@@ -1,0 +1,269 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+POR_arsenal_alfeite_organization = {
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_generic_naval_manufacturer_1
+	allowed = { 
+		tag = POR
+	}
+	add_trait = {
+		token = portugal_industrial_focus_material
+		available = {
+			always = no
+		}
+		name = "Industrial focus"
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=10 y=0 }
+
+		production_bonus = {
+			production_cost_factor = -0.10
+		}
+	}
+}
+
+POR_lisnave = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_maizuru_naval_arsenal
+	allowed = { 
+		tag = POR
+	}
+	add_trait = {
+		token = portugal_industrial_focus_material
+		available = {
+			always = no
+		}
+		name = "Industrial focus"
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=10 y=0 }
+
+		production_bonus = {
+			production_cost_factor = -0.10
+		}
+	}
+}
+
+POR_nautiber = {
+	include = generic_raider_ship_organization
+	icon = GFX_idea_mas
+	allowed = { 
+		tag = POR
+	}
+	add_trait = {
+		token = portugal_industrial_focus_material
+		available = {
+			always = no
+		}
+		name = "Industrial focus"
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=10 y=0 }
+
+		production_bonus = {
+			production_cost_factor = -0.10
+		}
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+POR_ogma_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_por_ogma
+	allowed = { 
+		has_dlc = "La Resistance"
+		tag = POR
+	}
+	available = { 
+		owner = { has_completed_focus = POR_ogma }
+	}
+	add_trait = {
+		token = portugal_industrial_focus_material
+		available = {
+			always = no
+		}
+		name = "Industrial focus"
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=10 y=0 }
+
+		production_bonus = {
+			production_cost_factor = -0.10
+		}
+	}
+}
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+
+POR_fnmal_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_2
+	allowed = { 
+		has_dlc = "La Resistance"
+		tag = POR
+	}
+	add_trait = {
+		token = portugal_industrial_focus_material
+		available = {
+			always = no
+		}
+		name = "Industrial focus"
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=10 y=0 }
+
+		production_bonus = {
+			production_cost_factor = -0.10
+		}
+	}
+}
+
+POR_fabrica_material_guerra_organization = {
+	include = generic_support_equipment_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_1
+	allowed = { 
+		has_dlc = "La Resistance"
+		tag = POR
+	}
+	add_trait = {
+		token = portugal_industrial_focus_material
+		available = {
+			always = no
+		}
+		name = "Industrial focus"
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=10 y=0 }
+
+		production_bonus = {
+			production_cost_factor = -0.10
+		}
+	}
+}
+
+POR_ogme_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_por_ogme
+	allowed = { 
+		has_dlc = "La Resistance"
+		tag = POR
+	}
+	available = { 
+		owner = { has_completed_focus = POR_ogme }
+	}
+	add_trait = {
+		token = portugal_industrial_focus_material
+		available = {
+			always = no
+		}
+		name = "Industrial focus"
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=10 y=0 }
+
+		production_bonus = {
+			production_cost_factor = -0.10
+		}
+	}
+}
+
+POR_fma_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_generic_artillery_manufacturer_2
+	allowed = { 
+		has_dlc = "La Resistance"
+		tag = POR
+	}
+
+	available = { 
+		owner = { has_completed_focus = POR_portuguese_artillery }
+	}
+	add_trait = {
+		token = portugal_industrial_focus_material
+		available = {
+			always = no
+		}
+		name = "Industrial focus"
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=10 y=0 }
+
+		production_bonus = {
+			production_cost_factor = -0.10
+		}
+	}
+}
+
+# CHI_hanyan_arsenal_organization = {
+# 	include = generic_infantry_equipment_organization
+# 	icon = GFX_idea_generic_infantry_equipment_manufacturer_1
+# 	allowed = {	
+# 		OR = {
+# 			is_literally_china = yes
+# 			tag = MAN
+# 			tag = MEN
+# 		} 
+# 		has_dlc = "Waking the Tiger"
+# 	}
+# 	ai_will_do = {
+# 		factor = 100000
+# 	}
+# 	add_trait = {
+# 		token = china_mio_trait_mass_rifle_production
+# 		name = "Chinese Rifle Technology"
+# 		icon = GFX_generic_mio_department_icon_facilities
+# 		special_trait_background = yes
+
+# 		position = { x=0 y=0 }
+
+# 		production_bonus = {
+# 			production_cost_factor = -0.15
+# 		}
+# 	}
+# }

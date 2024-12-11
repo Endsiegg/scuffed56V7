@@ -1,0 +1,292 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+# send_volunteers_desire
+
+
+POR_unit_production = {
+	allowed = { 
+		original_tag = POR
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 70 #88 to 70
+	}	
+
+	ai_strategy = {
+        type = building_target
+        id = arms_factory
+        value = 2000
+    }
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 1
+	}
+	
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 5
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = cavalry
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = motorized
+		value = -5 #because doctrine this = 2
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mechanized
+		value = -5 #because doctrine this = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 0 #because doctrine this = 10
+	}
+	
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = -30
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = -15 #because doctrine this = 15
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = -5
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = -10
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = -25
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = -10
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = -10
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = -10
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 35 #30 to 50
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 20 #20 to 40
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 0
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = large_plane_airframe
+		value = -100
+	}
+}	
+
+no_army_when_at_war = {
+	allowed = {
+		original_tag = POR
+	}
+	enable = {
+		POR = {
+			has_war = yes
+		}
+	}
+	abort = {
+		always = no
+	}
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -1
+	}
+}
+
+# Make POR want to send stuff to Republican Spain
+POR_helps_SPD_win_civil_war = {
+	allowed = {
+		original_tag = POR
+		has_dlc = "La Resistance"
+	}
+	enable = {
+		SPR_scw_in_progress = yes
+		NOT = { has_government = fascism }
+		has_completed_focus = POR_support_the_spanish_republic
+		country_exists = SPD
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = SPD }
+			SPD = { has_completed_focus = SPR_a_red_iberia }
+			has_government = fascism
+			has_global_flag = scw_over
+		}
+	}
+	
+	ai_strategy = {
+		type = support
+		id = SPD			
+		value = 50
+	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = SPD
+		value = 50
+	}
+
+}
+
+# Make POR want to send stuff to Nationalist Spain
+POR_helps_SPA_win_civil_war = {
+	allowed = {
+		original_tag = POR
+		has_dlc = "La Resistance"
+	}
+	enable = {
+		SPR_scw_in_progress = yes
+		OR = { 
+			has_government = fascism
+			has_government = neutrality
+		}
+		has_completed_focus = POR_support_the_spanish_nationalists
+		country_exists = SPA
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = SPA }
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+			has_global_flag = scw_over
+		}
+	}
+	
+	ai_strategy = {
+		type = support
+		id = SPA			
+		value = 50
+	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = SPA
+		value = 50
+	}
+
+}
+
+# Make POR want to send stuff to Carlist Spain
+POR_helps_SPB_win_civil_war = {
+	allowed = {
+		original_tag = POR
+		has_dlc = "La Resistance"
+	}
+	enable = {
+		SPR_scw_in_progress = yes
+		has_government = neutrality
+		has_completed_focus = POR_support_a_spanish_monarchy_in_the_war
+		country_exists = SPB
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = SPB }
+			NOT = { has_government = neutrality }
+			has_global_flag = scw_over
+		}
+	}
+	
+	ai_strategy = {
+		type = support
+		id = SPA			
+		value = 50
+	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = SPA
+		value = 50
+	}
+
+}

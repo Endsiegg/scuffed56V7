@@ -1,0 +1,443 @@
+ETH_second_italo_ethiopian_war_category = { #DLC Category
+	#ETH Side
+	ETH_recapture_the_juba_confluence = {   
+		icon = GFX_decision_border_war   
+		allowed = { original_tag = ETH }    
+		available = { 
+			AND = {
+				836 = {
+					is_fully_controlled_by = ETH
+				}
+				837 = {
+					is_fully_controlled_by = ETH
+				}
+			}	
+		}
+ 
+		activation = { 
+			NOT = {
+				836 = {
+					is_fully_controlled_by = ETH
+				}
+			}
+		}
+
+		visible = { has_global_flag = second_italo_ethiopian_war_flag }
+		cancel_if_not_visible = yes 
+		is_good = no
+		fire_only_once = yes                           
+		selectable_mission = no  
+		days_mission_timeout = 32
+		timeout_effect = {
+			add_war_support = -0.01
+		}
+		complete_effect = {  
+			ETH_escalate_the_war_effect = yes 
+		}
+	}
+	# Hold the Juba "dummy" mission for Italy 
+	ETH_hold_the_juba_confluence_mission = {   
+		icon = GFX_decision_generic_operation
+		allowed = { tag = ITA }    
+		available = { 
+			AND = {
+				836 = {
+					is_fully_controlled_by = ETH
+				}
+				837 = {
+					is_fully_controlled_by = ETH
+				}
+			}
+		}
+
+		activation = { 
+			has_war = yes 
+			has_global_flag = second_italo_ethiopian_war_flag
+			NOT = {
+				836 = {
+					is_fully_controlled_by = ETH
+				}
+			}
+		}
+		visible = { has_global_flag = second_italo_ethiopian_war_flag }
+		cancel_if_not_visible = yes 
+		is_good = yes
+		fire_only_once = yes                            
+		selectable_mission = no  
+		days_mission_timeout = 32
+		timeout_effect = {
+			effect_tooltip = {
+				ETH = { add_war_support = -0.01 }
+			}
+		}
+		complete_effect = {  
+			custom_effect_tooltip = ITA_war_escalation_inc_tt
+		}
+	}
+	#Eth side
+	ETH_hold_tigray = {   
+		icon = GFX_decision_generic_operation 
+		allowed = { original_tag = ETH }    
+		available = { 
+			842 = {
+				is_fully_controlled_by = ITA
+			}
+		}
+ 
+		activation = { 
+			has_war = yes 
+			has_global_flag = second_italo_ethiopian_war_flag
+			842 = {
+				is_fully_controlled_by = ETH
+			}
+		}
+
+		visible = { has_global_flag = second_italo_ethiopian_war_flag }
+		cancel_if_not_visible = yes 
+		is_good = yes
+		fire_only_once = yes                           
+		selectable_mission = no  
+		days_mission_timeout = 101
+		timeout_effect = {
+			ETH_escalate_the_war_effect = yes
+			ETH_BOP_centralization_small_effect = yes 
+		}
+		complete_effect = {  
+			add_war_support = -0.01
+			ETH_BOP_decentralization_small_effect = yes 
+		}
+	}
+	# Conquer Tigray mission for Italy 
+	ETH_conquer_tigray_mission = {   
+		icon = GFX_decision_border_war   
+		allowed = { tag = ITA }    
+		available = { 
+			842 = { is_controlled_by = ROOT }
+		}
+		activation = { 
+			has_war = yes 
+			has_global_flag = second_italo_ethiopian_war_flag
+			842 = {
+				is_fully_controlled_by = ETH
+			}
+		}
+		visible = { has_global_flag = second_italo_ethiopian_war_flag }
+		cancel_if_not_visible = yes 
+		is_good = no 
+		fire_only_once = yes                            
+		selectable_mission = no  
+		days_mission_timeout = 101
+		timeout_effect = {
+			custom_effect_tooltip = ITA_war_escalation_inc_tt
+		}
+		complete_effect = {  
+			effect_tooltip = {
+				ETH = { add_war_support = -0.01 }
+			}
+		}
+	}
+}
+
+
+economy_decisions = {	
+	ETH_promote_infrastructure_development_in_from = {
+
+		icon = generic_construction
+
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+
+		visible = {
+			hidden_trigger = {
+				ROOT = {
+					owns_state = FROM
+				}
+			}
+			if = {
+				limit = {
+					tag = ETH
+				}
+				
+			}
+			NOT = {
+				has_focus_tree = ethiopia_tree
+			}
+			if = {
+				limit = {
+					OR = {
+						original_tag = AFA
+						original_tag = ORO
+						original_tag = QEM
+						original_tag = TIG
+						original_tag = BEG
+						original_tag = HAR
+						original_tag = SID
+						original_tag = GBA
+					}
+					NOT = {
+						has_completed_focus = HOA_improved_irrigation_systems
+					}					
+				}
+				FROM = {
+					check_variable = { ETH_state_development_production_speed < -0.1  }
+				}					
+			}
+			else = {
+				FROM = {
+					check_variable = { ETH_state_development_production_speed < 0  }
+				}
+			}						
+		}
+		
+		available = {
+			FROM = {
+				check_variable = { ETH_state_development_production_speed < 0  }
+			}
+		}
+
+		cost = 25
+
+		fire_only_once = no
+		days_re_enable = 0
+		days_remove = 60
+
+		complete_effect = {
+			
+		}
+	
+
+		remove_effect = {
+			FROM = {
+				custom_effect_tooltip = ETH_state_development_production_speed_tt #"§YMax Factories in State§! §G+10%§!"
+				add_to_variable = { ETH_state_development_production_speed = 0.1 }
+			}
+		}
+	}	
+	ETH_promote_construction_development_in_from = {
+
+		icon = generic_factory
+
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+
+		visible = {
+			hidden_trigger = {
+				ROOT = {
+					owns_state = FROM
+				}
+			}
+
+			if = {
+				limit = {
+					OR = {
+						original_tag = AFA
+						original_tag = ORO
+						original_tag = QEM
+						original_tag = TIG
+						original_tag = BEG
+						original_tag = HAR
+						original_tag = SID
+						original_tag = GBA
+					}
+					NOT = {
+						has_completed_focus = HOA_improved_irrigation_systems
+					}					
+				}
+				FROM = {
+					check_variable = { ETH_state_development_local_building_slots_factor < -0.1  }
+				}					
+			}
+			else = {
+				FROM = {
+					check_variable = { ETH_state_development_local_building_slots_factor < 0  }
+				}
+			}
+			if = {
+				limit = {
+					tag = ETH
+				}
+				
+			}							
+		}
+		
+		available = {
+			FROM = {	
+				check_variable = { ETH_state_development_local_building_slots_factor < 0  }
+			}
+		}
+
+		cost = 25
+
+		fire_only_once = no
+		days_re_enable = 0
+		days_remove = 60
+
+		complete_effect = {
+			
+		}
+	
+
+		remove_effect = {
+			FROM = {
+				custom_effect_tooltip = ETH_state_development_local_building_tt
+				add_to_variable = { ETH_state_development_local_building_slots_factor = 0.1 }
+			}
+		}
+	}	
+	modernize_ethiopian_rubber_production = { #837
+		
+		icon = rubber
+
+		allowed = {
+			original_tag = ETH
+		}
+
+		available = {
+			owns_state = 837
+			controls_state = 837
+			OR = {
+				AND = {
+					original_tag = ETH
+					
+				}
+				has_completed_focus = HOA_exploit_national_resources
+				
+			}
+			
+			has_tech = excavation2
+		}
+
+		highlight_states = {
+ 			highlight_state_targets = { 
+				state = 837
+			} 
+		}
+
+		visible = {
+			OR = {
+				AND = {
+					original_tag = ETH
+					
+				}
+				has_completed_focus = HOA_exploit_national_resources
+				
+			}			
+			owns_state = 837
+			controls_state = 837
+			837 = {
+				NOT = {
+					has_state_flag = ethiopia_rubber_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		days_remove = 80
+
+		modifier = {
+		}
+		complete_effect = {
+			add_timed_idea = {
+				idea = bra_industrial_elite
+				days = 80
+			}
+		}
+				
+
+		remove_effect = {
+			837 = {
+				set_state_flag = ethiopia_rubber_developed
+			}
+			837 = {
+				add_resource = {
+					type = rubber
+					amount = 8
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	exploit_ethiopian_iron_deposits = { #271
+		
+		icon = steel
+
+		allowed = {
+			original_tag = ETH
+		}
+
+		available = {
+			owns_state = 271
+			controls_state = 271
+			original_tag = ETH
+			OR = {
+				AND = {
+					original_tag = ETH
+					
+				}
+				has_completed_focus = HOA_exploit_national_resources
+				
+			}
+			has_tech = excavation3
+		}
+
+		highlight_states = {
+ 			highlight_state_targets = { 
+				state = 271
+			} 
+		}
+
+		visible = {
+			OR = {
+				AND = {
+					original_tag = ETH
+					
+				}
+				has_completed_focus = HOA_exploit_national_resources
+				
+			}			
+			owns_state = 271
+			controls_state = 271
+			271 = {
+				NOT = {
+					has_state_flag = ethiopia_steel_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		days_remove = 80
+
+		modifier = {
+		}
+		complete_effect = {
+			add_timed_idea = {
+				idea = bra_industrial_elite
+				days = 80
+			}
+		}
+				
+
+		remove_effect = {
+			271 = {
+				set_state_flag = ethiopia_steel_developed
+			}
+			271 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+}	
