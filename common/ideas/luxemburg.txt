@@ -17,8 +17,6 @@ ideas = {
 				has_war = no
 				is_in_faction = no
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -31,6 +29,84 @@ ideas = {
 				improve_relations_maintain_cost_factor = -0.50
 				trade_opinion_factor = 0.50
 				ai_get_ally_desire_factor = -50
+			}
+		}
+
+		LUX_charlotte = {
+			
+			
+			allowed = {
+				has_government = democratic
+				NOT = {
+					has_country_leader = {
+						character = LUX_duchess_charlotte
+						ruling_only = yes
+					}
+				}
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			cancel = {
+				OR = {
+					NOT = {
+						has_government = democratic
+					}
+					has_country_leader = {
+						character = LUX_duchess_charlotte
+						ruling_only = yes
+					}
+				}
+			}
+			
+			removal_cost = -1
+
+			picture = LUX_charlotte
+	
+			traits = {
+				charismatic_monarch
+			}
+		}
+
+		LUX_charlotte_2 = {
+			
+			name = LUX_charlotte
+			
+			allowed = {
+				has_government = democratic
+				NOT = {
+					has_country_leader = {
+						character = LUX_duchess_charlotte
+						ruling_only = yes
+					}
+				}
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			cancel = {
+				OR = {
+					NOT = {
+						has_government = democratic
+					}
+					has_country_leader = {
+						character = LUX_duchess_charlotte
+						ruling_only = yes
+					}
+				}
+			}
+			
+			removal_cost = -1
+
+			picture = LUX_charlotte
+	
+			traits = {
+				charismatic_monarch
+				resistance_figure
 			}
 		}
 
@@ -52,8 +128,6 @@ ideas = {
 					has_government = neutrality
 				}
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -86,8 +160,6 @@ ideas = {
 					has_government = neutrality
 				}
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -120,8 +192,6 @@ ideas = {
 					has_government = fascism
 				}
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -164,8 +234,6 @@ ideas = {
 			available = {
 				has_government = democratic
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -190,8 +258,6 @@ ideas = {
 					has_government = democratic
 				}
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -213,8 +279,6 @@ ideas = {
 			available = {
 				exists = yes
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -235,8 +299,6 @@ ideas = {
 			available = {
 				has_government = communism
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -257,8 +319,6 @@ ideas = {
 			available = {
 				has_government = communism
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -279,8 +339,6 @@ ideas = {
 			available = {
 				has_government = democratic
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -301,8 +359,6 @@ ideas = {
 			available = {
 				has_government = democratic
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -322,8 +378,6 @@ ideas = {
 			available = {
 				exists = yes
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -346,8 +400,6 @@ ideas = {
 					has_government = communism
 				}
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -368,8 +420,6 @@ ideas = {
 			available = {
 				exists = yes
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -390,8 +440,6 @@ ideas = {
 			available = {
 				has_government = neutrality
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -401,7 +449,7 @@ ideas = {
 				army_org_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				war_support_factor = 0.05
-				consumer_goods_factor = -0.1
+				consumer_goods_factor = -0.15
 			}
 		}
 
@@ -416,8 +464,6 @@ ideas = {
 					has_government = communism
 				}
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -439,8 +485,6 @@ ideas = {
 			available = {
 				has_government = fascism
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -465,8 +509,6 @@ ideas = {
 					has_government = democratic
 				}
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -489,8 +531,6 @@ ideas = {
 			available = {
 				exists = yes
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -513,8 +553,6 @@ ideas = {
 			available = {
 				exists = yes
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -522,8 +560,7 @@ ideas = {
 
 			modifier = {
 				special_forces_min = 10
-				air_paradrop_attack_factor = 0.1
-				air_air_superiority_attack_factor = 0.10
+				air_superiority_efficiency = 0.15
 			}
 		}
 
@@ -536,8 +573,6 @@ ideas = {
 			available = {
 				exists = yes
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -555,8 +590,6 @@ ideas = {
 			available = {
 				exists = yes
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
@@ -577,15 +610,13 @@ ideas = {
 			available = {
 				exists = yes
 			}
-
-			cancel_if_invalid = yes
 			
 			removal_cost = -1
 
 			picture = generic_foreign_capital
 
 			modifier = {
-				consumer_goods_factor = -0.2
+				consumer_goods_factor = -0.25
 			}
 		}
 	}

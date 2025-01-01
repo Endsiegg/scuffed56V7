@@ -112,7 +112,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				neutrality_drift = 0.01
+				#neutrality_drift = 0.01	#disabled r56 - unlike in vanilla where neutrality has 0% starting support, this can turn Iceland non-aligned on historical in R56
 				stability_factor = -0.1
 				army_core_defence_factor = 0.05
 			}
@@ -1409,11 +1409,6 @@ ideas = {
 					build_cost_ic = -0.05
 				}
 			}
-
-			
-			research_bonus = {
-				#industry = 0.05
-			}
 			
 			traits = { ICE_shipping_concern }
 			
@@ -1430,11 +1425,6 @@ ideas = {
 			}
 			available = {
 				has_completed_focus = ICE_american_investments
-			}
-
-			
-			research_bonus = {
-
 			}
 			
 			traits = { industrial_concern }
