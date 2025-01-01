@@ -224,7 +224,7 @@ form_nation_mod_category = {
 		days_remove = 40
 		fire_only_once = yes	
 		visible = {
-			has_completed_focus = AUS_form_holy_roman_empire
+			has_country_flag = AUS_formed_HRE
 			has_civil_war = no
 		}
 
@@ -384,7 +384,7 @@ form_nation_mod_category = {
 			OR = {
 				original_tag = SWE
 				original_tag = NOR
-				original_tag = SAM
+				original_tag = SMI
 				original_tag = FIN
 			}
 		}
@@ -432,7 +432,7 @@ form_nation_mod_category = {
 			OR = {
 				original_tag = DEN
 				original_tag = NOR
-				original_tag = SAM
+				original_tag = SMI
 				original_tag = FIN
 			}
 		}
@@ -480,7 +480,7 @@ form_nation_mod_category = {
 			OR = {
 				original_tag = DEN
 				original_tag = SWE
-				original_tag = SAM
+				original_tag = SMI
 				original_tag = FIN
 			}
 		}
@@ -529,7 +529,7 @@ form_nation_mod_category = {
 			OR = {
 				original_tag = DEN
 				original_tag = SWE
-				original_tag = SAM
+				original_tag = SMI
 				original_tag = NOR
 			}
 		}
@@ -689,10 +689,10 @@ form_nation_mod_category = {
 				is_core_of = ROOT
 			}
 			has_civil_war = no
-			# has_game_rule = {
-			# 	rule = spr_fragmentation_status
-			# 	option = SPR_EU4
-			# }
+			has_game_rule = {
+				rule = spr_fragmentation_status
+				option = SPR_EU4
+			}
 			ADU = {
 				exists = no
 			}					
@@ -744,19 +744,19 @@ form_nation_mod_category = {
 				is_core_of = ROOT
 			}
 			has_civil_war = no
-			# NOT = {
-			# 	OR = {
-			# 		has_game_rule = {
-			# 			rule = spr_fragmentation_status
-			# 			option = SPR_EU4
-			# 		}
-			# 		has_game_rule = {
-			# 			rule = africa_colonization_status
-			# 			option = AFRICA_DECOLONIZED
-			# 		}					
-			# 	}
+			NOT = {
+				OR = {
+					has_game_rule = {
+						rule = spr_fragmentation_status
+						option = SPR_EU4
+					}
+					has_game_rule = {
+						rule = africa_colonization_status
+						option = AFRICA_DECOLONIZED
+					}					
+				}
 
-			# }				
+			}				
 		}
 
 		complete_effect = {				

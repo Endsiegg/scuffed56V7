@@ -27,7 +27,10 @@ prospect_for_resources = {
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 597
-				}				
+				}	
+				has_resources_rights = {
+					state = 597
+				}							
 			}
 		}
 
@@ -37,7 +40,10 @@ prospect_for_resources = {
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 597
-				}				
+				}
+				has_resources_rights = {
+					state = 597
+				}									
 			}
 			NOT = {
 				any_other_country = {
@@ -72,7 +78,11 @@ prospect_for_resources = {
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}							
 		}
 		remove_effect = { 
@@ -111,7 +121,10 @@ prospect_for_resources = {
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 621
-				}				
+				}	
+				has_resources_rights = {
+					state = 621
+				}							
 			}
 
 		}
@@ -122,7 +135,10 @@ prospect_for_resources = {
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 621
-				}				
+				}
+				has_resources_rights = {
+					state = 621
+				}								
 			}
 			NOT = {
 				any_other_country = {
@@ -157,7 +173,11 @@ prospect_for_resources = {
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}							
 		}
 		remove_effect = { 
@@ -171,16 +191,16 @@ prospect_for_resources = {
 		}	
 	}
 
-	develop_daqing_deposits = { #714
+	develop_daqing_deposits = { #943
 		
 		icon = oil
 		highlight_states = {
 			highlight_state_targets = {
-				state = 714
+				state = 943
 			} 
 		}
 		available = {
-			714 = {
+			943 = {
 				OR = {
 					has_resistance = no
 					AND = {
@@ -192,28 +212,34 @@ prospect_for_resources = {
 			has_tech = excavation_c
 			num_of_civilian_factories_available_for_projects > 2
 			OR = {
-				has_full_control_of_state = 714
+				has_full_control_of_state = 943
 				any_country = {
 					is_subject_of = ROOT
-					has_full_control_of_state = 714
-				}				
+					has_full_control_of_state = 943
+				}	
+				has_resources_rights = {
+					state = 943
+				}							
 			}
 		}
 
 		visible = {
 			OR = {
-				has_full_control_of_state = 714
+				has_full_control_of_state = 943
 				any_country = {
 					is_subject_of = ROOT
-					has_full_control_of_state = 714
-				}				
+					has_full_control_of_state = 943
+				}
+				has_resources_rights = {
+					state = 943
+				}								
 			}
 			NOT = {
 				any_other_country = {
 					has_decision = develop_daqing_deposits
 				}
 			}
-			714 = {
+			943 = {
 				NOT = {
 					has_state_flag = daqing_oil_developed_1
 				}
@@ -233,8 +259,8 @@ prospect_for_resources = {
 			factor = 10
 		}
 		remove_effect = { 
-			714 = { set_state_flag = daqing_oil_developed_1 } 
-			714 = {
+			943 = { set_state_flag = daqing_oil_developed_1 } 
+			943 = {
 				add_resource = {
 					type = oil
 					amount = 8
@@ -242,16 +268,16 @@ prospect_for_resources = {
 			}
 		}	
 	}
-	develop_daqing_deposits_2 = { #714
+	develop_daqing_deposits_2 = { #943
 		
 		icon = oil
 		highlight_states = {
 			highlight_state_targets = {
-				state = 714
+				state = 943
 			} 
 		}
 		available = {
-			714 = {
+			943 = {
 				OR = {
 					has_resistance = no
 					AND = {
@@ -263,28 +289,34 @@ prospect_for_resources = {
 			has_tech = excavation_d
 			num_of_civilian_factories_available_for_projects > 4
 			OR = {
-				has_full_control_of_state = 714
+				has_full_control_of_state = 943
 				any_country = {
 					is_subject_of = ROOT
-					has_full_control_of_state = 714
-				}				
+					has_full_control_of_state = 943
+				}	
+				has_resources_rights = {
+					state = 943
+				}							
 			}
 		}
 
 		visible = {
 			OR = {
-				has_full_control_of_state = 714
+				has_full_control_of_state = 943
 				any_country = {
 					is_subject_of = ROOT
-					has_full_control_of_state = 714
-				}				
+					has_full_control_of_state = 943
+				}	
+				has_resources_rights = {
+					state = 943
+				}							
 			}
 			NOT = {
 				any_other_country = {
 					has_decision = develop_daqing_deposits_2
 				}
 			}
-			714 = {
+			943 = {
 				has_state_flag = daqing_oil_developed_1
 				NOT = {
 					has_state_flag = daqing_oil_developed_2
@@ -305,8 +337,8 @@ prospect_for_resources = {
 			factor = 10
 		}
 		remove_effect = { 
-			714 = { set_state_flag = daqing_oil_developed_2 } 
-			714 = {
+			943 = { set_state_flag = daqing_oil_developed_2 } 
+			943 = {
 				add_resource = {
 					type = oil
 					amount = 12
@@ -335,7 +367,10 @@ prospect_for_resources = {
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 325
-				}				
+				}
+				has_resources_rights = {
+					state = 325
+				}								
 			}
 		}
 		highlight_states = {
@@ -350,7 +385,10 @@ prospect_for_resources = {
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 325
-				}				
+				}
+				has_resources_rights = {
+					state = 325
+				}								
 			}
 			NOT = {
 				any_other_country = {
@@ -385,7 +423,11 @@ prospect_for_resources = {
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 		remove_effect = { 
@@ -418,8 +460,17 @@ prospect_for_resources = {
 			}
 			has_tech = excavation2
 			num_of_civilian_factories_available_for_projects > 2
-			owns_state = 328
-			controls_state = 328
+			OR = {
+				AND = {
+					owns_state = 328
+					controls_state = 328
+				}
+				has_resources_rights = {
+					state = 328
+				}	
+			}
+
+		
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -428,8 +479,15 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			owns_state = 328
-			controls_state = 328
+			OR = {
+				AND = {
+					owns_state = 328
+					controls_state = 328
+				}
+				has_resources_rights = {
+					state = 328
+				}	
+			}
 			328 = {
 				NOT = {
 					has_state_flag = kirin_aluminium_developed
@@ -458,7 +516,11 @@ prospect_for_resources = {
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}							
 		}
 		remove_effect = { 
@@ -471,273 +533,6 @@ prospect_for_resources = {
 			}
 		}	
 	}
-	JAP_develop_tohuku_iron = { #533
-		icon = steel
-
-		highlight_states = {
-			highlight_state_targets = {
-				state = 533
-			} 
-		}
-
-		allowed = {
-			original_tag = JAP
-		}
-
-		available = {
-			has_full_control_of_state = 533
-			has_tech = excavation2
-			has_completed_focus = JAP_investing_internal_industries
-		}
-
-		visible = {
-			has_completed_focus = JAP_investing_internal_industries
-		}
-
-		fire_only_once = yes
-
-		cost = 25
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 5
-		}
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		complete_effect = {
-			533 = {
-				add_resource = {
-					type = steel
-					amount = 50
-				}
-			}
-		}
-	}
-	JAP_develop_hokkaido_chromium = { #536
-		icon = chromium
-
-		highlight_states = {
-			highlight_state_targets = {
-				state = 536
-			} 
-		}
-
-		allowed = {
-			original_tag = JAP
-		}
-
-		available = {
-			has_full_control_of_state = 536
-			has_tech = excavation2
-			has_completed_focus = JAP_investing_internal_industries
-		}
-
-		visible = {
-			has_completed_focus = JAP_investing_internal_industries
-		}
-
-		fire_only_once = yes
-
-		cost = 25
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 5
-		}
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		complete_effect = {
-			536 = {
-				add_resource = {
-					type = chromium
-					amount = 35
-				}
-			}
-		}
-	}
-
-	JAP_develop_koshinetsu_iron = { #535
-		icon = steel
-
-		highlight_states = {
-			highlight_state_targets = {
-				state = 535
-			} 
-		}
-
-		allowed = {
-			original_tag = JAP
-		}
-
-		available = {
-			has_full_control_of_state = 535
-			has_tech = excavation2
-		}
-
-		visible = {
-			has_completed_focus = JAP_investing_internal_industries
-		}
-
-		fire_only_once = yes
-
-		cost = 25
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 5
-		}
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		complete_effect = {
-			535 = {
-				add_resource = {
-					type = steel
-					amount = 50
-				}
-			}
-		}
-	}
-	JAP_develop_kanto_aluminium= { #272
-		icon = aluminium
-
-		highlight_states = {
-			highlight_state_targets = {
-				state = 282
-			} 
-		}
-
-		allowed = {
-			original_tag = JAP
-		}
-
-		available = {
-			has_full_control_of_state = 282
-			has_tech = excavation2
-		}
-
-		visible = {
-			has_completed_focus = JAP_investing_internal_industries
-		}
-
-		fire_only_once = yes
-
-		cost = 25
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 3
-		}
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		complete_effect = {
-			282 = {
-				add_resource = {
-					type = aluminium
-					amount = 30
-				}
-			}
-		}
-	}
-	JAP_develop_kansai_aluminium= { #272
-	icon = aluminium
-
-	highlight_states = {
-		highlight_state_targets = {
-			state = 531
-		} 
-	}
-
-	allowed = {
-		original_tag = JAP
-	}
-
-	available = {
-		has_full_control_of_state = 531
-		has_tech = excavation2
-	}
-
-	visible = {
-		has_completed_focus = JAP_investing_internal_industries
-	}
-
-	fire_only_once = yes
-
-	cost = 25
-	days_remove = 120
-
-	modifier = {
-		civilian_factory_use = 3
-	}
-
-	ai_will_do = {
-		factor = 10
-	}
-
-	complete_effect = {
-		531 = {
-			add_resource = {
-				type = aluminium
-				amount = 30
-			}
-		}
-	}
-}
-JAP_develop_chuguko_tungesten= { #272
-	icon = tungsten
-
-	highlight_states = {
-		highlight_state_targets = {
-			state = 529
-		} 
-	}
-
-	allowed = {
-		original_tag = JAP
-	}
-
-	available = {
-		has_full_control_of_state = 529
-		has_tech = excavation2
-	}
-
-	visible = {
-		has_completed_focus = JAP_investing_internal_industries
-	}
-
-	fire_only_once = yes
-
-	cost = 25
-	days_remove = 120
-
-	modifier = {
-		civilian_factory_use = 3
-	}
-
-	ai_will_do = {
-		factor = 10
-	}
-
-	complete_effect = {
-		529 = {
-			add_resource = {
-				type = tungsten
-				amount = 25
-			}
-		}
-	}
-}
 	develop_sichuan_aluminium_deposits = { #605
 		
 		icon = aluminium
@@ -761,7 +556,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 605
-				}				
+				}
+				has_resources_rights = {
+					state = 605
+				}								
 			}
 		}
 		highlight_states = {
@@ -778,7 +576,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 605
-				}			
+				}	
+				has_resources_rights = {
+					state = 605
+				}						
 			}
 			NOT = {
 				any_other_country = {
@@ -813,7 +614,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 		remove_effect = { 
@@ -856,7 +661,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 627
-				}			
+				}
+				has_resources_rights = {
+					state = 627
+				}							
 			}
 		}
 
@@ -868,7 +676,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 627
-				}			
+				}
+				has_resources_rights = {
+					state = 627
+				}							
 			}
 			NOT = {
 				any_other_country = {
@@ -903,7 +714,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}							
 		}
 		remove_effect = { 
@@ -940,7 +755,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 625
-				}			
+				}
+				has_resources_rights = {
+					state = 625
+				}							
 			}
 		}
 
@@ -958,7 +776,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 625
-				}			
+				}
+				has_resources_rights = {
+					state = 625
+				}							
 			}
 			NOT = {
 				any_other_country = {
@@ -993,7 +814,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -1002,80 +827,78 @@ JAP_develop_chuguko_tungesten= { #272
 			625 = {
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 6
 				}
 			}
 		}	
 	}
 #removed
-	develop_nauru_tungsten_deposits = { #725
-		
-		icon = tungsten
-
-		allowed = {
-			
-		}
-
-		available = {
-			225 = {
-				OR = {
-					has_resistance = no
-					AND = {
-						compliance > 30
-						resistance < 75
-					}
-				}
-			}
-			has_tech = excavation4
-			num_of_civilian_factories_available_for_projects > 2
-			owns_state = 725
-			controls_state = 725
-		}
-		highlight_states = {
-			highlight_state_targets = {
-			state = 725
-			}
-		}
-
-
-		visible = {
-			owns_state = 725
-			controls_state = 725
-			725 = {
-				NOT = {
-					has_state_flag = nauru_tungsten_developed
-				}
-			}
-		}
-
-		fire_only_once = yes
-
-		cost = 25
-		days_remove = 60
-
-		modifier = {
-			civilian_factory_use = 3
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				tag = ENG
-				has_war = no
-				factor = 0
-			}
-		}
-
-		remove_effect = {
-			725 = { set_state_flag = nauru_tungsten_developed }
-			725 = {
-				add_resource = {
-					type = tungsten #standin for phosphates
-					amount = 8
-				}
-			}
-		}
-	}
+#	develop_nauru_tungsten_deposits = { #725
+#		
+#		icon = tungsten
+#
+#		allowed = {
+#			
+#		}
+#
+#		available = {
+		#	225 = {
+		#		OR = {
+		#			has_resistance = no
+		#			AND = {
+		#				compliance > 30
+		#				resistance < 75
+		#			}
+		#		}
+		#	}
+#			has_tech = excavation4
+#			num_of_civilian_factories_available_for_projects > 2
+#			owns_state = 725
+#			controls_state = 725
+#		}
+#
+#		highlight_state_targets = {
+#			state = 725
+#		}
+#
+#		visible = {
+#			owns_state = 725
+#			controls_state = 725
+#			725 = {
+#				NOT = {
+#					has_state_flag = nauru_tungsten_developed
+#				}
+#			}
+#		}
+#
+#		fire_only_once = yes
+#
+#		cost = 25
+#		days_remove = 60
+#
+#		modifier = {
+#			civilian_factory_use = 3
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				tag = ENG
+#				has_war = no
+#				factor = 0
+#			}
+#		}
+#
+#		remove_effect = {
+#			725 = { set_state_flag = nauru_tungsten_developed }
+#			725 = {
+#				add_resource = {
+#					type = tungsten #standin for phosphates
+#					amount = 4
+#				}
+#			}
+#		}
+#	}
 	develop_tonkin_aluminium_deposits = { #671
 		
 		icon = aluminium
@@ -1099,7 +922,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 671
-				}			
+				}
+				has_resources_rights = {
+					state = 671
+				}							
 			}
 		}
 
@@ -1117,7 +943,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 671
-				}			
+				}
+				has_resources_rights = {
+					state = 671
+				}							
 			}
 			NOT = {
 				any_other_country = {
@@ -1152,7 +981,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -1161,7 +994,7 @@ JAP_develop_chuguko_tungesten= { #272
 			671 = {
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 6
 				}
 			}
 		}
@@ -1189,7 +1022,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 951
-				}			
+				}
+				has_resources_rights = {
+					state = 951
+				}							
 			}
 		}
 
@@ -1207,7 +1043,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 951
-				}			
+				}
+				has_resources_rights = {
+					state = 951
+				}							
 			}
 			NOT = {
 				any_other_country = {
@@ -1273,7 +1112,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 662
-				}			
+				}
+				has_resources_rights = {
+					state = 662
+				}							
 			}
 		}
 
@@ -1291,7 +1133,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 662
-				}			
+				}
+				has_resources_rights = {
+					state = 662
+				}							
 			}
 			NOT = {
 				any_other_country = {
@@ -1359,7 +1204,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 450
-				}			
+				}
+				has_resources_rights = {
+					state = 450
+				}						
 			}
 		}
 
@@ -1377,7 +1225,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 450
-				}			
+				}
+				has_resources_rights = {
+					state = 450
+				}							
 			}
 			NOT = {
 				any_other_country = {
@@ -1412,7 +1263,7 @@ JAP_develop_chuguko_tungesten= { #272
 			450 = {
 				add_resource = {
 					type = oil
-					amount = 8
+					amount = 4
 				}
 			}
 		}
@@ -1441,6 +1292,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 518
+				}
+				has_resources_rights = {
+					state = 518
 				}			
 			}
 		}
@@ -1458,6 +1312,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 518
+				}
+				has_resources_rights = {
+					state = 518
 				}			
 			}
 			NOT = {
@@ -1493,7 +1350,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}							
 		}
 
@@ -1532,6 +1393,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 780
+				}
+				has_resources_rights = {
+					state = 780
 				}			
 			}
 		}
@@ -1550,6 +1414,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 780
+				}
+				has_resources_rights = {
+					state = 780
 				}			
 			}
 			NOT = {
@@ -1617,6 +1484,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 780
+				}
+				has_resources_rights = {
+					state = 780
 				}			
 			}
 		}
@@ -1635,6 +1505,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 780
+				}
+				has_resources_rights = {
+					state = 780
 				}			
 			}
 			NOT = {
@@ -1674,7 +1547,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -1685,7 +1562,7 @@ JAP_develop_chuguko_tungesten= { #272
 			780 = {
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 4
 				}
 			}
 		}
@@ -1711,6 +1588,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 543
+				}
+				has_resources_rights = {
+					state = 543
 				}			
 			}
 			num_of_civilian_factories_available_for_projects > 2
@@ -1729,6 +1609,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 543
+				}
+				has_resources_rights = {
+					state = 543
 				}			
 			}
 			NOT = {
@@ -1776,7 +1659,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}	
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 	}
@@ -1802,6 +1689,9 @@ JAP_develop_chuguko_tungesten= { #272
 					is_subject_of = ROOT
 					has_full_control_of_state = 543
 				}			
+				has_resources_rights = {
+					state = 543
+				}
 			}
 			num_of_civilian_factories_available_for_projects > 4
 		}
@@ -1820,6 +1710,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 543
+				}
+				has_resources_rights = {
+					state = 543
 				}			
 			}
 			NOT = {
@@ -1858,7 +1751,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}							
 		}
 
@@ -1895,6 +1792,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 558
+				}
+				has_resources_rights = {
+					state = 558
 				}			
 			}
 			num_of_civilian_factories_available_for_projects > 2
@@ -1914,6 +1814,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 558
+				}
+				has_resources_rights = {
+					state = 558
 				}			
 			}
 			NOT = {
@@ -1948,7 +1851,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				tag = ENG
@@ -1999,6 +1906,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 56
+				}
+				has_resources_rights = {
+					state = 56
 				}			
 			}
 		}
@@ -2011,6 +1921,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 56
+				}
+				has_resources_rights = {
+					state = 56
 				}			
 			}
 			NOT = {
@@ -2046,7 +1959,7 @@ JAP_develop_chuguko_tungesten= { #272
 			56 = {
 				add_resource = {
 					type = oil
-					amount = 8
+					amount = 6
 				}
 			}
 		}
@@ -2075,6 +1988,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 4
+				}
+				has_resources_rights = {
+					state = 4
 				}			
 			}
 		}
@@ -2093,6 +2009,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 4
+				}
+				has_resources_rights = {
+					state = 4
 				}			
 			}
 			NOT = {
@@ -2128,7 +2047,7 @@ JAP_develop_chuguko_tungesten= { #272
 			4 = {
 				add_resource = {
 					type = oil
-					amount = 8
+					amount = 4
 				}
 			}
 		}
@@ -2162,6 +2081,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 36
+				}
+				has_resources_rights = {
+					state = 36
 				}			
 			}
 		}
@@ -2174,6 +2096,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 36
+				}
+				has_resources_rights = {
+					state = 36
 				}			
 			}
 			NOT = {
@@ -2206,7 +2131,7 @@ JAP_develop_chuguko_tungesten= { #272
 			36 = {
 				add_resource = {
 					type = oil
-					amount = 8
+					amount = 6
 				}
 				
 			}
@@ -2242,6 +2167,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 347
+				}
+				has_resources_rights = {
+					state = 347
 				}			
 			}
 		}
@@ -2254,6 +2182,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 347
+				}
+				has_resources_rights = {
+					state = 347
 				}			
 			}
 			NOT = {
@@ -2301,7 +2232,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}							
 		}
 	}
@@ -2334,6 +2269,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 331
+				}
+				has_resources_rights = {
+					state = 331
 				}			
 			}
 		}
@@ -2346,6 +2284,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 331
+				}
+				has_resources_rights = {
+					state = 331
 				}			
 			}
 			NOT = {
@@ -2386,7 +2327,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}							
 		}
 
@@ -2426,6 +2371,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 466
+				}
+				has_resources_rights = {
+					state = 466
 				}			
 			}
 		}
@@ -2443,6 +2391,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 466
+				}
+				has_resources_rights = {
+					state = 466
 				}			
 			}
 			NOT = {
@@ -2489,7 +2440,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}	
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 	}
@@ -2523,6 +2478,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 315
+				}
+				has_resources_rights = {
+					state = 315
 				}			
 			}
 		}
@@ -2535,6 +2493,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 315
+				}
+				has_resources_rights = {
+					state = 315
 				}			
 			}
 			NOT = {
@@ -2565,7 +2526,7 @@ JAP_develop_chuguko_tungesten= { #272
 			315 = {
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 6
 				}	
 			}
 		}
@@ -2582,7 +2543,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}	
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 	}
@@ -2616,6 +2581,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 372
+				}
+				has_resources_rights = {
+					state = 372
 				}			
 			}
 		}
@@ -2628,6 +2596,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 372
+				}
+				has_resources_rights = {
+					state = 372
 				}			
 			}
 			NOT = {
@@ -2692,7 +2663,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -2736,6 +2711,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 358
+				}
+				has_resources_rights = {
+					state = 358
 				}			
 			}
 		}
@@ -2748,6 +2726,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 358
+				}
+				has_resources_rights = {
+					state = 358
 				}			
 			}
 			NOT = {
@@ -2784,7 +2765,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -2852,6 +2837,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 368
+				}
+				has_resources_rights = {
+					state = 368
 				}			
 			}
 			num_of_civilian_factories_available_for_projects > 11
@@ -2871,6 +2859,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 368
+				}
+				has_resources_rights = {
+					state = 368
 				}			
 			}
 			NOT = {
@@ -2909,7 +2900,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -2977,7 +2972,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 386
-				}			
+				}
+				has_resources_rights = {
+					state = 386
+				}		
 			}
 			num_of_civilian_factories_available_for_projects > 11
 		}
@@ -2996,7 +2994,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 386
-				}			
+				}	
+				has_resources_rights = {
+					state = 386
+				}	
 			}
 			NOT = {
 				any_other_country = {
@@ -3034,7 +3035,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -3109,7 +3114,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 387
-				}			
+				}	
+				has_resources_rights = {
+					state = 387
+				}		
 			}
 		}
 
@@ -3121,6 +3129,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 387
+				}
+				has_resources_rights = {
+					state = 387
 				}			
 			}
 			NOT = {
@@ -3159,7 +3170,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -3191,7 +3206,7 @@ JAP_develop_chuguko_tungesten= { #272
 			387 = {
 				add_resource = {
 					type = tungsten
-					amount = 8
+					amount = 6
 				}
 			}
 		}
@@ -3234,6 +3249,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 378
+				}
+				has_resources_rights = {
+					state = 378
 				}			
 			}
 		}
@@ -3246,6 +3264,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 378
+				}
+				has_resources_rights = {
+					state = 378
 				}			
 			}
 			NOT = {
@@ -3284,7 +3305,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -3316,7 +3341,7 @@ JAP_develop_chuguko_tungesten= { #272
 			378 = {
 				add_resource = {
 					type = tungsten
-					amount = 8
+					amount = 6
 				}
 			}
 		}
@@ -3353,6 +3378,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 391
+				}
+				has_resources_rights = {
+					state = 391
 				}			
 			}
 		}
@@ -3371,6 +3399,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 391
+				}
+				has_resources_rights = {
+					state = 391
 				}			
 			}
 			NOT = {
@@ -3409,7 +3440,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -3484,6 +3519,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 360
+				}
+				has_resources_rights = {
+					state = 360
 				}			
 			}
 		}
@@ -3496,6 +3534,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 360
+				}
+				has_resources_rights = {
+					state = 360
 				}			
 			}
 			NOT = {
@@ -3534,7 +3575,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -3604,6 +3649,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 261
+				}
+				has_resources_rights = {
+					state = 261
 				}			
 			}
 		}
@@ -3622,6 +3670,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 261
+				}
+				has_resources_rights = {
+					state = 261
 				}			
 			}
 			NOT = {
@@ -3660,7 +3711,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -3735,6 +3790,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 396
+				}
+				has_resources_rights = {
+					state = 396
 				}			
 			}
 		}
@@ -3747,6 +3805,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 396
+				}
+				has_resources_rights = {
+					state = 396
 				}			
 			}
 			NOT = {
@@ -3785,7 +3846,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -3861,6 +3926,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 388
+				}
+				has_resources_rights = {
+					state = 388
 				}			
 			}
 		}
@@ -3873,6 +3941,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 388
+				}
+				has_resources_rights = {
+					state = 388
 				}			
 			}
 			NOT = {
@@ -3912,7 +3983,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -3944,7 +4019,7 @@ JAP_develop_chuguko_tungesten= { #272
 			388 = {
 				add_resource = {
 					type = chromium
-					amount = 8
+					amount = 6
 				}
 			}
 		}
@@ -3987,6 +4062,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 378
+				}
+				has_resources_rights = {
+					state = 378
 				}			
 			}
 		}
@@ -3999,6 +4077,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 378
+				}
+				has_resources_rights = {
+					state = 378
 				}			
 			}
 			NOT = {
@@ -4038,7 +4119,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				has_political_power < 200
@@ -4070,7 +4155,7 @@ JAP_develop_chuguko_tungesten= { #272
 			378 = {
 				add_resource = {
 					type = chromium
-					amount = 8
+					amount = 6
 				}
 			}
 		}
@@ -4084,96 +4169,96 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 		}
 	}
-	develop_oregon_chromium_deposits = { #385
-		
-		icon = chromium
-
-		allowed = {
-
-		}
-
-		highlight_states = {
-			highlight_state_targets = {
-				state = 385
-			} 
-		}
-
-		available = {
-			has_tech = excavation4
-			num_of_civilian_factories_available_for_projects > 11
-			owns_state = 385
-			controls_state = 385
-		}
-
-		visible = {
-			owns_state = 385
-			controls_state = 385
-			has_tech = excavation3
-			385 = {
-				NOT = {
-					has_state_flag = { 
-						flag = oregon_chromium_developed 
-						value = 5
-					}
-				}
-			}
-		}
-
-		cost = 25
-		days_remove = USA_oregon_chromium_duration
-
-		modifier = {
-			civilian_factory_use = 12
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_political_power < 200
-				factor = 0
-			}
-		}
-
-		remove_effect = {
-			custom_effect_tooltip = repeatable_decision_tt
-			add_to_variable = { var = USA_oregon_chromium_duration value = 30 }
-			385 = {
-				if = {
-					limit = {
-						NOT = {
-							has_state_flag = oregon_chromium_developed
-						}
-					}
-					set_state_flag = {
-						flag = oregon_chromium_developed
-						value = 1
-					}
-				}
-				else = {
-					modify_state_flag = {
-						flag = oregon_chromium_developed
-						value = 1
-					}
-				}
-			}
-			385 = {
-				add_resource = {
-					type = chromium
-					amount = 26
-				}
-			}
-		}
-
-		complete_effect = {
-			if = {
-				limit = {
-					check_variable = { var = USA_oregon_chromium_duration value = 30 compare = less_than }
-				}
-				set_variable = { var = USA_oregon_chromium_duration value = 30 }
-			}
-		}
-	}
-
+	#develop_oregon_chromium_deposits = { #385
+	#	
+	#	icon = chromium
+#
+	#	allowed = {
+#
+	#	}
+#
+	#	highlight_states = {
+	#		highlight_state_targets = {
+	#			state = 385
+	#		} 
+	#	}
+#
+	#	available = {
+	#		has_tech = excavation4
+	#		num_of_civilian_factories_available_for_projects > 11
+	#		owns_state = 385
+	#		controls_state = 385
+	#	}
+#
+	#	visible = {
+	#		owns_state = 385
+	#		controls_state = 385
+	#		has_tech = excavation3
+	#		385 = {
+	#			NOT = {
+	#				has_state_flag = { 
+	#					flag = oregon_chromium_developed 
+	#					value = 5
+	#				}
+	#			}
+	#		}
+	#	}
+#
+	#	cost = 25
+	#	days_remove = USA_oregon_chromium_duration?30
+#
+	#	modifier = {
+	#		civilian_factory_use = 12
+	#	}
+#
+	#	ai_will_do = {
+	#		factor = 1
+	#		modifier = {
+	#			has_political_power < 200
+	#			factor = 0
+	#		}
+	#	}
+#
+	#	remove_effect = {
+	#		custom_effect_tooltip = repeatable_decision_tt
+	#		add_to_variable = { var = USA_oregon_chromium_duration value = 30 }
+	#		385 = {
+	#			if = {
+	#				limit = {
+	#					NOT = {
+	#						has_state_flag = oregon_chromium_developed
+	#					}
+	#				}
+	#				set_state_flag = {
+	#					flag = oregon_chromium_developed
+	#					value = 1
+	#				}
+	#			}
+	#			else = {
+	#				modify_state_flag = {
+	#					flag = oregon_chromium_developed
+	#					value = 1
+	#				}
+	#			}
+	#		}
+	#		385 = {
+	#			add_resource = {
+	#				type = chromium
+	#				amount = 26
+	#			}
+	#		}
+	#	}
+#
+	#	complete_effect = {
+	#		if = {
+	#			limit = {
+	#				check_variable = { var = USA_oregon_chromium_duration value = 30 compare = less_than }
+	#			}
+	#			set_variable = { var = USA_oregon_chromium_duration value = 30 }
+	#		}
+	#	}
+	#}
+#
 	develop_alaska_chromium_deposits = { #463
 		
 		icon = chromium
@@ -4187,12 +4272,27 @@ JAP_develop_chuguko_tungesten= { #272
 		available = {
 			has_tech = excavation5
 			num_of_civilian_factories_available_for_projects > 11
-			owns_state = 463
-			controls_state = 463
+			OR = {
+				AND = {
+					owns_state = 463
+					controls_state = 463					
+				}
+				has_resources_rights = {
+					state = 463
+				}				
+			}
+
 		}
 		visible = {
-			owns_state = 463
-			controls_state = 463
+			OR = {
+				AND = {
+					owns_state = 463
+					controls_state = 463					
+				}
+				has_resources_rights = {
+					state = 463
+				}				
+			}
 			has_tech = excavation3
 			463 = {
 				NOT = {
@@ -4225,7 +4325,7 @@ JAP_develop_chuguko_tungesten= { #272
 				if = {
 					limit = {
 						NOT = {
-							has_state_flag = oregon_chromium_developed
+							has_state_flag = alaska_chromium_developed
 						}
 					}
 					set_state_flag = {
@@ -4288,6 +4388,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 537
+				}
+				has_resources_rights = {
+					state = 537
 				}			
 			}
 			num_of_civilian_factories_available_for_projects > 2
@@ -4302,6 +4405,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 537
+				}
+				has_resources_rights = {
+					state = 537
 				}			
 			}
 			NOT = {
@@ -4358,6 +4464,7 @@ JAP_develop_chuguko_tungesten= { #272
 						compliance > 30
 						resistance < 75
 					}
+
 				}
 			}
 			OR = {
@@ -4367,6 +4474,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 647
+				}
+				has_resources_rights = {
+					state = 647
 				}			
 			}
 			num_of_civilian_factories_available_for_projects > 2
@@ -4381,6 +4491,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 647
+				}
+				has_resources_rights = {
+					state = 647
 				}			
 			}
 			NOT = {
@@ -4437,6 +4550,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 123
+				}
+				has_resources_rights = {
+					state = 123
 				}			
 			}
 		}
@@ -4455,6 +4571,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 123
+				}
+				has_resources_rights = {
+					state = 123
 				}			
 			}
 			NOT = {
@@ -4489,7 +4608,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}				
 			modifier = {
 				tag = ENG
@@ -4503,7 +4626,7 @@ JAP_develop_chuguko_tungesten= { #272
 			123 = {
 				add_resource = {
 					type = tungsten
-					amount = 8
+					amount = 4
 				}
 			}
 		}
@@ -4531,6 +4654,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 123
+				}
+				has_resources_rights = {
+					state = 123
 				}			
 			}
 		}
@@ -4549,6 +4675,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 123
+				}
+				has_resources_rights = {
+					state = 123
 				}			
 			}
 			NOT = {
@@ -4585,7 +4714,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}	
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -4594,7 +4727,7 @@ JAP_develop_chuguko_tungesten= { #272
 			123 = {
 				add_resource = {
 					type = tungsten
-					amount = 8
+					amount = 6
 				}
 			}
 		}
@@ -4629,6 +4762,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 195
+				}
+				has_resources_rights = {
+					state = 195
 				}			
 			}
 			num_of_civilian_factories_available_for_projects > 2
@@ -4644,6 +4780,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 195
+				}
+				has_resources_rights = {
+					state = 195
 				}			
 			}
 			NOT = {
@@ -4714,6 +4853,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 653
+				}
+				has_resources_rights = {
+					state = 653
 				}			
 			}
 			num_of_civilian_factories_available_for_projects > 2
@@ -4728,6 +4870,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 653
+				}
+				has_resources_rights = {
+					state = 653
 				}			
 			}
 			NOT = {
@@ -4759,7 +4904,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}	
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -4805,6 +4954,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 217
+				}
+				has_resources_rights = {
+					state = 217
 				}			
 			}
 		}
@@ -4817,6 +4969,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 217
+				}
+				has_resources_rights = {
+					state = 217
 				}			
 			}
 			NOT = {
@@ -4852,7 +5007,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}	
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}					
 		}
 
@@ -4889,6 +5048,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 233
+				}
+				has_resources_rights = {
+					state = 233
 				}			
 			}
 		}
@@ -4906,6 +5068,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 233
+				}
+				has_resources_rights = {
+					state = 233
 				}			
 			}
 			NOT = {
@@ -4946,7 +5111,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -4955,7 +5124,7 @@ JAP_develop_chuguko_tungesten= { #272
 			233 = {
 				add_resource = {
 					type = tungsten
-					amount = 8
+					amount = 6
 				}
 			}
 		}
@@ -4983,6 +5152,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 233
+				}
+				has_resources_rights = {
+					state = 233
 				}			
 			}
 		}
@@ -5001,6 +5173,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 233
+				}
+				has_resources_rights = {
+					state = 233
 				}			
 			}
 			NOT = {
@@ -5042,7 +5217,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -5079,6 +5258,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 404
+				}
+				has_resources_rights = {
+					state = 404
 				}			
 			}
 		}
@@ -5097,6 +5279,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 404
+				}
+				has_resources_rights = {
+					state = 404
 				}			
 			}
 			NOT = {
@@ -5171,7 +5356,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 572
-				}			
+				}
+				has_resources_rights = {
+					state = 572
+				}						
 			}
 			has_tech = construction3
 		}
@@ -5190,6 +5378,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 572
+				}
+				has_resources_rights = {
+					state = 572
 				}			
 			}
 			NOT = {
@@ -5234,7 +5425,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}					
 		}
 
@@ -5289,6 +5484,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 573
+				}
+				has_resources_rights = {
+					state = 573
 				}			
 			}
 		}
@@ -5307,6 +5505,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 573
+				}
+				has_resources_rights = {
+					state = 573
 				}			
 			}
 			NOT = {
@@ -5347,7 +5548,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -5384,6 +5589,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 573
+				}
+				has_resources_rights = {
+					state = 573
 				}			
 			}
 		}
@@ -5402,6 +5610,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 573
+				}
+				has_resources_rights = {
+					state = 573
 				}			
 			}
 			NOT = {
@@ -5443,7 +5654,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}					
 		}
 
@@ -5486,6 +5701,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 220
+				}
+				has_resources_rights = {
+					state = 220
 				}			
 			}
 		}
@@ -5498,6 +5716,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 220
+				}
+				has_resources_rights = {
+					state = 220
 				}			
 			}
 			NOT = {
@@ -5541,7 +5762,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -5612,6 +5837,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 220
+				}
+				has_resources_rights = {
+					state = 220
 				}			
 			}
 		}
@@ -5624,6 +5852,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 220
+				}
+				has_resources_rights = {
+					state = 220
 				}			
 			}
 			NOT = {
@@ -5671,7 +5902,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -5742,6 +5977,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 220
+				}
+				has_resources_rights = {
+					state = 220
 				}			
 			}
 		}
@@ -5754,6 +5992,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 220
+				}
+				has_resources_rights = {
+					state = 220
 				}			
 			}
 			NOT = {
@@ -5801,7 +6042,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -5872,6 +6117,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 240
+				}
+				has_resources_rights = {
+					state = 240
 				}			
 			}
 		}
@@ -5884,6 +6132,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 240
+				}
+				has_resources_rights = {
+					state = 240
 				}			
 			}
 			NOT = {
@@ -5927,7 +6178,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -5998,6 +6253,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 240
+				}
+				has_resources_rights = {
+					state = 240
 				}			
 			}
 		}
@@ -6010,6 +6268,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 240
+				}
+				has_resources_rights = {
+					state = 240
 				}			
 			}
 			NOT = {
@@ -6057,7 +6318,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -6128,6 +6393,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 240
+				}
+				has_resources_rights = {
+					state = 240
 				}			
 			}
 		}
@@ -6140,6 +6408,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 240
+				}
+				has_resources_rights = {
+					state = 240
 				}			
 			}
 			NOT = {
@@ -6187,7 +6458,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -6252,6 +6527,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 407
+				}
+				has_resources_rights = {
+					state = 407
 				}			
 			}
 		}
@@ -6270,6 +6548,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 407
+				}
+				has_resources_rights = {
+					state = 407
 				}			
 			}
 			NOT = {
@@ -6310,7 +6591,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -6346,6 +6631,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 407
+				}
+				has_resources_rights = {
+					state = 407
 				}			
 			}
 			num_of_civilian_factories_available_for_projects > 4
@@ -6364,6 +6652,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 407
+				}
+				has_resources_rights = {
+					state = 407
 				}			
 			}
 			NOT = {
@@ -6405,7 +6696,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -6449,6 +6744,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 716
+				}
+				has_resources_rights = {
+					state = 716
 				}			
 			}
 		}
@@ -6461,6 +6759,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 716
+				}
+				has_resources_rights = {
+					state = 716
 				}			
 			}
 			NOT = {
@@ -6506,7 +6807,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 	}
@@ -6540,6 +6845,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 525
+				}
+				has_resources_rights = {
+					state = 525
 				}			
 			}
 		}
@@ -6552,6 +6860,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 525
+				}
+				has_resources_rights = {
+					state = 525
 				}			
 			}
 			NOT = {
@@ -6590,7 +6901,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 			modifier = {
 				add = 10
-				date > 1943.01.01
+				date > 1942.01.01
+			}
+			modifier = {
+				add = 10
+				num_of_military_factories > 50
 			}						
 		}
 
@@ -6618,7 +6933,7 @@ JAP_develop_chuguko_tungesten= { #272
 			525 = {
 				add_resource = {
 					type = tungsten
-					amount = 8
+					amount = 6
 				}
 			}
 		}
@@ -6662,6 +6977,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 658
+				}
+				has_resources_rights = {
+					state = 658
 				}			
 			}
 		}
@@ -6674,6 +6992,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 658
+				}
+				has_resources_rights = {
+					state = 658
 				}			
 			}
 			NOT = {
@@ -6736,6 +7057,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 656
+				}
+				has_resources_rights = {
+					state = 656
 				}			
 			}
 			num_of_civilian_factories_available_for_projects > 11
@@ -6755,7 +7079,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 656
-				}			
+				}	
+				has_resources_rights = {
+					state = 656
+				}		
 			}
 			NOT = {
 				any_other_country = {
@@ -6850,6 +7177,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 413
+				}
+				has_resources_rights = {
+					state = 413
 				}			
 			}
 		}
@@ -6862,6 +7192,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 413
+				}
+				has_resources_rights = {
+					state = 413
 				}			
 			}
 			NOT = {
@@ -6931,6 +7264,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 412
+				}
+				has_resources_rights = {
+					state = 412
 				}			
 			}
 		}
@@ -6943,6 +7279,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 412
+				}
+				has_resources_rights = {
+					state = 412
 				}			
 			}
 			NOT = {
@@ -6978,23 +7317,23 @@ JAP_develop_chuguko_tungesten= { #272
 			412 = {
 				add_resource = {
 					type = oil
-					amount = 8
+					amount = 6
 				}
 			}
 		}
 	}
-	develop_baghdad_oil_fields  = { #291
+	develop_baghdad_oil_fields  = { #it's now Basra 1045
 		
 		icon = oil
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 291
+				state = 1045
 			} 
 		}
 
 		available = {
-			291 = {
+			1045 = {
 				OR = {
 					has_resistance = no
 					AND = {
@@ -7003,40 +7342,49 @@ JAP_develop_chuguko_tungesten= { #272
 					}
 				}
 			}
-			has_tech = excavation5
+			has_tech = excavation4
 			num_of_civilian_factories_available_for_projects > 11
 			OR = {
 				AND = {
-					has_full_control_of_state = 291
+					has_full_control_of_state = 1045
 				}
 				any_country = {
 					is_subject_of = ROOT
-					has_full_control_of_state = 291
-				}			
+					has_full_control_of_state = 1045
+				}	
+				has_resources_rights = {    # Used in country scope
+					state = 1045 
+					#resources = { oil }
+				}							
 			}
 		}
 
 		visible = {
 			OR = {
 				AND = {
-					has_full_control_of_state = 291
+					has_full_control_of_state = 1045
 				}
 				any_country = {
 					is_subject_of = ROOT
-					has_full_control_of_state = 291
-				}			
+					has_full_control_of_state = 1045
+				}	
+				has_resources_rights = {    # Used in country scope
+					state = 1045 
+					#resources = { oil }
+				}						
 			}
 			NOT = {
 				any_other_country = {
 					has_decision = develop_baghdad_oil_fields
 				}
 			}
-			has_tech = excavation4
-			291 = {
+			has_tech = excavation3
+			1045 = {
 				NOT = {
-					has_state_flag = baghdad_developed
+					has_state_flag = basra_developed
 				}
 			}
+			#has_country_flag = IRQ_gui_basra_selected  --> does this do anything except hide the decision?
 		}
 
 		fire_only_once = yes
@@ -7053,10 +7401,10 @@ JAP_develop_chuguko_tungesten= { #272
 		}
 
 		remove_effect = {
-			291 = {
-				set_state_flag = baghdad_developed
+			1045 = {
+				set_state_flag = basra_developed
 			}
-			291 = {
+			1045 = {
 				add_resource = {
 					type = oil
 					amount = 18
@@ -7064,18 +7412,18 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 		}
 	}
-	develop_mosul_oil_fields   = { #676
+	develop_mosul_oil_fields   = { #1048
 		
 		icon = oil
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 676
+				state = 1048
 			} 
 		}
 
 		available = {
-			676 = {
+			1048 = {
 				OR = {
 					has_resistance = no
 					AND = {
@@ -7087,11 +7435,14 @@ JAP_develop_chuguko_tungesten= { #272
 			num_of_civilian_factories_available_for_projects > 5
 			OR = {
 				AND = {
-					has_full_control_of_state = 676
+					has_full_control_of_state = 1048
 				}
 				any_country = {
 					is_subject_of = ROOT
-					has_full_control_of_state = 676
+					has_full_control_of_state = 1048
+				}
+				has_resources_rights = {
+					state = 1048
 				}			
 			}
 			has_tech = excavation3
@@ -7100,12 +7451,15 @@ JAP_develop_chuguko_tungesten= { #272
 		visible = {
 			OR = {
 				AND = {
-					has_full_control_of_state = 676
+					has_full_control_of_state = 1048
 				}
 				any_country = {
 					is_subject_of = ROOT
-					has_full_control_of_state = 676
-				}			
+					has_full_control_of_state = 1048
+				}
+				has_resources_rights = {
+					state = 1048
+				}		
 			}
 			NOT = {
 				any_other_country = {
@@ -7113,11 +7467,12 @@ JAP_develop_chuguko_tungesten= { #272
 				}
 			}
 			
-			676 = {
+			1048 = {
 				NOT = {
 					has_state_flag = mosul_developed
 				}
 			}
+			#has_country_flag = IRQ_gui_kirkuk_selected
 		}
 
 		fire_only_once = yes
@@ -7134,13 +7489,13 @@ JAP_develop_chuguko_tungesten= { #272
 		}
 
 		remove_effect = {
-			676 = {
+			1048 = {
 				set_state_flag = mosul_developed
 			}
-			676 = {
+			1048 = {
 				add_resource = {
 					type = oil
-					amount = 28
+					amount = 12
 				}
 			}
 		}
@@ -7167,7 +7522,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 292
-				}			
+				}	
+				has_resources_rights = {
+					state = 292
+				}		
 			}
 			num_of_civilian_factories_available_for_projects > 14
 		}
@@ -7185,7 +7543,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 292
-				}			
+				}	
+				has_resources_rights = {
+					state = 292
+				}		
 			}
 			NOT = {
 				any_other_country = {
@@ -7280,7 +7641,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 457
-				}			
+				}	
+				has_resources_rights = {
+					state = 457
+				}		
 			}
 		}
 
@@ -7292,6 +7656,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 457
+				}
+				has_resources_rights = {
+					state = 457
 				}			
 			}
 			NOT = {
@@ -7327,7 +7694,7 @@ JAP_develop_chuguko_tungesten= { #272
 			457 = {
 				add_resource = {
 					type = oil
-					amount = 8
+					amount = 4
 				}
 			}
 		}
@@ -7361,6 +7728,9 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 765
+				}
+				has_resources_rights = {
+					state = 765
 				}			
 			}
 		}
@@ -7373,7 +7743,10 @@ JAP_develop_chuguko_tungesten= { #272
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 765
-				}			
+				}
+				has_resources_rights = {
+					state = 765
+				}		
 			}
 			NOT = {
 				any_other_country = {
@@ -7429,6 +7802,9 @@ JAP_develop_chuguko_tungesten= { #272
 				has_full_control_of_state = 448 
 				any_subject_country = { #FOR PUPPETS
 					has_full_control_of_state = 448
+				}
+				has_resources_rights = {
+					state = 448
 				}
 			} 
 		}
@@ -7501,7 +7877,7 @@ JAP_develop_chuguko_tungesten= { #272
 			448 = {
 				add_resource = {
 					type = oil
-					amount = 8
+					amount = 4
 				}
 			}
 		}
@@ -7521,6 +7897,9 @@ JAP_develop_chuguko_tungesten= { #272
 				has_full_control_of_state = 448 
 				any_subject_country = { #FOR PUPPETS
 					has_full_control_of_state = 448
+				}
+				has_resources_rights = {
+					state = 448
 				}
 			} 
 		}
@@ -7597,6 +7976,11 @@ JAP_develop_chuguko_tungesten= { #272
 			}
 		}
 	}
+
+
+
+
+
 	deeper_swedish_mines = { #76
 
 		icon = steel
@@ -7660,7 +8044,7 @@ JAP_develop_chuguko_tungesten= { #272
 			666 = {
 				add_resource = {
 					type = chromium
-					amount = 12
+					amount = 5
 				}
 			}
 		}
@@ -7676,9 +8060,18 @@ JAP_develop_chuguko_tungesten= { #272
 			original_tag = DEN
 		}
 		available = {
-			
+			has_tech = excavation3
 			num_of_civilian_factories_available_for_projects > 2
-			has_full_control_of_state = 101 
+			OR = {
+				has_full_control_of_state = 101 
+				any_subject_country = { #FOR PUPPETS
+					has_full_control_of_state = 448
+				}				
+				has_resources_rights = {
+					state = 463
+				}
+			}
+			
 		}
 
 		highlight_states = {
@@ -7688,22 +8081,31 @@ JAP_develop_chuguko_tungesten= { #272
 		}
 
 		visible = {
-			has_completed_focus = DEN_prospecting_new_sites
+			OR = {
+				has_completed_focus = DEN_prospecting_new_sites
+				has_completed_focus = GRL_prospecting_new_sites
+			}
+			
 			101 = {
 				NOT = {
 					has_state_flag = {
 						flag = expand_greenlands_mines_flag
-						value = 6
+						value = 3
 					}
 				}
 			}
+			NOT = {
+				any_other_country = {
+					has_decision = expand_greenlands_mines
+				}
+			}			
 		}
 
 		cost = 50
-		days_remove = 30
+		days_remove = 60
 
 		modifier = {
-			civilian_factory_use = 2
+			civilian_factory_use = 3
 		}
 
 		ai_will_do = {
@@ -7756,15 +8158,15 @@ JAP_develop_chuguko_tungesten= { #272
 			101 = {
 				add_resource = {
 					type = steel
-					amount = 12
+					amount = 8
 				}
 				add_resource = {
 					type = chromium
-					amount = 12
+					amount = 4
 				}
 				add_resource = {
 					type = tungsten
-					amount = 12
+					amount = 4
 				}
 			}
 		}

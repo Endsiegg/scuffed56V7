@@ -79,6 +79,11 @@ ISR_land_reclamation_category = {
 			political_power_factor = -0.1
 			production_speed_buildings_factor = -0.05
 		}
+		state_target = yes
+		targets = {
+			state = 454
+		}
+		on_map_mode = map_and_decisions_view
 		cost = 100
 		days_remove = 120
 		fire_only_once = yes
@@ -95,6 +100,10 @@ ISR_land_reclamation_category = {
 		}
 		modifier = {
 			political_power_factor = -0.05
+		}
+		state_target = yes
+		targets = {
+			state = 454
 		}
 		cost = 50
 		days_remove = 100
@@ -116,6 +125,10 @@ ISR_land_reclamation_category = {
 		}
 		modifier = {
 			political_power_factor = -0.15
+		}
+		state_target = yes
+		targets = {
+			state = 1016
 		}
 		cost = 100
 		days_remove = 120
@@ -147,6 +160,10 @@ ISR_land_reclamation_category = {
 		}
 		modifier = {
 			political_power_factor = -0.05
+		}
+		state_target = yes
+		targets = {
+			state = 1017
 		}
 		days_remove = 100
 		cost = 50
@@ -886,8 +903,6 @@ ISR_vote_president_category = {
 				has_country_flag = ISR_nominated_klausner
 			}
 			has_completed_focus = ISR_national_higher_education
-		}
-		available = {
 			NOT = { 
 				has_country_flag = ISR_urf_in_coalition
 			}
@@ -2163,7 +2178,7 @@ ISR_lehi_uprising_category = {
 	ISR_attack_irgun_officer = {
 		days_remove = 14
 		days_re_enable = 7
-		cost = 30
+		cost = 25
 		icon = GFX_decision_generic_assassination
 		ai_will_do = {
 			factor = 100
@@ -2181,14 +2196,13 @@ ISR_lehi_uprising_category = {
 			custom_effect_tooltip = ISR_preparedness_up_10
 			add_days_mission_timeout = {
 				mission = ISR_window_of_oppertunity
-				days = 5
+				days = 3
 			}
 		}
 	}
 	ISR_bomb_irgun_infrastructure = {
 		days_remove = 21
 		days_re_enable = 7
-		cost = 50
 		icon = GFX_decision_generic_ignite_civil_war
 		visible = {
 			has_completed_focus = ISR_strike_infrastructure
@@ -2196,7 +2210,14 @@ ISR_lehi_uprising_category = {
 		ai_will_do = {
 			factor = 200
 		}
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		custom_cost_text = MPL_decision_cost_command_power
 		remove_effect = {
+			hidden_effect = {
+				add_command_power = -15
+			}
 			add_to_variable = {
 				ISR_preparedness = 15
 			}
@@ -2204,6 +2225,10 @@ ISR_lehi_uprising_category = {
 				var = ISR_preparedness
 				min = 0
 				max = 100
+			}
+			add_days_mission_timeout = {
+				mission = ISR_window_of_oppertunity
+				days = 5
 			}
 			custom_effect_tooltip = ISR_preparedness_up_15
 		}
@@ -2279,6 +2304,10 @@ political_actions = {
 			}
 		}
 	}
+	
+}
+
+form_nation_mod_category = {
 	JOR_core_west_bank = {
 		icon = GFX_decision_border_war
 		allowed = {
@@ -2288,17 +2317,40 @@ political_actions = {
 			NOT = {
 				has_war_with = ISR
 			}
+			has_full_control_of_state = 966
 		}
 		cost = 50
 		visible = {
-			has_full_control_of_state = 966
+			NOT = {
+				has_cosmetic_tag = SYR_UNIFIED
+				has_cosmetic_tag = ARA_UNIFIED
+			}
 		}
+		state_target = yes
+		targets = {
+			state = 966
+		}
+		on_map_mode = map_and_decisions_view
 		ai_will_do = {
 			factor = 1000
 		}
+		fire_only_once = yes
 		complete_effect = {
-			add_state_core = 966
-			add_stability = -0.05
+			custom_effect_tooltip = JOR_core_west_bank_tt
+			every_controlled_state = {
+				limit = {
+					OR = {
+						state = 966
+						state = 1016
+						state = 1017
+						state = 454
+						state = 949
+					}
+				}
+				add_core_of = JOR
+			}
+			set_cosmetic_tag = JOR_united
+			add_stability = -0.1
 		}
 	}
 }

@@ -80,6 +80,10 @@ fascism_on_the_rise = {
 			stability_weekly = -0.015
  			political_power_gain = -0.3
 		}
+
+		complete_effect = {
+			set_country_flag = civil_support_for_fascist_civil_war
+		}
 		
 		ai_will_do = {
 			factor = 0.1
@@ -390,9 +394,9 @@ fascism_on_the_rise = {
 		
 		complete_effect = {
 			set_politics = { ruling_party = fascism elections_allowed = no }
-			clr_country_flag = preparation_for_fascism_civil_war
-			clr_country_flag = military_support_for_fascism_civil_war
-			clr_country_flag = civil_support_for_fascism_civil_war
+			clr_country_flag = preparation_for_fascist_civil_war
+			clr_country_flag = military_support_for_fascist_civil_war
+			clr_country_flag = civil_support_for_fascist_civil_war
 		}
 		
 		ai_will_do = {
@@ -492,9 +496,9 @@ fascism_on_the_rise = {
 				add_war_support = 0.1
 			}
 			clr_country_flag = flag_support_violence_fascist_civil_war			
-			clr_country_flag = preparation_for_fascism_civil_war
-			clr_country_flag = military_support_for_fascism_civil_war
-			clr_country_flag = civil_support_for_fascism_civil_war
+			clr_country_flag = preparation_for_fascist_civil_war
+			clr_country_flag = military_support_for_fascist_civil_war
+			clr_country_flag = civil_support_for_fascist_civil_war
 			set_country_flag = ideology_civil_war
 		}
 		
@@ -559,10 +563,6 @@ fascism_on_the_rise = {
 			check_has_focus_tree_to_switch_to_fascism = yes
 		}
 		
-		remove_trigger = {
-			has_government = fascism
-		}
-		
 		fire_only_once = yes
 		
 		cost = 75
@@ -605,10 +605,6 @@ fascism_on_the_rise = {
 			}
 			NOT = { has_government = fascism }
 			check_has_focus_tree_to_switch_to_fascism = yes
-		}
-		
-		remove_trigger = {
-			has_government = fascism
 		}
 		
 		fire_only_once = yes
@@ -688,10 +684,6 @@ fascism_on_the_rise = {
 			check_has_focus_tree_to_switch_to_fascism = yes
 		}
 		
-		remove_trigger = {
-			has_government = fascism
-		}
-		
 		fire_only_once = yes
 		
 		cost = 100
@@ -725,6 +717,8 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
+
 			}
 			NOT = { has_government = democratic }
 			check_has_focus_tree_to_switch_to_democratic = yes
@@ -753,6 +747,7 @@ democratic_on_the_rise = {
 				has_country_flag = open_up_political_discourse_democratic
 			}
 			OR = {
+				has_idea_with_trait = resolute_social_democrat
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
 			}
@@ -781,6 +776,10 @@ democratic_on_the_rise = {
  			political_power_gain = -0.3
 		}
 		
+		complete_effect = {
+			set_country_flag = civil_support_for_democratic_civil_war
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -832,6 +831,7 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
 			}
 			NOT = { has_government = democratic }
 			check_has_focus_tree_to_switch_to_democratic = yes
@@ -891,6 +891,7 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
 			}
 			NOT = { has_government = democratic }
 			any_army_leader = {
@@ -927,6 +928,7 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
 			}
 			NOT = { has_government = democratic }
 			any_army_leader = {
@@ -968,6 +970,7 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
 			}
 			NOT = { has_government = democratic }
 			check_has_focus_tree_to_switch_to_democratic = yes
@@ -1005,6 +1008,7 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
 			}
 			NOT = { has_government = democratic }
 			check_has_focus_tree_to_switch_to_democratic = yes
@@ -1039,6 +1043,7 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
 			}
 			NOT = { has_government = democratic }
 			check_has_focus_tree_to_switch_to_democratic = yes
@@ -1074,6 +1079,7 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
 			}
 			NOT = { has_government = democratic }
 			check_has_focus_tree_to_switch_to_democratic = yes
@@ -1201,13 +1207,10 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
 			}
 			NOT = { has_government = democratic }
 			check_has_focus_tree_to_switch_to_democratic = yes
-		}
-		
-		remove_trigger = {
-			has_government = democratic
 		}
 		
 		fire_only_once = yes
@@ -1235,6 +1238,7 @@ democratic_on_the_rise = {
 			OR = {
 				has_idea_with_trait = democratic_reformer
 				has_idea_with_trait = social_reformer
+				has_idea_with_trait = resolute_social_democrat
 			}
 		}
 
@@ -1242,10 +1246,6 @@ democratic_on_the_rise = {
 			has_country_flag = open_up_political_discourse_democratic
 			NOT = { has_government = democratic }
 			check_has_focus_tree_to_switch_to_democratic = yes
-		}
-		
-		remove_trigger = {
-			has_government = democratic
 		}
 		
 		fire_only_once = yes
@@ -1318,10 +1318,6 @@ democratic_on_the_rise = {
 			check_has_focus_tree_to_switch_to_democratic = yes
 		}
 		
-		remove_trigger = {
-			has_government = democratic
-		}
-		
 		fire_only_once = yes
 		
 		cost = 100
@@ -1351,7 +1347,7 @@ communism_on_the_rise = {
 		}
 
 		visible = {
-			NOT = { has_country_flag = preparation_for_communism_civil_war }
+			NOT = { has_country_flag = preparation_for_communist_civil_war }
 			OR = {
 				has_idea_with_trait = communist_revolutionary
 				has_idea_with_trait = ambitious_union_boss
@@ -1380,7 +1376,7 @@ communism_on_the_rise = {
 		visible = {
 			OR = {
 				has_country_flag = preparation_for_communist_civil_war
-				has_country_flag = open_up_political_discourse_communism
+				has_country_flag = open_up_political_discourse_communist
 			}
 			OR = {
 				has_idea_with_trait = communist_revolutionary
@@ -1409,6 +1405,10 @@ communism_on_the_rise = {
 			communism_drift = 0.15
 			stability_weekly = -0.015
  			political_power_gain = -0.3
+		}
+
+		complete_effect = {
+			set_country_flag = civil_support_for_communist_civil_war
 		}
 		
 		ai_will_do = {
@@ -1845,10 +1845,6 @@ communism_on_the_rise = {
 			check_has_focus_tree_to_switch_to_communism = yes
 		}
 		
-		remove_trigger = {
-			has_government = communism
-		}
-		
 		fire_only_once = yes
 		
 		cost = 75
@@ -1881,10 +1877,6 @@ communism_on_the_rise = {
 			has_country_flag = open_up_political_discourse_communist
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
-		}
-		
-		remove_trigger = {
-			has_government = communism
 		}
 		
 		fire_only_once = yes
@@ -1935,11 +1927,7 @@ communism_on_the_rise = {
 			#should limit early revolts
 			if = {
 				limit = {
-					OR = {
-						is_subject = yes
-						is_puppet = yes
-					}
-					
+					is_subject = yes
 				}
 				communism > 0.65	
 			}
@@ -1955,10 +1943,6 @@ communism_on_the_rise = {
 				has_country_flag = open_up_political_discourse_communist
 			}
 			check_has_focus_tree_to_switch_to_communism = yes
-		}
-		
-		remove_trigger = {
-			has_government = communism
 		}
 		
 		fire_only_once = yes
@@ -1991,6 +1975,7 @@ political_actions = {
                 original_tag = FRA
                 original_tag = CAN
                 original_tag = TUR
+				original_tag = LIE
             }
         }
 
@@ -1998,6 +1983,12 @@ political_actions = {
 			NOT = { has_government = fascism }
 			NOT = { has_government = communism }
 			is_government_in_exile = no
+			if = {
+				limit = {
+					original_tag = LIE
+				}
+				has_completed_focus = LIE_asylum_for_jews
+			}
 		}
 
         cost = 100
@@ -2010,6 +2001,7 @@ political_actions = {
         }
 
         modifier = {
+			special_project_speed_factor = 0.02
             research_speed_factor = 0.05
             stability_factor = -0.05
         }
@@ -2025,6 +2017,14 @@ political_actions = {
                     country_exists = DDR
                     DDR = { has_government = ROOT }
                 }
+				AND = {
+					original_tag = LIE
+					GER = {
+						NOT = {
+							has_government = fascism
+						}
+					}
+				}
             }
         }
 
@@ -2066,6 +2066,7 @@ political_actions = {
         }
 
         modifier = {
+			special_project_speed_factor = 0.02
             research_speed_factor = 0.05
             stability_factor = -0.05
         }
@@ -2111,7 +2112,7 @@ political_actions = {
         }
 	
 		modifier = {
-			fascism_drift = -0.10
+			fascism_drift = -0.05
 			stability_weekly = 0.007
 		}
 	
@@ -2127,24 +2128,6 @@ political_actions = {
 		
 		ai_will_do = {
 			base = 0
-			modifier = {
-				add = 1
-				tag = AUS
-				fascism > 0.45
-				is_historical_focus_on = no
-			}
-#			modifier = {
-#				add = 10
-#				tag = AUS
-#				fascism > 0.45
-#				#GER = { has_completed_focus = GER_reestablish_free_elections }
-#			}
-			modifier = {
-				add = 10
-				tag = AUS
-				fascism > 0.45
-				has_completed_focus = AUS_no_more_tyrants
-			}
 			modifier = {
 				factor = 0
 				original_tag = SPR
@@ -2194,7 +2177,7 @@ political_actions = {
         }
 	
 		modifier = {
-			democratic_drift = -0.10
+			democratic_drift = -0.05
 			stability_weekly = 0.007
 		}
 	
@@ -2246,7 +2229,7 @@ political_actions = {
         }
 	
 		modifier = {
-			communism_drift = -0.10
+			communism_drift = -0.05
 			stability_weekly = 0.007
 		}
 	
@@ -2262,6 +2245,52 @@ political_actions = {
 		
 		ai_will_do = {
 			factor = 0
+		}
+    }
+
+	anti_authoritarian_raids = {
+
+    	icon = generic_police_action
+
+    	visible = {
+			NOT = { has_government = neutrality }
+		}
+
+		available = {
+            neutrality > 0.1
+            if = {
+				limit = {
+					tag = SPR
+				}
+				NOT = {
+					has_idea = SPR_political_violence
+				}
+			}
+			if = {
+				limit = {
+					tag = DEN
+				}
+				has_country_flag = political_violence_resolved
+			}
+        }
+	
+		modifier = {
+			neutrality_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			base = 0
 		}
     }
     
@@ -2284,13 +2313,19 @@ political_actions = {
 					tag = DEN
 					has_government = democratic
 				}
-			#	has_completed_focus = DEN_Crackdown_on_Political_Violence
+				has_completed_focus = DEN_Crackdown_on_Political_Violence
 			}
 			else_if = {
 				limit = {
 					tag = DEN
 				}
 				has_country_flag = political_violence_resolved
+			}
+			if = {
+				limit = {
+					tag = SWI
+				}
+				has_completed_focus = SWI_ban_foreign_nazi_propaganda
 			}
 		}
 
@@ -2313,7 +2348,7 @@ political_actions = {
 		}
 	
 		modifier = {
-			fascism_drift = -0.10
+			fascism_drift = -0.02
 		}
 	
 		days_remove = -1
@@ -2367,14 +2402,14 @@ political_actions = {
 					tag = DEN
 					has_government = democratic
 				}
-			#	has_completed_focus = DEN_Crackdown_on_Political_Violence
+				has_completed_focus = DEN_Crackdown_on_Political_Violence
 			}
 			else_if = {
 				limit = {
 					tag = DEN
 					has_government = fascism
 				}
-			#	has_completed_focus = DEN_Consolidate_Media_Institutions
+				has_completed_focus = DEN_Consolidate_Media_Institutions
 			}
 			else_if = {
 				limit = {
@@ -2403,7 +2438,7 @@ political_actions = {
 		}
 	
 		modifier = {
-			democratic_drift = -0.10
+			democratic_drift = -0.02
 		}
 	
 		days_remove = -1
@@ -2430,6 +2465,7 @@ political_actions = {
 			}
 			custom_effect_tooltip = ban_democratic_party_tt
 			add_stability = ban_ideology_var
+			set_country_flag = ROOT_banned_democratic_party
 		}
 
 		ai_will_do = {
@@ -2456,13 +2492,20 @@ political_actions = {
 					tag = DEN
 					has_government = democratic
 				}
-			#	has_completed_focus = DEN_Crackdown_on_Political_Violence
+				NOT = { has_completed_focus = DEN_Popular_Front_against_Fascism }
+				has_completed_focus = DEN_Crackdown_on_Political_Violence
 			}
 			else_if = {
 				limit = {
 					tag = DEN
 				}
 				has_country_flag = political_violence_resolved
+			}
+			if = {
+				limit = {
+					tag = SWI
+				}
+				has_completed_focus = SWI_ban_the_communist_party
 			}
 		}
 
@@ -2491,7 +2534,7 @@ political_actions = {
 		}
 	
 		modifier = {
-			communism_drift = -0.10
+			communism_drift = -0.02
 		}
 	
 		days_remove = -1
@@ -2535,6 +2578,89 @@ political_actions = {
 			factor = 0
 		}
 	}
+
+	ban_authoritarian_party = {
+
+		icon = generic_arrest
+
+		available = {
+			neutrality < 0.2
+			if = {
+				limit = {
+					tag = SPR
+				}
+				NOT = {
+					has_idea = SPR_political_violence
+				}
+			}
+			if = {
+				limit = {
+					tag = DEN
+					has_government = democratic
+				}
+				has_completed_focus = DEN_Crackdown_on_Political_Violence
+			}
+			else_if = {
+				limit = {
+					tag = DEN
+				}
+				has_country_flag = political_violence_resolved
+			}
+		}
+
+		visible = {
+			NOT = { has_government = fascism }
+			neutrality > 0
+			if = { 
+				limit = { 
+					has_dlc = "Battle for the Bosporus"
+					has_global_flag = gre_bftb_focus_tree	#faction interactions is a core mechanic in Greek BftB tree	
+				}
+				NOT = { original_tag = GRE }
+			}
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = neutrality
+			}
+		}
+	
+		modifier = {
+			neutrality_drift = -0.02
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@neutrality
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_neutrality_flag
+			}
+			custom_effect_tooltip = ban_neutrality_party_tt
+			add_stability = ban_ideology_var
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
 	
 	institute_press_censorship_fascist_state = {
 
@@ -2553,7 +2679,7 @@ political_actions = {
 				limit = {
 					tag = DEN
 				}
-			#	has_completed_focus = DEN_Consolidate_Media_Institutions
+				has_completed_focus = DEN_Consolidate_Media_Institutions
 			}
 			if = {	#from vanilla
 				limit = {
@@ -2585,10 +2711,10 @@ political_actions = {
 		}
 	
 		modifier = {
-			communism_drift = -0.03
-			fascism_drift = 0.05
-			democratic_drift = -0.03
-			neutrality_drift = -0.03
+			communism_drift = -0.01
+			fascism_drift = 0.03
+			democratic_drift = -0.01
+			neutrality_drift = -0.01
 		}
 	
 		days_remove = 360
@@ -2657,10 +2783,10 @@ political_actions = {
 		}
 		
 		modifier = {
-			communism_drift = -0.03
-			fascism_drift = -0.03
-			democratic_drift = 0.05
-			neutrality_drift = -0.03
+			communism_drift = -0.01
+			fascism_drift = -0.01
+			democratic_drift = 0.03
+			neutrality_drift = -0.01
 		}
 	
 		days_remove = 360
@@ -2714,10 +2840,10 @@ political_actions = {
 		}
 	
 		modifier = {
-			communism_drift = 0.05
-			fascism_drift = -0.03
-			democratic_drift = -0.03
-			neutrality_drift = -0.03
+			communism_drift = 0.03
+			fascism_drift = -0.01
+			democratic_drift = -0.01
+			neutrality_drift = -0.01
 		}
 	
 		days_remove = 360
@@ -2777,13 +2903,23 @@ political_actions = {
 				}
 				NOT = { original_tag = GRE }
 			}
+			if = { 
+				limit = { 
+					original_tag = AFG
+				}
+				AFG = {
+					NOT = { 
+						has_completed_focus = AFG_enact_censorship
+					}
+				}
+			}
 		}
 	
 		modifier = {
-			communism_drift = -0.03
-			fascism_drift = -0.03
-			democratic_drift = -0.03
-			neutrality_drift = 0.05
+			communism_drift = -0.01
+			fascism_drift = -0.01
+			democratic_drift = -0.01
+			neutrality_drift = 0.03
 		}
 	
 		days_remove = 360
@@ -2791,16 +2927,6 @@ political_actions = {
 		
 		ai_will_do = {
 			factor = 0
-			modifier = { #Help Historical AI Finland
-			add = 10
-			has_dlc = "Arms Against Tyranny"
-			original_tag = FIN
-			FIN_is_historical_ai = yes
-			has_government = neutrality
-			NOT = { has_completed_focus = FIN_the_lone_wolf }
-			neutrality < 0.85
 		}
-		}
-		
 	}
 }
