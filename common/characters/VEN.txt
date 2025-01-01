@@ -10,7 +10,7 @@ characters={
 			}
 		}
 		country_leader ={
-			ideology=centrism
+			ideology = military_junta
 			expire="1965.1.1"
 			traits = {
 				nationalistic_tendencies
@@ -24,7 +24,7 @@ characters={
     		attack_skill = 3
     		defense_skill = 2
     		planning_skill = 4
-    		logistics_skill = 3
+    		logistics_skill = 4
 			legacy_id=6967
 		}
 	}
@@ -39,6 +39,9 @@ characters={
 			ideology=marxism
 			expire="1965.1.1"
 			id=-1
+			traits = {
+				union_organizer
+			}
 		}
 	}
 	VEN_arnold_margerie = {
@@ -52,6 +55,9 @@ characters={
 			ideology=nazism
 			expire="1965.1.1"
 			id=-1
+			traits = {
+				anti_communist
+			}			
 		}
 	}
 	VEN_romulo_gallegos = {
@@ -124,7 +130,7 @@ characters={
 		field_marshal={
 			traits = { war_hero politically_connected old_guard defensive_doctrine }
 			skill = 3
-			attack_skill = 1
+			attack_skill = 2
 			defense_skill = 3
 			planning_skill = 3
 			logistics_skill = 2
@@ -151,19 +157,19 @@ characters={
 	}
 	VEN_consejo_socialista_provisional = {
 		name="Consejo Socialista Provisional"
-			portraits={
-				civilian={
-					large="gfx/leaders/VEN/r56_portrait_VEN_provisional_council.dds"
-				}
+		portraits={
+			civilian={
+				large="gfx/leaders/VEN/r56_portrait_VEN_provisional_council.dds"
 			}
+		}
 	}
 	VEN_creole_petroleum_comuna = {
 		name="Creole Petroleum Comuna"
-			portraits={
-				civilian={
-					large="gfx/leaders/VEN/r56_portrait_VEN_anarchist.dds"
-				}
+		portraits={
+			civilian={
+				large="gfx/leaders/VEN/r56_portrait_VEN_anarchist.dds"
 			}
+		}
 	}
 
 	# GENERALS
@@ -181,23 +187,23 @@ characters={
 			skill = 3
 			attack_skill = 3
 			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
 			legacy_id=6968
 		}
 	}
 	VEN_oscar_mazzei_carta = {
 		name="Oscar Mazzei Carta"
-			portraits={
-				army={
-					large="gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
-				}
+		portraits={
+			army={
+				large="gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 			}
+		}
 		corps_commander={
 			traits = { old_guard politically_connected }
 			skill = 2
 			attack_skill = 1
-			defense_skill = 1
+			defense_skill = 2
 			planning_skill = 2
 			logistics_skill = 2
 			legacy_id=6970
@@ -205,27 +211,27 @@ characters={
 	}
 	VEN_luis_llovera_paez = {
 		name="Luis Llovera Páez"
-			portraits={
-				army={
-					large="gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
-					small="GFX_idea_generic_army_south_america_2"
-				}
+		portraits={
+			army={
+				large="gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
+				small="GFX_idea_generic_army_south_america_2"
 			}
-			advisor = {
+		}
+		advisor = {
 
-				slot = high_command
-				idea_token = luis_llovera_paez
-				allowed = {
-					original_tag = VEN
-				}
-				traits = {
-					army_artillery_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
+			slot = high_command
+			idea_token = luis_llovera_paez
+			allowed = {
+				original_tag = VEN
 			}
+			traits = {
+				army_artillery_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
 		corps_commander={
 			traits = { artillerist }
 			skill = 2
@@ -238,12 +244,12 @@ characters={
 	}
 	VEN_antnio_chalbaud_cardoma = {
 		name="Antnio Chalbaud Cardona"
-			portraits={
-				army={
-					large="gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
-					small="GFX_idea_generic_army_south_america_5"
-				}
+		portraits={
+			army={
+				large="gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
+				small="GFX_idea_generic_army_south_america_5"
 			}
+		}
         advisor = {
 
             slot = army_chief
@@ -264,9 +270,9 @@ characters={
         }
 		corps_commander={
 			traits = { old_guard trait_engineer }
-			skill = 1
+			skill = 2
 			attack_skill = 2
-			defense_skill = 1
+			defense_skill = 2
 			planning_skill = 1
 			logistics_skill = 2
 			legacy_id=6972
@@ -274,28 +280,28 @@ characters={
 	}
 	VEN_felix_roman_moreno = {
 		name="Félix Román Moreno"
-			portraits={
-				army={
-					large="gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
-					small="GFX_idea_generic_army_south_america_4"
-				}
+		portraits={
+			army={
+				large="gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
+				small="GFX_idea_generic_army_south_america_4"
 			}
-			advisor={
-				cost = 100
+		}
+		advisor={
+			cost = 100
 
-				slot = theorist
-				idea_token = felix_roman_moreno
-				ledger = air
-				allowed = {
-					original_tag = VEN
-				}
-				traits = {
-					air_warfare_theorist
-				}
-				ai_will_do = {
-					factor = 1.000
-				}
+			slot = theorist
+			idea_token = felix_roman_moreno
+			ledger = air
+			allowed = {
+				original_tag = VEN
 			}
+			traits = {
+				air_warfare_theorist
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
 		corps_commander={
 			traits = { air_force_ties }
 			skill = 1
@@ -485,7 +491,7 @@ characters={
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = juan_oropeza
+			idea_token = VEN_juan_oropeza
 			allowed = {
 				original_tag = VEN
 			}
@@ -574,7 +580,10 @@ characters={
 				democratic_reformer
 			}
 			available = {
-				has_completed_focus = VEN_generation_of_28
+				OR = {
+					has_country_flag = VEN_gallegos
+					has_completed_focus = VEN_generation_of_28
+				}
 			}
 			ai_will_do = {
 				factor = 0
@@ -645,7 +654,7 @@ characters={
 		}
 		navy_leader = {
 			traits = { craven }
-			skill = 1
+			skill = 2
 			attack_skill = 1
 			defense_skill = 2
 			maneuvering_skill = 1
@@ -677,9 +686,9 @@ characters={
 		}
 		navy_leader = {
 			traits = { cuts_corners }
-			skill = 1
+			skill = 2
 			attack_skill = 2
-			defense_skill = 1
+			defense_skill = 2
 			maneuvering_skill = 2
 			coordination_skill = 1
 			legacy_id=-1
@@ -758,7 +767,7 @@ characters={
 		name="Wilhelm von Faupel"
 		portraits={
 			army={
-				small="GFX_idea_ludwig_beck"
+				small="GFX_Portrait_Germany_Generic_land_1_small"
 			}
 		}
 		advisor={
@@ -825,7 +834,7 @@ characters={
 		name="Rafael Simón López"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_south_america_5"
+				small=GFX_idea_generic_army_cav_southamerican_2d
 			}
 		}
 		advisor={
@@ -854,30 +863,42 @@ characters={
 	}
 	VEN_maria_fernanda_agustina={
 		name="Maria Fernanda Agustina"
-		portraits={
-			army={
+		portraits = {
+			army = {
 				small="GFX_idea_generic_political_advisor_female_south_america"
+				large = GFX_portrait_generic_southamerica_female_05
 			}
 		}
-		advisor={
-			cost = 100
 
-			slot = theorist
-			idea_token = maria_fernanda_agustina
-			ledger = army
-			allowed = {
-				original_tag = VEN
-			}
-			available = {
-				has_completed_focus = VEN_nuclear_power
-			}
-			research_bonus = {
-				nuclear = 0.15
-			}
-			traits = {
-				nuclear_scientist
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist }
+			skills = {
+				specialization_nuclear = 1
 			}
 		}
+		gender = female
+		#advisor={
+		#	cost = 100
+
+		#	slot = theorist
+		#	idea_token = maria_fernanda_agustina
+		#	ledger = army
+		#	allowed = {
+		#		original_tag = VEN
+		#	}
+		#	available = {
+		#		has_completed_focus = VEN_nuclear_power
+		#		NOT = {
+		#			has_idea = r56i_laws_gender_patriarchy
+		#		}
+		#	}
+		#	research_bonus = {
+		#		nuclear = 0.15
+		#	}
+		#	traits = {
+		#		nuclear_scientist
+		#	}
+		#}
 	}
 
 

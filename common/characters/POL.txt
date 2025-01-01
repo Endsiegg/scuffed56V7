@@ -6,8 +6,9 @@ characters = {
 				large="GFX_portrait_POL_anna_anderson"
 			}
 		}
+		gender = female
 		country_leader = {
-			ideology=despotism
+			ideology=constitutional_monarchy
 			traits = { 
 				the_last_romanov_maybe 
 				r56_trait_opposed_to_communism
@@ -25,7 +26,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology=despotism
+			ideology=absolute_monarchism
 			traits = { 
 				patriot_king 
 				r56_trait_opposed_to_communism
@@ -43,7 +44,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology=despotism
+			ideology=absolute_monarchism
 			expire="1965.1.1"
 			id=-1
 			traits = { 
@@ -61,7 +62,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology=despotism
+			ideology=constitutional_monarchy
 			expire="1965.1.1"
 			id=-1
 			traits = {  
@@ -100,7 +101,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 8000
+				factor = 1.000
 			}
 		}
 
@@ -114,7 +115,7 @@ characters = {
 			legacy_id=-1
 		}
 		country_leader = {
-			ideology=oligarchism
+			ideology= controlled_democracy
 			traits = { 
 				POL_charismatic_leader
 				POL_Wieniawa_infamous_womanizer  
@@ -164,7 +165,7 @@ characters = {
 			legacy_id=-1
 		}
 		country_leader = {
-			ideology=oligarchism
+			ideology = controlled_democracy
 			traits = {  
 				polish_legionary
 				r56_trait_opposed_to_communism
@@ -203,7 +204,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 		field_marshal = {
@@ -216,7 +217,7 @@ characters = {
 			legacy_id = -1
 		}
 		country_leader = {
-			ideology = oligarchism
+			ideology = controlled_democracy
 			traits = { 
 				patriotic_guerilla
 				r56_trait_opposed_to_communism
@@ -255,7 +256,7 @@ characters = {
 				small="gfx/interface/ideas/idea_POL_ignacy_moscicki.dds"
 			}
 			civilian = {
-				large="GFX_portrait_POL_ignacy_moscicki"
+				large="gfx/leaders/POL/r56_portrait_POL_ignacy_moscicki.dds"
 			}
 		}
 		advisor={
@@ -280,7 +281,7 @@ characters = {
 		}
 		
 		country_leader = {
-			ideology=oligarchism
+			ideology= controlled_democracy
 			traits = { 
 				POL_chemist 
 				r56_trait_opposed_to_communism
@@ -389,9 +390,6 @@ characters = {
 				silent_workhorse 
 			}
 			cost = 100
-			ai_will_do = {
-				factor = 80000
-			}
 		}
 		country_leader = {
 			ideology=liberalism
@@ -408,7 +406,7 @@ characters = {
 		name=POL_wincenty_witos
 		portraits = {
 			civilian = {
-				large="GFX_POL_wincenty_witos"
+				large = "gfx/leaders/POL/r56_portrait_POL_Wincenty_Witos.dds"
 			}
 		}
 		country_leader = {
@@ -517,10 +515,10 @@ characters = {
 		name="Bolesław Piasecki"
 		portraits = {
 			civilian = {
-				large="GFX_POL_boleslaw_piasecki"
+				large= "gfx/leaders/POL/r56_portrait_POL_Boleslaw_Piasecki.dds"
 			}
 			army = {
-				small = GFX_idea_Boleslaw_Piasecki
+				small = "gfx/interface/ideas/pol/advisors/r56_idea_POL_advisor_Boleslaw_Piasecki.dds"
 			}
 		}
 		advisor = {
@@ -538,7 +536,7 @@ characters = {
 				army_chief_fanaticism
 			}
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 		country_leader = {
@@ -600,7 +598,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 		
@@ -638,7 +636,7 @@ characters = {
 			logistics_skill = 1
 		}
 		country_leader = {
-			ideology=despotism
+			ideology=constitutional_monarchy
 			traits = { he_who_bears_the_throne }
 			expire="1966.1.1.1"
 		}
@@ -670,7 +668,7 @@ characters = {
 		name=POL_wladyslaw_bortnowski
 		portraits = {
 			army = {
-				large="GFX_POL_wladyslaw_bortnowski"
+				large = "gfx/leaders/POL/r56_portrait_POL_Wladyslaw_Bortnowski.dds"
 				small = "gfx/interface/ideas/idea_POL_wladyslaw_bortnowski.dds"
 			}
 		}
@@ -692,7 +690,7 @@ characters = {
 				army_chief_planning_3
 			}
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 		corps_commander = {
@@ -730,7 +728,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { POL_sanation_right_leader offensive_doctrine }
+			traits = { POL_sanation_right_leader trait_mountaineer trait_engineer }
 			skill=2
 			attack_skill=2
 			defense_skill=2
@@ -806,12 +804,18 @@ characters = {
 				original_tag = POL
 			}
 			available = {
-					has_completed_focus = POL_The_Front_Morges	
+				OR = {
+					has_completed_focus = POL_The_Front_Morges
+					has_completed_focus = POL_elect_a_PSL_leader
+				}				
 				is_subject = no
 				has_government = democratic
 			}
 			visible = {
+				OR = {
 					has_completed_focus = POL_The_Front_Morges
+					has_completed_focus = POL_woo_morges_staff
+				}
 				
 				is_subject = no
 				NOT = { has_government = communism }
@@ -832,7 +836,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { old_guard POL_sanation_left_leader }
+			traits = { old_guard naval_liason POL_sanation_left_leader }
 			skill=3
 			attack_skill=2
 			defense_skill=3
@@ -889,7 +893,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { defensive_doctrine }
+			traits = { career_officer }
 			skill=2
 			attack_skill=1
 			defense_skill=3
@@ -903,7 +907,7 @@ characters = {
 		name=POL_wladyslaw_anders
 		portraits = {
 			army = {
-				large="GFX_POL_wladislaw_anders"
+				large = "gfx/leaders/POL/r56_portrait_POL_Wladyslaw_Anders.dds"
 				small = "gfx//interface//ideas//idea_Wladyslaw_Anders.dds"
 			}
 		}
@@ -938,12 +942,12 @@ characters = {
 		name="Roman Abraham"
 		portraits = {
 			army = {
-				large="GFX_POL_roman_abraham"
+				large = "gfx/leaders/POL/r56_portrait_POL_Roman_Abraham.dds"
 				small = "gfx/interface/ideas/idea_POL_roman_abraham.dds"
 			}
 		}
 		corps_commander = {
-			traits = { POL_sanation_right_leader }
+			traits = { POL_sanation_right_leader cavalry_officer }
 			skill=4
 			attack_skill=3
 			defense_skill=4
@@ -957,7 +961,7 @@ characters = {
 		name=POL_wincenty_kowalski
 		portraits = {
 			army = {
-				large="GFX_POL_wincenty_kowalski"
+				large = "gfx/leaders/POL/r56_portrait_POL_Wincenty_Kowalski.dds"
 				small = "GFX_idea_POL_wincenty_kowalski"
 			}
 		}
@@ -1020,7 +1024,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 		corps_commander = {
@@ -1105,7 +1109,7 @@ characters = {
 			}
 			cost = 200
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 		
@@ -1216,7 +1220,13 @@ characters = {
 			}
 			cost = 150
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
+			}
+		}
+		scientist = {
+			traits = { scientist_trait_surface_ship_specialist }
+			skills = {
+				specialization_naval = 1
 			}
 		}
 	}
@@ -1242,7 +1252,7 @@ characters = {
 			}
 			cost = 200
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 	}
@@ -1266,7 +1276,7 @@ characters = {
 			cost = 75
 			removal_cost = 200
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 	}
@@ -1299,27 +1309,21 @@ characters = {
 	#	}
 	#}
 
-	POL_stanislav_maczek = {
+	POL_stanislav_maczek = {	#was given control of the first motorized brigade in 1938, no clue why he shall become a panzer high command for Poland in 1936
 		name=POL_stanislav_maczek
 		portraits = {
 			army = {
 				small="GFX_idea_POL_stanislav_maczek"
 			}
 		}
-		advisor = {
-			slot = high_command
-			idea_token = POL_stanislav_maczek
-			ledger = army
-			allowed = {
-				original_tag = POL
-			}
-			traits = {
-				army_armored_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
+		corps_commander = {	#was a division commander, hence low level
+			traits = { fast_planner infantry_officer cavalry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+			legacy_id=-1
 		}
 	}
 
@@ -1368,7 +1372,7 @@ characters = {
 		}
 		gender = female
 		advisor = {
-			cost = 150
+			cost = 200
 			slot = political_advisor
 			idea_token = POL_wanda_wasilewska_advisor
 			allowed = {
@@ -1386,8 +1390,12 @@ characters = {
 			#	}
 			#}
 			available = {
+				NOT = {
+					has_idea = r56i_laws_gender_patriarchy
+				}
 				OR = {
 					has_completed_focus = POL_modus_vivendi
+					has_completed_focus = POL_a_leftist_sejm
 					has_completed_focus = POL_Found_Our_Own_Faction
 				}
 				NOT = { has_completed_focus = POL_Draw_Closer_To_The_USSR }
@@ -1470,6 +1478,7 @@ characters = {
 				}
 				available = {
 					OR = {
+						has_completed_focus = POL_reassemble_the_sejm
 						has_completed_focus = POL_Civil_Service_Reform
 						has_completed_focus = POL_modus_vivendi
 					}
@@ -1513,22 +1522,10 @@ characters = {
 						NOT = {
 							has_autonomy_state = autonomy_supervised_state
 						}
-						OR = {
-							has_completed_focus = POL_Civil_Service_Reform
-							has_completed_focus = POL_modus_vivendi
-						}
 					}
-					if = {
-						limit = {
-							has_dlc = "Poland: United and Ready"
-							NOT = {
-								has_dlc = "No Step Back"
-							}
-						}
-						OR = {
-							has_completed_focus = POL_modus_vivendi 
-							has_completed_focus = POL_Civil_Service_Reform
-						}
+					OR = {
+						has_completed_focus = POL_Civil_Service_Reform
+						has_completed_focus = POL_modus_vivendi
 					}
 					is_puppet = no
 					NOT = { has_government = communism }
@@ -1583,6 +1580,7 @@ characters = {
 			available = {
 				if = {
 					limit = { has_DLC = "No Step Back" }
+					has_completed_focus = POL_a_leftist_sejm 
 				}
 				if = {
 					limit = { NOT = { has_DLC = "No Step Back" } }
@@ -1620,6 +1618,7 @@ characters = {
 			available = {
 				if = {
 					limit = { has_DLC = "No Step Back" }
+					has_completed_focus = POL_a_leftist_sejm 
 				}
 				if = {
 					limit = { NOT = { has_DLC = "No Step Back" } }
@@ -1756,7 +1755,7 @@ characters = {
 		}			
 		advisor={
 			slot = political_advisor
-			idea_token = POL_tadeusz_bielecki_r56 #Previously POL_Tadeusz_Bielecki, more like a democrat
+			idea_token = POL_tadeusz_bielecki #Previously POL_Tadeusz_Bielecki, more like a democrat
 			allowed = {
 				original_tag = POL
 				#has_dlc = "No Step Back"	#we had him before and he is democratic nationalist  -Fantom
@@ -1801,8 +1800,11 @@ characters = {
 			available = {
 				OR = {
 					has_completed_focus = POL_modus_vivendi 
-					has_completed_focus = POL_Consolidate_The_Nationalist_Wing 
-					has_completed_focus = POL_The_Endecja_Movement 
+					has_completed_focus = POL_reassemble_the_sejm 
+					AND = {	#Endecja + Nationalist 
+						has_completed_focus = POL_Consolidate_The_Nationalist_Wing 
+						has_completed_focus = POL_The_Endecja_Movement 
+					}
 				}
 			}
 			allowed = {
@@ -1814,13 +1816,6 @@ characters = {
 			}
 			traits = {
 				national_determinist 
-			}
-			ai_will_do = {
-				factor = 500
-				modifier = {
-					factor = 0
-					has_government = democratic
-				}
 			}
 		}
 	}
@@ -1895,7 +1890,7 @@ characters = {
 						AND = {
 							is_subject = yes
 							OVERLORD = { has_government = communism }
-					}
+						}
 					}
 				}
 				if = {
@@ -1909,6 +1904,7 @@ characters = {
 							is_subject = yes
 							OVERLORD = { has_government = communism }
 						}
+						has_completed_focus = POL_a_leftist_sejm 
 					}
 				}
 			}
@@ -1985,6 +1981,7 @@ characters = {
 			available = {
 				OR = {
 					has_completed_focus = POL_modus_vivendi 
+					has_completed_focus = POL_reassemble_the_sejm 
 					has_completed_focus = POL_assemble_the_regency_council 
 				}
 			}
@@ -2025,7 +2022,13 @@ characters = {
 				falangist_militarist 
 			}
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
+				modifier = {
+					factor = 0.000
+					NOT = {
+						has_government = fascism 
+					}
+				}
 			}
 		}	
 		advisor={
@@ -2047,7 +2050,7 @@ characters = {
 				military_youth_propaganda
 			}
 			ai_will_do = {
-				factor = 10000
+				factor = 0.1
 			}
 		}	
 	}
@@ -2109,12 +2112,14 @@ characters = {
 							NOT = { has_dlc = "La Resistance" }
 							has_dlc = "Man the Guns"
 						}
+						has_completed_focus = POL_The_Bombe_no_lar
 					}
 					else_if = {
 						limit = {
 							NOT = { has_dlc = "La Resistance" }
 							NOT = { has_dlc = "Man the Guns" }
 						}
+						has_completed_focus = POL_The_Bombe_no_lar_no_mtg
 					}
 					has_completed_focus = POL_expand_polish_intelligence 
 				}
@@ -2179,29 +2184,36 @@ characters = {
 		}
 	}
 
-	POL_Rudolf_Gundlach = {
+	POL_rudolf_gundlach = {
 		name="Rudolf Gundlach"
 		portraits={
 			army={
 				small= GFX_idea_Rudolf_Gundlach
+				large = GFX_portrait_generic_europe_male_01
 			}
 		}
-		advisor={
-			cost = 75
-			slot = theorist
-			idea_token = POL_Rudolf_Gundlach
-			ledger = army
-			ai_will_do  = {
-				factor  = 1.000
-			}
-			allowed = {
-				original_tag = POL
-			}
-			available = {
-				has_completed_focus = POL_Gundlach_Periscope
-			}
-			traits = {
-				POL_tank_theorist
+		# advisor={
+		# 	cost = 75
+		# 	slot = theorist
+		# 	idea_token = POL_Rudolf_Gundlach
+		# 	ledger = army
+		# 	ai_will_do  = {
+		# 		factor  = 1.000
+		# 	}
+		# 	allowed = {
+		# 		original_tag = POL
+		# 	}
+		# 	available = {
+		# 		has_completed_focus = POL_Gundlach_Periscope
+		# 	}
+		# 	traits = {
+		# 		POL_tank_theorist
+		# 	}
+		# }
+		scientist = {
+			traits = { scientist_trait_armored_specialist scientist_trait_fast_learner }
+			skills = {
+				specialization_land = 2
 			}
 		}
 	}
@@ -2227,7 +2239,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 0
+				factor = 1
 			}
 		}
 	}
@@ -2253,7 +2265,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 0
+				factor = 1
 			}
 		}
 	}
@@ -2305,7 +2317,7 @@ characters = {
 		}
 		advisor = {
 			slot = high_command
-			idea_token = POL_zygmunt_buhusz_szysko
+			idea_token = POL_Tadeusz_Kasprzycki
 			ledger = army
 			allowed = {
 				original_tag = POL
@@ -2338,7 +2350,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 0
+				factor = 1.5
 			}
 		}
 	}
@@ -2364,6 +2376,15 @@ characters = {
 			ai_will_do = {
 				factor = 1.5
 			}
+		}
+		corps_commander = {	#was chief of mountaineous division in 1930s
+			traits = { trait_mountaineer camouflage_expert }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
 		}
 	}
 
@@ -2446,7 +2467,7 @@ characters = {
 			}
 			cost = 150
 			ai_will_do = {
-				factor = 0
+				factor = 1.5
 			}
 		}
 	}
@@ -2486,6 +2507,10 @@ characters = {
 			
 			ai_will_do = {
 				factor = 0
+				modifier = {
+					has_tech = mass_assault
+					add = 1
+				}
 			}	
 		}
 	}
@@ -2521,7 +2546,7 @@ characters = {
 			cost = 150
 			
 			ai_will_do = {
-				factor = 0
+				factor = 1.5
 			}
 		}
 	}
@@ -2557,7 +2582,7 @@ characters = {
 			cost = 150
 			
 			ai_will_do = {
-				factor = 0
+				factor = 1.5
 			}
 		}
 		corps_commander = {
@@ -2604,7 +2629,7 @@ characters = {
 			cost = 150
 			
 			ai_will_do = {
-				factor = 0
+				factor = 1.5
 			}
 		}
 	}
@@ -2649,6 +2674,10 @@ characters = {
 			
 			ai_will_do = {
 				factor = 0
+				modifier = {
+					has_tech = trench_warfare
+					add = 1.5
+				}
 			}
 		}
 	}
@@ -2751,7 +2780,7 @@ characters = {
 			cost = 100
 			
 			ai_will_do = {
-				factor = 5000
+				factor = 1
 			}
 		}
 	}
@@ -2789,7 +2818,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 		navy_leader = {
@@ -2817,14 +2846,14 @@ characters = {
 				original_tag = POL
 			}
 			available = {
-
+				has_completed_focus = POL_The_Endecja_Movement
 			}
 			traits = {
 				army_chief_drill_2
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 100000
+				factor = 1.000
 			}
 		}
 	}
@@ -2856,7 +2885,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 0
+				factor = 1.000
 			}
 		}
 	}
@@ -3023,7 +3052,7 @@ characters = {
 				}
 			}
 			traits = {
-				POL_Heavy_Industry_Emphasis
+				heavy_industry_emphasis_trait
 			}
 			cost = 200
 			ai_will_do = {
@@ -4724,7 +4753,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { old_guard }
+			traits = { old_guard artillerist }	#specialist in anti-air artillery
 			skill = 2
 			attack_skill = 1
 			defense_skill = 2
@@ -4742,7 +4771,7 @@ characters = {
 		name="Henryk Józewski"
 		portraits = {
 			army={
-				small="GFX_idea_generic_political_europe_2"
+				small="GFX_idea_generic_political_advisor_europe_2"
 			}
 		}
 		advisor={
@@ -4768,4 +4797,95 @@ characters = {
 			cost = 75
 		}
 	}
+	POL_joseph_rotblat = {
+		name = "Joseph Rotblat"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_europe_male_02
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist }
+			skills = {
+				specialization_nuclear = 1
+			}
+		}
+	}
+	POL_franciszek_misztal = {
+		name = "Franciszek Misztal"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_europe_male_05
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_gifted_engineer scientist_trait_r56_reckless_prototyper  }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
+	POL_stanislaw_prauss = {
+		name = "Stanisław Prauss"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_europe_male_13
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_bright scientist_trait_r56_political_dancer }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
+	POL_aleksander_potyrala = {
+		name = "Aleksander Potyrała"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_europe_male_07
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_surface_ship_specialist scientist_trait_brilliant_theorist }
+			skills = {
+				specialization_naval = 2
+			}
+		}
+	}
+	POL_mieczyslaw_filipowicz  = { # not sure of the trait but they did acquire subs so, maybe?
+		name = "Mieczysław Filipowicz "
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_europe_male_09
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_submarine_specialist }
+			skills = {
+				specialization_naval = 1
+			}
+		}
+	}
+	POL_jan_lapuszewski = {
+		name = "Jan Łapuszewski"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_europe_male_10
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_armored_specialist }
+			skills = {
+				specialization_land = 1
+			}
+		}
+	}
+
 }

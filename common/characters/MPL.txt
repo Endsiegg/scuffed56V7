@@ -126,6 +126,13 @@ characters = {
 		}
 	}
 	MPL_ahmed_hilmi_pasha = {
+		name = "Ahmed Hilmi Pasha"
+		portraits={
+			civilian ={
+				small="GFX_idea_MPL_ahmad_hilmi_pasha"
+				large = "gfx/leaders/PAL/r56_portrait_PAL_ahmad_hilmi_pasha.dds"
+			}
+		}
 		advisor={
 			slot = political_advisor
 			idea_token = MPL_ahmed_hilmi_pasha
@@ -157,13 +164,6 @@ characters = {
 					}
 				}
 			}			
-		}
-		name = "Ahmed Hilmi Pasha"
-		portraits={
-			civilian ={
-				small="GFX_idea_MPL_ahmad_hilmi_pasha"
-				large = "gfx/leaders/PAL/r56_portrait_PAL_ahmad_hilmi_pasha.dds"
-			}
 		}
 	}
 	MPL_raghib_nashashibi = {
@@ -396,7 +396,7 @@ characters = {
 			}
 		}
 		country_leader= {
-			ideology= absolute_monarchism
+			ideology= constitutional_monarchy
 			traits = { 
 				charismatic_monarch
 			}
@@ -474,7 +474,7 @@ characters = {
 			}
 		}
 		name = "Hasyia Suknik"
-		
+		gender = female
 		advisor = {
 			slot = political_advisor
 			idea_token = MPL_puah_rakovsky
@@ -483,6 +483,9 @@ characters = {
 			}
 			available = {
 				has_completed_focus = MPL_jews_ministers
+				NOT = {
+					has_idea = r56i_laws_gender_patriarchy
+				}
 			}
 			traits = {
 				womens_figurehead
@@ -576,9 +579,6 @@ characters = {
 			idea_token = MPL_herbert_layard
 			allowed = {
 				original_tag = MPL
-			}
-			available = {
-				
 			}			
 			traits = {
 				army_chief_morale_2
@@ -747,7 +747,10 @@ characters = {
 				original_tag = MPL
 			}
 			available = {
-				has_completed_focus = MPL_two_people_union
+				has_completed_focus = MPL_jews_ministers
+				NOT = {
+					has_global_flag = ISR_dov_hoz_dead
+				}
 			}			
 			traits = {
 				air_chief_ground_support_2
@@ -773,10 +776,10 @@ characters = {
 				}
 			}
 		}		
-		name=ISR_aharon_remez
+		name= "Dov Hoz"
 		portraits={
 			army ={
-				small="GFX_idea_generic_air_south_america_3"
+				small="GFX_idea_ISR_dov_hoz"
 			}		
 		}		
 	}
@@ -784,8 +787,8 @@ characters = {
 		name="Gershon Zak"
 		portraits={
 			army ={
-				small="GFX_idea_generic_navy_south_america_3"
 				large="gfx/leaders/r56_generic/r56_portrait_generic_admiral_GRE_1.dds"
+				small="GFX_idea_generic_navy_south_america_3"
 			}
 		}
 		advisor={

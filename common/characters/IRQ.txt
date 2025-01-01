@@ -1,4 +1,4 @@
-characters={
+﻿characters={
 
 	IRQ_ghazi_i={
 		name="Ghazi I"
@@ -6,16 +6,43 @@ characters={
 			civilian={
 				large="gfx/leaders/IRQ/r56_portrait_IRQ_ghazi_I.dds"
 			}
+			army={
+				large="gfx/leaders/IRQ/r56_portrait_IRQ_ghazi_I.dds"
+				small="GFX_idea_IRQ_ghazi"
+			}
 		}
 		country_leader={
 			ideology=absolute_monarchism
 			expire="1965.1.1"
 			id=-1
 			traits = {
-				IRQ_ghazi_i_of_iraq
+				nationalistic_tendencies
 				r56_trait_opposed_to_communism
 			}
 		}
+		field_marshal = {
+			traits = { politically_connected }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+			visible = {
+				has_country_leader = {
+					character = IRQ_ghazi_i
+					ruling_only = yes
+				}
+			}			
+		}	
+	}
+	IRQ_Abd_al_Ilah={
+		name="Abd al-Ilah bin Ali"
+		portraits={
+			civilian={
+				large="gfx/leaders/IRQ/r56_portrait_IRQ_abd_al_ilah.dds"
+			}
+		}
+		
 	}
 	IRQ_rashid_ali_algaylani={
 		name="Rashid Ali al-Gaylani"
@@ -51,17 +78,17 @@ characters={
 		}
 	}
 	IRQ_hamdi_al_pachachi={
-		name="Hamdi al-Pachachi"
+		name="Kamil Al Chaderchi"
 		portraits={
 			civilian={
-				large="gfx/leaders/SAU/Portrait_Arabia_Generic_2.dds"
+				large="gfx/leaders/IRQ/r56_portrait_IRQ_Hamdi_Al_Pachachi.dds"
 			}
 			army={
 				small="GFX_idea_generic_navy_arab_1"
 			}
 		}
 		country_leader={
-			ideology=conservatism
+			ideology=socialism
 			expire="1949.1.1.12"
 			id=-1
 			traits={
@@ -89,7 +116,7 @@ characters={
 		name="Faisal II"
 		portraits={
 			civilian={
-				large="gfx/leaders/JOR/Portrait_Arabia_Generic_land_1.dds"
+				large="gfx/leaders/IRQ/r56_portrait_IRQ_faisal_II.dds"
 			}
 		}
 		country_leader={
@@ -99,9 +126,11 @@ characters={
 		}
 	}
 	IRQ_abdul_al_karim_qasim={
+		name="Abdul Al-Karim Qasim"
 		portraits={
-			army = {
-				large = "gfx/leaders/kr_generic/Portrait_Arabia_Generic_land_new_6.dds"	
+			army={
+				small="GFX_idea_generic_army_arab_2"
+				large="gfx/leaders/IRQ/r56_portrait_IRQ_Abd_al_Karim_Qasim.dds"
 			}
 		}
 		corps_commander = {
@@ -127,19 +156,15 @@ characters={
 			ai_will_do = {
 				factor = 1.000
 			}
-		}		
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Abdul Al-Karim Qasim"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_arab_2"
-				large="gfx/leaders/IRQ/r56_portrait_IRQ_Abd_al_Karim_Qasim.dds"
-			}
 		}
 	}
 	IRQ_nureddin_mahmud={
-
-
+		name="Nureddin Mahmud"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_3"
+			}
+		}
 		advisor={ #became head of Iraqi cavalry, supported fascist coup then pardoned
 			slot = high_command
 			idea_token = IRQ_nureddin_mahmud
@@ -153,13 +178,6 @@ characters={
 			cost = 100
 			ai_will_do = {
 				factor = 1.000
-			}
-		}		
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Nureddin Mahmud"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_arab_3"
 			}
 		}
 	}		
@@ -177,8 +195,8 @@ characters={
 		name="Bakr Sidqi"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
-				large="gfx/leaders/IRQ/r56_portrait_IRQ_Bakr_Sidqi.dds"
+				small="gfx/interface/ideas/irq/IRQ_Baqri_Sikdi_2.dds"
+				large="gfx/leaders/SAU/Portrait_Arabia_Generic_land_2.dds"
 			}
 		}
 	}
@@ -212,7 +230,7 @@ characters={
 		name="Salah al-Din al-Sabbagh"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_3"
+				small="gfx/interface/ideas/irq/IRQ_Salah_al_Din_al_Sabbagh.dds"
 				large="gfx/leaders/kr_generic/Portrait_Arabia_Generic_land_new_5.dds"	
 			}
 		}
@@ -284,7 +302,7 @@ characters={
 		name="Fahmi Sa'id"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_arab_3"
+				small="gfx/interface/ideas/irq/IRQ_Fahmi_Said.dds"
 			}
 		}
 	}
@@ -310,7 +328,7 @@ characters={
 		name="Ali Mahmud al Shaykh"
 		portraits={
 			army={
-				small="GFX_idea_generic_navy_arab_1"
+				small="gfx/interface/ideas/irq/IRQ_Ali_Mahmud_al_Shaykh.dds"
 			}
 		}
 	}
@@ -456,7 +474,7 @@ characters={
 		name="Jamil al Midfai"
 		portraits={
 			army={
-				small="GFX_idea_generic_navy_arab_2"
+				small="gfx/interface/ideas/irq/IRQ_Jameel_Al_Madfaai.dds"
 			}
 		}
 	}
@@ -508,7 +526,7 @@ characters={
 			}
 		}
 	}
-	IRQ_zeid_bin_hussein={ #prince, brother of the king                         #previously IRQ_amir_al_illah, not relevant
+	IRQ_zeid_bin_hussein={ #prince, uncle of the king                         #previously IRQ_amir_al_illah, not relevant
 		advisor={
 			slot = political_advisor
 			idea_token = IRQ_zeid_bin_hussein
@@ -523,7 +541,7 @@ characters={
 		name="Zeid Bin Hussein"
 		portraits={
 			army={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="gfx/interface/ideas/irq/IRQ_Zeid_bin_Hussein_2.dds"
 			}
 		}
 	}
@@ -534,6 +552,7 @@ characters={
 				small="GFX_idea_generic_political_advisor_female_arab" #small="GFX_idea_generic_political_advisor_europe_1"
 			}
 		}
+		gender = female
 		advisor={
 			slot = political_advisor
 			idea_token = IRQ_mariam_nerma
@@ -541,14 +560,16 @@ characters={
 				original_tag = IRQ
 			}
 			available = {
-			
+				NOT = {
+					has_idea = r56i_laws_gender_patriarchy
+				}			
 			}
 			traits = {
 				womens_figurehead 
 			}
 		}	
 	}	
-	IRQ_abdul_muhsin_al_hakim = { #real, check if Sunni or Shia, maybe
+	IRQ_abdul_muhsin_al_hakim = { #
 		name="Abdul Muhsin Al Hakim"
 		portraits={
 			army={
@@ -589,7 +610,7 @@ characters={
 			allowed  = {
 				original_tag  = IRQ
 				has_dlc = "La Resistance"
-			}			
+			}		
 			traits  = {
 				head_of_intelligence 
 			}
@@ -617,7 +638,7 @@ characters={
 		name="Ajeel Al-Yawar"
 		portraits={
 			army={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="gfx/interface/ideas/irq/IRQ_idea_ajil_al_yaver.dds"
 			}
 		}
 	}	
@@ -642,10 +663,10 @@ characters={
 			}
 		}
 	}		
-	IRQ_ali_abn_hussein={  #died in 1935
+	IRQ_abdulilah_bin_ali={  #cousin of king
 		advisor={
 			slot = political_advisor
-			idea_token = IRQ_ali_abn_hussein
+			idea_token = IRQ_abdulilah_bin_ali
 			allowed  = {
 					original_tag  = IRQ
 				}
@@ -657,7 +678,7 @@ characters={
 				}
 		}
 # TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Ali Abn Hussein"
+		name="Abdulilah Bin Ali"
 		portraits={
 			army={
 				small="GFX_idea_generic_political_advisor_arab_2"
@@ -676,10 +697,10 @@ characters={
 				}
 		}
 # TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Nuri as Said"
+		name="Nuri Al Said"
 		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_arab_1"
+			civilian={
+				small="gfx/interface/ideas/irq/IRQ_Nuri_al_Said.dds"
 			}
 		}
 	}

@@ -16,48 +16,20 @@ characters={
 			id=-1
 		}
 	}
-	#LUX_gustave_lebeau={
-	#	name="Gustave Lebeau"
-	#	portraits={
-	#		civilian={
-	#			large="gfx/leaders/Europe/portrait_europe_generic_4.dds"
-	#		}
-	#	}
-	#	country_leader={
-	#		ideology=stalinism
-	#		traits={ reluctant_interventionist }
-	#		expire="1951.1.1.12"
-	#		id=-1
-	#	}
-	#}
-	#LUX_frédéric_nagelmackers={
-	#	name="Frédéric Nagelmackers"
-	#	portraits={
-	#		civilian={
-	#			large="gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
-	#		}
-	#	}
-	#	country_leader={
-	#		ideology=fascism_ideology
-	#		traits={ editor }
-	#		expire="1954.1.1.12"
-	#		id=-1
-	#	}
-	#}
-	#LUX_jean_pirson={
-	#	name="Jean Pirson"
-	#	portraits={
-	#		civilian={
-	#			large="gfx/leaders/Europe/Portrait_europe_generic_7.dds"
-	#		}
-	#	}
-	#	country_leader={
-	#		ideology=oligarchism
-	#		traits={ quartermaster_general }
-	#		expire="1942.1.1.12"
-	#		id=-1
-	#	}
-	#}
+	LUX_duchess_charlotte={
+		name="Duchess Charlotte"
+		portraits={
+			civilian={
+				large="gfx/leaders/LUX/r56_portrait_LUX_Duchess_Charlotte.dds"
+			}
+		}
+		country_leader={
+			ideology=absolute_monarchism
+			traits = { charismatic_monarch }
+			expire="1965.1.1"
+			id=-1
+		}
+	}
 	LUX_zenon_bernard={
 		name=LUX_zenon_bernard
 		portraits={
@@ -267,7 +239,10 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_country_leader = { ruling_only = yes name = "Charles Marx"}
+					has_country_leader = { 
+						character = LUX_charles_marx
+						ruling_only = yes
+					}
 					has_government = fascism
 				}
 			}			
@@ -303,7 +278,10 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_country_leader = { ruling_only = yes name = "Pierre Dupong"}
+					has_country_leader = { 
+						character = LUX_pierre_dupong
+						ruling_only = yes
+					}
 				}
 				OR = {
 					has_government = democratic
@@ -343,7 +321,6 @@ characters={
 					factor = 1.000
 				}
 		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
 		name="Damien Roeser"
 		portraits={
 			army={
@@ -353,11 +330,39 @@ characters={
 		}
 	}
 
-
+	LUX_guillaume_konsbruck={
+		advisor={
+			slot = high_command
+			idea_token = LUX_guillaume_konsbruck
+			allowed = {
+				original_tag = LUX
+			}
+			traits = {
+				army_cavalry_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="Guillaume Konsbruck"
+		portraits={
+			army={ # Thanks Harry
+				small="GFX_idea_LUX_guillaume_konsbruck"
+				large="gfx/leaders/LUX/r56_portrait_LUX_Guillaume_Konsbruck.dds"
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer career_officer }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}		
+	}
 	LUX_emile_speller={
 		advisor={
-			
-			
 			slot = army_chief
 			idea_token = LUX_emile_speller
 			allowed = {
@@ -375,46 +380,18 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_LUX_emile_speller"
-				large="gfx/leaders/SWI/Portrait_SWI_Generic_land_3.dds"
-				#"gfx/leaders/LUX/r56_portrait_LUX_Emile_Speller.dds"
+				large="gfx/leaders/LUX/r56_portrait_LUX_Emile_Speller.dds"
 			}
 		}
 		field_marshal = {
-			traits = { trait_cautious infantry_officer }
+			traits = { trait_cautious caring_leader }
 			skill = 2
 			attack_skill = 1
 			defense_skill = 2
 			planning_skill = 1
 			logistics_skill = 3
 		}		
-	}
-	
-#	LUX_pierre_fischbach={
-#		advisor={
-#			
-#			
-#			slot = high_command
-#			idea_token = LUX_pierre_fischbach
-#			ledger = navy
-#				allowed = {
-#					original_tag = LUX
-#				}
-#				traits = {
-#					navy_fleet_logistics_2
-#				}
-#				cost = 100
-#				ai_will_do = {
-#					factor = 1.000
-#				}
-#		}
-## TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-#		name="Pierre Fischbach"
-#		portraits={
-#			army={
-#				small="GFX_idea_generic_navy_europe_1"
-#			}
-#		}
-#	}	
+	}	
 	LUX_lou_hemmer={
 		advisor={		
 			slot = air_chief
@@ -501,13 +478,18 @@ characters={
 			slot = theorist
 			idea_token = LUX_felix_de_bourbon_parme
 			ledger = army
-				allowed = {
-					original_tag = LUX
+			allowed = {
+				original_tag = LUX
+			}
+			visible = {
+				NOT = {
+					has_government = communism
 				}
-				
-				traits = {
-					military_theorist
-				}
+			}
+			
+			traits = {
+				military_theorist
+			}
 		}
 		advisor={
 			cost = 100
@@ -515,18 +497,37 @@ characters={
 			slot = high_command
 			idea_token = LUX_felix_de_bourbon_parme2
 			ledger = army
-				allowed = {
-					original_tag = LUX
+			allowed = {
+				original_tag = LUX
+			}
+			visible = {
+				NOT = {
+					has_government = communism
 				}
-				
-				traits = {
-					army_chief_organizational_2
-				}
+			}
+			
+			traits = {
+				army_chief_organizational_2
+			}
 		}		
 		name=LUX_felix_de_bourbon_parme
 		portraits={
 			army={
-				small = "GFX_idea_LUX_felix_de_bourbon_parme2"
+				large="gfx/leaders/LUX/r56_portrait_portrait_LUX_Felix_de_Bourbon_Parma.dds"
+				small = "GFX_idea_LUX_felix_de_bourbon_parma"
+			}
+		}
+		field_marshal = {
+			traits = { war_hero cavalry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+			visible = {
+				NOT = {
+					has_government = communism
+				}
 			}
 		}
 	}
@@ -607,33 +608,6 @@ characters={
 		}
 	}
 	#LUX_aloyse_glodt actually just a firefighter
-	#Guillaume Konsbruck better pick as he was actually a major, aide de camp of the grand duchess,studied cavalry in St Cyr
-	LUX_guillaume_konsbruck={
-		advisor={
-			
-			
-			slot = high_command
-			idea_token = LUX_guillaume_konsbruck
-			ledger = army
-				allowed = {
-					original_tag = LUX
-				}
-				traits = {
-					army_armored_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Guillaume Konsbruck"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_3"
-			}
-		}
-	}
 
 	LUX_pierre_krier={
 		advisor={
@@ -672,6 +646,50 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+	}
+	LUX_navy_chief={ #there might be a commander of the fluvial police to find, good luck finding his name though.
+		name="Admiral in Chief"
+			portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = LUX_navy_chief
+			allowed = {
+				original_tag = LUX
+			}
+			traits = {
+				navy_chief_maneuver_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+				modifier = {
+					factor = 0
+					date < 1941.01.01
+					NOT = {
+						has_cosmetic_tag = UNL_UNIFIED
+					}
+				}			
+			}
+		}
+	}
+	LUX_william_kroll = {
+		name = "William Kroll"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_europe_male_10
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_fast_learner }
+			skills = {
+				specialization_land = 1
 			}
 		}
 	}

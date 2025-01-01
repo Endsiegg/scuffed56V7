@@ -10,28 +10,28 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=despotism
+			ideology= military_junta
 			expire="1965.1.1"
 			traits={
-				nationalistic_tendencies
+				likes_usa GUA_napoleon anti_communist
 			}
 			id=-1
 		}
 		country_leader={
-			ideology=rexism
+			ideology=fascism_ideology
 			expire="1965.1.1"
 			traits={
-				GUA_napoleon fascist_militia_leader
+				likes_usa GUA_napoleon anti_communist
 			}
 			id=-1
 		}
 		field_marshal={
-			traits = { infantry_officer politically_connected }
-			skill = 4
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 2
+			traits = { infantry_officer politically_connected harsh_leader defensive_doctrine organizer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 1
 		}
 	}
 	GUA_juan_jose_arevalo={
@@ -61,35 +61,50 @@ characters={
 		}
 	}
 	GUA_jacobo_arbenz={
-		name="Jacobo Árbenz"
+		name="Jacobo Árbenz Guzmán"
 		portraits={
 			army={
 				large="gfx/leaders/GUA/r56_portrait_GUA_jacobo_arbenz.dds"
+				small="gfx/interface/ideas/gua/r56_idea_GUA_jaboco_arbenz.dds"
 			}
 		}
+		advisor={
+			slot = army_chief
+			idea_token = GUA_jacopo_arbenz_guzman
+			allowed={
+				original_tag = GUA
+			}
+			traits={
+				army_chief_offensive_2
+			}
+			ai_will_do={
+				factor = 1
+			}
+			cost = 100
+		}
 		corps_commander={
-			traits = { career_officer decided_planner }
+			traits = { career_officer brilliant_strategist promising }
 			skill = 2
-			attack_skill = 1
+			attack_skill = 2
 			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
 		}
 	}
-	GUA_miguel_ydigoras_fuentes={
+	GUA_miguel_ydigoras_fuentes={ #became general only in 1937, was sent in diplomatic exile after the fall of Ubico because he was too close to him, plotted coup attempts between 45 and 50
 		name="Miguel Ydigoras Fuentes"
 		portraits={
 			army={
 				small="gfx/interface/ideas/gua/r56_idea_GUA_miguel_ydigoras_fuentes.dds"
-				large="gfx/leaders/GUA/r56_portrait_GUA_miguel_ydigoras_fuentes.dds"
+				large="gfx/leaders/South America/portrait_south_america_generic_land_10.dds"
 			}
 		}
 		corps_commander={
-			traits = { politically_connected ranger }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 2
+			traits = { politically_connected trait_reckless infantry_officer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
 			logistics_skill = 1
 		}
 		advisor={
@@ -107,33 +122,35 @@ characters={
 		name="Juan Federico Ponce"
 		portraits={
 			army={
+				small="gfx/interface/ideas/gua/r56_idea_GUA_juan_federico_ponce.dds"
 				large="gfx/leaders/GUA/r56_Portrait_GUA_Juan_Federico_Ponce.dds"
 			}
 		}
-		corps_commander={
-			traits = { politically_connected }
-			skill = 2
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 1
-		}
+		advisor={
+			slot = army_chief
+			idea_token = GUA_federico_ponce_vaides
+			allowed={
+				original_tag = GUA
+			}
+			available = {
+				has_completed_focus = GUA_ubiquistas
+			}
+			traits={
+				army_chief_old_guard
+			}
+			ai_will_do={
+				factor = 1
+			}
+			cost = 50
+		}		
 	}
 	GUA_jose_victor_mejia={
 		name="José Victor Mejía"
 		portraits={
 			army={
-				small="gfx/interface/ideas/gua/r56_idea_GUA_Jose_Victor_Mejía_de_León.dds"
-				large="gfx/leaders/GUA/r56_Portrait_GUA_Jose_Victor_Mejía.dds"
+				small="gfx/interface/ideas/idea_south_america_generic_land_8.dds"
+				large="gfx/leaders/South America/portrait_south_america_generic_land_8.dds"
 			}
-		}
-		corps_commander={
-			traits = { air_force_ties }
-			skill = 2
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
 		}
 		advisor={
 			slot = theorist
@@ -146,30 +163,48 @@ characters={
 				air_warfare_theorist
 			}
 		}
-	}
-	GUA_anzueto_valencia={
-		name=GUA_anzueto_valencia
-		portraits={
-			army={
-				small="gfx/interface/ideas/gua/r56_idea_GUA_anzueto_valencia.dds"
-			}
-		}
 		advisor={
-			slot = political_advisor
-			idea_token = GUA_anzueto_valencia
+			slot = air_chief
+			idea_token = GUA_jose_victor_mejia
+			ledger = air
 			allowed={
 				original_tag = GUA
 			}
 			traits={
-				prince_of_terror
+				air_chief_night_operations_2
 			}
 		}
 	}
-	GUA_eduardo_villagran_ariza={
-		name=GUA_eduardo_villagran_ariza
+	GUA_buenaventura_pineda={ #chosen as part of the triumvirate to succeed Ubico, they ultimately failed
+		name="Buenaventura Piñeda"
 		portraits={
+			civilian={
+				small="gfx/interface/ideas/gua/r56_idea_GUA_buenaventura_pineda.dds"
+			}
 			army={
-				small="GFX_idea_generic_political_advisor_south_america_1"
+				small="gfx/interface/ideas/gua/r56_idea_GUA_buenaventura_pineda_army.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = GUA_buenaventura_pineda
+			allowed={
+				original_tag = GUA
+			}
+			traits={
+				military_youth_propaganda
+			}
+		}
+	}
+	GUA_eduardo_villagran_ariza={ #chosen as part of the triumvirate to succeed Ubico, they ultimately failed
+		name="Eduardo Villagrán Ariza"
+		portraits={
+			civilian={
+				small="gfx/interface/ideas/gua/r56_idea_GUA_eduardo_villagran_ariza.dds"
+			}
+			army={
+				large="gfx/leaders/GUA/r56_portrait_GUA_Eduardo_Villagran_Ariza.dds"
+				small="gfx/interface/ideas/gua/r56_idea_GUA_eduardo_villagran_ariza_army.dds"
 			}
 		}
 		advisor={
@@ -179,7 +214,58 @@ characters={
 				original_tag = GUA
 			}
 			traits={
-				smooth_talking_charmer
+				military_treasurer
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GUA_eduardo_villagran_ariza_army
+			ledger = army
+			allowed={
+				original_tag = GUA
+			}
+			traits={
+				army_artillery_2
+			}
+			ai_will_do={
+				factor = 1
+			}
+			cost = 100
+		}
+		corps_commander={
+			traits = { career_officer artillerist }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	GUA_anzueto_valencia={
+		name=GUA_anzueto_valencia
+		portraits={
+			civilian={
+				small="gfx/interface/ideas/gua/r56_idea_GUA_anzueto_valencia.dds"
+			}
+			army={
+				small="gfx/interface/ideas/gua/r56_idea_GUA_anzueto_valencia_army.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = GUA_anzueto_valencia
+			allowed={
+				original_tag = GUA
+			}
+			available = {
+				has_completed_focus = GUA_ubiquistas
+				has_country_leader = {
+					character = GUA_jorge_ubico_castaneda
+					ruling_only = yes
+				}
+			}
+			traits={
+				AUS_chief_of_police
 			}
 		}
 	}
@@ -201,70 +287,31 @@ characters={
 			}
 		}
 	}
-	GUA_federico_ponce_vaides={
-		name=GUA_federico_ponce_vaides
+	GUA_guiseppe_sotanis={
+		name="Guiseppe Sotanis"
 		portraits={
 			army={
-				small="gfx/interface/ideas/gua/r56_idea_GUA_juan_federico_ponce.dds"
+				small="GFX_portrait_ITA_giuseppe_botai_small"
 			}
 		}
 		advisor={
-			slot = army_chief
-			idea_token = GUA_federico_ponce_vaides
+			slot = political_advisor
+			idea_token = GUA_juan_arevalo_bermejo
 			allowed={
 				original_tag = GUA
 			}
-			traits={
-				army_chief_old_guard
-			}
-			ai_will_do={
-				factor = 1
-			}
-			cost = 50
-		}
-	}
-	GUA_jacopo_arbenz_guzman={
-		name=GUA_jacopo_arbenz_guzman
-		portraits={
-			army={
-				small="gfx/interface/ideas/gua/r56_idea_GUA_jaboco_arbenz.dds"
-			}
-		}
-		advisor={
-			slot = army_chief
-			idea_token = GUA_jacopo_arbenz_guzman
-			allowed={
-				original_tag = GUA
+			available = {
+				NOT = {
+					has_war_with = ITA
+					OR = {
+						has_government = democratic
+						has_government = communism
+					}
+				}
 			}
 			traits={
-				army_chief_offensive_2
+				retired_officer
 			}
-			ai_will_do={
-				factor = 1
-			}
-			cost = 100
-		}
-	}
-	GUA_r_buenaventure_pineda={
-		name=GUA_r_buenaventure_pineda
-		portraits={
-			army={
-				small="GFX_idea_generic_air_south_america_2"
-			}
-		}
-		advisor={
-			slot = air_chief
-			idea_token = GUA_r_buenaventure_pineda
-			allowed={
-				original_tag = GUA
-			}
-			traits={
-				air_chief_ground_support_2
-			}
-			ai_will_do={
-				factor = 1
-			}
-			cost = 100
 		}
 	}
 	GUA_francisco_javier_arana={
@@ -333,7 +380,7 @@ characters={
 			cost = 100
 		}
 	}
-	GUA_manuel_orellana={
+	GUA_manuel_orellana={ #president for a month in 30-31, would have been eliminated if he wasn't related to the ascencion of Ubico to power, so moved as attaché to Spain until 1940 (for which side?) died at age 69 in 1940 in Barcelona, role in high command dubious
 		name=GUA_manuel_orellana
 		portraits={
 			army={
@@ -356,7 +403,7 @@ characters={
 			cost = 100
 		}
 	}
-	GUA_carlos_diaz_de_leon={
+	GUA_carlos_diaz_de_leon={ #Chief of staff of Arbenz, then president in 54. keep as character but remove high command role as too young.
 		name=GUA_carlos_diaz_de_leon
 		portraits={
 			army={
@@ -379,7 +426,7 @@ characters={
 			cost = 100
 		}
 	}
-	GUA_miguel_garcia_granados={
+	GUA_miguel_garcia_granados={ #guy straight from the 19th century was long dead, never saw a plane.
 		name=GUA_miguel_garcia_granados
 		portraits={
 			army={
@@ -402,7 +449,7 @@ characters={
 			cost = 100
 		}
 	}
-	GUA_jose_ezuira_abel={
+	GUA_jose_ezuira_abel={ #I have no idea, borrowed from hoi3 but how did they find it for hoI3 idk
 		name=GUA_jose_ezuira_abel
 		portraits={
 			army={
@@ -425,7 +472,7 @@ characters={
 			cost = 100
 		}
 	}
-	GUA_enrique_peralta_azurdia={
+	GUA_enrique_peralta_azurdia={ #a bit stupid as he was prsident in the 60's too young
 		name=GUA_enrique_peralta_azurdia
 		portraits={
 			army={
@@ -444,7 +491,7 @@ characters={
 			}
 		}
 	}
-	GUA_w_tesch_orlando={
+	GUA_w_tesch_orlando={ #present in hOI3, idk who this is.
 		name=GUA_w_tesch_orlando
 		portraits={
 			army={
