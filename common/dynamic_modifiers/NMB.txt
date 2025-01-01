@@ -1,11 +1,9 @@
 #	Example:
-# 
+#
 #	example_dynamic_modifier = {
 #		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
 #		enable = { always = yes } #optional, the modifier won't apply if not enabled
 #		remove_trigger = { always = no } #optional, will remove the modifier if true
-#       attacker_modifier = no  # if yes this modifier will also be read in combat for 
-#                               # people engaging in the combat even if not in the state
 #
 #		# list of modifiers
 #		fuel_cost = 321
@@ -26,16 +24,10 @@
 #	can be added to countries, states or unit leaders
 #	will only updated daily, unless forced by force_update_dynamic_modifier effect
 
-GRE_The_State_of_The_Government_dynamic_modifier = {
-			icon = GFX_generic_manpower_bonus 
-		
-			enable = { always = yes }
-#Initial Modifiers
+NMB_graveyard_coast = {
+	
+	icon = GFX_modifiers_SOV_civilian_labor_in_defense
 
-	        consumer_goods_factor = GRE_The_State_of_The_Government_consumer_goods_factor
-			political_power_factor = GRE_The_State_of_The_Government_political_power_factor
-			production_speed_industrial_complex_factor = GRE_The_State_of_The_Government_production_speed_industrial_complex_factor
-			production_speed_arms_factory_factor = GRE_The_State_of_The_Government_production_speed_arms_factory_factor
-
-		}
-
+	supply_factor = -0.15
+	production_speed_naval_base_factor = -0.33
+}
