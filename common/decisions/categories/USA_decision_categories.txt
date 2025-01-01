@@ -2,6 +2,17 @@
 ##### USA ######
 ################
 
+USA_war_plan_blue_cat = {
+	icon = usa_intervention_mandate
+	allowed = {
+		original_tag = USA
+	}
+	visible = {
+		has_completed_focus = USA_war_plan_blue
+	}
+	priority = 86
+}
+
 USA_population_migration = {
 
 	icon = generic_political_actions
@@ -85,7 +96,7 @@ USA_combating_jim_crow = {
 		target_array = owned_states
 		target_trigger = {
 			FROM = {
-				r56_jim_crow_state_check = yes
+				has_state_flag = r56_jim_crow_state
 			}
 		}
 		zoom = 400
