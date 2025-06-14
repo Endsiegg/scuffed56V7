@@ -8,6 +8,39 @@
 
  #################### 
 
+ zvolen_railway_factory_organization = {
+	name = zvolen_railway_factory
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_generic_tank_manufacturer_2
+	allowed = {
+		original_tag = SLO
+	}
+
+	available = {
+		owner = {
+			has_completed_focus = SLO_zvolen_railway_factory
+		}
+	}
+
+	equipment_type = {  
+        armor
+        train_equipment
+    }
+
+	research_categories = { 
+        armor
+        train_tech
+    }
+
+
+	initial_trait = {
+        name = NOR_mio_initial_trait_mechanical_workshop
+        
+        equipment_bonus = {
+            build_cost_ic = -0.05
+        }
+	}
+}	
 
 
 #####################
@@ -21,7 +54,6 @@
 #####################
 
 
-
 ###########################
 
 ###  #    ##  #  # ###  ## 
@@ -31,7 +63,6 @@
 #    ### #  # #  # ### ##  
 
 ###########################
-
 
 
 ################################### 
@@ -44,32 +75,3 @@
 
 
 ###################################
-
-ETH_ncgf_organization = {
-	name = ETH_ncgf
-	include = generic_support_equipment_organization
-	icon = GFX_idea_ETH_ncgf
-	allowed = {	
-		tag = ETH
-		has_dlc = "By Blood Alone"
-	}
-	available = {
-		owner = { has_completed_focus = ETH_invest_in_the_west }
-	}
-}
-ETH_hmmbi_organization = {
-	name = ETH_hmmbi
-	include = generic_infantry_equipment_organization	
-	icon = GFX_idea_ETH_hmmbi
-	allowed = {	
-		tag = ETH
-		has_dlc = "By Blood Alone"
-	}
-	available = {
-		owner = { has_completed_focus = ETH_invest_in_the_north }
-	}
-}
-
-### Foreign Subsidiaries
-
-### ITA_beretta_organization -> see ITA_organizations.txt 

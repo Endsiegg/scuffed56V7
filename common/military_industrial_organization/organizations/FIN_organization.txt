@@ -13,7 +13,7 @@ FIN_valtion_panssaritehdas_organization = {
 	include = generic_infantry_tank_organization
 	icon = GFX_idea_FIN_valtion_panssaritehdas
 	allowed = {	
-		tag = FIN
+		original_tag = FIN
 		has_dlc = "Arms Against Tyranny"
 	}
 
@@ -32,28 +32,21 @@ FIN_valtion_panssaritehdas_organization = {
 		x = 8.5
 	}
 
-	remove_trait = { generic_mio_trait_heavy_tank_improvements generic_mio_trait_heavy_tank_specialization }
-
-	override_trait = {
-		token = generic_mio_trait_modular_construction
-
-		position = { x=3 y=1 }
-		relative_position_id = generic_mio_trait_medium_tank_improvements
-	}
+	remove_trait = { generic_mio_trait_heavy_tank_specialization }
 
 	override_trait = {
 		token = generic_mio_trait_light_tank_specialization
 
-		position = { x=-1 y=3 }
-		relative_position_id = generic_mio_trait_modular_construction
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_adaptable_chassis
 		mutually_exclusive= { generic_mio_trait_medium_tank_specialization }
 	}
 	
 	override_trait = {
 		token = generic_mio_trait_medium_tank_specialization
 
-		position = { x=1 y=3 }
-		relative_position_id = generic_mio_trait_modular_construction
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_adaptable_chassis
 		mutually_exclusive= { generic_mio_trait_light_tank_specialization }
 	}
 
@@ -84,9 +77,9 @@ FIN_valtion_panssaritehdas_organization = {
 		special_trait_background = yes
 
 		position = { x=0 y=1 }
-		relative_position_id = generic_mio_trait_modular_construction
+		relative_position_id = generic_mio_trait_adaptable_chassis
 		
-		any_parent = { generic_mio_trait_modular_construction }
+		any_parent = { generic_mio_trait_adaptable_chassis }
 		
 		available = {
 			owner = {
@@ -106,8 +99,7 @@ FIN_valtion_panssaritehdas_organization = {
 		icon = GFX_generic_mio_department_icon_tank_general_production
 		special_trait_background = yes
 
-		position = { x=1 y=0 }
-		relative_position_id = FIN_mio_trait_salvaged_and_retooled
+		position = { x=9 y=0 }
 		
 		available = {
 			owner = {
@@ -136,7 +128,7 @@ FIN_crichton_vulcan_organization = { #Coastal Defense Ships & Subs
 	include = generic_raider_ship_organization
 	icon = GFX_idea_FIN_crichton_vulcan
 	allowed = {	
-		tag = FIN
+		original_tag = FIN
 		has_dlc = "Arms Against Tyranny"
 	}
 
@@ -199,7 +191,6 @@ FIN_crichton_vulcan_organization = { #Coastal Defense Ships & Subs
 
 		production_bonus = {
 			production_capacity_factor = 0.05
-			production_efficiency_gain_factor = 0.05
 		}
 	}
 
@@ -293,7 +284,7 @@ FIN_valtion_lentokonetehdas_organization = { #Light Aircraft
 	include = generic_general_aircraft_organization
 	icon = GFX_idea_FIN_valtion_lentokonetehdas
 	allowed = {	
-		tag = FIN
+		original_tag = FIN
 		has_dlc = "Arms Against Tyranny"
 	}
 
@@ -380,7 +371,7 @@ FIN_valtion_kivaaritehdas_organization = { #Infantry Equipment
 	include = generic_infantry_equipment_organization
 	icon = GFX_idea_FIN_valtion_kivaaritehdas
 	allowed = {	
-		tag = FIN
+		original_tag = FIN
 		has_dlc = "Arms Against Tyranny"
 	}
 
@@ -421,7 +412,7 @@ FIN_valtion_kivaaritehdas_organization = { #Infantry Equipment
 	}
 
 	override_trait = {
-		token = generic_mio_trait_anti_vechicle_land_mines
+		token = generic_mio_trait_anti_vehicle_land_mines
 
 		position = { x=0 y=2 }
 		relative_position_id = generic_mio_trait_vehicle_mounted_capabilities
@@ -500,7 +491,7 @@ FIN_valtion_tykkitehdas_organization = { #AT (Artillery)
 	include = generic_artillery_organization
 	icon = GFX_idea_FIN_valtion_tykkitehdas
 	allowed = {	
-		tag = FIN
+		original_tag = FIN
 		has_dlc = "Arms Against Tyranny"
 	}
 
@@ -576,7 +567,7 @@ FIN_sisu_auto_organization = { #Motorized
 	include = generic_motorized_mechanized_organization
 	icon = GFX_idea_FIN_sisu_auto
 	allowed = {	
-		tag = FIN
+		original_tag = FIN
 		has_dlc = "Arms Against Tyranny"
 	}
 
@@ -785,6 +776,25 @@ FIN_sisu_auto_organization = { #Motorized
 	}
 }
 
+FIN_lokomo_organization = {
+	name = "Lokomo"
+	include = generic_train_organization_r56_NSB
+	icon = GFX_idea_generic_railroads
+	allowed = {
+		original_tag = FIN
+	}
+
+	initial_trait = {
+		name = generic_train_organization_r56_NSB_initial_trait
+		limit_to_equipment_type = { train_equipment railway_gun_equipment }
+		production_bonus = {
+			production_cost_factor = -0.05
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+	}
+}
 
 
 
