@@ -16,7 +16,7 @@ country_event = {
 	option = { # Accept demands
 		name = baltic.1.a
 		ai_chance = {
-			base = 100
+			base = 10
 			modifier = { # Don't accept if in a faction that can protect them
 				factor = 0
 				OR = {
@@ -31,10 +31,16 @@ country_event = {
 					SOV = { surrender_progress > 0.5 }
 				}
 			}
-		}
 
+			modifier = { # estonian soviet treaty
+				add = 10
+				EST = {
+					has_completed_focus = EST_soviet_estonian_treaty
+				}
+			}
+		}
 		SOV = {
-			country_event = { days = 1 id = soviet.8 }
+			country_event = { days = 5 id = soviet.6 }
 		}
 		custom_effect_tooltip = GAME_OVER_TT
 	}
@@ -62,12 +68,12 @@ country_event = {
 		}
 
 		SOV = {
-			country_event = { days = 1 id = soviet.9 }
+			country_event = { days = 5 id = soviet.7 }
 			effect_tooltip = {
 				create_wargoal = {
 					type = annex_everything
 					target = EST
-				}
+				}	
 			}
 		}
 	}
@@ -85,7 +91,7 @@ country_event = {
 	option = { # Accept demands
 		name = baltic.1.a
 		ai_chance = {
-			base = 100
+			base = 10
 			modifier = { # Don't accept if in a faction that can protect them
 				factor = 0
 				OR = {
@@ -103,7 +109,7 @@ country_event = {
 		}
 
 		SOV = {
-			country_event = { days = 1 id = soviet.8 }
+			country_event = { days = 5 id = soviet.8 }
 		}
 	}
 	option = { # Refuse
@@ -130,7 +136,7 @@ country_event = {
 		}
 
 		SOV = {
-			country_event = { days = 1 id = soviet.9 }
+			country_event = { days = 5 id = soviet.9 }
 			effect_tooltip = {
 				create_wargoal = {
 					type = annex_everything
@@ -153,7 +159,7 @@ country_event = {
 	option = { # Accept demands
 		name = baltic.1.a
 		ai_chance = {
-			base = 100
+			base = 10
 			modifier = { # Don't accept if in a faction that can protect them
 				factor = 0
 				OR = {
@@ -171,7 +177,7 @@ country_event = {
 		}
 
 		SOV = {
-			country_event = { days = 1 id = soviet.10 }
+			country_event = { days = 5 id = soviet.10 }
 		}
 	}
 	option = { # Refuse
@@ -198,7 +204,7 @@ country_event = {
 		}
 
 		SOV = {
-			country_event = { days = 1 id = soviet.11 }
+			country_event = { days = 5 id = soviet.11 }
 			effect_tooltip = {
 				create_wargoal = {
 				type = annex_everything
@@ -221,7 +227,7 @@ country_event = {
 	option = { # Accept demands
 		name = baltic.4.a
 		ai_chance = { 
-			factor = 90
+			base = 90
 			modifier = {
 				factor = 0
 				NOT = {
@@ -261,7 +267,7 @@ country_event = {
 	option = { # Refuse
 		name = baltic.4.b		
 		ai_chance = { 
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
@@ -328,14 +334,9 @@ country_event = {
 
 	trigger = {
 		SOV = { has_government = communism }
-		NOT = { 
-			OR = {
-				has_country_flag = baltic.5_fired 
-				FIN = {
-					has_civil_war = no
-				}
-			}
-		}
+		NOT = { has_country_flag = baltic.5_fired }
+		has_war = no
+		always = no # Removed this event due to it causing issues with the Baltic Focus Tree. May re-enable at some point, or may just delete completely.
 		OR = {
 			tag = LIT
 			tag = FIN
@@ -353,7 +354,7 @@ country_event = {
 	option = { # Annexed by SOV
 		name = baltic.5.a
 		ai_chance = {
-			factor = 40
+			base = 40
 			modifier =  {
 				factor = 2
 				OR = {
@@ -371,7 +372,7 @@ country_event = {
 	}
 	option = { # Become Puppet state
 		name = baltic.5.b
-		ai_chance = { factor = 55
+		ai_chance = { base = 55
 			modifier = {
 				factor = 2
 				tag = FIN
@@ -384,25 +385,11 @@ country_event = {
 		trigger = {
 			is_puppet = no
 		}
-		ai_chance = { factor = 5 }
+		ai_chance = { base = 5 }
 	}
 
 	mean_time_to_happen = {
 		days = 2
-	}
-}
-
-# Hidden event to be annexed. Needed because of problem with FROM and events in annexed countries (JH)
-country_event = {
-	id = baltic.6
-
-	hidden = yes
-	
-	is_triggered_only = yes
-
-	immediate = {
-		news_event = { id = news.69 }
-		news_event = { id = news.71 hours = 1 }
 	}
 }
 
@@ -419,7 +406,7 @@ country_event = {
 	option = { #Enter alliance
 		name = baltic.7.a
 		ai_chance = {
-			factor = 90
+			base = 90
 		}
 		POL = {
 			add_to_faction = ROOT
@@ -437,7 +424,7 @@ country_event = {
 	option = {
 		name = baltic.7.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		effect_tooltip = {
 			POL = {
