@@ -1,4 +1,120 @@
 defined_text = {
+	name = GetMenIndustrializationTimer
+	text = {
+		trigger = {
+			has_country_flag = MEN_rapid_industrialization_timer
+		}
+		localization_key = MEN_rapid_industrialization_timer_tt
+	}	
+	text = {
+		localization_key = "120"
+	}	
+}
+defined_text = {
+	name = GetAmanullahVisitCairo
+	text = {
+		trigger = {
+			AFG = {
+				has_country_leader = {
+					character = AFG_amanullah_khan
+					ruling_only = yes
+				}
+			}
+			EGY = {
+				has_country_leader = {
+					character = EGY_farouk_i
+					ruling_only = yes
+				}
+			}
+		}
+		localization_key = GFX_report_event_AFG_amnullah_visits_cairo_farouk
+	}	
+	text = {
+		localization_key = GFX_report_event_AFG_amnullah_visits_cairo
+	}	
+}
+defined_text = {
+	name = GetAmanullahVisitRome
+	text = {
+		trigger = {
+			AFG = {
+				has_country_leader = {
+					character = AFG_amanullah_khan
+					ruling_only = yes
+				}
+			}
+			ITA = {
+				OR = {
+					OR = {
+						has_idea = vittorio_emanuele
+						has_idea = vittorio_emanuele_emperor_of_ethiopia
+						has_idea = vittorio_emanuele_albania_ethiopia
+						has_idea = vittorio_emanuele_king_of_albania
+					}
+					has_country_leader = {
+						character = ITA_vittorio_emanuele_iii
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		localization_key = GFX_report_event_AFG_amnullah_visits_rome_vittorio
+	}	
+	text = {
+		localization_key = GFX_report_event_AFG_amnullah_visits_rome
+	}	
+}
+defined_text = {
+	name = GetAmanullahVisitTurkey
+	text = {
+		trigger = {
+			AFG = {
+				has_country_leader = {
+					character = AFG_amanullah_khan
+					ruling_only = yes
+				}
+			}
+			TUR = {
+				OR = {
+					has_idea = TUR_mustafa_kemal_ataturk_figurehead
+					has_country_leader = {
+						character = TUR_mustafa_kemal_ataturk
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		localization_key = GFX_report_event_AFG_amnullah_visits_turkey
+	}	
+	text = {
+		localization_key = GFX_report_event_AFG_amnullah_khan
+	}	
+}
+defined_text = {
+	name = GetRajAdjective
+	text = {
+		trigger = {
+			RAJ = {
+				OR = {
+					is_subject_of = ENG
+					AND = {
+						exists = no
+						ENG = {
+							any_owned_state = {
+								is_core_of = RAJ
+							}
+						}
+					}
+				}
+			}
+		}
+		localization_key = ENG_ADJ
+	}	
+	text = {
+		localization_key = RAJ_ADJ
+	}	
+}
+defined_text = {
 	name = GetHUNdemandthecoastline
 	text = {
 		trigger = {
@@ -21,25 +137,25 @@ defined_text = {
 }
 defined_text = {
 	name = PAK_indian_support
-	text = {
-		trigger = {
-			RAJ = { has_country_flag = very_sympathetic }
-		}
-		localization_key = pak_very_sympathetic
-	}
-	text = {
-		trigger = {
-			RAJ = { has_country_flag = sympathetic }
-		}
-		localization_key = pak_sympathetic
-	}
-	text = {
-		trigger = {
-			RAJ = { has_country_flag = opposed }
-		}
-		localization_key = pak_opposed
-	}
-	
+	#text = {					#those flags are not defined, so disabled them for now			- Fantom
+	#	trigger = {
+	#		RAJ = { has_country_flag = very_sympathetic }
+	#	}
+	#	localization_key = pak_very_sympathetic
+	#}
+	#text = {
+	#	trigger = {
+	#		RAJ = { has_country_flag = sympathetic }
+	#	}
+	#	localization_key = pak_sympathetic
+	#}
+	#text = {
+	#	trigger = {
+	#		RAJ = { has_country_flag = opposed }
+	#	}
+	#	localization_key = pak_opposed
+	#}
+	#
 	text = { 
 		localization_key = pak_neutral
 	}
@@ -351,6 +467,12 @@ defined_text = {
 		}
 		localization_key = "Digvijaysinhji Ranjitsinhji"
 	}
+	text = {
+		trigger = {
+			state = 1013
+		}
+		localization_key = "Tashi Namgyai"
+	}
 }
 defined_text = {
 	name = GetOperationName
@@ -368,7 +490,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			state = 425 
+			state = 442
 		}
 		localization_key = "Operation Tiger"
 	}
@@ -395,6 +517,12 @@ defined_text = {
 			state = 428 
 		}
 		localization_key = "Operation Vatodara"
+	}
+	text = {
+		trigger = {
+			state = 1013 
+		}
+		localization_key = "Operation Tulku"
 	}
 	text = { 
 		localization_key = princely_state_policing_action_default
@@ -460,7 +588,7 @@ defined_text = {
 	text = {
 		trigger = {
 			ENG = { 
-				has_country_leader = { name = "Lord Edward Halifax" ruling_only = yes }				
+				has_country_leader = { character = ENG_lord_edward_halifax ruling_only = yes }				
 			}
 		}
 		localization_key = GFX_news_event_ENG_lord_halifax
@@ -468,10 +596,65 @@ defined_text = {
 	text = {
 		trigger = {
 			ENG = { 
-				has_country_leader = { name = "Winston Churchill" ruling_only = yes }				
+				has_country_leader = { character = ENG_winston_churchill ruling_only = yes }				
 			}
 		}
 		localization_key = GFX_news_event_eng_churchill_sign_treaty
+	}						
+	text = {
+		trigger = {
+			ENG = { 
+				has_country_leader = { character = ENG_clement_attlee ruling_only = yes }				
+			}
+		}
+		localization_key = GFX_news_event_ENG_clement_attlee
+	}
+
+	text = {
+		localization_key = GFX_news_event_generic_sign_treaty2
+	}
+}
+defined_text = {
+	name = GetBritishPMElectionImage
+	text = {
+		trigger = {
+			ENG = { 
+				has_country_leader = { character = ENG_stanley_baldwin ruling_only = yes }				
+			}
+		}
+		localization_key = GFX_news_event_ENG_stanley_baldwin
+	}
+	text = {
+		trigger = {
+			ENG = { 
+				has_country_leader = { character = ENG_neville_chamberlain ruling_only = yes }				
+			}
+		}
+		localization_key = GFX_news_event_ENG_neville_chamberlain
+	}	
+	text = {
+		trigger = {
+			ENG = { 
+				has_country_leader = { character = ENG_lord_edward_halifax ruling_only = yes }				
+			}
+		}
+		localization_key = GFX_news_event_ENG_lord_halifax
+	}						
+	text = {
+		trigger = {
+			ENG = { 
+				has_country_leader = { character = ENG_winston_churchill ruling_only = yes }				
+			}
+		}
+		localization_key = GFX_news_event_ENG_winston_churchill
+	}						
+	text = {
+		trigger = {
+			ENG = { 
+				has_country_leader = { character = ENG_clement_attlee ruling_only = yes }				
+			}
+		}
+		localization_key = GFX_news_event_ENG_clement_attlee
 	}
 
 	text = {
@@ -483,7 +666,7 @@ defined_text = {
 	text = {
 		trigger = {
 			USA = {
-				has_country_leader = { name = "Franklin Delano Roosevelt" ruling_only = yes }
+				has_country_leader = { character = USA_franklin_delano_roosevelt ruling_only = yes }
 			}
 		}
 		localization_key = GFX_news_event_generic_usa_treaty
@@ -491,7 +674,7 @@ defined_text = {
 	text = {
 		trigger = {
 			USA = {
-				has_country_leader = { name = "Alf Landon" ruling_only = yes }
+				has_country_leader = { character = USA_alf_landon ruling_only = yes }
 			}
 		}
 		localization_key = GFX_news_event_usa_alf_landon
@@ -499,7 +682,7 @@ defined_text = {
 	text = {
 		trigger = {
 			USA = {
-				has_country_leader = { name = "Wendell Willkie" ruling_only = yes }
+				has_country_leader = { character = USA_wendell_willkie ruling_only = yes }
 			}
 		}
 		localization_key = GFX_news_event_usa_wendell_willkie
@@ -548,7 +731,7 @@ defined_text = {
 		trigger = {
 			USA = {
 				has_country_leader = {
-					character = "Earl Browder"
+					character = USA_earl_browder
 					ruling_only = yes
 				}
 			}
@@ -566,7 +749,7 @@ defined_text = {
 	text = {
 		trigger = {
 			FROM = {
-				has_country_leader = { name = "Charles Lindbergh" ruling_only = yes }
+				has_country_leader = { character = USA_charles_lindbergh ruling_only = yes }
 			}
 		}
 		localization_key = GFX_news_event_usa_charles_lindbergh
@@ -613,7 +796,7 @@ defined_text = {
 	text = {
 		trigger = {
 			POL = {
-				has_country_leader = { name = "Friedrich Christian" ruling_only = yes }
+				has_country_leader = { character = POL_friedrich_christian ruling_only = yes }
 			}
 		}
 		localization_key = GFX_news_event_generic_parliament
@@ -697,19 +880,26 @@ defined_text = {
 	name = GetCommonwealthIndependenceImage
 	text = {
 		trigger = {
-			original_tag = CAN
+			FROM = {
+				original_tag = CAN
+			}			
+			
 		}
 		localization_key = GFX_news_event_CAN_independence
 	}
 	text = {
 		trigger = {
-			original_tag = RAJ
+			FROM = {
+				original_tag = RAJ
+			}					
 		}
 		localization_key = GFX_news_event_indian_independence2
 	}
 	text = {
 		trigger = {
-			original_tag = AST
+			FROM = {
+				original_tag = SAF
+			}					
 		}
 		localization_key = GFX_news_event_saf_coup
 	}
@@ -801,7 +991,7 @@ defined_text = {
 		trigger = {
 			64 = { is_controlled_by = USA }
 		}
-		localization_key = GFX_news_event_ENG_fall_of_berlin
+		localization_key = GFX_news_event_USA_fall_of_berlin
 	}
 	text = {
 		trigger = {
@@ -973,12 +1163,151 @@ defined_text = {
 	name = GetCapitulationImage		
 	text = {
 		trigger = {
+			ROOT = {
+				original_tag = AFG
+			}			
+		}
+		localization_key = GFX_news_event_AFG_capitulation
+	}
+	text = {
+		trigger = { # WW1 French Indochinese soldiers in Albania
+			ROOT = {
+				OR = {
+					original_tag = ALB
+					original_tag = BOS
+					original_tag = MCD
+					original_tag = KSV
+				}
+						
+			}
+			FROM.FROM = {
+				OR = {
+					original_tag = VIN
+					original_tag = LAO
+					original_tag = CAM
+					original_tag = FRI
+					original_tag = BRM
+					original_tag = SIA
+				}
+			}
+		}
+		localization_key = GFX_news_event_ALB_capitulation_VIN
+	}
+	text = {
+		trigger = { # Albania
+			ROOT = {
+				OR = {
+					original_tag = ALB
+					original_tag = BOS
+					original_tag = MCD
+					original_tag = KSV
+				}
+						
+			}
+			FROM.FROM = {
+				OR = {
+					original_tag = FRA
+					original_tag = OCC
+					original_tag = BEL
+					original_tag = YUG
+					original_tag = BOS
+					original_tag = SER
+				}
+			}
+		}
+		localization_key = GFX_news_event_016
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = ALB							
+			}
+			FROM.FROM = {
+				original_tag = ITA
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		localization_key = GFX_news_event_008
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = AUS							
+			}
+			FROM.FROM = {
+				original_tag = ENG	
+			}
+		}
+		localization_key = GFX_news_event_AUS_capitulation_ENG
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = AUS							
+			}
+			FROM.FROM = {
+				original_tag = SOV	
+			}
+		}
+		localization_key = GFX_news_event_AUS_capitulation_SOV
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = AUS							
+			}
+			FROM.FROM = {
+				original_tag = USA	
+			}
+		}
+		localization_key = GFX_news_event_AUS_capitulation_USA
+	}
+
+	text = {
+		trigger = {
 			Root = {
-				original_tag = AUS
+				OR = {
+					original_tag = AUS
+					original_tag = SWI #somewhat relevant
+					original_tag = LIE #somewhat relevant
+				}
 			}
 		}
 		localization_key = GFX_news_event_AUS_capitulation
 	}	
+	text = {
+		trigger = {
+			ROOT = {
+				OR = {
+					original_tag = BEL
+					original_tag = FLA
+				}							
+			}
+			FROM.FROM = {
+				original_tag = SPR # together should ensure that it's carlist Spain
+				has_government = neutrality
+				has_completed_focus = SPA_supremacy_of_the_communion
+				
+			}
+		}
+		localization_key = GFX_news_event_BEL_rexist_military_parade # actually parade of the Walloon legion coming back to Brussels in 1944, but they did use crosses of St Andreas, like the Carlists.
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				OR = {
+					original_tag = BEL
+					original_tag = WLL
+				}					
+			}
+			FROM.FROM = {
+				original_tag = USA	
+			}
+		}
+		localization_key = GFX_news_event_BEL_capitulation_USA
+	}
 	text = {
 		trigger = {
 			Root = {
@@ -990,7 +1319,7 @@ defined_text = {
 				
 			}
 		}
-		localization_key = GFX_news_event_BEL_capitulation
+		localization_key = GFX_news_event_BEL_capitulation # actually French soldiers surrendering in Lille, so should be changed (dated 23 of August 2023)
 	}
 	text = {
 		trigger = {
@@ -1037,6 +1366,29 @@ defined_text = {
 			ROOT = {
 				original_tag = CZE							
 			}
+			FROM.FROM = {
+				original_tag = SOV	
+			}
+		}
+		localization_key = GFX_news_event_CZE_capitulation_SOV
+	}
+
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = CZE							
+			}
+			FROM.FROM = {
+				original_tag = USA
+			}
+		}
+		localization_key = GFX_news_event_CZE_capitulation_USA
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = CZE							
+			}
 		}
 		localization_key = GFX_news_event_CZE_capitulation
 	}			
@@ -1061,68 +1413,75 @@ defined_text = {
 	text = {
 		trigger = {
 			ROOT = {
+				original_tag = DNZ							
+			}
+		}
+		localization_key = GFX_news_event_DNZ_danzig_city
+	}	
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = ENG			
+			}
+			FROM.FROM = {
+				OR = {
+					original_tag = AST
+					original_tag = NZL
+				}
+			}			
+		}
+		localization_key = GFX_news_event_ENG_capitulation_AST
+	}
+	text = {
+		trigger = {
+			ROOT = {
 				original_tag = ENG			
 			}
 			FROM.FROM = {
 				OR = {
 					original_tag = CAN
-					original_tag = AST
-					original_tag = NZL
 					original_tag = SAF
 				}
 			}			
 		}
 		localization_key = GFX_news_event_ENG_capitulation_commonwealth
 	}
+
 	text = {
 		trigger = {
 			ROOT = {
-				original_tag = INS
-				OR = {
-					is_puppet_of = AST
-					is_puppet_of = ENG
-					is_puppet_of = NZL
-					is_puppet_of = GER
-					is_puppet_of = HOL
-					is_puppet_of = BEL
-					is_puppet_of = LUX
-				}		
+				original_tag = EST							
 			}
 			FROM.FROM = {
-				OR = {
-					original_tag = JAP
-					original_tag = KOR
-					original_tag = MEN
-					original_tag = MAN
-				}
+				original_tag = SOV	
+				has_government = communism
 			}
 		}
-		localization_key = GFX_news_event_JAP_european_treaty
-	}	
-	text = {
-		trigger = {
-			ROOT = {
-				original_tag = JAP	
-			}
-			FROM.FROM = {
-				OR = {
-					original_tag = ENG
-					AND = {
-						is_puppet_of = ENG
-						OR = {
-							original_tag = AST
-							original_tag = NZL
-							original_tag = CAN
-							original_tag = SCO
-							original_tag = NIR
-							original_tag = SAF
-						}
-					}
-				}
-			}
-		}
-		localization_key = GFX_news_event_JAP_capitulation_ENG
+		localization_key = GFX_news_event_EST_capitulation_SOV
 	}
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = FRI	
+				NOT = {
+					has_government = communism
+				}		
+			}			
+		}
+		localization_key = GFX_news_event_FRI_capitulation
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = FIN							
+			}
+			FROM.FROM = {
+				original_tag = SOV
+			}
+		}
+		localization_key = GFX_news_event_FIN_capitulation_SOV
+	}	
+
 
 	text = {
 		trigger = {
@@ -1193,7 +1552,17 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_FRA_capitulation_india
 	}	
-		
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = FRA			
+			}
+			FROM.FROM = {
+				original_tag = GER
+			}
+		}
+		localization_key = GFX_news_event_FRA_rethondes_armistice
+	}			
 	text = {
 		trigger = {
 			ROOT = {
@@ -1219,7 +1588,54 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_GER_capitulation_soviet
-	}		
+	}	
+	text = { 
+		trigger = {
+			ROOT = {
+				OR = {
+					original_tag = GER	
+					original_tag = PRE
+					original_tag = BAY
+					has_cosmetic_tag = GER_REUNITED					
+				}
+			}
+			FROM.FROM = {
+				original_tag = NOR
+			}		
+		}
+		localization_key = GFX_news_event_GER_capitulation_NOR
+	}	
+	#text = {			#not defined
+	#	trigger = {
+	#		ROOT = {
+	#			OR = {
+	#				original_tag = GER	
+	#				original_tag = PRE
+	#				original_tag = BAY
+	#				has_cosmetic_tag = GER_REUNITED					
+	#			}
+	#						
+	#		}
+	#		FROM.FROM = {
+	#			OR = {
+	#				original_tag = ETH
+	#				original_tag = MLI
+	#				original_tag = NGA
+	#				original_tag = TZN
+	#				original_tag = COG
+	#				original_tag = AFA
+	#				original_tag = TOG
+	#				original_tag = SEN
+	#				original_tag = VOL
+	#				original_tag = GAB
+	#				original_tag = MZB
+	#				original_tag = ANG
+	#			}
+	#			
+	#		}
+	#	}
+	#	localization_key = GFX_news_event_GER_capitulation_ETH
+	#}		
 	text = {
 		trigger = {
 			ROOT = {
@@ -1284,6 +1700,23 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_HOL_capitulation
 	}	
+
+	
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = HUN
+				has_country_leader = { character = HUN_miklos_horthy ruling_only = yes }							
+			}
+			FROM.FROM = {
+				OR = {
+					original_tag = USA
+					original_tag = CSA
+				}
+			}
+		}
+		localization_key = GFX_news_event_HUN_join_faction_america
+	}
 	text = {
 		trigger = {
 			ROOT = {
@@ -1292,6 +1725,31 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_HUN_capitulation
 	}		
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = INS
+				OR = {
+					is_puppet_of = AST
+					is_puppet_of = ENG
+					is_puppet_of = NZL
+					is_puppet_of = GER
+					is_puppet_of = HOL
+					is_puppet_of = BEL
+					is_puppet_of = LUX
+				}		
+			}
+			FROM.FROM = {
+				OR = {
+					original_tag = JAP
+					original_tag = KOR
+					original_tag = MEN
+					original_tag = MAN
+				}
+			}
+		}
+		localization_key = GFX_news_event_JAP_european_treaty
+	}	
 	text = {
 		trigger = {
 			ROOT = {
@@ -1350,8 +1808,74 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_IRQ_capitulation
 	}	
+
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = JAP	
+			}
+			FROM.FROM = {
+				OR = {
+					original_tag = ENG
+					AND = {
+						is_puppet_of = ENG
+						OR = {
+							original_tag = NZL
+							original_tag = CAN
+							original_tag = SCO
+							original_tag = NIR
+							original_tag = SAF
+						}
+					}
+				}
+			}
+		}
+		localization_key = GFX_news_event_JAP_capitulation_ENG
+	}
+
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = JAP	
+			}
+			FROM.FROM = {
+				original_tag = AST
+			}
+		}
+		localization_key = GFX_news_event_ast_transfer_singapore
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = JAP			
+			}
+			FROM.FROM = {
+				OR = {
+					original_tag = MAN	
+					original_tag = XSM
+					original_tag = CHI
+					original_tag = TNG
+					original_tag = SHX
+					original_tag = XSM
+					original_tag = YUN				
+				}
+				
+			}
+		}
+		localization_key = GFX_news_event_JAP_capitulation_CHI
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = JAP							
+			}
+			FROM.FROM = {
+				original_tag = SOV
+			}
+		}
+		localization_key = GFX_news_event_JAP_capitulation_SOV
+	}		
 		
-			
 	text = {
 		trigger = {
 			ROOT = {
@@ -1363,11 +1887,78 @@ defined_text = {
 	text = {
 		trigger = {
 			ROOT = {
+				original_tag = LAT							
+			}
+			FROM.FROM = {
+				original_tag = SOV
+			}
+		}
+		localization_key = GFX_news_event_LAT_capitulation_SOV
+	}	
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = LIT			
+			}
+			FROM.FROM = {
+				original_tag = SOV
+			}
+		}
+		localization_key = GFX_news_event_LIT_capitulation_SOV
+	}	
+	text = {
+		trigger = {
+			ROOT = {
 				original_tag = LUX				
 			}
 		}
 		localization_key = GFX_news_event_LUX_capitulation
-	}		
+	}	
+	text = {
+		trigger = {
+			ROOT = {
+				OR = {
+					original_tag = MAN	
+					original_tag = XSM
+					original_tag = CHI
+					original_tag = TNG
+					original_tag = SHX
+					original_tag = XSM
+					original_tag = YUN				
+				}
+							
+			}
+			FROM.FROM = {
+				OR = {
+					original_tag = SOV
+					original_tag = BLR
+					original_tag = UKR
+					original_tag = VLA
+					original_tag = ARM
+					original_tag = GEO
+				}
+				
+			}
+		}
+		localization_key = GFX_news_event_MAN_capitulation_SOV
+	}	
+
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = NOR
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+			}
+			FROM.FROM = {
+				original_tag = SOV
+			}
+		}
+		localization_key = GFX_news_event_NOR_capitulation_SOV
+	}	
+
 	text = {
 		trigger = {
 			ROOT = {
@@ -1387,6 +1978,17 @@ defined_text = {
 	text = {
 		trigger = {
 			ROOT = {
+				original_tag = RAJ				
+			}
+            FROM.FROM = {
+				original_tag = PAK
+            }			
+		}
+		localization_key = GFX_news_event_indian_parade
+	}	
+	text = {
+		trigger = {
+			ROOT = {
 				OR = {
 					original_tag = RAJ	
 					original_tag = HYD
@@ -1397,6 +1999,86 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_RAJ_capitulation
+	}	
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = ROM				
+			}
+            FROM.FROM = {
+				OR = {
+					original_tag = SOV
+					original_tag = UKR
+					original_tag = BLR
+				}
+            }			
+		}
+		localization_key = GFX_news_event_ROM_capitulation_SOV
+	}	
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = ROM				
+			}
+            FROM.FROM = {
+				OR = {
+					original_tag = SOV
+					original_tag = UKR
+					original_tag = BLR
+				}
+            }			
+		}
+		localization_key = GFX_news_event_ROM_capitulation_SOV
+	}	
+	text = {
+        trigger = {
+            ROOT = {
+                original_tag = ROM
+            }
+            FROM.FROM = {
+                OR = {
+                    original_tag = HUN
+                    has_cosmetic_tag = HUN_EMPIRE
+                }
+            }
+        }
+        localization_key = GFX_news_event_HUN_hungary_occupies_area
+    }
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = SAF							
+			}
+			FROM.FROM = {
+				OR = {
+					original_tag = GER	
+					original_tag = PRE
+					original_tag = BAY
+					original_tag = HAN
+					original_tag = WUR
+					has_cosmetic_tag = GER_REUNITED
+				}	
+			}
+		}
+		localization_key = GFX_news_event_SAF_capitulation_GER
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				OR = {
+					original_tag = SOV
+					original_tag = UKR
+					original_tag = BLR
+				}			
+			}
+            FROM.FROM = {
+				OR = {
+					original_tag = ROM
+					original_tag = MOL
+				}
+            }			
+		}
+		localization_key = GFX_news_event_SOV_capitulation_ROM
 	}		
 	text = {
 		trigger = {
@@ -1464,6 +2146,20 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_033
 	}	
+
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = SWE
+			}
+			FROM.FROM = {
+				original_tag = SOV
+				has_government = communism
+			}
+		}
+		localization_key = GFX_news_event_SWE_capitulation_SOV
+	}
+
 	text = {
 		trigger = {
 			ROOT = {
@@ -1480,7 +2176,7 @@ defined_text = {
 					original_tag = USA				
 				}
 				FROM.FROM = {
-					has_country_leader = { name = "Iosif Stalin" ruling_only = yes }
+					has_country_leader = { character = SOV_iosif_stalin ruling_only = yes }
 				}
 			}				
 		}
@@ -1520,8 +2216,7 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_USA_capitulation_japan
-	}
-			
+	}	
 	text = {
 		trigger = {
 			ROOT = {
@@ -1550,6 +2245,17 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_YUG_capitulation_italy
 	}	
+	text = {
+		trigger = {
+			ROOT = {
+				original_tag = YUG
+			}
+			FROM.FROM = {
+				original_tag = SOV
+			}
+		}
+		localization_key = GFX_news_event_YUG_capitulation_SOV
+	}
 	text = {
 		trigger = {
 			ROOT = {
@@ -1611,46 +2317,75 @@ defined_text = {
 	text = {
 		trigger = {
 			ROOT = { #more specific African pics before this one
-				capital_scope = {
-					is_on_continent = africa
-					is_core_of = ROOT
-				}
-				NOT = { #you never know these days
-					OR = {
-						original_tag = IRQ
-						original_tag = SAU
-						original_tag = YEM
-						original_tag = OMA
-						original_tag = EGY
-						original_tag = LBA
-						original_tag = JOR
-						original_tag = PAL
-						original_tag = LEB
-						original_tag = SYR
-						original_tag = KUW
-						original_tag = UAE
-						original_tag = QAT
-						original_tag = TUN
-						original_tag = ALG
-						original_tag = MOR
-						original_tag = ADU
-												
-						#####
-						original_tag = FRA
-						original_tag = HOL
-						original_tag = ENG
-						original_tag = ITA
-						AND = {
-							original_tag = SAF
-							OR = {
-								has_government = fascism
-								has_government = democratic
-								has_government = neutrality
-							}
-						}						
-					}
+			
+				OR = {
+					original_tag = GNB #portuguese change if possile
+					original_tag = ANG
+					original_tag = MZB
+
+					original_tag = BRD #Belgian
+					original_tag = COG
+					original_tag = RWA
 					
+
+					original_tag = TOG
+					original_tag = SEN
+					original_tag = GAB
+					original_tag = GNA
+
+					original_tag = CAR
+
+
+					original_tag = MLI
+					original_tag = CHA
+					original_tag = CMR
+					original_tag = RCG
+					original_tag = VOL
+					original_tag = IVO
+
 				}
+				
+						
+			#	capital_scope = {
+			#		is_on_continent = africa
+			#		is_core_of = ROOT
+			#	}
+			#	NOT = { #you never know these days
+			#		OR = {
+			#			original_tag = IRQ
+			#			original_tag = SAU
+			#			original_tag = YEM
+			#			original_tag = OMA
+			#			original_tag = EGY
+			#			original_tag = LBA
+			#			original_tag = JOR
+			#			original_tag = PAL
+			#			original_tag = LEB
+			#			original_tag = SYR
+			#			original_tag = KUW
+			#			original_tag = UAE
+			#			original_tag = QAT
+			#			original_tag = TUN
+			#			original_tag = ALG
+			#			original_tag = MOR
+			#			original_tag = ADU
+			#									
+			#			#####
+			#			original_tag = FRA
+			#			original_tag = HOL
+			#			original_tag = ENG
+			#			original_tag = ITA
+			#			AND = {
+			#				original_tag = SAF
+			#				OR = {
+			#					has_government = fascism
+			#					has_government = democratic
+			#					has_government = neutrality
+			#				}
+			#			}						
+			#		}
+			#		
+			#	}
 			}
 		}
 		localization_key = GFX_news_event_african_capitulation #british colonial troops desirable
@@ -1665,6 +2400,81 @@ defined_text = {
 	text = {
 		trigger = {
 			FROM = {
+				original_tag = AFG
+			}
+		}
+		localization_key = GFX_news_event_AFG_create_faction
+	}	
+	text = {
+		trigger = {
+			AFG = {
+				OR = {
+					has_country_leader = {
+						character = AFG_mohammed_zahir_shah
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = AFG_hashim_khan
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = AFG_sardar_shah_mahmud_khan
+						ruling_only = yes
+					}
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = AFG
+					original_tag = FRA
+				}				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = AFG
+					original_tag = FRA
+				}				
+			}
+		}
+		localization_key = GFX_news_event_AFG_join_faction_FRA
+	}
+	text = {
+		trigger = {
+			OR = {
+				FROM = {
+					original_tag = SOV
+					has_government = communism
+					is_in_faction_with = AFG
+				}
+				FROM = {
+					original_tag = AFG
+					has_government = communism
+					is_in_faction_with = SOV
+				}
+			}
+		}
+		localization_key = GFX_news_event_AFG_join_faction_SOV
+	}
+	text = {
+		trigger = {
+			OR = {
+				FROM = {
+					original_tag = YUG
+					is_in_faction_with = AFG
+				}
+				FROM = {
+					original_tag = AFG
+					is_in_faction_with = YUG
+				}
+			}
+		}
+		localization_key = GFX_news_event_AFG_join_faction_YUG
+	}	
+	text = {
+		trigger = {
+			FROM = {
 				has_country_leader = { 
 					character = USA_franklin_delano_roosevelt
 					ruling_only = yes
@@ -1676,10 +2486,18 @@ defined_text = {
 	text = {
 		trigger = {
 			FROM = {
-				has_country_leader = { name = "Alf Landon" ruling_only = yes }
+				has_country_leader = { character = USA_alf_landon ruling_only = yes }
 			}
 		}
 		localization_key = GFX_news_event_usa_alf_landon
+	}
+	text = {
+		trigger = {
+			FROM = {
+				has_country_leader = { character = USA_wendell_willkie ruling_only = yes }
+			}
+		}
+		localization_key = GFX_news_event_usa_wendell_willkie
 	}
 	text = {
 		trigger = {
@@ -1692,19 +2510,18 @@ defined_text = {
 	text = {
 		trigger = {
 			FROM = {
-				has_country_leader = { name = "Charles Lindbergh" ruling_only = yes }
+				has_country_leader = { name = "Wallis I" ruling_only = yes }
 			}
 		}
-		localization_key = GFX_news_event_usa_charles_lindbergh
-	}
-	
+		localization_key = GFX_news_event_usa_wallis_simpson
+	}		
 	text = {
 		trigger = {
 			FROM = {
-				has_country_leader = { name = "Wendell Willkie" ruling_only = yes }
+				has_country_leader = { character = USA_charles_lindbergh ruling_only = yes }
 			}
 		}
-		localization_key = GFX_news_event_usa_wendell_willkie
+		localization_key = GFX_news_event_usa_charles_lindbergh
 	}	
 	
 	text = {
@@ -1725,7 +2542,7 @@ defined_text = {
 					original_tag = USA
 					original_tag = USB
 				}
-				has_country_leader = { name = "Douglas MacArthur" ruling_only = yes }
+				has_country_leader = { character = USA_douglas_macarthur ruling_only = yes }
 				
 				has_government = democratic
 				
@@ -1742,7 +2559,7 @@ defined_text = {
 					original_tag = USA
 					original_tag = USB
 				}
-				has_country_leader = { name = "Douglas MacArthur" ruling_only = yes }
+				has_country_leader = { character = USA_douglas_macarthur ruling_only = yes }
 				NOT = {
 					has_government = democratic
 				}
@@ -1791,16 +2608,71 @@ defined_text = {
 		trigger = {
 			FROM = {
 				original_tag = MAN
-				OR = {
+				NOT = {
 					has_country_leader = { character = MAN_puyi ruling_only = yes }
-					has_country_leader = { character = MAN_puyi_tfv ruling_only = yes }
-					has_idea = puyi_constitutional
 				}
-				
+			}
+		}
+		localization_key = GFX_news_event_MAN_diplomats_axis
+	}
+	text = {
+		trigger = {
+			FROM = {
+				original_tag = MAN
+				has_country_leader = { character = MAN_puyi ruling_only = yes }
 			}
 		}
 		localization_key = GFX_news_event_MAN_puyi_saluting
 	}		
+	text = {
+		trigger = {
+			FROM = {
+				AND = {
+					original_tag = BEL
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+		}		
+		localization_key = GFX_news_event_BEL_monarchist_parade
+	}	
+	text = {
+		trigger = {
+			FROM = {
+				AND = {
+					original_tag = HOL
+					NOT = {
+						has_government = communism
+					}
+					OR = {
+						has_idea = HOL_wilhelmina
+						has_country_leader = { character = HOL_wilhelmina ruling_only = yes }
+					}
+				}
+			}
+		}		
+		localization_key = GFX_news_event_HOL_wilhelmina_1
+	}	
+	text = {
+		trigger = {
+			FROM = {
+				AND = {
+					original_tag = NEP
+					has_country_leader = { character = NEP_juddha_rana ruling_only = yes }
+				}
+			}
+		}
+		localization_key = GFX_news_event_NEP_juddha_rana_join_faction
+	}	
+	text = {
+		trigger = {
+			FROM = {
+				original_tag = POL
+			}
+		}
+		localization_key = GFX_news_event_021
+	}			
 	text = {
 		trigger = {
 			FROM = {
@@ -1809,7 +2681,38 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_clowns
-	}	
+	}
+	text = {
+		trigger = {
+			OR = {
+				FROM = {
+					original_tag = SOV
+					is_in_faction_with = CAN
+				}
+				FROM = {
+					original_tag = CAN
+					is_in_faction_with = SOV
+				}
+			}
+		}
+		localization_key = GFX_news_event_CAN_join_faction_SOV
+	}
+	text = {
+		trigger = {
+			FROM = {
+				AND = {
+					original_tag = CHI
+					has_country_leader = { 
+						character = CHI_chiang_kai_shek
+						ruling_only = yes
+					}
+				}
+			}
+		}		
+		localization_key = GFX_news_event_CHI_chiang_review_troops2
+	}		
+	
+
 	text = {
 		trigger = { #more specific North American pics before this one
 			FROM = {
@@ -1825,7 +2728,7 @@ defined_text = {
 		localization_key = GFX_news_event_north_american_diplomats_communism
 	}
 	text = {
-		trigger = { #more specific South American pics before this one
+		trigger = { #more specific european pics before this one
 			FROM = {
 				capital_scope = {
 					is_on_continent = europe	
@@ -1836,16 +2739,27 @@ defined_text = {
 		localization_key = GFX_news_event_generic_communism
 	}		
 	
+
 	text = {
-		trigger = { #more specific South American pics before this one
+		trigger = {
 			FROM = {
-				capital_scope = {
-					is_on_continent = south_america
+				original_tag = JAP
+			}
+		}
+		localization_key = GFX_news_event_japanese_parade
+	}	
+	text = {
+		trigger = { #more specific Afrrican pics before this one
+			FROM = {
+				original_tag = ETH
+				has_country_leader = { 
+					character = ETH_haile_selassie
+					ruling_only = yes
 				}
 			}
 		}
-		localization_key = GFX_news_event_south_american_diplomats
-	}	
+		localization_key = GFX_news_event_ETH_selassie_league_of_nations
+	}			
 	text = {
 		trigger = {
 			FROM = { #more specific African pics before this one
@@ -1894,7 +2808,7 @@ defined_text = {
 							original_tag = COG
 							OR = {
 								has_government = fascism
-								has_country_leader = { name = "Pierre Ryckmans" ruling_only = yes }
+								has_country_leader = { character = COG_pierre_ryckmans ruling_only = yes }
 							}
 						}
 						AND = {
@@ -1949,7 +2863,7 @@ defined_text = {
 					original_tag = BRM
 					original_tag = SWK
 					original_tag = CAM
-					original_tag = VIE
+					original_tag = VIN
 					original_tag = LAO
 					original_tag = PHI
 				}
@@ -1964,17 +2878,202 @@ defined_text = {
 }
 defined_text = {
 		
-		
 	name = GetEthnicGenericAllianceInvitationImage
 
+	text = {
+		trigger = {
+			AFG = {
+				OR = {
+					has_country_leader = {
+						character = AFG_mohammed_zahir_shah
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = AFG_hashim_khan
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = AFG_sardar_shah_mahmud_khan
+						ruling_only = yes
+					}
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = AFG
+					original_tag = FRA
+				}				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = AFG
+					original_tag = FRA
+				}				
+			}
+		}
+		localization_key = GFX_news_event_AFG_join_faction_FRA
+	}
+	text = {
+		trigger = {
+			SOV = {
+				has_government = communism
+			}
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = AFG
+					original_tag = SOV
+				}				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = AFG
+					original_tag = SOV
+				}				
+			}
+		}
+		localization_key = GFX_news_event_AFG_join_faction_SOV
+	}
+
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					AND = {
+						original_tag = BEL
+						has_country_leader = { 
+							character = BEL_leon_degrelle
+							ruling_only = yes
+						}
+					}
+					original_tag = GER
+				}
+				has_government = fascism
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					AND = {
+						original_tag = BEL
+						has_country_leader = { 
+							character = BEL_leon_degrelle
+							ruling_only = yes
+						}
+					}
+					original_tag = GER
+				}
+				has_government = fascism
+			}
+		}
+		localization_key = GFX_news_event_BEL_rexist_military_parade
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = AFG
+					original_tag = YUG
+				}				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = AFG
+					original_tag = YUG
+				}				
+			}
+		}
+		localization_key = GFX_news_event_AFG_join_faction_YUG
+	}	
+
+	text = { #Cuba joins the USSR, but it's a red alert Joke
+		trigger = { 
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+	
+				original_tag = CUB
+
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				original_tag = SOV
+				has_government = communism
+			}
+		}
+		localization_key = GFX_news_event_CUB_join_faction_USSR_red_alert
+	}
+
+	text = { #Brazil joins the USSR
+		trigger = { 
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+	
+				original_tag = BRA
+
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				original_tag = SOV
+				OR = {
+					has_government = communism
+					has_government = democratic
+				}
+				
+			}
+		}
+		localization_key = GFX_news_event_BRA_join_faction_ussr
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = SOV
+					original_tag = CAN
+				}				
+				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = SOV
+					original_tag = CAN
+				}				
+			}
+		}
+		localization_key = GFX_news_event_CAN_join_faction_SOV
+	}	
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = FRA
+					original_tag = BRA
+				}				
+				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = FRA
+					original_tag = BRA
+				}				
+			}
+		}
+		localization_key = GFX_news_event_BRA_join_faction_france
+	}	
+	
 	text = { #spanish speaking country joins Russia - USSR
 		trigger = { 
 			any_country = {
 				has_country_flag = alliance_applicant@ROOT
 				OR = {
-					capital_scope = {
-						is_on_continent = south_america
-					}
 					original_tag = MEX
 					original_tag = SPR #original pic from Spain
 					original_tag = DOM
@@ -1985,16 +3084,13 @@ defined_text = {
 					original_tag = NIC
 					original_tag = COS
 					original_tag = BLZ
-				}
-				
-				NOT = { #you never know these days
-					OR = {
-						original_tag = FRA
-						original_tag = HOL
-						original_tag = ENG
-						original_tag = BRA
-					}
-					
+					original_tag = PRU
+					original_tag = COL
+					original_tag = VEN
+					original_tag = ECU
+					original_tag = BOL
+					original_tag = ARG
+					original_tag = CHL
 				}
 			}
 			any_country = {
@@ -2073,7 +3169,6 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_CUB_join_faction_usa_roosevelt
 	}
-
 	text = {
 		trigger = {
 			any_country = {
@@ -2134,6 +3229,18 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_MEX_declaration_of_war
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				AND = {
+					original_tag = NEP
+					has_country_leader = { character = NEP_juddha_rana ruling_only = yes }
+				}
+			}
+		}
+		localization_key = GFX_news_event_NEP_juddha_rana_join_faction
 	}	
 	text = {
 		trigger = {
@@ -2143,7 +3250,7 @@ defined_text = {
 					original_tag = PRU
 					AND = {
 						original_tag = USA
-						has_country_leader = { name = "Franklin Delano Roosevelt" ruling_only = yes }
+						has_country_leader = { character = USA_franklin_delano_roosevelt ruling_only = yes }
 					}
 				}
 				
@@ -2155,7 +3262,7 @@ defined_text = {
 					original_tag = PRU
 					AND = {
 						original_tag = USA
-						has_country_leader = { name = "Franklin Delano Roosevelt" ruling_only = yes }
+						has_country_leader = { character = USA_franklin_delano_roosevelt ruling_only = yes }
 					}
 				}		
 			}
@@ -2183,6 +3290,49 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_PRU_join_faction_germany
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = GER
+					original_tag = SAF
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = GER
+					original_tag = SAF
+				}
+			}
+			GER = {
+				has_government = fascism
+			}
+		}
+		localization_key = GFX_news_event_SAF_join_faction_germany
+	}
+
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = LAT
+					original_tag = GER
+				}				
+				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = LAT
+					original_tag = GER
+				}				
+			}
+		}
+		localization_key = GFX_news_event_LAT_join_faction_GER
 	}	
 	text = { #spanish speaking country joins fascists # pic of Chilean fascists
 		trigger = { 
@@ -2209,6 +3359,7 @@ defined_text = {
 						original_tag = HOL
 						original_tag = ENG
 						original_tag = BRA
+						original_tag = HAI
 					}
 					
 				}
@@ -2232,6 +3383,7 @@ defined_text = {
 						original_tag = FRA
 						original_tag = HOL
 						original_tag = ENG
+						original_tag = HAI
 					}
 					
 				}
@@ -2251,6 +3403,7 @@ defined_text = {
 						original_tag = FRA
 						original_tag = HOL
 						original_tag = ENG
+						original_tag = HAI
 					}
 					
 				}
@@ -2277,7 +3430,28 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_ETH_join_faction_japan
+	}		
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = JAP
+					original_tag = HAI
+				}				
+				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = JAP
+					original_tag = HAI
+				}				
+			}
+		}
+		localization_key = GFX_news_event_ETH_join_faction_japan
 	}	
+	
 	text = {
 		trigger = {
 			any_country = {
@@ -2315,7 +3489,7 @@ defined_text = {
 							original_tag = COG
 							OR = {
 								has_government = fascism
-								has_country_leader = { name = "Pierre Ryckmans" ruling_only = yes }
+								has_country_leader = { character = COG_pierre_ryckmans ruling_only = yes }
 							}
 						}
 						AND = {
@@ -2374,7 +3548,7 @@ defined_text = {
 							original_tag = COG
 							OR = {
 								has_government = fascism
-								has_country_leader = { name = "Pierre Ryckmans" ruling_only = yes }
+								has_country_leader = { character = COG_pierre_ryckmans ruling_only = yes }
 							}
 						}
 						AND = {
@@ -2387,6 +3561,15 @@ defined_text = {
 						}						
 					}			
 				}
+			}
+		}
+		localization_key = GFX_news_event_african_diplomats
+	}	
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				original_tag = HAI
 			}
 		}
 		localization_key = GFX_news_event_african_diplomats
@@ -2500,6 +3683,26 @@ defined_text = {
 				has_country_flag = alliance_applicant@ROOT
 				OR = {
 					original_tag = JAP
+					original_tag = PHI
+				}				
+				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = JAP
+					original_tag = PHI
+				}				
+			}
+		}
+		localization_key = GFX_news_event_PHI_join_faction_japan
+	}	
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = JAP
 					original_tag = SIA
 				}
 			}
@@ -2544,7 +3747,7 @@ defined_text = {
 					original_tag = BRM
 					original_tag = SWK
 					original_tag = CAM
-					original_tag = VIE
+					original_tag = VIN
 					original_tag = LAO
 					original_tag = PHI
 				}
@@ -2595,7 +3798,28 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_FRA_join_faction_japan
-	}		
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = JAP
+					original_tag = ENG
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = JAP
+					original_tag = ENG
+				}
+			}
+		}
+		localization_key = GFX_news_event_JAP_join_faction_ENG
+	}	
+	
+
 	#### CHI ####		
 	text = {
 		trigger = {
@@ -2790,6 +4014,7 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_PRC_join_faction_ussr
 	}
+
 	text = {
 		trigger = {
 			any_country = {
@@ -2819,47 +4044,39 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_CHI_join_faction_ussr2
 	}
-	text = {
-		trigger = {
-			any_country = {
-				has_country_flag = alliance_applicant@ROOT
-				OR = {
-					AND = {
-						original_tag = MAN
-						OR = {
-							has_country_leader = { name = "Aisin Gioro Puyi" ruling_only = yes }
-							has_country_leader = { name = "Xuantong" ruling_only = yes }
-						}
-						
-					}
-					AND = {
-						original_tag = SOV
-					}
-					
-				}
-				
-				
-			}
-			any_country = {
-				has_country_flag = alliance_inviter@ROOT
-				OR = {
-					AND = {
-						original_tag = MAN
-						OR = {
-							has_country_leader = { name = "Aisin Gioro Puyi" ruling_only = yes }
-							has_country_leader = { name = "Xuantong" ruling_only = yes }
-						}
-						
-					}
-					AND = {
-						original_tag = SOV
-					}
-					
-				}			
-			}
-		}
-		localization_key = GFX_news_event_MAN_join_faction_ussr
-	}			
+	#text = {		#not defined
+	#	trigger = {
+	#		any_country = {
+	#			has_country_flag = alliance_applicant@ROOT
+	#			OR = {
+	#				AND = {
+	#					original_tag = MAN
+	#					has_country_leader = { character = MAN_puyi ruling_only = yes }
+	#				}
+	#				AND = {
+	#					original_tag = SOV
+	#				}
+	#				
+	#			}
+	#			
+	#			
+	#		}
+	#		any_country = {
+	#			has_country_flag = alliance_inviter@ROOT
+	#			OR = {
+	#				AND = {
+	#					original_tag = MAN
+	#					has_country_leader = { character = MAN_puyi ruling_only = yes }
+	#				}
+	#				AND = {
+	#					original_tag = SOV
+	#				}
+	#				
+	#			}			
+	#		}
+	#	}
+	#	localization_key = GFX_news_event_MAN_join_faction_ussr
+	#}			
 	text = {
 		trigger = {
 			any_country = {
@@ -2879,10 +4096,7 @@ defined_text = {
 					original_tag = VIN
 					original_tag = LAO
 					original_tag = BRM
-
 				}
-				
-				
 			}
 			any_country = {
 				has_country_flag = alliance_inviter@ROOT
@@ -2892,9 +4106,7 @@ defined_text = {
 						character = SOV_iosif_stalin
 						ruling_only = yes
 					}
-				}
-					
-							
+				}		
 			}
 		}
 		localization_key = GFX_news_event_CHI_join_faction_ussr
@@ -3026,7 +4238,54 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_USA_join_faction_japan
-	}	
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					AND = {
+						original_tag = PRC
+						has_country_leader = { 
+							character = PRC_mao_zedong
+							ruling_only = yes
+						}
+					}
+					AND = {
+						original_tag = USA
+						OR = {
+							has_government = democratic
+							has_government = communism							
+						}
+					}
+					
+				}
+				
+				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					AND = {
+						original_tag = PRC
+						has_country_leader = { 
+							character = PRC_mao_zedong
+							ruling_only = yes
+						}
+					}
+					AND = {
+						original_tag = USA
+						OR = {
+							has_government = democratic
+							has_government = communism							
+						}
+					}
+					
+				}			
+			}
+		}
+		localization_key = GFX_news_event_USA_join_faction_PRC
+	}
 	text = {
 		trigger = {
 			any_country = {
@@ -3076,7 +4335,7 @@ defined_text = {
 			any_country = {
 				has_country_flag = alliance_inviter@ROOT
 				original_tag = SOV
-				has_country_leader = { name = "Iosif Stalin" ruling_only = yes }				
+				has_country_leader = { character = SOV_iosif_stalin ruling_only = yes }				
 			}
 		}
 		localization_key = GFX_news_event_USA_stalin_our_leader
@@ -3092,8 +4351,56 @@ defined_text = {
 		localization_key = GFX_news_event_usa_earl_browder_happy
 	}	
 	#### Europe ####	
+	
 	text = {
-		trigger = { #more specific South American pics before this one
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				AND = {
+					original_tag = HOL
+					NOT = {
+						has_government = communism
+					}				
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				
+				original_tag = ENG
+				
+			}
+		}
+		localization_key = 	GFX_news_event_HOL_british_ambassador
+
+	}
+	
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				AND = {
+					original_tag = HOL
+					OR = {
+						has_government = democratic
+						has_government = neutrality
+					}				
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				NOT = {
+					has_government = communism
+				}				
+				original_tag = ENG
+				
+			}
+		}
+		localization_key = 	GFX_news_event_LUX_join_faction_britain
+
+	}	
+
+	text = {
+		trigger = { #more specific european pics before this one
 			any_country = {
 				has_country_flag = alliance_applicant@ROOT
 				capital_scope = {
@@ -3160,7 +4467,7 @@ defined_text = {
 					original_tag = NOR
 					OR = {
 						has_idea = NOR_haakon
-						has_country_leader = { name = "Haakon VII" ruling_only = yes }
+						has_country_leader = { character = NOR_haakon_vii ruling_only = yes }
 					}
 				}
 			}
@@ -3195,7 +4502,7 @@ defined_text = {
 					original_tag = NOR
 					OR = {
 						has_idea = NOR_haakon
-						has_country_leader = { name = "Haakon VII" ruling_only = yes }
+						has_country_leader = { character = NOR_haakon_vii ruling_only = yes }
 					}
 				}
 			}
@@ -3346,7 +4653,10 @@ defined_text = {
 						original_tag = ITA
 						OR = {
 							has_idea = victor_emmanuel
-							has_country_leader = { character = ITA_victor_emmanuel_iii ruling_only = yes }
+							has_idea = vittorio_emanuele_emperor_of_ethiopia
+							has_idea = vittorio_emanuele_king_of_albania
+							has_idea = vittorio_emanuele_albania_ethiopia
+							has_country_leader = { character = ITA_vittorio_emanuele_iii ruling_only = yes }
 						}
 					}
 					
@@ -3365,7 +4675,10 @@ defined_text = {
 						original_tag = ITA
 						OR = {
 							has_idea = victor_emmanuel
-							has_country_leader = { character = ITA_victor_emmanuel_iii ruling_only = yes }
+							has_idea = vittorio_emanuele_emperor_of_ethiopia
+							has_idea = vittorio_emanuele_king_of_albania
+							has_idea = vittorio_emanuele_albania_ethiopia
+							has_country_leader = { character = ITA_vittorio_emanuele_iii ruling_only = yes }
 						}
 					}
 					
@@ -3452,7 +4765,25 @@ defined_text = {
 		localization_key = GFX_news_event_ast_transfer_singapore
 	}
 	
-	
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = ENG
+					original_tag = SWE
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = ENG
+					original_tag = SWE
+				}
+			}
+		}
+		localization_key = GFX_news_event_sweden_the_buckingham_gathering
+	}		
 	text = {
 		trigger = {
 			any_country = {
@@ -3505,7 +4836,7 @@ defined_text = {
 
 					AND = {
 						original_tag = SPR
-						has_country_leader = { name = "Francisco Franco" ruling_only = yes }
+						has_country_leader = { character = SPA_francisco_franco ruling_only = yes }
 
 					}
 					
@@ -3520,7 +4851,7 @@ defined_text = {
 					}
 					AND = {
 						original_tag = SPR
-						has_country_leader = { name = "Francisco Franco" ruling_only = yes }
+						has_country_leader = { character = SPA_francisco_franco ruling_only = yes }
 
 					}
 				}
@@ -3570,14 +4901,14 @@ defined_text = {
 					has_country_flag = alliance_applicant@ROOT
 					AND = {
 						original_tag = RAJ
-						has_country_leader = { name = "Subhas Chandra Bose" ruling_only = yes }
+						has_country_leader = { character = RAJ_subhas_chanda_bose ruling_only = yes }
 					}
 				}
 				any_country = {
 					has_country_flag = alliance_inviter@ROOT
 					AND = {
 						original_tag = RAJ
-						has_country_leader = { name = "Subhas Chandra Bose" ruling_only = yes }
+						has_country_leader = { character = RAJ_subhas_chanda_bose ruling_only = yes }
 					}
 				}
 			}
@@ -3602,8 +4933,28 @@ defined_text = {
 				}
 			}
 		}
-		localization_key = news_event_TIB_british_mission	
-	}			
+		localization_key = GFX_news_event_TIB_british_mission	
+	}	
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				original_tag = TIB
+
+
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+				
+			}
+		}
+		localization_key = GFX_news_event_TIB_potala_and_military	
+	}		
+	
 	text = {
 		trigger = {
 			any_country = {
@@ -3644,6 +4995,7 @@ defined_text = {
 			}
 			GER = {
 				has_government = fascism
+				has_country_leader = { character = GER_adolf_hitler ruling_only = yes }
 			}
 		}
 		localization_key = GFX_news_event_tsar_boris_with_hitler	
@@ -3653,14 +5005,32 @@ defined_text = {
 			any_country = {
 				has_country_flag = alliance_applicant@ROOT
 				OR = {
+					original_tag = BUL
+					original_tag = SOV
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = BUL
+					original_tag = SOV
+				}
+			}
+			SOV = {
+				has_government = communism
+				has_country_leader = { character = SOV_iosif_stalin ruling_only = yes }
+			}
+		}
+		localization_key = GFX_news_event_dimitrov_and_stalin
+	}	
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
 					AND = {
 						original_tag = ROM
-						OR = {
-							has_idea = ROM_figurehead_king_michael
-							has_idea = ROM_king_carol_ii_handled
-							has_idea = ROM_king_carol_ii_hedonist
-							has_country_leader = { character = ROM_king_michael ruling_only = yes }
-						}
+						has_country_leader = { character = ROM_king_michael ruling_only = yes }
 					}
 					original_tag = SOV
 				}
@@ -3670,12 +5040,7 @@ defined_text = {
 				OR = {
 					AND = {
 						original_tag = ROM
-						OR = {
-							has_idea = ROM_figurehead_king_michael
-							has_idea = ROM_king_carol_ii_handled
-							has_idea = ROM_king_carol_ii_hedonist
-							has_country_leader = { character = ROM_king_michael ruling_only = yes }
-						}
+						has_country_leader = { character = ROM_king_michael ruling_only = yes }
 					}
 					original_tag = SOV
 				}
@@ -3707,7 +5072,28 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_ROM_join_faction_soviet
-	}	
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = SOV
+					original_tag = SAF
+				}
+				has_government = communism
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = SOV
+					original_tag = SAF
+				}
+				has_government = communism	
+			}
+		}
+		localization_key = GFX_news_event_SAF_communist_reunion
+	}
 	text = {
 		trigger = {
 			any_country = {
@@ -3715,11 +5101,7 @@ defined_text = {
 				OR = {
 					AND = {
 						original_tag = ROM
-						OR = {
-							has_idea = ROM_king_carol_ii_handled
-							has_idea = ROM_king_carol_ii_hedonist
-							has_country_leader = { character = ROM_king_michael ruling_only = yes }
-						}
+						has_country_leader = { character = ROM_king_michael ruling_only = yes }
 					}
 					original_tag = JAP
 				}
@@ -3729,11 +5111,7 @@ defined_text = {
 				OR = {
 					AND = {
 						original_tag = ROM
-						OR = {
-							has_idea = ROM_king_carol_ii_handled
-							has_idea = ROM_king_carol_ii_hedonist
-							has_country_leader = { character = ROM_king_michael ruling_only = yes }
-						}
+						has_country_leader = { character = ROM_king_michael ruling_only = yes }
 					}
 					original_tag = JAP
 				}
@@ -3758,7 +5136,7 @@ defined_text = {
 				}
 			}
 			GER = {
-				has_country_leader = { name = "Adolf Hitler" ruling_only = yes }
+				has_country_leader = { character = GER_adolf_hitler ruling_only = yes }
 			}
 			ROM = {
 				has_character = ROM_ion_antonescu
@@ -3783,12 +5161,12 @@ defined_text = {
 				}
 			}
 			GER = {
-				has_country_leader = { name = "Adolf Hitler" ruling_only = yes }
+				has_country_leader = { character = GER_adolf_hitler ruling_only = yes }
 			}
 			ROM = {
 				OR = {
 					has_country_leader = { character = ROM_king_michael ruling_only = yes }
-					has_idea = ROM_figurehead_king_michael
+					has_idea = r56_ROM_michael_idea
 				}
 			}
 		}
@@ -3837,7 +5215,7 @@ defined_text = {
 			}
 			ENG = {
 				OR = {
-					has_country_leader = { name = "Neville Chamberlain" ruling_only = yes }
+					has_country_leader = { character = ENG_neville_chamberlain ruling_only = yes }
 					has_country_leader = { character = ENG_stanley_baldwin ruling_only = yes }
 				}
 			}
@@ -3865,7 +5243,7 @@ defined_text = {
 			}
 			ENG = {
 				OR = {
-					has_country_leader = { name = "Neville Chamberlain" ruling_only = yes }
+					has_country_leader = { character = ENG_neville_chamberlain ruling_only = yes }
 					has_country_leader = { character = ENG_stanley_baldwin ruling_only = yes }
 				}
 			}
@@ -3986,7 +5364,7 @@ defined_text = {
 				}
 				ENG = {
 					OR = {
-						has_country_leader = { name = "Winston Churchill" ruling_only = yes }
+						has_country_leader = { character = ENG_winston_churchill ruling_only = yes }
 						has_idea = ENG_winston_churchill #for neutrality
 					}
 				}
@@ -4017,7 +5395,7 @@ defined_text = {
 				}				
 				ENG = {
 					OR = {
-						has_country_leader = { name = "Winston Churchill" ruling_only = yes }
+						has_country_leader = { character = ENG_winston_churchill ruling_only = yes }
 						has_idea = ENG_winston_churchill #for neutrality
 					}
 				}
@@ -4048,7 +5426,7 @@ defined_text = {
 				}				
 				ENG = {
 					OR = {
-						has_country_leader = { name = "Winston Churchill" ruling_only = yes }
+						has_country_leader = { character = ENG_winston_churchill ruling_only = yes }
 						has_idea = ENG_winston_churchill #for neutrality
 					}
 				}
@@ -4076,7 +5454,7 @@ defined_text = {
 				}				
 				ENG = {
 					OR = {
-						has_country_leader = { name = "Winston Churchill" ruling_only = yes }
+						has_country_leader = { character = ENG_winston_churchill ruling_only = yes }
 						has_idea = ENG_winston_churchill #for neutrality
 					}
 				}
@@ -4098,7 +5476,7 @@ defined_text = {
 				original_tag = ENG
 				ENG = {
 					OR = {
-						has_country_leader = { name = "Winston Churchill" ruling_only = yes }
+						has_country_leader = { character = ENG_winston_churchill ruling_only = yes }
 						has_idea = ENG_winston_churchill #for neutrality
 					}
 				}
@@ -4121,7 +5499,7 @@ defined_text = {
 			any_country = {
 				has_country_flag = alliance_inviter@ROOT
 				original_tag = SOV
-				has_country_leader = { name = "Iosif Stalin" ruling_only = yes }				
+				has_country_leader = { character = SOV_iosif_stalin ruling_only = yes }				
 			}
 		}
 		localization_key = GFX_news_event_ENG_british_stalinism
@@ -4159,7 +5537,7 @@ defined_text = {
 				}
 				
 				SOV = {
-					has_country_leader = { name = "Iosif Stalin" ruling_only = yes }
+					has_country_leader = { character = SOV_iosif_stalin ruling_only = yes }
 				}
 				
 			}			
@@ -4202,10 +5580,10 @@ defined_text = {
 				}
 			}
 			GER = {
-				has_country_leader = { name = "Adolf Hitler" ruling_only = yes }
+				has_country_leader = { character = GER_adolf_hitler ruling_only = yes }
 			}
 			YUG = {
-				has_country_leader = { name = "Prince Paul" ruling_only = yes }
+				has_country_leader = { character = YUG_prince_paul ruling_only = yes }
 			}
 		}
 		localization_key = GFX_news_event_YUG_join_faction_germany
@@ -4317,6 +5695,7 @@ defined_text = {
 				OR = {
 					original_tag = AUS
 					original_tag = SWI #an alpine chalet makes it relevant
+					original_tag = LIE #an alpine chalet makes it relevant
 				}
 				
 			}
@@ -4475,18 +5854,43 @@ defined_text = {
 		}
 		localization_key = GFX_news_event_imro
 	}
+
 	text = {
 		trigger = {
 			any_country = {
 				has_country_flag = partisan_rebellion
-				OR = {
-					original_tag = NEP	
-					original_tag = BHU
-				}
+				
+				original_tag = MEX
+				
+				has_government = fascism
 			}
 		}
-		localization_key = GFX_news_event_NEP_partisans
-	}		
+		localization_key = GFX_news_event_mex_civil_war
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = partisan_rebellion
+				
+				original_tag = MEX
+			}
+		}
+		localization_key = GFX_news_event_mexico_escobar_returns_to_mexico
+	}	
+
+
+	#text = {		#not defined
+	#	trigger = {
+	#		any_country = {
+	#			has_country_flag = partisan_rebellion
+	#			OR = {
+	#				original_tag = NEP	
+	#				original_tag = BHU
+	#			}
+	#		}
+	#	}
+	#	localization_key = GFX_news_event_NEP_partisans
+	#}		
 	text = {
 		trigger = {
 			any_country = {
@@ -4518,14 +5922,7 @@ defined_text = {
 				original_tag = POL
 			}
 		}
-		random_list = {
-			50 = {
-				localization_key = GFX_news_event_home_army_women
-			}
-			50 = {
-				localization_key = GFX_news_event_polish_resistance_warsaw
-			}
-		}
+		localization_key = GFX_news_event_POL_home_army_women
 	}
 	text = {
 		trigger = {
@@ -4547,7 +5944,7 @@ defined_text = {
 				has_country_flag = partisan_rebellion
 				OR = {
 					original_tag = SPR
-					original_tag = EUS
+					original_tag = NAV
 				}
 				
 			}
@@ -4706,7 +6103,7 @@ defined_text = {
 
 					original_tag = BHU
 					original_tag = TIB
-					original_tag = VIE
+					original_tag = VIN
 					original_tag = CAM
 					original_tag = LAO
 					original_tag = SIA
@@ -4730,18 +6127,35 @@ defined_text = {
 			any_country = {
 				has_country_flag = partisan_rebellion
 				OR = {
-					original_tag = ETH					
+					original_tag = ETH		
+					original_tag = AFA			
 				}
 			}
 		}
 		localization_key = GFX_news_event_ETH_ethiopian_warriors
-	}		
+	}	
+
 	text = {
 		trigger = {
 			any_country = {
 				has_country_flag = partisan_rebellion
 				OR = {
-					original_tag = ETH
+					original_tag = ERI		
+					original_tag = MLI	
+					original_tag = SOM		
+				}
+			}
+		}
+		localization_key = GFX_news_event_african_desert_partisans
+	}		
+	
+	
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = partisan_rebellion
+				OR = {
+					original_tag = SUD
 					original_tag = UGA
 					original_tag = TZN
 					original_tag = KEN
@@ -4762,7 +6176,7 @@ defined_text = {
 					original_tag = MLW
 					original_tag = SEN
 					original_tag = GAM
-					original_tag = MLI
+					
 					original_tag = VOL
 					original_tag = GNB		
 					original_tag = EQG
@@ -4784,7 +6198,7 @@ defined_text = {
 						NOT = {
 							OR = {
 								has_government = fascism
-								has_country_leader = { name = "Pierre Ryckmans" ruling_only = yes }
+								has_country_leader = { character = COG_pierre_ryckmans ruling_only = yes }
 							}
 						}
 					}					
