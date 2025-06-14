@@ -7,56 +7,19 @@ focus_tree = {
 		modifier = {
 			add = 10
 			OR = {
-			#	tag = SIK
+				tag = SIK
 				tag = TNG
 				tag = YUN
-				#tag = GXC
+				tag = GXC
 				tag = SHX
 				tag = XSM
 			}
-			has_dlc = "Waking the Tiger"
 		}
 	}
 	
 	default = no
 
 	continuous_focus_position = { x = 50 y = 1350 }
-
-#	focus = {
-#		id = CHI_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		
-#		
-#		
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
 
 	focus = {
 		id = CHI_secure_internal_politics
@@ -189,11 +152,6 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Death or Dishonor"
-					}
-					
 					NOT = {
 						CHI = { is_in_tech_sharing_group = CHI_technological_cooperation_tech_group } 
 					}
@@ -201,26 +159,13 @@ focus_tree = {
 				CHI = { add_to_tech_sharing_group = CHI_technological_cooperation_tech_group }
 				add_to_tech_sharing_group = CHI_technological_cooperation_tech_group	
 			}
-			else = {
-				if = {
-					limit = {
-						NOT = {
-							CHI = { has_idea = CHI_technological_cooperation_idea } 
-						}						
-					}
-					CHI = {
-						add_ideas = CHI_technological_cooperation_idea
-					}
-				}
-				add_ideas = CHI_technological_cooperation_idea
-			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 
 	focus = {
 		id = CHI_new_model_province
-		icon = GFX_goal_generic_construct_infrastructure
+		icon = GFX_goal_generic_citizens
 		prerequisite = { focus = CHI_cooperation_with_the_nationalists }		
 		x = 1
 		y = 1
@@ -240,7 +185,7 @@ focus_tree = {
 
 	focus = {
 		id = CHI_root_out_corruption
-		icon = GFX_goal_demand_sudetenland
+		icon = GFX_goal_PER_corrupt_bureaucracy_against
 		prerequisite = { focus = CHI_new_model_province }
 		mutually_exclusive = { focus = CHI_embrace_the_opium_trade }
 		x = -1
@@ -262,7 +207,7 @@ focus_tree = {
 
 	focus = {
 		id = CHI_embrace_the_opium_trade
-		icon = GFX_goal_generic_trade
+		icon = GFX_goal_generic_opium
 		prerequisite = { focus = CHI_new_model_province }
 		mutually_exclusive = { focus = CHI_root_out_corruption }
 		x = 1
@@ -307,7 +252,7 @@ focus_tree = {
 
 	focus = {
 		id = CHI_reform_the_administration
-		icon = GFX_goal_generic_propaganda
+		icon = GFX_focus_generic_improve_the_administration
 		prerequisite = { focus = CHI_root_out_corruption focus = CHI_embrace_the_opium_trade }
 		x = 0
 		y = 2
@@ -349,6 +294,7 @@ focus_tree = {
 					}
 				}
 			}
+			is_ai = no		#if you cant do the next focus, then wasting pp on this is pointless
 			is_subject = no
 			NOT = { has_war_with = CHI }
 			if = {
@@ -367,14 +313,14 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = enable_power_struggle
-		#	WTT_setup_political_struggle = yes
-		#	WTT_add_ROOT_to_political_struggle = yes
+			WTT_setup_political_struggle = yes
+			WTT_add_ROOT_to_political_struggle = yes
 		}
 	}
 
 	focus = {
 		id = CHI_power_struggle
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_goal_CHI_continue_the_peoples_tutelage
 		prerequisite = { focus = CHI_join_the_republican_government }
 		x = -1
 		y = 4
@@ -456,12 +402,20 @@ focus_tree = {
 				#	value = 100
 				#}
 			}
-			PRC = {
+			
+			if = {
+				limit = {
+					PRC = {
+						has_government = communism
+					}
+				}
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = CHI_cooperation_with_the_communists_positive
-				}
+				}					
 			}
+
+			
 			CHI = {
 				add_opinion_modifier = {
 					target = ROOT
@@ -544,7 +498,7 @@ focus_tree = {
 
 	focus = {
 		id = CHI_judiciary_reforms
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_generic_trial
 		prerequisite = { focus = CHI_ideological_education }
 		x = -1
 		y = 2
@@ -640,6 +594,8 @@ focus_tree = {
 					event_target:WTT_communist_china = {
 						NOT = { is_in_faction_with = ROOT }
 						is_in_faction = no
+						is_subject = no
+						has_government = communism
 					}
 				}
 				event_target:WTT_communist_china = {
@@ -698,7 +654,7 @@ focus_tree = {
 
 	focus = {
 		id = CHI_opposition
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_goal_generic_martial_law
 		prerequisite = { focus = CHI_secure_internal_politics }
 		mutually_exclusive = { focus = CHI_cooperation_with_the_communists focus = CHI_cooperation_with_the_nationalists }
 		x = 5
@@ -709,6 +665,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {	#do not compromise the united front
+				factor = 0
+				is_historical_focus_on = yes
+			}
 		}
 		
 		available_if_capitulated = yes
@@ -782,7 +742,7 @@ focus_tree = {
 
 	focus = {
 		id = CHI_public_works
-		icon = GFX_goal_generic_construct_infrastructure
+		icon = GFX_goal_generic_road2
 		prerequisite = { focus = CHI_cooperation_with_the_communists focus = CHI_opposition }
 		x = -1
 		y = 2
@@ -820,7 +780,8 @@ focus_tree = {
 
 	focus = {
 		id = CHI_rural_militias
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_goal_small_infantry
+
 		prerequisite = { focus = CHI_public_works }
 		x = 1
 		y = 1
@@ -839,7 +800,7 @@ focus_tree = {
 
 	focus = {
 		id = CHI_war_taxes
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_goal_generic_military_funding
 		prerequisite = { focus = CHI_opposition }
 		x = 3
 		y = 1
@@ -898,84 +859,6 @@ focus_tree = {
 			add_political_power = 75
 			add_war_support = 0.1
 			army_experience = 10
-		#	if = {
-		#		limit = { ROOT = { tag = GXC } }
-		#		create_field_marshal = {
-		#			name = "Li Zongren"
-		#			gfx = GFX_portrait_li_zongren
-		#			traits = { infantry_officer } # Many warlord battles as a junior commander
-		#			skill = 3
-		#			attack_skill = 4
-		#			defense_skill = 3
-		#			planning_skill = 2
-		#			logistics_skill = 2					
-		#		}
-		#	}
-		#	else_if = {
-		#		limit = { ROOT = { tag = YUN } }
-		#		create_field_marshal = {
-		#			name = "Long Yun"
-		#			gfx = GFX_portrait_yun_long_yun				
-		#			traits = { war_hero } # Fought in the Xinhai Revolution, showed personal bravery fighting Japan
-		#			skill = 3
-		#			attack_skill = 4
-		#			defense_skill = 3
-		#			planning_skill = 2
-		#			logistics_skill = 2
-		#		}
-		#	}
-		#	else_if = {
-		#		limit = { ROOT = { tag = SHX } }
-		#		create_field_marshal = {
-		#			name = "Yan Xishan"
-		#			gfx = GFX_portrait_yan_xishan
-		#			traits = { career_officer } # Educated at officer schools in China and Japan
-		#			skill = 3
-		#			attack_skill = 4
-		#			defense_skill = 3
-		#			planning_skill = 2
-		#			logistics_skill = 2
-		#		}
-		#	}
-		#	else_if = {
-		#		limit = { ROOT = { tag = XSM } }
-		#		create_field_marshal = {
-		#			name = "Ma Bufang"
-		#			gfx = GFX_portrait_xsm_ma_bufang
-		#			traits = { cavalry_officer } # Raised 30,000 Muslim Cavalrymen
-		#			skill = 3
-		#			attack_skill = 4
-		#			defense_skill = 3
-		#			planning_skill = 2
-		#			logistics_skill = 2
-		#		}
-		#	}
-		#	else_if = {
-		#		limit = { ROOT = { tag = SIK } }
-		#		create_field_marshal = {
-		#			name = "Sheng Shicai"
-		#			gfx = GFX_portrait_sheng_shicai
-		#			traits = { politically_connected } # Studied political economy, played Stalin and Chiang against one another
-		#			skill = 3
-		#			attack_skill = 4
-		#			defense_skill = 3
-		#			planning_skill = 2
-		#			logistics_skill = 2
-		#		}
-		#	}
-		#	else_if = {
-		#		limit = { ROOT = { tag = TNG } }
-		#		create_field_marshal = {
-		#			name = "Ma Hushan"
-		#			gfx = GFX_Portrait_Ma_Hushan
-		#			traits = { politically_connected cavalry_officer }
-		#			skill = 3
-		#			attack_skill = 4
-		#			defense_skill = 3
-		#			planning_skill = 2
-		#			logistics_skill = 2
-		#		}
-		#	}
 		}
 	}
 
@@ -1115,11 +998,11 @@ focus_tree = {
 	focus = {
 		id = CHI_industrial_investment
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 12
+		x = 13
 		y = 0
 		relative_position_id = CHI_secure_internal_politics
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 4
@@ -1135,10 +1018,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = CHI_industrial_investment_IC
@@ -1148,12 +1031,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = CHI_import_german_equipment
-		text = "Import German Equipment"
+		id = GXC_import_german_equipment
 		icon = GFX_goal_rhineland
 		relative_position_id = CHI_industrial_investment
 		x = 2
-		y = 0
+		y = 1
+		prerequisite = { focus = CHI_industrial_investment }
 
 		cost = 5
 
@@ -1161,9 +1044,13 @@ focus_tree = {
 			factor = 60
 		}
 
+		allow_branch = {
+			original_tag = GXC
+		}
+
 		available = {
 			NOT = {
-				has_completed_focus = WARLORD_cooperation_with_the_communists
+				has_completed_focus = CHI_cooperation_with_the_communists
 			}
 		}
 		
@@ -1179,10 +1066,57 @@ focus_tree = {
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
-				amount = 2500
+				amount = 1500
 				producer = GER
 			}	
-			army_experience = 10
+			GER = {
+				army_experience = 10
+			}			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = CHI_complete_horgos_hami_road
+		icon = GFX_goal_generic_road
+		prerequisite = { focus = CHI_industrial_investment }
+		relative_position_id = CHI_industrial_investment
+		x = 2
+		y = 1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		allow_branch = {
+			OR = {
+				original_tag = SIK
+				original_tag = TNG
+			}
+		}
+
+		available = {
+			controls_state = 617
+			controls_state = 760
+		}
+
+		completion_reward = {
+			617 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}				
+			}
+			760 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}				
+			}				
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1191,7 +1125,7 @@ focus_tree = {
 		id = CHI_public_education_reform
 		icon = GFX_focus_research
 		prerequisite = { focus = CHI_industrial_investment }
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = CHI_industrial_investment
 
@@ -1209,13 +1143,13 @@ focus_tree = {
 
 	focus = {
 		id = CHI_local_arms_production
-		icon = GFX_goal_generic_production
-		prerequisite = { focus = CHI_industrial_investment focus = CHI_import_german_equipment }
-		x = 1
+		icon = GFX_goal_generic_military_factories
+		prerequisite = { focus = CHI_industrial_investment }
+		x = 0
 		y = 1
 		relative_position_id = CHI_industrial_investment
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 4
@@ -1223,6 +1157,78 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = CHI_local_arms_production_AF
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = CHI_long_term_economic_planning
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = CHI_local_arms_production }
+		x = -1
+		y = 1
+		relative_position_id = CHI_local_arms_production
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		completion_reward = {
+			add_ideas = CHI_long_term_economic_planning
+		}
+	}
+
+	focus = {
+		id = CHI_expand_the_taiyuan_arsenal #taiyuan_arsenal # in 1937 Yan Xishan evacuated the ammunition production of the arsenal to the southern part of Shaanxi under nationalist control (the Xian state)
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = { focus = CHI_local_arms_development }
+		prerequisite = { focus = CHI_local_arms_production }
+		x = 0
+		y = 1
+		relative_position_id = CHI_long_term_economic_planning
+
+		cost = 10
+
+		allow_branch = {
+			OR = {
+				original_tag = XSM
+				original_tag = GXC
+				original_tag = SHX
+				original_tag = SIK
+				original_tag = YUN
+			}
+			controls_state = 615
+			
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			army_experience = 10
+			random_owned_controlled_state = {
+				prioritize = {
+					615
+				}
 				limit = {
 					is_fully_controlled_by = ROOT
 					free_building_slots = {
@@ -1239,26 +1245,98 @@ focus_tree = {
 				}
 				set_state_flag = CHI_local_arms_production_AF
 			}
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+					NOT = {
+						has_global_flag = CHI_mobilize_the_taiyuan_arsenal
+					}
+				}
+				mio:CHI_taiyuan_arsenal_organization = {
+					add_mio_funds = 1500
+				}
+				set_global_flag = CHI_mobilize_the_taiyuan_arsenal
+			}			
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
-		id = CHI_long_term_economic_planning
-		icon = GFX_goal_generic_production2
+		id = GXC_military_aviation_school
+		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = CHI_local_arms_production }
 		x = 0
-		y = 2
-		relative_position_id = CHI_industrial_investment
-
+		y = 3
+		relative_position_id = CHI_local_arms_production
+	
 		cost = 10
-
+	
 		ai_will_do = {
 			factor = 4
 		}
 
+		allow_branch = {
+			original_tag = GXC
+		}
+	
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_ideas = CHI_long_term_economic_planning
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				name = BALTIC_school_of_aviation_tech_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_equipment
+			}
 		}
 	}
 
@@ -1266,14 +1344,14 @@ focus_tree = {
 		id = CHI_local_arms_development
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = CHI_local_arms_production }
-		x = 2
-		y = 2
-		relative_position_id = CHI_industrial_investment
+		x = 1
+		y = 1
+		relative_position_id = CHI_local_arms_production
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
-			factor = 90
+			factor = 2
 		}
 
 		completion_reward = {
@@ -1283,10 +1361,6 @@ focus_tree = {
 				uses = 1
 				category = infantry_weapons
 			}
-			mio:CHI_hanyan_arsenal_organization = {
-				complete_mio_trait = china_mio_trait_mass_rifle_production
-				add_mio_funds = 2000
-			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1295,9 +1369,9 @@ focus_tree = {
 		id = CHI_heavy_weapons_development
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = CHI_local_arms_development }
-		x = 2
-		y = 3
-		relative_position_id = CHI_industrial_investment
+		x = 0
+		y = 1
+		relative_position_id = CHI_local_arms_development
 
 		cost = 10
 
@@ -1314,6 +1388,138 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	### WARLORD NATIONAL SPIRIT-RELATED FOCUSES ###
+
+	focus = {
+		id = CHI_strenghten_warlord_authority
+		icon = GFX_focus_generic_military_dictatorship
+		x = 18 #r56 was:16
+		y = 0
+
+		cost = 10
+
+		relative_position_id = CHI_secure_internal_politics
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			IF = {
+				limit = {
+					has_idea = CHI_warlord_state_idea
+				}
+				swap_ideas = {
+					remove_idea = CHI_warlord_state_idea
+					add_idea = CHI_warlord_state_idea_2
+				}	
+			}
+		}
+	}
+
+	focus = {
+		id = CHI_uplift_the_cavalry_regiments
+		icon = GFX_goal_generic_cavalry
+		x = -1
+		y = 1
+
+		cost = 10
+
+		prerequisite = { focus = CHI_strenghten_warlord_authority }
+
+		relative_position_id = CHI_strenghten_warlord_authority
+
+		mutually_exclusive = {
+			focus = CHI_uplift_the_mountain_brigades
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CHI_warlord_state_idea_2
+				add_idea = CHI_warlord_state_idea_cav
+			}	
+		}
+	}
+
+	focus = {
+		id = CHI_uplift_the_mountain_brigades
+		icon = GFX_focus_secret_rearmament
+		x = 1
+		y = 1
+
+		cost = 10
+
+		prerequisite = { focus = CHI_strenghten_warlord_authority }
+
+		relative_position_id = CHI_strenghten_warlord_authority
+
+		mutually_exclusive = {
+			focus = CHI_uplift_the_cavalry_regiments
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+
+			swap_ideas = {
+				remove_idea = CHI_warlord_state_idea_2
+				add_idea = CHI_warlord_state_idea_mnt
+			}
+
+			add_tech_bonus = {
+				name = CHI_uplift_the_mountain_brigades
+				bonus = 0.75
+				uses = 1
+				category = mountaineers_tech
+			}	
+		}
 	}
 
 }

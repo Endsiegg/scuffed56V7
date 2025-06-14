@@ -28,7 +28,7 @@
 		icon = GFX_goal_generic_construct_civilian
 		x = 5
 		y = 0
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -55,7 +55,7 @@
 		prerequisite = { focus = EST_more_civilian_factories }
 		x = 5
 		y = 3
-		cost = 10
+		cost = 8
 
 		ai_will_do = {
 			factor = 10
@@ -69,7 +69,6 @@
 					free_building_slots = {
 						building = infrastructure
 						size > 0
-						include_locked = yes
 					}
 				}
 				add_building_construction = {
@@ -86,7 +85,6 @@
 					free_building_slots = {
 						building = infrastructure
 						size > 0
-						include_locked = yes
 					}
 				}
 				add_building_construction = {
@@ -113,62 +111,12 @@
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				
+				prioritize = { 13 }
 				limit = {
 					is_core_of = ROOT
 					free_building_slots = {
 						building = infrastructure
 						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				
-				limit = {
-					is_core_of = ROOT
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				
-				limit = {
-					is_core_of = ROOT
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				
-			}
-			random_owned_controlled_state = {
-				
-				limit = {
-					is_core_of = ROOT
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-						include_locked = yes
 					}
 				}
 				add_building_construction = {
@@ -232,13 +180,12 @@
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 2
 					instant_build = yes
 				}
-				
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -249,7 +196,7 @@
 		prerequisite = { focus = EST_develop_our_railroads }
 		x = 7
 		y = 3
-		cost = 5
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -299,7 +246,7 @@
 		prerequisite = { focus = EST_prepare_for_war }
 		x = 7
 		y = 1
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -321,7 +268,6 @@
 					level = 2
 					instant_build = yes
 				}
-				set_state_flag = POL_invest_in_the_old_polish_region_1
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -355,10 +301,10 @@
 		}
 
 		complete_tooltip = {
-			add_extra_state_shared_building_slots = 3
+			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
 				type = industrial_complex
-				level = 3
+				level = 2
 				instant_build = yes
 			}
 		}
@@ -387,10 +333,10 @@
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -402,7 +348,7 @@
 		icon = GFX_focus_generic_industry_3
 		x = 0
 		y = 5
-		cost = 5
+		cost = 10
 
 
 		ai_will_do = {
@@ -434,7 +380,7 @@
 			}
 
 			191 = { #Tartu
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 			}
 
 			12 = { # Läti1
@@ -442,13 +388,13 @@
 			}
 
 			190 = { # Läti2
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 			}
 
 
 			add_tech_bonus = {
 				name = industrial_bonus
-				bonus = 1
+				bonus = 0.5
 				uses = 1
 				category = industry
 			}
@@ -466,16 +412,6 @@ shared_focus = {
 		ai_will_do = {
 			factor = 10
 		}
-		complete_tooltip = {
-			random_state = {
-				limit = { has_state_flag = POL_start_central_industrial_region_1 }
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -487,13 +423,12 @@ shared_focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
-				set_state_flag = POL_start_central_industrial_region_1
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -511,16 +446,6 @@ shared_focus = {
 		ai_will_do = {
 			factor = 10
 		}
-		complete_tooltip = {
-			random_state = {
-				limit = { has_state_flag = POL_invest_in_the_old_polish_region_1 }
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -532,13 +457,12 @@ shared_focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 2
 					instant_build = yes
 				}
-				set_state_flag = POL_invest_in_the_old_polish_region_1
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -573,7 +497,10 @@ shared_focus = {
 		icon = GFX_focus_research
 		prerequisite = { focus = EST_more_civilian_factories_II focus = EST_invest_in_the_military_II}
 		available = {
-			
+			OR = {
+				any_country = { has_added_tension_amount > 10 }
+				any_country = { threat > 0.15 }
+			}
 		}
 		x = 2
 		y = 5
@@ -604,8 +531,14 @@ shared_focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = EST_foreign_cooperation
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
 			add_doctrine_cost_reduction = {
-				name = POL_the_defence_of_poland
+				name = EST_foreign_cooperation
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
@@ -613,36 +546,35 @@ shared_focus = {
 			if = {
 				limit = {
 					has_dlc = "La Resistance"
-					NOT = {
-						has_intelligence_agency = yes
-					}
+					NOT = { has_intelligence_agency = yes }
 				}
 				create_intelligence_agency = yes				
 			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
 			if = {
 				limit = {
-					NOT = {
-						has_government = communism
-					}
-					is_puppet = no
+					NOT = { has_government = communism }
+					is_subject = no
 					JAP = {
-						NOT = {
-							has_government = communism
-						}
-						is_puppet = no
+						NOT = { has_government = communism }
+						is_subject = no
 					}
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment
 					amount = 5
 					producer = JAP
-				}
-				add_tech_bonus = {
-					name = POL_the_defence_of_poland
-					bonus = 0.5
-					uses = 1
-					category = infantry_weapons
 				}								
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				custom_effect_tooltip = available_mio_tt
+				custom_effect_tooltip = CHL_skip_one_line_tt
+				show_mio_tooltip = ENG_rsaf_enfield_organization
+				custom_effect_tooltip = CHL_skip_one_line_tt
+				show_mio_tooltip = ENG_royal_arsenal_organization
+				custom_effect_tooltip = CHL_skip_one_line_tt
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ESPIONAGE FOCUS_FILTER_MILITARY_EQUIPMENT }
@@ -689,13 +621,14 @@ shared_focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-		    remove_ideas = EST_outdated_military
 			add_tech_bonus = {
-				name = POL_standardisation_of_equipment
+				name = EST_standardization_of_equipment
 				bonus = 1
 				uses = 1
 				category = infantry_weapons
 			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+		    remove_ideas = EST_outdated_military
 			#1x 50% for Infantry Equipment
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -726,7 +659,7 @@ shared_focus = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
-shared_focus = {
+	shared_focus = {
 		id = EST_invite_german_experts
 		icon = GFX_goal_military_agreement_germany
 		prerequisite = { focus = EST_study_foreign_tanks }
@@ -750,7 +683,7 @@ shared_focus = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = POL_study_foreign_tanks
+				name = EST_invite_german_experts
 				bonus = 1
 				uses = 1
 				category = armor
@@ -772,6 +705,12 @@ shared_focus = {
 		completion_reward = {
 			army_experience = 5
 			add_ideas = FRA_motorized_focus
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				custom_effect_tooltip = CHL_skip_one_line_tt
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = USA_ford_motor_company_organization
+			}
 		}
 	}
 	shared_focus = {
@@ -810,7 +749,7 @@ shared_focus = {
 
 		x = 0
 		y = 3
-		cost = 5
+		cost = 8
 
 		available_if_capitulated = yes
 
@@ -820,8 +759,14 @@ shared_focus = {
 		completion_reward = {
 			add_resource = {
 				type = oil
-				amount = 12
+				amount = 2
 				state = 813
+			}
+			add_tech_bonus = {
+				name = GER_synth_oil_research
+				bonus = 0.5
+				uses = 2
+				category = synth_resources
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_OIL}
@@ -837,7 +782,7 @@ shared_focus = {
 
 		x = 2
 		y = 3
-		cost = 10
+		cost = 8
 
 		available_if_capitulated = yes
 
@@ -847,12 +792,12 @@ shared_focus = {
 		completion_reward = {
 			add_resource = {
 				type = steel
-				amount = 8
+				amount = 6
 				state = 191
 			}
 			add_resource = {
 				type = steel
-				amount = 8
+				amount = 6
 				state = 13
 			}
 		}
@@ -898,10 +843,10 @@ shared_focus = {
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -932,13 +877,12 @@ shared_focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 4
+					level = 2
 					instant_build = yes
 				}
-				set_state_flag = POL_invest_in_the_old_polish_region_1
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -1107,7 +1051,7 @@ shared_focus = {
 		id = EST_air_base_expansion
 		icon = GFX_goal_EST_coa_air_force
 
-		x = -6
+		x = 19
 		y = 0
 		cost = 10
 
@@ -1174,9 +1118,8 @@ shared_focus = {
 		id = EST_air_innovations
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = EST_air_base_expansion }
-		relative_position_id =  EST_air_base_expansion 
 
-		x = -1
+		x = 18
 		y = 1
 		cost = 10
 
@@ -1201,10 +1144,8 @@ shared_focus = {
 		id = EST_fighter_modernisation
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = EST_air_base_expansion }
-		relative_position_id =  EST_air_base_expansion 
 
-
-		x = 1
+		x = 20
 		y = 1
 		cost = 10
 
@@ -1222,6 +1163,11 @@ shared_focus = {
 				category = light_fighter
 			}
 			#1x50% research bonus to fighter models
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = BALTIC_RAF_organization
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1229,9 +1175,9 @@ shared_focus = {
 		id = EST_heavy_fighter_concept
 		icon = GFX_focus_usa_escort_fighters
 		prerequisite = { focus = EST_air_innovations focus = EST_fighter_modernisation }
-		relative_position_id =  EST_air_innovations 
-		x = 1
-		y = 1
+
+		x = 19
+		y = 2
 		cost = 10
 
 		ai_will_do = {
@@ -1255,11 +1201,9 @@ shared_focus = {
 		id = EST_naval_bomber_experiments
 		icon = GFX_goal_generic_air_naval_bomber
 		prerequisite = { focus = EST_air_innovations }
-		relative_position_id =  EST_air_innovations 
 
-
-		x = -1
-		y = 1
+		x = 17
+		y = 2
 		cost = 10
 
 		ai_will_do = {
@@ -1284,10 +1228,9 @@ shared_focus = {
 		icon = GFX_goal_multiple_bombers
 		prerequisite = { focus = EST_heavy_fighter_concept focus = EST_air_innovations }
 		mutually_exclusive = { focus = EST_light_bomber_focus }
-		relative_position_id =  EST_heavy_fighter_concept 
 
-		x = -1
-		y = 1
+		x = 18
+		y = 3
 		cost = 10
 
 		ai_will_do = {
@@ -1313,10 +1256,9 @@ shared_focus = {
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = EST_heavy_fighter_concept focus = EST_fighter_modernisation }
 		mutually_exclusive = { focus = EST_medium_bomber_focus }
-		relative_position_id =  EST_heavy_fighter_concept 
 
-		x = 1
-		y = 1
+		x = 20
+		y = 3
 		cost = 10
 
 		ai_will_do = {
@@ -1341,9 +1283,9 @@ shared_focus = {
 		id = EST_air_modernisations_programme
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = EST_light_bomber_focus focus = EST_medium_bomber_focus }
-		relative_position_id =  EST_medium_bomber_focus 
-		x = 1
-		y = 1
+
+		x = 19
+		y = 4
 		cost = 10
 
 		ai_will_do = {
@@ -1374,9 +1316,9 @@ shared_focus = {
     shared_focus = {
 		id = EST_build_paldiski_port
 		icon = GFX_goal_EST_coa_navy
-		x = -2
+		x = 23
 		y = 0
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -1400,10 +1342,10 @@ shared_focus = {
 
 		complete_tooltip = {
 			navy_experience = 25
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = dockyard
-				level = 2
+				level = 1
 				instant_build = yes
 			}
 		}
@@ -1435,10 +1377,10 @@ shared_focus = {
 							include_locked = yes
 						}
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 				}
@@ -1504,15 +1446,19 @@ shared_focus = {
 					}
 				}
 			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = EST_paldiski_port_organization
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	shared_focus = {
 		id = EST_expand_port_paldiski
 		prerequisite = { focus = EST_build_paldiski_port }
-		relative_position_id =  EST_build_paldiski_port 
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 0
+		x = 23
 		y = 3
 		cost = 10
 		ai_will_do = {
@@ -1628,8 +1574,7 @@ shared_focus = {
 		id = EST_escort_effort
 		icon = GFX_goal_generic_navy_anti_submarine
 		prerequisite = { focus = EST_build_paldiski_port }
-		relative_position_id =  EST_build_paldiski_port 
-		x = -1
+		x = 22
 		y = 1
 		cost = 10
 		#ai_will_do = {
@@ -1646,9 +1591,8 @@ shared_focus = {
 		id = EST_special_marine_forces
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = EST_escort_effort }
-		relative_position_id =  EST_escort_effort 
-		x = 0
-		y = 1
+		x = 22
+		y = 2
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -1675,11 +1619,10 @@ shared_focus = {
 	shared_focus = {
 		id = EST_navy_tactics
 		icon = GFX_goal_coastal_navy
-		x = 1
+		x = 24
 		y = 1
 		cost = 10
 		prerequisite = { focus = EST_build_paldiski_port }
-		relative_position_id =  EST_build_paldiski_port 
 		ai_will_do = {
 			factor = 1
 		}
@@ -1699,10 +1642,9 @@ shared_focus = {
 	shared_focus = {
 		id = EST_destroyer_focus
 		prerequisite = { focus = EST_navy_tactics }
-		relative_position_id =  EST_navy_tactics 
 		icon = GFX_focus_generic_destroyer
-		x = 0
-		y = 1
+		x = 24
+		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 1

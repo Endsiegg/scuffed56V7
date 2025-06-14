@@ -1,46 +1,27 @@
- #####-----> Rt56 Shared Generic Trees <><> <><> <><> 
-#	shared_focus = {
-#		id = ABC_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		completion_reward = {
-#
-#		}
-#	}
-
+#####-----> Rt56 Shared Generic Trees <><> <><> <><> 
 	shared_focus = {
 		id = ABC_establish_a_general_staff
 		icon = GFX_focus_generic_military_mission
 		x = 3
 		y = 0
+		allow_branch = {
+			NOT = {
+				# GER shared
+				original_tag = PRE
+				original_tag = BAY
+				original_tag = WUR
+				original_tag = BAD
+				original_tag = SAX
+				original_tag = HAN
+				original_tag = MEK
+				original_tag = SHL
+			}
+		}
 		offset = {
 			x = 23
 			y = 0
 			trigger = {
-				tag = ALB
+				has_focus_tree = albania_focus		#they lose their non-generic political branch when overthrown by YUG
 			}
 		}
 		offset = {
@@ -53,10 +34,11 @@
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 
 		available = {
+			num_divisions > 0
 		}
 
 		cancel_if_invalid = yes
@@ -66,13 +48,12 @@
 		}
 
 		completion_reward = {
-			army_experience = 25
-
-			if = {
+			army_experience = 5
+			if = { # Tooltip Only
 				limit = {
-					not = {
-							has_country_flag = ABC_establish_a_general_staff_a
-							has_country_flag = ABC_establish_a_general_staff_b
+					NOT = {
+						has_country_flag = ABC_establish_a_general_staff_a
+						has_country_flag = ABC_establish_a_general_staff_b
 					}
 				}
 				add_ideas = ABC_establish_a_general_staff_idea
@@ -83,16 +64,14 @@
 				}
 				add_ideas = ABC_establish_a_general_staff_idea_1
 			}
-
 			if = {
 				limit = {
 					has_country_flag = ABC_establish_a_general_staff_b
 				}
 				add_ideas = ABC_establish_a_general_staff_idea_2
 			}
-
 			hidden_effect = {
-					set_country_flag = ABC_i_am_generic_army		
+				set_country_flag = ABC_i_am_generic_army		
 			}
 		}
 	}
@@ -105,10 +84,10 @@
 		y = 1
 		relative_position_id = ABC_establish_a_general_staff
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 
 		cancel_if_invalid = yes
@@ -117,7 +96,7 @@
 			unlock_decision_tooltip = ABC_training_exercise 
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -131,12 +110,12 @@
 		x = 0
 		y = 1
 		relative_position_id = ABC_army_reform
-		cost = 5
+		cost = 10
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			army_experience = 25
+			army_experience = 5
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
@@ -153,13 +132,13 @@
 		x = 0
 		y = 1
 		relative_position_id = ABC_doctrine_effort
-		cost = 5
+		cost = 10
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			unlock_decision_tooltip = r56_organize_military_maneuvers 
-			army_experience = 50
+			army_experience = 10
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
@@ -200,12 +179,12 @@
 	
 	shared_focus = {
 		id = ABC_equipment_effort
-		icon = GFX_goal_generic_small_arms
+		icon = GFX_focus_generic_manpower
 		prerequisite = { focus = ABC_army_reform }
 		x = -3
 		y = 1
 		relative_position_id = ABC_army_reform
-		cost = 5
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -223,12 +202,12 @@
 	}
 	shared_focus = {
 		id = ABC_equipment_effort_2
-		icon = GFX_goal_generic_army_artillery
+		icon = GFX_goal_machine_gun
 		prerequisite = { focus = ABC_equipment_effort }
 		x = -1
 		y = 1
 		relative_position_id = ABC_equipment_effort
-		cost = 5
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -256,7 +235,7 @@
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 
 		cancel_if_invalid = yes
@@ -341,7 +320,7 @@
 
 	shared_focus = {
 		id = ABC_establish_a_armor_corp
-		icon = GFX_focus_NZL_bob_semple_tank
+		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = ABC_army_modernization }
 		x = 2
 		y = 3
@@ -350,19 +329,101 @@
 		cost = 10
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 		
 		bypass = {
-			has_tech = improved_light_tank
+				if = {
+					limit = {
+						has_dlc = "No Step Back"
+					}
+					or = {
+						has_tech = improved_light_tank_chassis
+						has_tech = improved_medium_tank_chassis
+						has_tech = improved_heavy_tank_chassis
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_dlc = "No Step Back"
+						}
+					}
+					or = {
+						has_tech = advanced_light_tank
+						has_tech = improved_medium_tank
+						has_tech = improved_heavy_tank
+					}
+				}
 		}
-
 		cancel_if_invalid = yes
 
 		completion_reward = {
+			#HAS DLC
 			if = {
 				limit = {
-					NOT = { has_tech = gwtank }
+					NOT = { has_tech = gwtank_chassis }
+					has_dlc = "No Step Back"
+				}
+				add_tech_bonus = {
+					name = armor_bonus
+					bonus = 3
+					uses = 1
+					technology = gwtank_chassis
+				}
+				add_tech_bonus = {
+					name = POL_study_foreign_tanks
+					bonus = 1
+					uses = 1
+					category = armor
+				}								
+				add_equipment_to_stockpile = { type = light_tank_chassis_0 amount = 20 producer = FRA }
+			}
+			if = { 
+				limit = { 
+					has_tech = gwtank_chassis
+					NOT = { has_tech = basic_light_tank }
+					has_dlc = "No Step Back"
+				}
+				add_tech_bonus = {
+					name = armor_bonus
+					bonus = 1
+					uses = 1
+					technology = basic_light_tank
+				}
+				add_tech_bonus = {
+					name = POL_study_foreign_tanks
+					bonus = 1
+					uses = 1
+					category = armor
+				}				
+				add_equipment_to_stockpile = { type = light_tank_chassis_0 amount = 20 producer = FRA }
+			}
+			if = { 
+				limit = { 
+					has_tech = gwtank_chassis
+					has_tech = basic_light_tank
+					NOT = { has_tech = improved_light_tank }
+					has_dlc = "No Step Back"
+				}
+				add_tech_bonus = {
+					name = armor_bonus
+					bonus = 1
+					uses = 1
+					technology = improved_light_tank
+				}
+				add_tech_bonus = {
+					name = POL_study_foreign_tanks
+					bonus = 1
+					uses = 1
+					category = armor
+				}				
+				add_equipment_to_stockpile = { type = light_tank_chassis_0 amount = 20 producer = FRA }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = gwtank_chassis }
+					NOT = { has_dlc = "No Step Back" }
 				}
 				add_tech_bonus = {
 					name = armor_bonus
@@ -376,12 +437,14 @@
 					uses = 1
 					category = armor
 				}								
-				add_equipment_to_stockpile = { type = gw_tank_equipment  amount = 20 producer = FRA }
+				add_equipment_to_stockpile = { type = gw_tank_equipment amount = 20 producer = FRA }
 			}
+			# NO DLC
 			if = { 
 				limit = { 
 					has_tech = gwtank
 					NOT = { has_tech = basic_light_tank }
+					NOT = { has_dlc = "No Step Back" }
 				}
 				add_tech_bonus = {
 					name = armor_bonus
@@ -402,6 +465,7 @@
 					has_tech = gwtank
 					has_tech = basic_light_tank
 					NOT = { has_tech = improved_light_tank }
+					NOT = { has_dlc = "No Step Back" }
 				}
 				add_tech_bonus = {
 					name = armor_bonus
@@ -431,7 +495,7 @@
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 
 		available = {
@@ -453,7 +517,7 @@
 	}
 	shared_focus = {
 		id = ABC_motorization_effort
-		icon = GFX_goal_generic_modernizing_the_cavalry
+		icon = GFX_focus_generic_truck
 		prerequisite = { focus = ABC_army_modernization }
 		x = 4
 		y = 3
@@ -462,7 +526,7 @@
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 		
 		bypass = {
@@ -483,7 +547,7 @@
 	}
 	shared_focus = {
 		id = ABC_mechanization_effort
-		icon = GFX_goal_mechanized_offensive
+		icon = GFX_focus_generic_mechanized
 		prerequisite = { focus = ABC_establish_a_armor_corp }
 		prerequisite = { focus = ABC_motorization_effort }
 		x = 3
@@ -493,7 +557,7 @@
 		cost = 10
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 
 		cancel_if_invalid = yes
@@ -501,7 +565,7 @@
 		completion_reward = {
 			add_tech_bonus = {
 				name = FRA_mechanized_focus
-				ahead_reduction = 1
+				ahead_reduction = 0.5
 				bonus = 0.5
 				uses = 1
 				category = cat_mechanized_equipment
@@ -512,7 +576,7 @@
 
 	shared_focus = {
 		id = ABC_field_hospitals
-		icon = GFX_goal_medicine
+		icon = GFX_focus_generic_field_hostpital
 		prerequisite = { focus = ABC_motorization_effort }
 		x = 5
 		y = 4
@@ -521,7 +585,7 @@
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 
 		available = {
@@ -553,7 +617,7 @@
 		cost = 10
 
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 
 		available = {

@@ -24,48 +24,12 @@ focus_tree = {
 	default = no
 
 	continuous_focus_position = { x = 250 y = 1100 }
-
-#	focus = {
-#		id = LAT_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
-	#shared_focus = BAL_UNIFIED_baltic_unification
-	#shared_focus = LAT_revitalize_civilian_economy	#r56 tree shared
-	#shared_focus = LAT_VEF_radio_production			#r56 tree shared
-	#shared_focus = LAT_rely_on_foreign_attaches		#r56 tree shared
+	#shared_focus = BALTIC_rejoin_the_railways
+	shared_focus = LAT_revitalize_civilian_economy	#r56 tree shared
+	shared_focus = LAT_VEF_radio_production			#r56 tree shared
+	shared_focus = LAT_rely_on_foreign_attaches		#r56 tree shared
  	shared_focus = BALTIC_restore_workers_republic
-	shared_focus = BALTIC_rejoin_the_railways
+	 shared_focus = BAL_UNIFIED_baltic_unification
 	
 	###############################################
 	#### SUSPEND THE CONSTITUTION (HISTORICAL) ####
@@ -358,13 +322,16 @@ focus_tree = {
 				election_frequency = 48
 				elections_allowed = yes
 			}
-			promote_character = LAT_fricis_menders
-			effect_tooltip = {
-				swap_ruler_traits = {
-
-					remove = subservient_democrat add = subservient_democrat_democratic
+			LAT_fricis_menders = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						ideology = socialism
+						traits = { subservient_democrat_democratic }
+						expire = "1980.1.1.1"
+						id = -1
+					}
 				}
-
 			}
 			remove_ideas = democratic_opposition_idea_1
 			add_popularity = {
@@ -1589,8 +1556,6 @@ focus_tree = {
 					infantry = { x = 2 y = 2 }
 					infantry = { x = 3 y = 2 }
 				}
-				support = {
-				}
 			}
 			random_owned_controlled_state = {
 				custom_effect_tooltip = LAT_free_the_ugonskrusts_tt
@@ -2282,6 +2247,7 @@ focus_tree = {
 				effect_tooltip = {
 					every_other_country = {
 						limit = {
+							is_baltic_country = yes
 							is_in_faction_with = ROOT
 						}
 					}
@@ -2600,7 +2566,7 @@ focus_tree = {
 			}
 			else = {
 				add_tech_bonus = {
-					name = underground_bonus
+					name = LAT_prepare_covert_resistance
 					bonus = 1.0
 					uses = 2
 					category = electronics
@@ -2680,6 +2646,7 @@ focus_tree = {
 			add_ideas = { BALTIC_economic_union_1 }
 			every_other_country = {
 				limit = {
+					is_baltic_country = yes
 					is_in_faction_with = ROOT
 				}
 				hidden_effect = { country_event = BALTIC_entente_events.1 }
@@ -2712,6 +2679,7 @@ focus_tree = {
 			add_ideas = { LIT_baltic_defence_army }
 			every_other_country = {
 				limit = {
+					is_baltic_country = yes
 					is_in_faction_with = ROOT
 				}
 				hidden_effect = { country_event = BALTIC_entente_events.2 }
@@ -2746,6 +2714,7 @@ focus_tree = {
 			}
 			every_other_country = {
 				limit = {
+					is_baltic_country = yes
 					is_in_faction_with = ROOT
 				}
 				hidden_effect = { country_event = BALTIC_entente_events.3 }
@@ -2785,6 +2754,7 @@ focus_tree = {
 			add_ideas = { BALTIC_union_idea }
 			every_other_country = {
 				limit = {
+					is_baltic_country = yes
 					is_in_faction_with = ROOT
 				}
 				hidden_effect = { country_event = BALTIC_entente_events.4 }
@@ -2864,6 +2834,7 @@ focus_tree = {
 			}
 			every_other_country = {
 				limit = {
+					is_baltic_country = yes
 					is_in_faction_with = ROOT
 				}
 				swap_ideas = {
@@ -2917,6 +2888,7 @@ focus_tree = {
 			}
 			every_other_country = {
 				limit = {
+					is_baltic_country = yes
 					NOT = {
 						is_in_faction_with = ROOT
 					}
@@ -2955,6 +2927,7 @@ focus_tree = {
 		completion_reward = {
 			every_other_country = {
 				limit = {
+					is_baltic_country = yes
 					is_in_faction_with = ROOT
 				}
 				country_event = {
@@ -2966,12 +2939,14 @@ focus_tree = {
 				if = {
 					limit = {
 						any_other_country = {
+							is_baltic_country = yes
 							is_in_faction_with = ROOT
 						}
 					}
 					custom_effect_tooltip = if_they_accept_tt
 					every_other_country = {
 						limit = {
+							is_baltic_country = yes
 							is_in_faction_with = ROOT
 						}
 					}
@@ -2980,6 +2955,7 @@ focus_tree = {
 			}
 			every_other_country = {
 				limit = {
+					is_baltic_country = yes
 					NOT = {
 						is_in_faction_with = ROOT
 					}

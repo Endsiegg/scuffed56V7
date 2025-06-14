@@ -404,6 +404,20 @@ shared_focus = {
 			has_focus_tree = danish_focus
 		}
 	}
+	offset = {
+		x = 25
+		y = -15
+		trigger = {
+			has_focus_tree = denmark_focus
+		}
+	}
+	offset = {
+		x = 35
+		y = -15
+		trigger = {
+			has_focus_tree = free_denmark
+		}
+	}
 
 	offset = {
 		x = -17
@@ -497,6 +511,14 @@ shared_focus = {
 			has_focus_tree = norwegian_focus
 		}
 	}
+	offset = {
+		x = -25
+		y = -7
+		trigger = {
+			has_dlc = "Arms Against Tyranny"
+			has_focus_tree = r56_norwegian_focus
+		}
+	}
 
 	#ICELAND
 	offset = {
@@ -539,8 +561,6 @@ shared_focus = {
 		}
 	}
 
-	search_filters = {}
-
 	completion_reward = {
 		if = {
 			limit = {	
@@ -581,8 +601,6 @@ joint_focus = {
 		has_war_support > 0.25
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -613,8 +631,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes
 		is_faction_leader = yes
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -707,8 +723,6 @@ joint_focus = {
 		num_of_civilian_factories > 15	
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -729,15 +743,13 @@ joint_focus = {
 	x = -1
 	y = 1
 	relative_position_id = NORDIC_political_cooperation
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
 	available = {
 		NORDIC_basic_available_trigger = yes
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -844,7 +856,7 @@ joint_focus = {
 	x = 1
 	y = 1
 	relative_position_id = NORDIC_shared_intelligence
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
@@ -852,8 +864,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes	
 		is_faction_leader = yes 
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -989,7 +999,7 @@ joint_focus = {
 	x = 0
 	y = 1
 	relative_position_id = NORDIC_first_joint_institution
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
@@ -998,8 +1008,6 @@ joint_focus = {
 		has_stability > 0.55
 		num_of_civilian_factories > 17	
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -1332,8 +1340,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes
 		is_faction_leader = yes 
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -1765,8 +1771,6 @@ joint_focus = {
 		num_divisions > 15
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -1809,8 +1813,6 @@ joint_focus = {
 		num_divisions > 20
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -1850,7 +1852,7 @@ joint_focus = {
 	x = 0
 	y = 1
 	relative_position_id = NORDIC_joint_military_exercises
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
@@ -1859,8 +1861,6 @@ joint_focus = {
 		has_army_manpower = { size > 89999 } 
 		num_divisions > 20
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -1941,8 +1941,6 @@ joint_focus = {
 
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -2007,8 +2005,6 @@ joint_focus = {
 		}
 		has_army_manpower = { size > 99999 } 
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -2397,7 +2393,7 @@ joint_focus = {
 	x = -2
 	y = 1
 	relative_position_id = NORDIC_northern_command
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
@@ -2407,8 +2403,6 @@ joint_focus = {
 			size > 24
 		}
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -2446,7 +2440,7 @@ joint_focus = {
 	x = 0
 	y = 1
 	relative_position_id = NORDIC_nordic_navy
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
@@ -2471,8 +2465,6 @@ joint_focus = {
 	#		has_global_flag = NORDIC_debug_show_all_capstones
 	#	}
 	#}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -2647,7 +2639,7 @@ joint_focus = {
 	x = 3
 	y = 1
 	relative_position_id = NORDIC_nordic_navy
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
@@ -2657,8 +2649,6 @@ joint_focus = {
 			size > 19
 		}
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -2697,8 +2687,6 @@ joint_focus = {
 		}
 		num_of_naval_factories > 14		
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -2855,8 +2843,6 @@ joint_focus = {
 		}
 		num_of_naval_factories > 14
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -3015,8 +3001,6 @@ joint_focus = {
 		num_of_naval_factories > 14
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -3163,8 +3147,6 @@ joint_focus = {
 		num_of_naval_factories > 14
 		num_researched_technologies > 25
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -3466,8 +3448,6 @@ joint_focus = {
 		num_of_naval_factories > 19
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -3543,8 +3523,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes	
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -3552,6 +3530,7 @@ joint_focus = {
 	completion_reward_joint_originator = {
 		army_experience = 50
 		add_doctrine_cost_reduction = {
+			name = NORDIC_mountaineers
 			cost_reduction = 0.75
 			uses = 1
 			category = special_forces_doctrine
@@ -3562,6 +3541,7 @@ joint_focus = {
 	completion_reward_joint_member = {
 		navy_experience = 20
 		add_doctrine_cost_reduction = {
+			name = NORDIC_mountaineers
 			cost_reduction = 0.5
 			uses = 1
 			category = special_forces_doctrine
@@ -3593,8 +3573,6 @@ joint_focus = {
 		}
 		num_of_naval_factories > 17
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -3685,7 +3663,7 @@ joint_focus = {
 	x = -5
 	y = 0
 	relative_position_id = NORDIC_nordic_navy
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
@@ -3695,8 +3673,6 @@ joint_focus = {
 			size > 199
 		}
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -3740,7 +3716,7 @@ joint_focus = {
 	x = 0
 	y = 1
 	relative_position_id = NORDIC_nordic_airforce
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
@@ -3750,8 +3726,6 @@ joint_focus = {
 			size > 349
 		}
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -3798,8 +3772,6 @@ joint_focus = {
 			size > 299
 		}
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -3856,8 +3828,6 @@ joint_focus = {
 	available = {
 		NORDIC_basic_available_trigger = yes
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -3916,9 +3886,7 @@ joint_focus = {
 				type = strategic_bomber
 			}
 		}
-	}
-
-	search_filters = {} 
+	} 
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -4004,8 +3972,6 @@ joint_focus = {
 		}
 	}
 
-	search_filters = {}
-
 	completion_reward = {
 		hidden_effect = {
 			add_to_variable = {
@@ -4079,15 +4045,13 @@ joint_focus = {
 
 	available = {
 		NORDIC_basic_available_trigger = yes
-		has_tech = decimetric_radar
+		has_tech = cavity_magnatron
 		has_tech = interwar_antiair
 		air_base > 9
 		any_owned_state = {
 			air_base > 3 
 		}
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -4495,8 +4459,6 @@ joint_focus = {
 		}
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -4654,7 +4616,7 @@ joint_focus = {
 #
 #	available = {
 #		NORDIC_basic_available_trigger = yes
-#		has_tech = decimetric_radar
+#		has_tech = cavity_magnatron
 #	}
 #
 #	search_filters = {}
@@ -4855,7 +4817,7 @@ joint_focus = {
 	x = 7
 	y = 1
 	relative_position_id = NORDIC_form_joint_alliance
-	cost = 5
+	cost = 10
 
 	text_icon = NORDIC_focus_style
 
@@ -4864,8 +4826,6 @@ joint_focus = {
 		num_researched_technologies > 25
 
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -4898,8 +4858,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes
 		num_researched_technologies > 50
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -4942,8 +4900,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes
 		num_researched_technologies > 30
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -5005,8 +4961,6 @@ joint_focus = {
 		num_of_civilian_factories > 15	
 		NORDIC_basic_available_trigger = yes
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -5080,23 +5034,21 @@ joint_focus = {
 		num_of_civilian_factories > 20
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
 
 	completion_reward_joint_originator = {
-		add_ideas = {
-			NORDIC_development_fund_originator_ns
-			
+		add_timed_idea = {
+			idea = NORDIC_development_fund_originator_ns
+			days = 365
 		}
 	}
 
 	completion_reward_joint_member = {
-		add_ideas = {
-			NORDIC_development_fund_member_ns
-			
+		add_timed_idea = {
+			idea = NORDIC_development_fund_member_ns
+			days = 365
 		}
 	}
 }
@@ -5120,8 +5072,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes
 		num_of_civilian_factories > 20
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -5256,8 +5206,6 @@ joint_focus = {
 		num_of_civilian_factories > 25
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -5378,8 +5326,6 @@ joint_focus = {
 		num_of_naval_factories > 15
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -5446,8 +5392,6 @@ joint_focus = {
 		num_of_civilian_factories > 25
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -5486,8 +5430,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes
 		num_researched_technologies > 30
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -5530,8 +5472,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -5565,27 +5505,61 @@ joint_focus = {
 		num_researched_technologies > 50
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
 
 	completion_reward_joint_originator = {
-		add_tech_bonus = {
-			name = NORDIC_nuclear_research
-			bonus = 1.5
-			uses = 1
-			category = nuclear
+		IF = {
+			limit = {
+				NOT = {
+					has_tech = atomic_research
+				}
+			}
+			add_tech_bonus = {
+				name = NORDIC_nuclear_research
+				bonus = 1.25
+				uses = 1
+				category = nuclear
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.75
+			}
+		}
+		ELSE = {
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.95
+			}
 		}
 	}
 
 	completion_reward_joint_member = {
-		add_tech_bonus = {
-			name = NORDIC_nuclear_research
-			bonus = 0.5
-			uses = 1
-			category = nuclear
+		IF = {
+			limit = {
+				NOT = {
+					has_tech = atomic_research
+				}
+			}
+			add_tech_bonus = {
+				name = NORDIC_nuclear_research
+				bonus = 0.5
+				uses = 1
+				category = nuclear
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.25
+			}
+		}
+		ELSE = {
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.50
+			}
 		}
 	}
 }
@@ -5612,8 +5586,6 @@ joint_focus = {
 		num_researched_technologies > 55
 		num_of_civilian_factories > 25
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -5693,7 +5665,6 @@ joint_focus = {
 #			}
 #		}
 #	}
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -5703,8 +5674,13 @@ joint_focus = {
 		add_tech_bonus = {
 			name = NORDIC_nordic_rocketry
 			bonus = 0.25
-			uses = 2 
+			uses = 2
 			category = rocketry
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_breakthrough_progress = {
+			specialization = specialization_air
+			value = 0.50
 		}
 	}
 
@@ -5714,6 +5690,10 @@ joint_focus = {
 			bonus = 0.25
 			uses = 1 
 			category = rocketry
+		}
+		add_breakthrough_progress = {
+			specialization = specialization_air
+			value = 0.25
 		}
 	}
 }
@@ -5741,8 +5721,6 @@ joint_focus = {
 		}
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -5755,6 +5733,10 @@ joint_focus = {
 			uses = 2
 			category = jet_technology 
 		}
+		add_breakthrough_progress = {
+			specialization = specialization_air
+			value = 0.50
+		}
 	}
 
 	completion_reward_joint_member = {
@@ -5764,6 +5746,10 @@ joint_focus = {
 			ahead_reduction = 1
 			uses = 1
 			category = jet_technology 
+		}
+		add_breakthrough_progress = {
+			specialization = specialization_air
+			value = 0.25
 		}
 	}
 }
@@ -5945,8 +5931,6 @@ joint_focus = {
 		num_of_military_factories > 10
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -6023,8 +6007,6 @@ joint_focus = {
 		num_of_military_factories > 20
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -6088,8 +6070,6 @@ joint_focus = {
 			arms_factory > 3
 		}
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -6183,8 +6163,6 @@ joint_focus = {
 		NORDIC_basic_available_trigger = yes
 		num_of_military_factories > 15
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
@@ -6350,8 +6328,6 @@ joint_focus = {
 		num_of_military_factories > 25
 	}
 
-	search_filters = {}
-
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
 	}
@@ -6414,8 +6390,6 @@ joint_focus = {
 		num_of_military_factories > 20
 		num_researched_technologies > 45
 	}
-
-	search_filters = {}
 
 	joint_trigger = {
   		NORDIC_basic_joint_trigger = yes 
