@@ -55,6 +55,14 @@ opinion_modifiers = {
 	ARM_liberators = {
 		value = 50
 	}
+
+	ARM_scars_of_the_past = {
+		value = -75
+	}
+	
+	ARM_greek_armenian_friendship_modifier = {
+		value = 75
+	}
 	
 ###------> AST <><> <><> <><> <><> <><>
 
@@ -326,6 +334,8 @@ opinion_modifiers = {
 
 	CZKE_seek_accommodation_with_britain = { value = 50 }
 
+	CZKE_friendship_with_USSR = { value = 30 }
+
 ###------> DEN <><> <><> <><> <><> <><>
 	
 	DEN_GEN_Correspondence = { value = 50 }
@@ -338,10 +348,6 @@ opinion_modifiers = {
 	
 	ENG_state_visit = {
 		value = 30
-	}
-	
-	denounce_germany = {
-		value = -30
 	}
 	
 	western_focus = {
@@ -419,75 +425,17 @@ opinion_modifiers = {
 	fin_scandintervention = { value = 50 }
 	
 	fin_didntintervene = { value = -50 }
+
+	FIN_driftwood = { value = -25 }
 	
 ###------> FRA <><> <><> <><> <><> <><>
-	
-	FRA_anti_fascism_mod = {
-		value = -50
-	}	
-	
-	FRA_anti_communism_mod = {
-		value = -50
-	}
-	
-	FRA_anti_capitalism_mod = {
-		value = -50
-	}
-	
-	FRA_delegation_to_china = {
-		value = 50
-	}
-	
-	denounce_monroe = {
-		value = -30
-	}
-	
-	arming_mexico_support = {
-		value = 50
-	}
-	
-	arming_mexico_opposition = {
-		value = -50
-	}
-	
-	argentine_leaders = {
-		value = 50
-	}
-	
-	scandinavian_q = {
-		value = -50
-	}
-	
-	berlin_forum = {
-		value = 50
-	}
-	
-	italian_forum = {
-		value = 50
-	}
 	
 	FRA_SPA_alliance_focus = {
 		value = 50
 	}
 	
-	hatay_question = {
-		value = -30
-	}
-	
-	swiss_question = {
-		value = -50
-	}
-	
 	FRA_TUR_diplomacy_focus = {
 		value = 50
-	}
-	
-	arming_brazil_support = {
-		value = 50
-	}
-	
-	arming_brazil_opposition = {
-		value = -50
 	}
 	
 	threat_to_med = {
@@ -562,6 +510,14 @@ opinion_modifiers = {
 		value = 75
 	}
 
+	cominform = {
+		value = 50
+	}
+
+	cominform_denied = {
+		value = -30
+	}
+
 ###------> GRE <><> <><> <><> <><> <><>
 	
 	gre_pro_ally = {
@@ -599,12 +555,6 @@ opinion_modifiers = {
 	GRE_draw_closer_to_USSR = { value = 50 }
 
 	GRE_draw_closer_to_britain = { value = 50 }
-	
-###------> HOL <><> <><> <><> <><> <><>
-	
- 	HOL_trick_germans_good = { value = 30 }
- 	
- 	HOL_trick_germans_bad = { value = -10 }
 
 ###------> HON <><> <><> <><> <><> <><>
 
@@ -708,8 +658,6 @@ opinion_modifiers = {
 
 	JAP_SOV_sakhalin_oil_agreement  = { value = 15 }
 	
-	JAP_embargo = { value = -100}
-	
 ###------> KMT <><> <><> <><> <><> <><>
 	
 	no_collaboration_with_CHI_COM = { value = -100 }
@@ -727,12 +675,6 @@ opinion_modifiers = {
 	false_document_trusted = { value = -100 }
 	
 	never_like_them_anyway = { value = -100 }
-	
-	recognition = { value = 100 }
-	
-	tolerance = { value = 100 }
-	
-	wtever = { value = 40 }
 	
 	SOV_CHI_join_comintern_reject = { value = -50 }
 	
@@ -796,19 +738,11 @@ opinion_modifiers = {
 		decay = 2
 	}
 	
-	ignore_claim = { value = -25 }
-	
 	sino_german_cooperation = { value = 15 }
 	
 	more_sino_german_coop = { value = 20 }
 	
 	KMT_sino_japanes_friendship = { value = 50 }
-	
-	selfish = { 
-		value = -5 
-		months = 1
-		decay = 1
-	}
 	
 	GER_CHI_join_germany_reject = { value = -10 }
 	
@@ -851,20 +785,6 @@ opinion_modifiers = {
 	CHI_KR_fd = { value = 35 }
 
 ###------> LIT <><> <><> <><> <><> <><>
-	
-	
-	revolt_organizer = {
-		value = -50
-		months = 36
-		decay = 1
-	}
-
-
-	revolt_organizer = {
-		value = -50
-		months = 36
-		decay = 1
-	}
 
 	LIT_dissolved_the_directorate = { value = -100 }
 
@@ -885,12 +805,13 @@ opinion_modifiers = {
 	diplomatic_ties = { #special used for civil wars that are on hold and blocks faction stuff
 		value = 30
 	}
+
+	huge_decrease = {
+		value = -50
+	}
 	
 	###------> MAN <><> <><> <><> <><> <><>
-		
-		tungchow_mutiny = { value = -80 }
-		
-		hand_over_rfr = { value = 25 }
+	helped_to_arrest_konstantin = { value = 25 }
 
 	
 	###------> MAL <><> <><> <><> <><> <><>
@@ -906,10 +827,6 @@ opinion_modifiers = {
 	MEX_expelled_diplomats = {
 		value = -50
 	}
-	MEX_trade_deal = {
-		value = 50
-	}
-
 	
 ###------> MON <><> <><> <><> <><> <><>
 
@@ -945,38 +862,6 @@ opinion_modifiers = {
 	
 	PER_reaffirm_friendship_with_turkey = {
 		value = 55
-	}
-
-	PER_supported_spain_civil_war = {
-		value = 30
-	}
-
-	PER_claimed_the_gulf = {
-		value = -25
-	}
-	
-	PER_nationalized_oil = {
-		value = -100
-	}
-	
-	PER_claimed_iraq = {
-		value = -25
-	}
-	
-	PER_claimed_afghanistan = {
-		value = -25
-	}
-	
-	PER_claimed_turkey = {
-		value = -25
-	}
-	
-	PER_claimed_the_holy_land = {
-		value = -25
-	}
-	
-	PER_revoked_gullistan = {
-		value = -100
 	}
 
 ###------> POR <><> <><> <><> <><> <><>
@@ -1026,7 +911,21 @@ opinion_modifiers = {
 	PRC_2nd_ne_flag_replacement = { 
 		value = -100 
 	}
-	
+
+###------> ROM <><> <><> <><> <><> <><>
+
+	betrayed_balkan_pact = { value = -40 }
+
+	rom_ger_friendship = { value = 50 }
+
+	rom_fra_antifriendship = { value = -100 }
+
+	rom_seized_our_companies = { value = -60 }
+
+	rom_improved_relations = { value = 40 }
+
+	rom_trade_capital_balkan = { trade = yes value = 50 }
+
 ###------> SAU <><> <><> <><> <><> <><>
 	
 	demanded_our_colonies = { value = -40 }
@@ -1054,6 +953,18 @@ opinion_modifiers = {
 	sau_trade_broken = { 
 		trade = yes
 		value = -75 
+	}
+
+	sau_solved_border_dispute = {
+		value = 35
+	}
+
+	sau_rejected_riyadh_line = {
+		value = -15
+	}
+
+	granted_autonomy = {
+		value = 15
 	}
 	
 ###------> SOV <><> <><> <><> <><> <><>
@@ -1144,6 +1055,9 @@ opinion_modifiers = {
 		trade = yes
 		value = 75
 	}		
+	SWE_nationalized_landsverk = {
+		value = -50
+	}
 ###------> SWI <><> <><> <><> <><> <><>
 	
 	SWI_chose_communism = {
@@ -1215,7 +1129,41 @@ opinion_modifiers = {
 	USA_sent_supplies = {
 		value = 20
 	}
+
+###------> YUG <><> <><> <><> <><> <><>
+
+	YUG_little_entente_ally = {
+		value = 25
+	}
 	
-}	
+	YUG_little_entente_enemy = {
+		value = -30
+	}
+
+	YUG_betrayed_little_entente = {
+		value = -40
+	}
+
+###------> MEN <><> <><> <><> <><> <><>
+
+	MEN_shared_struggle = {
+		value = 50
+	}
+
+###------> GUA <><> <><> <><> <><> <><>
+	
+	GUA_fascist_leanings = {
+		value = -15
+	}
+
+	GUA_usurper_government = {
+		value = -100
+	}
+
+	GUA_anti_american_sentiment = {
+		value = -50
+	}
+	
+}
 
 #####-----------------------------------------------------------> End
