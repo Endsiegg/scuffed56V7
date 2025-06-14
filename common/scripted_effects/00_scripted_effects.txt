@@ -946,8 +946,7 @@ instantiate_collaboration_government = {
 							}
 							create_country_leader = { #Pondichéry communist
 								name = "Caïlacha Subbiah"
-								desc = "POLITICS_LORD_LINLITHGOW_DESC"
-								picture = "gfx/leaders/kr_generic/Portrait_India_Generic_new_6.dds"
+								picture = GFX_kr_portrait_india_generic_6
 								expire = "1965.1.1"
 								ideology = stalinism
 							}
@@ -966,10 +965,9 @@ instantiate_collaboration_government = {
 							}
 							create_country_leader = { #Representative of Pondichéry
 								name = "Deiva Zivarattinam"
-								desc = "POLITICS_LORD_LINLITHGOW_DESC"
-								picture = "gfx/leaders/kr_generic/Portrait_India_Generic_new_4.dds"
+								picture = GFX_kr_portrait_india_generic_4
 								expire = "1965.1.1"
-								ideology = centrism
+								ideology = moderatism
 							}
 						}
 						else_if = {
@@ -986,8 +984,7 @@ instantiate_collaboration_government = {
 							}
 							create_country_leader = { #indian in japanese indian army but coulen't find better
 								name = "Prem Sahgal"
-								desc = "POLITICS_LORD_LINLITHGOW_DESC"
-								picture = "gfx/leaders/kr_generic/Portrait_India_Generic_land_new_7.dds"
+								picture = GFX_kr_portrait_india_generic_land_7
 								expire = "1965.1.1"
 								ideology = fascism_ideology
 							}
@@ -1054,7 +1051,7 @@ instantiate_collaboration_government = {
 								desc = " "
 								picture = "gfx/leaders/r56_generic/r56_portrait_ITA_generic_land_2.dds"
 								expire = "1965.1.1"
-								ideology = moderatism
+								ideology = oligarchism
 							}
 						}
 					}
@@ -1116,7 +1113,6 @@ instantiate_collaboration_government = {
 						}
 						create_country_leader = {
 							name = "Liang Hongzhi"
-							desc = "POLITICS_WANG_JINGWEI_DESC"
 							picture = "gfx/leaders/CHI/r56_portrait_CHI_Liang_Hongzhi.dds"
 							expire = "1965.1.1"
 							ideology = fascism_ideology
@@ -1126,7 +1122,6 @@ instantiate_collaboration_government = {
 						}
 						create_country_leader = {
 							name = "Liang Hongzhi"
-							desc = "POLITICS_WANG_JINGWEI_DESC"
 							picture = "gfx/leaders/CHI/r56_portrait_CHI_Liang_Hongzhi.dds"
 							expire = "1965.1.1"
 							ideology = despotism
@@ -1139,7 +1134,6 @@ instantiate_collaboration_government = {
 					else = {
 						create_country_leader = {
 							name = "Wang Jingwei"
-							desc = "POLITICS_WANG_JINGWEI_DESC"
 							picture = "gfx/leaders/CHI/r56_portrait_CHI_Wang_Jingwei.dds"
 							expire = "1965.1.1"
 							ideology = fascism_ideology
@@ -1150,7 +1144,6 @@ instantiate_collaboration_government = {
 						set_party_name = { ideology = fascism long_name = KMT_wjw name = KMT_wjw }
 						create_country_leader = {
 							name = "Wang Jingwei"
-							desc = "POLITICS_WANG_JINGWEI_DESC"
 							picture = "gfx/leaders/CHI/r56_portrait_CHI_Wang_Jingwei.dds"
 							expire = "1965.1.1"
 							ideology = despotism
@@ -1243,7 +1236,7 @@ instantiate_collaboration_government = {
 						desc = ""
 						picture = "gfx/leaders/r56_generic/r56_portrait_generic_middle_east_1.dds"
 						expire = "1965.1.1"
-						ideology = moderatism
+						ideology = conservatism_n
 						traits = {
 							eager_collaborator
 						}
@@ -1332,7 +1325,6 @@ instantiate_collaboration_government = {
 						#the generic portrait is actually him
 						create_country_leader = {
 							name = "Vilmos Rőder"
-							desc = "POLITICS_FERENC_SZALASI_DESC"
 							picture = "gfx/leaders/Europe/portrait_europe_generic_6.dds"
 							expire = "1965.1.1"
 							ideology = oligarchism
@@ -1349,7 +1341,6 @@ instantiate_collaboration_government = {
 						#the generic portrait is actually him
 						create_country_leader = {
 							name = "Vilmos Rőder"
-							desc = "POLITICS_FERENC_SZALASI_DESC"
 							picture = "gfx/leaders/Europe/portrait_europe_generic_6.dds"
 							expire = "1965.1.1"
 							ideology = fascism_ideology
@@ -1367,14 +1358,12 @@ instantiate_collaboration_government = {
 						OVERLORD = {
 							has_government = fascism
 							NOT = {
-								OR = {
-									original_tag = ROM
-									original_tag = TRA
-									original_tag = CZE
-									original_tag = SLO
-									original_tag = YUG
-									original_tag = SER
-								}
+								original_tag = ROM
+								original_tag = TRA
+								original_tag = CZE
+								original_tag = SLO
+								original_tag = YUG
+								original_tag = SER
 							}
 						}
 						NOT = {
@@ -1388,7 +1377,6 @@ instantiate_collaboration_government = {
 					}
 					create_country_leader = {
 						name = "Ferenc Szalasi"
-						desc = "POLITICS_FERENC_SZALASI_DESC"
 						picture = "gfx/leaders/HUN/r56_portrait_HUN_Ferenc_Szalasi.dds"
 						expire = "1965.1.1"
 						ideology = nazism
@@ -1414,13 +1402,9 @@ instantiate_collaboration_government = {
 					}
 					create_country_leader = {
 						name = "José P. Laurel"
-						desc = "POLITICS_FERENC_SZALASI_DESC"
 						picture = "gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds"
 						expire = "1965.1.1"
 						ideology = fascism_ideology
-						traits = {
-
-						}
 					}
 				}
 
@@ -1428,7 +1412,6 @@ instantiate_collaboration_government = {
 					limit = { original_tag = CZE }
 					if = {
 						limit = {
-							has_dlc = "Death or Dishonor"
 							OR = {
 								is_subject_of = GER
 								is_subject_of = PRE
@@ -1444,7 +1427,6 @@ instantiate_collaboration_government = {
 						}
 						create_country_leader = {
 							name = "Konstantin von Neurath"
-							desc = "POLITICS_FERENC_SZALASI_DESC"
 							picture = "gfx/leaders/CZE/portrait_konstantin_von_neurath.dds"
 							expire = "1965.1.1"
 							ideology = nazism
@@ -1469,6 +1451,29 @@ instantiate_collaboration_government = {
 						74 = { add_core_of = GER }
 						GER = { transfer_state = 74 }
 					}
+
+					if = {
+						limit = {
+							AUS = {
+								OR = {
+									is_in_faction_with = GER
+									is_puppet_of = GER
+								}
+							}
+						}
+						1078 = { add_core_of = AUS }
+						AUS = { transfer_state = 1078 }
+					}
+					else_if = {
+						limit = {
+							GER = {
+								controls_state = 4
+								controls_state = 152
+							}
+						}
+						1078 = { add_core_of = GER }
+						GER = { transfer_state = 1078 }
+					}
 				}
 
 				if = {
@@ -1488,7 +1493,6 @@ instantiate_collaboration_government = {
 					}
 					create_country_leader = {
 						name = "Constantin Kromiadi"
-						desc = "POLITICS_FERENC_SZALASI_DESC"
 						picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 						expire = "1965.1.1"
 						ideology = nazism
@@ -1533,7 +1537,6 @@ instantiate_collaboration_government = {
 					}
 					create_country_leader = {
 						name = "Horia Sima"
-						desc = "POLITICS_KONSTADINOS_LOGOTHETOPOULOS_DESC"
 						picture = "gfx/leaders/ROM/r56_portrait_ROM_Horia_Sima.dds"
 						expire = "1965.1.1"
 						ideology = nazism
@@ -1562,7 +1565,6 @@ instantiate_collaboration_government = {
 					}
 					create_country_leader = {
 						name = "Rafael Sánchez Mazas"
-						desc = "POLITICS_FERENC_SZALASI_DESC"
 						picture = "gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_1.dds"
 						expire = "1965.1.1"
 						ideology = falangism
@@ -1591,7 +1593,6 @@ instantiate_collaboration_government = {
 						}
 						create_country_leader = {
 							name = "Mehdi Frashëri"
-							desc = "POLITICS_FERENC_SZALASI_DESC"
 							picture = "gfx/leaders/Europe/portrait_europe_generic_4.dds"
 							expire = "1965.1.1"
 							ideology = fascism_ideology
@@ -1612,7 +1613,6 @@ instantiate_collaboration_government = {
 						}
 						create_country_leader = {
 							name = "Shefqet Vërlaci"
-							desc = "POLITICS_FERENC_SZALASI_DESC"
 							picture = "gfx/leaders/Europe/portrait_europe_generic_6.dds"
 							expire = "1965.1.1"
 							ideology = fascism_ideology
@@ -1646,7 +1646,6 @@ instantiate_collaboration_government = {
 					POL = { set_party_name = { ideology = fascism long_name = GER_fascism_party_long name = GER_fascism_party } }
 					create_country_leader = {
 						name = "Hans Frank"
-						desc = "HANS_FRANK_DESC"
 						picture = "r56_portrait_POL_Hans_Frank.dds"
 						expire = "1965.1.1"
 						ideology = nazism
@@ -1659,10 +1658,9 @@ instantiate_collaboration_government = {
 					POL = { set_party_name = { ideology = neutrality long_name = POL_monarchy_party_long name = POL_monarchy_party } }
 					create_country_leader = {
 						name = "Fryderyk Krystian Wettyn"
-						desc = "FRYDERYK_KRYSTIAN_WETTYN_DESC"
 						picture = "r56_portrait_POL_Fryderyk_Krystian_Wettyn.dds"
 						expire = "1965.1.1"
-						ideology = despotism
+						ideology = constitutional_monarchy
 						traits = {
 							POL_king_of_poland
 							POL_german_origins
@@ -1699,9 +1697,6 @@ instantiate_collaboration_government = {
 						picture = "r56_portrait_EST_Hjalmar_Mae.dds"
 						expire = "1959.1.1"
 						ideology = nazism
-						traits = {
-
-						}
 					}
 				}
 
@@ -1771,9 +1766,6 @@ instantiate_collaboration_government = {
 						picture = "gfx/leaders/YUG/r56_portrait_YUG_Andrija_Hebrang.dds"
 						expire = "1965.1.1"
 						ideology = stalinism
-						traits = {
-							#
-						}
 					}
 				}
 
@@ -1794,7 +1786,6 @@ instantiate_collaboration_government = {
 					}
 					create_country_leader = {
 						name = "Constantin Kromiadi"
-						desc = "POLITICS_FERENC_SZALASI_DESC"
 						picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 						expire = "1965.1.1"
 						ideology = nazism
@@ -1870,7 +1861,6 @@ instantiate_collaboration_government = {
 					}
 					create_country_leader = {
 						name = "Horia Sima"
-						desc = "POLITICS_KONSTADINOS_LOGOTHETOPOULOS_DESC"
 						picture = "gfx/leaders/ROM/r56_portrait_ROM_Horia_Sima.dds"
 						expire = "1965.1.1"
 						ideology = nazism
@@ -1898,7 +1888,6 @@ instantiate_collaboration_government = {
 					}
 					create_country_leader = {
 						name = "Rafael Sánchez Mazas"
-						desc = "POLITICS_FERENC_SZALASI_DESC"
 						picture = "gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_1.dds"
 						expire = "1965.1.1"
 						ideology = falangism
@@ -1970,11 +1959,9 @@ instantiate_collaboration_government = {
 									}
 									create_country_leader = { #indian in japanese indian army but coulen't find better
 										name = "Caïlacha Subbiah"
-										desc = "POLITICS_LORD_LINLITHGOW_DESC"
 										picture = "gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
 										expire = "1965.1.1"
 										ideology = stalinism
-										traits = { }
 									}
 								}
 								else_if = {
@@ -1991,11 +1978,9 @@ instantiate_collaboration_government = {
 									}
 									create_country_leader = { #Representative of Pondichéry
 										name = "Deiva Zivarattinam"
-										desc = "POLITICS_LORD_LINLITHGOW_DESC"
 										picture = "gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
 										expire = "1965.1.1"
-										ideology = centrism
-										traits = { }
+										ideology = moderatism
 									}
 								}
 								else_if = {
@@ -2012,11 +1997,9 @@ instantiate_collaboration_government = {
 									}
 									create_country_leader = { #indian in japanese indian army but coulen't find better
 										name = "Prem Sahgal"
-										desc = "POLITICS_LORD_LINLITHGOW_DESC"
 										picture = "gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
 										expire = "1965.1.1"
 										ideology = fascism_ideology
-										traits = { }
 									}
 								}
 							}
@@ -2038,11 +2021,9 @@ instantiate_collaboration_government = {
 									}
 									create_country_leader = {
 										name = "Jose Ricardo Pereira Cabral"
-										desc = " "
 										picture = "gfx/leaders/r56_generic/r56_portrait_ITA_generic_land_2.dds"
 										expire = "1965.1.1"
 										ideology = fascism_ideology
-										traits = { }
 									}
 								}
 								else_if = {
@@ -2059,11 +2040,9 @@ instantiate_collaboration_government = {
 									}
 									create_country_leader = {
 										name = "Jose Ricardo Pereira Cabral"
-										desc = " "
 										picture = "gfx/leaders/r56_generic/r56_portrait_ITA_generic_land_2.dds"
 										expire = "1965.1.1"
 										ideology = conservatism
-										traits = { }
 									}
 								}
 								else_if = {
@@ -2080,11 +2059,9 @@ instantiate_collaboration_government = {
 									}
 									create_country_leader = {
 										name = "Jose Ricardo Pereira Cabral"
-										desc = " "
 										picture = "gfx/leaders/r56_generic/r56_portrait_ITA_generic_land_2.dds"
 										expire = "1965.1.1"
-										ideology = moderatism
-										traits = { }
+										ideology = oligarchism
 									}
 								}
 							}
@@ -2123,7 +2100,6 @@ instantiate_collaboration_government = {
 								}
 								create_country_leader = {
 									name = "Liang Hongzhi"
-									desc = "POLITICS_WANG_JINGWEI_DESC"
 									picture = "gfx/leaders/CHI/r56_portrait_CHI_Liang_Hongzhi.dds"
 									expire = "1965.1.1"
 									ideology = fascism_ideology
@@ -2133,7 +2109,6 @@ instantiate_collaboration_government = {
 								}
 								create_country_leader = {
 									name = "Liang Hongzhi"
-									desc = "POLITICS_WANG_JINGWEI_DESC"
 									picture = "gfx/leaders/CHI/r56_portrait_CHI_Liang_Hongzhi.dds"
 									expire = "1965.1.1"
 									ideology = despotism
@@ -2146,7 +2121,6 @@ instantiate_collaboration_government = {
 							else = {
 								create_country_leader = {
 									name = "Wang Jingwei"
-									desc = "POLITICS_WANG_JINGWEI_DESC"
 									picture = "gfx/leaders/CHI/r56_portrait_CHI_Wang_Jingwei.dds"
 									expire = "1965.1.1"
 									ideology = fascism_ideology
@@ -2157,7 +2131,6 @@ instantiate_collaboration_government = {
 								set_party_name = { ideology = fascism long_name = KMT_wjw name = KMT_wjw }
 								create_country_leader = {
 									name = "Wang Jingwei"
-									desc = "POLITICS_WANG_JINGWEI_DESC"
 									picture = "gfx/leaders/CHI/r56_portrait_CHI_Wang_Jingwei.dds"
 									expire = "1965.1.1"
 									ideology = despotism
@@ -2171,24 +2144,22 @@ instantiate_collaboration_government = {
 							if = {
 								limit = {
 									NOT = {
-										OR = {
-											owns_state = 524
-											owns_state = 591
-											owns_state = 592
-											owns_state = 594
-											owns_state = 596
-											owns_state = 613
-											owns_state = 620
-											owns_state = 605
-											owns_state = 603
-											owns_state = 597
-											owns_state = 622
-											owns_state = 615
-											owns_state = 608
-											owns_state = 716
-											owns_state = 328
-											owns_state = 325
-										}
+										owns_state = 524
+										owns_state = 591
+										owns_state = 592
+										owns_state = 594
+										owns_state = 596
+										owns_state = 613
+										owns_state = 620
+										owns_state = 605
+										owns_state = 603
+										owns_state = 597
+										owns_state = 622
+										owns_state = 615
+										owns_state = 608
+										owns_state = 716
+										owns_state = 328
+										owns_state = 325
 									}
 								}
 								if = {
@@ -2258,7 +2229,6 @@ instantiate_collaboration_government = {
 								#the generic portrait is actually him
 								create_country_leader = {
 									name = "Vilmos Rőder"
-									desc = "POLITICS_FERENC_SZALASI_DESC"
 									picture = "gfx/leaders/Europe/portrait_europe_generic_6.dds"
 									expire = "1965.1.1"
 									ideology = oligarchism
@@ -2276,7 +2246,6 @@ instantiate_collaboration_government = {
 								#the generic portrait is actually him
 								create_country_leader = {
 									name = "Vilmos Rőder"
-									desc = "POLITICS_FERENC_SZALASI_DESC"
 									picture = "gfx/leaders/Europe/portrait_europe_generic_6.dds"
 									expire = "1965.1.1"
 									ideology = fascism_ideology
@@ -2295,14 +2264,12 @@ instantiate_collaboration_government = {
 								OVERLORD = {
 									has_government = fascism
 									NOT = {
-										OR = {
-											original_tag = ROM
-											original_tag = TRA
-											original_tag = CZE
-											original_tag = SLO
-											original_tag = YUG
-											original_tag = SER
-										}
+										original_tag = ROM
+										original_tag = TRA
+										original_tag = CZE
+										original_tag = SLO
+										original_tag = YUG
+										original_tag = SER
 									}
 								}
 								NOT = {
@@ -2317,7 +2284,6 @@ instantiate_collaboration_government = {
 							}
 							create_country_leader = {
 								name = "Ferenc Szalasi"
-								desc = "POLITICS_FERENC_SZALASI_DESC"
 								picture = "gfx/leaders/HUN/r56_portrait_HUN_Ferenc_Szalasi.dds"
 								expire = "1965.1.1"
 								ideology = nazism
@@ -2344,13 +2310,9 @@ instantiate_collaboration_government = {
 							}
 							create_country_leader = {
 								name = "José P. Laurel"
-								desc = "POLITICS_FERENC_SZALASI_DESC"
 								picture = "gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds"
 								expire = "1965.1.1"
 								ideology = fascism_ideology
-								traits = {
-
-								}
 							}
 						}
 
@@ -2358,7 +2320,6 @@ instantiate_collaboration_government = {
 							limit = { original_tag = CZE }
 							if = {
 								limit = {
-									has_dlc = "Death or Dishonor"
 									OR = {
 										is_subject_of = GER
 										is_subject_of = PRE
@@ -2374,7 +2335,6 @@ instantiate_collaboration_government = {
 								}
 								create_country_leader = {
 									name = "Konstantin von Neurath"
-									desc = "POLITICS_FERENC_SZALASI_DESC"
 									picture = "gfx/leaders/CZE/portrait_konstantin_von_neurath.dds"
 									expire = "1965.1.1"
 									ideology = nazism
@@ -2398,6 +2358,29 @@ instantiate_collaboration_government = {
 								GER = { transfer_state = 69 }
 								74 = { add_core_of = GER }
 								GER = { transfer_state = 74 }
+
+								if = {
+									limit = {
+										AUS = {
+											OR = {
+												is_in_faction_with = GER
+												is_puppet_of = GER
+											}
+										}
+									}
+									1078 = { add_core_of = AUS }
+									AUS = { transfer_state = 1078 }
+								}
+								else_if = {
+									limit = {
+										GER = {
+											controls_state = 4
+											controls_state = 152
+										}
+									}
+									1078 = { add_core_of = GER }
+									GER = { transfer_state = 1078 }
+								}
 							}
 						}
 
@@ -2418,7 +2401,6 @@ instantiate_collaboration_government = {
 							}
 							create_country_leader = {
 								name = "Constantin Kromiadi"
-								desc = "POLITICS_FERENC_SZALASI_DESC"
 								picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 								expire = "1965.1.1"
 								ideology = nazism
@@ -2463,7 +2445,6 @@ instantiate_collaboration_government = {
 							}
 							create_country_leader = {
 								name = "Horia Sima"
-								desc = "POLITICS_KONSTADINOS_LOGOTHETOPOULOS_DESC"
 								picture = "gfx/leaders/ROM/r56_portrait_ROM_Horia_Sima.dds"
 								expire = "1965.1.1"
 								ideology = nazism
@@ -2492,7 +2473,6 @@ instantiate_collaboration_government = {
 							}
 							create_country_leader = {
 								name = "Rafael Sánchez Mazas"
-								desc = "POLITICS_FERENC_SZALASI_DESC"
 								picture = "gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_1.dds"
 								expire = "1965.1.1"
 								ideology = falangism
@@ -2521,11 +2501,9 @@ instantiate_collaboration_government = {
 								}
 								create_country_leader = {
 									name = "Mehdi Frashëri"
-									desc = "POLITICS_FERENC_SZALASI_DESC"
 									picture = "gfx/leaders/Europe/portrait_europe_generic_4.dds"
 									expire = "1965.1.1"
 									ideology = fascism_ideology
-									traits = { }
 								}
 							}
 							else_if = {
@@ -2542,11 +2520,9 @@ instantiate_collaboration_government = {
 								}
 								create_country_leader = {
 									name = "Shefqet Vërlaci"
-									desc = "POLITICS_FERENC_SZALASI_DESC"
 									picture = "gfx/leaders/Europe/portrait_europe_generic_6.dds"
 									expire = "1965.1.1"
 									ideology = fascism_ideology
-									traits = { }
 								}
 							}
 						}
@@ -2567,13 +2543,7 @@ abandon_colony_tag = {
 			limit = {
 				original_tag = CAN
 			}
-			if = {
-				limit = { NOT = { has_dlc = "Together for Victory" } }
-				set_cosmetic_tag = CAN_ALY
-			}
-			else = {
-				set_cosmetic_tag = CAN_UK
-			}
+			set_cosmetic_tag = CAN_UK
 		}
 		else_if = {
 			limit = {
@@ -2605,7 +2575,7 @@ abandon_colony_tag = {
 			limit = {
 				OR = {
 					has_cosmetic_tag = united_polynesia
-					has_cosmetic_tag = MAJ_UNIFIED
+					has_cosmetic_tag = MAL_UNIFIED
 				}
 			}
 		}
@@ -2692,10 +2662,33 @@ gain_random_agency_upgrade = { #Gives a random agency upgrade or grants a free a
 					}
 				}
 				1 = {
+					upgrade_intelligence_agency = upgrade_interrogation_techniques
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_interrogation_techniques
+					}
+				}
+				1 = {
 					upgrade_intelligence_agency = upgrade_anti_partisan
 					modifier = {
 						factor = 0
 						has_done_agency_upgrade = upgrade_anti_partisan
+					}
+				}
+
+				1 = {
+					upgrade_intelligence_agency = upgrade_r56_home_guard
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_r56_home_guard
+					}
+				}
+
+				1 = {
+					upgrade_intelligence_agency = upgrade_r56_civilian_signal_corp
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_r56_civilian_signal_corp
 					}
 				}
 				1 = {
@@ -2768,6 +2761,14 @@ gain_random_agency_upgrade = { #Gives a random agency upgrade or grants a free a
 						has_done_agency_upgrade = upgrade_psycho_warfare
 					}
 				}
+
+				1 = {
+					upgrade_intelligence_agency = upgrade_linguistic_training
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_linguistic_training
+					}
+				}
 				1 = {
 					upgrade_intelligence_agency = upgrade_form_department
 					modifier = {
@@ -2828,7 +2829,7 @@ join_allies_effect = {
 			ENG = {
 				is_faction_leader = yes
 				has_government = democratic
-				not = { has_war_with = ROOT }
+				NOT = { has_war_with = ROOT }
 			}
 		}
 		ENG = { country_event = generic.2 }
@@ -2848,10 +2849,6 @@ remove_fascist_spirits_effect = {
 		remove_ideas = fascist_influence
 	}
 	if = {
-		limit = { has_idea = american_influence_drift_fascism }
-		remove_ideas = american_influence_drift_fascism
-	}
-	if = {
 		limit = { has_idea = GER_align_hungary }
 		remove_ideas = GER_align_hungary
 	}
@@ -2863,10 +2860,6 @@ remove_fascist_spirits_effect = {
 
 #Should remove any and all communist foreign influence
 remove_communist_spirits_effect = {
-	if = {
-		limit = { has_idea = american_influence_drift_communism }
-		remove_ideas = american_influence_drift_communism
-	}
 	if = {
 		limit = { has_idea = comintern_influence }
 		remove_ideas = comintern_influence
@@ -3291,7 +3284,7 @@ on_daily = {
 
 leave_the_league_of_nations = {
 	custom_effect_tooltip = leave_the_league_of_nations_tt
-	hidden_effect = { remove_ideas = league_of_nations_member_idea }
+	hidden_effect = { clr_country_flag = league_of_nations_member_flag }
 }
 
 bba_get_fighter_GER_effect = { #creates a fighter design if necessary and exports a number of them to ROOT
@@ -5455,9 +5448,12 @@ SF_PARA_sabotage_effect = { #When changing this, update the research tooltip
 		type = arms_factory
 		damage = 1
 	}
-	set_state_flag = {
-		flag = para_drop_effect
-		days = 30
+	ROOT = {
+		set_state_flag = {
+			value = 1
+			flag = para_drop_effect
+			days = 30
+		}
 	}
 }
 
@@ -5466,11 +5462,14 @@ SF_PARA_combat_effect = { #When changing this, update the research tooltip
 		limit = { 
 			OWNER = { has_war_with = FROM }
 		}
-		set_unit_organization = 0.50
+		set_unit_organization = 0.5
 	}
-	set_state_flag = {
-		flag = para_drop_effect
-		days = 30
+	ROOT = {
+		set_state_flag = {
+			value = 1
+			flag = para_drop_effect
+			days = 30
+		}
 	}
 }
 
@@ -5500,9 +5499,12 @@ SF_marine_demoliton_effect = { #When changing this, update the research tooltip
 		type = fuel_silo
 		damage = 1
 	}
-	set_state_flag = {
-		flag = marines_commando_effect
-		days = 30
+	ROOT = {
+		set_state_flag = {
+			value = 1
+			flag = marines_commando_effect
+			days = 30
+		}
 	}
 }
 
@@ -5740,4 +5742,10 @@ store_core_states_on_game_start = { #Should be called from history file
 			}
 		}
 	}
+}
+
+set_african_central_bank_variables = {
+	set_variable = { org_africa_central_bank_stability_factor = 0.05}
+	set_variable = { org_africa_central_bank_industrial_complex_factor = 0.1}
+	set_variable = { org_africa_central_bank_infrastructure_factor = 0.1}
 }
