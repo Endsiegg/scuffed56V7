@@ -1,5 +1,16 @@
 ﻿division_template = {
-	name = "Infantry Division"
+	name = "Hativat Hir"
+	regiments = { 
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+}
+
+
+
+division_template = {
+	name = "Ugdat Hir"
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -14,7 +25,7 @@
 	#}
 }
 division_template = {
-	name = "Armored Division"
+	name = "Ugdat Shiryon"
 
 	regiments = {
 		light_armor = { x = 0 y = 0 }
@@ -29,9 +40,8 @@ division_template = {
 	}
 }
 division_template = {
-	name = "Motorized Regiment" 			# Used to be SS division -> New system for SS. Also messed up the civil war by refusing to move to the fascists, and immersion-breaking to have them around as royalists
+	name = "Ugdat Hir Memuna" 			
 
-	division_names_group = GER_MOT_02
 
 	regiments = {
 		motorized = { x = 0 y = 0 }
@@ -45,7 +55,7 @@ division_template = {
 }
 
 division_template = {
-	name = "Cavalry Regiment"
+	name = "Gdud Parashim"
 
 
 	regiments = {
@@ -61,31 +71,40 @@ division_template = {
 units = {
 
 	division= {	
-		division_name = {
-			is_name_ordered = yes
-			name_order = 1
-		}
-		location = 1086
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
-	}			
+		name = "Golani Brigade"
+		location = 1065
+		division_template = "Ugdat Hir"
+		start_experience_factor = 0.4
+	}	
 	division= {	
-		division_name = {
-			is_name_ordered = yes
-			name_order = 2
-		}
-		location = 1086
-		division_template = "Infantry Division" 
-		start_experience_factor = 0.3
+		name = "Carmeli Brigade"
+		location = 1065
+		division_template = "Hativat Hir"
+		start_experience_factor = 0.1
+	}	
+	division= {	
+		name = "Alexandroni Brigade"
+		location = 1201
+		division_template = "Hativat Hir" 
+		start_experience_factor = 0.1
 	}
 	division= {	
-		division_name = {
-			is_name_ordered = yes
-			name_order = 3
-		}
+		name = "Kiryati Brigade"
+		location = 4206
+		division_template = "Hativat Hir"
+		start_experience_factor = 0.1
+	}	
+	division= {	
+		name = "Givati Brigade"
+		location = 4206
+		division_template = "Hativat Hir" 
+		start_experience_factor = 0.1
+	}
+	division= {	
+		name = "Etzioni Brigade"
 		location = 1086
-		division_template = "Infantry Division" 
-		start_experience_factor = 0.3
+		division_template = "Hativat Hir"
+		start_experience_factor = 0.1
 	}
 }
 
