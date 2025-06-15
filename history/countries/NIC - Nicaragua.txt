@@ -9,27 +9,29 @@ set_technology = {
 	etax_doctrine = 1
 	camo = 1
 
-	
 	infantry_weapons = 1
 	gw_artillery = 1
-
+	tech_military_police = 1
+	tech_trucks = 1
 }
 if = {
 	limit = { has_dlc = "By Blood Alone" }
-		set_technology = {
-			iw_small_airframe = 1
-		}
+	set_technology = {
+		iw_small_airframe = 1
+		iw_large_airframe = 1
+		engines_1 = 1
+		aa_lmg = 1
+	}
 	else = {
 		set_technology = {
 			early_fighter = 1
-
-			early_bomber = 1
-
+			early_bombs = 1
 		}
 	}
 }
 
 set_country_flag = monroe_doctrine
+set_country_flag = hispanic
 
 recruit_character = NIC_juan_bautista_sacasa
 recruit_character = NIC_anastasio_somoza_garcía
@@ -62,19 +64,19 @@ set_convoys = 10
 
 add_ideas = {
 	NIC_banana_republic
-	
+	NIC_anastasio_somoza_garcía_advisor
 	NIC_guardia_nacional_assassinations
 }
 
 set_politics = {
 	ruling_party = democratic
 	last_election = "1933.12.8"
-	election_frequency = 4
+	election_frequency = 48
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 70
-	fascism = 5
-	communism = 10
-	neutrality = 15
+	democratic = 42
+	fascism = 18
+	communism = 4
+	neutrality = 36
 }

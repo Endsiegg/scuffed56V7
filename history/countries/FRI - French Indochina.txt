@@ -19,19 +19,19 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	gw_artillery = 1
-	early_fighter = 1
-	early_bomber = 1
 }
 if = {
 	limit = { has_dlc = "By Blood Alone" }
-		set_technology = {
+	set_technology = {
 		iw_small_airframe = 1
-		}
+		iw_large_airframe = 1
+		engines_1 = 1
+		aa_lmg = 1
+		early_bombs = 1
+	}
 	else = {
 		set_technology = {
-				
 			early_fighter = 1
-			
 			early_bomber = 1
 		}
 	}
@@ -75,12 +75,7 @@ add_ideas = {
 	FRI_illiteracy
 }
 
-if = {
-	limit = { 
-		has_dlc = "Together for Victory" 
-	}
-	add_to_tech_sharing_group = french_research
-}
+add_to_tech_sharing_group = french_research
 
 #Characters
 recruit_character = FRI_rené_robin
@@ -111,3 +106,8 @@ recruit_character = FRI_eugene_mordant
 recruit_character = FRI_marcel_alessandri
 recruit_character = FRI_pierre_perrier
 
+
+country_event = {
+	id = frenchindochina.9
+	days = 3650
+}

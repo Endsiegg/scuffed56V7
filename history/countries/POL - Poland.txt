@@ -2,6 +2,37 @@
 
 oob = "POL_1936"
 
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "POL_1936_naval_mtg"
+	else = {
+		set_naval_oob = "POL_1936_naval_legacy"
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "POL_1936_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			aa_cannon_1 = 1
+			iw_small_airframe = 1
+			basic_small_airframe = 1
+			engines_1 = 1
+			early_bombs = 1
+		}
+	else = {
+		set_air_oob = "POL_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_bomber = 1
+			CAS1 = 1
+			tactical_bomber1 = 1
+			naval_bomber1 = 1
+		}
+	}
+}
+
 set_research_slots = 4
 set_war_support = 0.55
 set_stability = 0.39
@@ -11,15 +42,15 @@ set_technology = {
 	# Extended Technologies
     etax_doctrine = 1
     camo = 1
-		
-	
+
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	tech_mountaineers = 1
 	tech_support = 1		
 	tech_engineers = 1
 	tech_recon = 1
-	motorised_infantry = 1
+	tech_trucks = 1
+    motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antitank = 1
 	interwar_antiair = 1
@@ -33,28 +64,7 @@ set_technology = {
 	basic_train = 1
 	marines = 1
 }
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-	set_air_oob = "POL_1936_air_bba"
-	set_technology = {
-		aa_lmg = 1
-		aa_cannon_1 = 1
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		engines_1 = 1
-		early_bombs = 1
-	}
-	else = {
-		set_air_oob = "POL_1936_air_legacy"
-		set_technology = {
-			early_fighter = 1
-			early_bomber = 1
-			CAS1 = 1
-			tactical_bomber1 = 1
-			naval_bomber1 = 1
-		}
-	}
-}
+
 if = {
 	limit = {
 		not = { has_dlc = "Man the Guns" }
@@ -64,8 +74,6 @@ if = {
 		basic_destroyer = 1
 		early_submarine = 1
 	}
-	
-	set_naval_oob = "POL_1936_naval_legacy"
 }
 
 if = {
@@ -138,7 +146,7 @@ if = {
 	}
 	
 	create_equipment_variant = {
-		name = "Gryf Class"						# minelaying craft
+		name = "Gryf Class"	# minelaying craft
 		type = ship_hull_light_2
 		parent_version = 0
 		modules = {
@@ -188,8 +196,25 @@ if = {
 			rear_1_custom_slot = empty
 		}
 		obsolete = yes
-	}	
-	set_naval_oob = "POL_1936_naval_mtg"
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "By Blood Alone"
+		}
+	}
+	create_equipment_variant = {
+		name = "PZL P.24"
+		type = fighter_equipment_0
+		upgrades = {
+			plane_gun_upgrade = 3
+			plane_range_upgrade = 0  
+			plane_engine_upgrade = 1
+			plane_reliability_upgrade = 3
+		}
+	}
 }
 if = {
 	limit = {
@@ -214,7 +239,6 @@ if = {
 			engine_type_slot = engine_2_1x
 			special_type_slot_1 = empty
 		}
-		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "PZL P.23"
@@ -224,24 +248,10 @@ if = {
 			engine_type_slot = engine_1_1x
 			special_type_slot_1 = lmg_defense_turret
 		}
-		obsolete = yes
 	}
 }
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "By Blood Alone"
-		}
-	}
-	# create_equipment_variant = {
-	# 	name = "PZL P.24"
-	# 	type = fighter_equipment_0
-	# 	upgrades = {
-	# 	#	plane_reliability_upgrade = 3
-	# 	}
-	# }
-}
-set_global_flag = fall_of_berlin_pol
+
+#set_global_flag = fall_of_berlin_pol -> Breaks news_event.131 i believe and it just causes more lag
 
 # DIPLOMACY
 
@@ -250,6 +260,7 @@ diplomatic_relation = {
 	relation = non_aggression_pact
 	active = yes
 }
+
 GER = {
 	add_ai_strategy = {
 		type = befriend
@@ -263,6 +274,7 @@ diplomatic_relation = {
 	relation = non_aggression_pact
 	active = yes
 }
+
 SOV = {
 	add_ai_strategy = {
 		type = befriend
@@ -271,12 +283,15 @@ SOV = {
 	}
 }
 
+give_guarantee = FRA
+give_guarantee = ROM
 
 diplomatic_relation = {
 	country = ROM
 	relation = non_aggression_pact
 	active = yes
 }
+
 ROM = {
 	add_ai_strategy = {
 		type = befriend
@@ -285,18 +300,10 @@ ROM = {
 	}
 }
 
-if = {
-	limit = {
-		has_dlc = "Together for Victory"
-	}
-	set_autonomy = {
-		target = DNZ
-		autonomous_state = autonomy_free_city
-		freedom_level = 0.75
-	}
-	else = {
-		puppet = DNZ
-	}
+set_autonomy = {
+	target = DNZ
+	autonomous_state = autonomy_free_city
+	freedom_level = 0.75
 }
 
 if = {
@@ -307,13 +314,25 @@ if = {
 		uncontrolled_exports
 		POL_april_constitution_1
 		POL_looming_peasants_strike
-		POL_sanation_left_opposition_1
-		POL_sanation_right_opposition_1
+		#POL_sanation_left_opposition_1
+		#POL_sanation_right_opposition_1
 		POL_Polish_Cipher_Bureau_Focus0
 		#POL_ludomil_rayski
+		#POL_SEPEWE - see below 
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Arms Against Tyranny"
+		}
+	}
+	add_ideas = {
 		POL_SEPEWE
 	}
 }
+
 
 if = {
 	limit = {
@@ -347,7 +366,7 @@ add_equipment_to_stockpile = {
 
 add_equipment_to_stockpile = {
 	type = infantry_equipment_0
-	amount = 11000
+	amount = 1100
 	producer = POL
 }
 
@@ -372,6 +391,7 @@ set_popularities = {
 	communism = 0.8
 	neutrality = 61
 }
+
 recruit_character = POL_julian_leszczynski_lenski	#r56 stalinist default leader
 recruit_character = POL_ignacy_moscicki
 recruit_character = POL_wladyslaw_sikorski
@@ -431,7 +451,6 @@ recruit_character = POL_vladislav_korchits
 recruit_character = POL_wojtek
 #r56 characters
 recruit_character = POL_Stanislaw_Ulam
-recruit_character = POL_Rudolf_Gundlach
 recruit_character = POL_Wlodzimierz_Steyer
 recruit_character = POL_Mariusz_Zaruski
 recruit_character = POL_Janusz_Radziwill
@@ -497,6 +516,13 @@ recruit_character = POL_Mieczyslaw_Norwid_Neugebauer
 recruit_character = POL_Zygmunt_Zulawski
 recruit_character = POL_Kazimierz_Puzak
 recruit_character = POL_Jan_Pilsudski
+recruit_character = POL_zymunt_modzelewski
+recruit_character = POL_jedrzeg_moraczewski
+recruit_character = POL_emil_rauer
+recruit_character = POL_antoni_balcar
+recruit_character = POL_edward_drozniak
+recruit_character = POL_antoni_xiezopolski
+
 #r56 generals...
 recruit_character = POL_Juliusz_Rommel
 recruit_character = POL_Franciszek_Kleeberg
@@ -525,11 +551,28 @@ recruit_character = POL_Rudolf_Prich
 recruit_character = POL_stefan_dab_biernacki
 
 recruit_character = POL_tadeusz_bielecki	#we have him and this is our role!
-recruit_character = POL_walery_slawek
-recruit_character = POL_jan_mosdorf
-recruit_character = POL_joachim_stefan_bartoszewicz
-recruit_character = POL_stanislaw_wojciechowski
+### SCIENTISTS ###
+recruit_character = POL_joseph_rotblat
+recruit_character = POL_franciszek_misztal
+recruit_character = POL_stanislaw_prauss
+recruit_character = POL_aleksander_potyrala
+recruit_character = POL_mieczyslaw_filipowicz
+#recruit_character = POL_xawery_czernicki	#also advisor, this is duplicate
+recruit_character = POL_rudolf_gundlach
+recruit_character = POL_jan_lapuszewski
 
+if = {
+	limit = {
+		OR = {
+			has_dlc = "No Step Back"
+			has_dlc = "Poland: United and Ready"
+		}
+	}
+	recruit_character = POL_walery_slawek
+	recruit_character = POL_jan_mosdorf
+	recruit_character = POL_joachim_stefan_bartoszewicz
+	recruit_character = POL_stanislaw_wojciechowski
+}
 
 if = {
 	limit = {
@@ -537,6 +580,8 @@ if = {
 	}
 	recruit_character = POL_henryk_floyar_rajchman
 }
+
+news_event = { id = poland.113 days = 1097 }		#Dmowski died 02.01.1939
 
 
 #add_ideas = {
@@ -584,13 +629,14 @@ if = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
+
 	create_equipment_variant = {
-		name = "TKS"
+		name = "TK-3" 
 		type = light_tank_chassis_0
 		parent_version = 0
 		modules = {
 			main_armament_slot = tank_heavy_machine_gun
-			turret_type_slot = tank_light_fixed_superstructure_turret
+			turret_type_slot = r56_tank_light_tankette_superstructure_turret
 			suspension_type_slot = tank_bogie_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
@@ -600,7 +646,48 @@ if = {
 			tank_nsb_engine_upgrade = 1
 		}
 		obsolete = yes #used for oob
+		icon = "gfx/interface/technologies/POL_basic_light_tank.dds"
 	}
+
+	create_equipment_variant = {
+		name = "TKS" 
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = r56_tank_light_tankette_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 2
+			tank_nsb_engine_upgrade = 2
+		}
+
+		icon = "gfx/interface/technologies/POL_basic_light_tank.dds"
+	}
+
+	create_equipment_variant = {
+		name = "TKD" 
+		type = light_tank_artillery_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			turret_type_slot = r56_tank_front_plate_fixed_superstructure_turret #not a true superstructure so it gets the plate
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+
+		upgrades = {
+			tank_nsb_armor_upgrade = 1
+			tank_nsb_engine_upgrade = 1
+		}
+
+		icon = "gfx/interface/technologies/POL_basic_light_tank.dds"
+	}
+
 	create_equipment_variant = {
 		name = "7TP dw"
 		type = light_tank_chassis_0
@@ -617,7 +704,9 @@ if = {
 			tank_nsb_armor_upgrade = 2
 			tank_nsb_engine_upgrade = 2
 		}
+		icon = "gfx/interface/technologies/POL_imp_light_tank.dds"
 	}
+
 	create_equipment_variant = {
 		name = "7TP jw"
 		type = light_tank_chassis_0
@@ -634,6 +723,7 @@ if = {
 			tank_nsb_armor_upgrade = 2
 			tank_nsb_engine_upgrade = 2
 		}
+		icon = "gfx/interface/technologies/POL_imp_light_tank.dds"
 	}
 	#	add_equipment_to_stockpile = {
 	#		type = light_tank_chassis_0
