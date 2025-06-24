@@ -130,8 +130,7 @@ guiTypes = {
 			borderSize = {x = 12 y = 12}	
 			maxValue =1
 			minValue =0
-			stepSize = 0.01
-			scroll_speed = 40
+			stepSize =0.01
 			startValue = 0
 			horizontal = 0
 
@@ -196,19 +195,17 @@ guiTypes = {
 		guiButtonType = {
 			parent = "listboxSliderButton"
 			name = "upButton"
-			quadTextureSprite = "GFX_scroll_right"
+			quadTextureSprite = "GFX_scroll_left"
 			position = { x=0 y =0}	
 		}
 		
 		guiButtonType = {
 			parent = "listboxSliderButton"
 			name = "downButton"
-			quadTextureSprite = "GFX_scroll_left"
+			quadTextureSprite = "GFX_scroll_right"
 			position = { x=0 y =120}	
 		}
 	}
-
-	### Extended Scrollbar Types ###
 
 	extendedScrollbarType = {
 		name = "right_vertical_sliderno_bg"
@@ -284,39 +281,6 @@ guiTypes = {
 		}
 	}
 	
-	extendedScrollbarType = {
-		name = "right_cabinet_vertical_slider"
-		position = { x = -5 y = 0 }
-		size = { width = 12 height = 18 }
-		startValue = 0
-		orientation = upper_right
-		origo = upper_right
-		smooth_scrolling = 1.25
-
-		background = {
-			name = "Background"
-			quadTextureSprite = "GFX_project_history_cabinet_scrollbar"
-		}
-
-		slider = {
-			name = "Slider"
-			quadTextureSprite = "GFX_scroll_drager"
-			position = { x = -2 y = -2 }
-		}
-
-		decreaseButton = {
-			name = "Decrease"
-			quadTextureSprite = "GFX_project_history_cabinet_scroll_arrow_up"
-			position = { x = -1 y = 0 }
-		}
-
-		increaseButton = {
-			name = "Increase"
-			quadTextureSprite = "GFX_project_history_cabinet_scroll_arrow_down"
-			position = { x=-13 y = -16}
-		}
-	}
-
 	extendedScrollbarType = {
 		name = "left_vertical_slider"
 		position = { x = 6 y = 0 }
@@ -555,7 +519,7 @@ guiTypes = {
 			position = { x= 0 y = 0 }
 			font = "hoi_20b"
 			borderSize = {x = 0 y = 0}
-			text = " " #r56, gives me a headache
+			text = " "
 			maxWidth = 200
 			maxHeight = 32
 			fixedsize = yes

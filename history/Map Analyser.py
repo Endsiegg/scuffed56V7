@@ -15,7 +15,7 @@ DefaultDir()
 filelistmod = os.listdir()
 
 if UseRoadto56:
-    modstringkeys = ("rubber_refinery", "aluminum_mill", "steel_mill")
+    modstringkeys = ( "aluminum_mill", "steel_mill")
 else:
     modstringkeys = tuple()
 numkeys = ("id", "infrastructure", "industrial_complex", "arms_factory", "synthetic_refinery", "air_base", "anti_air_building", "radar_station", "manpower", "local_supplies", "steel", "tungsten", "oil", "rubber", "aluminium", "chromium") #excluding nuclear because obviously it isnt a typical starting one
@@ -51,10 +51,7 @@ if GetStateNames:
         for line in statenamelines:
             if "STATE_" in line:
                 lineisolate = line.replace("_", ":")                #isolate the ID by making the symbols before and after the same, since bba I no longer check for "STATE_" but "_" because name variants exist with a _ after the ID as well
-                try:
-                    currid = int(lineisolate.split(":")[-2])        #state ID lines with ID at the end
-                except:
-                    currid = int(lineisolate.split(":")[-3])        #state ID lines with country tag behind ID (mainly for pre-1.15 state names)
+                currid = int(lineisolate.split(":")[1])             #save the detected ID to a variable
                 if statenameslist[currid - 1] == None:              #allows only the first entry if several are present for one state, just because Road to 56's dynamic renaming entries are unintelligable
                     statenameslist[currid - 1] = line.split("\"")[1]    #the text between brackets is assigned to the matching ID entry in the list
     DefaultDir()

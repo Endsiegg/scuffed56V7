@@ -11,10 +11,8 @@ technologies = {
 			supply_consumption = -0.02
 		}
 		category_special_forces = {
-			soft_attack = 0.05
-		}
-		category_special_forces_leg_infantry = {
 			max_organisation = 5
+			soft_attack = 0.05
 		}
 		enable_subunits = {
 			rangers_support
@@ -42,8 +40,10 @@ technologies = {
 		research_cost = 2.25
 		
 		allow = {
-			has_tech = tech_mountaineers
-			can_unlock_new_special_forces_tree = yes
+			AND = {
+				has_tech = tech_mountaineers
+				can_unlock_new_special_forces_tree = yes
+			}
 		}
 		
 		on_research_complete = {
@@ -88,8 +88,8 @@ technologies = {
 		rangers_support = {
 			acclimatization_cold_climate_gain_factor = 0.25
 			snow = {
-				attack = 0.10
-				defence = 0.15
+				attack = 0.15
+				defence = 0.20
 				movement = 0.15
 			}
 		}
@@ -270,7 +270,14 @@ technologies = {
 				breakthrough = 0.15
 			}
 		}
-		
+
+		rangers_support = {
+			battalion_mult = {
+				category = category_line_artillery
+				soft_attack = 0.20
+			}
+		}
+
 		xor = { mountaineers_combat_1 }
 		
 		doctrine = yes	
@@ -453,10 +460,8 @@ technologies = {
 		marines_special_forces_contribution_factor = -0.25
 		naval_invasion_capacity = 5
 		category_special_forces = {
-			soft_attack = 0.05
-		}
-		category_special_forces_leg_infantry = {
 			max_organisation = 5
+			soft_attack = 0.05
 		}
 		
 		enable_subunits = {
@@ -498,7 +503,7 @@ technologies = {
 		
 		pioneer_support = {
 			jungle = {
-				attack = 0.15
+				attack = 0.20
 				defence = 0.10
 				movement = 0.10
 			}
@@ -820,11 +825,11 @@ technologies = {
 			 breakthrough = 0.1
 			 max_organisation = 5
 		}
-		
+
 		pioneer_support = {
 			battalion_mult = {
 				category = category_amphibious_tanks
-				hard_attack = 0.1
+				armor = 0.15
 				breakthrough = 0.15
 			}
 		}
@@ -865,7 +870,7 @@ technologies = {
 		force_use_small_tech_layout = yes
 		allow_branch = { not = { has_dlc = "Man the Guns" } }
 		
-		special_forces_attack_factor = 0.10
+		special_forces_attack_factor = 0.15
 		
 		doctrine = yes	
 		research_cost = 2.25
@@ -904,20 +909,20 @@ technologies = {
 				defense = 0.05
 			}
 		}
-		
+
 		anti_air = {
-			 battalion_mult = {
-				category = category_marines
-				defense = 0.05
-			}
-		}
-		
-		anti_tank = {
-			 battalion_mult = {
-				category = category_marines
-				defense = 0.05
-			}
-		}
+			battalion_mult = {
+			   category = category_marines
+			   defense = 0.05
+		   }
+	   }
+	   
+	   anti_tank = {
+			battalion_mult = {
+			   category = category_marines
+			   defense = 0.05
+		   }
+	   }
 
 		extra_marine_supply_grace = 24
 		naval_invasion_capacity = 10
@@ -945,7 +950,7 @@ technologies = {
 			#artillery = 4.0
 		}
 	}
-
+	
 	###Paratroopers
 	
 	special_forces_paratroopers = {
@@ -963,12 +968,10 @@ technologies = {
 			air_defence = 0.20
 		}
 		category_special_forces = {
+			max_organisation = 5
 			soft_attack = 0.05
 		}
-		category_special_forces_leg_infantry = {
-			max_organisation = 5
-		}
-	
+		
 		allow = { 
 			AND = {
 				has_tech = paratroopers 
@@ -1431,14 +1434,11 @@ technologies = {
 		
 		category_special_forces = {
 			soft_attack = 0.05
-		}
-
-		category_special_forces_leg_infantry = {
 			max_organisation = 5
 		}
 
 		category_shocktroops = {
-			breakthrough = 0.05
+			hard_attack = 0.05
 		}
 
 		unit_shocktroop_design_cost_factor = -0.50
@@ -1448,6 +1448,7 @@ technologies = {
 		
 		categories = {
 			special_forces_doctrine
+			r56_shock_infantry_tech
 			cat_shocktroops_doctrine
 		}
 
@@ -1488,19 +1489,20 @@ technologies = {
 		
 		categories = {
 			special_forces_doctrine
+			r56_shock_infantry_tech
 			cat_shocktroops_doctrine
 		}
 
 		
 		shocktroop = {
 			urban = {
-				attack = 0.10
+				attack = 0.15
 			}
 		}
 
 		category_shocktroops = {
 			initiative = 0.01
-			soft_attack = 0.01
+			soft_attack = 0.05
 		}
 
 		
@@ -1538,18 +1540,19 @@ technologies = {
 		
 		categories = {
 			special_forces_doctrine
+			r56_shock_infantry_tech
 			cat_shocktroops_doctrine
 		}
 
 		shocktroop = {
 			fort = {
-				attack = 0.10
+				attack = 0.15
 			}
 		}
 
 		category_shocktroops = {
-			breakthrough = 0.01
-			hard_attack = 0.01
+			breakthrough = 0.05
+			hard_attack = 0.05
 		}
 
 		
@@ -1591,6 +1594,13 @@ technologies = {
 			}
 		}
 
+		engineer = {
+			battalion_mult = {
+				category = category_shocktroops
+				hard_attack = 0.10
+			}
+		}
+
 		anti_tank = {
 			battalion_mult = {
 				category = category_shocktroops
@@ -1601,7 +1611,7 @@ technologies = {
 		anti_air = {
 			battalion_mult = {
 				category = category_shocktroops
-				defense = 0.05
+				defense = 0.10
 			}
 		}
 
@@ -1611,6 +1621,7 @@ technologies = {
 		
 		categories = {
 			special_forces_doctrine
+			r56_shock_infantry_tech
 			cat_shocktroops_doctrine
 		}
 
@@ -1649,10 +1660,11 @@ technologies = {
 		
 		categories = {
 			special_forces_doctrine
+			r56_shock_infantry_tech
 			cat_shocktroops_doctrine
 		}
 
-		shocktroop = {
+		category_shocktroops = {
 			max_organisation = 5
 		}
 		
@@ -1666,12 +1678,12 @@ technologies = {
 		logistics_company = {
 			battalion_mult = {
 				category = category_shocktroops
-				defense = 0.05
+				max_strength = 0.05
 			}
 		}
 
 
-		special_forces_no_supply_grace = 5
+		special_forces_no_supply_grace = 24
 		
 		folder = {
 			name = special_forces_doctrine_folder
@@ -1708,10 +1720,11 @@ technologies = {
 		
 		categories = {
 			special_forces_doctrine
+			r56_shock_infantry_tech
 			cat_shocktroops_doctrine
 		}
 
-		shocktroop = {
+		category_shocktroops = {
 			max_organisation = 5
 		}
 
@@ -1729,7 +1742,7 @@ technologies = {
 			}
 		}
 
-		experience_gain_shocktroop_combat_factor = 0.05
+		experience_gain_shocktroop_combat_factor = 0.10
 			
 		
 		folder = {
@@ -1766,13 +1779,11 @@ technologies = {
 		
 		engineer = {
 			battalion_mult = {
-				category = category_special_forces_leg_infantry
+				category = category_special_forces
 				hard_attack = 0.10
+				max_strength = 0.10
 			}
 		}
-
-		acclimatization_hot_climate_gain_factor = 0.10
-		acclimatization_cold_climate_gain_factor = 0.10
 
 		
 		doctrine = yes	
@@ -1780,6 +1791,7 @@ technologies = {
 		
 		categories = {
 			special_forces_doctrine
+			r56_shock_infantry_tech
 			cat_shocktroops_doctrine
 		}
 
@@ -1813,6 +1825,7 @@ technologies = {
 		
 		categories = {
 			special_forces_doctrine
+			r56_shock_infantry_tech
 			cat_shocktroops_doctrine
 		}
 
@@ -1824,8 +1837,8 @@ technologies = {
 			combat_width = -0.2
 		}
 
-		special_forces_cap = 0.1
-		special_forces_no_supply_grace = 10
+		special_forces_cap = 0.20
+		special_forces_no_supply_grace = 24
 
 		
 		folder = {
@@ -1858,6 +1871,7 @@ technologies = {
 		
 		categories = {
 			special_forces_doctrine
+			r56_shock_infantry_tech
 			cat_shocktroops_doctrine
 		}
 
@@ -1865,7 +1879,7 @@ technologies = {
 		light_tank_recon = {
 			battalion_mult = {
 				category = category_shocktroops
-				breakthrough = 0.05
+				hard_attack = 0.10
 			}
 		}
 
@@ -1873,8 +1887,9 @@ technologies = {
 			breakthrough = 0.10
 		}
 
-		special_forces_cap = 0.1
-		pocket_penalty = -0.1
+		special_forces_cap = 0.20
+		pocket_penalty = -0.2
+		special_forces_out_of_supply_factor = -0.1
 
 		
 		folder = {
