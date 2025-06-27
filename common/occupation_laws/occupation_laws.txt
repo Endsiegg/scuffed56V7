@@ -61,10 +61,27 @@
 #	}
 #}
 
+missing_garrison_scaled_effect = {
+	icon = 1
+	missing_garrison_law = yes # missing garrison will now be scaling to law set as missing_garrison_law if it is set, otherwise it will use default_law as it used to
+	sound_effect = "Martial_Law_Interface_No_Garrison"
+	visible = {
+		always = no
+	}
+
+	state_modifier = {
+		resistance_target = 0.1
+		compliance_gain = -0.045
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
 
 no_garrison = {
 	icon = 1
-	default_law = yes
+
 	sound_effect = "Martial_Law_Interface_No_Garrison"
 
 	state_modifier = {
@@ -88,20 +105,20 @@ no_garrison = {
 				has_government = democratic
 			}
 			has_active_resistance = no
-			add = 0
+			add = 200
 		}
 		# if losing, get manpower & equipment back
 		modifier = {
 			FROM = {
 				surrender_progress > 0.15
 			}
-			add = 0
+			add = 100
 		}
 		modifier = {
 			FROM = {
 				surrender_progress > 0.4
 			}
-			add = 0
+			add = 500
 		}
 
 		modifier = {
@@ -161,7 +178,6 @@ foreign_civilian_oversight = {
 		#resistance_decay 				= 0.5
 		#resistance_growth 				= -0.5
 	}
-	starting_law = yes
 
 	ai_will_do = {
 		base = 120
@@ -261,11 +277,13 @@ liberate_workers_occupation = {
 military_governor_occupation = {
 	icon = 6
 	sound_effect = "Martial_Law_Interface_Military_Governor_Occupation"
+	default_law = yes
+	starting_law = yes
 
 	state_modifier = {
 		resistance_target 			= -0.35
 		compliance_gain 			= -0.045
-		required_garrison_factor 	= 0.
+		required_garrison_factor 	= 0.0
 		#local_factories 			= 0.10
 		local_resources 			= 0.10
 		local_manpower 				= 0.08
@@ -526,7 +544,7 @@ reconciliation = {
 	}
 
 	state_modifier = {
-		compliance_gain 				= 0.0.
+		compliance_gain 				= 0.1
 		required_garrison_factor 		= -0.5
 		resistance_damage_to_garrison 	= -0.5
 		resistance_decay 				= 0.5
