@@ -17,48 +17,13 @@ focus_tree = {
 
 shared_focus = GEN_Aviation_Effort
 shared_focus = GEN_Naval_Effort
-shared_focus = GEN_Industrial_Start
-shared_focus = GEN_Industrial_Boom
+shared_focus = GEN_begin_industrial_buildup
+shared_focus = GEN_industrial_boom
 shared_focus = ABC_establish_a_general_staff
 shared_focus = USC_UNIFIED_central_american_unification
 
 	continuous_focus_position = { x = 50 y = 1100 }
 
-#	focus = {
-#		id = NIC_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
 #somoza
 focus = {
 	id = NIC_president_Somoza_Garcia
@@ -136,6 +101,7 @@ focus = {
 	y = 1
 	relative_position_id = NIC_president_Somoza_Garcia
 	cost = 5
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
 	ai_will_do = {
 		factor = 9.9
 	}
@@ -161,6 +127,7 @@ focus = {
 	y = 2
 	relative_position_id = NIC_president_Somoza_Garcia
 	cost = 10
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_IMPROVEMENT }
 	ai_will_do = {
 		factor = 10
 	}
@@ -168,7 +135,6 @@ focus = {
 		add_ideas = NIC_volunteer_corps
 
 	}
-	search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 }
 
 focus = {
@@ -179,6 +145,7 @@ focus = {
 	y = 2
 	relative_position_id = NIC_president_Somoza_Garcia
 	cost = 5
+	search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
 	ai_will_do = {
 		factor = 9.8
 	}
@@ -318,8 +285,6 @@ focus = {
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }
 
-
-
 focus = {
 	id = NIC_health_services
 	icon = GFX_goal_medicine
@@ -356,6 +321,7 @@ focus = {
 	prerequisite = { focus = NIC_regulate_the_national_railroads }
 	prerequisite = { focus = NIC_health_services }
 	cost = 10
+	search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 	ai_will_do = {
 		factor = 10
 	}
@@ -371,11 +337,8 @@ focus = {
 			add_idea = NIC_social_reforms3
 		}
 	}
-	search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+
 }
-
-
-
 
 focus = {
 	id = NIC_nicaraguan_diplomacy
@@ -392,6 +355,7 @@ focus = {
 	x = 60
 	y = 1
 	cost = 5
+	search_filters = { FOCUS_FILTER_POLITICAL }
 	ai_will_do = {
 		factor = 10
 	}
@@ -560,9 +524,11 @@ focus = {
 	y = 4
 	relative_position_id = NIC_nicaraguan_diplomacy
 	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ANNEXATION }
 	ai_will_do = {
 		factor = 10
 	}
+	will_lead_to_war_with = HON
 	completion_reward = {
 		create_wargoal = {
 			type = annex_everything
@@ -571,14 +537,13 @@ focus = {
 		}
 		custom_effect_tooltip = NIC_remove_ideatt
 		if = {
-				limit = {
-					original_tag = NIC
-					has_idea =	NIC_banana_republic
-				}
-			remove_ideas = NIC_banana_republic
+			limit = {
+				original_tag = NIC
+				has_idea =	NIC_banana_republic
 			}
+			remove_ideas = NIC_banana_republic
+		}
 	}
-	search_filters = { FOCUS_FILTER_ANNEXATION }
 }
 
 focus = {
@@ -588,8 +553,11 @@ focus = {
 	mutually_exclusive = { focus = NIC_the_strength_of_moscow focus = NIC_ally_the_champion_of_europe }
 	available = {
 		USA = {
-			has_war_with = GER
+			has_war = yes
 			is_in_faction = yes
+			NOT = {
+				has_war_with = ROOT
+			}
 		}
 	}
 	bypass = {
@@ -650,11 +618,11 @@ focus = {
 		}
 		else_if = {
 			limit = {
-				ENG = {
-					is_in_faction_with = USA
-				}
+			#	ENG = {
+			#		is_in_faction_with = USA
+			#	}
 				USA = {
-					has_government = democratic
+				#	has_government = democratic
 					is_faction_leader = yes
 					has_capitulated = no
 					NOT = { has_war_with = ROOT }
@@ -733,6 +701,7 @@ focus = {
 	y = 2
 	relative_position_id = NIC_nicaraguan_diplomacy
 	cost = 5
+	search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
 	ai_will_do = {
 		factor = 10
 	}
@@ -756,12 +725,25 @@ focus = {
 				category = r56_marines_infantry_tech
 			}
 		}
-		add_tech_bonus = {
-			name = special_forces_bonus
-			bonus = 1.0
-			uses = 1
-			category = r56_special_forces_training_tech 
-		}			
+		if = {
+			limit = {
+				has_dlc = "Arms Against Tyranny"
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = special_forces_doctrine
+			}
+		}
+		else = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				ahead_reduction = 0.5
+				category = r56_special_forces_training_tech 
+			}	
+		}		
 	}
 }
 
@@ -828,8 +810,13 @@ focus = {
 	available = {
 		has_opinion = {
 			target = GER
-			value = 80
+			value > 50
 		}	
+		GER = {
+			is_faction_leader = yes
+			has_government = fascism
+			surrender_progress < 0.15
+		}
 	}
 	bypass = {
 		is_in_faction_with = GER
@@ -1071,7 +1058,7 @@ focus = {
 		state = 317
 		}
 	}
-	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STEEL}
+	search_filters = { FOCUS_FILTER_RESOURCES }
 }
 
 focus = {
@@ -1103,6 +1090,7 @@ focus = {
 	ai_will_do = {
 		factor = 9.9
 	}
+	will_lead_to_war_with = COS
 	completion_reward = {
 		create_wargoal = {
 			type = annex_everything

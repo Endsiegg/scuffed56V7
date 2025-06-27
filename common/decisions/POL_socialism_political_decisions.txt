@@ -333,16 +333,15 @@ socialism_on_the_rise77 = {
 						original_tag = POL
 						NOT = { has_government = communism }
 					}
-					 load_focus_tree = polish_focus
+					load_focus_tree = polish_focus
 					set_country_flag = pol_anti_comm_scw
 					set_cosmetic_tag = POLcivilwar 
 					retire_ideology_leader = neutrality
 					create_country_leader = {
 						name = "Edward Rydz-Śmigły"
-						desc = "POLITICS_Rydz_Smigly_DESC"
 						picture = "r56_portrait_POL_Rydz_Smigly.dds"
 						expire = "1965.1.1"
-						ideology = despotism
+						ideology = military_junta
 						traits = {
 							marshal_of_poland
 							nationalistic_tendencies
@@ -459,7 +458,6 @@ socialism_on_the_rise77 = {
 			set_party_name = { ideology = democratic long_name = POL_PPS_party_long name = POL_PPS_party }
 			create_country_leader = {
 				name = "Tomasz Arciszewski"
-				desc = "POLITICS_TOMASZ_ARCISZEWSKI_DESC"
 				picture = "r56_portrait_POL_Tomasz_Arciszewski.dds"
 				expire = "1965.1.1"
 				ideology = socialism
@@ -593,10 +591,7 @@ socialism_on_the_rise77 = {
 					logistics_skill = 1
 				}
 			}
-			if = {
-				limit = { has_unit_leader = 3128 }
-				remove_unit_leader = 3128
-			}
+			if = { limit = { has_unit_leader = 3128 } random_unit_leader = { limit = { has_id = 3128 } retire = yes } }
 		}
 		
 		ai_will_do = {

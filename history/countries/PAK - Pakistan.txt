@@ -1,4 +1,4 @@
-﻿capital = 443
+﻿capital = 1093
 
 oob = "PAK_1936"
 
@@ -14,13 +14,11 @@ if = {
 	activate_mission = bangladesh_liberation_disable
 }
 set_country_flag = PAK_civil_war	#to avoid mtg events
-set_war_support = 0.3
-set_stability = 0.4 
-set_research_slots = 4
-set_convoys = 20
-add_ideas = {
-	RAJ_Caste_Debuff_1
-}
+set_war_support = 0.65
+set_stability = 0.25
+set_research_slots = 3
+set_convoys = 5
+
 if = {
 	limit = {
 		has_dlc = "Battle for the Bosporus"
@@ -28,6 +26,7 @@ if = {
 	set_technology = { camelry = 1 }
 	load_oob = camel_template
 }	
+
 # Starting tech
 set_technology = {
 
@@ -41,20 +40,19 @@ set_technology = {
 	tech_recon = 1
 	trench_warfare = 1
 	fleet_in_being = 1
+	gw_artillery = 1
 	
 }
 if = {
 	limit = { has_dlc = "By Blood Alone" }
-		set_technology = {
-			iw_small_airframe = 1
-		}
+	set_technology = {
+		iw_small_airframe = 1
+		engines_1 = 1
+		aa_lmg = 1
+	}
 	else = {
 		set_technology = {
 			early_fighter = 1
-
-		
-
-
 		}
 	}
 }
@@ -74,12 +72,24 @@ if = {
 		mtg_transport = 1
 	}
 }
-
 if = {
-	limit = { has_dlc = "Together for Victory" }
-
-	add_to_tech_sharing_group = commonwealth_research
+	limit = {
+		not = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+	}
 }
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
+}
+
+add_to_tech_sharing_group = commonwealth_research
 
 set_politics = {
 	ruling_party = neutrality
@@ -87,22 +97,25 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
+
 set_popularities = {
-	democratic = 12
-	fascism = 8
-	communism = 3
-	neutrality = 77
+	democratic = 22
+	fascism = 4
+	communism = 10
+	neutrality = 64
 }
 
 recruit_character = PAK_muhammad_ali_jinnah
-recruit_character = PAK_zulfikar_ali_bhutto
+recruit_character = PAK_Liaquat_Ali_Khan
 recruit_character = PAK_mian_iftikharuddin
 recruit_character = PAK_mohammed_zaman_kiani
 recruit_character = PAK_iftikhar_khan_janjua
 recruit_character = PAK_akbar_khan
 recruit_character = PAK_muhammad_ziaulhaq
 recruit_character = PAK_syed_mohammad_ahsan
-recruit_character = PAK_Liaquat_Ali_Khan
+recruit_character = PAK_muhammad_iqbal
+recruit_character = PAK_ashraf_ali_thanwi
+recruit_character = PAK_aga_khan
 recruit_character = PAK_acd2
 recruit_character = PAK_ncs
 recruit_character = PAK_nccr
@@ -122,3 +135,5 @@ recruit_character = PAK_hiddenf
 recruit_character = PAK_ncm
 recruit_character = PAK_nt
 recruit_character = PAK_hiddenc
+
+recruit_character = PAK_nazir_ahmed

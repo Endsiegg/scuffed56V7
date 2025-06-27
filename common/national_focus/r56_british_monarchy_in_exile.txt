@@ -1,48 +1,5 @@
 #
 #Edit for Rt56 by Thinking_Waffle#
-#	shared_focus = {
-#		id = GEN_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
-
-### search_filters = {FOCUS_FILTER_POLITICAL}
-### search_filters = {FOCUS_FILTER_RESEARCH}
-### search_filters = {FOCUS_FILTER_INDUSTRY}
-### search_filters = {FOCUS_FILTER_STABILITY}
-### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
-### search_filters = {FOCUS_FILTER_MANPOWER}
-### search_filters = {FOCUS_FILTER_ANNEXATION}
 	shared_focus = {
 		id = ENG_welcome_british_exiles
 		icon = GFX_focus_eng_global_defense
@@ -67,14 +24,6 @@
 			}
 		}
 		offset = {
-			x = -26
-			y = 0
-			trigger = {
-				has_focus_tree = south_african_focus
-			}
-		}		
-				
-		offset = {
 			x = 8
 			y = 0
 			trigger = {
@@ -82,7 +31,55 @@
 			}
 		}
 		offset = {
-			x = 0
+			x = -29
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				} 
+				has_completed_focus = AST_R56_reaffirm_commonwelth_commitments
+			}
+		}
+		offset = {
+			x = -27
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				} 
+				has_completed_focus = AST_R56_dreams_of_a_republic 
+			}
+		}
+		offset = {
+			x = -22
+			y = 0
+			trigger = { 
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				OR = {
+					has_completed_focus = AST_R56_appeal_to_the_labour_dissidents
+					has_completed_focus = AST_R56_third_time_lucky 
+				}
+				
+			}
+		}
+		offset = {
+			x = -18
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				} 
+				has_completed_focus = AST_R56_australia_first 
+			}
+		}
+		offset = {
+			x = 4
 			y = 0
 			trigger = {
 				has_focus_tree = r56_new_zealander_focus
@@ -94,7 +91,33 @@
 			trigger = {
 				has_focus_tree = generic_focus
 			}
-		}								
+		}
+		offset = {
+			x = -21
+			trigger = {
+				has_focus_tree = r56_new_zealander_focus
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				OR = {
+					has_completed_focus = NZL_unite_communist_movements
+					has_completed_focus = NZL_national_party_triumphant
+				}
+			}
+		}
+		offset = {
+			x = -12
+			trigger = {
+				has_focus_tree = r56_new_zealander_focus
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = NZL_the_labour_partys_reform
+			}
+		}
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -107,6 +130,8 @@
 				original_tag = AST
 			}
 		}
+
+		text_icon = NORDIC_focus_style
 
 		available = {
 			OR = {
@@ -127,9 +152,6 @@
 				}
 				NOT = {
 					OR = {
-						
-						
-						
 						
 						has_completed_focus = r56_CAN_communism
 						
@@ -163,7 +185,6 @@
 					OR = {
 						has_government = communism
 						has_idea = AST_R56_appeal_to_the_labour_dissidents_idea
-						has_idea = AST_abandon_the_westminster_system_communism
 						has_idea_with_trait = communist_revolutionary
 						has_civil_war = yes
 					}
@@ -177,7 +198,7 @@
 					OR = {
 						has_government = communism
 						has_idea = internationalism
-						has_completed_focus = NZL_emerge_from_the_caves
+						has_completed_focus = NZL_unite_communist_movements
 						has_idea_with_trait = communist_revolutionary
 						has_civil_war = yes
 					}	
@@ -188,19 +209,19 @@
 
 		completion_reward = {
 			add_doctrine_cost_reduction = {
-				name = CAN_rcaf_station_borden
+				name = ENG_welcome_british_exiles
 				cost_reduction = 0.35
 				uses = 1
 				category = air_doctrine
 			}
 			add_doctrine_cost_reduction = {
-				name = CAN_army_modernization
+				name = ENG_welcome_british_exiles
 				cost_reduction = 0.35
 				uses = 1
 				category = land_doctrine
 			}			
 			add_doctrine_cost_reduction = {
-				name = POL_Naval_Officers_School
+				name = ENG_welcome_british_exiles
 				cost_reduction = 0.35
 				uses = 1
 				category = naval_doctrine
@@ -221,6 +242,8 @@
 		ai_will_do = {
 			factor = 10
 		}
+		text_icon = NORDIC_focus_style
+
 		available = {
 			NOT = {
 				has_government = communism
@@ -265,6 +288,8 @@
 				original_tag = AST
 			}			
 		}			
+		text_icon = NORDIC_focus_style
+
 		available = {
 			NOT = {
 				has_government = communism
@@ -309,6 +334,8 @@
 		ai_will_do = {
 			factor = 10
 		}
+		text_icon = NORDIC_focus_style
+
 		available = {
 			NOT = {
 				has_government = communism
@@ -364,6 +391,8 @@
 		}
 
 		will_lead_to_war_with = ENG
+
+		text_icon = NORDIC_focus_style
 
 		available = {
 			NOT = {

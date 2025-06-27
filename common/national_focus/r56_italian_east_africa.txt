@@ -1,49 +1,6 @@
 #
 # Tree originally designed for minor countries around the arctic circle (what about you Greenland?)
 #Edit for Rt56 by Thinking_Waffle#
-#	focus = {
-#		id = GEN_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
-
-### search_filters = {FOCUS_FILTER_POLITICAL}
-### search_filters = {FOCUS_FILTER_RESEARCH}
-### search_filters = {FOCUS_FILTER_INDUSTRY}
-### search_filters = {FOCUS_FILTER_STABILITY}
-### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
-### search_filters = {FOCUS_FILTER_MANPOWER}
-### search_filters = {FOCUS_FILTER_ANNEXATION}
 
 focus_tree = {
 	id = italian_east_africa
@@ -63,7 +20,7 @@ focus_tree = {
 
 	shared_focus = GEN_Aviation_Effort
 	shared_focus = GEN_Naval_Effort
-	shared_focus = GEN_Industrial_Start
+	shared_focus = GEN_begin_industrial_buildup
 
 	focus = {
 		id = AOI_securing_east_africa
@@ -73,19 +30,56 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 50
 		}
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_equipment_to_stockpile = { type = infantry_equipment  amount = 10000 }
 			add_political_power = 150
 			custom_effect_tooltip = ITA_ministry_of_italian_africa_occupation_law_tt
 			show_ideas_tooltip = ITA_fake_colonial_police_law		
-			AOI = {
+			ROOT = {
 				set_occupation_law_where_available = colonial_police
-			}		
+			}
+			if = {
+				limit = {
+					AND = {
+						ROOT = {
+							has_war_with_major = no
+						}
+						550 = {
+							is_fully_controlled_by = ROOT
+						}
+						842 = {
+							is_fully_controlled_by = ROOT
+						}
+						843 = {
+							is_fully_controlled_by = ROOT
+						}
+						271 = {
+							is_fully_controlled_by = ROOT
+						}
+					}
+				}
+				build_railway = { 
+					path = { 12766 13287 2072 7944 5097 13288 5010 }
+				}
+			}
+			hidden_effect = {
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment  
+					amount = 12500 
+					producer = AOI
+				}
+				every_controlled_state = {
+					limit = {
+						has_resistance = yes
+					}
+					add_compliance = 5
+					set_garrison_strength = 0.91
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		
@@ -101,13 +95,13 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 30
 		}
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_equipment_to_stockpile = { type = infantry_equipment  amount = 5000 }
+			add_equipment_to_stockpile = { type = infantry_equipment  amount = 500 }
 			add_tech_bonus = {
 				name = special_forces_bonus
 				bonus = 3
@@ -124,6 +118,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
+
 	focus = {
 		id = AOI_establish_a_general_staff
 		icon = GFX_focus_por_luso_tropicalism
@@ -136,17 +131,15 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 5
 		}
 
 		available = {
 			#num_divisions > 0
 		}
 
-		cancel_if_invalid = yes
-
 		complete_tooltip = {
-		army_experience = 50
+		army_experience = 5
 		if = {
 				limit = {
 					has_country_flag = ABC_establish_a_general_staff_a
@@ -166,7 +159,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			army_experience = 50
+			army_experience = 5
 
 			if = {
 				limit = {
@@ -206,13 +199,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = AOI_establish_a_general_staff
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
-			factor = 11
+			factor = 5
 		}
-
-		cancel_if_invalid = yes
 
 		completion_reward = {
 			set_country_flag = ITA_colonial_police_improved_flag
@@ -229,12 +220,143 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 2
+				uses = 1
 				category = land_doctrine
+			}
+
+			if = {
+				limit = {
+					836 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				build_railway = { 
+					path = { 4995 13297 10775 }
+				}
+			}
+
+
+			every_controlled_state = {
+				limit = {
+					has_resistance = yes
+				}
+				add_compliance = 5
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
+
+	focus = {
+		id = AOI_establish_provincial_capitals
+		icon = GFX_focus_ITA_strengthen_ascari_corps
+		prerequisite = { focus = AOI_securing_east_africa }
+		x = -2
+		y = 1
+		relative_position_id = AOI_securing_east_africa
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		available = {
+			ROOT = {
+				exists = yes
+				NOT = {
+					has_war_with_major = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			army_experience = 5
+			every_controlled_state = {
+				limit = {
+					is_fully_controlled_by = AOI
+					OR = {
+						state = 841
+						state = 838
+						state = 271
+						state = 835
+						state = 559
+						state = 550
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = { 
+						all_provinces = yes
+						limit_to_victory_point > 0
+						limit_to_supply_node = yes
+					}
+					instant_build = yes
+				}
+				hidden_effect = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = { 
+							all_provinces = yes
+							limit_to_victory_point > 0
+							limit_to_naval_base = yes
+						}
+						instant_build = yes
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = r56_AOI_provincial_capital
+					scope = AOI
+				}
+				add_claim_by = AOI
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						AND = {
+							838 = {
+								is_fully_controlled_by = AOI
+							}
+							835 = {
+								is_fully_controlled_by = AOI
+							}
+							841 = {
+								is_fully_controlled_by = AOI
+							}
+						}
+					}
+				}
+				841 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = 1984
+						instant_build = yes
+					}
+				}
+				838 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = 7912
+						instant_build = yes
+					}
+				}
+				835 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = 13298
+						instant_build = yes
+					}
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
 	focus = {
 		id = AOI_warm_climate_training
 		icon = GFX_focus_generic_camel_corps
@@ -242,7 +364,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = AOI_establish_a_general_staff
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -297,12 +419,7 @@ focus_tree = {
 		prerequisite = { focus = AOI_warm_climate_training }
 		
 		relative_position_id = AOI_organize_the_police_structure
-		cost = 5
-
-		ai_will_do = {
-			factor = 30
-		}
-
+		cost = 10
 		available = {
 			any_controlled_state = {
 				is_on_continent = africa
@@ -315,6 +432,14 @@ focus_tree = {
 			custom_effect_tooltip = ITA_polizia_dell_africa_italiana_occupation_law_tt
 
 			set_country_flag = ITA_colonial_police_final_flag
+
+			every_controlled_state = {
+				limit = {
+					has_resistance = yes
+				}
+				add_compliance = 5
+				add_resistance = -5
+			}
 		}
 	}
 	focus = {
@@ -325,11 +450,6 @@ focus_tree = {
 		prerequisite = { focus = AOI_italian_african_police }
 		relative_position_id = AOI_italian_african_police
 		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
 		available = {
 			any_controlled_state = {
 				is_on_continent = africa
@@ -368,7 +488,12 @@ focus_tree = {
 				hidden_effect = {
 					add_ideas = r56i_laws_security_order
 				}
-				
+			}
+			every_controlled_state = {
+				limit = {
+					has_resistance = yes
+				}
+				add_resistance = -3
 			}		
 		}
 	}		
@@ -380,7 +505,7 @@ focus_tree = {
 		relative_position_id = AOI_organize_the_police_structure
 		x = -1
 		y = 1	
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 30
@@ -390,11 +515,8 @@ focus_tree = {
 
 		}
 
-		cancel_if_invalid = yes
-
 		completion_reward = {
-			army_experience = 10
-
+			army_experience = 25
 			add_ideas = FRA_colonial_recruitment
 		}
 	}
@@ -409,12 +531,11 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
 		allow_branch = {
 			has_dlc = "Battle for the Bosporus"
 		}
-		cancel_if_invalid = yes
 
 		completion_reward = {
 		#	add_ideas = SAU_camelry_expertise
@@ -440,10 +561,6 @@ focus_tree = {
 		text = ABC_equipment_effort
 		cost = 10
 
-		ai_will_do = {
-			factor = 3
-		}
-
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -461,7 +578,7 @@ focus_tree = {
 
 	focus = {		
 		id = AOI_infantry_camouflage
-		text = ROM_infantry_camouflage
+		text = ABC_infantry_camouflage
 		icon = GFX_goal_small_infantry
 		prerequisite = { focus = AOI_equipment_effort }
 		x = -2
@@ -502,10 +619,6 @@ focus_tree = {
 		relative_position_id = AOI_equipment_effort
 		cost = 10
 
-		ai_will_do = {
-			factor = 3
-		}
-
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -536,8 +649,6 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-
-		cancel_if_invalid = yes
 
 		complete_tooltip = {
 		army_experience = 5
@@ -572,10 +683,6 @@ focus_tree = {
 		relative_position_id = AOI_equipment_effort
 		cost = 10
 
-		ai_will_do = {
-			factor = 3
-		}
-
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -602,10 +709,6 @@ focus_tree = {
 		y = 1
 		relative_position_id = AOI_equipment_effort_3
 		cost = 10
-
-		ai_will_do = {
-			factor = 3
-		}
 
 		available_if_capitulated = yes
 
@@ -651,8 +754,6 @@ focus_tree = {
 		bypass = {
 			has_tech = improved_light_tank
 		}
-
-		cancel_if_invalid = yes
 
 		complete_tooltip = {
 			if = {
@@ -785,10 +886,6 @@ focus_tree = {
 		relative_position_id = AOI_establish_a_armor_corp
 		cost = 10
 
-		ai_will_do = {
-			factor = 1
-		}
-
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -820,8 +917,6 @@ focus_tree = {
 			has_tech = radio
 			has_tech = motorised_infantry
 		}
-
-		cancel_if_invalid = yes
 
 		complete_tooltip = {
 			add_tech_bonus = {
@@ -861,8 +956,6 @@ focus_tree = {
 			has_tech = motorised_infantry
 		}
 
-		cancel_if_invalid = yes
-
 		complete_tooltip = {
 		unlock_decision_tooltip = ABC_motorize_the_army 
 			add_tech_bonus = {
@@ -897,8 +990,6 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-
-		cancel_if_invalid = yes
 
 		complete_tooltip = {
 			add_tech_bonus = {
@@ -940,8 +1031,6 @@ focus_tree = {
 			has_tech = motorised_infantry
 		}
 
-		cancel_if_invalid = yes
-
 		complete_tooltip = {
 			add_tech_bonus = {
 				name = motorized_bonus
@@ -981,8 +1070,6 @@ focus_tree = {
 		available = {
 			has_tech = motorised_infantry
 		}
-
-		cancel_if_invalid = yes
 
 		complete_tooltip = {
 			add_tech_bonus = {

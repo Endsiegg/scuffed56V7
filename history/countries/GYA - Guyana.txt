@@ -8,20 +8,9 @@ set_technology = {
 	etax_doctrine = 1	
 	camo = 1
 }
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-		set_technology = {
-			iw_small_airframe = 1
-		}
-	else = {
-		set_technology = {
-							
-			CAS1 = 1
-			early_fighter = 1	
-		}
-	}
-}
 set_convoys = 5
+
+set_country_flag = monroe_doctrine
 
 set_politics = {
 	ruling_party = democratic
@@ -38,33 +27,21 @@ set_popularities = {
 
 create_country_leader = {
 	name = "Arthur Raymond Chung"
-	desc = ""
 	picture = "gfx/leaders/r56_generic/r56_portrait_generic_politician_asia_2_democracy.dds"
 	expire = "1965.1.1"
 	ideology = conservatism
-	traits = {
-		
-	}
 }
 
 create_country_leader = {
 	name = "Edward Luckhoo"
-	desc = ""
 	picture = "gfx/leaders/r56_generic/r56_portrait_generic_politician_south_america_2.dds"
 	expire = "1965.1.1"
 	ideology = despotism
-	traits = {
-		
-	}
 }
 
 create_country_leader = {
-	
 	name = "Peter Milliard" #pan african more or less communist
-	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_1.dds"
+	picture = GFX_kr_portrait_africa_generic_1
 	expire = "1965.1.1"
 	ideology = marxism
-	traits = {
-		#
-	}
 }

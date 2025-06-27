@@ -8,30 +8,33 @@ focus_tree = {
 			add = 10
 			tag = BHU
 		}
-}
-continuous_focus_position = { x = 1200 y = 1400 }
-default = no
+	}
+
+	continuous_focus_position = { x = 50 y = 1000 }
+	default = no
+
 	focus = {
 		id = BHU_aftermath_of_the_visit_to_india
-		icon = GFX_focus_chi_british_cooperation
+		icon = GFX_goal_RAJ_British_India_Borders
 		x = 12
 		y = 0
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
 		}		
 
 		completion_reward = {
-			country_event = { days = 1 id = himalaya_bhutan.2 }
+			country_event = { hours = 18 id = himalaya_bhutan.2 }
 			custom_effect_tooltip = BHU_can_decline_effect
-
 			hidden_effect = {
 				set_rule = {
-				can_decline_call_to_war = yes
+					can_decline_call_to_war = yes
 				}	
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_create_an_army
@@ -41,7 +44,9 @@ default = no
 		relative_position_id = BHU_aftermath_of_the_visit_to_india
 		x = 4
 		y = 1
-		cost = 5
+
+		cost = 10
+
 		ai_will_do = {
 			factor = 0.5
 			modifier = {
@@ -50,24 +55,36 @@ default = no
 					has_completed_focus = BHU_embrace_radical_nationalism
 					has_completed_focus = BHU_denounce_the_aristocracy
 				}
-			}			
+			}
 		}
-		available = {
-		
-		}
+
 		completion_reward = {
-			army_experience = 5
+			army_experience = 10
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			country_lock_all_division_template = no
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			swap_ideas = { remove_idea = BHU_no_army add_idea = BHU_fledgling_army }
 
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = available_theorist
-			show_ideas_tooltip = BHU_namgyal_bahadur3
+			show_ideas_tooltip = BHU_namgyal_bahadur
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_chief_of_army
 			show_ideas_tooltip = BHU_bachu_phugyal
 
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = BHU_rin_singh_dorji
 		}
+
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
 	}
 	focus = {
@@ -78,10 +95,12 @@ default = no
 		relative_position_id = BHU_aftermath_of_the_visit_to_india
 		x = 6
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
-			is_ai = yes
+			hidden_trigger = { #AI checks are a soft fourth wall break. Hide them when possible
+				is_ai = yes
+			}
 		}
 
 		allow_branch = {
@@ -96,66 +115,100 @@ default = no
 					has_completed_focus = BHU_constitutional_parlementarism
 					has_completed_focus = BHU_maintain_monarchic_regime
 				}
-			}			
-		}		
+			}
+		}
+
 		completion_reward = {
 			add_political_power = 150
+			add_stability = 0.05
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_blissful_isolation
 		icon = GFX_goal_religious_harmony
 		prerequisite = { focus = BHU_peace_will_reign }
 		relative_position_id = BHU_peace_will_reign
+
 		x = 0
 		y = 1
-		cost = 10
+
+		cost = 5
+
 		ai_will_do = {
 			factor = 3
-		}		
+		}
+
 		completion_reward = {
 			add_political_power = 150
+			add_stability = 0.05
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 	}	
 	focus = {
 		id = BHU_arms_deliveries
 		prerequisite = { focus = BHU_create_an_army }
 		relative_position_id = BHU_create_an_army		
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_goal_generic_gun_purchase
+
 		x = -1
 		y = 1
-		cost = 10
 
-		bypass = {
-			RAJ = {
-				OR = {
-					has_war = yes
-					exists = no
-				}
-			}
-		}
+		cost = 8
+
 		available = {
-			OR = {
-				RAJ = {
-					has_opinion = { target = ROOT value > 40 }
+			any_neighbor_country = {
+				has_opinion = { target = ROOT value > 40 }
+				OR = {
+					num_of_factories > 10
+					original_tag = RAJ
+					is_major = yes
 				}
-				RAJ = {
-					is_in_faction_with = ROOT
+				NOT = {
+					has_war_with = ROOT
+					original_tag = TIB
+					original_tag = NEP
 				}
-				ROOT = {
-					is_subject_of = RAJ
-				}
-				RAJ = { has_government = ROOT }
 			}
 		}
+
 		ai_will_do = {
 			factor = 3
 		}
+
 		completion_reward = {
+			every_neighbor_country = {
+				limit = {
+					has_opinion = { target = ROOT value > 40 }
+					OR = {
+						num_of_factories > 10
+						original_tag = RAJ
+						is_major = yes
+					}
+					NOT = {
+						has_war_with = ROOT
+						original_tag = TIB
+						original_tag = NEP
+					}
+				}
+				
+				custom_effect_tooltip = generic_skip_one_line_tt
+				
+				BHU = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 500
+						producer = PREV
+					}
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_offsite_building = { type = arms_factory level = 1 }
 		}
+
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
@@ -163,25 +216,40 @@ default = no
 		prerequisite = { focus = BHU_create_an_army }
 		relative_position_id = BHU_create_an_army		
 		icon = GFX_goal_TIB_philip_neame
+
 		x = 0
 		y = 2
-		cost = 10
+
+		cost = 8
+
 		ai_will_do = {
 			factor = 3
-		}		
+		}
+
 		completion_reward = {
-		unlock_decision_tooltip = BHU_improve_military_standards
-				add_timed_idea = {
-					idea = BHU_first_inspection_idea
-					days = 100
-					}
+			army_experience = 25
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			unlock_decision_tooltip = BHU_improve_military_standards
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.25
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_timed_idea = {
+				idea = BHU_first_inspection_idea
+				days = 7
+			}
 		}
+
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH }
 	}	
 	focus = {
@@ -191,7 +259,7 @@ default = no
 		icon = GFX_focus_generic_military_mission
 		x = -1
 		y = 1
-		cost = 10
+		cost = 8
 
 		available = {
 			has_country_flag = bhutan_improved_military_standards
@@ -200,14 +268,20 @@ default = no
 			factor = 8
 		}		
 		completion_reward = {
+			add_war_support = 0.05
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.25
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
-			add_war_support = 0.1
-
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_ideas = ABC_establish_a_general_staff_idea_1
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = BHU_ugyen_tanghi
 			show_ideas_tooltip = BHU_namgyal_bahadur2
@@ -221,20 +295,38 @@ default = no
 		relative_position_id = BHU_officers_training		
 		x = 0
 		y = 2
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 3
 		}		
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.5
+				cost_reduction = 0.75
 				uses = 1
 				category = land_doctrine
 			}
-		every_army_leader = {
-			add_planning = 1
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			every_army_leader = {
+				add_planning = 1
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			random_army_leader = {
+				limit = {
+					NOT = {
+						has_trait = thorough_planner
+					}
+				}
+				add_trait = {
+					trait = thorough_planner
+				}
+			}
+			
+			remove_ideas = BHU_fledgling_army
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH }
 	}
@@ -251,18 +343,37 @@ default = no
 		}		
 		completion_reward = {
 			add_ideas = special_forces
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_tech_bonus = {
 				name = special_forces_bonus
 				bonus = 3
 				uses = 1
 				category = r56_mountain_infantry_tech
 			}
-			add_tech_bonus = {
-				name = special_forces_bonus
-				bonus = 1.0
-				uses = 2
-				category = r56_special_forces_training_tech 
-			}			
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_doctrine_cost_reduction = {
+					cost_reduction = 0.5
+					uses = 2
+					category = cat_mountaineers_doctrine
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = special_forces_bonus
+					bonus = 0.5
+					uses = 2
+					ahead_reduction = 0.5
+					category = r56_special_forces_training_tech 
+				}	
+			}					
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH }
 	}	
@@ -274,36 +385,23 @@ default = no
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 1
 		y = 1
-		cost = 10
+		cost = 8
 
 		available = {
 			has_country_flag = bhutan_improved_military_standards
 		}
+
 		ai_will_do = {
 			factor = 3
-		}		
+		}
+
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
-						building = industrial_complex
+						building = arms_factory
 						size > 0
 						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -321,35 +419,21 @@ default = no
 		prerequisite = { focus = BHU_small_arms_workshop }
 		prerequisite = { focus = BHU_officers_training }
 		relative_position_id = BHU_small_arms_workshop		
-		icon = GFX_goal_generic_small_arms		
+		icon = GFX_goal_generic_small_arms
 		x = -1
 		y = 1
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 3
 		}		
 		completion_reward = {
+			army_experience = 15
 			add_tech_bonus = {
 				name = infantry_weapons_bonus
-				bonus = 0.25
-				uses = 1
-				technology = support_weapons
-				technology = support_weapons2
-				technology = support_weapons3
-			}
-			add_tech_bonus = {
-				name = infantry_weapons_bonus
-				bonus = 0.25
-				uses = 1
-				technology = infantry_weapons1
-				technology = infantry_weapons2
-				technology = improved_infantry_weapons
-				technology = improved_infantry_weapons_2
-				technology = infantry_at
-				technology = infantry_at2
-				technology = advanced_infantry_weapons
-				technology = advanced_infantry_weapons2	
-			}			
+				bonus = 0.75
+				uses = 2
+				category = infantry_weapons
+			}	
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -368,24 +452,9 @@ default = no
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
-						building = industrial_complex
+						building = arms_factory
 						size > 0
 						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -395,6 +464,16 @@ default = no
 					instant_build = yes
 				}					
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.25
+				uses = 1
+				ahead_reduction = 0.5
+				category = support_tech
+			}	
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -403,11 +482,11 @@ default = no
 		prerequisite = { focus = BHU_ammunitions }
 		prerequisite = { focus = BHU_formalize_military_doctrine }
 		prerequisite = { focus = BHU_fledgeling_industry }
-		relative_position_id = BHU_ammunitions		
+		relative_position_id = BHU_ammunitions
 		icon = GFX_goal_generic_army_artillery
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 3
 		}		
@@ -415,7 +494,7 @@ default = no
 			add_tech_bonus = {
 				name = infantry_artillery_bonus
 				ahead_reduction = 1
-				bonus = 1
+				bonus = 0.5
 				uses = 1
 				category = artillery
 			}
@@ -426,10 +505,10 @@ default = no
 		id = BHU_mountain_guns
 		prerequisite = { focus = BHU_artillery }
 		relative_position_id = BHU_artillery	
-		icon = GFX_goal_generic_army_artillery2
+		icon = GFX_focus_SMB_mountain_guns
 		x = 1
 		y = 1
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 3
 		}		
@@ -445,7 +524,7 @@ default = no
 		icon = GFX_focus_NZL_bob_semple_tank
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 2
 		}		
@@ -471,13 +550,57 @@ default = no
 			factor = 5
 		}		
 		completion_reward = { #free industry advisor?
-			add_political_power = 100
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_timed_idea = {
-					idea = BHU_1921_modernization_roadmap_idea 
-					days = 1095
-					}
+				idea = BHU_1921_modernization_roadmap_idea
+				days = 1095
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					has_idea = BHU_severe_economic_isolationism
+				}
+				custom_effect_tooltip = r56_newline
+				swap_ideas = {
+					remove_idea = BHU_severe_economic_isolationism
+					add_idea = BHU_moderate_economic_isolationism
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					has_idea = BHU_moderate_economic_isolationism
+				}
+				custom_effect_tooltip = r56_newline
+				swap_ideas = {
+					remove_idea = BHU_moderate_economic_isolationism
+					add_idea = BHU_slight_economic_isolationism
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					has_idea = BHU_slight_economic_isolationism
+				}
+				custom_effect_tooltip = r56_newline
+				remove_ideas = BHU_slight_economic_isolationism
+			}
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_education_reform
@@ -492,29 +615,37 @@ default = no
 		}		
 		completion_reward = {
 			add_research_slot = 1
+			add_tech_bonus = {
+				name = UK_secret_focus
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_train_more_doctors
-		icon = GFX_goal_medicine	
+		icon = GFX_goal_medicine
 		prerequisite = { focus = BHU_education_reform }
 		relative_position_id = BHU_education_reform		
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}		
 		completion_reward = {
+			add_stability = 0.05
 			add_tech_bonus = {
 				name = hospital_company_tech_bonus_name
-				bonus = 1
+				bonus = 1.5
 				uses = 1
+				ahead_reduction = 0.5
 				category = hospital_tech
 			}
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 	}	
 	focus = {
 		id = BHU_improve_agriculture
@@ -528,86 +659,61 @@ default = no
 			factor = 3
 		}		
 		completion_reward = {
-			add_ideas = BHU_agriculatural_reform
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = BHU_forestry_exploitation
-		icon = GFX_focus_generic_treaty	
-		prerequisite = { focus = BHU_improve_agriculture }
-		relative_position_id = BHU_improve_agriculture		
-		x = 2
-		y = 1
-		cost = 10
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-
-		ai_will_do = {
-			factor = 3
-		}		
-		completion_reward = {
 			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
+				prioritize = { 324 }
 				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_ideas = BHU_agriculatural_reform
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					has_idea = BHU_severe_economic_isolationism
+				}
+				custom_effect_tooltip = r56_newline
+				swap_ideas = {
+					remove_idea = BHU_severe_economic_isolationism
+					add_idea = BHU_moderate_economic_isolationism
 				}
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					has_idea = BHU_moderate_economic_isolationism
+				}
+				custom_effect_tooltip = r56_newline
+				swap_ideas = {
+					remove_idea = BHU_moderate_economic_isolationism
+					add_idea = BHU_slight_economic_isolationism
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					has_idea = BHU_slight_economic_isolationism
+				}
+				custom_effect_tooltip = r56_newline
+				remove_ideas = BHU_slight_economic_isolationism
+			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_improve_the_roads
-		icon = GFX_goal_generic_construction
+		icon = GFX_goal_generic_road
 		prerequisite = { focus = BHU_improve_agriculture }
 		relative_position_id = BHU_improve_agriculture		
 		x = 4
 		y = 1
-		cost = 10
+		cost = 8
 
 		bypass = {
 			custom_trigger_tooltip = {
@@ -623,28 +729,19 @@ default = no
 
 		ai_will_do = {
 			factor = 3
-		}		
+		}
+
 		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 324 }
+				add_extra_state_shared_building_slots = 1
+			}
 			random_owned_controlled_state = {
 				prioritize = { 324 }
 				limit = {
 					free_building_slots = {
 						building = infrastructure
 						size > 1
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 1
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
 					}
 				}
 				add_building_construction = {
@@ -654,16 +751,20 @@ default = no
 				}
 			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_the_dragon_trains
-		icon = GFX_goal_generic_construct_infrastructure
+		icon = GFX_goal_generic_train_2
 		prerequisite = { focus = BHU_improve_the_roads }
 		relative_position_id = BHU_improve_the_roads		
 		x = 1
 		y = 1
 		cost = 10
+
+		available = {	#shouldnt be too harmful to AI as it can exploit resources instead for the next focus, alternatively, can make train equipment conditional on this tech
+			has_tech = basic_train
+		}
 
 		bypass = {
 			custom_trigger_tooltip = {
@@ -682,6 +783,16 @@ default = no
 		}		
 
 		completion_reward = {
+			if = {
+				limit = {
+					324 = {
+						is_fully_controlled_by = ROOT
+					}
+				} 
+				build_railway = { 
+					path = { 8010 12860 }
+				}
+			}
 			random_owned_controlled_state = {
 				prioritize = { 324 }
 				limit = {
@@ -710,29 +821,30 @@ default = no
 					instant_build = yes
 				}
 			}
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 5
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
 	focus = {
 		id = BHU_mineral_survey
-		icon = GFX_goal_generic_construction2	
+		icon = GFX_goal_generic_coal_mining
 		prerequisite = { focus = BHU_improve_agriculture }
 		relative_position_id = BHU_improve_agriculture		
 		x = 2
 		y = 1
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 3
 		}		
 		completion_reward = {
 			add_tech_bonus = {
 				name = excavation_tech_bonus_name
-				bonus = 1
+				bonus = 0.75
 				uses = 2
-				technology = excavation1
-				technology = excavation2
-				technology = excavation3
-				technology = excavation4
+				category = excavation_tech
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -745,7 +857,7 @@ default = no
 		relative_position_id = BHU_mineral_survey		
 		x = 1
 		y = 1
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 5
 		}		
@@ -758,7 +870,7 @@ default = no
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STEEL}
-	}	
+	}
 	focus = {
 		id = BHU_new_weaving_techniques
 		icon = GFX_goal_generic_production
@@ -766,61 +878,109 @@ default = no
 		relative_position_id = BHU_improve_agriculture		
 		x = 0
 		y = 1
-		cost = 10
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
+		cost = 8
 
 		ai_will_do = {
 			factor = 5
-		}		
+		}
+
 		completion_reward = {
 			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
-				}
-			}		
+				}					
+			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_reform_the_taxation_system
 		icon = GFX_goal_TIB_monastic_tax
 		prerequisite = { focus = BHU_new_weaving_techniques }
-		relative_position_id = BHU_new_weaving_techniques		
-		x = 0
+		relative_position_id = BHU_new_weaving_techniques
+		x = 1
 		y = 1
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 5
 		}		
 		completion_reward = {
 			add_political_power = 120
+			if = {
+				limit = {
+					has_idea = BHU_severe_economic_isolationism
+				}
+				swap_ideas = {
+					remove_idea = BHU_severe_economic_isolationism
+					add_idea = BHU_moderate_economic_isolationism
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BHU_moderate_economic_isolationism
+				}
+				swap_ideas = {
+					remove_idea = BHU_moderate_economic_isolationism
+					add_idea = BHU_slight_economic_isolationism
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BHU_slight_economic_isolationism
+				}
+				remove_ideas = BHU_slight_economic_isolationism
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
-		id = BHU_organize_the_land
-		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = BHU_reform_the_taxation_system }
-		prerequisite = { focus = BHU_the_dragon_trains focus = BHU_exploit_the_findings}
-		relative_position_id = BHU_reform_the_taxation_system		
-		x = 4
+		id = BHU_utilize_our_forests
+		icon = GFX_focus_CHL_expand_the_forestry
+		prerequisite = { focus = BHU_new_weaving_techniques }
+		relative_position_id = BHU_new_weaving_techniques
+		x = -1
 		y = 1
 		cost = 8
+		ai_will_do = {
+			factor = 5
+		}		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}					
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STEEL}
+	}
+	focus = {
+		id = BHU_organize_the_land
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = BHU_exploit_the_findings focus = BHU_the_dragon_trains }
+		relative_position_id = BHU_exploit_the_findings	
+		x = 1
+		y = 1
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}		
@@ -830,17 +990,18 @@ default = no
 				add_extra_state_shared_building_slots = 2
 			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	}	
 	
 	focus = {
 		id = BHU_fledgeling_industry
 		icon = GFX_focus_generic_industry_2
 		prerequisite = { focus = BHU_reform_the_taxation_system }
-		relative_position_id = BHU_reform_the_taxation_system		
-		x = 0
+		prerequisite = { focus = BHU_utilize_our_forests }
+		relative_position_id = BHU_reform_the_taxation_system
+		x = -1
 		y = 1
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 4
 		}		
@@ -876,7 +1037,7 @@ default = no
 				}					
 			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_defense_policy
@@ -915,20 +1076,20 @@ default = no
 						size > 0
 						include_locked = yes
 					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}					
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -939,11 +1100,11 @@ default = no
 				}					
 			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_technological_progress
-		icon = GFX_focus_research2
+		icon = GFX_goal_supremacy_of_will
 		prerequisite = { focus = BHU_industrial_modernization }
 		relative_position_id = BHU_industrial_modernization		
 		x = 2
@@ -955,28 +1116,8 @@ default = no
 		completion_reward = {
 			 add_research_slot = 1
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 	}
-	focus = {
-		id = BHU_industry_enlightened_by_science
-		icon = GFX_goal_supremacy_of_will
-		prerequisite = { focus = BHU_technological_progress }
-		relative_position_id = BHU_technological_progress		
-		x = 2
-		y = 1
-		cost = 10
-
-		available = {
-			num_of_factories > 50
-		}
-		ai_will_do = {
-			factor = 50
-		}		
-		completion_reward = {
-			 add_research_slot = 1
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
 	focus = {
 		id = BHU_naval_effort
 		icon = GFX_goal_generic_construct_naval_dockyard
@@ -988,7 +1129,6 @@ default = no
 		cost = 10
 
 		available_if_capitulated = yes
-
 
 		available = {
 			any_state = {
@@ -1123,7 +1263,6 @@ default = no
 
 		available_if_capitulated = yes
 
-
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1160,7 +1299,6 @@ default = no
 
 		available_if_capitulated = yes
 
-
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1196,7 +1334,6 @@ default = no
 
 		available_if_capitulated = yes
 
-
 		ai_will_do = {
 			factor = 10 #it must appear
 			modifier = {
@@ -1224,7 +1361,6 @@ default = no
 		cost = 10
 
 		available_if_capitulated = yes
-
 
 		ai_will_do = {
 			factor = 1
@@ -1261,7 +1397,6 @@ default = no
 		cost = 10
 
 		available_if_capitulated = yes
-
 
 		ai_will_do = {
 			factor = 1
@@ -1300,7 +1435,6 @@ default = no
 
 		available_if_capitulated = yes
 
-
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1337,7 +1471,6 @@ default = no
 
 		available_if_capitulated = yes
 
-
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1367,8 +1500,7 @@ default = no
 	}
 	focus = {
 		id = BHU_build_air_strip
-		icon = GFX_goal_generic_build_airforce
-		prerequisite = { focus = BHU_ammunitions }
+		icon = GFX_goal_generic_airport
 		prerequisite = { focus = BHU_formalize_military_doctrine }
 		relative_position_id = BHU_ammunitions		
 		x = -2
@@ -1376,7 +1508,6 @@ default = no
 		cost = 10
 
 		available_if_capitulated = yes
-
 
 		complete_tooltip = {
 			air_experience = 25
@@ -1399,7 +1530,6 @@ default = no
 		}
 		completion_reward = {
 			air_experience = 25
-
 			if = {
 				limit = {
 					capital_scope = {
@@ -1426,6 +1556,9 @@ default = no
 					ROOT = { set_country_flag = aviation_effort_AB }
 				}
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			if = {
 				limit = {
 					capital_scope = {
@@ -1444,13 +1577,18 @@ default = no
 					ROOT = { set_country_flag = aviation_effort_AB }
 				}
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_doctrine_cost_reduction = {
 				name = air_doc_bonus
 				cost_reduction = 0.5
 				uses = 1
 				category = air_doctrine
 			}
-
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			custom_effect_tooltip = available_chief_of_airforce
 			show_ideas_tooltip = BHU_namgyal_bahadur
 			show_ideas_tooltip = BHU_dorji_yeshey	
@@ -1470,19 +1608,39 @@ default = no
 
 		available_if_capitulated = yes
 	
-	ai_will_do = {
+		ai_will_do = {
 			factor = 1
 		}
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = fighter_bonus
-				bonus = 1
+			air_experience = 15
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
 				uses = 1
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
+				category = air_doctrine
+			}
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = BHU_large_airframes
+					bonus = 1
+					uses = 1
+					category = light_air
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = fighter_bonus
+					bonus = 1
+					uses = 1
+					technology = early_fighter
+					technology = fighter1
+					technology = fighter2
+					technology = fighter3
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -1505,17 +1663,35 @@ default = no
 		}		
 		
 		completion_reward = {
-			add_tech_bonus = {
-				name = bomber_bonus
-				bonus = 1
+			air_experience = 15
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
 				uses = 1
-				technology = strategic_bomber1
-				technology = strategic_bomber2
-				technology = strategic_bomber3
-				category = tactical_bomber
-				technology = heavy_fighter1
-				technology = heavy_fighter2
-				technology = heavy_fighter3				
+				category = air_doctrine
+			}
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = BHU_large_airframes
+					bonus = 1
+					uses = 1
+					category = heavy_air
+					category = medium_air
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = bomber_bonus
+					bonus = 1
+					uses = 1
+					category = heavy_air
+					category = tactical_bomber
+					category = cat_heavy_fighter			
+				}
+			
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -1537,11 +1713,10 @@ default = no
 
 		completion_reward = {
 			air_experience = 25
-			
 			add_doctrine_cost_reduction = {
 				name = air_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
+				cost_reduction = 0.75
+				uses = 2
 				category = air_doctrine
 			}
 			add_tech_bonus = {
@@ -1563,19 +1738,19 @@ default = no
 		relative_position_id = BHU_aftermath_of_the_visit_to_india		
 		x = -12
 		y = 1
-		cost = 20
+		cost = 5
 		completion_reward = {
-			add_ideas = idea_BHU_maintain_the_monarchy
 			add_political_power = 100
+			add_ideas = idea_BHU_maintain_the_monarchy
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_reinforce_the_throne
-		icon = GFX_focus_generic_home_defense
+		icon = GFX_focus_generic_monarchy_2
 		mutually_exclusive = { focus = BHU_delegate_to_the_tslzogdu }		
 		prerequisite = { focus = BHU_maintain_monarchic_regime }
-		relative_position_id = BHU_maintain_monarchic_regime		
+		relative_position_id = BHU_maintain_monarchic_regime
 		x = -1
 		y = 1
 		cost = 10
@@ -1587,7 +1762,7 @@ default = no
 		completion_reward = {
 			add_ideas = idea_BHU_reinforce_the_throne
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 	}
 	focus = {
 		id = BHU_delegate_to_the_tslzogdu
@@ -1597,21 +1772,20 @@ default = no
 		relative_position_id = BHU_maintain_monarchic_regime		
 		x = 1
 		y = 1
-		cost = 10
+		cost = 8
 
 		ai_will_do = {
 			factor = 5
 		}		
 		
 		completion_reward = {
-			remove_ideas = BHU_backward_economy
-			add_political_power = 100
+			add_ideas = BHU_decentralized_administration
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
 		id = BHU_aristocratic_regime
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_goal_generic_aristocratic_cooperation
 		prerequisite = { focus = BHU_delegate_to_the_tslzogdu }
 		relative_position_id = BHU_delegate_to_the_tslzogdu		
 		x = 0
@@ -1624,12 +1798,25 @@ default = no
 		
 		completion_reward = {
 			add_ideas = idea_BHU_aristocratic_regime
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			every_neighbor_country = {
+				limit = {
+					NOT = {
+						has_capitulated = yes
+						has_war_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+				custom_effect_tooltip = BHU_improve_relations_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}	
 	focus = {
 		id = BHU_the_quiet_strength
-		icon = GFX_focus_generic_self_management
+		icon = GFX_focus_generic_monarchy_1
 		prerequisite = { focus = BHU_reinforce_the_throne }
 		relative_position_id = BHU_reinforce_the_throne		
 		x = 0
@@ -1641,8 +1828,21 @@ default = no
 		}		
 		
 		completion_reward = {
+			add_political_power = 50
 			add_ideas = idea_BHU_the_quiet_strength
-			remove_ideas = BHU_backward_economy
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			every_neighbor_country = {
+				limit = {
+					NOT = {
+						has_capitulated = yes
+						has_war_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+				custom_effect_tooltip = BHU_improve_relations_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}	
@@ -1654,14 +1854,29 @@ default = no
 		relative_position_id = BHU_aftermath_of_the_visit_to_india
 		x = -4
 		y = 1
-		cost = 5
+		cost = 8
 		
 		ai_will_do = {
 			factor = 20
 		}		
 		
 		completion_reward = {
+			if = { #Here for flavor only, breakaway is handle elsewhere. The reward shows player this is the "Breakaway" path
+				limit = {
+					is_subject = yes
+				}
+				add_autonomy_score = {
+					value = 50
+					localization = "New Ways"
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_timed_idea = { idea = idea_BHU_new_ideas days = 1095 }
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = BHU_sonam_tobgay_dorji2
 			show_ideas_tooltip = BHU_communist_revolutionary
@@ -1679,12 +1894,12 @@ default = no
 		cost = 5
 
 		available = {
-			num_of_factories > 20
 			is_in_faction = no
+			num_of_factories > 15
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 5
 		}		
 		
 		completion_reward = {
@@ -1696,7 +1911,7 @@ default = no
 	}	
 	focus = {
 		id = BHU_constitutional_parlementarism
-		icon = GFX_focus_generic_treaty
+		icon = GFX_goal_constitutional_monarchy
 		mutually_exclusive = { focus = BHU_denounce_the_aristocracy focus = BHU_embrace_radical_nationalism }		
 		prerequisite = { focus = BHU_new_ideas }
 		relative_position_id = BHU_new_ideas		
@@ -1713,6 +1928,13 @@ default = no
 				ideology = democratic
 				popularity = 0.15
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_timed_idea = {
+				idea = AFG_constitutional_monarchy_idea
+				days = 365
+			}
 		}
 	}
 	focus = {
@@ -1722,15 +1944,22 @@ default = no
 		relative_position_id = BHU_constitutional_parlementarism		
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 5
-		}		
+		}	
+		
+		available = {
+			NOT = {
+				has_idea = BHU_severe_economic_isolationism
+				has_idea = BHU_moderate_economic_isolationism
+				has_idea = BHU_slight_economic_isolationism
+			}
+		}
 		
 		completion_reward = {
 			add_ideas = BHU_traders_of_the_himalaya
-			remove_ideas = BHU_backward_economy
 		}
 	}
 	focus = {
@@ -1740,7 +1969,7 @@ default = no
 		relative_position_id = BHU_traders_of_the_himalaya		
 		x = 0
 		y = 2
-		cost = 10
+		cost = 8
 
 		ai_will_do = {
 			factor = 5
@@ -1752,20 +1981,6 @@ default = no
 					free_building_slots = {
 						building = infrastructure
 						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
 					}
 				}
 				add_building_construction = {
@@ -1781,21 +1996,6 @@ default = no
 						size > 0
 						include_locked = yes
 					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -1803,7 +2003,7 @@ default = no
 					level = 1
 					instant_build = yes
 				}
-			}			
+			}
 		}			
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1823,11 +2023,15 @@ default = no
 		}		
 		
 		completion_reward = {
-			set_politics = { ruling_party = democratic elections_allowed = yes }
+			add_stability = 0.1
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.25
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			set_politics = { ruling_party = democratic elections_allowed = yes last_election = 1936.1.1 }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}		
@@ -1836,27 +2040,30 @@ default = no
 		icon = GFX_goal_generic_intelligence_exchange
 		prerequisite = { focus = BHU_traders_of_the_himalaya }
 		prerequisite = { focus = BHU_share_power }
-		relative_position_id = BHU_traders_of_the_himalaya		
+		relative_position_id = BHU_traders_of_the_himalaya
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
+
+		available = {
+			NOT = {
+				has_idea = BHU_severe_economic_isolationism
+				has_idea = BHU_moderate_economic_isolationism
+				has_idea = BHU_slight_economic_isolationism
+			}
+		}
 		
 		ai_will_do = {
 			factor = 5
 		}		
 		
 		completion_reward = {
-			hidden_effect = {
-				trade_policy_open_up = yes
-				trade_policy_open_up = yes			
-			}
-			custom_effect_tooltip = trade_policy_open_up_twice_tooltip
-			
+			add_ideas = free_trade
 		}
 	}	
 	focus = {
 		id = BHU_denounce_the_aristocracy
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_rom_handle_king
 		mutually_exclusive = { focus = BHU_constitutional_parlementarism focus = BHU_embrace_radical_nationalism }
 		prerequisite = { focus = BHU_new_ideas }
 		relative_position_id = BHU_new_ideas		
@@ -1869,14 +2076,16 @@ default = no
 		}		
 		
 		completion_reward = {
-			add_timed_idea = { idea = internationalism days = 1095 }
+			add_stability = -0.1
+			add_war_support = 0.05
 			add_popularity = {
 				ideology = communism
 				popularity = 0.05
 			}
-			add_stability = -0.1
-			add_war_support = 0.02
 			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_timed_idea = { idea = internationalism days = 1095 }
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 	}
@@ -1887,10 +2096,10 @@ default = no
 		relative_position_id = BHU_denounce_the_aristocracy		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 
 		available = {
-			communism > 0.45
+			communism > 0.35
 		}
 		bypass = {
 			has_government = communism
@@ -1900,42 +2109,79 @@ default = no
 		}		
 		
 		completion_reward = {
-			unlock_decision_tooltip = BHU_denounce_the_treaty_of_punakha			
+			add_stability = -0.15
 			add_popularity = {
 				ideology = communism
 				popularity = 0.05
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			set_politics = { ruling_party = communism elections_allowed = no }
-			add_stability = -0.15
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			unlock_decision_tooltip = BHU_denounce_the_treaty_of_punakha
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			every_neighbor_country = {
+				limit = {
+					NOT = {
+						has_capitulated = yes
+						has_war_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+				custom_effect_tooltip = BHU_improve_relations_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
 		id = BHU_land_redistribution
-		icon = GFX_goal_generic_agriculture
+		icon = GFX_focus_SMB_a_land_of_mountains
 		prerequisite = { focus = BHU_overthrow_the_feudals }
 		relative_position_id = BHU_overthrow_the_feudals		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		
 		ai_will_do = {
 			factor = 10
 		}		
 		
 		completion_reward = {
-			add_political_power = 100
-			trade_policy_open_up = yes
+			add_political_power = 120
+			add_stability = -0.05
 			add_popularity = {
 				ideology = communism
 				popularity = 0.05
-			}			
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}	
 	focus = {
 		id = BHU_mobilization_of_the_masses
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_SOV_mobilization_plan
 		prerequisite = { focus = BHU_land_redistribution }
 		relative_position_id = BHU_land_redistribution		
 		x = 0
@@ -1956,12 +2202,28 @@ default = no
 		}		
 		
 		completion_reward = {
-			add_war_support = 0.1
-			add_ideas = militarism_focus	
+			add_war_support = 0.15
+			add_ideas = militarism_focus
 		}
 		search_filters = {  FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
 	}	
+	focus = {
+		id = BHU_indoctrination_focus
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = BHU_mobilization_of_the_masses }
+		relative_position_id = BHU_mobilization_of_the_masses
+		x = -3
+		y = 1
+		cost = 10
 
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+			add_ideas = indoctrination_focus
+		}
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+	}
 	focus = {
 		id = BHU_contact_chinese_communists
 		icon = GFX_focus_chi_cooperation_with_the_communists
@@ -1970,13 +2232,13 @@ default = no
 		relative_position_id = BHU_mobilization_of_the_masses		
 		x = -1
 		y = 1
-		cost = 10
+		cost = 8
 
 		available = {
+			has_government = communism
 			PRC = {
 				has_government = communism
 			}
-			has_government = communism
 		}
 		bypass = {
 			NOT = {
@@ -1989,10 +2251,41 @@ default = no
 		ai_will_do = {
 			factor = 5
 		}
-		
+
 		completion_reward = {
+			custom_effect_tooltip = SAU_gain_3_generals			
 			add_opinion_modifier = { target = PRC modifier = medium_increase }
-			add_ideas = TIB_chinese_commissars_idea
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_ideas = TIB_cooperation_with_the_PLA
+
+			hidden_effect = {
+				create_corps_commander = {
+					traits = { JAP_communist_sympathizer }
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				create_corps_commander = {
+					traits = { JAP_communist_sympathizer }
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				create_corps_commander = {
+					traits = { JAP_communist_sympathizer }
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
 	}
@@ -2004,13 +2297,13 @@ default = no
 		relative_position_id = BHU_mobilization_of_the_masses		
 		x = 1
 		y = 1
-		cost = 10
+		cost = 8
 
 		available = {
+			has_government = communism
 			SOV = {
 				has_government = communism
 			}
-			has_government = communism
 		}
 		bypass = {
 			NOT = {
@@ -2025,18 +2318,22 @@ default = no
 		}
 		
 		completion_reward = {
-			add_opinion_modifier = { target = SOV modifier = medium_increase }
-			add_ideas = TIB_soviet_military_mission_idea
+			army_experience = 25
+			add_opinion_modifier = { target = SOV modifier = small_increase }
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_ideas = TIB_soviet_advisors
 		}
 	}	
 	focus = {
 		id = BHU_forced_industrial_progress
-		icon = GFX_focus_generic_support_the_left_right
+		icon = GFX_focus_generic_communist_industry
 		prerequisite = { focus = BHU_contact_chinese_communists focus = BHU_contact_the_soviets }
 		relative_position_id = BHU_contact_chinese_communists		
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			has_government = communism
@@ -2047,7 +2344,7 @@ default = no
 		}		
 		
 		completion_reward = {
-			remove_ideas = BHU_backward_economy
+			add_stability = -0.05
 			add_ideas = workers_culture
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2059,35 +2356,20 @@ default = no
 		relative_position_id = BHU_forced_industrial_progress		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		
 		ai_will_do = {
 			factor = 7
 		}		
 		
 		completion_reward = {
-			add_stability = 0.1
+			add_stability = 0.15
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
 						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -2096,7 +2378,7 @@ default = no
 					level = 1
 					instant_build = yes
 				}
-			}			
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 	}	
@@ -2115,17 +2397,24 @@ default = no
 		}		
 		
 		completion_reward = {
-			unlock_decision_tooltip = BHU_denounce_the_treaty_of_punakha		
+			add_war_support = 0.05
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.05
-			}		
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			unlock_decision_tooltip = BHU_denounce_the_treaty_of_punakha
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_timed_idea = { idea = nationalism days = 1095 }
 		}
 	}
 	focus = {
 		id = BHU_spread_aggressive_attitude
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_focus_generic_spread_fascism
 		prerequisite = { focus = BHU_embrace_radical_nationalism }
 		relative_position_id = BHU_embrace_radical_nationalism		
 		x = 0
@@ -2137,14 +2426,47 @@ default = no
 		}		
 		
 		completion_reward = {
-			add_stability = -0.05		
-			add_war_support = 0.2
+			add_stability = -0.05
+			add_named_threat = { threat = 1 name = GEN_seeking_expansive_t }
+			add_war_support = 0.15
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_ideas = GEN_Conquer_I
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			every_neighbor_country = {
+				add_opinion_modifier = { target = ROOT modifier = medium_decrease }
+			}
+			if = {
+				limit = {
+					fascism > 0.35
+					NOT = {
+						has_government = fascism
+					}
+				}
+				set_politics = { ruling_party = fascism }
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			every_neighbor_country = {
+				limit = {
+					NOT = {
+						has_capitulated = yes
+						has_war_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+				custom_effect_tooltip = BHU_improve_relations_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 	}	
 	focus = {
 		id = BHU_mass_conscription
-		icon = GFX_focus_generic_little_entente
+		icon = GFX_focus_generic_fascist_troops
 		prerequisite = { focus = BHU_spread_aggressive_attitude }
 		relative_position_id = BHU_spread_aggressive_attitude		
 		x = -1
@@ -2166,61 +2488,51 @@ default = no
 		}			
 		
 		completion_reward = {
-			add_stability = -0.05		
+			add_stability = -0.05
 			add_war_support = 0.05
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_ideas = militarism_focus
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					fascism > 0.35
+					NOT = {
+						has_government = fascism
+					}
+				}
+				set_politics = { ruling_party = fascism }
+			}
 		}
 		search_filters = {  FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
 	}
 	focus = {
 		id = BHU_armement_program
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_generic_combined_arms
 		prerequisite = { focus = BHU_spread_aggressive_attitude }
 		relative_position_id = BHU_spread_aggressive_attitude		
 		x = 1
 		y = 1
-		cost = 10			
-		
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
+		cost = 8			
 
 		ai_will_do = {
 			factor = 10
 		}		
 		
 		completion_reward = {
-			remove_ideas = BHU_backward_economy
+			add_war_support = 0.1
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
 						size > 0
 						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -2230,6 +2542,66 @@ default = no
 					instant_build = yes
 				}
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			upgrade_economy_law = yes
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					fascism > 0.35
+					NOT = {
+						has_government = fascism
+					}
+				}
+				set_politics = { ruling_party = fascism }
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = BHU_german_arms_shipments
+		icon = GFX_focus_chi_mission_to_germany
+		prerequisite = { focus = BHU_armement_program }
+		relative_position_id = BHU_armement_program	
+		x = 1
+		y = 1
+		cost = 8			
+
+		ai_will_do = {
+			factor = 10
+		}		
+
+		available = {
+			GER = {
+				has_government = fascism
+				NOT = {
+					has_war_with = ROOT
+					has_capitulated = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1500
+				producer = GER
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+				producer = GER
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -2245,12 +2617,30 @@ default = no
 		ai_will_do = {
 			factor = 5
 		}
+
+		available = {
+			fascism > 0.35
+		}
 		
 		completion_reward = {
 			add_popularity = {
 				ideology = fascism
-				popularity = 0.05
+				popularity = 0.10
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					NOT = {
+						has_government = fascism
+					}
+				}
+				set_politics = { ruling_party = fascism }
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_ideas = idea_BHU_dragons_storm
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
@@ -2265,10 +2655,39 @@ default = no
 		cost = 10
 
 		available = {
-			r56_script_i_am_sane = yes
-			RAJ = {
-				r56_script_target_is_sane = yes
-			}		
+			is_subject = no
+			OR = {
+				1013 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+							has_capitulated = yes
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				323 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+							has_capitulated = yes
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				1091 = {
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+							has_capitulated = yes
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -2276,24 +2695,93 @@ default = no
 		}		
 		
 		completion_reward = {
-			431 = { add_core_of = BHU }
-			random_country = {
-				limit = { owns_state = 431 }
-				BHU = {
-					create_wargoal = {
-						type = take_core_state
-						target = PREV
-						expire = 0
-						generator = { 431 }
+			if = {
+				limit = {
+					323 = {
+						controller = {
+							NOT = {
+								has_war_with = ROOT
+								has_capitulated = yes
+								is_in_faction_with = ROOT
+								is_subject_of = ROOT
+							}
+						}
+					}
+					1091 = {
+						controller = {
+							NOT = {
+								has_war_with = ROOT
+								has_capitulated = yes
+								is_in_faction_with = ROOT
+								is_subject_of = ROOT
+							}
+						}
 					}
 				}
-			}			
+				323 = {
+					add_core_of = ROOT
+					controller = {
+						ROOT = {
+							create_wargoal = {
+								type = take_core_state
+								target = PREV
+								expire = 0
+								generator = { 323 }
+							}
+						}
+					}
+				}
+				1091 = {
+					add_core_of = ROOT
+					controller = {
+						ROOT = {
+							create_wargoal = {
+								type = take_core_state
+								target = PREV
+								expire = 0
+								generator = { 1091 }
+							}
+						}
+					}
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					1013 = {
+						controller = {
+							NOT = {
+								has_war_with = ROOT
+								has_capitulated = yes
+								is_in_faction_with = ROOT
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				1013 = { 
+					remove_claim_by = ROOT
+					add_core_of = ROOT
+					controller = {
+						ROOT = {
+							create_wargoal = {
+								type = take_core_state
+								target = PREV
+								expire = 0
+								generator = { 1013 }
+							}
+						}
+					}
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 	focus = {
 		id = BHU_attack_the_plateau
-		icon = GFX_goal_TIB_monasteries_crushed
+		icon = GFX_goal_PRC_liberate_tibet
 		prerequisite = { focus = BHU_dragons_storm focus = BHU_mobilization_of_the_masses}
 		relative_position_id = BHU_dragons_storm		
 		x = -1
@@ -2301,38 +2789,46 @@ default = no
 		cost = 10
 
 		available = {
-			r56_script_i_am_sane = yes
-			TIB = {
-				r56_script_target_is_sane = yes
-				is_puppet = no
-			}	
-			OR = {
-				has_government = fascism
-				has_government = communism
-			}
+			is_subject = no
 			has_army_manpower = { size > 39999 }
+			757 = {
+				controller = {
+					NOT = {
+						has_war_with = ROOT
+						has_capitulated = yes
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
 		}
 		
 		ai_will_do = {
 			factor = 15
-		}		
+		}
+		
+		#The target in 95% of cases
+		will_lead_to_war_with = TIB 
 		
 		completion_reward = {
 			every_state = {
 				limit = {
-					is_core_of = TIB
+					OR = {
+						state = 757
+						state = 758
+						state = 322
+						state = 601
+						state = 434
+					}
 				}
 				add_core_of = BHU
 			}
-			if = {
-				limit = {
-					NOT = {
-						owns_state = 757
-					}
-				}
-				random_country = {
-					limit = { owns_state = 757 }
-					BHU = {
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			757 = {
+				controller = {
+					ROOT = {
 						create_wargoal = {
 							type = take_core_state
 							target = PREV
@@ -2341,7 +2837,7 @@ default = no
 						}
 					}
 				}
-			}				
+			}	
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -2354,94 +2850,130 @@ default = no
 		relative_position_id = BHU_attack_the_plateau
 		cost = 10
 		ai_will_do = {
-			base = 10
+			base = 0
 		}
 		available = {
 			r56_script_i_am_sane = yes
-			OR = {
-				is_ai = no
-			}
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = SIK
-						is_core_of = XSM
-						is_core_of = MON
-						is_core_of = MEN
-						is_core_of = TAN
-						is_core_of = CHI
-						is_core_of = PRC
-					}
-				}
-				add_claim_by = ROOT
-			}
 			if = { 
 				limit = {
-					CHI = { exists = yes }
+					CHI = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = CHI
 				}
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			if = { 
 				limit = {
-					PRC = { exists = yes }
+					PRC = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = PRC
 				}
-			}			
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			if = { 
 				limit = {
-					SIK = { exists = yes }
+					SIK = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = SIK
 				}
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			if = { 
 				limit = {
-					XSM = { exists = yes }
+					XSM = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = XSM
 				}
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			if = { 
 				limit = {
-					MON = { exists = yes }
+					MON = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = MON
 				}
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			if = { 
 				limit = {
-					MEN = { exists = yes }
+					MEN = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = MEN
 				}
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			if = { 
 				limit = {
-					TAN = { exists = yes }
+					TAN = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = TAN
 				}
-			}						
+			}
 		}
 	}
 	focus = {
@@ -2455,7 +2987,7 @@ default = no
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
 				OR = {
 					CHI = {
@@ -2468,17 +3000,18 @@ default = no
 		}
 
 		available = {	
-			r56_script_i_am_sane = yes
+			is_subject = no
 			JAP = {
-				r56_script_target_is_sane = yes
+				NOT = {
+					has_war_with = ROOT
+					has_capitulated = yes
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
 			}
 		}
-			
-		bypass = {
-			JAP = {
-				r56_script_standard_bypass = yes
-			}
-		}
+
+		will_lead_to_war_with = JAP
 
 		completion_reward = {
 			create_wargoal = {

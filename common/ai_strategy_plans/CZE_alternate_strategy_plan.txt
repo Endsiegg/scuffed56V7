@@ -2,8 +2,11 @@ CZE_alternate_strategy_plan_entente = {
 	name = "CZE aims to form Entente"
 	desc = "Let's fight good and die well!"
 
+	allowed = {
+		original_tag = CZE
+	}
+
 	enable = {
-		original_tag = CZE	
 		OR = {
 			has_country_flag = CZE_AI_RANDOM_DEMOCRATIC_ALTERNATE
 			has_game_rule = {
@@ -13,7 +16,26 @@ CZE_alternate_strategy_plan_entente = {
 		}
 	}
 	abort = {
-		
+		OR = {
+			has_government = fascism
+			has_government = communism
+			is_subject = yes
+			has_capitulated = yes	#dont continue post-war please
+			ROM = {
+				OR = {
+					exists = no
+					has_government = fascism
+					has_government = communism
+				}
+			}
+			YUG = {
+				OR = {
+					exists = no
+					has_government = fascism
+					has_government = communism
+				}
+			}
+		}
 	}
 
 	ai_national_focuses = {
@@ -35,7 +57,7 @@ CZE_alternate_strategy_plan_entente = {
 		type = added_military_to_civilian_factory_ratio
 		value = 15
 	}
-	
+
 
 	traits = {
 		captain_of_industry = 5
@@ -54,8 +76,15 @@ CZE_alternate_strategy_plan_entente = {
 	}
 
 	focus_factors = {
-		CZKE_french_military_mission = 40
-		
+		CZKE_legacy_of_legions = 3
+		CZKE_french_military_mission = 10
+		CZKE_france_alliance = 10
+		CZKE_revive_little_entente = 10
+		CZKE_invite_romania = 10
+		CZKE_invite_yugoslavia = 10
+
+		CZKE_soviet_treaties = 0
+		CZKE_empower_internationalism = 0
 	}
 
 }
@@ -64,8 +93,11 @@ CZE_alternate_strategy_plan_communist = {
 	name = "CZE aims to be a good little people's republic"
 	desc = "Let's all be comrades!"
 
+	allowed = {
+		original_tag = CZE
+	}
+
 	enable = {
-		original_tag = CZE	
 		OR = {
 			has_country_flag = CZE_AI_RANDOM_COMMUNIST
 			has_game_rule = {
@@ -75,7 +107,7 @@ CZE_alternate_strategy_plan_communist = {
 		}
 	}
 	abort = {
-		
+
 	}
 
 	ai_national_focuses = {
@@ -87,7 +119,7 @@ CZE_alternate_strategy_plan_communist = {
 		artillery = 18.0
 		support_tech = 10
 	}
-	
+
 	traits = {
 		captain_of_industry = 5
 		war_industrialist = 5
@@ -118,8 +150,11 @@ CZE_alternate_strategy_plan_fascist = {
 	name = "THE BOHEMIAN EMPIRE RIDES AGAIN"
 	desc = "DEATH OR GLORY!"
 
+	allowed = {
+		original_tag = CZE
+	}
+
 	enable = {
-		original_tag = CZE	
 		OR = {
 			has_country_flag = CZE_AI_RANDOM_FASCIST
 			has_game_rule = {
@@ -129,7 +164,7 @@ CZE_alternate_strategy_plan_fascist = {
 		}
 	}
 	abort = {
-		
+
 	}
 
 	ai_national_focuses = {
@@ -141,9 +176,9 @@ CZE_alternate_strategy_plan_fascist = {
 		artillery = 18.0
 		support_tech = 10
 	}
-	
-	
-	
+
+
+
 
 	traits = {
 		captain_of_industry = 5
@@ -171,8 +206,11 @@ CZE_alternate_strategy_plan_democratic = {
 	name = "CZE aims to be a good little democracy"
 	desc = "Let's all be friends!"
 
+	allowed = {
+		original_tag = CZE
+	}
+
 	enable = {
-		original_tag = CZE	
 		OR = {
 			has_country_flag = CZE_AI_RANDOM_DEMOCRATIC
 			has_game_rule = {
@@ -182,7 +220,7 @@ CZE_alternate_strategy_plan_democratic = {
 		}
 	}
 	abort = {
-		
+
 	}
 
 	ai_national_focuses = {
@@ -195,9 +233,9 @@ CZE_alternate_strategy_plan_democratic = {
 		artillery = 18.0
 		support_tech = 0
 	}
-	
-	
-	
+
+
+
 
 	traits = {
 		captain_of_industry = 5

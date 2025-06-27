@@ -1,51 +1,8 @@
 #
 #Edit for Rt56 by Thinking_Waffle#
-#	shared_focus = {
-#		id = GEN_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
-
-### search_filters = {FOCUS_FILTER_POLITICAL}
-### search_filters = {FOCUS_FILTER_RESEARCH}
-### search_filters = {FOCUS_FILTER_INDUSTRY}
-### search_filters = {FOCUS_FILTER_STABILITY}
-### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
-### search_filters = {FOCUS_FILTER_MANPOWER}
-### search_filters = {FOCUS_FILTER_ANNEXATION}
 	shared_focus = {
 		id = GCO_UNIFIED_gran_colombian_unification
-		icon = GFX_goal_COL_legitimize_gran_colombia
+		icon = GFX_goal_COL_bolivarian_brother
 		cost = 5
 		prerequisite = {
 
@@ -57,14 +14,14 @@
 				original_tag = COL
 				original_tag = VEN
 				original_tag = CRC
-				original_tag = GYA
+			#	original_tag = GYA
 			}
 
 		}
 		x = 57
 		y = 0
 		offset = {
-			x = -12
+			x = 8
 			y = 0
 			trigger = {
 				has_focus_tree = colombian_focus
@@ -81,6 +38,8 @@
 		ai_will_do = {
 			factor = 5
 		}
+
+		text_icon = NORDIC_focus_style
 
 		available = {
 			if = {
@@ -107,7 +66,7 @@
 	shared_focus = {
 		id = GCO_UNIFIED_connect_the_cities
 		icon = GFX_goal_generic_road
-		cost = 5
+		cost = 10
 		prerequisite = {
 			focus = GCO_UNIFIED_gran_colombian_unification
 		}
@@ -117,6 +76,8 @@
 		ai_will_do = {
 			factor = 10
 		}
+		text_icon = NORDIC_focus_style
+
 		available = {
 			NOT = {
 				has_idea = generic_recent_economic_unification
@@ -182,6 +143,8 @@
 		ai_will_do = {
 			factor = 10
 		}
+		text_icon = NORDIC_focus_style
+
 		available = {
 			NOT = {
 				has_idea = generic_recent_economic_unification
@@ -192,14 +155,6 @@
 			has_idea = YUG_idea_expanded_mining_industry
 		}
 		completion_reward = {
-			493 = {
-				add_extra_state_shared_building_slots = 2				
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
 			add_ideas = YUG_idea_expanded_mining_industry
 		}
 	}
@@ -217,10 +172,9 @@
 		ai_will_do = {
 			factor = 10
 		}
-
+		text_icon = NORDIC_focus_style
 		completion_reward = {
 			add_stability = 0.15
-			add_war_support = 0.10
 		}
 	}
 
@@ -228,13 +182,15 @@
 		id = GCO_UNIFIED_naval_buildup
 		text = CARIB_naval_buildup
 		icon = GFX_goal_generic_admirality
-		cost = 5
+		cost = 10
 		prerequisite = {
 			focus = GCO_UNIFIED_administrative_reorganization
 		}
 		relative_position_id = GCO_UNIFIED_administrative_reorganization
 		x = -1
 		y = 1
+		text_icon = NORDIC_focus_style
+
 		available = {
 			NOT = {
 				has_idea = generic_recent_economic_unification
@@ -286,6 +242,8 @@
 		x = 1
 		y = 1
 		cost = 10
+		text_icon = NORDIC_focus_style
+
 		available = {
 			controls_state = 486
 			NOT = {
@@ -328,6 +286,8 @@
 			factor = 10
 		}
 
+		text_icon = NORDIC_focus_style
+
 		bypass = {
 			OR = {
 				has_idea = idea_r56_defense_of_the_union
@@ -347,6 +307,8 @@
 		prerequisite = {
 			focus = GCO_UNIFIED_defend_the_new_union
 		}
+		text_icon = NORDIC_focus_style
+
 		available = {
 			NOT = {
 				has_idea = generic_recent_army_unification
@@ -384,7 +346,9 @@
 #		ai_will_do = {
 #			factor = 10
 #		}
-#		available = {
+#		text_icon = NORDIC_focus_style
+# 
+#  		available = {
 #			NOT = {
 #				has_idea = generic_recent_economic_unification
 #			}
@@ -400,6 +364,3 @@
 #			add_ideas = YUG_idea_expanded_mining_industry
 #		}
 #	}
-
-
-

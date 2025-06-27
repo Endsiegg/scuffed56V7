@@ -16,7 +16,7 @@ focus_tree = {
     }
 
     # loyalist path
-
+    shared_focus = ARAB_the_holy_war
     focus = {
         id = EGY_solidify_british_ties
         icon = GFX_focus_chi_british_cooperation
@@ -39,10 +39,9 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            add_political_power = 50
             add_ai_strategy = {
                 type = alliance
-                id = "ENG"
+                id = ENG
                 value = 200
             }
             random_country = {
@@ -61,7 +60,7 @@ focus_tree = {
         relative_position_id = EGY_solidify_british_ties
 		x = -4
 		y = 1
-        cost = 5
+        cost = 10
         available = {
             has_country_flag = EGY_fuad_bit_the_dust
             is_subject_of = ENG
@@ -77,14 +76,9 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            if = {
-                limit = {
-                    has_dlc = "Together for Victory"
-                }
-                add_autonomy_score = {
-                    value = -50
-                    localization = EGY_empower_govenor_general_autonomy
-                }
+            add_autonomy_score = {
+                value = -50
+                localization = EGY_empower_govenor_general_autonomy
             }
             add_stability = -0.1
             custom_effect_tooltip = EGY_empower_govenor_general_warning
@@ -108,32 +102,27 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            add_stability = -0.05
+            add_stability = -0.1
             add_war_support = 0.1
-            if = {
-                limit = {
-                    has_dlc = "Together for Victory"
-                }
-                add_autonomy_score = {
-                    value = -100
-                    localization = EGY_empower_govenor_general_autonomy
-                }
+            add_autonomy_score = {
+                value = -100
+                localization = EGY_empower_govenor_general_autonomy
             }
             random_owned_controlled_state = {
                 prioritize = { 447 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
             }
             random_owned_controlled_state = {
                 prioritize = { 907 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = industrial_complex
-					level = 2
+					type = arms_factory
+					level = 1
 					instant_build = yes
 				}
             }
@@ -145,7 +134,7 @@ focus_tree = {
         relative_position_id = EGY_empower_govenor_general
 		x = 0
 		y = 2
-        cost = 8
+        cost = 10
         available = {
             is_subject_of = ENG
         }
@@ -163,14 +152,9 @@ focus_tree = {
                 popularity = -0.2
             }
 			remove_ideas = EGY_egyptian_non_alligment
-            if = {
-                limit = {
-                    has_dlc = "Together for Victory"
-                }
-                add_autonomy_score = {
-                    value = -100
-                    localization = EGY_empower_govenor_general_autonomy
-                }
+            add_autonomy_score = {
+                value = -100
+                localization = EGY_empower_govenor_general_autonomy
             }
             set_cosmetic_tag = EGY_BRITISH_PUPPET
             set_party_name = { 
@@ -219,7 +203,7 @@ focus_tree = {
         relative_position_id = EGY_empower_govenor_general
 		x = 0
 		y = 3
-        cost = 8
+        cost = 10
         available = {
             is_subject_of = ENG
             has_civil_war = no
@@ -266,7 +250,7 @@ focus_tree = {
         relative_position_id = EGY_solidify_british_ties
 		x = -2
 		y = 1
-        cost = 5
+        cost = 7.2
         mutually_exclusive = {
             focus = EGY_empower_govenor_general
         }
@@ -282,20 +266,11 @@ focus_tree = {
 			}
         }
         completion_reward = {
-            if = {
-                limit = {
-                    has_dlc = "Together for Victory"
-                }
-                add_autonomy_score = {
-                    value = 50
-                    localization = EGY_continue_the_status_quo
-                }
-                add_stability = 0.10
+            add_autonomy_score = {
+                value = 50
+                localization = EGY_continue_the_status_quo
             }
-            else = {
-                add_political_power = 50
-                add_stability = 0.05
-            }
+            add_stability = 0.05
         }
     }
     focus = {
@@ -323,7 +298,7 @@ focus_tree = {
 			}
         }
         completion_reward = {
-            add_political_power = 120
+            add_political_power = 50
             swap_ruler_traits = {
                 remove = EGY_the_young_king
                 add = EGY_the_young_king_2
@@ -336,7 +311,7 @@ focus_tree = {
         relative_position_id = EGY_continue_the_status_quo
 		x = 0
 		y = 2
-        cost = 5
+        cost = 10
         available = {
             has_country_leader = {
                 character = EGY_farouk_i
@@ -373,10 +348,13 @@ focus_tree = {
         relative_position_id = EGY_continue_the_status_quo
 		x = 0
 		y = 3
-        cost = 8
+        cost = 10
         available = {
             compare_autonomy_state > autonomy_puppet
             has_war = no
+            NOT = {
+                is_puppet_of = PAL
+            }
         }
         prerequisite = {
             focus = EGY_influence_of_the_king
@@ -390,18 +368,22 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            if = {
-                limit = {
-                    has_dlc = "Together for Victory"
-                }
-                add_autonomy_score = {
-                    value = 50
-                    localization = EGY_egypt_serving_the_empire
-                }
+            add_autonomy_score = {
+                value = 250
+                localization = EGY_egypt_serving_the_empire
             }
-			ENG = {
-				country_event = { id = egypt.12 hours = 12 }
-			}
+			# ENG = {   #becoming a dominion is *less* autonomy
+			# 	country_event = { id = egypt.12 hours = 12 }
+			# }
+            # custom_effect_tooltip = if_they_accept_tt
+            # effect_tooltip = {
+            #     set_autonomy = {
+            #         target = EGY
+            #         autonomy_state = autonomy_dominion
+            #         end_wars = no
+            #         end_civil_wars = no
+            #     }
+            # }
         }
     }
 
@@ -410,7 +392,7 @@ focus_tree = {
 		id = EGY_welcome_british_exiles
         text = ENG_welcome_british_exiles
 		icon = GFX_focus_eng_global_defense
-		cost = 5
+		cost = 10
 		relative_position_id = EGY_egypt_serving_the_empire
         x = -1
         y = 1							
@@ -419,31 +401,33 @@ focus_tree = {
 		}
 		available = {
 			is_subject_of = ENG
-            
+            ENG = {
+                has_capitulated = yes
+            }
 		}
         prerequisite = {
 			focus = EGY_egypt_serving_the_empire
             focus = EGY_invite_the_colonial_cabinet				
         }
 		completion_reward = {
-			add_tech_bonus = {
-				name = CAN_rcaf_station_borden
-				bonus = 1
-				uses = 1
-				category = air_doctrine
-			}
-			add_tech_bonus = {
-				name = CAN_army_modernization
-				bonus = 1
-				uses = 1
-				category = land_doctrine
-			}			
-			add_tech_bonus = {
-				name = POL_Naval_Officers_School
-				bonus = 1
-				uses = 1
-				category = naval_doctrine
-			}
+			add_doctrine_cost_reduction = {
+                name = ENG_welcome_british_exiles
+                cost_reduction = 0.5
+                uses = 1
+                category = land_doctrine
+            }
+			add_doctrine_cost_reduction = {
+                name = ENG_welcome_british_exiles
+                cost_reduction = 0.5
+                uses = 1
+                category = air_doctrine
+            }			
+			add_doctrine_cost_reduction = {
+                name = ENG_welcome_british_exiles
+                cost_reduction = 0.5
+                uses = 1
+                category = naval_doctrine
+            }
 		}
 		search_filters = {FOCUS_FILTER_RESEARCH}
 	}
@@ -463,26 +447,81 @@ focus_tree = {
 		}
 		available = {
 			is_subject_of = ENG
-          
+            ENG = {
+                has_capitulated = yes
+            }
 		}
 		completion_reward = {
 			add_manpower = 10000
 			add_war_support = 0.05
-			add_tech_bonus = {
-				name = special_forces_bonus
-				bonus = 1.0
-				uses = 1
-				category = r56_special_forces_training_tech 
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_doctrine_cost_reduction = {
+					cost_reduction = 0.5
+					uses = 1
+					category = special_forces_doctrine
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = special_forces_bonus
+					bonus = 0.5
+					uses = 1
+					category = r56_special_forces_training_tech 
+				}	
 			}									
 		}
         search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_RESEARCH}
 	}	
-
-				
 	focus = {
-		id = EGY_Embrace_English_Leadership
-        text = EGY_Embrace_English_Leadership
-		icon = GFX_focus_generic_treaty
+		id = EGY_british_agents
+        text = ENG_british_agents
+		icon = GFX_goal_generic_secret_documents
+		cost = 5
+		prerequisite = {
+			focus = EGY_recruit_volunteers
+		}
+		relative_position_id = EGY_recruit_volunteers
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 0.01
+		}
+		allow_branch = {
+			has_dlc = "La Resistance"		
+		}			
+		available = {
+			is_subject_of = ENG
+            ENG = {
+                has_capitulated = yes
+            }
+			has_intelligence_agency = yes	
+		}
+		completion_reward = {
+			create_operative_leader = {
+				bypass_recruitment = yes
+				nationalities = { ENG }
+				portrait_tag_override = ENG
+			}
+			create_operative_leader = {
+				bypass_recruitment = yes
+				nationalities = { ENG WLS }
+				portrait_tag_override = ENG
+			}
+			create_operative_leader = {
+				bypass_recruitment = yes
+				nationalities = { ENG }
+				portrait_tag_override = ENG
+			}											
+		}
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+	}
+	focus = {
+		id = EGY_landing_exercices
+        text = ENG_landing_exercices
+		icon = GFX_goal_generic_amphibious_assault
 		cost = 10
 		prerequisite = {
 			focus = EGY_welcome_british_exiles
@@ -493,16 +532,97 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+            is_subject_of = ENG
+            ENG = {
+                has_capitulated = yes
+            }
+			has_navy_size = {
+			    size > 5
+			}
+			has_army_manpower = {
+				size > 49999
+			}			
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_tech_bonus = {
+					name = uk_amphibious_focus
+					bonus = 1.0
+					uses = 1
+					category = marine_tech
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = uk_amphibious_focus
+					bonus = 1.0
+					uses = 1
+					category = marine_tech
+					category = r56_special_forces_training_tech 
+				}
+			}	
+			add_tech_bonus = {
+				name = uk_amphibious_focus
+				bonus = 1.0
+				uses = 1
+				category = tp_tech
+			}
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				add_tech_bonus = {
+					name = JAP_expand_the_snlf
+					bonus = 1
+					uses = 1
+					category = amphibious_armor_tech
+				}				
+			}									
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}			
+	focus = {
+		id = EGY_reclaim_the_british_isles_exile
+        text = ENG_reclaim_the_british_isles_exile
+		icon = GFX_focus_attack_britain
+		cost = 10
+		prerequisite = {
+			focus = EGY_landing_exercices
+		}
+		relative_position_id = EGY_landing_exercices
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
 		will_lead_to_war_with = ENG
 		available = {
-			
+            NOT = {
+                has_government = communism
+            }
+			has_navy_size = {
+			    size > 15
+			}
+			has_army_manpower = {
+				size > 119999
+			}
+			has_capitulated = no
+			r56_script_i_am_sane = yes
+			ENG = {
+				r56_script_target_is_sane = yes
+			}				
 		}
 		completion_reward = {
-            add_ideas = EGY_British_Acceptance	
-            ENG = { country_event = egypt.67 }
-
-				
-            						
+			create_wargoal = {
+				type = topple_government
+				target = ENG
+				expire = 0
+			}									
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -518,7 +638,7 @@ focus_tree = {
         cost = 5
         available = {
             any_controlled_state = {
-                has_state_flag = EGY_sudanese_separatism_flag
+                EGY_has_sudanese_separatism = yes
             }
         }
         prerequisite = {
@@ -618,6 +738,11 @@ focus_tree = {
 				}
 				add_opinion_modifier = { target = EGY modifier = ENG_commonwealth_ties }
 			}
+            add_ai_strategy = {
+                type = asking_foreign_garrison
+                id = ENG
+                value = 20
+            }
         }
     }
     focus = {
@@ -626,12 +751,11 @@ focus_tree = {
         relative_position_id = EGY_egypts_place_in_the_empire
 		x = -2
 		y = 1
-        cost = 5
+        cost = 10
         available = {
 			threat > 0.05
             has_full_control_of_state = 907
         }
-		cancel_if_invalid = yes
         prerequisite = {
             focus = EGY_egypts_place_in_the_empire
         }
@@ -650,25 +774,25 @@ focus_tree = {
                 }
                 add_building_construction = {
 					type = bunker
-					level = 2
+					level = 1
 					instant_build = yes
 					province = 7188
                 }
                 add_building_construction = {
 					type = bunker
-					level = 2
+					level = 1
 					instant_build = yes
 					province = 4143
                 }
                 add_building_construction = {
 					type = bunker
-					level = 2
+					level = 1
 					instant_build = yes
 					province = 12004
                 }
                 add_building_construction = {
 					type = bunker
-					level = 2
+					level = 1
 					instant_build = yes
 					province = 10005
                 }
@@ -681,7 +805,7 @@ focus_tree = {
         relative_position_id = EGY_the_nile_strategy
 		x = 1
 		y = 1
-        cost = 5
+        cost = 10
         prerequisite = {
             focus = EGY_the_nile_strategy
         }
@@ -690,7 +814,7 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            air_experience = 25
+            air_experience = 10
             random_owned_controlled_state = {
                 prioritize = { 447 }
 				add_building_construction = {
@@ -700,7 +824,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = anti_air_building
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -713,7 +837,7 @@ focus_tree = {
 				}
                 add_building_construction = {
 					type = anti_air_building
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -725,7 +849,7 @@ focus_tree = {
         relative_position_id = EGY_the_nile_strategy
 		x = -1
 		y = 1
-        cost = 5
+        cost = 10
         available = {
             has_full_control_of_state = 907
         }
@@ -745,8 +869,8 @@ focus_tree = {
 					province = 4076
                 }
                 add_building_construction = {
-					type = bunker
-					level = 2
+					type = coastal_bunker
+					level = 1
 					instant_build = yes
 					province = 4076
                 }
@@ -759,27 +883,27 @@ focus_tree = {
 					province = 10005
                 }
                 add_building_construction = {
-					type = bunker
-					level = 2
+					type = coastal_bunker
+					level = 1
 					instant_build = yes
 					province = 10005
                 }
             }
             random_owned_controlled_state = {
                 prioritize = { 907 }
-                add_extra_state_shared_building_slots = 2
+                add_extra_state_shared_building_slots = 1
                 add_building_construction = {
                     type = infrastructure
-                    level = 2
+                    level = 1
                     instant_build = yes
                 }
             }
             random_owned_controlled_state = {
                 prioritize = { 447 }
-                add_extra_state_shared_building_slots = 2
+                add_extra_state_shared_building_slots = 1
                 add_building_construction = {
                     type = infrastructure
-                    level = 2
+                    level = 1
                     instant_build = yes
                 }
             }
@@ -809,7 +933,7 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            air_experience = 25
+            air_experience = 10
             add_ideas = ENG_joint_air_training_scheme
 
         }
@@ -834,12 +958,12 @@ focus_tree = {
         completion_reward = {
             add_equipment_to_stockpile = {
                 type = convoy
-                amount = 250
+                amount = 100
                 producer = EGY
             }
             random_owned_controlled_state = {
                 prioritize = { 447 }
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
 					level = 1
@@ -866,14 +990,7 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            if = {
-                limit = { has_dlc = "Together for Victory" }
-            
-                add_to_tech_sharing_group = commonwealth_research
-            }
-            else = {
-                add_ideas = EGY_commomwealth_research_cooperation_bonus
-            }
+            add_to_tech_sharing_group = commonwealth_research
         }
     }
     focus = {
@@ -882,7 +999,7 @@ focus_tree = {
         relative_position_id = EGY_commonwealth_research_cooperation
 		x = -1
 		y = 1
-        cost = 10
+        cost = 7.2
         prerequisite = {
             focus = EGY_commonwealth_research_cooperation
         }
@@ -893,19 +1010,19 @@ focus_tree = {
         completion_reward = {
             random_owned_controlled_state = {
                 prioritize = { 447 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
             }
             random_owned_controlled_state = {
                 prioritize = { 907 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
             }
@@ -917,7 +1034,7 @@ focus_tree = {
         relative_position_id = EGY_commonwealth_research_cooperation
 		x = 1
 		y = 1
-        cost = 6
+        cost = 7.2
         prerequisite = {
             focus = EGY_commonwealth_research_cooperation
         }
@@ -928,7 +1045,7 @@ focus_tree = {
         completion_reward = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
-  				amount = 1500
+  				amount = 3000
  		 		producer = ENG
 			}
 			add_opinion_modifier = { target = ENG modifier = RAJ_Weapon_Shipments }
@@ -971,13 +1088,22 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            custom_effect_tooltip = available_designer
-            show_ideas_tooltip = EGY_vauxhall
+            if = {
+                limit = {
+                    has_dlc = "Arms Against Tyranny"
+                }
+                custom_effect_tooltip = available_mio_tt
+                show_mio_tooltip = ENG_vauxhall_organization
+            }
+            else = {
+                custom_effect_tooltip = available_designer
+                show_ideas_tooltip = EGY_vauxhall
+            }
             add_tech_bonus = {
                 name = EGY_study_british_armor
 				bonus = 1
 				uses = 1
-				category = armor
+				category = cat_medium_armor
 			}
         }
     }
@@ -987,7 +1113,7 @@ focus_tree = {
         relative_position_id = EGY_commonwealth_research_cooperation
 		x = -3
 		y = 4
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = EGY_study_british_armor
         }
@@ -1002,7 +1128,7 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            add_stability = 0.10
+            add_stability = 0.05
             if = {
                 limit = {
                     has_full_control_of_state = 447
@@ -1028,7 +1154,7 @@ focus_tree = {
         cost = 10
         available = {
             is_in_faction = yes
-            
+            has_war = yes
         }
         prerequisite = {
             focus = EGY_study_british_armor
@@ -1061,14 +1187,7 @@ focus_tree = {
         cost = 5
         available = {
 			has_country_flag = EGY_1936_anglo_egyptian_conference_ended_in_egypts_favor
-            if = {
-                limit = { has_dlc = "Together for Victory" }
-            
-                compare_autonomy_state > autonomy_colony
-            }
-            else = {
-                is_subject = yes
-            }
+            compare_autonomy_state > autonomy_colony
         }
         bypass = {
             NOT = {
@@ -1094,7 +1213,9 @@ focus_tree = {
                     ENG = {
                         is_faction_leader = yes
                     }
-                    has_country_flag = EGY_will_stay_in_allies_flag
+                    NOT = {
+                        has_country_flag = EGY_will_stay_in_allies_flag
+                    }
                 }
                 leave_faction = yes
             }
@@ -1183,7 +1304,7 @@ focus_tree = {
         cost = 5
         available = {
             any_owned_state = {
-                has_state_flag = EGY_sudanese_separatism_flag
+                EGY_has_sudanese_separatism = yes
             }
         }
         prerequisite = {
@@ -1207,6 +1328,7 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            is_subject = no
             any_owned_state = {
                 has_state_flag = EGY_ETH_threatened_sudanese_state
             }
@@ -1216,8 +1338,14 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 25
+                has_army_manpower = { size > 99999 }
+                ETH = { has_war_with_major = yes }
+            }
         }
+        will_lead_to_war_with = ETH
         completion_reward = {
             create_wargoal = {
                 target = ETH
@@ -1480,6 +1608,32 @@ focus_tree = {
                 ALB = {
                     country_event = { id = egypt.29 hours = 6 }
                 }
+                custom_effect_tooltip = if_they_accept_tt
+                effect_tooltip = {
+                    if = {
+                        limit = {
+                            has_dlc = "No Step Back"
+                        }
+                        ROOT = {
+                            set_autonomy = {
+                                target = ALB
+                                autonomy_state = autonomy_personal_union
+                                end_wars = no
+                                end_civil_wars = no
+                            }
+                        }
+                    }
+                    else = {
+                        ROOT = {
+                            set_autonomy = {
+                                target = ALB
+                                autonomy_state = autonomy_protectorate
+                                end_wars = no
+                                end_civil_wars = no
+                            }
+                        }
+                    }
+                }
             }
             else = {
                 every_state = {
@@ -1498,6 +1652,7 @@ focus_tree = {
         cost = 10
         available = {
             is_subject = no
+            NOT = { has_global_flag = form_egypt_albania_flag }
             OR = {
                 ALB = {
                     is_subject_of = ROOT
@@ -1512,10 +1667,13 @@ focus_tree = {
                 } 
             }
         }
+        bypass = {
+            has_country_flag = EGY_backed_down_from_albania
+        }
         prerequisite = {
             focus = EGY_claim_the_albanian_throne
         }
-        search_filters = {FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT}
+        search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
             factor = 10
         }
@@ -1546,6 +1704,58 @@ focus_tree = {
                 add_core_of = EGY
             }
             set_cosmetic_tag = EGY_ALB_united
+            hidden_effect = {
+                set_global_flag = form_egypt_albania_flag 
+            }
+        }
+    }
+    focus = {
+        id = EGY_finalize_albanian_irredentism
+        icon = GFX_goal_ALB_greater_albania
+        relative_position_id = EGY_found_the_new_kingdom
+		x = -2
+		y = 1
+        cost = 10
+        available = {
+            is_subject = no
+            any_owned_state = {
+                is_core_of = ALB
+            }
+        }
+        prerequisite = {
+            focus = EGY_found_the_new_kingdom
+        }
+        search_filters = {FOCUS_FILTER_ANNEXATION}
+        ai_will_do = {
+            base = 0
+            modifier = {
+                add = 10
+                has_army_manpower = { size > 199999 }
+            }
+        }
+        will_lead_to_war_with = YUG
+        will_lead_to_war_with = MAC
+        completion_reward = {
+            every_other_country = {
+				limit = {
+					NOT = { is_ally_with = ROOT }
+					any_owned_state = {
+						OR = {
+                            is_claimed_by = ALB
+                            state = 950
+                            state = 802
+                            state = 953
+						}
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = take_state_focus
+						expire = 0
+					}
+				}
+			}
         }
     }
     focus = {
@@ -1553,7 +1763,7 @@ focus_tree = {
         icon = GFX_goal_generic_befriend_egypt
         relative_position_id = EGY_found_the_new_kingdom
 		x = -3
-		y = 1
+		y = 2
         cost = 5
         available = {
             is_subject = no
@@ -1580,7 +1790,7 @@ focus_tree = {
         icon = GFX_goal_extensive_conscription_fascism
         relative_position_id = EGY_found_the_new_kingdom
 		x = 0
-		y = 1
+		y = 2
         cost = 5
         available = {
             is_subject = no
@@ -1615,7 +1825,7 @@ focus_tree = {
 			is_puppet = no
 			any_other_country = {
 				is_major = yes
-				has_government = democratic
+				has_government = fascism
 				is_faction_leader = yes
 				NOT = { has_war_with = ROOT }
 				has_opinion = {
@@ -1628,10 +1838,11 @@ focus_tree = {
             focus = EGY_radicalize_the_iron_guard
         }
         bypass = {
-            OR = {
-                is_in_faction_with = ITA
-                is_in_faction_with = GER
-            }
+            any_other_country = {
+				has_government = fascism
+				is_faction_leader = yes
+				is_in_faction_with = ROOT
+			}
         }
         search_filters = {FOCUS_FILTER_ALLIANCE}
         ai_will_do = {
@@ -1658,7 +1869,7 @@ focus_tree = {
 				}
                 add_ai_strategy = {
                     type = alliance
-                    id = "ITA"
+                    id = ITA
                     value = 100
                 }
 				ITA = {
@@ -1706,7 +1917,7 @@ focus_tree = {
                 upgrade_intelligence_agency = upgrade_psycho_warfare
             }
             else = {
-                add_stability = 0.02
+                add_war_support = 0.02
                 add_tech_bonus = {
                     name = EGY_the_iron_intelligence_department
                     bonus = 1
@@ -1721,7 +1932,7 @@ focus_tree = {
         icon = GFX_goal_generic_freedom
         relative_position_id = EGY_found_the_new_kingdom
 		x = 3
-		y = 1
+		y = 2
         cost = 5
         available = {
             is_subject = no
@@ -1791,7 +2002,7 @@ focus_tree = {
 				}
                 add_ai_strategy = {
                     type = alliance
-                    id = "ENG"
+                    id = ENG
                     value = 100
                 }
 				ENG = {
@@ -1805,6 +2016,50 @@ focus_tree = {
 					country_event = generic.2
 				}
 			}
+        }
+    }
+    focus = {
+        id = EGY_the_guardian_of_africa
+        icon = GFX_focus_generic_africa_liberation
+        relative_position_id = EGY_rekindle_the_unstable_alliance
+		x = 0
+		y = 1
+        cost = 10
+        available = {
+			is_puppet = no
+			any_other_country = {
+				capital_scope = {
+                    is_on_continent = africa
+                }
+                OR = {
+                    has_government = democratic
+                    has_government = neutrality
+                }
+                NOT = {
+                    has_war_with = ROOT
+                }
+			}
+        }
+        prerequisite = {
+            focus = EGY_rekindle_the_unstable_alliance
+        }
+        search_filters = {}
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            every_other_country = {
+                limit = { 
+                    capital_scope = { 
+                        is_on_continent = africa 
+                    }
+                    OR = {
+                        has_government = neutrality 
+                        has_government = democratic
+                    }
+                }
+                ROOT = { diplomatic_relation = { country = PREV relation = guarantee active = yes } }
+            }
         }
     }
     focus = {
@@ -1906,8 +2161,7 @@ focus_tree = {
             663 = {
                 OWNER = {
                     NOT = {
-                        is_subject_of = ROOT
-                        is_in_faction_with = ROOT
+                        is_ally_with = ROOT
                     }
                 }
             }
@@ -1917,14 +2171,27 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 10
+                has_army_manpower = { size > 199999 }
+                663 = {
+                    owner = {
+                        OR = {
+                            has_war_with_major = yes
+                            is_major = no
+                        }
+                    }
+                }
+            }
         }
+        will_lead_to_war_with = ITA
+        will_lead_to_war_with = LBA
         completion_reward = {
             add_state_core = 663
             every_other_country = {
 				limit = {
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { is_subject_of = ROOT }
+					NOT = { is_ally_with = ROOT }
 					any_owned_state = {
 						state = 663
 					}
@@ -2011,6 +2278,14 @@ focus_tree = {
             TUR = {
                 country_event = { id = egypt.33 hours = 6 }
             }
+            custom_effect_tooltip = if_they_accept_tt
+            effect_tooltip = {
+                diplomatic_relation = {
+                    country = TUR
+                    relation = non_aggression_pact
+                    active = yes
+                }
+            }
         }
     }
     focus = {
@@ -2043,7 +2318,7 @@ focus_tree = {
         completion_reward = {
             add_ai_strategy = {
                 type = conquer
-                id = "ISR"
+                id = ISR
                 value = 200
             }
             create_wargoal = {
@@ -2051,6 +2326,7 @@ focus_tree = {
                 type = annex_everything
                 expire = 0
             }
+            unlock_decision_tooltip = EGY_establish_a_palestinian_potectorate
         }
     }
     focus = {
@@ -2078,8 +2354,27 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = EGY_anti_invasion
+        text = GEN_Anti_Invasion
+        icon = GFX_goal_generic_construct_military
+        relative_position_id = EGY_continue_international_neutrality
+		x = 0
+		y = 1
+        cost = 10
+        prerequisite = {
+            focus = EGY_continue_international_neutrality
+        }
+        search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER}
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_ideas = GEN_Anti_Invasion_I
+        }
+    }
 
-    # alternate monarchy because i got some ideas boi
+    # alternate monarchy because i got some ideas mate
 
     focus = {
         id = EGY_restore_the_khedive
@@ -2094,7 +2389,7 @@ focus_tree = {
             any_other_country = {
                 NOT = {
                     has_country_leader = {
-                        name = "Abbas II"
+                        character = EGY_abbas_ii
                         ruling_only = yes
                     }
                 }
@@ -2204,10 +2499,11 @@ focus_tree = {
                 remove = EGY_abbas_ii_of_egypt
                 add = EGY_abbas_ii_of_egypt_2
             }
+
         }
     }
     focus = {
-        id = EGY_rightful_sucessor_to_the_empire
+        id = EGY_rightful_successor_to_the_empire
         icon = GFX_focus_generic_monarchy_2
         relative_position_id = EGY_move_back_to_the_ottomans
 		x = -2
@@ -2244,7 +2540,7 @@ focus_tree = {
     focus = {
         id = EGY_solidify_control_of_the_levant
         icon = GFX_focus_generic_attack_syria
-        relative_position_id = EGY_rightful_sucessor_to_the_empire
+        relative_position_id = EGY_rightful_successor_to_the_empire
 		x = -1
 		y = 1
         cost = 10
@@ -2252,13 +2548,17 @@ focus_tree = {
             is_subject = no
         }
         prerequisite = {
-            focus = EGY_rightful_sucessor_to_the_empire
+            focus = EGY_rightful_successor_to_the_empire
         }
         bypass = {
             owns_state = 966
             owns_state = 454
+            owns_state = 1016
+            owns_state = 1017
             owns_state = 949
             owns_state = 455
+            owns_state = 1021
+            owns_state = 1022
             owns_state = 553
             owns_state = 554
             owns_state = 677
@@ -2266,27 +2566,53 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 10
+                has_army_manpower = { size > 199999 }
+                554 = {
+                    owner = {
+                        OR = {
+                            has_war_with_major = yes
+                            is_major = no
+                        }
+                    }
+                }
+            }
         }
+        will_lead_to_war_with = MPL
+        will_lead_to_war_with = PAL
+        will_lead_to_war_with = ISR
+        will_lead_to_war_with = JOR
+        will_lead_to_war_with = SYR
+        will_lead_to_war_with = LEB
+        will_lead_to_war_with = FRA
         completion_reward = {
             add_state_claim = 966
             add_state_claim = 454
+            add_state_claim = 1016
+            add_state_claim = 1017
             add_state_claim = 949
             add_state_claim = 455
+            add_state_claim = 1021
+            add_state_claim = 1022
             add_state_claim = 553
             add_state_claim = 554
             add_state_claim = 677
             add_state_claim = 680
             every_other_country = {
 				limit = {
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { is_subject_of = ROOT }
+					NOT = { is_ally_with = ROOT }
 					any_owned_state = {
 						OR = {
                             state = 966
                             state = 454
+                            state = 1016
+                            state = 1017
                             state = 949
                             state = 455
+                            state = 1021
+                            state = 1022
                             state = 553
                             state = 554
                             state = 677
@@ -2308,7 +2634,7 @@ focus_tree = {
     focus = {
         id = EGY_crush_the_arabian_revolt
         icon = GFX_focus_generic_attack_saudi_arabia
-        relative_position_id = EGY_rightful_sucessor_to_the_empire
+        relative_position_id = EGY_rightful_successor_to_the_empire
 		x = 1
 		y = 1
         cost = 10
@@ -2316,7 +2642,7 @@ focus_tree = {
             is_subject = no
         }
         prerequisite = {
-            focus = EGY_rightful_sucessor_to_the_empire
+            focus = EGY_rightful_successor_to_the_empire
         }
         bypass = {
             owns_state = 679
@@ -2327,8 +2653,14 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 15
+                has_army_manpower = { size > 149999 }
+            }
         }
+        will_lead_to_war_with = SAU
+        will_lead_to_war_with = YEM
         completion_reward = {
             add_state_claim = 679
             add_state_claim = 292
@@ -2337,8 +2669,7 @@ focus_tree = {
             add_state_claim = 293
             every_other_country = {
 				limit = {
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { is_subject_of = ROOT }
+					NOT = { is_ally_with = ROOT }
 					any_owned_state = {
 						OR = {
                             state = 679
@@ -2362,7 +2693,7 @@ focus_tree = {
     focus = {
         id = EGY_reclaim_the_sehzade
         icon = GFX_goal_generic_attack_turkey
-        relative_position_id = EGY_rightful_sucessor_to_the_empire
+        relative_position_id = EGY_rightful_successor_to_the_empire
 		x = 0
 		y = 2
         cost = 10
@@ -2381,12 +2712,17 @@ focus_tree = {
         will_lead_to_war_with = TUR
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 25
+                has_army_manpower = { size > 199999 }
+                any_neighbor_country = { original_tag = TUR }
+            }
         }
         completion_reward = {
             add_ai_strategy = {
                 type = conquer
-                id = "TUR"
+                id = TUR
                 value = 200
             }
             every_state = {
@@ -2397,8 +2733,7 @@ focus_tree = {
             }
             every_other_country = {
 				limit = {
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { is_subject_of = ROOT }
+					NOT = { is_ally_with = ROOT }
 					any_owned_state = {
 						is_core_of = TUR
                         if = {
@@ -2456,8 +2791,16 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 25
+                has_army_manpower = { size > 149999 }
+                any_neighbor_country = { original_tag = BUL }
+            }
         }
+        will_lead_to_war_with = YUG
+        will_lead_to_war_with = BUL
+        will_lead_to_war_with = ROM
         completion_reward = {
             add_state_claim = 106
 			add_state_claim = 105
@@ -2515,10 +2858,10 @@ focus_tree = {
             focus = EGY_move_back_to_the_ottomans
         }
         mutually_exclusive = {
-            focus = EGY_rightful_sucessor_to_the_empire
+            focus = EGY_rightful_successor_to_the_empire
         }
         ai_will_do = {
-            factor = 10
+            base = 99
         }
         completion_reward = {
             set_rule = {
@@ -2527,7 +2870,7 @@ focus_tree = {
             add_ideas = EGY_egyptian_turkish_intervention_force
             add_ai_strategy = {
                 type = send_volunteers_desire
-                id = "TUR"
+                id = TUR
                 value = 150
             }
 
@@ -2541,7 +2884,11 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
-
+            is_subject = no
+            is_in_faction = no
+            TUR = {
+                has_completed_focus = TUR_pivot_to_the_past
+            }
         }
         prerequisite = {
             focus = EGY_intervene_in_the_turkish_civil_war
@@ -2561,7 +2908,30 @@ focus_tree = {
         }
         completion_reward = {
             TUR = {
-                add_opinion_modifier = { target = EGY modifier = large_increase }
+                add_opinion_modifier = { target = EGY modifier = huge_increase }
+            }
+            if = {
+                limit = {
+                    TUR = {
+                        has_completed_focus = TUR_pivot_to_the_past
+                        is_faction_leader = yes
+                    }
+                }
+                TUR = {
+                    country_event = generic.2
+                }
+            }
+            else = {
+                effect_tooltip = {
+                    TUR = {
+                        country_event = generic.2
+                    }
+                }
+            }
+            add_ai_strategy = {
+                type = alliance
+                id = TUR
+                value = 200
             }
 
         }
@@ -2603,7 +2973,44 @@ focus_tree = {
         }
     }
     focus = {
-        id = EGY_invite_ottoman_intellectuels
+        id = EGY_imperial_factories
+        icon = GFX_goal_generic_royal_industry
+        relative_position_id = EGY_reclaim_the_sehzade
+		x = 4
+		y = 1
+        cost = 10
+        prerequisite = {
+            focus = EGY_reclaim_the_sehzade
+            focus = EGY_revive_the_eyalet
+        }
+        search_filters = {FOCUS_FILTER_INDUSTRY}
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            random_owned_controlled_state = {
+                prioritize = { 447 }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+            }
+            random_owned_controlled_state = {
+                prioritize = { 907 }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+            }
+
+        }
+    }
+    focus = {
+        id = EGY_invite_ottoman_intellectuals
         icon = GFX_focus_research
         relative_position_id = EGY_reclaim_the_sehzade
 		x = 2
@@ -2624,7 +3031,7 @@ focus_tree = {
     }
     focus = {
         id = EGY_join_the_central_powers
-        icon = GFX_goal_GER_flag_german_empire
+        icon = GFX_focus_ger_revive_kaiserreich
         relative_position_id = EGY_dominate_the_balkans
 		x = 2
 		y = 1
@@ -2682,7 +3089,7 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            add_war_support = 0.02
+            add_war_support = 0.05
             set_rule = {
                 can_create_factions = yes
             }
@@ -2797,7 +3204,12 @@ focus_tree = {
         will_lead_to_war_with = ENG
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 15
+                has_army_manpower = { size > 199999 }
+                ENG = { has_war_with_major = yes }
+            }
         }
         completion_reward = {
 			add_tech_bonus = {
@@ -2849,7 +3261,17 @@ focus_tree = {
         will_lead_to_war_with = RAJ
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 10
+                has_army_manpower = { size > 199999 }
+                RAJ = {
+                    OR = {
+                        is_subject = no
+                        has_war = yes
+                    }
+                }
+            }
         }
         completion_reward = {
             create_wargoal = {
@@ -2885,7 +3307,12 @@ focus_tree = {
         will_lead_to_war_with = JAP
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 10
+                has_army_manpower = { size > 149999 }
+                JAP = { has_war_with_major = yes }
+            }
         }
         completion_reward = {
             create_wargoal = {
@@ -2968,6 +3395,19 @@ focus_tree = {
         }
         completion_reward = {
             country_event = { id = egypt.36 hours = 6 }
+            effect_tooltip = {
+                add_popularity = {
+                    ideology = democratic
+                    popularity = 0.1
+                }
+                set_politics = {
+                    ruling_party = democratic
+                    elections_allowed = yes
+                    last_election = "1935.12.17"
+                    election_frequency = 48
+                }
+                add_ideas = EGY_farouk_i_idea
+            }
 
         }
     }
@@ -3049,12 +3489,12 @@ focus_tree = {
         cost = 10
         prerequisite = {
             focus = EGY_ministry_of_awqaf
-            focus = EGY_the_free_officers_movement
+            focus = EGY_voice_of_the_arabs
         }
         bypass = {
             NOT = {
                 any_owned_state = {
-                    has_state_flag = EGY_sudanese_separatism_flag
+                    EGY_has_sudanese_separatism = yes
                 }
             }
         }
@@ -3262,7 +3702,7 @@ focus_tree = {
     }
     focus = {
         id = EGY_invite_german_advisors
-        icon = GFX_goal_ROM_invite_german_advisors
+        icon = GFX_goal_generic_officers
         relative_position_id = EGY_the_free_officers_movement
 		x = 1
 		y = 1
@@ -3355,8 +3795,22 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0 
+            modifier = {
+                add = 1000
+                has_army_manpower = { size > 149999 }
+                663 = {
+                    owner = {
+                        OR = {
+                            has_war_with_major = yes
+                            is_major = no
+                        }
+                    }
+                }
+            }
         }
+        will_lead_to_war_with = ITA
+        will_lead_to_war_with = LBA
         completion_reward = {
             if = {
                 limit = {
@@ -3393,16 +3847,9 @@ focus_tree = {
                 }
             }
             else = {
-                every_state = {
-                    limit = {
-                        is_core_of = LBA
-                    }
-                    add_claim_by = ROOT
-                }
                 every_other_country = {
                     limit = {
-                        NOT = { is_in_faction_with = ROOT }
-                        NOT = { is_subject_of = ROOT }
+                        NOT = { is_ally_with = ROOT }
                         any_owned_state = {
                             is_core_of = LBA
                         }
@@ -3416,7 +3863,13 @@ focus_tree = {
                     }
                 }
             }
-
+            
+            every_state = {
+                limit = {
+                    is_core_of = LBA
+                }
+                add_claim_by = ROOT
+            }
         }
     }
     focus = {
@@ -3444,8 +3897,22 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0 
+            modifier = {
+                add = 99
+                has_army_manpower = { size > 199999 }
+                459 = {
+                    owner = {
+                        OR = {
+                            has_war_with_major = yes
+                            is_major = no
+                        }
+                    }
+                }
+            }
         }
+        will_lead_to_war_with = FRA
+        will_lead_to_war_with = ALG
         completion_reward = {
             if = {
                 limit = {
@@ -3482,18 +3949,11 @@ focus_tree = {
                 }
             }
             else = {
-                every_state = {
-                    limit = {
-                        is_core_of = ALG
-                    }
-                    add_claim_by = ROOT
-                }
                 every_other_country = {
                     limit = {
-                        NOT = { is_in_faction_with = ROOT }
-                        NOT = { is_subject_of = ROOT }
+                        NOT = { is_ally_with = ROOT }
                         any_owned_state = {
-                            is_core_of = LBA
+                            is_core_of = ALG #was LBA, unintended?
                         }
                     }
                     ROOT = {
@@ -3504,6 +3964,12 @@ focus_tree = {
                         }
                     }
                 }
+            }
+            every_state = {
+                limit = {
+                    is_core_of = ALG
+                }
+                add_claim_by = ROOT
             }
 
         }
@@ -3548,8 +4014,23 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            factor = 0
+            modifier = {
+                add = 10
+                has_army_manpower = { size > 199999 }
+                554 = {
+                    owner = {
+                        OR = {
+                            has_war_with_major = yes
+                            is_major = no
+                        }
+                    }
+                }
+            }
         }
+        will_lead_to_war_with = FRA
+        will_lead_to_war_with = SYR
+        will_lead_to_war_with = LEB
         completion_reward = {
             if = {
                 limit = {
@@ -3560,15 +4041,14 @@ focus_tree = {
                 }
                 every_other_country = {
                     limit = {
-                        any_owned_state = {
+                        any_controlled_state = {
                             OR = {
                                 is_core_of = SYR
                                 is_core_of = LEB
                             }
-                            OWNER = {
+                            controller = {
                                 NOT = {
-                                    is_subject_of = ROOT
-                                    is_in_faction_with = ROOT
+                                    is_ally_with = ROOT
                                 }
                             }
                         }
@@ -3605,20 +4085,10 @@ focus_tree = {
                 }
             }
             else = {
-                every_state = {
-                    limit = {
-                        OR = {
-                            is_core_of = SYR
-                            is_core_of = LEB
-                        }
-                    }
-                    add_claim_by = ROOT
-                }
                 every_other_country = {
                     limit = {
-                        NOT = { is_in_faction_with = ROOT }
-                        NOT = { is_subject_of = ROOT }
-                        any_owned_state = {
+                        NOT = { is_ally_with = ROOT }
+                        any_controlled_state = {
                             OR = {
                                 is_core_of = SYR
                                 is_core_of = LEB
@@ -3634,6 +4104,16 @@ focus_tree = {
                     }
                 }
             }
+            every_state = {
+                limit = {
+                    OR = {
+                        is_core_of = SYR
+                        is_core_of = LEB
+                    }
+                }
+                add_claim_by = ROOT
+            }
+            
         }
     }
     focus = {
@@ -3644,11 +4124,11 @@ focus_tree = {
 		y = 1
         cost = 10
         available = {
+            is_subject = no
             country_exists = ISR
             NOT = {
                 ISR = {
-                    is_in_faction_with = ROOT
-                    is_subject_of = ROOT
+                    is_ally_with = ROOT
                 }
             }
         }
@@ -3661,12 +4141,25 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0 
+            modifier = {
+                add = 1000
+                OR = {
+                    LEB = {
+                        exists = yes
+                        has_capitulated = no
+                    }
+                    SYR = {
+                        exists = yes
+                        has_capitulated = no
+                    }
+                }
+            }
         }
         completion_reward = {
             add_ai_strategy = {
                 type = conquer
-                id = "ISR"
+                id = ISR
                 value = 200
             }
             set_global_flag = anti_israeli_coalition
@@ -3676,6 +4169,7 @@ focus_tree = {
                 expire = 0
             }
             custom_effect_tooltip = EGY_anti_israeli_coalition_tt
+            unlock_decision_tooltip = EGY_establish_a_palestinian_potectorate
         }
     }
     focus = {
@@ -3732,6 +4226,7 @@ focus_tree = {
                 }
                 hidden_effect = {
                     every_owned_state = {
+                        limit = { is_core_of = PREV }
                         add_core_of = ROOT
                     }
                 }
@@ -3774,8 +4269,34 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 15
+                has_army_manpower = { size > 199999 }
+                1016 = {
+                    owner = {
+                        OR = {
+                            has_war_with_major = yes
+                            NOT = { is_subject_of = ENG }
+                        }
+                    }
+                }
+            }
         }
+        will_lead_to_war_with = IRQ
+        will_lead_to_war_with = FRA
+        will_lead_to_war_with = ITA
+        will_lead_to_war_with = ENG
+        will_lead_to_war_with = SAU
+        will_lead_to_war_with = YEM
+        will_lead_to_war_with = OMA
+        will_lead_to_war_with = SYR
+        will_lead_to_war_with = LEB
+        will_lead_to_war_with = KUR
+        will_lead_to_war_with = LBA
+        will_lead_to_war_with = MPL
+        will_lead_to_war_with = PAL
+        will_lead_to_war_with = ISR
         completion_reward = {
             add_war_support = 0.05
             every_other_country = {
@@ -3785,8 +4306,7 @@ focus_tree = {
                         tag = PER
                         tag = AFG
                         tag = SOV
-                        is_in_faction_with = ROOT
-                        is_subject_of = ROOT
+                        is_ally_with = ROOT
                     }
 					any_owned_state = {
 						is_on_continent = middle_east
@@ -3816,7 +4336,7 @@ focus_tree = {
                 character = EGY_gamal_abdel_nasser
                 ruling_only = yes
             }
-            neutrality > 0.7
+            neutrality > 0.8
         }
         prerequisite = {
             focus = EGY_bring_the_rest_of_arabia_into_the_fold
@@ -3903,11 +4423,40 @@ focus_tree = {
         completion_reward = {
             add_ai_strategy = {
                 type = protect
-                id = "PAL"
+                id = PAL
                 value = 100
             }
             PAL = {
                 country_event = { id = egypt.63 hours = 6 }
+            }
+            custom_effect_tooltip = if_they_accept_tt
+            effect_tooltip = {
+                PAL = {
+                    add_equipment_to_stockpile = {
+                        type = infantry_equipment
+                        amount = 2000
+                        producer = EGY
+                    }
+                    add_equipment_to_stockpile = {
+                        type = artillery_equipment
+                        amount = 100
+                        producer = EGY
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    ISR = {
+                        exists = yes
+                        is_subject = no
+                        NOT = {
+                            is_in_faction_with = PAL
+                        }
+                    }
+                }
+                ISR = {
+                    add_opinion_modifier = { target = EGY modifier = large_decrease }
+                }
             }
         }
     }
@@ -3936,10 +4485,10 @@ focus_tree = {
             focus = EGY_bring_the_rest_of_arabia_into_the_fold
         }
         bypass = {
-            OR = {
-                has_war_with = USA
-                NOT = {
-                    country_exists = USA
+            USA = {
+                OR = {
+                    has_war_with = ROOT
+                    exists = no
                 }
             }
         }
@@ -3948,7 +4497,22 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            country_event = { id = egypt.56 hours = 6 }
+            USA = {
+                country_event = { id = egypt.56 hours = 6 }
+            }
+            custom_effect_tooltip = if_they_accept_tt
+            effect_tooltip = {
+                add_equipment_to_stockpile = {
+                    type = infantry_equipment
+                    amount = 2500
+                    producer = USA
+                }
+                add_equipment_to_stockpile = {
+                    type = artillery_equipment
+                    amount = 200
+                    producer = USA
+                }
+            }
 
         }
     }
@@ -3960,24 +4524,13 @@ focus_tree = {
 		y = 1
         cost = 10
         available = {
-			is_in_faction = no
-			is_puppet = no
-			any_other_country = {
-				is_major = yes
-				has_government = democratic
-				is_faction_leader = yes
-				NOT = { has_war_with = ROOT }
-				has_opinion = {
-					target = ROOT
-					value > 0
-				}
-			}
         }
         prerequisite = {
             focus = EGY_seek_american_material_aid
         }
         mutually_exclusive = {
             focus = EGY_join_the_comintern
+            focus = EGY_the_non_alligned_movement
         }
         search_filters = {FOCUS_FILTER_ALLIANCE}
         ai_will_do = {
@@ -4136,10 +4689,7 @@ focus_tree = {
                 has_government = fascism
                 is_major = yes
                 NOT = {
-                    OR = {
-                        is_in_faction_with = ROOT
-                        is_subject_of = ROOT
-                    }
+                    is_ally_with = ROOT
                 }
             }
         }
@@ -4156,8 +4706,7 @@ focus_tree = {
                     has_government = fascism
                     is_major = yes
                     NOT = {
-                        is_in_faction_with = ROOT
-                        is_subject_of = ROOT
+                        is_ally_with = ROOT
                     }
                 }
                 EGY = {
@@ -4167,6 +4716,75 @@ focus_tree = {
                         expire = 0
                     }
                 }
+            }
+
+        }
+    }
+    focus = {
+        id = EGY_the_non_alligned_movement
+        icon = GFX_focus_SWI_neutrality_on_the_move
+        relative_position_id = EGY_seek_american_material_aid
+		x = 3
+		y = 1
+        cost = 10
+        available = {
+            is_subject = no
+            is_in_faction = no
+            any_other_country = {
+                OR = {
+                    has_government = neutrality
+                    has_government = democratic
+                }
+                has_war = no
+                is_subject = no
+                is_in_faction = no
+                capital_scope = {
+                    NOT = {
+                        is_on_continent = europe 
+                    }
+                }
+                NOT = {
+                    tag = USA
+                    has_idea = neutrality_idea
+                    has_added_tension_amount > 3
+                }
+            }
+        }
+        prerequisite = {
+            focus = EGY_seek_american_material_aid
+            focus = EGY_diplomatic_mission_to_the_soviet_union
+        }
+        mutually_exclusive = {
+            focus = EGY_join_the_comintern
+            focus = EGY_join_the_allies
+        }
+        search_filters = {FOCUS_FILTER_ALLIANCE}
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            create_faction = the_non_alligned_movement
+            every_other_country = {
+                limit = {
+                    OR = {
+                        has_government = neutrality
+                        has_government = democratic
+                    }
+                    has_war = no
+                    is_subject = no
+                    is_in_faction = no
+                    capital_scope = {
+                        NOT = {
+                            is_on_continent = europe 
+                        }
+                    }
+                    NOT = {
+                        tag = USA
+                        has_idea = neutrality_idea
+                        has_added_tension_amount > 3
+                    }
+                }
+                country_event = { id = generic.5 }
             }
 
         }
@@ -4210,6 +4828,14 @@ focus_tree = {
             SOV = {
                 country_event = { id = egypt.60 hours = 6 }
             }
+            custom_effect_tooltip = if_they_accept_tt
+            effect_tooltip = {
+                add_equipment_to_stockpile = {
+                    type = medium_tank_chassis
+                    amount = 100
+                    producer = SOV
+                }
+            }
 
         }
     }
@@ -4217,7 +4843,7 @@ focus_tree = {
         id = EGY_join_the_comintern
         icon = GFX_focus_chi_mission_to_the_soviet_union
         relative_position_id = EGY_diplomatic_mission_to_the_soviet_union
-		x = 0
+		x = 1
 		y = 1
         cost = 10
         available = {
@@ -4239,6 +4865,7 @@ focus_tree = {
         }
         mutually_exclusive = {
             focus = EGY_join_the_allies
+            focus = EGY_the_non_alligned_movement
         }
         search_filters = {FOCUS_FILTER_ALLIANCE}
         ai_will_do = {
@@ -4497,8 +5124,7 @@ focus_tree = {
                 has_state_flag = EGY_fascist_headquarters
             }
             any_owned_state = {
-                is_core_of = SUD
-                has_state_flag = EGY_sudanese_separatism_flag
+                EGY_has_sudanese_separatism = yes
             }
         }
 		prerequisite = {
@@ -4521,8 +5147,9 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            country_exists = GER
             GER = {
-				exists = yes
+				has_government = fascism
                 is_subject = no
 				NOT = {
 					has_war_with = EGY
@@ -4550,6 +5177,8 @@ focus_tree = {
 			GER = { 
 				country_event = { id = egypt.18 hours = 12 } 
 			}
+            custom_effect_tooltip = if_they_accept_tt
+            custom_effect_tooltip = egypt.19_tt
         }
     }
 	focus = {
@@ -4811,7 +5440,7 @@ focus_tree = {
         completion_reward = {
             add_ai_strategy = {
                 type = conquer
-                id = "ISR"
+                id = ISR
                 value = 200
             }
             create_wargoal = {
@@ -5003,7 +5632,7 @@ focus_tree = {
 				}
                 add_ai_strategy = {
                     type = alliance
-                    id = "GER"
+                    id = GER
                     value = 100
                 }
 				GER = {
@@ -5022,7 +5651,7 @@ focus_tree = {
     }
     focus = {
         id = EGY_german_military_mission
-        icon = GFX_goal_ROM_invite_german_advisors
+        icon = GFX_goal_generic_officers
 		relative_position_id = EGY_formalise_the_german_alliance
 		x = -1
 		y = 1
@@ -5162,7 +5791,17 @@ focus_tree = {
         will_lead_to_war_with = ENG
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 15
+                has_army_manpower = { size > 199999 }
+                ENG = { 
+                    OR = {
+                        is_major = no
+                        has_war_with_major = yes
+                    }
+                }
+            }
         }
         completion_reward = {
             add_tech_bonus = {
@@ -5319,7 +5958,7 @@ focus_tree = {
                     }
 				}
 				add_opinion_modifier = {
-					target = GER
+					target = ROOT
 					modifier = ger_anti_colonial2
 				}
 			}
@@ -5330,7 +5969,7 @@ focus_tree = {
 					}
 				}
 				add_opinion_modifier = {
-					target = GER
+					target = ROOT
 					modifier = ger_anti_colonial
 				}
 			}
@@ -5344,7 +5983,7 @@ focus_tree = {
 						}
 					}
 					add_opinion_modifier = {
-						target = GER
+						target = ROOT
 						modifier = ger_anti_colonial2
 					}
 				}
@@ -5359,7 +5998,7 @@ focus_tree = {
 						}
 					}
 					add_opinion_modifier = {
-						target = GER
+						target = ROOT
 						modifier = ger_anti_colonial2
 					}
 				}
@@ -5448,7 +6087,7 @@ focus_tree = {
         }
     }
     focus = {
-        id = EGY_reconsile_with_turkey
+        id = EGY_reconcile_with_turkey
         icon = GFX_goal_generic_befriend_turkey
 		relative_position_id = EGY_anti_imperialist_uniformity
 		x = -1
@@ -5502,16 +6141,21 @@ focus_tree = {
 			focus = EGY_invite_iran
 		}
         mutually_exclusive = {
-            focus = EGY_reconsile_with_turkey
+            focus = EGY_reconcile_with_turkey
         }
         will_lead_to_war_with = TUR
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 25
+                has_army_manpower = { size > 199999 }
+                any_neighbor_country = { original_tag = TUR }
+            }
         }
         completion_reward = {
             add_state_claim = 797
             create_wargoal = {
-				target = GRE
+				target = TUR
 				expire = 0
 				type = puppet_wargoal_focus
 			}
@@ -5521,7 +6165,7 @@ focus_tree = {
     focus = {
         id = EGY_alliance_with_greece
         icon = GFX_goal_generic_befriend_greece
-		relative_position_id = EGY_reconsile_with_turkey
+		relative_position_id = EGY_reconcile_with_turkey
 		x = 0
 		y = 1
         cost = 10
@@ -5533,7 +6177,7 @@ focus_tree = {
         }
 		prerequisite = {
             focus = EGY_secure_the_bosporus
-			focus = EGY_reconsile_with_turkey
+			focus = EGY_reconcile_with_turkey
 		}
         mutually_exclusive = {
             focus = EGY_secure_the_hellenic_mandate
@@ -5566,14 +6210,18 @@ focus_tree = {
         }
 		prerequisite = {
             focus = EGY_secure_the_bosporus
-			focus = EGY_reconsile_with_turkey
+			focus = EGY_reconcile_with_turkey
 		}
         mutually_exclusive = {
             focus = EGY_alliance_with_greece
         }
         will_lead_to_war_with = GRE
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 25
+                has_army_manpower = { size > 199999 }
+            }
         }
         completion_reward = {
             create_wargoal = {
@@ -5609,7 +6257,17 @@ focus_tree = {
         will_lead_to_war_with = ENG
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 15
+                has_army_manpower = { size > 199999 }
+                ENG = { 
+                    OR = {
+                        is_major = no
+                        has_war_with_major = yes
+                    }
+                }
+            }
         }
         completion_reward = {
             add_tech_bonus = {
@@ -5662,8 +6320,16 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 15
+                has_army_manpower = { size > 199999 }
+            }
         }
+        will_lead_to_war_with = MPL
+        will_lead_to_war_with = PAL
+        will_lead_to_war_with = ISR
+        will_lead_to_war_with = SAU
         completion_reward = {
             add_war_support = 0.1
             add_state_claim = 679
@@ -5673,8 +6339,7 @@ focus_tree = {
             add_state_claim = 293
             every_other_country = {
 				limit = {
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { is_subject_of = ROOT }
+					NOT = { is_ally_with = ROOT }
 					any_owned_state = {
 						OR = {
                             state = 679
@@ -5748,8 +6413,12 @@ focus_tree = {
         bypass = {
             owns_state = 966
             owns_state = 454
+            owns_state = 1016
+            owns_state = 1017
             owns_state = 949
             owns_state = 455
+            owns_state = 1021
+            owns_state = 1022
             owns_state = 553
             owns_state = 554
             owns_state = 677
@@ -5757,27 +6426,46 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 15
+                has_army_manpower = { size > 199999 }
+                1016 = {
+                    owner = {
+                        OR = {
+                            has_war_with_major = yes
+                            NOT = { is_subject_of = ENG }
+                        }
+                    }
+                }
+            }
         }
         completion_reward = {
             add_state_claim = 966
             add_state_claim = 454
+            add_state_claim = 1016
+            add_state_claim = 1017
             add_state_claim = 949
             add_state_claim = 455
+            add_state_claim = 1021
+            add_state_claim = 1022
             add_state_claim = 553
             add_state_claim = 554
             add_state_claim = 677
             add_state_claim = 680
             every_other_country = {
 				limit = {
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { is_subject_of = ROOT }
+					NOT = { is_ally_with = ROOT }
 					any_owned_state = {
 						OR = {
                             state = 966
                             state = 454
+                            state = 1016
+                            state = 1017
                             state = 949
                             state = 455
+                            state = 1021
+                            state = 1022
                             state = 553
                             state = 554
                             state = 677
@@ -5824,7 +6512,19 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ANNEXATION}
         ai_will_do = {
-            factor = 10
+            base = 0
+            modifier = {
+                add = 10
+                has_army_manpower = { size > 199999 }
+                663 = {
+                    owner = {
+                        OR = {
+                            has_war_with_major = yes
+                            is_major = no
+                        }
+                    }
+                }
+            }
         }
         completion_reward = {
             if = {
@@ -5839,8 +6539,7 @@ focus_tree = {
                             is_core_of = LBA
                             OWNER = {
                                 NOT = {
-                                    is_subject_of = ROOT
-                                    is_in_faction_with = ROOT
+                                    is_ally_with = ROOT
                                 }
                             }
                         }
@@ -5870,8 +6569,7 @@ focus_tree = {
                 }
                 every_other_country = {
                     limit = {
-                        NOT = { is_in_faction_with = ROOT }
-                        NOT = { is_subject_of = ROOT }
+                        NOT = { is_ally_with = ROOT }
                         any_owned_state = {
                             is_core_of = LBA
                         }
@@ -5922,7 +6620,9 @@ focus_tree = {
 		y = 0
         cost = 10
         available = {
-            has_full_control_of_state = 551
+            any_owned_state = {
+                is_core_of = SUD
+            }
         }
         search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_EGY_SUDANESE_SEPARATISM}
         ai_will_do = {
@@ -5934,10 +6634,10 @@ focus_tree = {
                     is_core_of = SUD
                 }
                 prioritize = { 551 }
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
                 add_building_construction = {
@@ -5956,7 +6656,7 @@ focus_tree = {
         relative_position_id = EGY_development_in_sudan
 		x = -1
 		y = 2
-        cost = 5
+        cost = 7.2
         available = {
             has_full_control_of_state = 551
             has_full_control_of_state = 886
@@ -6037,6 +6737,7 @@ focus_tree = {
         }
         completion_reward = {
             add_tech_bonus = {
+                name = EGY_expand_jonglei_aluminum
 				bonus = 1
 				uses = 1
 				category = aluminium_tech
@@ -6071,10 +6772,10 @@ focus_tree = {
         completion_reward = {
             random_owned_controlled_state = {
                 prioritize = { 907 }
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 2
 					instant_build = yes
 				}
             }
@@ -6086,7 +6787,7 @@ focus_tree = {
         relative_position_id = EGY_banha_industrial_sectors
 		x = -1
 		y = 3
-        cost = 10
+        cost = 5
         prerequisite = {
             focus = EGY_banha_industrial_sectors
         }
@@ -6104,7 +6805,7 @@ focus_tree = {
         relative_position_id = EGY_banha_industrial_sectors
 		x = 1
 		y = 1
-        cost = 10
+        cost = 7.2
         prerequisite = {
             focus = EGY_banha_industrial_sectors
         }
@@ -6116,7 +6817,7 @@ focus_tree = {
             add_tech_bonus = {
                 name = EGY_banque_misr
                 bonus = 1
-                uses = 1
+                uses = 2
                 category = industry
             }
             custom_effect_tooltip = available_political_advisor
@@ -6129,7 +6830,7 @@ focus_tree = {
         relative_position_id = EGY_banque_misr
 		x = 1
 		y = 1
-        cost = 10
+        cost = 5
         prerequisite = {
             focus = EGY_banque_misr
         }
@@ -6190,7 +6891,7 @@ focus_tree = {
         relative_position_id = EGY_banque_misr
 		x = -1
 		y = 1
-        cost = 10
+        cost = 5
         prerequisite = {
             focus = EGY_banque_misr
         }
@@ -6206,10 +6907,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-                add_extra_state_shared_building_slots = 2
+                add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
             }
@@ -6225,6 +6926,7 @@ focus_tree = {
         available = {
             threat > 0.05
         }
+        continue_if_invalid = yes
         prerequisite = {
             focus = EGY_the_aswan_dam
         }
@@ -6266,11 +6968,30 @@ focus_tree = {
         }
     }
     focus = {
+        id = EGY_military_build
+        text = GEN_Military_Build
+        icon = GFX_goal_generic_construct_mil_factory
+        relative_position_id = EGY_national_defence_funds
+		x = 1
+		y = 1
+        cost = 10
+        prerequisite = {
+            focus = EGY_national_defence_funds
+        }
+        search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY}
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_ideas = GEN_Military_Build_I
+        }
+    }
+    focus = {
         id = EGY_rural_education_plan
         icon = GFX_goal_research_silver
-        relative_position_id = EGY_banque_misr
-		x = 0
-		y = 3
+        relative_position_id = EGY_national_defence_funds
+		x = -1
+		y = 1
         cost = 10
         prerequisite = {
             focus = EGY_national_defence_funds
@@ -6280,6 +7001,7 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
+            add_ideas = EGY_rural_education
             add_research_slot = 1
         }
     }
@@ -6289,7 +7011,7 @@ focus_tree = {
         relative_position_id = EGY_development_in_sudan
 		x = 1
 		y = 1
-        cost = 10
+        cost = 7.2
         prerequisite = {
             focus = EGY_development_in_sudan
             focus = EGY_banha_industrial_sectors
@@ -6299,11 +7021,6 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            add_resource = {
-                type = steel
-                amount = 16
-                state = 457
-            }
             add_tech_bonus = {
                 name = EGY_ministry_of_resources
                 bonus = 1
@@ -6358,7 +7075,7 @@ focus_tree = {
         relative_position_id = EGY_banha_industrial_sectors
 		x = 6
 		y = 0
-        cost = 10
+        cost = 5
         available_if_capitulated = yes
         search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP}
         ai_will_do = {
@@ -6445,19 +7162,23 @@ focus_tree = {
         available = {
             has_civil_war = no
 			controls_state = 551
+            controls_state = 883
 		}
         bypass = {
             OR = {
                 has_capitulated = yes
                 NOT = {
-                    controls_state = 551
+                    AND = {
+                        controls_state = 551
+                        controls_state = 883
+                    }
                 }
             }
         }
         prerequisite = {
             focus = EGY_expand_the_defence_department
         }
-        search_filters = {FOCUS_FILTER_EGY_SUDANESE_SEPARATISM}
+        search_filters = {FOCUS_FILTER_EGY_SUDANESE_SEPARATISM FOCUS_FILTER_INDUSTRY}
         ai_will_do = {
             factor = 10
         }
@@ -6471,26 +7192,38 @@ focus_tree = {
                             }
                         }
                     }
-                    add_resistance = -5
+                    add_resistance = -4
                 }
                 add_building_construction = {
 					type = bunker
-					province = 12725
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province = 12725
-					level = 1
-					instant_build = yes
-				}
-                add_building_construction = {
-					type = bunker
 					province = 12806
-					level = 1
+					level = 2
 					instant_build = yes
 				}
+			}
+            883 = {
+                if = {
+                    limit = {
+                        883 = {
+                            NOT = {
+                                is_core_of = ROOT
+                            }
+                        }
+                    }
+                    add_resistance = -4
+                }
+                add_building_construction = {
+                    type = bunker
+                    province = 12725
+                    level = 1
+                    instant_build = yes
+                }
+                add_building_construction = {
+                    type = coastal_bunker
+                    province = 12725
+                    level = 1
+                    instant_build = yes
+                }
 			}
         }
     }
@@ -6502,9 +7235,17 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
-          
+            has_civil_war = no
+			controls_state = 453
 		}
-       
+        bypass = {
+            OR = {
+                has_capitulated = yes
+                NOT = {
+                    controls_state = 453
+                }
+            }
+        }
         prerequisite = {
             focus = EGY_expand_the_defence_department
         }
@@ -6517,19 +7258,19 @@ focus_tree = {
                 add_building_construction = {
 					type = bunker
 					province = 4161
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
 					province = 10002
-					level = 2
+					level = 1
 					instant_build = yes
 				}
                 add_building_construction = {
 					type = bunker
 					province = 12073
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -6591,8 +7332,14 @@ focus_tree = {
         relative_position_id = EGY_defence_of_cairo
 		x = 0
 		y = 1
-        cost = 8
-        
+        cost = 10
+        available = {
+            OR = {
+			    has_capitulated = yes
+                surrender_progress > 0.6
+            }
+		}
+        available_if_capitulated = yes
         prerequisite = {
             focus = EGY_defence_of_cairo
         }
@@ -6611,8 +7358,9 @@ focus_tree = {
 		y = 1
         cost = 10
         available = {
-			
+			has_capitulated = yes
 		}
+        available_if_capitulated = yes
         prerequisite = {
             focus = EGY_organize_the_egyptian_resistance
         }
@@ -6632,8 +7380,9 @@ focus_tree = {
 		y = 1
         cost = 10
         available = {
-			
+			has_capitulated = yes
 		}
+        available_if_capitulated = yes
         prerequisite = {
             focus = EGY_organize_the_egyptian_resistance
         }
@@ -6646,7 +7395,7 @@ focus_tree = {
             add_manpower = 5000
             add_equipment_to_stockpile = {
 				type = infantry_equipment
-  				amount = 2000
+  				amount = 3000
  		 		producer = EGY
 			}
             add_offsite_building = { type = arms_factory level = 2 }
@@ -6658,10 +7407,11 @@ focus_tree = {
         relative_position_id = EGY_the_army_in_exile
 		x = -1
 		y = 1
-        cost = 5
+        cost = 10
         available = {
-			
+			has_capitulated = yes
 		}
+        available_if_capitulated = yes
         prerequisite = {
             focus = EGY_the_army_in_exile
         }
@@ -6682,8 +7432,9 @@ focus_tree = {
 		y = 1
         cost = 10
         available = {
-			
+			has_capitulated = yes
 		}
+        available_if_capitulated = yes
         prerequisite = {
             focus = EGY_the_army_in_exile
         }
@@ -6693,13 +7444,13 @@ focus_tree = {
         }
         completion_reward = {
             air_experience = 25
-            add_manpower = 3000
+            add_manpower = 1000
             add_equipment_to_stockpile = {
-                type = fighter_equipment
-                amount = 200
+                type = small_plane_airframe
+                amount = 50
                 producer = EGY
             }
-           
+            add_offsite_building = { type = arms_factory level = 1 }
         }
     }
 	focus = {
@@ -6718,14 +7469,13 @@ focus_tree = {
             add_to_variable = { EGY_the_egyptian_land_doctrine_cost_factor = -0.1 }
             add_to_variable = { EGY_the_egyptian_army_command_power_gain_mult = 0.1 }
             custom_effect_tooltip = EGY_egyptian_military_academy_tt
-			army_experience = 25
-            add_tech_bonus = {
+			army_experience = 10
+            add_doctrine_cost_reduction = {
                 name = EGY_egyptian_military_academy
-				bonus = 1
-				uses = 1
-				category = land_doctrine
-			}
-
+                cost_reduction = 0.5
+                uses = 1
+                category = land_doctrine
+            }
         }
     }
 	focus = {
@@ -6741,7 +7491,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = EGY_sudanese_volunteers
 		}
-        search_filters = {FOCUS_FILTER_RESEARCH}
+        search_filters = {FOCUS_FILTER_MANPOWER}
         ai_will_do = {
             factor = 10
         }
@@ -6758,7 +7508,7 @@ focus_tree = {
         relative_position_id = EGY_egyptian_military_academy
 		x = 1
 		y = 1
-        cost = 5
+        cost = 10
 		available = {
 			any_owned_state = {
                 is_core_of = SUD
@@ -6787,6 +7537,7 @@ focus_tree = {
                 limit = {
                     is_core_of = SUD
                     NOT = {
+                        state = 767
                         is_core_of = ROOT
                     }
                 }
@@ -6795,7 +7546,7 @@ focus_tree = {
         }
     }
     focus = {
-        id = EGY_modernize_our_weaponary
+        id = EGY_modernize_our_weaponry
         icon = GFX_goal_generic_small_arms
         relative_position_id = EGY_egyptian_military_academy
 		x = 0
@@ -6811,7 +7562,7 @@ focus_tree = {
         }
         completion_reward = {
             add_tech_bonus = {
-                name = EGY_modernize_our_weaponary
+                name = EGY_modernize_our_weaponry
                 bonus = 1
                 uses = 2
                 category = infantry_weapons
@@ -6822,12 +7573,12 @@ focus_tree = {
     focus = {
         id = EGY_field_piece_research
         icon = GFX_goal_generic_army_artillery2
-        relative_position_id = EGY_modernize_our_weaponary
+        relative_position_id = EGY_modernize_our_weaponry
 		x = 0
 		y = 1
         cost = 10
 		prerequisite = {
-			focus = EGY_modernize_our_weaponary
+			focus = EGY_modernize_our_weaponry
 		}
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
@@ -6848,12 +7599,12 @@ focus_tree = {
     focus = {
         id = EGY_logistical_brigades
         icon = GFX_goal_ammunitions
-        relative_position_id = EGY_modernize_our_weaponary
+        relative_position_id = EGY_modernize_our_weaponry
 		x = -1
 		y = 2
         cost = 10
 		prerequisite = {
-			focus = EGY_modernize_our_weaponary
+			focus = EGY_modernize_our_weaponry
 		}
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
@@ -6875,22 +7626,26 @@ focus_tree = {
     focus = {
         id = EGY_radio_technologies
         icon = GFX_goal_generic_radio_development_2
-        relative_position_id = EGY_modernize_our_weaponary
+        relative_position_id = EGY_modernize_our_weaponry
 		x = 2
 		y = 1
-        cost = 5
+        cost = 10
 		prerequisite = {
-			focus = EGY_modernize_our_weaponary
+			focus = EGY_modernize_our_weaponry
 		}
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
             factor = 10
         }
         completion_reward = {
+            add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.25
+			}
 			add_tech_bonus = {
                 name = EGY_radio_technologies
                 bonus = 1
-                uses = 1
+                uses = 2
                 category = electronics
                 category = signal_company_tech
             }
@@ -6903,7 +7658,7 @@ focus_tree = {
         relative_position_id = EGY_radio_technologies
 		x = 0
 		y = 1
-        cost = 8
+        cost = 10
 		prerequisite = {
 			focus = EGY_radio_technologies
 		}
@@ -6914,8 +7669,8 @@ focus_tree = {
         completion_reward = {
             add_to_variable = { EGY_the_egyptian_army_military_leader_cost_factor = -0.5 }
             add_to_variable = { EGY_the_egyptian_land_doctrine_cost_factor = -0.1 }
-            custom_effect_tooltip = EGY_egyptian_military_academy_tt
-			army_experience = 25
+            custom_effect_tooltip = EGY_new_military_institute_tt
+			army_experience = 10
             add_tech_bonus = {
                 name = EGY_new_military_institute
 				bonus = 0.5
@@ -6927,7 +7682,7 @@ focus_tree = {
     }
     focus = {
         id = EGY_central_intelligence
-        icon = GFX_goal_CAN_CAMP_X
+        icon = GFX_goal_generic_spy_connection
         relative_position_id = EGY_radio_technologies
 		x = 2
 		y = 1
@@ -6952,7 +7707,14 @@ focus_tree = {
                 create_intelligence_agency = yes				
             }	
             add_ideas = GER_abwehr_contacts
-            
+            create_operative_leader = {
+                name = "Zakaria Mohieddin"
+                GFX = GFX_EGY_Portrait_Zakaria_Mohieddin
+                traits = { operative_well_groomed }
+                bypass_recruitment = yes
+                available_to_spy_master = no
+                nationalities = { EGY }
+            }
 
         }
     }
@@ -7003,9 +7765,9 @@ focus_tree = {
         }
     }
     focus = {
-        id = EGY_desert_camoflauge
+        id = EGY_desert_camouflage
         icon = GFX_goal_generic_desert_warfare
-        relative_position_id = EGY_modernize_our_weaponary
+        relative_position_id = EGY_modernize_our_weaponry
 		x = -1
 		y = 3
         cost = 5
@@ -7018,9 +7780,9 @@ focus_tree = {
         }
         completion_reward = {
             add_to_variable = { EGY_the_egyptian_army_cas_damage_reduction = 0.1 }
-            custom_effect_tooltip = EGY_desert_camoflauge_tt
+            custom_effect_tooltip = EGY_desert_camouflage_tt
 			add_tech_bonus = {
-                name = EGY_desert_camoflauge
+                name = EGY_desert_camouflage
                 bonus = 1
                 uses = 1
                 category = camo_tech
@@ -7034,7 +7796,7 @@ focus_tree = {
         relative_position_id = EGY_radio_technologies
 		x = -1
 		y = 2
-        cost = 8
+        cost = 7.2
 		prerequisite = {
 			focus = EGY_logistical_brigades
 		}
@@ -7084,15 +7846,15 @@ focus_tree = {
         }
     }
     focus = {
-        id = EGY_air_defences
+        id = EGY_air_defenses
         icon = GFX_goal_EGY_air_defense
-        relative_position_id = EGY_modernize_our_weaponary
+        relative_position_id = EGY_modernize_our_weaponry
 		x = -2
 		y = 1
         cost = 10
 		prerequisite = {
 			focus = EGY_defence_of_cairo
-			focus = EGY_modernize_our_weaponary
+			focus = EGY_modernize_our_weaponry
 		}
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
@@ -7116,9 +7878,9 @@ focus_tree = {
 				}
 			}
             add_tech_bonus = {
-                name = EGY_air_defences
+                name = EGY_air_defenses
                 bonus = 1
-                uses = 1
+                uses = 2
                 category = anti_air_tech
             }
         }
@@ -7131,7 +7893,7 @@ focus_tree = {
 		y = 6
         cost = 10
 		prerequisite = {
-			focus = EGY_desert_camoflauge
+			focus = EGY_desert_camouflage
             focus = EGY_continue_motorization_of_the_army
 		}
         search_filters = {FOCUS_FILTER_RESEARCH}
@@ -7141,18 +7903,30 @@ focus_tree = {
         completion_reward = {
             add_to_variable = { EGY_the_egyptian_army_heat_attrition_factor = -0.1 }
             custom_effect_tooltip = EGY_unit_777_tt
-			add_tech_bonus = {
-                name = EGY_unit_777
-                bonus = 1
-                uses = 1
-                category = r56_special_forces_training_tech 
-            }
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_doctrine_cost_reduction = {
+					cost_reduction = 0.5
+					uses = 1
+					category = special_forces_doctrine
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = EGY_unit_777
+					bonus = 0.5
+					uses = 1
+					category = r56_special_forces_training_tech 
+				}	
+			}	
 			add_tech_bonus = {
                 name = EGY_unit_777
 				bonus = 1
 				ahead_reduction = 1
 				uses = 1
-				category = r56_special_forces_training_tech
+				category = r56_desert_infantry_tech
 			}
         }
     }
@@ -7171,14 +7945,36 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            add_tech_bonus = {
-                name = EGY_study_nuclear_power
-                bonus = 1
-                uses = 1
-                category = nuclear
-            }
-            custom_effect_tooltip = available_theorist
-            show_ideas_tooltip = EGY_sameera_moussa
+            IF = {	
+				limit = {
+					NOT = {
+						has_tech = atomic_research
+					}
+				}
+				add_tech_bonus = {
+					name = nuclear_bonus
+					bonus = 1.0
+					uses = 1
+					category = nuclear
+				}
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 0.5
+				}
+			}
+			ELSE = {
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 0.8
+				}
+			}
+            # custom_effect_tooltip = available_theorist #TODO_R56 turn into scienst 
+            # show_ideas_tooltip = EGY_sameera_moussa
+			custom_effect_tooltip = {
+				localization_key = available_scientist_one_line_tt
+				CHARACTER = EGY_sameera_moussa
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
         }
     }
 
@@ -7190,7 +7986,7 @@ focus_tree = {
         relative_position_id = EGY_egyptian_military_academy
         x = 7
         y = 0
-        cost = 5
+        cost = 10
         search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP}
         ai_will_do = {
             factor = 10
@@ -7253,7 +8049,7 @@ focus_tree = {
 		y = 3
         cost = 5
 		available = {
-            
+            is_subject = no
 			has_full_control_of_state = 907
             NOT = {
                 OR = {
@@ -7355,7 +8151,7 @@ focus_tree = {
         relative_position_id = EGY_expand_alexandria_shipping
         x = 0
         y = 1
-        cost = 10
+        cost = 5
         available = { 
             has_full_control_of_state = 551 
         }
@@ -7368,15 +8164,15 @@ focus_tree = {
         }
         completion_reward = {
             551 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 				    instant_build = yes
 			    }
                 add_building_construction = {
                     type = naval_base
-                    level = 1
+                    level = 2
                     instant_build = yes
                     province = 12725
                 }
@@ -7430,7 +8226,7 @@ focus_tree = {
         relative_position_id = EGY_expand_the_navy
         x = -3
         y = 1
-        cost = 7
+        cost = 7.2
         prerequisite = {
             focus = EGY_expand_the_navy
         }
@@ -7440,10 +8236,21 @@ focus_tree = {
         }
         completion_reward = {
             add_tech_bonus = {
-                name = EGY_el_saka_forces
+                name = VEN_marine_forces
 				bonus = 1.0
 				uses = 1
 				category = marine_tech
+			}
+            if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_doctrine_cost_reduction = {
+					name = special_forces_bonus
+					cost_reduction = 0.5
+					uses = 1
+					category = cat_marines_doctrine
+				}	
 			}
         }
     }
@@ -7477,7 +8284,7 @@ focus_tree = {
         relative_position_id = EGY_expand_the_navy
         x = -1
         y = 1
-        cost = 10
+        cost = 7.2
         prerequisite = {
             focus = EGY_expand_the_navy
         }
@@ -7512,7 +8319,7 @@ focus_tree = {
         relative_position_id = EGY_expand_the_navy
         x = 1
         y = 1
-        cost = 10
+        cost = 7.2
         prerequisite = {
             focus = EGY_expand_the_navy
         }
@@ -7592,6 +8399,7 @@ focus_tree = {
         ai_will_do = {
             factor = 10
         }
+        will_lead_to_war_with = GRE
         completion_reward = {
             add_tech_bonus = {
                 name = EGY_big_farouq
@@ -7608,7 +8416,7 @@ focus_tree = {
         relative_position_id = EGY_big_farouq
         x = 1
         y = 1
-        cost = 10
+        cost = 7.2
         prerequisite = {
             focus = EGY_big_farouq
             focus = EGY_carrier_development
@@ -7647,7 +8455,7 @@ focus_tree = {
         cost = 10
         available = { 
             has_navy_size = {
-                size > 14
+                size > 29
             }
             any_owned_state = { 
                 is_coastal = yes 
@@ -7754,8 +8562,7 @@ focus_tree = {
             add_state_claim = 118
             every_other_country = {
 				limit = {
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { is_subject_of = ROOT }
+					NOT = { is_ally_with = ROOT }
 					any_owned_state = {
 						OR = {
                             state = 183
@@ -7784,7 +8591,7 @@ focus_tree = {
         relative_position_id = EGY_expand_the_navy
         x = 6
         y = 0
-        cost = 5
+        cost = 10
         search_filters = {FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH}
         ai_will_do = {
             factor = 10
@@ -7793,7 +8600,7 @@ focus_tree = {
             air_experience = 25
             add_doctrine_cost_reduction = {
                 name = EGY_reestablish_control_of_the_EAAF
-                uses = 2
+                uses = 1
                 cost_reduction = 0.5
                 category = air_doctrine
             }
@@ -7806,7 +8613,7 @@ focus_tree = {
         relative_position_id = EGY_reestablish_control_of_the_EAAF
         x = -1
         y = 1
-        cost = 7
+        cost = 5
         prerequisite = {
             focus = EGY_reestablish_control_of_the_EAAF
         }
@@ -7839,7 +8646,7 @@ focus_tree = {
         relative_position_id = EGY_reestablish_control_of_the_EAAF
         x = 1
         y = 1
-        cost = 10
+        cost = 7.2
         prerequisite = {
             focus = EGY_reestablish_control_of_the_EAAF
         }
@@ -7848,19 +8655,39 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            custom_effect_tooltip = available_theorist
+            custom_effect_tooltip = available_chief_of_airforce
             show_ideas_tooltip = EGY_victor_tait
-            add_tech_bonus = {
-                name = EGY_victor_taits_legacy
-                bonus = 1
-                uses = 1
-                category = light_fighter
-            }
-            add_tech_bonus = {
-                name = EGY_victor_taits_legacy
-                bonus = 1
-                uses = 1
-                category = cas_bomber
+            if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+                add_tech_bonus = {
+                    name = EGY_victor_taits_legacy
+                    bonus = 1
+                    uses = 1
+                    category = light_air
+                }
+                add_tech_bonus = {
+                    name = EGY_victor_taits_legacy
+                    technology =  aa_cannon_1
+                    technology =  aa_cannon_2
+                    bonus = 0.5
+                    uses = 1
+                }
+			}
+			else = {
+				add_tech_bonus = {
+                    name = EGY_victor_taits_legacy
+                    bonus = 1
+                    uses = 1
+                    category = light_fighter
+                }
+                add_tech_bonus = {
+                    name = EGY_victor_taits_legacy
+                    bonus = 1
+                    uses = 1
+                    category = cas_bomber
+                }
             }
         }
     }
@@ -7870,7 +8697,7 @@ focus_tree = {
         relative_position_id = EGY_reestablish_control_of_the_EAAF
         x = 2
         y = 2
-        cost = 8
+        cost = 5
         available = {
             ENG = {
                 exists = yes
@@ -7886,12 +8713,24 @@ focus_tree = {
         ai_will_do = {
             factor = 10
         }
-        completion_reward = {
-            add_equipment_to_stockpile = {
-                type = fighter_equipment
-                amount = 150
-                producer = ENG
-            }
+        completion_reward = { #BBA Updated - Should Spawn 40 Glosters now
+            if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+                add_equipment_to_stockpile = {
+                    type = small_plane_airframe_0
+                    amount = 40
+                    producer = ENG
+                }
+			}
+			else = {
+                add_equipment_to_stockpile = {
+                    type = small_plane_airframe
+                    amount = 40
+                    producer = ENG
+                }
+			}
         }
     }
     focus = {
@@ -7913,12 +8752,11 @@ focus_tree = {
         }
         completion_reward = {
             air_experience = 25
-            
-            add_tech_bonus = {
-                name = EGY_victor_taits_legacy
-                bonus = 1
+            add_doctrine_cost_reduction = {
+                name = EGY_royal_egyptian_airforce
                 uses = 1
-                category = air_equipment
+                cost_reduction = 0.5
+                category = air_doctrine
             }
         }
     }
@@ -7928,7 +8766,7 @@ focus_tree = {
         relative_position_id = EGY_reestablish_control_of_the_EAAF
         x = -1
         y = 3
-        cost = 10
+        cost = 7.2
         prerequisite = {
             focus = EGY_royal_egyptian_airforce
         }
@@ -7937,12 +8775,25 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            add_tech_bonus = {
-                name = EGY_bomber_production
-                bonus = 1
-                uses = 1
-                category = medium_air
-            }
+            if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+                add_tech_bonus = {
+                    name = EGY_bomber_production
+                    bonus = 1
+                    uses = 1
+                    category = medium_air
+                }
+			}
+			else = {
+                add_tech_bonus = {
+                    name = EGY_bomber_production
+                    bonus = 1
+                    uses = 1
+                    category = tactical_bomber
+                }
+			}
         }
     }
     focus = {
@@ -7961,12 +8812,18 @@ focus_tree = {
         }
         completion_reward = {
             add_tech_bonus = {
-                name = EGY_al_zafir_kahi_missles
-                bonus = 1
-                uses = 1
-                ahead_reduction = 1
-                category = rocketry
-            }
+				name = EGY_al_zafir_kahi_missles
+				bonus = 1
+				uses = 1
+				category = rocketry
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.75
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = r56_generic_rocket_idea
         }
     }
     focus = {
@@ -7975,7 +8832,7 @@ focus_tree = {
         relative_position_id = EGY_royal_egyptian_airforce
         x = 0
         y = 2
-        cost = 5
+        cost = 7.2
         prerequisite = {
             focus = EGY_royal_egyptian_airforce
         }
@@ -7984,14 +8841,147 @@ focus_tree = {
             factor = 10
         }
         completion_reward = {
-            air_experience = 25
-            navy_experience = 25
+            air_experience = 5
+            navy_experience = 5
             add_tech_bonus = {
-                name = EGY_radar_defence_technologies
+                name = radar_focus
                 bonus = 1
-                uses = 1
-                category = radar_tech
+				uses = 1
+				category = radar_tech
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.25
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+            add_ideas = r56_generic_radar_idea
+        }
+    }
+
+    focus = {
+        id = EGY_a_humiliation
+        icon = GFX_goal_generic_crisis
+        x = 98
+        y = 5
+        cost = 1
+        allow_branch = {
+            has_country_flag = ISR_suez_contested_event_happened
+            
+        }
+        completion_reward = {
+            add_popularity = {
+                ideology = EGY
+                popularity = -0.05
+            }
+        }
+    }
+
+    focus = {
+        id = EGY_stretch_out_the_hand 
+        icon = GFX_goal_ISR_stretch_hand
+        relative_position_id = EGY_a_humiliation
+        text = ISR_stretch_out_the_hand
+        x = -2
+        y = 1
+        cost = 5
+        mutually_exclusive = {
+            focus = EGY_three_nos
+        }
+		available = {
+			NOT = {
+				ISR = {
+					has_completed_focus = ISR_stretch_out_the_hand
+				}
+                has_country_flag = ISR_negotiations_collapsed
+			}
+		}
+        prerequisite = {
+            focus = EGY_a_humiliation
+        }
+        completion_reward = {
+            
+			ISR = {
+				country_event = {
+					id = israel.84
+					days = 1 
+					random_hours = 12
+				}
+			}
+        }
+    }
+    focus = {
+        id = EGY_three_nos 
+        icon = GFX_goal_PAL_destroy_israel
+        relative_position_id = EGY_a_humiliation
+        prerequisite = {
+            focus = EGY_a_humiliation
+        }
+        x = 2
+        y = 1
+        cost = 5
+        mutually_exclusive = {
+            focus = EGY_stretch_out_the_hand
+        }
+        available = {
+            NOT = {
+                has_country_flag = ISR_EGY_negotiating
+            }
+        }
+        completion_reward = {
+            add_stability = -0.10
+            add_war_support = 0.15
+			if = {
+				limit = { 
+					has_idea = ISR_suez_pressure_2
+				}
+				swap_ideas = {
+					remove_idea = ISR_suez_pressure_2
+					add_idea = ISR_suez_pressure_1
+				}
+			}
+			else_if = {
+				limit = { 
+					has_idea = ISR_suez_pressure_3
+				}
+				swap_ideas = {
+					remove_idea = ISR_suez_pressure_3
+					add_idea = ISR_suez_pressure_2
+				}
+			}
+			else_if = {
+				limit = { 
+					has_idea = ISR_suez_pressure_4
+				}
+				swap_ideas = {
+					remove_idea = ISR_suez_pressure_4
+					add_idea = ISR_suez_pressure_3
+				}
+			}
+			else_if = {
+				limit = { 
+					has_idea = ISR_suez_pressure_5
+				}
+				swap_ideas = {
+					remove_idea = ISR_suez_pressure_5
+					add_idea = ISR_suez_pressure_4
+				}
+			}
+			911 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 12049
+				}
+				
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4073
+				}
+			}
         }
     }
 }

@@ -414,10 +414,6 @@ liberalism_on_the_rise = {
 			NOT = { has_government = democratic }
 		}
 		
-		remove_trigger = {
-			has_government = democratic
-		}
-		
 		fire_only_once = yes
 		
 		cost = 0
@@ -447,10 +443,6 @@ liberalism_on_the_rise = {
 			has_country_flag = open_up_political_discourse_liberal
 			#check_has_focus_tree_to_switch_to_liberalism = yes
 			NOT = { has_government = democratic }
-		}
-		
-		remove_trigger = {
-			has_government = democratic
 		}
 		
 		fire_only_once = yes
@@ -507,10 +499,6 @@ liberalism_on_the_rise = {
 			has_country_flag = open_up_political_discourse_liberal
 		}
 		
-		remove_trigger = {
-			has_government = democratic
-		}
-		
 		fire_only_once = yes
 		
 		cost = 0
@@ -542,8 +530,7 @@ liberalism_on_the_rise = {
 					logistics_skill = 2
 				}
 			}
-			if = { limit = { has_unit_leader = 3128 }
-				remove_unit_leader = 3128 }
+			if = { limit = { has_unit_leader = 3128 } random_unit_leader = { limit = { has_id = 3128 } retire = yes } }
 			country_event = { id = political.20 }
 		}
 		
@@ -973,10 +960,6 @@ nationalism_on_the_rise = {
 			NOT = { has_government = democratic }
 		}
 		
-		remove_trigger = {
-			has_government = democratic
-		}
-		
 		fire_only_once = yes
 		
 		cost = 0
@@ -1006,10 +989,6 @@ nationalism_on_the_rise = {
 			has_country_flag = open_up_political_discourse_nationalist
 			#check_has_focus_tree_to_switch_to_nationalist = yes
 			NOT = { has_government = democratic }
-		}
-		
-		remove_trigger = {
-			has_government = democratic
 		}
 		
 		fire_only_once = yes
@@ -1066,10 +1045,6 @@ nationalism_on_the_rise = {
 			has_country_flag = open_up_political_discourse_nationalist
 		}
 		
-		remove_trigger = {
-			has_government = democratic
-		}
-		
 		fire_only_once = yes
 		
 		cost = 0
@@ -1115,10 +1090,8 @@ nationalism_on_the_rise = {
 					logistics_skill = 2
 				}
 			}
-			if = { limit = { has_unit_leader = 3128 }
-				remove_unit_leader = 3128 }
-			if = {
-			limit = { NOT = { has_unit_leader = 3163 } }
+			if = { limit = { has_unit_leader = 3128 } random_unit_leader = { limit = { has_id = 3128 } retire = yes } }
+			if = { limit = { NOT = { has_unit_leader = 3163 } }
 				create_corps_commander = {
 					name = "Stanisław Haller"
 					picture = "r56_portrait_POL_Stanislaw_Haller.dds"
@@ -1560,10 +1533,6 @@ stalinism_on_the_rise = {
 			NOT = { has_government = communism }
 		}
 		
-		remove_trigger = {
-			has_government = communism
-		}
-		
 		fire_only_once = yes
 		
 		cost = 100
@@ -1593,10 +1562,6 @@ stalinism_on_the_rise = {
 			has_country_flag = open_up_political_discourse_stalinist
 			#check_has_focus_tree_to_switch_to_stalinism = yes
 			NOT = { has_government = communism }
-		}
-		
-		remove_trigger = {
-			has_government = communism
 		}
 		
 		fire_only_once = yes
@@ -1651,10 +1616,6 @@ stalinism_on_the_rise = {
 			NOT = { has_government = communism }
 			#check_has_focus_tree_to_switch_to_stalinism = yes
 			has_country_flag = open_up_political_discourse_stalinist
-		}
-		
-		remove_trigger = {
-			has_government = communism
 		}
 		
 		fire_only_once = yes

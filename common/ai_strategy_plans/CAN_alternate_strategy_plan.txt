@@ -1,112 +1,49 @@
-CAN_democratic_alternate = {
-	name = "Canada goes at it alone"
-	desc = "They are very sorry about that"
+#####-----> TUR: Alternate AI Behavior (Road to 56) <><> <><> <><> <><> <><>
 
-	enable = {
+CAN_democratic_alternative_plan_R56 = {
+	name = "CAN: Canadian Democratic AI Plan Road to 56"
+	desc = "Alternate democratic behaviour for Canada."
+
+	allowed = {
 		original_tag = CAN
-		has_dlc = "Together for Victory"
+	}
+	
+	enable = {
 		OR = {
 			has_country_flag = CAN_AI_RANDOM_DEMOCRATIC_ALTERNATE 
-			has_game_rule = {
-				rule = CAN_ai_behavior
-				option = DEMOCRATIC_ALTERNATE
-			}
 		}
+		has_focus_tree = r56_canadian_focus
 	}
-	abort = {
-		
-	}
-
-	ai_national_focuses = {
 	
-	}
-
-	research = {
-		industry = 20.0
-		infantry_tech = 15.0
-		artillery = 8.0
-		support_tech = 6.5
-		dd_tech = 5
-	}
-
-	traits = {
-		captain_of_industry = 5
-		war_industrialist = 5
-	}
-
-	# Keep small, as it is used as a factor for some things (such as research needs)
-	# Recommended around 1.0. Useful for relation between plans
-	weight = {
-		factor = 1.0
-		modifier = {
-			factor = 1.0
-		}
-	}
-
-	focus_factors = {
-		
-	}
-
-}
-
-CAN_fascist = {
-	name = "Canada goes fascist"
-	desc = "They are very sorry about that"
-
-	enable = {
-		original_tag = CAN
-		has_dlc = "Together for Victory"
-		OR = {
-			has_country_flag = CAN_AI_RANDOM_FASCIST 
-			has_game_rule = {
-				rule = CAN_ai_behavior
-				option = FASCIST
-			}
-		}
-	}
-	abort = {
-		
-	}
-
 	ai_national_focuses = {
-		
+		r56_CAN_forge_our_own_future
 	}
-
-	research = {
-		industry = 20.0
-		infantry_tech = 15.0
-		artillery = 8.0
-		support_tech = 6.5
-		dd_tech = 5
+	
+	focus_factors = {
+		r56_CAN_fascism = 0
+		r56_CAN_communism = 0
+		r56_CAN_trust_in_the_commonwealth = 0
 	}
-
-	traits = {
-		captain_of_industry = 5
-		war_industrialist = 5
-	}
-
-	# Keep small, as it is used as a factor for some things (such as research needs)
-	# Recommended around 1.0. Useful for relation between plans
+	
+	#Keep small, as it is used as a factor for some things, such as research needs.
+	#Recommended around 1.0. Useful for relation between plans.
 	weight = {
 		factor = 1.0
 		modifier = {
 			factor = 1.0
 		}
 	}
-
-	focus_factors = {
-		
-	}
-
 }
 
-CAN_communist = {
-	name = "Canada goes communist"
-	desc = "They are very sorry about that"
+CAN_communist_plan_R56 = {
+	name = "CAN: Canadian Communist AI Plan Road to 56"
+	desc = "Alternate communist behaviour for Canada."
 
-	enable = {
+	allowed = {
 		original_tag = CAN
-		has_dlc = "Together for Victory"
+	}
+	
+	enable = {
 		OR = {
 			has_country_flag = CAN_AI_RANDOM_COMMUNIST 
 			has_game_rule = {
@@ -114,39 +51,82 @@ CAN_communist = {
 				option = COMMUNIST
 			}
 		}
+		has_focus_tree = r56_canadian_focus
 	}
+	
+	
 	abort = {
-		
+		is_subject = yes
+		NOT = {
+			has_government = communism
+		}
 	}
-
+	
 	ai_national_focuses = {
-		
+		r56_CAN_communism
 	}
-
-	research = {
-		industry = 20.0
-		infantry_tech = 15.0
-		artillery = 8.0
-		support_tech = 6.5
-		dd_tech = 5
+	
+	focus_factors = {
+		r56_CAN_fascism = 0
+		r56_CAN_forge_our_own_future = 0
+		r56_CAN_trust_in_the_commonwealth = 0
 	}
-
-	traits = {
-		captain_of_industry = 5
-		war_industrialist = 5
-	}
-
-	# Keep small, as it is used as a factor for some things (such as research needs)
-	# Recommended around 1.0. Useful for relation between plans
+	
+	#Keep small, as it is used as a factor for some things, such as research needs.
+	#Recommended around 1.0. Useful for relation between plans.
 	weight = {
 		factor = 1.0
 		modifier = {
 			factor = 1.0
 		}
 	}
-
-	focus_factors = {
-		
-	}
-
 }
+
+
+CAN_fascist_plan_R56 = {
+	name = "CAN: Canadian fascist AI Plan Road to 56"
+	desc = "Alternate fascist behaviour for Canada."
+
+	allowed = {
+		original_tag = CAN
+	}
+	
+	enable = {
+		OR = {
+			has_country_flag = CAN_AI_RANDOM_FASCIST
+			has_game_rule = {
+				rule = CAN_ai_behavior
+				option = FASCIST
+			}
+		}
+		has_focus_tree = r56_canadian_focus
+	}
+	
+	abort = {
+		is_subject = yes
+		NOT = {
+			has_government = fascism
+		}
+	}
+	
+	ai_national_focuses = {
+		r56_CAN_fascism
+	}
+	
+	focus_factors = {
+		r56_CAN_communism = 0
+		r56_CAN_forge_our_own_future = 0
+		r56_CAN_trust_in_the_commonwealth = 0
+	}
+	
+	#Keep small, as it is used as a factor for some things, such as research needs.
+	#Recommended around 1.0. Useful for relation between plans.
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+#####-----> End of File <><> <><> <><> <><> <><>

@@ -48,11 +48,6 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = flamethrower
-			research_cost_coeff = 1
-		}
-
-		path = {
 			leads_to_tech = sniper_rifle
 			research_cost_coeff = 1
 		}
@@ -72,71 +67,65 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
 		}
-	}
-
-	flamethrower = {
-
-		research_cost = 1.75
-		start_year = 1930
-
-		folder = {
-			name = infantry_folder
-			position = { x = -2  y = -1 }
-		}
-
-		enable_equipment_modules = {
-			flamethrower
-		}
-
-		categories = {
-			infantry_weapons
-		}
-		
-		
-		ai_will_do = {
-			factor = 1
-		}
-
-		category_all_infantry = {
-			hard_attack = 0.2
-			breakthrough = 0.1
-		}
-
-		engineer = {
-			breakthrough = 1.5
-		}
-
 	}
 
 	sniper_rifle = {
 
-		category_all_infantry = {
-			soft_attack = 0.3
-		}
-			
 		category_recon = {
-			soft_attack = 0.1 #pretty sure this was a mistake being at 1, it makes light tank recon get 300 soft attack
+			soft_attack = 0.10
 		}
 
-		category_special_forces = {
-			hard_attack = 0.1
+		recon = {
+			battalion_mult = {
+				category = category_all_infantry
+				soft_attack = 0.03
+			}
+			battalion_mult = {
+				category = category_special_forces
+				hard_attack = 0.03
+			}
+		}
+
+		mot_recon = {
+			battalion_mult = {
+				category = category_all_infantry
+				soft_attack = 0.03
+			}
+			battalion_mult = {
+				category = category_special_forces
+				hard_attack = 0.03
+			}
 		}
 		
+		enable_equipment_modules = {
+			r56_tank_improved_optics
+		}
 		
 		research_cost = 1.75
 		start_year = 1930
 		folder = {
 			name = infantry_folder
-			position = { x = 2 y = 0 }
+			position = { x = -2 y = -1 }
 		}
 		
 		categories = {
 			infantry_weapons
+			recon_tech
 		}
+		
+		on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_r56_tank_optical_rangefinder
+			}
+		}
+
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 15
@@ -150,7 +139,7 @@ technologies = {
 		}
 
 		enable_equipment_modules = {
-			tank_anti_tank_rifle_gun
+			r56_tank_anti_tank_rifle_gun
 		}
 				
 		path = {
@@ -173,6 +162,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -198,15 +188,16 @@ technologies = {
 
 		category_all_infantry = {
 			hard_attack = 0.25
+			ap_attack = 0.25
 		}
 
-		category_light_infantry = {
-			ap_attack = 0.5
-		}
+		#category_light_infantry = {
+		#	ap_attack = 0.5
+		#}
 
-		militia = {
-			hard_attack = 0.1
-		}
+		#militia = {
+		#	hard_attack = 0.1
+		#}
 		
 		research_cost = 1.75
 		start_year = 1936
@@ -222,7 +213,10 @@ technologies = {
 
 		categories = {
 			infantry_weapons
+			anti_tank_infantry_weapons
 		}
+
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 2
@@ -283,6 +277,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 2
@@ -335,20 +330,21 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 3
 						
 			modifier = {
 				factor = 10
-				date > "1939.1.1"
+				date > "1938.6.1"
 			}
 			modifier = {
 				num_of_military_factories < 50
 				factor = 0.5
 			}
 			modifier = {
-				factor = 0
+				factor = 0.5
 				tag = SOV
 				OR = {
 					date < "1944.1.1" # stock up on lots of rifles, we got the manpower
@@ -409,6 +405,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -442,17 +439,29 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
+		enable_equipment_modules = {
+			r56_tank_anti_tank_rifle_gun_2
+		}
+
 		research_cost = 1.5
 		start_year = 1939
 		folder = {
 			name = infantry_folder
 			position = { x = 2 y = @1939 }
 		}
+
+		on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = r56_anti_tank_rifle_grenade_tech 
+			}
+		}
 		
 		categories = {
 			infantry_weapons
 			anti_tank_infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -478,8 +487,8 @@ technologies = {
 	infantry_at2 = {
 
 		category_all_infantry = {
-			hard_attack = 0.5
-			ap_attack = 2
+			hard_attack = 0.25
+			ap_attack = 1
 		}
 		
 		path = {
@@ -498,6 +507,7 @@ technologies = {
 			infantry_weapons
 			anti_tank_infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -542,6 +552,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 0.8
@@ -612,6 +623,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -667,19 +679,18 @@ technologies = {
 		
 		categories = {
 			para_tech
-			cat_special_forces_generic
 			r56_paratroops_infantry_tech
 		}
-		ai_will_do = { #Changed to 0 because the AI can't do paradrops so all those techs are useless to them
-			factor = 0
+		ai_will_do = { #Changed to 0.1 because the AI can't do paradrops so all those techs are useless to them
+			factor = 0.1
 
 			modifier = {
 				factor = 2
 				tag = USA
 			}
 			
-			modifier = {
-				factor = 2
+			modifier = { #Something about a raid on Eben Emael
+				factor = 50 
 				tag = GER
 			}
 			
@@ -712,7 +723,6 @@ technologies = {
 		categories = {
 			para_tech
 			r56_paratroops_infantry_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = { #Changed to 0 because the AI can't do paradrops so all those techs are useless to them
@@ -758,7 +768,6 @@ technologies = {
 		categories = {
 			para_tech
 			r56_paratroops_infantry_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = { #Changed to 0 because the AI can't do paradrops so all those techs are useless to them
@@ -814,7 +823,6 @@ technologies = {
 		categories = {
 			marine_tech
 			r56_marines_infantry_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -854,7 +862,6 @@ technologies = {
 		categories = {
 			marine_tech
 			r56_marines_infantry_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -895,7 +902,6 @@ technologies = {
 		categories = {
 			marine_tech
 			r56_marines_infantry_tech
-			cat_special_forces_generic
 		}
 		ai_will_do = {
 			factor = 0.7
@@ -948,7 +954,6 @@ technologies = {
 			infantry_tech
 			mountaineers_tech
 			r56_mountain_infantry_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -979,7 +984,6 @@ technologies = {
 			infantry_tech
 			mountaineers_tech
 			r56_mountain_infantry_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -1011,7 +1015,6 @@ technologies = {
 			infantry_tech
 			mountaineers_tech
 			r56_mountain_infantry_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -1025,8 +1028,8 @@ technologies = {
 	
 	tech_special_forces = {
 		category_special_forces = {
-			acclimatization_hot_climate_gain_factor = 0.10
-			acclimatization_cold_climate_gain_factor = 0.10
+			acclimatization_hot_climate_gain_factor = 0.05
+			acclimatization_cold_climate_gain_factor = 0.05
 		}
 
 		path = {
@@ -1039,11 +1042,13 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1
-		start_year = 1937
+		allow_branch = { not = { has_dlc = "Arms Against Tyranny" } }
+
+		research_cost = 2
+		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = 24 y = @1936 }
+			position = { x = 24 y = @1938 }
 		}
 		
 		categories = {
@@ -1051,7 +1056,6 @@ technologies = {
 			marine_tech
 			para_tech
 			r56_special_forces_training_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -1079,10 +1083,10 @@ technologies = {
 
 
 		research_cost = 2
-		start_year = 1939
+		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = 23 y = @1939 }
+			position = { x = 23 y = @1940 }
 		}
 		
 		categories = {
@@ -1090,7 +1094,6 @@ technologies = {
 			marine_tech
 			para_tech
 			r56_special_forces_training_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -1103,7 +1106,7 @@ technologies = {
 			advanced_special_forces
 		}
 
-		special_forces_cap = 0.10
+		special_forces_cap = 0.05
 		special_forces_training_time_factor = -0.1
 		
 		path = {
@@ -1112,10 +1115,10 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1939
+		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = 25 y = @1939 }
+			position = { x = 25 y = @1940 }
 		}
 		
 		categories = {
@@ -1123,7 +1126,6 @@ technologies = {
 			marine_tech
 			para_tech
 			r56_special_forces_training_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -1134,11 +1136,11 @@ technologies = {
 	extreme_environment_training = {
 
 		category_special_forces = {
-			acclimatization_hot_climate_gain_factor = 0.20
-			acclimatization_cold_climate_gain_factor = 0.20
+			acclimatization_hot_climate_gain_factor = 0.50
+			acclimatization_cold_climate_gain_factor = 0.50
 		}
 		
-		special_forces_no_supply_grace = 24
+		special_forces_no_supply_grace = 48
 		special_forces_training_time_factor = 0.1
 		
 		path = {
@@ -1147,10 +1149,10 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1941
+		start_year = 1943
 		folder = {
 			name = infantry_folder
-			position = { x = 23 y = @1941 }
+			position = { x = 23 y = @1943 }
 		}
 		
 		categories = {
@@ -1159,26 +1161,21 @@ technologies = {
 			marine_tech
 			para_tech
 			r56_special_forces_training_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
 			factor = 0.7
 		}
-
-
-
-
 	}
 
 	survival_training = {
 
 		category_special_forces = {
-			acclimatization_hot_climate_gain_factor = 0.10
-			acclimatization_cold_climate_gain_factor = 0.10
+			acclimatization_hot_climate_gain_factor = 0.20
+			acclimatization_cold_climate_gain_factor = 0.20
 		}
 		
-		special_forces_out_of_supply_factor = -0.2
+		special_forces_out_of_supply_factor = -0.1
 		
 		path = {
 			leads_to_tech = elite_forces
@@ -1186,10 +1183,10 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1941
+		start_year = 1943
 		folder = {
 			name = infantry_folder
-			position = { x = 25 y = @1941 }
+			position = { x = 25 y = @1943 }
 		}
 		
 		categories = {
@@ -1197,7 +1194,6 @@ technologies = {
 			marine_tech
 			para_tech
 			r56_special_forces_training_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -1207,13 +1203,13 @@ technologies = {
 
 	elite_forces = {
 		category_special_forces = {
-			acclimatization_hot_climate_gain_factor = 0.10
-			acclimatization_cold_climate_gain_factor = 0.10
+			acclimatization_hot_climate_gain_factor = 0.20
+			acclimatization_cold_climate_gain_factor = 0.20
 			max_organisation = 5
 			soft_attack = 0.05
 		}
 		
-		special_forces_no_supply_grace = 24
+		special_forces_no_supply_grace = 48
 		
 		path = {
 			leads_to_tech = elite_forces_02
@@ -1221,10 +1217,10 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1942
+		start_year = 1946
 		folder = {
 			name = infantry_folder
-			position = { x = 24 y = @1942 }
+			position = { x = 24 y = @1946 }
 		}
 		
 		categories = {
@@ -1232,7 +1228,6 @@ technologies = {
 			marine_tech
 			para_tech
 			r56_special_forces_training_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -1256,10 +1251,10 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1943
+		start_year = 1950
 		folder = {
 			name = infantry_folder
-			position = { x = 24 y = @1944 }
+			position = { x = 24 y = @1950 }
 		}
 		
 		categories = {
@@ -1267,7 +1262,6 @@ technologies = {
 			marine_tech
 			para_tech
 			r56_special_forces_training_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -1286,10 +1280,10 @@ technologies = {
 		special_forces_no_supply_grace = 48
 
 		research_cost = 2
-		start_year = 1945
+		start_year = 1954
 		folder = {
 			name = infantry_folder
-			position = { x = 24 y = @1946 }
+			position = { x = 24 y = @1954 }
 		}
 		
 		categories = {
@@ -1297,7 +1291,6 @@ technologies = {
 			marine_tech
 			para_tech
 			r56_special_forces_training_tech
-			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -1386,6 +1379,34 @@ technologies = {
 				movement = 0.05
 			}
 		}
+	}
+
+	mountain_defensive_training = {	#Austria
+
+		research_cost = 1
+
+		# only from focus!
+		allow = {
+			always = no
+		}
+
+
+		#If you change these
+		#Change the custom tooltip too: AUS_osterreichische_gebirgsjager_tt
+		infantry = {
+			mountain = {
+				defence = 0.05
+				movement = 0.05
+			}
+		}
+
+		mountaineers = {
+			mountain = {
+				defence = 0.05
+				movement = 0.1
+			}
+		}
+
 	}
 
 	
@@ -1484,73 +1505,19 @@ technologies = {
 
 	support_weapons = {
 
-		infantry = {
+		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
-		bicycle_battalion = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		cavalry = {
-			defense = 0.02
-			breakthrough = 0.02
-		}
-		camelry = {
+		category_cavalry = {
 			defense = 0.02
 			breakthrough = 0.02
 		}		
-		mountaineers = {
+		category_special_forces_leg_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		paratrooper = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		marine = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
-
-		jaeger = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		jungletroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		desertinfantry = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		shocktroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
-
-		motorized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mechanized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mot_shocktroop = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mech_shocktroop = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		amphibious_mechanized = {
+		category_vehicle_infantry = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
@@ -1570,6 +1537,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -1608,75 +1576,29 @@ technologies = {
 	
 	support_weapons2 = {
 
-		infantry = {
+		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
-		bicycle_battalion = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		cavalry = {
-			defense = 0.02
-			breakthrough = 0.02
-		}
-		camelry = {
+		category_cavalry = {
 			defense = 0.02
 			breakthrough = 0.02
 		}		
-		mountaineers = {
+		category_special_forces_leg_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		paratrooper = {
-			defense = 0.03
-			breakthrough = 0.03
+		category_vehicle_infantry = {
+			defense = 0.05
+			breakthrough = 0.05
 		}
-		marine = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
 
-		jaeger = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		jungletroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		desertinfantry = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		shocktroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
-
-		motorized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mechanized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mot_shocktroop = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mech_shocktroop = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		amphibious_mechanized = {
-			defense = 0.05
-			breakthrough = 0.05
+		#Once we have more custom SP's this should be moved deeper into the tree
+		on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_r56_gammon_bomb
+			}
 		}
 		
 		path = {
@@ -1694,6 +1616,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -1738,75 +1661,19 @@ technologies = {
  
 	support_weapons3 = {
 
-		infantry = {
+		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
-		bicycle_battalion = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		cavalry = {
+		category_cavalry = {
 			defense = 0.02
 			breakthrough = 0.02
-		}
-		camelry = {
-			defense = 0.02
-			breakthrough = 0.02
-		}	
-		mountaineers = {
+		}		
+		category_special_forces_leg_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		paratrooper = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		marine = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		jaeger = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
-
-		jungletroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-
-		desertinfantry = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-
-		shocktroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
-
-		motorized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mechanized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mot_shocktroop = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mech_shocktroop = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		amphibious_mechanized = {
+		category_vehicle_infantry = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
@@ -1826,6 +1693,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -1860,75 +1728,21 @@ technologies = {
 	
 	support_weapons4 = {
 
-		infantry = {
+		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
-		bicycle_battalion = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		cavalry = {
+		category_cavalry = {
 			defense = 0.02
 			breakthrough = 0.02
-		}
-		camelry = {
-			defense = 0.02
-			breakthrough = 0.02
-		}	
-		mountaineers = {
+		}		
+		category_special_forces_leg_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		paratrooper = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		marine = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
-
-		jaeger = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		jungletroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		desertinfantry = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		shocktroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> X   <><> <><> <><> <><> <><>
-
-		motorized = {
+		category_vehicle_infantry = {
 			defense = 0.05
 			breakthrough = 0.05
-		}
-		mechanized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mot_shocktroop = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mech_shocktroop = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		amphibious_mechanized = {
-			defense = 0.05
-			breakthrough = 0.05		  
 		}
 		
 		path = {
@@ -1946,6 +1760,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1	
@@ -1999,6 +1814,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -2062,6 +1878,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -2120,6 +1937,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -2161,6 +1979,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -2202,6 +2021,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -2249,6 +2069,7 @@ technologies = {
 			infantry_weapons
 			anti_tank_infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -2292,6 +2113,7 @@ technologies = {
 			infantry_weapons
 			anti_tank_infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -2330,6 +2152,7 @@ technologies = {
 			infantry_weapons
 			anti_tank_infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -2657,7 +2480,7 @@ technologies = {
 
 		jungletroop = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02
 			soft_attack = 0.02
 		}
 
@@ -2701,7 +2524,7 @@ technologies = {
 
 		jungletroop = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02 
 			soft_attack = 0.02
 		}
 		
@@ -2745,7 +2568,7 @@ technologies = {
 
 		jungletroop = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02 
 			soft_attack = 0.02
 		}
 		
@@ -2789,7 +2612,7 @@ technologies = {
 
 		jungletroop = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02 
 			soft_attack = 0.02
 		}
 		
@@ -2833,7 +2656,7 @@ technologies = {
 
 		jungletroop = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02 
 			soft_attack = 0.02
 		}
 
@@ -2877,10 +2700,6 @@ technologies = {
 			mot_shocktroop
 		}
 		
-		enable_subunits = {
-			mech_shocktroop
-		}
-		
 		on_research_complete_limit = {
 			NOT = {
 				has_template_containing_unit = shocktroop
@@ -2911,7 +2730,6 @@ technologies = {
 			infantry_tech
 			r56_shock_infantry_tech
 		}
-
 		
 		ai_will_do = {
 			factor = 0
@@ -2927,12 +2745,7 @@ technologies = {
 
 		mot_shocktroop = {
 			max_organisation = 2
-			soft_attack = 0.03
-		}
-		
-		mech_shocktroop = {
-			max_organisation = 2
-			soft_attack = 0.03
+			soft_attack = 0.02
 		}
 
 		path = {
@@ -2954,16 +2767,15 @@ technologies = {
 	}
 	
 	shocktroops3 = {
+		enable_subunits = {
+			mech_shocktroop
+		}
 
 		shocktroop = {
 			max_organisation = 5
 		}
 
 		mot_shocktroop = {
-			max_organisation = 2
-		}
-		
-		mech_shocktroop = {
 			max_organisation = 2
 		}
 		
@@ -3081,57 +2893,19 @@ technologies = {
 	
 	support_weapons_a = {
 
-		infantry = {
+		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
-		cavalry = {
+		category_cavalry = {
 			defense = 0.02
 			breakthrough = 0.02
-		}
-		camelry = {
-			defense = 0.02
-			breakthrough = 0.02
-		}	
-		mountaineers = {
+		}		
+		category_special_forces_leg_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		paratrooper = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		marine = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
-
-		jaeger = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		jungletroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		desertinfantry = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		shocktroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> X   <><> <><> <><> <><> <><>
-
-		motorized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mechanized = {
+		category_vehicle_infantry = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
@@ -3151,6 +2925,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -3159,66 +2934,23 @@ technologies = {
 	
 	support_weapons_b = {
 
-		infantry = {
+		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
-		cavalry = {
+		category_cavalry = {
 			defense = 0.02
 			breakthrough = 0.02
 		}		
-		mountaineers = {
+		category_special_forces_leg_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		paratrooper = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		marine = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
-
-		jaeger = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		jungletroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		desertinfantry = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		shocktroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> X   <><> <><> <><> <><> <><>
-
-		motorized = {
+		category_vehicle_infantry = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
-		mechanized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mot_shocktroop = {
-			max_organisation = 2
-			soft_attack = 0.03
-		}
-		
-		mech_shocktroop = {
-			max_organisation = 2
-			soft_attack = 0.03
-		}
-		
+
 		path = {
 			leads_to_tech = support_weapons_c
 			research_cost_coeff = 1
@@ -3234,6 +2966,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -3264,68 +2997,21 @@ technologies = {
 	
 	support_weapons_c = {
 
-		infantry = {
+		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
-		cavalry = {
+		category_cavalry = {
 			defense = 0.02
 			breakthrough = 0.02
-		}
-		camelry = {
-			defense = 0.02
-			breakthrough = 0.02
-		}	
-		mountaineers = {
+		}		
+		category_special_forces_leg_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		paratrooper = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		marine = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> Jaeger   <><> <><> <><> <><> <><>
-
-		jaeger = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		jungletroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		desertinfantry = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		shocktroop = {
-			defense = 0.03
-			breakthrough = 0.03
-		}
-		
-###------> X   <><> <><> <><> <><> <><>
-
-		motorized = {
+		category_vehicle_infantry = {
 			defense = 0.05
 			breakthrough = 0.05
-		}
-		mechanized = {
-			defense = 0.05
-			breakthrough = 0.05
-		}
-		mot_shocktroop = {
-			max_organisation = 2
-			soft_attack = 0.03
-		}
-		
-		mech_shocktroop = {
-			max_organisation = 2
-			soft_attack = 0.03
 		}
 		
 		research_cost = 1.5
@@ -3338,6 +3024,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 		}
+		#special_project_specialization = { specialization_land }
 		
 		ai_will_do = {
 			factor = 1
@@ -3371,6 +3058,19 @@ technologies = {
 			camelry
 		}		
 	}
+	elephantry = {
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			elephantry
+		}
+	}
 	######### FROM SOVIET FOCUS ##########
 	penal_infantry = {
 		
@@ -3399,8 +3099,8 @@ technologies = {
 		}
 
 		category_all_infantry = {
-			acclimatization_cold_climate_gain_factor = 0.15
-			default_morale = 0.01
+			acclimatization_cold_climate_gain_factor = 0.05
+			#default_morale = 0.01
 		}
 		
 		modifier = {
@@ -3427,7 +3127,7 @@ technologies = {
 					original_tag = CAN
 					original_tag = SWE
 					original_tag = FIN
-					original_tag = SAM
+					original_tag = SMI
 					original_tag = GRL
 					original_tag = ICE
 					original_tag = QBC
@@ -3445,8 +3145,8 @@ technologies = {
 		}		
 
 		category_all_infantry = {
-			acclimatization_cold_climate_gain_factor = 0.15
-			default_morale = 0.01
+			acclimatization_cold_climate_gain_factor = 0.05
+			#default_morale = 0.01
 		}
 		
 		modifier = {
@@ -3473,7 +3173,7 @@ technologies = {
 					original_tag = CAN
 					original_tag = SWE
 					original_tag = FIN
-					original_tag = SAM
+					original_tag = SMI
 					original_tag = GRL
 					original_tag = ICE
 					original_tag = QBC
@@ -3491,8 +3191,8 @@ technologies = {
 		}
 
 		category_all_infantry = {
-			acclimatization_cold_climate_gain_factor = 0.15
-			default_morale = 0.01
+			acclimatization_cold_climate_gain_factor = 0.05
+			#default_morale = 0.01
 		}
 		
 		modifier = {
@@ -3519,7 +3219,7 @@ technologies = {
 					original_tag = CAN
 					original_tag = SWE
 					original_tag = FIN
-					original_tag = SAM
+					original_tag = SMI
 					original_tag = GRL
 					original_tag = ICE
 					original_tag = QBC
@@ -3532,8 +3232,8 @@ technologies = {
 	winter_clothes_1944 = {
 
 		category_all_infantry = {
-			acclimatization_cold_climate_gain_factor = 0.15
-			default_morale = 0.01
+			acclimatization_cold_climate_gain_factor = 0.05
+			#default_morale = 0.01
 		}
 		
 		modifier = {
@@ -3560,7 +3260,7 @@ technologies = {
 					original_tag = CAN
 					original_tag = SWE
 					original_tag = FIN
-					original_tag = SAM
+					original_tag = SMI
 					original_tag = GRL
 					original_tag = ICE
 					original_tag = QBC
@@ -3623,7 +3323,7 @@ technologies = {
 		jaeger = {
 			acclimatization_cold_climate_gain_factor = 0.20
 			soft_attack = 0.02
-			default_morale = 0.02
+			defense = 0.02
 		}
 		
 
@@ -3662,7 +3362,7 @@ technologies = {
 		jaeger = {
 			acclimatization_cold_climate_gain_factor = 0.20
 			soft_attack = 0.02
-			default_morale = 0.02
+			defense = 0.02
 		}
 		
 		path = {
@@ -3699,7 +3399,7 @@ technologies = {
 		jaeger = {
 			acclimatization_cold_climate_gain_factor = 0.20
 			soft_attack = 0.02
-			default_morale = 0.02
+			defense = 0.02 
 		}
 
 		path = {
@@ -3736,7 +3436,7 @@ technologies = {
 		jaeger = {
 			acclimatization_cold_climate_gain_factor = 0.20
 			soft_attack = 0.02
-			default_morale = 0.02
+			defense = 0.02 
 		}
 		
 		path = {
@@ -3774,7 +3474,7 @@ technologies = {
 		jaeger = {
 			acclimatization_cold_climate_gain_factor = 0.20
 			soft_attack = 0.02
-			default_morale = 0.02
+			defense = 0.02 
 		}
 
 		research_cost = 2.0
@@ -3820,8 +3520,8 @@ technologies = {
 		}
 
 		category_all_infantry = {
-			acclimatization_hot_climate_gain_factor = 0.15
-			default_morale = 0.01
+			acclimatization_hot_climate_gain_factor = 0.05
+			#default_morale = 0.01
 		}
 		
 		modifier = {
@@ -3848,7 +3548,7 @@ technologies = {
 				OR = {
 					original_tag = SWE
 					original_tag = FIN
-					original_tag = SAM
+					original_tag = SMI
 					original_tag = GRL
 					original_tag = ICE
 					original_tag = QBC
@@ -3865,8 +3565,8 @@ technologies = {
 		}		
 
 		category_all_infantry = {
-			acclimatization_hot_climate_gain_factor = 0.15
-			default_morale = 0.01
+			acclimatization_hot_climate_gain_factor = 0.05
+			#default_morale = 0.01
 		}
 		
 		modifier = {
@@ -3892,7 +3592,7 @@ technologies = {
 				OR = {
 					original_tag = SWE
 					original_tag = FIN
-					original_tag = SAM
+					original_tag = SMI
 					original_tag = GRL
 					original_tag = ICE
 					original_tag = QBC
@@ -3909,8 +3609,8 @@ technologies = {
 		}
 
 		category_all_infantry = {
-			acclimatization_hot_climate_gain_factor = 0.15
-			default_morale = 0.01
+			acclimatization_hot_climate_gain_factor = 0.05
+			#default_morale = 0.01
 		}
 		
 		modifier = {
@@ -3936,7 +3636,7 @@ technologies = {
 				OR = {
 					original_tag = SWE
 					original_tag = FIN
-					original_tag = SAM
+					original_tag = SMI
 					original_tag = GRL
 					original_tag = ICE
 					original_tag = QBC
@@ -3949,8 +3649,8 @@ technologies = {
 
 
 		category_all_infantry = {
-			acclimatization_hot_climate_gain_factor = 0.15
-			default_morale = 0.01
+			acclimatization_hot_climate_gain_factor = 0.05
+			#default_morale = 0.01
 		}
 		
 		modifier = {
@@ -3976,7 +3676,7 @@ technologies = {
 				OR = {
 					original_tag = SWE
 					original_tag = FIN
-					original_tag = SAM
+					original_tag = SMI
 					original_tag = GRL
 					original_tag = ICE
 					original_tag = QBC
@@ -4124,7 +3824,7 @@ technologies = {
 
 		desertinfantry = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02 
 			soft_attack = 0.02
 		}
 		
@@ -4167,7 +3867,7 @@ technologies = {
 
 		desertinfantry = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02 
 			soft_attack = 0.02
 		}
 		
@@ -4210,7 +3910,7 @@ technologies = {
 
 		desertinfantry = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02 
 			soft_attack = 0.02
 		}
 		
@@ -4237,7 +3937,7 @@ technologies = {
 
 		desertinfantry = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02 
 			soft_attack = 0.02
 		}
 		
@@ -4280,7 +3980,7 @@ technologies = {
 
 		desertinfantry = {
 			acclimatization_hot_climate_gain_factor = 0.20
-			default_morale = 0.02
+			defense = 0.02 
 			soft_attack = 0.02
 		}
 		
@@ -4325,12 +4025,12 @@ technologies = {
 		}	
 
 		category_all_infantry = {
-			default_morale = 0.02
+			ap_attack = 0.02
 			breakthrough = 0.02
 			hard_attack = 0.02
 		}
 		category_support_battalions = {
-			default_morale = 0.02
+			ap_attack = 0.02
 			breakthrough = 0.02
 			hard_attack = 0.02
 		}
@@ -4357,12 +4057,12 @@ technologies = {
 	camo1942 = {
 
 		category_all_infantry = {
-			default_morale = 0.02
+			ap_attack = 0.02
 			breakthrough = 0.02
 			hard_attack = 0.02
 		}
 		category_support_battalions = {
-			default_morale = 0.02
+			ap_attack = 0.02
 			breakthrough = 0.02
 			hard_attack = 0.02
 		}
@@ -4394,12 +4094,12 @@ technologies = {
 	camo1948 = {
 
 		category_all_infantry = {
-			default_morale = 0.02
+			ap_attack = 0.02
 			breakthrough = 0.02
 			hard_attack = 0.02
 		}
 		category_support_battalions = {
-			default_morale = 0.02
+			ap_attack = 0.02
 			breakthrough = 0.02
 			hard_attack = 0.02
 		}
@@ -4431,12 +4131,12 @@ technologies = {
 	camo1955 = {
 
 		category_all_infantry = {
-			default_morale = 0.02
+			ap_attack = 0.02
 			breakthrough = 0.02
 			hard_attack = 0.02
 		}
 		category_support_battalions = {
-			default_morale = 0.02
+			ap_attack = 0.02
 			breakthrough = 0.02
 			hard_attack = 0.02
 		}
@@ -4620,63 +4320,234 @@ technologies = {
 		}
 	}
 
-	SWE_lynx_armored_car = {	#was elsewhere in the file, but structure is different in R56
+	r56_SWE_lynx_armored_car = {	#was elsewhere in the file, but structure is different in R56
 		allow = { always = no }
-	   enable_equipments = {
-		   #armored_car_at_equipment
-	   }
+		enable_equipments = {
+			#armored_car_at_equipment
+		}
 
-	   research_cost = 1
-	   start_year = 1942
-	   sub_tech_index = 1
-	   
-	   categories = {
-		   motorized_equipment
-		   armor
-		   cat_armored_cars
-	   }
+		research_cost = 1
+		start_year = 1942
+		sub_tech_index = 1
+		
+		categories = {
+			motorized_equipment
+			armor
+			cat_armored_cars
+		}
 
-	   armored_car = {
-		   max_organisation = 5
-		   ap_attack = 0.1
-		   hard_attack = 0.1
-		   #hardness = 1
-		   forest = {
-			   attack = 0.2
-			   movement = 0.55
-		   }
-		   desert = {
-			   attack = -0.2
-			   movement = -0.55
-		   }
+		armored_car = {
+			max_organisation = 6
+			ap_attack = 0.1
+			hard_attack = 0.1
+			forest = {
+				attack = 0.1
+				movement = 0.1
+			}
+			desert = {
+				attack = 0.1
+				movement = 0.1
+			}
 
-		   snow = {
-			   attack = 0.2
-			   movement = 0.35
-		   }
-	   }
+			snow = {
+				attack = 0.1
+				movement = 0.1
+			}
+	   	}
 
-	   armored_car_recon = {
-		   max_organisation = 3
-		   ap_attack = 0.1
-		   hard_attack = 0.1
-		   #hardness = 1
-		   forest = {
-			   attack = 0.05
-			   movement = 0.1
-		   }
-		   desert = {
-			   attack = -0.15
-			   movement = -0.15
-		   }
+		armored_car_recon = {
+			max_organisation = 4
+			ap_attack = 0.1
+			hard_attack = 0.1
+			forest = {
+				attack = 0.1
+				movement = 0.1
+			}
+			desert = {
+				attack = 0.1
+				movement = 0.1
+			}
 
-		   snow = {
-			   attack = 0.2
-			   movement = 0.25
-		   }
-	   }
+			snow = {
+				attack = 0.2
+				movement = 0.2
+			}
+		}
    }
+
+	TOA_jungle_pioneers_support_tech = {
+			
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			jungle_pioneers_support
+		}
+	}
+
+	ToA_river_boats_tech = { #hidden tech to boost Brazil via Brown Water Navy focus
+		# Remember to update tt: BRA_brown_water_navy_idea_bonus_tt
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		category_all_infantry = {
+			river = {
+				movement = 0.1
+				attack = 0.1
+				defence = 0.05
+			}
+		}
+	}
 	
+	######### FROM GERMAN FOCUS ##########
+	sturmtruppe_battalion_tech = {
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			sturmtruppe_battalion
+		}
+	}
+
+	GER_heavy_armored_car = {
+ 		allow = { always = no }
+		enable_equipments = {
+			#armored_car_at_equipment
+		}
+
+		research_cost = 1
+		start_year = 1936
+		sub_tech_index = 1
+		
+		categories = {
+			motorized_equipment
+			armor
+			cat_armored_cars
+		}
+
+		armored_car_recon = {
+			max_strength = 3
+			max_organisation = 2
+			armor_value = 0.5
+			#ap_attack = 0.1
+			#hard_attack = 0.1
+			#hardness = 1
+			recon = 1
+			defense = 0.1
+			forest = {
+		    	#attack = 0.05
+				movement = 0.05
+			}
+			desert = {
+		    	#attack = 0.05
+				movement = 0.1
+			}
+			plains = {
+				movement = 0.1
+			}
+		}
+	}	
+
+
+	##### FROM BELGIAN FOCUS #####
+	BEL_chasseurs_ardennais = { #hidden tech to boost Mountaineers in Forests. Remember to update BEL_chasseurs_ardennais_tt if you change these numbers!
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		category_jaeger = {
+			forest = {
+				attack = 0.05
+				defence = 0.1
+			}
+		}
+	}
+
+	uranium_tipped_bullets = {
+
+		allow = {
+			always = no #UPDATE RAJ_uranium_tipped_bullets_tt if changing
+		}
+
+		research_cost = 1
+		start_year = 1947
+
+		category_all_infantry = {
+			hard_attack = 0.25
+			ap_attack = 1
+		}
+
+		category_cavalry = {
+			hard_attack = 0.1
+			ap_attack = 0.4
+		}
+
+		category_artillery = {
+			hard_attack = 1
+		}
+
+		#artillery = {
+		#	hard_attack = 2
+		#}
+		#artillery_brigade = {
+		#	hard_attack = 2.5
+		#}
+		#mot_artillery_brigade = {
+		#	hard_attack = 1
+		#}
+		#category_self_propelled_artillery = {
+		#	hard_attack = 0.5
+		#}
+
+		category_tank_destroyers = {
+			hard_attack = 0.15
+			ap_attack = 0.2
+		}
+
+		anti_tank = {
+			hard_attack = 0.1
+			ap_attack = 0.2
+		}
+		#anti_tank_brigade = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.2
+		#}
+		mot_anti_tank_brigade = {
+			hard_attack = 0.1
+			ap_attack = 0.2
+		}
+
+		anti_air = {
+			air_attack = 0.1
+		}
+		#anti_air_brigade = {
+		#	air_attack = 0.1
+		#}
+		mot_anti_air_brigade = {
+			air_attack = 0.1
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
 ###------> X <><> <><> <><> <><> <><>	
 
 	

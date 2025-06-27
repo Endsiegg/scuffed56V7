@@ -6,13 +6,16 @@ GRE_historical_plan = {
 		original_tag = GRE
 	}
 	enable = {
+		NOT = {
+			has_focus_tree = r56_greek_focus
+		}
 		OR = {
 			AND = {
 				is_historical_focus_on = yes
 				has_game_rule = {
 					rule = GRE_ai_behavior
 					option = DEFAULT
-				}	
+				}
 			}
 			has_country_flag = GRE_AI_RANDOM_NEUTRALITY_HISTORICAL
 			has_game_rule = {
@@ -31,7 +34,7 @@ GRE_historical_plan = {
 				has_government = democratic
 				date > 1938.01.01
 			}
-			
+
 			has_government = fascism
 		}
 	}

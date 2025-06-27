@@ -1,21 +1,8 @@
-#formable_nations = {
-#
-#	icon = generic_formable_nations
-#
-#	allowed = {
-#		has_dlc = "Waking the Tiger"
-#	}
-#}
-
 form_scandinavia_category = {
 
 	icon = scandinavia_decision_icon_category
 
 	picture = GFX_decision_cat_generic_scandinavia
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
 
 	priority = 20
 
@@ -49,10 +36,6 @@ form_nordic_league_category = {
 
 	picture = GFX_decision_cat_generic_nordic_league
 
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
-
 	priority = 20
 
 	on_map_area = {
@@ -64,18 +47,21 @@ form_nordic_league_category = {
 					#Norway
 					region = 191
 					region = 11
+					state = 1027
 					#Sweden
 					region = 192
 					region = 10
 					region = 9 #including Aland
 					#Mainland Denmark
 					state = 37
+					state = 1025
 					state = 99
 					state = 964
 					#islands
 					state = 337
 					state = 100
 					state = 101
+					state = 1043
 					#Finland
 					region = 13	#sorry, but you need Karelia, Petsamo and Salla too!
 					AND = {
@@ -96,10 +82,6 @@ form_gran_colombia_category = {
 	icon = generic_formable_nations
 
 	picture = GFX_decision_cat_generic_gran_colombia
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
 
 	priority = 20
 
@@ -135,10 +117,6 @@ form_austria_hungary_category = {
 
 	picture = GFX_decision_cat_generic_austria_hungary
 
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
-
 	priority = 20
 
 	on_map_area = {
@@ -151,9 +129,12 @@ form_austria_hungary_category = {
 					state = 153
 					state = 152
 					state = 4
+					state = 848
+					state = 1054
+					state = 1086
 					# Czechoslovakia without Ruthenia
 					region = 22
-					# Hungary + Transylvania
+					# Hungary + Ruthenia + Transylvania
 					region = 27
 					# Slovenia
 					state = 956
@@ -185,11 +166,6 @@ form_commonwealth_category = {
 	icon = generic_formable_nations
 
 	picture = GFX_decision_cat_generic_commonwealth
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
-
 	priority = 20
 
 	on_map_area = {
@@ -236,14 +212,7 @@ form_united_netherlands_category = {
 	picture = GFX_decision_cat_generic_united_netherlands
 
 	allowed = {
-		OR = {
-			has_dlc = "Waking the Tiger"
-			AND = {
-				has_dlc = "Man the Guns"
-				tag = HOL
-			}
-		}
-		has_global_flag = form_united_netherlands_flag_locked
+		original_tag = LUX
 	}
 
 	priority = 20
@@ -262,6 +231,8 @@ form_united_netherlands_category = {
 					state = 6
 					state = 34
 					state = 965
+					state = 1094
+					state = 1095
 					# Luxembourg
 					state = 8
 				}
@@ -276,10 +247,6 @@ form_united_central_america_category = {
 	icon = generic_formable_nations
 
 	picture = GFX_decision_cat_generic_united_central_america
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
 
 	priority = 20
 
@@ -306,11 +273,6 @@ form_baltic_federation_category = {
 	icon = generic_formable_nations
 
 	picture = GFX_decision_cat_generic_baltic_federation
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
-
 	priority = 20
 
 	on_map_area = {
@@ -332,10 +294,6 @@ form_ottoman_empire_category = {
 
 	picture = GFX_decision_cat_generic_ottoman_empire
 
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
-
 	priority = 20
 
 	on_map_area = {
@@ -347,9 +305,13 @@ form_ottoman_empire_category = {
 					state = 679
 					state = 293
 					state = 454
+					state = 1016
+					state = 1017
 					state = 949
 					state = 966
 					state = 455
+					state = 1021
+					state = 1022
 					state = 656
 					state = 731
 					state = 184
@@ -379,6 +341,12 @@ form_ottoman_empire_category = {
 					state = 676
 					state = 675
 					state = 291
+					state = 1045
+					state = 1046
+					state = 1047
+					state = 1048
+					state = 1049
+					
 					# Syria
 					state = 677
 					state = 680
@@ -398,10 +366,6 @@ form_european_union_category = {
 	icon = generic_formable_nations
 
 	picture = GFX_decision_cat_generic_european_union
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
 
 	priority = 20
 
@@ -424,16 +388,11 @@ form_european_union_category = {
 					state = 39
 					state = 160
 					state = 912
+					state = 850 #Trentino
 					#Germany
 					region = 7
-					AND = {
-						region = 6
-						NOT = {
-							state = 37
-							state = 99
-							state = 964
-						}
-					}
+					region = 6
+					state = 998
 				}
 			}
 		}
@@ -446,10 +405,6 @@ form_mutapa_category = {
 	icon = generic_formable_nations
 
 	picture = GFX_decision_cat_generic_mutapa
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
 
 	priority = 20
 
@@ -482,57 +437,53 @@ form_roman_empire_category = {
 
 	picture = GFX_decision_cat_generic_roman_empire
 
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
-
 	priority = 20
 
-	on_map_area = {
+	on_map_area = {	#updated
 		name = GEN_control_of_these_states_is_required_to_form_the_nation
 		target_array = global.r56_formables_states_array
 		target_trigger = {
 			FROM = {
 				OR = {
 					# Some Dutch states
-					state = 7
-					state = 35
+					#state = 7
+					#state = 35
 					# Some Luxemburgian states
-					state = 8
+					#state = 8
 					# Some Austrian states
-					state = 153
+					#state = 153
 					# Some Hungarian states
-					state = 154
-					state = 913
+					# state = 154
+					# state = 913
 					# Albania
 					state = 44
 					state = 805
 					state = 910
 					# Yugoslavia
-					state = 102
+					#state = 102
 					state = 103
-					state = 109
-					state = 104
-					state = 45
-					state = 107
+					#state = 109
+					#state = 104	#removed over vanilla, since R56 has an extra coastal state
+					#state = 45
+					#state = 107
 					state = 105
-					state = 108
-					state = 106
-					state = 764
+					#state = 108
+					#state = 106
+					#state = 764
 
-					state = 802
-					state = 950
-					state = 803
-					state = 952
-					state = 953
-					state = 956
+					#state = 802
+					#state = 950
+					#state = 803
+					#state = 952
+					#state = 953
+					#state = 956
 					state = 853
 					state = 958
-					state = 959
-					state = 804
-					state = 961
-					state = 962
-					state = 963
+					#state = 959
+					#state = 804	#removed over vanilla, since R56 has an extra coastal state
+					#state = 961
+					#state = 962
+					#state = 963
 					# Greece
 					state = 185
 					state = 731
@@ -542,41 +493,41 @@ form_roman_empire_category = {
 					state = 187
 					state = 182
 					# Bulgaria
-					state = 48
-					state = 212
-					state = 211
-					state = 801
+					# state = 48
+					# state = 212
+					# state = 211
+					# state = 801
 					# Some Romanian states
-					state = 76
-					state = 84
-					state = 83
-					state = 82	
-					state = 764
-					state = 81
-					state = 46
-					state = 77
-					state = 955
+					# state = 76
+					# state = 84
+					# state = 83
+					# state = 82	
+					# state = 764
+					# state = 81
+					# state = 46
+					# state = 77
+					# state = 955
 					# Turkey
 					state = 341
 					state = 340
 					state = 339
 					state = 342
-					state = 343
-					state = 347
-					state = 49
-					state = 346
+					#state = 343
+					state = 347		#Izmit, added over vanilla
+					#state = 49
+					#state = 346
 					state = 345
-					state = 356
-					state = 348
+					#state = 356
+					#state = 348
 					state = 344
-					state = 355
-					state = 349
-					state = 350
-					state = 354
-					state = 353
-					state = 352
-					state = 798
-					state = 800		#Van
+					#state = 355
+					#state = 349
+					#state = 350
+					#state = 354
+					#state = 353
+					#state = 352
+					#state = 798
+					#state = 800		#Van
 					state = 797		#Istanbul
 					# Iraq
 					#custom_trigger_tooltip = {
@@ -584,20 +535,26 @@ form_roman_empire_category = {
 					#	state = 676
 					#	state = 675
 					#	state = 291
+					#state = 1045
+					#state = 1046
+					#state = 1047
+					#state = 1048
+					#state = 1049
+					#
 					#}
 					# Switzerland
-					state = 3
-					state = 151
+					# state = 3
+					# state = 151
 					# Portugal
-					state = 180
-					state = 181
-					state = 112
-					state = 179
-					state = 795
+					# state = 180
+					# state = 181
+					# state = 112
+					# state = 179
+					# state = 795
 					# Belgium
-					state = 6
-					state = 34
-					state = 965
+					# state = 6
+					# state = 34
+					# state = 965
 					# Italy
 					state = 158
 					state = 159
@@ -616,6 +573,8 @@ form_roman_empire_category = {
 					state = 957		#Marche
 					state = 736		#Litorale
 					state = 912		#Friuli
+					state = 850		#Trentino
+					state = 852		#Istria
 					# North Africa / Dodecanese
 					state = 164
 					state = 448
@@ -627,69 +586,71 @@ form_roman_empire_category = {
 					state = 663
 					# Spain
 					state = 165
-					state = 166
+					#state = 166
 					state = 167
 					state = 177
-					state = 171
-					state = 174
-					state = 172
-					state = 176
-					state = 170
-					state = 41
-					state = 175
-					state = 169
+					#state = 171
+					#state = 174
+					#state = 172
+					#state = 176
+					#state = 170
+					#state = 41
+					#state = 175
+					#state = 169
 					state = 173
 					state = 168
-					state = 788
-					state = 789
-					state = 790
-					state = 791
-					state = 792
-					state = 793
-					state = 794
-					state = 973		#Andorra
+					#state = 788
+					#state = 789
+					#state = 790
+					#state = 791
+					#state = 792
+					#state = 793
+					#state = 794
+					#state = 973		#Andorra
 					# North Africa
 					state = 290
-					# France
-					state = 29
-					state = 18
-					state = 17
-					state = 28
-					state = 15
-					state = 16
-					state = 27
-					state = 14
-					state = 30
-					state = 24
-					state = 23
-					state = 33
-					state = 26
-					state = 20
-					state = 32
+					# France (ordered mostly north to south)
+					#state = 29
+					#state = 18
+					#state = 17
+					#state = 28
+					#state = 15
+					#state = 16
+					#state = 785
+					#state = 27
+					#state = 14
+					#state = 30
+					#state = 24
+					#state = 23
+					#state = 33
+					#state = 26
+					#state = 20
+					#state = 32
 					state = 735
-					state = 25
+					#state = 25
 					state = 22
 					state = 21
-					state = 19
-					state = 20
+					#state = 19
+					#state = 20
 					state = 1
 					state = 31
-					state = 785
-					state = 806		#Pyrenees-Atlantiques
-					# North Africa
+					#state = 806		#Pyrenees-Atlantiques
+					state = 851		#Var
+					# Tunis
 					state = 458
 					state = 665
+					# Algeria
 					state = 460
-					state = 513
-					state = 933
+					#state = 513
+					#state = 933
 					state = 459
 					state = 461
 					# Syria
 					state = 677
-					state = 680
 					state = 553
-					state = 554
 					state = 799		#Hatay
+					#state = 680
+					#state = 554
 					# Britain
 					#state = 127
 					#state = 123
@@ -706,17 +667,19 @@ form_roman_empire_category = {
 					state = 452
 					state = 447
 					state = 907
-					state = 456
-					state = 457
+					#state = 456
+					#state = 457
 					state = 453
 					state = 454
 					state = 949
-					state = 966
-					state = 455
+					#state = 966
+					#state = 455
 					state = 183
-					state = 656
 					state = 911	#Suez
 					state = 995	#East Suez
+					state = 966
+					state = 1016
+					state = 1017
 					# Gibraltar
 					state = 118
 					# Malta 
@@ -733,10 +696,6 @@ form_persian_empire_category = {
 	icon = generic_formable_nations
 
 	picture = GFX_decision_cat_generic_persian_empire
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
 
 	priority = 20
 
@@ -773,10 +732,20 @@ form_persian_empire_category = {
 					# Afghanistan
 						state = 415
 						state = 267
+						state = 1008
+						state = 1009
+						state = 1010
+						state = 1011
 					# Iraq
 						state = 676
 						state = 675
 						state = 291
+						state = 1045
+						state = 1046
+						state = 1047
+						state = 1048
+						state = 1049
+						
 					# Turkey
 						state = 341
 						state = 340
@@ -819,6 +788,8 @@ form_persian_empire_category = {
 						state = 453
 						state = 454
 						state = 455
+						state = 1021
+						state = 1022
 						state = 183
 						state = 656
 						state = 966
@@ -836,10 +807,6 @@ form_byzantine_empire_category = {
 	icon = byzantine_decision_icon
 
 	picture = GFX_decision_cat_generic_byzantine_empire
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
 
 	priority = 20
 
@@ -871,10 +838,6 @@ form_arabia_category = {
 
 	picture = GFX_decision_cat_generic_arabia
 
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
-
 	priority = 2
 
 	on_map_area = {
@@ -886,10 +849,16 @@ form_arabia_category = {
 					# Spain: Northern Africa
 						state = 290
 						state = 783
+						state = 699
 					# Iraq
 						state = 676
 						state = 675
 						state = 291
+						state = 1045
+						state = 1046
+						state = 1047
+						state = 1048
+						state = 1049
 					# Saudi Arabia
 						state = 292
 						state = 679
@@ -902,6 +871,7 @@ form_arabia_category = {
 						state = 450
 						state = 451
 						state = 663
+						state = 273
 					# France: Syria, Northern Africa
 						# North Africa
 						state = 458
@@ -912,11 +882,15 @@ form_arabia_category = {
 						state = 459
 						state = 461
 						state = 462
+						state = 514
 						# Syria
 						state = 677
 						state = 680
 						state = 553
 						state = 554
+						#Mauritania
+						state = 557
+						state = 786
 					# Britain: Egypt, Sudan, Middle East and Arabia
 						state = 452
 						state = 447
@@ -930,6 +904,8 @@ form_arabia_category = {
 						state = 949
 						state = 966
 						state = 455
+						state = 1021
+						state = 1022
 						state = 656
 						state = 658
 						state = 659
@@ -944,7 +920,13 @@ form_arabia_category = {
 						state = 855
 						state = 293
 						state = 294
+						state = 1102
+						state = 1103
 						state = 765
+						state = 1007
+						state = 767
+						state = 552
+						state = 979
 					}
 				}
 			}
@@ -952,15 +934,11 @@ form_arabia_category = {
 	}
 }
 
-form_majapahit_empire_category = {
+form_malayan_confederation_category = {
 
 	icon = generic_formable_nations
 
 	picture = GFX_decision_cat_generic_majapahit_empire
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
 
 	priority = 20
 
@@ -970,39 +948,40 @@ form_majapahit_empire_category = {
 		target_trigger = {
 			FROM = {
 				OR = {
-					# Dutch East Indies
-					region = 187
-					state = 909	#Riau Islands
-					region = 158
-					AND = {	#Shall include Indonesian Calimantan
-						region = 159
-						NOT = {
-							state = 333	#Sarawak
-							state = 916	#Sabah
-						}
-					}
-					AND = {
-						region = 93
-						NOT = {
-							state = 721	#no East Timor
-						}
-					}
-					region = 91
+					state = 974
+					state = 672
+					state = 335
+					state = 976
+					state = 446
+					state = 667
+					state = 978
+					state = 334
+					state = 977
+					state = 673
+					state = 975
+					state = 668
 					state = 669
-					# British Malaya
-					AND = {
-						region = 188
-						NOT = {
-							state = 724
-							state = 977
-						}
-					}
+					state = 738
+					state = 909
 					state = 333	#Sarawak
 					state = 916	#Sabah
+					state = 336
+					state = 951
+					state = 915
+					state = 960
+					state = 914
+					state = 1014 #Brunei
+					state = 627
+					state = 628
+					state = 626
+					state = 625
+					state = 624
+					state = 623
+					state = 327
 				}
 			}
 		}
-		zoom = 700
+		zoom = 750
 	}
 }
 
@@ -1011,10 +990,6 @@ form_rattanakosin_kingdom_category = {
 	icon = generic_formable_nations
 
 	picture = GFX_decision_cat_generic_rattanakosin_kingdom
-
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
 
 	priority = 20
 
@@ -1055,10 +1030,6 @@ form_hre_category = {
 
 	picture = GFX_decision_cat_generic_hre
 
-	allowed = {
-		has_dlc = "Waking the Tiger"
-	}
-
 	priority = 20
 
 	on_map_area = {
@@ -1089,15 +1060,17 @@ form_hre_category = {
 					state = 66
 					state = 67
 					state = 63
-					state = 989 #Ostrhineland
-					state = 922 #Frankfurt
-					state = 923 #Baden
+					state = 989		#Ostrhineland
+					state = 922		#Frankfurt
+					state = 923		#Baden
+					state = 1053	#Saarland
 					#other
 					state = 8	#Luxembourgh
 					state = 28	#Alsace
 					state = 735	#Savoy
 					# Czechia
 					state = 69
+					state = 1078
 					state = 9
 					state = 75
 					state = 74
@@ -1117,11 +1090,19 @@ form_hre_category = {
 					state = 845	#Jura Mountains
 					state = 846	#Ticino
 					state = 847	#Western Swiss Alps
+					# Liechtenstein
+					state = 997
 					# Austria
 					state = 153
 					state = 152
 					state = 4
-					state = 848	#Vorarlberg
+					state = 848	 #Vorarlberg
+					state = 1054 #Styria
+					state = 1086 #Burgenland
+					# Slovenia
+					state = 102
+					state = 853
+					state = 956
 					# Netherlands
 					state = 7
 					state = 35
@@ -1130,6 +1111,8 @@ form_hre_category = {
 					state = 6
 					state = 34
 					state = 965
+					state = 1094
+					state = 1095
 				}
 			}
 		}
@@ -1143,11 +1126,77 @@ form_greater_german_reich_category = {
 
 	picture = GFX_decision_cat_generic_hre
 
-	allowed = {
-		has_dlc = "Waking the Tiger"
+	on_map_area = {
+		name = GEN_control_of_these_states_is_required_to_form_the_nation
+		target_array = global.r56_formables_states_array
+		target_trigger = {
+			FROM = {
+				OR = {
+					state = 5
+					state = 763
+					state = 51
+					state = 42
+					state = 56
+					state = 57
+					state = 55
+					state = 50
+					state = 59
+					state = 58
+					state = 998
+					state = 60
+					state = 54
+					state = 52
+					state = 53
+					state = 61
+					state = 64
+					state = 65
+					state = 62
+					state = 68
+					state = 66
+					state = 67
+					state = 63
+					state = 989 
+					state = 922 
+					state = 923 
+					state = 998 				
+					state = 69				
+					state = 1078				
+					state = 74		
+					state = 153
+					state = 152
+					state = 4
+					state = 848
+					state = 1054
+					state = 1086
+					state = 85
+					state = 807
+					state = 86
+					state = 762
+					state = 188
+					state = 964
+					state = 8
+					state = 965
+					state = 28
+					state = 956
+					state = 102
+					state = 1053	#Saarland
+				}
+			}
+		}
+		zoom = 800
 	}
 }
 
+form_greater_german_state_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_picture_greater_proletarian_germany
+
+	allowed = {
+		has_dlc = "Gotterdammerung"
+	}
+}
 form_andalusia_category = {
 
 	icon = generic_formable_nations
@@ -1188,7 +1237,7 @@ form_polynesia_category = {
 
 	icon = generic_formable_nations
 
-	picture = GFX_decision_cat_generic_polynesia
+	picture = GFX_decision_cat_picture_generic_polynesia
 
 	priority = 20
 
@@ -1199,18 +1248,23 @@ form_polynesia_category = {
 			FROM = {
 				OR = {
 					# Polynesia
-					state = 284 #North Island
+					state = 630 #Johnston Atoll
 					state = 629 #Hawaii
-					state = 684 #Caroline Islands
-					state = 638 #Guam
+					state = 642 #Canton Island
+					state = 643 #Ellice Islands
 					state = 641 #Tahiti
-					state = 646 #Saipan
+					state = 727 #Line Islands
+					state = 284 #North Island
 					state = 723 #South Island
+					state = 1087 #Chatham Islands
 					state = 726 #Samoa
+					state = 1088 #American Samoa
+					state = 734 #Tonga
+					state = 1089 #Niue
 				}
 			}
 		}
-		zoom = 800
+		zoom = 1000
 	}
 }
 
@@ -1296,18 +1350,22 @@ form_turan_category = {
 					# Syria
 						state = 677
 						state = 680
+						state = 799
 					# Iraq
 						state = 676
+						state = 1048
+						state = 1049
 					# Persia
 						state = 421
 						state = 419
 						state = 420
-						state = 417
-						state = 413
-						state = 266
-						state = 416
+						state = 983
+						state = 987
+						state = 988
+						
 					# Azerbaijan
 						state = 229
+						state = 1044
 					# Kuban Region + Crimea
 						state = 233
 						state = 232
@@ -1341,6 +1399,16 @@ form_turan_category = {
 						state = 590
 						state = 570
 						state = 571
+						state = 823
+						state = 831
+						state = 832
+						state = 830
+						state = 985
+						state = 881
+						state = 882
+						state = 874
+						state = 822
+						state = 882
 					# Siberia
 						state = 654
 						state = 40
@@ -1400,6 +1468,9 @@ form_macedonian_empire_category = {
 					state = 105
 					state = 44
 					state = 805
+					state = 910
+					state = 950
+					state = 963
 					# Iran
 					state = 419
 					state = 421
@@ -1413,9 +1484,22 @@ form_macedonian_empire_category = {
 					state = 416
 					state = 414
 					state = 410
+					state = 988
+					state = 987
+					state = 420
+					state = 986
+					state = 984
+					state = 983
+					state = 982
+					state = 981
+					state = 980
 					# Afghanistan
 					state = 415
 					state = 267
+					state = 1008
+					state = 1009
+					state = 1010
+					state = 1011
 					# Central Asia
 					state = 742 # Tajikistan
 					state = 405 # Uzbekistan
@@ -1424,6 +1508,11 @@ form_macedonian_empire_category = {
 					state = 676
 					state = 675
 					state = 291
+					state = 1045
+					state = 1046
+					state = 1047
+					state = 1048
+					state = 1049
 					# Turkey
 					state = 341
 					state = 340
@@ -1444,11 +1533,14 @@ form_macedonian_empire_category = {
 					state = 353
 					state = 352
 					state = 797
+					state = 798
+					state = 800
 					# France: Syria
 					state = 677
 					state = 680
 					state = 553
 					state = 554
+					state = 799
 					# Britain: Egypt
 					state = 452
 					state = 447
@@ -1456,13 +1548,22 @@ form_macedonian_empire_category = {
 					state = 456
 					state = 453
 					state = 457
+					state = 911
+					state = 995
 					# Britain: Levant / Kuwait
 					state = 454
 					state = 455
+					state = 1021
+					state = 1022
 					state = 656
+					state = 966
+					state = 1016
+					state = 1017
+					state = 949
 					# Raj / Punjab
 					state = 440
 					state = 443
+					state = 1093
 					state = 441
 					state = 787
 					state = 442
@@ -1480,7 +1581,7 @@ form_mountainous_republic_category = {
 
 	icon = generic_formable_nations
 
-	#picture = GFX_decision_cat_picture_form_turan
+	#picture = GFX_decision_cat_picture_form_mountainous_republic
 	
 	allowed = {
 		has_dlc = "No Step Back"
@@ -1510,7 +1611,7 @@ form_transcaucasus_category = {
 
 	icon = generic_formable_nations
 
-	#picture = GFX_decision_cat_picture_form_turan
+	#picture = GFX_decision_cat_picture_form_transcaucasian_republic
 	
 	allowed = {
 		has_dlc = "No Step Back"
@@ -1528,6 +1629,7 @@ form_transcaucasus_category = {
 					state = 231 # Georgia
 					state = 230 # Armenia
 					state = 229 # Azerbaijan
+					state = 1044 # Nakhchivan
 				}
 			}
 		}
@@ -1539,7 +1641,7 @@ form_siberia_category = {
 
 	icon = generic_formable_nations
 
-	#picture = GFX_decision_cat_picture_form_turan
+	#picture = GFX_decision_cat_picture_form_siberian_republic
 	
 	allowed = {
 		has_dlc = "No Step Back"
@@ -1569,7 +1671,7 @@ form_idel_ural_category = {
 
 	icon = generic_formable_nations
 
-	#picture = GFX_decision_cat_picture_form_turan
+	#picture = GFX_decision_cat_picture_form_idel_uralic_republic
 	
 	allowed = {
 		has_dlc = "No Step Back"
@@ -1599,7 +1701,7 @@ form_ethiopian_empire_category = {
 
 	icon = generic_formable_nations
 
-	#picture = GFX_decision_cat_picture_form_turan
+	#picture = GFX_decision_cat_picture_form_the_horn_of_africa
 	
 	allowed = {
 		has_dlc = "By Blood Alone"
@@ -1610,7 +1712,7 @@ form_east_africa_category = {
 
 	icon = generic_formable_nations
 
-	#picture = GFX_decision_cat_picture_form_turan
+	#picture = GFX_decision_cat_picture_form_east_africa
 	
 	allowed = {
 		
@@ -1621,7 +1723,7 @@ form_horn_of_africa_africa_category = {
 
 	icon = generic_formable_nations
 
-	#picture = GFX_decision_cat_picture_form_turan
+	#picture = GFX_decision_cat_picture_form_the_horn_of_africa
 	
 	allowed = {
 		has_dlc = "By Blood Alone"
