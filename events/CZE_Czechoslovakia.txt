@@ -1807,57 +1807,6 @@ country_event = {
 	option = { 
 		name = czke.220.a
 		ai_chance = { factor = 1 }		
-
-		if = {
-			limit = {
-				has_tech = fighter1
-			}
-			custom_effect_tooltip = new_model
-				create_equipment_variant = {
-				name = "B.634"
-				type = fighter_equipment_1
-				parent_version = 0
-					upgrades = {
-						plane_gun_upgrade = 1
-						plane_range_upgrade = 1
-						plane_engine_upgrade = 2
-						plane_reliability_upgrade = 2
-					}
-				}	
-			custom_effect_tooltip = new_aircraft_model
-			custom_effect_tooltip = gained_avia_bk
-			hidden_effect = {
-				CZE = {
-					set_technology = { heavy_fighter1 = 1 }
-				}
-			}
-		}	
-		
-		if = {
-			limit = {
-				NOT = { has_tech = fighter1 }
-			}
-			custom_effect_tooltip = new_aircraft_model
-			custom_effect_tooltip = gained_avia_b4
-			hidden_effect = {
-				CZE = {
-					set_technology = { fighter1 = 1 }
-				}
-			}
-		}
-
-		custom_effect_tooltip = new_model
-		create_equipment_variant = {
-			name = "Š.328/IV"
-			type = CAS_equipment_1
-			parent_version = 0
-			upgrades = {
-				plane_cas_upgrade = 2
-				plane_range_upgrade = 1
-				plane_engine_upgrade = 0
-				plane_reliability_upgrade = 4
-			}
-		}	
 	}
 }
 
