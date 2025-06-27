@@ -125,8 +125,8 @@ NDefines.NMilitary.PLAN_PROVINCE_HIGH_VP_IMPORTANCE_AREA = 10.0 -- vanilla 10
 NDefines.NMilitary.PLAN_PROVINCE_LOW_VP_IMPORTANCE_FRONT = 4.0 -- 2.0
 NDefines.NMilitary.PLAN_PROVINCE_MEDIUM_VP_IMPORTANCE_FRONT = 6.0 -- 2.25
 NDefines.NMilitary.PLAN_PROVINCE_HIGH_VP_IMPORTANCE_FRONT = 8.0 -- 2.75
-NDefines.NMilitary.PEN_VS_AVERAGE = 0.9 -- 0.4
-NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.2 -- 0.4
+NDefines.NMilitary.PEN_VS_AVERAGE = 0.6 -- 0.4
+NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.8 -- 0.4
 
 -- Addition with 1.3.2
 NDefines.NMilitary.PLAN_PORVINCE_PORT_BASE_IMPORTANCE = 18.0		-- increased from 12.0 ; Added importance for area defense province with a port
