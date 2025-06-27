@@ -1599,55 +1599,6 @@ focus_tree = {
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZKE_air_modernization_tooltip_reward
 			effect_tooltip = {
-				if = {
-					limit = {
-						has_tech = fighter1
-						NOT = {
-							has_dlc = "By Blood Alone"
-						}
-					}
-					create_equipment_variant = {
-						name = "B.634"
-						type = fighter_equipment_1
-						parent_version = 0
-						upgrades = {
-							plane_gun_upgrade = 1
-							plane_range_upgrade = 1
-							plane_engine_upgrade = 2
-							plane_reliability_upgrade = 2
-						}
-					}	
-					hidden_effect = {
-						CZE = {
-							set_technology = { heavy_fighter1 = 1 }
-						}
-					}
-				}
-				if = {
-					limit = {
-						NOT = { 
-							has_tech = fighter1 
-							has_dlc = "By Blood Alone"
-						}
-					}
-					hidden_effect = {
-						CZE = {
-							set_technology = { fighter1 = 1 }
-						}
-					}
-					create_equipment_variant = {
-						name = "Š.328/IV"
-						type = CAS_equipment_1
-						parent_version = 0
-						upgrades = {
-							plane_cas_upgrade = 2
-							plane_range_upgrade = 1
-							plane_engine_upgrade = 0
-							plane_reliability_upgrade = 4
-						}
-					}
-				}
-				else = {
 					if = {
 						limit = {
 							has_tech = basic_small_airframe
@@ -1675,7 +1626,6 @@ focus_tree = {
 							icon = "GFX_CZE_CAS3_medium"
 						}
 					}
-				}
 			}
 		}
 	}
