@@ -28,7 +28,7 @@ modifiers = {
 			air_maximum_speed_factor = 0.02
 			air_agility_factor = 0.07
 		}
-	}	
+	}
 	fighter_unique = {
 		type = { fighter interceptor }
 		chance = 0.4
@@ -46,7 +46,7 @@ modifiers = {
 			air_maximum_speed_factor = 0.01
 			air_agility_factor = 0.05
 		}
-	}	
+	}
 	fighter_genius = {
 		type = { fighter interceptor }
 		chance = 0.025
@@ -64,11 +64,11 @@ modifiers = {
 			air_maximum_speed_factor = 0.04
 			air_agility_factor = 0.08
 		}
-	}	
+	}
 
 	### Bombers ###
 	bomber_good = {
-		type = { tactical_bomber strategic_bomber } 
+		type = { tactical_bomber strategic_bomber }
 		chance = 0.3
 		effect = {
 			air_strategic_bomber_bombing_factor = 0.05
@@ -93,7 +93,16 @@ modifiers = {
 			ground_attack_factor = 0.06
 			air_range_factor = 0.015
 		}
-	}	
+	}
+	bomber_unique = {
+		type = { tactical_bomber strategic_bomber }
+		chance = 0.4
+		effect = {
+			air_strategic_bomber_bombing_factor = 0.10
+			ground_attack_factor = 0.08
+			air_range_factor = 0.06
+		}
+	}
 	bomber_unique_bombing = {
 		type = { tactical_bomber strategic_bomber }
 		chance = 0.2
@@ -111,7 +120,15 @@ modifiers = {
 			ground_attack_factor = 0.05
 			air_range_factor = 0.12
 		}
-	}	
+	}
+	bomber_genius = {
+		type = { tactical_bomber strategic_bomber }
+		chance = 0.05
+		effect = {
+			air_strategic_bomber_bombing_factor = 0.15
+			air_range_factor = 0.1
+		}
+	}
 	bomber_genius_bombing = {
 		type = { tactical_bomber strategic_bomber }
 		chance = 0.05
@@ -129,12 +146,12 @@ modifiers = {
 			ground_attack_factor = 0.075
 			air_range_factor = 0.25
 		}
-	}	
+	}
 
 	### Support ###
 
 	support_good = {
-		type = { cas naval_bomber }
+		type = { cas tactical_bomber naval_bomber }
 		chance = 0.3
 		effect = {
 			naval_strike_targetting_factor = 0.05
@@ -143,7 +160,7 @@ modifiers = {
 		}
 	}
 	support_good_bombing = {
-		type = { cas naval_bomber }
+		type = { cas tactical_bomber naval_bomber }
 		chance = 0.3
 		effect = {
 			naval_strike_targetting_factor = 0.09
@@ -151,16 +168,25 @@ modifiers = {
 		}
 	}
 	support_good_agility = {
-		type = { cas naval_bomber }
+		type = { cas tactical_bomber naval_bomber }
 		chance = 0.3
 		effect = {
 			naval_strike_targetting_factor = 0.025
 			ground_attack_factor = 0.02
 			air_agility_factor = 0.1
 		}
-	}	
+	}
+	support_unique = {
+		type = { cas tactical_bomber naval_bomber }
+		chance = 0.4
+		effect = {
+			naval_strike_targetting_factor = 0.1
+			ground_attack_factor = 0.05
+			air_agility_factor = 0.1
+		}
+	}
 	support_unique_bombing = {
-		type = { cas naval_bomber }
+		type = { cas tactical_bomber naval_bomber }
 		chance = 0.2
 		effect = {
 			naval_strike_targetting_factor = 0.2
@@ -169,16 +195,25 @@ modifiers = {
 		}
 	}
 	support_unique_agility = {
-		type = { cas naval_bomber }
+		type = { cas tactical_bomber naval_bomber }
 		chance = 0.2
 		effect = {
 			naval_strike_targetting_factor = 0.05
 			ground_attack_factor = 0.025
 			air_agility_factor = 0.2
 		}
-	}	
+	}
+	support_genius = {
+		type = { cas tactical_bomber naval_bomber }
+		chance = 0.05
+		effect = {
+			naval_strike_targetting_factor = 0.15
+			ground_attack_factor = 0.08
+			air_agility_factor = 0.15
+		}
+	}
 	support_genius_bombing = {
-		type = { cas naval_bomber }
+		type = { cas tactical_bomber naval_bomber }
 		chance = 0.025
 		effect = {
 			naval_strike_targetting_factor = 0.3
@@ -187,12 +222,12 @@ modifiers = {
 		}
 	}
 	support_genius_agility = {
-		type = { cas naval_bomber }
+		type = { cas tactical_bomber naval_bomber }
 		chance = 0.025
 		effect = {
 			naval_strike_targetting_factor = 0.075
 			ground_attack_factor = 0.16
 			air_agility_factor = 0.3
 		}
-	}	
+	}
 }

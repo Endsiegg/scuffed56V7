@@ -10,7 +10,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=moderatism
+			ideology = controlled_democracy
 			traits={ #technically he shouldnt be leader but this is for DLC reasons
 				#father_of_the_turks	#added automatically by DLC check
 				indomitable_perseverance
@@ -95,6 +95,7 @@ characters={
 			}
 			country_leader={
 				ideology=stalinism
+				traits = { heavy_industry_emphasis_trait }
 				expire="1965.1.1"
 				id=-1
 			}
@@ -145,7 +146,6 @@ characters={
 							}
 						}
 					}
-					has_completed_focus = TUR_fully_integrate_the_is_bank 
 				}
 				visible = {
 					has_global_flag = tur_bftb_focus_tree
@@ -220,8 +220,7 @@ characters={
 								has_idea = TUR_nihal_atsiz 
 							}
 						}
-					}
-					has_completed_focus = TUR_continue_the_policy_of_etatism 
+					}	#starting prime minister, hence no checks needed
 				}
 				visible = {
 					has_global_flag = tur_bftb_focus_tree
@@ -241,7 +240,7 @@ characters={
 			}
 			
 			country_leader={
-				ideology=despotism
+				ideology= social_nationalism
 				traits={ milli_sef }
 				expire="1965.1.1"
 				id=-1
@@ -258,7 +257,7 @@ characters={
 				}
 			}
 			country_leader={
-				ideology=despotism
+				ideology= social_nationalism
 				traits={ milli_sef }
 				expire="1965.1.1"
 				id=-1
@@ -317,24 +316,14 @@ characters={
 				grand_battle_plan_expert
 			}
 		}
-
-		corps_commander={
-			traits={ trait_cautious politically_connected desert_fox }
-			skill=2
-			attack_skill=1
-			defense_skill=1
-			planning_skill=2
-			logistics_skill=3
-			legacy_id=-1
-		}
 	}
 
 	TUR_mustafa_muglali={
 		name=TUR_mustafa_muglali
 		portraits={
 			army={
-				large="GFX_portrait_tur_mustafa_mugali"
-				small="gfx/interface/ideas/idea_TUR_mustafa_mugali.dds"
+				large = GFX_portrait_tur_mustafa_muglali
+				small = GFX_portrait_TUR_mustafa_muglali_small
 			}
 		}
 		corps_commander={
@@ -343,6 +332,25 @@ characters={
 			attack_skill=3
 			defense_skill=2
 			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	
+	TUR_abdulkadir_seven={ #Supposed to be Baki :pensive:
+		name="Abdülkadir Seven"
+		portraits={
+			army={
+				large="GFX_kr_portrait_europe_generic_land_1"
+				small="GFX_kr_portrait_europe_generic_land_1_small"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_leader skilled_staffer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
 			logistics_skill=1
 			legacy_id=-1
 		}
@@ -365,15 +373,23 @@ characters={
 				idea_token = TUR_salih_omurtak
 				allowed = {
 					original_tag = TUR
-					has_global_flag = tur_bftb_focus_tree
 				}
 				available = {
-					NOT = {
-						has_country_flag = TUR_ottoman_officers_invited_back
+					if = {
+						limit = {
+							has_global_flag = tur_bftb_focus_tree
+						}
+						NOT = {
+							has_country_flag = TUR_ottoman_officers_invited_back
+						}					
+					}
+					else = {
+						NOT = {
+							has_completed_focus = TUR_overthrow_inonus_government
+						}
 					}
 				}
 				visible = {
-					has_global_flag = tur_bftb_focus_tree
 					NOT = {
 						has_country_flag = TUR_ottoman_officers_invited_back
 					}
@@ -381,7 +397,7 @@ characters={
 				traits = {
 					army_chief_drill_2
 				}
-			cost = 100
+				cost = 100
 				ai_will_do = {
 					factor = 1.000
 				}
@@ -444,7 +460,7 @@ characters={
 		portraits={
 			army={
 				large="GFX_portrait_tur_mehmet_nuri_yamut"
-				small="gfx/interface/ideas/idea_TUR_mehmet_nuri_yamut.dds"
+				small=GFX_portrait_TUR_mehmet_nuri_yamut_small
 			}
 		}
 		corps_commander={
@@ -539,9 +555,6 @@ characters={
 				allowed = {
 					original_tag = TUR
 				}
-				visible = { 
-					has_global_flag = tur_bftb_focus_tree
-				}
 				traits = {
 					navy_chief_decisive_battle_2
 				}
@@ -569,6 +582,7 @@ characters={
 			portraits={
 				army={
 					small="GFX_idea_generic_navy_europe_3"
+					large = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
 				}
 			}
 			advisor={
@@ -584,10 +598,19 @@ characters={
 				traits = {
 					navy_chief_decisive_battle_2
 				}
-			cost =  100
+				cost =  100
 				ai_will_do = {
 					factor = 1.000
 				}
+			}
+			navy_leader={
+				traits = { navy_career_officer gunnery_expert}
+				skill = 3
+				attack_skill = 2
+				defense_skill = 3
+				maneuvering_skill = 3
+				coordination_skill = 2
+				legacy_id = -1
 			}
 		}
 	}
@@ -600,22 +623,35 @@ characters={
 				large="GFX_portrait_tur_sukru_okan"
 			}
 		}
-		advisor={
+		advisor= {
 			slot = navy_chief
 			idea_token = TUR_sukru_okan
 			allowed = {
 				original_tag = TUR
 			}
 			available = {
-				NOT = {
-					has_country_flag = TUR_ottoman_officers_invited_back
+				if = {
+					limit = {
+						has_global_flag = tur_bftb_focus_tree
+					}
+					NOT = {
+						has_country_flag = TUR_ottoman_officers_invited_back
+					}					
+				}
+				if = {
+					limit = {
+						has_focus_tree = turkish_focus_r56
+					}
+					NOT = {
+						has_completed_focus = TUR_overthrow_inonus_government
+					}
 				}
 			}
 			visible = {
-				has_global_flag = tur_bftb_focus_tree
 				NOT = {
 					has_country_flag = TUR_ottoman_officers_invited_back
-				}
+					has_completed_focus = TUR_overthrow_inonus_government
+				}					
 			}
 			traits = {
 				navy_chief_maneuver_2
@@ -631,8 +667,8 @@ characters={
 			skill=2
 			attack_skill=2
 			defense_skill=1
-			maneuvering_skill=1
-			coordination_skill=1
+			maneuvering_skill=2
+			coordination_skill=2
 			legacy_id=907
 		}
 	}
@@ -659,7 +695,6 @@ characters={
 					original_tag = TUR
 				}
 				visible = {
-					has_global_flag = tur_bftb_focus_tree
 					NOT = {
 						has_country_leader = {
 							character = TUR_fevzi_cakmak
@@ -668,7 +703,7 @@ characters={
 					}
 				}
 				available = {
-					not_already_hired_except_as = army_chief
+					not_already_hired_except_as = army_chief				
 				}
 				traits = {
 					army_chief_defensive_2
@@ -715,9 +750,8 @@ characters={
 						OR = {
 							has_completed_focus = TUR_kemalist_socialist_theory 
 							has_completed_focus = TUR_readdress_the_montreux_convention 
-							has_completed_focus = TUR_anti_bolshevik_mediterranean_bloc 
 							and = {
-								has_completed_focus = TUR_democratic_capstone_focus 
+								has_completed_focus = TUR_traditionalize_the_ataturk_legacy 
 								has_country_leader = {
 									character = TUR_celal_bayar
 									ruling_only = yes 
@@ -743,9 +777,6 @@ characters={
 				planning_skill=3
 				logistics_skill=3
 				legacy_id=901
-				visible = {
-					has_global_flag = tur_bftb_focus_tree
-				}
 			}
 		}
 		instance = {
@@ -770,7 +801,10 @@ characters={
 				}
 				visible = {
 					NOT = {
-						has_global_flag = tur_bftb_focus_tree
+						has_country_leader = {
+							character = TUR_fevzi_cakmak
+							ruling_only = yes
+						}
 					}
 				}
 				traits = {
@@ -786,6 +820,16 @@ characters={
 				ideology=fascism_ideology
 				expire="1966.1.1.1"
 				id=-1
+			}
+
+			field_marshal={
+				traits = { offensive_doctrine career_officer infantry_officer old_guard }
+				skill = 4
+				legacy_id = 60	
+				attack_skill = 4
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 3
 			}
 		}
 	}
@@ -830,9 +874,7 @@ characters={
 			idea_token = TUR_zeki_dogan
 			allowed = {
 				original_tag = TUR
-			}
-			visible = {	
-				has_global_flag = tur_bftb_focus_tree
+				has_dlc = "Battle for the Bosporus"
 			}
 			traits = {
 				air_chief_ground_support_2
@@ -840,30 +882,6 @@ characters={
 			cost = 100
 			ai_will_do = {
 				factor = 1.000
-			}
-		}
-	}
-	
-	TUR_vecihi_hurkus={
-		name=TUR_vecihi_hurkus
-		portraits={
-			army={
-				small="GFX_idea_tur_vecihi_hurkus"
-			}
-		}
-		advisor={
-			cost = 100
-			slot = theorist
-			idea_token = TUR_vecihi_hurkus
-			ledger = air
-			allowed = {
-				original_tag = TUR
-			}
-			visible = {	
-				has_global_flag = tur_bftb_focus_tree
-			}			
-			traits = {
-				air_warfare_theorist
 			}
 		}
 	}
@@ -879,6 +897,7 @@ characters={
 					small="GFX_idea_sabiha_gocen"
 				}
 			}
+			gender = female
 			advisor={
 				cost = 200
 				slot = high_command
@@ -889,13 +908,23 @@ characters={
 					original_tag = TUR
 				}
 				available = {
-					has_completed_focus = TUR_hava_okulu
 					NOT = {
-						has_country_flag = TUR_ottoman_officers_invited_back
+						has_idea = r56i_laws_gender_patriarchy
+					}
+					if = {
+						limit = {
+							has_global_flag = tur_bftb_focus_tree
+						}
+						has_completed_focus = TUR_hava_okulu
+						NOT = {
+							has_country_flag = TUR_ottoman_officers_invited_back
+						}				
+					}
+					else = {
+						has_completed_focus = TUR_found_an_air_war_academy
 					}
 				}
 				visible = {
-					has_global_flag = tur_bftb_focus_tree
 					NOT = {
 						has_country_flag = TUR_ottoman_officers_invited_back
 					}
@@ -918,6 +947,7 @@ characters={
 					small="GFX_idea_sabiha_gocen"
 				}
 			}
+			gender = female
 			advisor={
 				slot = high_command
 				idea_token = TUR_sabiha_gokcen
@@ -928,6 +958,11 @@ characters={
 				visible = {
 					NOT = {
 						has_global_flag = tur_bftb_focus_tree
+					}
+				}
+				available = {
+					NOT = {
+						has_idea = r56i_laws_gender_patriarchy
 					}
 				}
 				traits = {
@@ -967,7 +1002,7 @@ characters={
 		}
 	}
 
-	TUR_cemil_cahit_toydemir={
+	TUR_cemil_cahit_toydemir= {
 		instance = {
 			allowed = {
 				has_dlc = "Battle for the Bosporus" 
@@ -986,14 +1021,27 @@ characters={
 					original_tag = TUR
 				}
 				available = {
-					NOT = {
-						has_country_flag = TUR_ottoman_officers_invited_back
+					if = {
+						limit = {
+							has_global_flag = tur_bftb_focus_tree
+						}
+						NOT = {
+							has_country_flag = TUR_ottoman_officers_invited_back
+						}					
+					}
+					if = {
+						limit = {
+							has_focus_tree = turkish_focus_r56
+						}
+						NOT = {
+							has_completed_focus = TUR_overthrow_inonus_government
+						}
 					}
 				}
 				visible = {
-					has_global_flag = tur_bftb_focus_tree
 					NOT = {
 						has_country_flag = TUR_ottoman_officers_invited_back
+						has_completed_focus = TUR_overthrow_inonus_government
 					}
 				}
 				traits = {
@@ -1072,7 +1120,17 @@ characters={
 			defense_skill = 3
 			planning_skill = 3
 			logistics_skill = 2
-			visible = { has_country_flag = TUR_PROVISIONARY_flag }
+			visible = { 
+				if = {
+					limit = {
+						has_global_flag = tur_bftb_focus_tree
+					}
+					has_country_flag = TUR_PROVISIONARY_flag 
+				}
+				else = {
+					has_completed_focus = TUR_stabilize_the_nation
+				}
+			}
 		}
 	}
 
@@ -1094,7 +1152,17 @@ characters={
 			defense_skill = 2
 			planning_skill = 2
 			logistics_skill = 1
-			visible = { has_country_flag = TUR_PROVISIONARY_flag }
+			visible = { 
+				if = {
+					limit = {
+						has_global_flag = tur_bftb_focus_tree
+					}
+					has_country_flag = TUR_PROVISIONARY_flag 
+				}
+				else = {
+					has_completed_focus = TUR_stabilize_the_nation
+				}
+			}
 		}
 	}
 
@@ -1116,10 +1184,19 @@ characters={
 			defense_skill = 5
 			planning_skill = 3
 			logistics_skill = 3
-			visible = { has_country_flag = TUR_PROVISIONARY_flag }
+			visible = { 
+				if = {
+					limit = {
+						has_global_flag = tur_bftb_focus_tree
+					}
+					has_country_flag = TUR_PROVISIONARY_flag 
+				}
+				else = {
+					has_completed_focus = TUR_stabilize_the_nation
+				}
+			}
 		}
 	}
-
 
 	TUR_ali_ihsan_sabis={
 		name=TUR_ali_ihsan_sabis
@@ -1129,16 +1206,23 @@ characters={
 			}
 		}
 		advisor={
-			slot = high_command
+			slot = army_chief
 			idea_token = TUR_ali_ihsan_sabis
 			ledger = army
 			allowed = {
 				original_tag = TUR
 				has_dlc = "Battle for the Bosporus"
 			}
-			visible = {
-				has_global_flag = tur_bftb_focus_tree
-				has_country_flag = TUR_ottoman_officers_invited_back
+			visible = { 
+				if = {
+					limit = {
+						has_global_flag = tur_bftb_focus_tree
+					}
+					has_country_flag = TUR_ottoman_officers_invited_back
+				}
+				else = {
+					has_completed_focus = TUR_stabilize_the_nation
+				}
 			}
 			traits = {
 				army_chief_morale_2
@@ -1159,7 +1243,7 @@ characters={
 			name=TUR_kazim_orbay
 			portraits={
 				army={
-					small="gfx/interface/ideas/idea_TUR_kazim_orbay.dds"
+					small=GFX_portrait_TUR_kazim_orbay_small
 					large = "GFX_portrait_TUR_kazim_orbay"
 				}
 				civilian = {
@@ -1184,10 +1268,19 @@ characters={
 							has_country_flag = TUR_ottoman_officers_invited_back
 						}					
 					}
+					if = {
+						limit = {
+							has_focus_tree = turkish_focus_r56
+						}
+						NOT = {
+							has_completed_focus = TUR_overthrow_inonus_government
+						}
+					}
 				}
 				visible = {
 					NOT = {
 						has_country_flag = TUR_ottoman_officers_invited_back
+						has_completed_focus = TUR_overthrow_inonus_government
 					}
 				}
 				traits = {
@@ -1374,9 +1467,6 @@ characters={
 				allowed = {
 					original_tag = TUR
 				}
-				visible = {	
-					has_global_flag = tur_bftb_focus_tree
-				}
 				available = {
 					NOT = {
 						has_country_leader = {
@@ -1388,15 +1478,7 @@ characters={
 				traits = {
 					grand_fleet_proponent
 				}
-			}
-			navy_leader={
-				traits = { bold }
-				skill = 2
-				attack_skill = 3
-				defense_skill = 1
-				maneuvering_skill = 1
-				coordination_skill = 2
-			}			
+			}		
 		}
 		instance = {
 			allowed = {
@@ -1417,25 +1499,12 @@ characters={
 				allowed = {
 					original_tag = TUR
 				}
-				visible = {
-					NOT = {
-						has_global_flag = tur_bftb_focus_tree
-					}
-				}
 				traits = {
 					navy_chief_old_guard
 				}
 				ai_will_do = {
 					factor = 1.000
 				}
-			}
-			navy_leader={
-				traits = { bold }
-				skill = 2
-				attack_skill = 3
-				defense_skill = 1
-				maneuvering_skill = 1
-				coordination_skill = 2
 			}
 		}
 	}
@@ -1465,10 +1534,19 @@ characters={
 						has_country_flag = TUR_ottoman_officers_invited_back
 					}					
 				}
+				if = {
+					limit = {
+						has_focus_tree = turkish_focus_r56
+					}
+					NOT = {
+						has_completed_focus = TUR_overthrow_inonus_government
+					}
+				}
 			}
 			visible = {
 				NOT = {
 					has_country_flag = TUR_ottoman_officers_invited_back
+					has_completed_focus = TUR_overthrow_inonus_government
 				}
 			}
 			traits = {
@@ -1524,7 +1602,7 @@ characters={
 		portraits={
 			army={
 				large="GFX_portrait_tur_abdurrahman_nafiz_gurman"
-				small="gfx/interface/ideas/idea_TUR_abdurrahman_nafiz_gurman.dds"
+				small=GFX_portrait_TUR_abdurrahman_gurman_small
 			}
 		}
 		corps_commander={
@@ -1687,6 +1765,76 @@ characters={
 			legacy_id=-1
 		}
 	}
+	
+	TUR_rifat_ozdes={
+		name="Rifat Özdeş"
+		portraits={
+			army={
+				large="gfx/leaders/r56_generic/r56_portrait_arabia_generic_land_4.dds"
+				small="gfx/interface/ideas/generic/r56_advisors/r56_advisor_arabia_generic_land_4.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = TUR_rifat_ozdes
+			ledger = navy
+			allowed = {
+				original_tag = TUR
+			}
+			traits = {
+				navy_submarine_1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		navy_leader={
+			traits={ seawolf }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			maneuvering_skill=2
+			coordination_skill=1
+			legacy_id=-1
+		}
+	}
+	
+	TUR_hulusi_gokdalay={
+		name="Hulusi Gökdalay"
+		portraits={
+			army={
+				large="GFX_kr_portrait_europe_generic_navy_2"
+				small="GFX_kr_portrait_europe_generic_navy_2_small"
+			}
+		}
+
+		advisor={
+			slot = navy_chief
+			idea_token = TUR_hulusi_gokdalay
+			allowed = {
+				original_tag = TUR
+			}
+			traits = {
+				navy_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		navy_leader={
+			traits={ lancer chief_engineer }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			maneuvering_skill=1
+			coordination_skill=3
+			legacy_id=-1
+		}
+	}
 
 	TUR_fahrettin_altay={
 		name=TUR_fahrettin_altay
@@ -1711,10 +1859,21 @@ characters={
 						has_country_flag = TUR_ottoman_officers_invited_back
 					}					
 				}
+				if = {
+					limit = {
+						has_focus_tree = turkish_focus_r56
+					}
+					NOT = {
+						has_completed_focus = TUR_consolidate_the_chp
+						has_completed_focus = TUR_overthrow_inonus_government
+					}
+				}
 			}
 			visible = {
 				NOT = {
 					has_country_flag = TUR_ottoman_officers_invited_back
+					has_completed_focus = TUR_consolidate_the_chp
+					has_completed_focus = TUR_overthrow_inonus_government
 				}
 			}
 			traits = {
@@ -1725,15 +1884,264 @@ characters={
 				factor = 1.000
 			}
 		}
+	}
+		
+	TUR_ihsan_orgun={
+		name="İhsan Orgun"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_chief_all_weather_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = TUR_ihsan_orgun
+			ledger = air
+			allowed = {
+				original_tag = TUR
+			}
+			available = {
+			}
+			visible = {
+			}
+			traits = {
+				air_air_combat_training_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	TUR_muzaffer_erguder={
+		name="Muzaffer Ergüder"
+		portraits={
+			army={
+				small="GFX_idea_tur_refe_bele"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = TUR_muzaffer_erguder
+			allowed = {
+				original_tag = TUR
+			}
+			available = {
+			}
+			visible = {
+			}
+			traits = {
+				air_chief_night_operations_1
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	TUR_emin_sozeri = {
+		name = "Emin Sözeri"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_arab_3"
+			}
+		}
 
+		advisor = {
+			cost = 150
+			
+			slot = theorist
+			idea_token = TUR_emin_sozeri
+			ledger = air
+			allowed = {
+				original_tag = TUR
+			}
+			
+			traits = {
+				air_warfare_theorist
+			}
+		}
+	}
+	
+	TUR_zeki_isin = {
+		name = "Zeki Işin"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_navy_south_america_1"
+			}
+		}
+
+		advisor = {
+			cost = 150
+			
+			slot = theorist
+			idea_token = TUR_zeki_isin
+			ledger = navy
+			allowed = {
+				original_tag = TUR
+			}
+			
+			traits = {
+				naval_theorist
+			}
+		}
+	}
+	
+	TUR_necati_ozdeniz = {
+		name = "Necati Özdeniz"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_communist_revolutionary_southamerican_2d"
+			}
+		}
+		
+		navy_leader = {
+			traits = { fleet_protector }
+			skill = 3
+			legacy_id = -1
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+	}
+	
+	TUR_kemal_dogan = {
+		name = "Kemal Doğan"
+		portraits = {
+			army = {
+			    large="gfx/leaders/r56_generic/r56_portrait_south_america_generic_land_3.dds"
+				small = "GFX_idea_generic_air_arab_3"
+			}
+		}
+
+		advisor = {
+			cost = 100
+			
+			slot = high_command
+			idea_token = TUR_kemal_dogan
+			ledger = army
+			allowed = {
+				original_tag = TUR
+			}
+			
+			traits = {
+				army_artillery_2
+			}
+		}
+		
 		corps_commander={
-			traits={ brilliant_strategist cavalry_officer war_hero trait_TUR_kemalist_champion hill_fighter }
-			skill=4
-			attack_skill=4
-			defense_skill=3
-			planning_skill=4
-			logistics_skill=2
-			legacy_id=902
+			traits = { artillerist career_officer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	
+	TUR_asim_gunduz = {
+		name = "Âsım Gündüz"
+		portraits = {
+			army = {
+			    large="gfx/leaders/r56_generic/r56_portrait_south_america_generic_land_5.dds"
+			}
+		}
+		
+		advisor = {
+			cost = 100
+			
+			slot = high_command
+			idea_token = TUR_asim_gunduz
+			ledger = army
+			allowed = {
+				original_tag = TUR
+			}
+			
+			traits = {
+				army_entrenchment_2
+			}
+		}
+		
+		corps_commander={
+			traits = { trait_engineer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	
+	TUR_tahsin_yazici = {
+		name = "Tahsin Yazıcı"
+		portraits = {
+			army = {
+				small = "GFX_idea_ENG_henry_pownall"
+			}
+		}
+
+		advisor = {
+			cost = 100
+			
+			slot = high_command
+			idea_token = TUR_tahsin_yazici
+			ledger = army
+			allowed = {
+				original_tag = TUR
+			}
+			
+			traits = {
+				army_armored_2
+			}
+		}
+	}
+	
+	TUR_burhanettin_uluc = {
+		name = "Burhanettin Uluc"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_military_theorist_commonwealth_2d"
+			}
+		}
+
+		advisor = {
+			cost = 100
+			
+			slot = high_command
+			idea_token = TUR_burhanettin_uluc
+			ledger = army
+			allowed = {
+				original_tag = TUR
+			}
+			
+			traits = {
+				army_regrouping_2
+			}
+		}
+	}
+	
+	TUR_behcet_turkmen = {
+		name = "Behçet Turkmen"
+		portraits = {
+			army = {
+				small = "GFX_portrait_FIN_urho_kekkonen_small"
+			}
+		}
+
+		advisor = {
+			cost = 150
+			slot = political_advisor
+			idea_token = TUR_behcet_turkmen
+			allowed = {
+				original_tag = TUR
+				has_dlc = "La Resistance"
+			}
+			traits = {
+				SWI_intelligence_officer
+			}
 		}
 	}
 
@@ -1752,9 +2160,16 @@ characters={
 				original_tag = TUR
 				has_dlc = "Battle for the Bosporus"
 			}
-			visible = {
-				has_global_flag = tur_bftb_focus_tree
-				has_country_flag = TUR_ottoman_officers_invited_back
+			visible = { 
+				if = {
+					limit = {
+						has_global_flag = tur_bftb_focus_tree
+					}
+					has_country_flag = TUR_ottoman_officers_invited_back
+				}
+				else = {
+					has_completed_focus = TUR_stabilize_the_nation
+				}
 			}
 			traits = {
 				army_logistics_1
@@ -1770,8 +2185,8 @@ characters={
 		name = TUR_nazmi_solok
 		portraits={
 			army={
-				large="gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
-				small="gfx/interface/ideas/idea_south_america_generic_land_3.dds"
+				large = GFX_Portrait_South_America_Generic_land_3
+				small = GFX_Portrait_South_America_Generic_land_3_small
 			}
 		}
 		corps_commander={
@@ -1825,18 +2240,26 @@ characters={
 				has_dlc = "Battle for the Bosporus"
 			}
 			available = {
-				OR = {
-					has_government = fascism 
-					has_government = communism 
-					has_completed_focus = TUR_pivot_to_the_past 
-					has_country_leader = {
-						character = TUR_adnan_menderes
-						ruling_only = yes 
+				if = {
+					limit = {
+						has_global_flag = tur_bftb_focus_tree
+					}
+					OR = {
+						has_government = fascism 
+						has_government = communism 
+						has_completed_focus = TUR_pivot_to_the_past 
+						has_country_leader = {
+							character = TUR_adnan_menderes
+							ruling_only = yes 
+						}
 					}
 				}
-			}
-			visible = {
-				has_global_flag = tur_bftb_focus_tree
+				else = {
+					OR = {
+						has_completed_focus = TUR_cult_of_the_marshal
+						has_completed_focus = TUR_overthrow_inonus_government
+					}
+				}
 			}
 			traits = {
 				irredentist_academic 
@@ -1858,13 +2281,16 @@ characters={
 				original_tag = TUR
 			}
 			available = {
-				has_completed_focus = TUR_misak_i_milli 
-				has_global_flag = tur_bftb_focus_tree
-				
+				if = { 
+					limit = {
+						has_global_flag = tur_bftb_focus_tree
+					}
+					has_completed_focus = TUR_misak_i_milli 					
+				}
+				else = {
+					has_completed_focus = TUR_pan_turkism
+				}
 			}
-			visible = {
-				has_global_flag = tur_bftb_focus_tree
-			}	
 			traits = {
 				avid_turanist 
 			}
@@ -1964,7 +2390,7 @@ characters={
 			visible = {
 				has_global_flag = tur_bftb_focus_tree	
 				and = {
-					has_completed_focus = TUR_democratic_capstone_focus 
+					has_completed_focus = TUR_traditionalize_the_ataturk_legacy 
 					NOT = {
 						has_country_leader = {
 							character = TUR_adnan_menderes
@@ -2182,7 +2608,7 @@ characters={
 				#has_global_flag = tur_bftb_focus_tree
 			}
 			traits = {
-				financial_expert 
+				SWI_diplomat 
 			}
 		}
 	}
@@ -2199,11 +2625,7 @@ characters={
 			idea_token = TUR_halide_edib_adivar
 			allowed = {
 				original_tag = TUR
-				#has_dlc = "Battle for the Bosporus"
 			}
-		#	visible = {
-		#		has_global_flag = tur_bftb_focus_tree
-		#	}
 			available = {
 				if = {
 					limit = {
@@ -2211,23 +2633,17 @@ characters={
 					}
 					has_completed_focus = TUR_the_sun_language_theory
 				}
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = tur_bftb_focus_tree
-						}
-						
-					}
-					
-				}				 
+				else = {
+					has_completed_focus = TUR_expand_the_centralization_efforts			 
+				}
 			}
 			traits = {
-				feminist_ultranationalist 
+				feminist_ultranationalist
 			}
 		}
 	}
 
-	TUR_kazim_ozalp={
+	TUR_kazim_ozalp = {
 		instance = {
 			allowed = {
 				has_dlc = "Battle for the Bosporus"
@@ -2246,13 +2662,23 @@ characters={
 					original_tag = TUR
 				}
 				visible = {
-					has_global_flag = tur_bftb_focus_tree
-				}
-				available = {
 					NOT = {
 						OR = {
 							has_completed_focus = TUR_revive_turkish_revolutionism 
 							has_completed_focus = TUR_pivot_to_the_past 
+						}
+					}
+				}
+				available = {
+					if = { 
+						limit = {
+							has_global_flag = tur_bftb_focus_tree
+						}
+						NOT = {
+							OR = {
+								has_completed_focus = TUR_revive_turkish_revolutionism 
+								has_completed_focus = TUR_pivot_to_the_past 
+							}
 						}
 					}
 				}
@@ -2286,7 +2712,7 @@ characters={
 		}
 	}
 
-	TUR_sevket_sureyya_aydemir={
+	TUR_sevket_sureyya_aydemir = {
 		name=TUR_sevket_sureyya_aydemir
 		portraits={
 			civilian={
@@ -2370,13 +2796,7 @@ characters={
 						has_completed_focus = TUR_reinvigorate_turkish_nationalism 
 					}					
 				}
-				if = { 
-					limit = {
-						NOT = {
-							has_global_flag = tur_bftb_focus_tree
-						}
-						
-					}
+				else = { 
 					has_government = fascism				
 				}				
 
@@ -2419,9 +2839,6 @@ characters={
 			allowed = {
 				original_tag = TUR
 			}
-			visible = {
-				
-			}
 			available = {
 				if = {
 					limit = {
@@ -2434,14 +2851,11 @@ characters={
 						has_country_flag = TUR_sponsored_killigil_armaments_flag 
 					}					
 				}
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = tur_bftb_focus_tree
-						}
-						
-					}
-										
+				else = {
+					OR = {
+						has_completed_focus = TUR_befriend_the_fascist_council
+						has_completed_focus = TUR_overthrow_inonus_government
+					}					
 				}				
 
 			}
@@ -2454,6 +2868,9 @@ characters={
 	TUR_said_i_nursi={
 		name=TUR_said_i_nursi
 		portraits={
+			civilian={
+				large="gfx/leaders/TUR/Portrait_Turkey_Sefik_Husnu.dds"		#will get a portrait later on
+			}
 			army={
 				small="GFX_idea_tur_said_i_nursi"
 			}
@@ -2499,7 +2916,7 @@ characters={
 		name=TUR_mehmet_recep_peker
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_TUR_recep_peker.dds"
+				small="GFX_idea_TUR_recep_peker"
 			}
 			civilian={
 				large="GFX_portrait_tur_recep_peker"
@@ -2635,15 +3052,27 @@ characters={
 			allowed = {
 				original_tag = TUR
 				has_dlc = "Battle for the Bosporus"
-			}
-			visible = {
-				has_global_flag = tur_bftb_focus_tree
 			}			
 			available = {
-				OR = {
-					has_completed_focus = TUR_establish_the_committee_of_pan_turkism 
-					has_completed_focus = TUR_misak_i_milli 
+				if = {
+					limit = {
+						has_global_flag = tur_bftb_focus_tree
+					}
+					OR = {
+						has_completed_focus = TUR_establish_the_committee_of_pan_turkism 
+						has_completed_focus = TUR_misak_i_milli 
+					}				
 				}
+				if = {
+					limit = {
+						has_focus_tree = turkish_focus_r56
+					}
+					OR = {
+						has_completed_focus = TUR_befriend_the_fascist_council		
+						has_completed_focus = TUR_batum_and_the_muslim_caucasian_states
+					}	
+				}
+					
 			}
 			traits = {
 				pan_turkic_doyen 
@@ -2664,8 +3093,6 @@ characters={
 			allowed = {
 				original_tag = TUR
 				
-			}
-			visible = {
 			}
 			available = {
 				has_government = communism 
@@ -2701,8 +3128,7 @@ characters={
 			visible = {
 				NOT = {
 					has_global_flag = tur_bftb_focus_tree
-				}
-				
+				}	
 			}			
 			traits = {
 				staunch_traditionalist
@@ -2722,13 +3148,92 @@ characters={
 			allowed = {
 				original_tag = TUR
 			}
-			visible = {
-				NOT = {
-					has_global_flag = tur_bftb_focus_tree
-				}
-			}
 			traits = {
 				financial_expert
+			}
+		}
+	}
+	TUR_ahmet_emin_yalman = {
+		name = "Ahmet Emin Yalman"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = TUR_ahmet_emin_yalman
+			allowed = {
+				original_tag = TUR
+			}
+			available = {
+				has_government = democratic
+			}
+			traits = {
+				liberal_journalist
+			}
+		}
+	}
+	TUR_adnan_adivar = {
+		name = "Adnan Adivar"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = TUR_ahmet_emin_yalman
+			allowed = {
+				original_tag = TUR
+			}
+			available = {
+				has_government = democratic
+			}
+			traits = {
+				ICE_progressive_doctor
+			}
+		}
+	}
+	TUR_arif_oruc = {
+		name = "Arif Oruç"
+		portraits={
+			army={
+				small="GFX_kr_portrait_middle_east_generic_5_small"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = TUR_arif_oruc
+			allowed = {
+				original_tag = TUR
+			}
+			available = {
+				has_government = communism
+			}
+			traits = {
+				editor
+			}
+		}
+	}
+	TUR_hikmet_kivilcimli = {
+		name = "Hikmet Kivilcimli"
+		portraits={
+			army={
+				small="GFX_kr_portrait_arabia_generic_2_small"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = TUR_hikmet_kivilcimli
+			allowed = {
+				original_tag = TUR
+			}
+			available = {
+				has_government = communism
+			}
+			traits = {
+				socialist_writer
 			}
 		}
 	}
@@ -2761,7 +3266,7 @@ characters={
 		name=GER_hans_von_luck
 		portraits={
 			army={
-				large="GFX_portrait_GER_hans_von_luck"
+				large="gfx/leaders/GER/portrait_ger_hans_von_luck.dds"
 				small="gfx/interface/ideas/idea_GER_hans_von_luck.dds"
 			}
 		}
@@ -2773,7 +3278,14 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 			legacy_id = 75
-			visible = { has_completed_focus = TUR_invite_german_officers_to_izmir }
+			visible = { 
+				if = {
+					limit = {
+						original_tag = TUR
+					}
+					has_completed_focus = TUR_invite_german_officers_to_izmir
+				}
+			}
 		}
 	}
 
@@ -2793,7 +3305,14 @@ characters={
 			defense_skill = 2
 			planning_skill = 4
 			logistics_skill = 2
-			visible = { has_completed_focus = TUR_invite_german_officers_to_izmir }
+			visible = { 
+				if = {
+					limit = {
+						original_tag = TUR
+					}
+					has_completed_focus = TUR_invite_german_officers_to_izmir
+				}
+			}
 		}
 	}
 
@@ -2813,7 +3332,63 @@ characters={
 			defense_skill = 3
 			maneuvering_skill = 4
 			coordination_skill = 3
-			visible = { has_completed_focus = TUR_the_italo_turkish_naval_academy }
+			visible = { 
+				if = {
+					limit = {
+						original_tag = TUR
+					}
+					has_completed_focus = TUR_the_italo_turkish_naval_academy
+				}
+			}
+		}
+	}
+
+#scientists
+	#todo_r56: check char
+	TUR_vecihi_hurkus = {
+		name = TUR_vecihi_hurkus
+		portraits = {
+			army = {
+				large = GFX_portrait_TUR_vecihi_hurkus
+				small = GFX_idea_tur_vecihi_hurkus
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_resourceful }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
+	TUR_resit_sureyya_gursey  = {
+		name = "Reşit Süreyya Gürsey"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_southamerica_male_03
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_fast_learner }
+			skills = {
+				specialization_nuclear = 1
+			}
+		}
+	}
+	TUR_fikret_karabudak  = {
+		name = "Fikret Karabudak"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_southamerica_male_08
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_resourceful }
+			skills = {
+				specialization_land = 1
+			}
 		}
 	}
 }

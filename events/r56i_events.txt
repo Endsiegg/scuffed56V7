@@ -12,6 +12,7 @@ country_event = {
 	picture = GFX_report_event_ger_civil_war
 	
 	trigger = {
+		always = no #as cool as these were once upon a time it's time to either rework it or sunset them
 		has_stability < 0.30
 		NOT = {
 			has_country_flag = r56i_flag_riots_suppress_spend
@@ -43,8 +44,12 @@ country_event = {
 			AND = {
 				original_tag = SPR
 				date < 1942.01.01 #grace period
-			}
+			}		
+			has_completed_focus = SPR_all_must_bear_the_torch	#regional defense council of spain with stability drop	
+			has_completed_focus = HON_free_our_markets		#ancap honduras with constant stability drop
+			has_completed_focus = MON_oust_genden				#ancom mongolia with constant stability drop			
 		}
+	
 	}
 	
 	mean_time_to_happen = {
@@ -104,6 +109,7 @@ country_event = {
 	picture = GFX_r56i_generic_event_02
 	
 	trigger = {
+		always = no #as cool as these were once upon a time it's time to either rework it or sunset them
 		has_stability < 0.20
 		has_country_flag = r56i_flag_riots_possible_again
 		NOT = {
@@ -114,7 +120,6 @@ country_event = {
 				has_country_flag = r56i_flag_riots_suppress_success
 				has_country_flag = r56i_flag_riots_ongoing
 				has_idea = r56i_laws_security_order
-				has_idea = SPR_collectivized_society
 			}
 		}
 	}
@@ -506,11 +511,15 @@ country_event = {
 	picture = GFX_report_event_spain_civil_war_volunteers_01
 	
 	is_triggered_only = yes
+
+	trigger = {	#ensures upon triggering, that this isnt a subject, the triggering on_action happens before the actual puppeting in peacedeals
+		is_subject = no
+	}
 	
 	option = {
 		name = r56i.event.10.a
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				#value security of being in a faction
 				OR = {
@@ -523,12 +532,15 @@ country_event = {
 						has_government = neutrality
 						NOT = {
 							has_country_leader = {
-								name = "Michael I"
+								character = ROM_king_michael
 								ruling_only = yes
 							}
-						}	
+						}
 					}
-					
+					AND = {
+						has_idea = KMT_united_front
+						has_war_with = JAP
+					}					
 					AND = {
 						OR = {
 							original_tag = NOR
@@ -574,7 +586,7 @@ country_event = {
 							has_government = neutrality
 							tag = GER
 							is_faction_leader = yes
-							is_in_faction_with = NOR					
+							is_in_faction_with = ROOT	#was NOR, presumed broken given the original_tag check above					
 						}						
 					}					
 				}
@@ -629,7 +641,7 @@ country_event = {
 	option = {
 		name = r56i.event.10.b
 		ai_chance = {
-			factor = 0.2
+			base = 0.2
 		}		
 	}
 }
@@ -662,7 +674,7 @@ country_event = {
 	option = {
 		name = r56i.event.12.a
 		ai_chance = {
-			factor = 100
+			base = 100
 			#As they are puppets will always happen.
 #			modifier = {
 #				#value security of being in a faction
@@ -749,7 +761,7 @@ country_event = {
 	option = {
 		name = r56i.event.12.b #leave just in case
 		ai_chance = {
-			factor = 20 #adding a bit of randomness?
+			base = 20 #adding a bit of randomness?
 		}		
 	}
 }

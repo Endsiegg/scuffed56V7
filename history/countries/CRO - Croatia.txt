@@ -7,6 +7,7 @@ set_stability = 0.40
 
 oob = "CRO_1936"
 
+#recruit_character = CRO_antun_mihalovic #disabled at the request of spicy and brit. will be used for future content
 recruit_character = CRO_ante_pavelic
 recruit_character = CRO_andrija_hebrang
 recruit_character = CRO_ivan_subasic
@@ -39,6 +40,9 @@ recruit_character = CRO_nikola_steinfl
 recruit_character = CRO_vladimir_kren
 recruit_character = CRO_franjo_dzal
 
+recruit_character = CRO_nikola_mandic	#GD addition presumably -> is he used in r56 though?
+recruit_character = CRO_joseph_francis # Habsburg
+
 set_technology = {
 
 	# Extended Technologies
@@ -51,20 +55,6 @@ set_technology = {
 	tech_mountaineers = 1
 	tech_support = 1
 	tech_recon = 1
-}
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-		set_technology = {
-		iw_small_airframe = 1
-		}
-	else = {
-		set_technology = {
-								
-			CAS1 = 1
-			early_fighter = 1
-
-		}
-	}
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }

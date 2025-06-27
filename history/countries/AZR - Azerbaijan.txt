@@ -1,6 +1,5 @@
 #Parmi les collaborateurs azerbaïdjanais du groupe Caucase se distinguent l’ex-ministre de l’Intérieur de l’Azerbaïdjan, Halilbek Hasmamedov, et l’ancien ministre de la guerre Hosrovbek Sultanov. Les deux Azerbaïdjanais étaient en totale et irréversible opposition au leader du moussavat M. E. Rassoul-Zadé et à sa revue Kurtulusch [La Libération], publiée irrégulièrement à Berlin en allemand dans la seconde moitié des années 1930.
 
-
 capital = 229 #Baku
 
 recruit_character = AZR_mir_jafar_baghirov
@@ -13,12 +12,9 @@ recruit_character = AZR_mehmed_emin_resulzade
 recruit_character = AZR_hilal_munsi
 recruit_character = AZR_israfil_israfilov
 
-#oob = "AZR_1936"
-
 set_war_support = 0.25
 set_stability = 0.50 
-set_research_slots = 4
-set_country_flag = started_out_as_landlocked
+set_research_slots = 3
 # Starting tech
 set_technology = {
 
@@ -33,6 +29,7 @@ set_technology = {
 	tech_engineers = 1
 	tech_military_police = 1
 	tech_mountaineers = 1
+	tech_trucks = 1
 	motorised_infantry = 1
 	paratroopers = 1
 	gw_artillery = 1
@@ -40,21 +37,29 @@ set_technology = {
 	mass_assault = 1
 	fleet_in_being = 1
 }
-if = {
+if = {	#same as Soviets
 	limit = { has_dlc = "By Blood Alone" }
 		set_technology = {
-		iw_large_airframe = 1
-		iw_medium_airframe = 1
-		
+			iw_small_airframe = 1
+			aa_lmg = 1
+			aa_cannon_1 = 1
+			early_bombs = 1
+			engines_1 = 1
+			engines_2 = 1
+			iw_medium_airframe = 1
+			iw_large_airframe = 1
+			basic_small_airframe = 1
+			basic_medium_airframe = 1
+			aircraft_construction = 1
 		}
 	else = {
 		set_technology = {
-				
 			early_fighter = 1
-	fighter1 = 1
-	early_bomber = 1
-	strategic_bomber1 = 1
-	naval_bomber1 = 1
+			fighter1 = 1
+			early_bomber = 1
+			strategic_bomber1 = 1
+			naval_bomber1 = 1
+			flying_boat = 1
 		}
 	}
 }
@@ -118,6 +123,7 @@ set_politics = {
 	ruling_party = democratic
 	election_frequency = 48
 	elections_allowed = yes
+	last_election = "1936.1.1"
 }
 set_popularities = {
 	democratic = 30

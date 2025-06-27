@@ -16,47 +16,43 @@ focus_tree = {
 	}
 	continuous_focus_position = { x = 3600 y = 1200 }
 	default = no
-#	focus = {
-#		id = USA_
-#		#icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		
-#		
-#		
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
 
 	focus = {
 		id = USA_continue_the_new_deal
 		icon = GFX_Goal_USA_new_deal
-		x = 14
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					has_completed_focus = USA_reestablish_the_gold_standard
+				}
+			}
+		}
+		x = 16
 		y = 0
+		offset = {
+			x = -12
+			y = 0
+			trigger = {
+				OR = {
+					NOT = { has_dlc = "Man the Guns" }
+					if = {
+						limit = {
+							has_game_rule = {
+								rule = obsolete_focus_branches_visibility
+								option = HIDE
+							}
+						}
+						has_completed_focus = USA_reestablish_the_gold_standard
+					}
+				}
+			}
+		}
 		offset = {
 			x = -12
 			y = 0
@@ -78,7 +74,8 @@ focus_tree = {
 		
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		completion_reward = {
-			add_political_power = 150
+			add_political_power = 120
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 
@@ -123,11 +120,11 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		
-		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_USA_CONGRESS}
+		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
-			add_political_power = 50
-			add_war_support = 0.05 #placeholder for better idea and concepts later - SpicyAlfredo
-			add_stability = 0.05 #placeholder for better idea and concepts later - SpicyAlfredo
+			add_political_power = 25
+			add_war_support = 0.03 #placeholder for better idea and concepts later - SpicyAlfredo
+			add_stability = 0.03 #placeholder for better idea and concepts later - SpicyAlfredo
 		}
 	}
 
@@ -150,20 +147,63 @@ focus_tree = {
 
 		allow_branch = {
 			has_government = democratic
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					has_completed_focus = USA_reestablish_the_gold_standard
+				}
+			}
 		}
 
 		available = {
 			congress_high_support_trigger = yes
 			democratic > 0.95
 			date < 1954.01.01
-	
+			if = {
+				limit = {
+					370 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				divisions_in_state = {
+					size > 0
+					state = 370
+				}
+			}
+			if = {
+				limit = {
+					367 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				divisions_in_state = {
+					size > 0
+					state = 367
+				}
+			}
+			if = {
+				limit = {
+					371 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				divisions_in_state = {
+					size > 0
+					state = 371
+				}
+			}
 
 		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		
-		search_filters = {  FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			unlock_decision_tooltip = { decision = USA_pass_a_new_civil_rights_bill show_effect_tooltip = yes } 
 			add_stability = -0.10
@@ -179,25 +219,47 @@ focus_tree = {
 		relative_position_id = USA_continue_the_new_deal
 		cost = 5
 
+		available = { 
+			congress_low_support_trigger = yes
+		}
+
 		ai_will_do = {
 			factor = 1
-			modifier = { #Always one commie threat there is
-				add = 0.8
-				date > 1939.1.1
+			modifier = { #Always one commie big bad
+				add = 9
+				date < 1939.1.1
 				SOV = {
-					NOT = { 
-						has_government = communism
+					OR = {
+						NOT = { 
+							has_government = communism
+						}
+						has_completed_focus = SOV_counter_coup
+						has_completed_focus = SOV_beaten_but_not_defeated
+						has_completed_focus = SOV_counter_coup_old
 					}
 				}
 			}
 		}
+
 		allow_branch = {
 			has_dlc = "Man the Guns"
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					has_completed_focus = USA_reestablish_the_gold_standard
+				}
+			}
 		}
 		
-		search_filters = {FOCUS_FILTER_POLITICAL}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			add_stability = -0.05
+			add_war_support = 0.05 #upside of going commie
 			custom_effect_tooltip = available_political_advisor
 		    show_ideas_tooltip = earl_browder
 			if = {
@@ -230,6 +292,7 @@ focus_tree = {
 					remove_ideas = rt56_far_left_suppression
 				}
 			}
+			USA_congress_small_opposition = yes #Making rushing alt USA a little harder in Rt56
 		}
 	}
 	focus = {
@@ -249,7 +312,7 @@ focus_tree = {
 			OR = {
 				communism > 0.1
 				has_country_leader = { ruling_only = yes name = "Harry S. Truman" }
-				has_country_leader = { ruling_only = yes name = "Wendell Willkie" }
+				has_country_leader = { ruling_only = yes character = USA_wendell_willkie }
 			}
 		}
 
@@ -265,6 +328,7 @@ focus_tree = {
 	focus = {
 		id = USA_democratic_socialism
 		icon = GFX_goal_generic_red_freedom
+		text = USA_democratic_socialism_focus
 		x = -1
 		y = 1
 		prerequisite = { focus = USA_desegregate_the_armed_forces }
@@ -308,6 +372,96 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = USA_communist_secret_police
+		icon = GFX_focus_SOV_military_purge
+		cost = 10
+		text = POR_communist_secret_police
+		prerequisite = {
+			focus = USA_democratic_socialism
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_office_of_strategic_services
+			}
+		}
+		relative_position_id = USA_democratic_socialism
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+					has_intelligence_agency = yes
+					NOT = {
+						has_done_agency_upgrade = upgrade_interrogation_techniques
+					}
+				}
+				upgrade_intelligence_agency = upgrade_interrogation_techniques
+			}
+			else_if = {
+				limit = {
+					has_dlc = "La Resistance"
+					NOT = {
+						has_intelligence_agency = yes
+					}
+				}
+				create_intelligence_agency = yes
+			}
+						
+			add_tech_bonus = {
+				name = mp_tech_bonus_name
+				bonus = 1
+				uses = 1
+				category = military_police_tech
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						has_idea = r56i_laws_security_balanced
+						has_idea = r56i_laws_security_rights
+						has_idea = r56i_laws_security_order
+					}
+				}
+				custom_effect_tooltip = EFFECT_CHANGE_LAW_r56i_laws_social
+				show_ideas_tooltip = r56i_laws_security_order
+				hidden_effect = {
+					add_ideas = r56i_laws_security_order
+				}
+				
+			}
+		}
+		search_filters = {  FOCUS_FILTER_RESEARCH FOCUS_FILTER_ESPIONAGE }
+	}
+
+	focus = {
+		id = USA_expand_the_intelligence_services
+		text = POR_expand_the_intelligence_services
+		icon = GFX_goal_generic_spy_connection
+		cost = 5
+		prerequisite = {
+			focus = USA_communist_secret_police
+		}
+		available = {
+			has_intelligence_agency = yes
+			agency_upgrade_number > 4
+		}
+		relative_position_id = USA_communist_secret_police
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = GER_abwehr_contacts
+		}
+		search_filters = {  FOCUS_FILTER_ESPIONAGE }
+	}
+
 	focus = {
 		id = r56_USA_join_the_mexican_revolutionaries
 		icon = GFX_goal_mexico_mexico_for_mexicans
@@ -658,7 +812,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_suspend_the_presecution }
 		relative_position_id = USA_suspend_the_presecution
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -797,7 +951,7 @@ focus_tree = {
 		prerequisite = { focus = USA_old_age_pension_act }
 		prerequisite = { focus = USA_accumulated_wealth_tax_act }
 		relative_position_id = USA_union_representation_act
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1178,7 +1332,10 @@ focus_tree = {
 			if = {
 				limit = {
 					GER = {
-						has_completed_focus = GER_revive_the_kaiserreich
+						OR = {
+							has_completed_focus = GER_a_new_reich
+							has_completed_focus = GER_restore_the_empire
+						}
 						not = { is_in_faction_with = ROOT }
 					}
 				}
@@ -1442,9 +1599,9 @@ focus_tree = {
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_POLITICAL}
+		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			add_political_power = 150
+			add_political_power = 120
 			unlock_decision_tooltip = { decision = USA_WPA_program_decision show_effect_tooltip = no }
 			hidden_effect = {
 				set_variable = {
@@ -1713,7 +1870,7 @@ focus_tree = {
 		#ai_will_do = {
 		#	factor = 1
 		#}
-		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_RUBBER}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
 		completion_reward = {
 			add_tech_bonus = {
 				name = USA_rubber_reserve_company
@@ -1749,6 +1906,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available = {
+			has_war_support > 0.05
 			congress_high_support_trigger = yes 
 			has_government = democratic
 			NOT = { has_idea_with_trait = fascist_demagogue }
@@ -1757,8 +1915,20 @@ focus_tree = {
 		bypass = {
 			
 		}
-		search_filters = {FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			if = {
+				limit = {
+					ROOT = {
+						is_major = yes
+						has_government = democratic
+					}
+				}
+				add_threat = -5 #Congrats. You played yourself
+			}
+			else = {
+				add_threat = 5
+			}
 			hidden_effect = {
 				every_other_country = {
 					limit = {
@@ -1793,7 +1963,7 @@ focus_tree = {
 				limit = {
 					has_war_support < 0.2
 				}
-				add_stability = -0.2
+				add_stability = -0.25
 			}
 			custom_effect_tooltip = USA_limited_intervention_tt
 			hidden_effect = {
@@ -1808,6 +1978,12 @@ focus_tree = {
 		prerequisite = { focus = USA_limited_intervention }
 		available = {
 			has_government = democratic
+			if = {
+				limit = {
+					has_war = no
+				}
+				congress_high_support_trigger = yes 
+			}
 		}
 
 		bypass = {
@@ -1825,7 +2001,7 @@ focus_tree = {
 		#}
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
-			add_war_support = 0.05
+			add_war_support = 0.10
 			if = {
 				limit = {
 					NOT = { has_government = communism }
@@ -1852,10 +2028,11 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 
 		available = {
+			has_war_support > 0.10
 			has_government = democratic
 		}
 		
@@ -1905,6 +2082,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_war_support > 0.10
 			NOT = {
 				OR = {
 					has_war_with = JAP
@@ -1932,6 +2110,15 @@ focus_tree = {
 		}
 
 		available = {
+			if = {
+				limit = {
+					has_war = no
+				}
+				congress_high_support_trigger = yes 
+			}
+			else = {
+				congress_low_support_trigger = yes
+			}
 			OR = {
 				has_war = yes
 				has_war_support > 0.3
@@ -1940,6 +2127,16 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = r56_USA_defense_contractors
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				swap_ideas = { 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
+			}
+			USA_congress_small_opposition = yes
 		}
 	}
 	focus = {
@@ -1954,8 +2151,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 50
 		}
-
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		available = {
+			if = {
+				limit = {
+					has_war = no
+				}
+				congress_high_support_trigger = yes 
+			}
+			else = {
+				congress_low_support_trigger = yes
+			}
 			OR = {
 				has_war = yes
 				has_war_support > 0.5
@@ -2071,7 +2277,7 @@ focus_tree = {
 		available = {
 			
 		}
-
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
 		completion_reward = {
 			#add_ideas = r56_USA_aquire_war_materiel
 			add_tech_bonus = {
@@ -2107,6 +2313,22 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
 			add_ideas = r56_USA_military_rnd
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { 
+					ROOT = {
+						has_character = USA_vannevar_bush
+					}
+				}
+				ROOT = { #He is the GUY
+					USA_vannevar_bush = {
+						add_scientist_xp = {
+							experience = 250
+							specialization = specialization_air 
+						}
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -2119,24 +2341,48 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
-
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		available = {
-			
+			has_war_support > 0.5
+			if = {
+				limit = {
+					has_war = no
+				}
+				congress_high_support_trigger = yes 
+			}
+			else = {
+				congress_low_support_trigger = yes
+			}
 		}
 
 		completion_reward = {
+			add_war_support = 0.05
 			add_timed_idea = {
 				idea = r56_USA_over_there
-				days = 365
-			} 
+				days = 490
+			}
 			if = {
 				limit = {
 					NOT = { has_idea = BEL_volunteer_corps }
 				}
 				add_ideas = BEL_volunteer_corps
 			}
+			if = {
+				limit = {
+					has_war_support < 0.4
+					has_war_support > 0.2
+				}
+				add_stability = -0.1
+			}
+			else_if = {
+				limit = {
+					has_war_support < 0.2
+				}
+				add_stability = -0.25
+			}
+			USA_congress_small_opposition = yes
 		}
 	}
 	focus = {
@@ -2188,7 +2434,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_black_chamber
-		icon = GFX_goal_CAN_CAMP_X
+		icon = GFX_goal_generic_spy_connection
 		prerequisite = { focus = USA_focus_on_europe focus = USA_focus_on_asia }
 		prerequisite = { focus = USA_office_of_strategic_services }
 		available = { }
@@ -2359,15 +2605,15 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 3
-				num_of_military_factories > 200
+				num_of_military_factories > 185
 			}
 			modifier = {
 				factor = 5
-				num_of_military_factories > 250
+				num_of_military_factories > 200
 			}
 			modifier = {
 				factor = 10
-				num_of_military_factories > 300
+				num_of_military_factories > 250
 			}						
 		}
 
@@ -2376,10 +2622,10 @@ focus_tree = {
 				limit = {
 					has_war_support > 0.4
 				}
-				#congress_low_support_trigger = yes
+				congress_low_support_trigger = yes
 			}
 			else = {
-				#congress_medium_support_trigger = yes
+				congress_medium_support_trigger = yes
 			}
 			any_other_country = {
 				is_major = yes
@@ -2389,11 +2635,11 @@ focus_tree = {
 				has_war = yes
 			}
 			OR = {
-				threat > 0.10
-				has_war_support > 0.10
+				threat > 0.20
+				has_war_support > 0.15
 			}
 			OR = {
-				has_idea = free_trade
+				#has_idea = free_trade
 				any_other_country = {
 					NOT = {
 						has_government = ROOT
@@ -2405,11 +2651,11 @@ focus_tree = {
 			OR = {
 				AND = {
 					has_war = yes
-					num_of_factories > 200
+					num_of_factories > 185
 				}
 				AND = {
 					has_war = no
-					num_of_factories > 250
+					num_of_factories > 200
 				}
 			}
 		}
@@ -2427,10 +2673,123 @@ focus_tree = {
 			#	add_ideas = export_focus
 			#}
 			#else = {
-				add_political_power = 75
+				add_political_power = 50
 			#}
 			add_ideas = rt56_office_of_econimic_warfare_idea
-			
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+					ROOT = {
+						has_government = democratic
+						is_major = yes
+						#diplomatic_relation = { 
+						#	country = JAP
+						#	relation = embargo
+						#	active = no
+						#}
+					}
+					JAP = {
+						OR = {
+							has_war_with = CHI
+							has_war_with = PRC
+							has_war_with = AST
+							has_war_with = NZL
+						}
+						has_government = fascism
+						is_major = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				send_embargo = JAP
+			}
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+					ROOT = {
+						has_government = democratic
+						is_major = yes
+						#diplomatic_relation = { 
+						#	country = GER
+						#	relation = embargo
+						#	active = no
+						#}
+					}
+					GER = {
+						OR = {
+							has_war_with = FRA
+							has_war_with = ENG
+						}
+						has_government = fascism
+						is_major = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				send_embargo = GER
+			}
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+					ROOT = {
+						has_government = democratic
+						is_major = yes
+						#diplomatic_relation = { 
+						#	country = GER
+						#	relation = embargo
+						#	active = no
+						#}
+					}
+					ENG = {
+						OR = {
+							has_war_with = FRA
+							has_war_with = GER
+						}
+						has_government = fascism
+						is_major = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				send_embargo = ENG
+			}
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+					ROOT = {
+						has_government = democratic
+						is_major = yes
+						#diplomatic_relation = { 
+						#	country = GER
+						#	relation = embargo
+						#	active = no
+						#}
+					}
+					FRA = {
+						OR = {
+							has_war_with = ENG
+							has_war_with = GER
+						}
+						has_government = fascism
+						is_major = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				send_embargo = FRA
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:USA_ford_motor_company_organization = {
+					add_mio_funds = 250
+				}
+			}
 			if = {
 				limit = {
 					has_war_support > 0.4
@@ -2467,24 +2826,24 @@ focus_tree = {
 			democratic > 0.95
 			#has_idea = undisturbed_isolation
 			has_war = no
-			# any_other_country = {
-			# 	is_major = yes
-			# 	has_government = ROOT
-			# 	has_war = yes
-			# }
+			any_other_country = {
+				is_major = yes
+				has_government = ROOT
+				has_war = yes
+			}
 			OR = {
-				threat > 0.10
+				threat > 0.20
 				has_war_support > 0.10
 			}
-			# if = {
-			# 	limit = {
-			# 		has_war_support < 0.10
-			# 	}
-			# 	congress_medium_support_trigger = yes
-			# }
-			# else = {
-			# 	congress_low_support_trigger = yes
-			# }
+			if = {
+				limit = {
+					has_war_support < 0.10
+				}
+				congress_medium_support_trigger = yes
+			}
+			else = {
+				congress_low_support_trigger = yes
+			}
 		}
 
 		cancel_if_invalid = no
@@ -2495,7 +2854,7 @@ focus_tree = {
 			add_political_power = 50
 			add_timed_idea = {
 				idea = rt56_USA_cash_and_carry_home 
-				days = 120
+				days = 180
 			}
 			every_other_country = {
 				limit = {
@@ -2511,7 +2870,25 @@ focus_tree = {
 							is_neighbor_of = USA
 							has_government = ROOT
 							original_tag = CAN
-							# has_war = yes
+							has_war = yes
+							NOT = {
+								has_war_with = USA
+							}							
+						}
+						AND = { #You get it too buddy
+							is_neighbor_of = USA
+							has_government = ROOT
+							original_tag = AST
+							has_war = yes
+							NOT = {
+								has_war_with = USA
+							}							
+						}
+						AND = { #You get it too buddy
+							is_neighbor_of = USA
+							has_government = ROOT
+							original_tag = NZL
+							has_war = yes
 							NOT = {
 								has_war_with = USA
 							}							
@@ -2573,7 +2950,15 @@ focus_tree = {
 				}
 				add_timed_idea = {
 					idea = rt56_USA_cash_and_carry_away
-					days = 120
+					days = 180
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:USA_brooklyn_naval_yard_organization = {
+					add_mio_funds = 250
 				}
 			}
 			if = {
@@ -2865,7 +3250,7 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
 			navy_experience = 50
 			army_experience = 50
@@ -2950,10 +3335,11 @@ focus_tree = {
 		available = {
 			OR = {
 				has_war = yes
-				has_war_support > 0.35
+				has_war_support > 0.5
 			}
 			democratic > 0.95
 		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		continue_if_invalid = yes
 		x = 0
 		y = 2
@@ -2989,9 +3375,19 @@ focus_tree = {
 				add_ideas = civilian_economy
 				set_country_flag = USA_the_giant_wakes_added_civ_eco
 			}
-			add_timed_idea = {
-				idea = rt56_the_gaint_wakes_idea
-				days = 365
+			#Only Democratic USA should have the op timed idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = { 
+				limit = {
+					ROOT = {
+						has_government = democratic
+					}
+				}
+				add_timed_idea = {
+					idea = rt56_the_gaint_wakes_idea
+					days = 30
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			random_owned_controlled_state = {
 				prioritize = { 360 }
@@ -3058,7 +3454,23 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				set_state_flag = USA_gaint_wakes_state_flag
 			}
-
+			if = {
+				limit = {
+					has_idea = rt56_naval_funding_favoritism
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				remove_ideas = rt56_naval_funding_favoritism
+			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				swap_ideas = { 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
+			}
 		}
 	}
 	focus = {
@@ -3118,6 +3530,21 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 1
 				set_state_flag = USA_wartime_industry_state_flag
+			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_funding_favoritism
+				}
+				remove_ideas = rt56_naval_funding_favoritism
+			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				swap_ideas = { 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -3192,7 +3619,7 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
 	}
 
 	focus = {
@@ -3235,7 +3662,7 @@ focus_tree = {
 			}
 			add_ideas = extensive_conscription
 		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
@@ -3252,20 +3679,19 @@ focus_tree = {
 						region = 120
 					}
 				}
-				add_extra_state_shared_building_slots = 5
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 5
+					level = 3
 					instant_build = yes
 				}
 				set_state_flag = USA_USACE_projects_3AF
 			}
-			every_controlled_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = infrastructure
-						size > 1
-						include_locked = yes
+						size > 2
 					}
 					OR = {
 						region = 117
@@ -3273,7 +3699,7 @@ focus_tree = {
 						region = 119
 						region = 120
 					}
-					state_population > 2500000
+					state_population > 3000000
 				}
 				add_building_construction = {
 					type = infrastructure
@@ -3287,7 +3713,6 @@ focus_tree = {
 					free_building_slots = {
 						building = infrastructure
 						size > 2
-						include_locked = yes
 					}
 					OR = {
 						region = 117
@@ -3306,7 +3731,16 @@ focus_tree = {
 			}
 			air_experience = 50
 			navy_experience = 50
-			army_experience = 50			
+			army_experience = 10	
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				swap_ideas = { 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
+			}		
 		}
 	}
 	focus = {
@@ -3335,7 +3769,7 @@ focus_tree = {
 		#	factor = 1
 		#}
 		completion_reward = {
-			navy_experience = 10
+			#navy_experience = 10
 			463 = {
 				add_extra_state_shared_building_slots = 1
 				if = {
@@ -3343,7 +3777,6 @@ focus_tree = {
 						free_building_slots = {
 							building = infrastructure
 							size > 1
-							include_locked = yes
 						}
 					}
 					add_building_construction = {
@@ -3436,7 +3869,7 @@ focus_tree = {
 	focus = {
 		id = USA_tuskegee_airmen
 		icon = GFX_goal_USA_tuskegee_airmen
-		prerequisite = { focus = USA_arsenal_of_democracy }
+		prerequisite = { focus = USA_war_propaganda focus = USA_arsenal_of_democracy }
 		x = -1
 		y = 1
 		relative_position_id = USA_arsenal_of_democracy
@@ -3449,18 +3882,39 @@ focus_tree = {
 		available = {
 			OR = {
 				has_war = yes
-				has_war_support > 0.20
+				has_war_support > 0.3
 			}
 			367 = {
-				air_base > 2
+				air_base > 0
 			}
-	
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				has_tech = improved_small_airframe
+				has_tech = improved_medium_airframe
+			}
+			else = {
+				has_tech = fighter2
+				has_tech = tactical_bomber2
+			}
+
 		}
 		completion_reward = {
 			add_war_support = 0.05
 			custom_effect_tooltip = USA_tuskegee_airmen_tt
+			
 			hidden_effect = {
-				load_oob = "USA_tuskegee_airmen"
+				if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					load_oob = "USA_tuskegee_airmen_bba"
+				}
+				else = {
+					load_oob = "USA_tuskegee_airmen"
+				}
+
 			}
 		}
 	}
@@ -3480,6 +3934,7 @@ focus_tree = {
 		available = {
 			has_government = democratic
 			congress_medium_support_trigger = yes
+			has_war = no
 		}
 		search_filters = {FOCUS_FILTER_STABILITY}
 		completion_reward = {
@@ -3532,12 +3987,10 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_tech_bonus = {
-				name = USA_manhattan_project
-				bonus = 1.0
-				uses = 2
-				category = nuclear
-			}
+			add_ideas = USA_manhattan_project_ns 
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			random_owned_controlled_state = {
 				prioritize = { 368 }
 				limit = {
@@ -3553,6 +4006,22 @@ focus_tree = {
 				add_dynamic_modifier = { modifier = r56_the_project }
 			}
 			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				set_state_flag = USA_manhattan_project
+				add_dynamic_modifier = { modifier = r56_the_project }
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
 				prioritize = { 376 }
 				limit = {
 					is_core_of = ROOT
@@ -3566,238 +4035,258 @@ focus_tree = {
 				set_state_flag = USA_manhattan_project
 				add_dynamic_modifier = { modifier = r56_the_project } 
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					NOT = {
+						has_tech = atomic_research
+					}
+				}
+				add_tech_bonus = {
+					name = USA_manhattan_project
+					bonus = 1.0
+					uses = 1
+					category = nuclear
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 0.5
+				}
+			}
+			ELSE = {
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 0.8
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_dlc = "Gotterdammerung" 
+						has_government = democratic
+					}
+					ROOT = {
+						scoped_play_song = "apocalyptic_weapons"
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_rally_the_martians
+		icon = GFX_focus_generic_university_3
+		prerequisite = { focus =  USA_manhattan_project }
+		x = 0
+		y = 1
+
+		relative_position_id =  USA_manhattan_project
+
+		allow_branch = {
+			has_dlc = "Gotterdammerung"
+		}
+		cost = 5
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available = {
+			has_government = democratic
+			has_tech = atomic_research
+			custom_trigger_tooltip = {
+				tooltip = USA_rally_the_martians_trigger_tt	
+				all_country_with_original_tag = {
+					original_tag_to_check = HUN
+					OR = {
+						has_completed_focus = wuw_HUN_join_the_comintern
+						has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
+						has_completed_focus = wuw_HUN_continue_the_regency
+						has_completed_focus = wuw_HUN_reinstate_the_pragmatic_sanction
+					}
+				}
+			}
+		}
+		
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			if = {
+				limit = {
+					any_country_with_original_tag = {
+						original_tag_to_check = HUN
+						has_character = HUN_edward_teller
+					}
+				}
+				custom_effect_tooltip = {
+					localization_key = available_scientist_one_line_tt
+					CHARACTER = HUN_edward_teller
+				}	
+			}
+			if = {
+				limit = {
+					any_country_with_original_tag = {
+						original_tag_to_check = HUN
+						has_character = HUN_john_von_neumann
+					}
+				}
+				custom_effect_tooltip = {
+					localization_key = available_scientist_one_line_tt
+					CHARACTER = HUN_john_von_neumann
+				}
+			}
+			if = {
+				limit = {
+					any_country_with_original_tag = {
+						original_tag_to_check = HUN
+						has_character = HUN_leo_szilard
+					}
+				}
+				custom_effect_tooltip = {
+					localization_key = available_scientist_one_line_tt
+					CHARACTER = HUN_leo_szilard
+				}
+			}
+			hidden_effect = { #There has to be a better way to do this but I'm to lazy to find it - SpicyAlfredo
+				if = {
+					limit = {
+						any_country_with_original_tag = {
+							original_tag_to_check = HUN
+							has_character = HUN_edward_teller
+						}
+					}
+					random_other_country = {
+						limit = {
+							has_character = HUN_edward_teller
+							original_tag = HUN
+						}
+						set_nationality = {
+							target_country = USA
+							character = HUN_edward_teller
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_country_with_original_tag = {
+							original_tag_to_check = HUN
+							has_character = HUN_john_von_neumann
+						}
+					}
+					random_other_country = {
+						limit = {
+							has_character = HUN_john_von_neumann
+							original_tag = HUN
+						}
+						set_nationality = {
+							target_country = USA
+							character = HUN_john_von_neumann
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_country_with_original_tag = {
+							original_tag_to_check = HUN
+							has_character = HUN_john_von_neumann
+						}
+					}
+					random_other_country = {
+						limit = {
+							has_character = HUN_leo_szilard
+							original_tag = HUN
+						}
+						set_nationality = {
+							target_country = USA
+							character = HUN_leo_szilard
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = USA_rally_the_martians
+				bonus = 0.25
+				uses = 1
+				category = electronics
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.25
+			}
 		}
 	}
 
 ################## NATO FOCUSES ###########################
 
 	focus = {
-		id = r56_USA_foundation_of_NATO
-		icon = GFX_focus_chi_mission_to_the_us
-		prerequisite = { focus = USA_us_war_economy focus = USA_wartime_industry }
-		available = {
-			has_government = democratic
-			is_puppet = no
-			OR = {
-				AND = {
-					ENG = { 
-						is_faction_leader = yes
-						is_in_faction_with = ROOT
-					}
-				}
-				AND = {
-					FRA = { 
-						is_faction_leader = yes
-						is_in_faction_with = ROOT
-					}
-				}
-				AND = {
-					is_in_faction = yes
-					is_faction_leader = yes
-				}
-				is_in_faction = no
-			}
-			
-			OR = {
-				threat > 0.5
-				has_war_support > 0.8
-				has_war_with = SOV
-			}
-			OR = {
-				AND = {
-					has_war = yes
-					num_of_military_factories > 199
-				}
-				AND = {
-					has_war = no
-					num_of_military_factories > 249
-				}	
-			}
-		}
-
-		
-		
+		id = r56_USA_form_united_nations
+		icon = GFX_goal_USA_united_nations
+		prerequisite = { focus = USA_wartime_industry focus = USA_us_war_economy }
 		x = -3
 		y = 5
 		relative_position_id = USA_arsenal_of_democracy
 		cost = 5
-		ai_will_do = {
-			factor = 1
-			modifier = { #Go for the unthinkable asap
-				add = 25
-				SOV = {
-					exists = yes
-					is_major = yes
+		available = {
+			has_government = democratic
+			has_war_with_major = yes
+			custom_trigger_tooltip = {
+				tooltip = r56_un_trigger_tooltip
+				all_enemy_country = {
+					OR = {
+						is_major = no
+						any_other_country = {
+							is_major = yes
+							has_war_with = PREV
+							NOT = {
+								is_in_faction_with = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
 				}
-				ROOT = {
-					has_war = no
-				}
-				has_global_flag = r56_ww2_got_done_early_make_ai_move_toward_ww3
 			}
 		}
 		completion_reward = {
-			if = {
+			custom_effect_tooltip = r56_un_tooltip
+			unlock_decision_category_tooltip = CW_united_nations_security_council
+			set_country_flag = r56_invited_to_un_security_council
+			add_to_array = {
+				global.members_of_un = THIS.id
+			}
+			every_other_country = {
 				limit = {
-					ENG = { 
-						is_faction_leader = yes
-						is_in_faction_with = ROOT
+					is_major = yes
+					has_war_together_with = PREV
+					NOT = {
+						has_war_with = ROOT
+					}
+					meta_trigger = {
+						text = {
+							NOT = {
+								has_global_flag = r56_[THIS_COUNTRY]_in_yalta
+							}
+						}
+						THIS_COUNTRY = "[THIS.GetTag]"
 					}
 				}
-				create_faction = USA_nato_faction
-				custom_effect_tooltip = USA_dissolve_allies_found_nato_tt
-				hidden_effect = {
-					if = {
-						limit = {
-							ENG = { 
-								is_faction_leader = yes
-								is_ai = no
-							}
-						}
-						every_country = {
-							limit = {
-								OR = {
-									tag = ROOT
-									is_in_faction_with = ROOT
-								}
-							}
-							ENG = {
-								add_to_faction = PREV
-							}	
-						}
-						hidden_effect = {
-							save_event_target_as = alliance_applicant
-							ENG = { save_event_target_as = alliance_inviter }					
-							set_country_flag = alliance_applicant@ROOT
-							ENG = { set_country_flag = alliance_inviter@ROOT }
-							news_event = { id = r56i.event.16 hours = 12 }
-						}				
-					}			
-					if = {
-						limit = {	
-							ENG = { 
-								is_faction_leader = yes
-								is_ai = yes
-							}		
-						}
-						every_country = {
-							limit = {
-								OR = {
-									tag = ENG
-									is_in_faction_with = ENG
-								}
-							}
-							ROOT = {
-								add_to_faction = PREV
-							}	
-						}
-						hidden_effect = {
-							set_country_flag = alliance_inviter@ROOT
-							save_event_target_as = alliance_inviter
-							ENG = { save_event_target_as =  alliance_applicant }	
-							ENG = { set_country_flag = alliance_applicant@ROOT }
-							news_event = { id = r56i.event.16 hours = 12 }
-						}				
-					}
+				set_country_flag = r56_invited_to_un_security_council
+				add_to_array = {
+					global.members_of_un = THIS.id
 				}
-				add_ideas = rt56_USA_founder_of_nato_idea
+				unlock_decision_category_tooltip = CW_united_nations_security_council
 			}
-
-			if = {
-				limit = {
-					FRA = { 
-						is_faction_leader = yes
-						is_in_faction_with = ROOT
-					}
-				}
-				create_faction = USA_nato_faction
-				custom_effect_tooltip = USA_dissolve_allies_found_nato_tt
-				hidden_effect = {
-					if = {
-						limit = {
-							FRA = { 
-								is_faction_leader = yes
-								is_ai = no
-							}
-						}
-						every_country = {
-							limit = {
-								OR = {
-									tag = ROOT
-									is_in_faction_with = ROOT
-								}
-							}
-							FRA = {
-								add_to_faction = PREV
-							}	
-						}
-						hidden_effect = {
-							save_event_target_as = alliance_applicant
-							FRA = { save_event_target_as = alliance_inviter }					
-							set_country_flag = alliance_applicant@ROOT
-							FRA = { set_country_flag = alliance_inviter@ROOT }
-							news_event = { id = r56i.event.16 hours = 12 }
-						}				
-					}			
-					if = {
-						limit = {	
-							FRA = { 
-								is_faction_leader = yes
-								is_ai = yes
-							}		
-						}
-						every_country = {
-							limit = {
-								OR = {
-									tag = FRA
-									is_in_faction_with = FRA
-								}
-							}
-							ROOT = {
-								add_to_faction = PREV
-							}	
-						}
-						hidden_effect = {
-							set_country_flag = alliance_inviter@ROOT
-							save_event_target_as = alliance_inviter
-							FRA = { save_event_target_as =  alliance_applicant }	
-							FRA = { set_country_flag = alliance_applicant@ROOT }
-							news_event = { id = r56i.event.16 hours = 12 }
-						}				
-					}
-				}
-				add_ideas = rt56_USA_founder_of_nato_idea
-			}
-
-			if = {
-				limit = {
-					is_in_faction = yes
-					is_faction_leader = yes
-				}
-				set_faction_name = USA_nato_faction
-				add_ideas = rt56_USA_founder_of_nato_idea
-			}
-			if = {
-				limit = {
-					is_in_faction = no
-				}
-				create_faction = USA_nato_faction
-				add_ideas = rt56_USA_founder_of_nato_idea
-			}
-			if = {
-				limit = {
-					NOT = { has_idea = BEL_volunteer_corps }
-				}
-				set_rule = { can_send_volunteers = yes }
-				add_ideas = BEL_volunteer_corps
-			}
+			r56_calculate_un_members = yes
 		}
-		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
 		id = r56_USA_overwatch_the_pacific
 		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = r56_USA_foundation_of_NATO }
+		prerequisite = { focus = r56_USA_form_united_nations }
 		available = {
 			has_government = democratic
 		}
@@ -3806,7 +4295,7 @@ focus_tree = {
 		
 		x = -4
 		y = 1
-		relative_position_id = r56_USA_foundation_of_NATO
+		relative_position_id = r56_USA_form_united_nations
 		cost = 8
 		ai_will_do = {
 			factor = 1
@@ -3842,10 +4331,20 @@ focus_tree = {
 		bypass = {
 			OR ={
 				country_exists = FSM
+				country_exists = PLU
+				country_exists = MRS
+				country_exists = RAP
+				country_exists = KIR
+				country_exists = NRU
 				country_exists = TAH
 				country_exists = FIJ
 				country_exists = GUM
 				country_exists = SAM
+				country_exists = TON
+				country_exists = NIU
+				country_exists = TUV
+				country_exists = SOL
+				country_exists = VAN
 			}
 		}
 		
@@ -3938,13 +4437,1061 @@ focus_tree = {
 						relation = docking_rights
 						active = yes
 					}
-					ROOT = {give_guarantee = FSM }
+					ROOT = { give_guarantee = FSM }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Palau as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = PLU
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = PLU
+					PLU = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { PLU = { exists = no } }
+						release = PLU
+						PLU = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = PLU
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = PLU }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Palauan Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = PLU
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = PLU }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Marshall Islands as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = MRS
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = MRS
+					MRS = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { MRS = { exists = no } }
+						release = MRS
+						MRS = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = MRS
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = MRS }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Marshallese Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = MRS
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = MRS }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Guam as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = GUM
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = GUM
+					GUM = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { GUM = { exists = no } }
+						release = GUM
+						GUM = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = GUM
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = GUM }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Guam Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = GUM
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = GUM }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Kiribati as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = KIR
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = KIR
+					KIR = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { KIR = { exists = no } }
+						release = KIR
+						KIR = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = KIR
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = KIR }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Abemaman Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = KIR
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = KIR }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Nauru as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = NRU
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = NRU
+					NRU = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { NRU = { exists = no } }
+						release = NRU
+						NRU = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = NRU
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = NRU }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Nauruan Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = NRU
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = NRU }
 				}
 				add_stability = 0.02
 				add_political_power = 20
 			}
 
-			#release Polynesia as a sovereign nation
+			#release Fiji as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = FIJ
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = FIJ
+					FIJ = {
+						custom_effect_tooltip = create_two_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { FIJ = { exists = no } }
+						release = FIJ
+						FIJ = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = FIJ
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = FIJ }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Fijian Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Fijian Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = FIJ
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = FIJ }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Solomon Islands as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = SOL
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = SOL
+					SOL = {
+						custom_effect_tooltip = create_two_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { SOL = { exists = no } }
+						release = SOL
+						SOL = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = SOL
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = SOL }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Solomon Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Solomon Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = SOL
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = SOL }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Vanuatu Islands as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = VAN
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = VAN
+					VAN = {
+						custom_effect_tooltip = create_two_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { VAN = { exists = no } }
+						release = VAN
+						VAN = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = VAN
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = VAN }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Vanuatu Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Vanuatu Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = VAN
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = VAN }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+
+			#release Samoa as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = SAM
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = SAM
+					SAM = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { SAM = { exists = no } }
+						release = SAM
+						SAM = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = SAM
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = SAM }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Samoa Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = SAM
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = SAM }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+
+			#release Tonga as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = TON
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = TON
+					TON = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { TON = { exists = no } }
+						release = TON
+						TON = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = TON
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = TON }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Tonga Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = TON
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = TON }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Niue as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = NIU
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = NIU
+					NIU = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { NIU = { exists = no } }
+						release = NIU
+						NIU = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = NIU
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = NIU }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Niuean Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = NIU
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = NIU }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Tuvalu as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = TUV
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = TUV
+					TUV = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { TUV = { exists = no } }
+						release = TUV
+						TUV = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = TUV
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = TUV }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Tuvaluan Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = TUV
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = TUV }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release RAPalu as a sovereign nation
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = RAP
+						is_owned_by = ROOT
+					}
+				}
+				effect_tooltip ={
+					release = RAP
+					RAP = {
+						custom_effect_tooltip = create_one_units_tt
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { RAP = { exists = no } }
+						release = RAP
+						RAP = { save_event_target_as = released_nation_target }
+					}
+					else = {
+						create_dynamic_country = {
+							original_tag = RAP
+							
+							save_event_target_as = released_nation_target
+							PREV = {
+								every_owned_state = {
+									limit = { is_core_of = RAP }
+									PREV.PREV = { transfer_state = PREV }
+								}
+							}
+						}
+					}
+					event_target:released_nation_target = {
+						division_template = {
+							name = "National Guard Division"
+							priority = 1
+							division_names_group = USA_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+					
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+					
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+
+								infantry = { x = 3 y = 0 }
+								infantry = { x = 3 y = 1 }
+								infantry = { x = 3 y = 2 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+							}
+						}
+						random_owned_controlled_state = {
+							limit = { PREV = { has_full_control_of_state = PREV } }
+							create_unit = {
+								division = "name = \"Rapa Nui Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
+								owner = PREV
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = RAP
+						relation = docking_rights
+						active = yes
+					}
+					ROOT = { give_guarantee = RAP }
+				}
+				add_stability = 0.02
+				add_political_power = 20
+			}
+			
+			#release Tahiti as a sovereign nation
 			if = {
 				limit = {
 					any_state = {
@@ -4025,250 +5572,6 @@ focus_tree = {
 						active = yes
 					}
 					ROOT = {give_guarantee = TAH }
-				}
-				add_stability = 0.02
-				add_political_power = 20
-			}
-
-			#release FIJ as a sovereign nation
-			if = {
-				limit = {
-					any_state = {
-						is_core_of = FIJ
-						is_owned_by = ROOT
-					}
-				}
-				effect_tooltip ={
-					release = FIJ
-					FIJ = {
-						custom_effect_tooltip = create_two_units_tt
-					}
-				}
-				hidden_effect = {
-					if = {
-						limit = { FIJ = { exists = no } }
-						release = FIJ
-						FIJ = { save_event_target_as = released_nation_target }
-					}
-					else = {
-						create_dynamic_country = {
-							original_tag = FIJ
-							
-							save_event_target_as = released_nation_target
-							PREV = {
-								every_owned_state = {
-									limit = { is_core_of = FIJ }
-									PREV.PREV = { transfer_state = PREV }
-								}
-							}
-						}
-					}
-					event_target:released_nation_target = {
-						division_template = {
-							name = "National Guard Division"
-							priority = 1
-							division_names_group = USA_INF_01
-							regiments = {
-								infantry = { x = 0 y = 0 }
-								infantry = { x = 0 y = 1 }
-								infantry = { x = 0 y = 2 }
-					
-								infantry = { x = 1 y = 0 }
-								infantry = { x = 1 y = 1 }
-								infantry = { x = 1 y = 2 }
-					
-								infantry = { x = 2 y = 0 }
-								infantry = { x = 2 y = 1 }
-								infantry = { x = 2 y = 2 }
-
-								infantry = { x = 3 y = 0 }
-								infantry = { x = 3 y = 1 }
-								infantry = { x = 3 y = 2 }
-							}
-							support = {
-								engineer = { x = 0 y = 0 }
-								artillery = { x = 0 y = 1 }
-							}
-						}
-						random_owned_controlled_state = {
-							limit = { PREV = { has_full_control_of_state = PREV } }
-							create_unit = {
-								division = "name = \"Fijian Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
-								owner = PREV
-							}
-						}
-						random_owned_controlled_state = {
-							limit = { PREV = { has_full_control_of_state = PREV } }
-							create_unit = {
-								division = "name = \"Polynesian Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
-								owner = PREV
-							}
-						}
-					}
-					diplomatic_relation = {
-						country = FIJ
-						relation = docking_rights
-						active = yes
-					}
-					ROOT = {give_guarantee = TAH }
-				}
-				add_stability = 0.02
-				add_political_power = 20
-			}
-
-			#release Guam as a sovereign nation
-			if = {
-				limit = {
-					any_state = {
-						is_core_of = GUM
-						is_owned_by = ROOT
-					}
-				}
-				effect_tooltip ={
-					release = GUM
-					GUM = {
-						custom_effect_tooltip = create_one_units_tt
-					}
-				}
-				hidden_effect = {
-					if = {
-						limit = { GUM = { exists = no } }
-						release = GUM
-						GUM = { save_event_target_as = released_nation_target }
-					}
-					else = {
-						create_dynamic_country = {
-							original_tag = GUM
-							
-							save_event_target_as = released_nation_target
-							PREV = {
-								every_owned_state = {
-									limit = { is_core_of = GUM }
-									PREV.PREV = { transfer_state = PREV }
-								}
-							}
-						}
-					}
-					event_target:released_nation_target = {
-						division_template = {
-							name = "National Guard Division"
-							priority = 1
-							division_names_group = USA_INF_01
-							regiments = {
-								infantry = { x = 0 y = 0 }
-								infantry = { x = 0 y = 1 }
-								infantry = { x = 0 y = 2 }
-					
-								infantry = { x = 1 y = 0 }
-								infantry = { x = 1 y = 1 }
-								infantry = { x = 1 y = 2 }
-					
-								infantry = { x = 2 y = 0 }
-								infantry = { x = 2 y = 1 }
-								infantry = { x = 2 y = 2 }
-
-								infantry = { x = 3 y = 0 }
-								infantry = { x = 3 y = 1 }
-								infantry = { x = 3 y = 2 }
-							}
-							support = {
-								engineer = { x = 0 y = 0 }
-								artillery = { x = 0 y = 1 }
-							}
-						}
-						random_owned_controlled_state = {
-							limit = { PREV = { has_full_control_of_state = PREV } }
-							create_unit = {
-								division = "name = \"Guam Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
-								owner = PREV
-							}
-						}
-					}
-					diplomatic_relation = {
-						country = GUM
-						relation = docking_rights
-						active = yes
-					}
-					ROOT = {give_guarantee = TAH }
-				}
-				add_stability = 0.02
-				add_political_power = 20
-			}
-
-			#release Samoa as a sovereign nation
-			if = {
-				limit = {
-					any_state = {
-						is_core_of = SAM
-						is_owned_by = ROOT
-					}
-				}
-				effect_tooltip ={
-					release = SAM
-					SAM = {
-						custom_effect_tooltip = create_one_units_tt
-					}
-				}
-				hidden_effect = {
-					if = {
-						limit = { SAM = { exists = no } }
-						release = SAM
-						SAM = { save_event_target_as = released_nation_target }
-					}
-					else = {
-						create_dynamic_country = {
-							original_tag = SAM
-							
-							save_event_target_as = released_nation_target
-							PREV = {
-								every_owned_state = {
-									limit = { is_core_of = SAM }
-									PREV.PREV = { transfer_state = PREV }
-								}
-							}
-						}
-					}
-					event_target:released_nation_target = {
-						division_template = {
-							name = "National Guard Division"
-							priority = 1
-							division_names_group = USA_INF_01
-							regiments = {
-								infantry = { x = 0 y = 0 }
-								infantry = { x = 0 y = 1 }
-								infantry = { x = 0 y = 2 }
-					
-								infantry = { x = 1 y = 0 }
-								infantry = { x = 1 y = 1 }
-								infantry = { x = 1 y = 2 }
-					
-								infantry = { x = 2 y = 0 }
-								infantry = { x = 2 y = 1 }
-								infantry = { x = 2 y = 2 }
-
-								infantry = { x = 3 y = 0 }
-								infantry = { x = 3 y = 1 }
-								infantry = { x = 3 y = 2 }
-							}
-							support = {
-								engineer = { x = 0 y = 0 }
-								artillery = { x = 0 y = 1 }
-							}
-						}
-						random_owned_controlled_state = {
-							limit = { PREV = { has_full_control_of_state = PREV } }
-							create_unit = {
-								division = "name = \"Samoa Division\" division_template = \"National Guard Division\" start_experience_factor = 0.2" 
-								owner = PREV
-							}
-						}
-					}
-					diplomatic_relation = {
-						country = SAM
-						relation = docking_rights
-						active = yes
-					}
-					ROOT = {give_guarantee = SAM }
 				}
 				add_stability = 0.02
 				add_political_power = 20
@@ -4461,6 +5764,7 @@ focus_tree = {
 		prerequisite = { focus = r56_USA_liberty_for_the_pacific focus = r56_USA_withdraw_from_philippines focus = r56_USA_fate_of_hawaii  }
 		available = {
 			is_puppet = no
+			has_rule = can_send_volunteers
 			OR = {
 				KOR = {
 					exists = yes
@@ -4537,7 +5841,7 @@ focus_tree = {
 			}
 			has_equipment = { infantry_equipment > 6999 }
 		}
-
+		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_RESEARCH }
 		bypass = {
 			OR = {
 				CHI = {
@@ -4689,7 +5993,13 @@ focus_tree = {
 			PRC = {
 				exists = yes
 				is_puppet = no
-				NOT = { has_government = democratic }
+				NOT = {
+					OR = {
+						has_government = democratic
+						is_in_faction_with = USA
+						has_war_with = ROOT
+					}
+				}
 			}
 		}
 
@@ -4719,6 +6029,259 @@ focus_tree = {
 			#USA_congress_medium_support = yes	#are congress really such warmongers?
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = r56_USA_return_to_europe
+		icon = GFX_Goal_USA_Global_Hegemony
+		prerequisite = { focus = r56_USA_form_united_nations }
+		available = {
+			has_government = democratic
+		}
+		
+		x = 5
+		y = 1
+		relative_position_id = r56_USA_form_united_nations
+		cost = 8
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = rt56_USA_watching_over_pacific_idea
+				}
+				swap_ideas = {
+					remove_idea = rt56_USA_watching_over_pacific_idea
+					add_idea = rt56_USA_watching_over_europe_idea
+				}
+			}
+			else = {
+				add_ideas = rt56_USA_watching_over_europe_idea
+				custom_effect_tooltip = USA_NATO_overwatch_tt
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = r56_USA_foundation_of_NATO
+		icon = GFX_goal_generic_befriend_united_states
+		prerequisite = { focus = r56_USA_return_to_europe }
+		x = -5
+		y = 1
+		relative_position_id = r56_USA_return_to_europe
+		cost = 5
+		ai_will_do = {
+			factor = 1
+			modifier = { #Go for the unthinkable asap
+				add = 25
+				SOV = {
+					exists = yes
+					is_major = yes
+				}
+				ROOT = {
+					has_war = no
+				}
+				has_global_flag = r56_ww2_got_done_early_make_ai_move_toward_ww3
+			}
+		}
+		available = {
+			has_government = democratic
+			is_puppet = no
+			OR = {
+				AND = {
+					ENG = { 
+						is_faction_leader = yes
+						is_in_faction_with = ROOT
+					}
+				}
+				AND = {
+					FRA = { 
+						is_faction_leader = yes
+						is_in_faction_with = ROOT
+					}
+				}
+				AND = {
+					is_in_faction = yes
+					is_faction_leader = yes
+				}
+				is_in_faction = no
+			}
+			
+			OR = {
+				threat > 0.5
+				has_war_support > 0.8
+				has_war_with = SOV
+			}
+			OR = {
+				AND = {
+					has_war = yes
+					num_of_military_factories > 199
+				}
+				AND = {
+					has_war = no
+					num_of_military_factories > 249
+				}	
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					ENG = { 
+						is_faction_leader = yes
+						is_in_faction_with = ROOT
+					}
+				}
+				create_faction = USA_nato_faction
+				custom_effect_tooltip = USA_dissolve_allies_found_nato_tt
+				hidden_effect = {
+					if = {
+						limit = {
+							ENG = { 
+								is_faction_leader = yes
+								is_ai = no
+							}
+						}
+						every_country = {
+							limit = {
+								OR = {
+									tag = ROOT
+									is_in_faction_with = ROOT
+								}
+							}
+							ENG = {
+								add_to_faction = PREV
+							}	
+						}
+						hidden_effect = {
+							save_event_target_as = alliance_applicant
+							ENG = { save_event_target_as = alliance_inviter }					
+							set_country_flag = alliance_applicant@ROOT
+							ENG = { set_country_flag = alliance_inviter@ROOT }
+							news_event = { id = r56i.event.16 hours = 12 }
+						}				
+					}			
+					if = {
+						limit = {	
+							ENG = { 
+								is_faction_leader = yes
+								is_ai = yes
+							}		
+						}
+						every_country = {
+							limit = {
+								OR = {
+									tag = ENG
+									is_in_faction_with = ENG
+								}
+							}
+							ROOT = {
+								add_to_faction = PREV
+							}	
+						}
+						hidden_effect = {
+							set_country_flag = alliance_inviter@ROOT
+							save_event_target_as = alliance_inviter
+							ENG = { save_event_target_as =  alliance_applicant }	
+							ENG = { set_country_flag = alliance_applicant@ROOT }
+							news_event = { id = r56i.event.16 hours = 12 }
+						}				
+					}
+				}
+				add_ideas = rt56_USA_founder_of_nato_idea
+			}
+
+			if = {
+				limit = {
+					FRA = { 
+						is_faction_leader = yes
+						is_in_faction_with = ROOT
+					}
+				}
+				create_faction = USA_nato_faction
+				custom_effect_tooltip = USA_dissolve_allies_found_nato_tt
+				hidden_effect = {
+					if = {
+						limit = {
+							FRA = { 
+								is_faction_leader = yes
+								is_ai = no
+							}
+						}
+						every_country = {
+							limit = {
+								OR = {
+									tag = ROOT
+									is_in_faction_with = ROOT
+								}
+							}
+							FRA = {
+								add_to_faction = PREV
+							}	
+						}
+						hidden_effect = {
+							save_event_target_as = alliance_applicant
+							FRA = { save_event_target_as = alliance_inviter }					
+							set_country_flag = alliance_applicant@ROOT
+							FRA = { set_country_flag = alliance_inviter@ROOT }
+							news_event = { id = r56i.event.16 hours = 12 }
+						}				
+					}			
+					if = {
+						limit = {	
+							FRA = { 
+								is_faction_leader = yes
+								is_ai = yes
+							}		
+						}
+						every_country = {
+							limit = {
+								OR = {
+									tag = FRA
+									is_in_faction_with = FRA
+								}
+							}
+							ROOT = {
+								add_to_faction = PREV
+							}	
+						}
+						hidden_effect = {
+							set_country_flag = alliance_inviter@ROOT
+							save_event_target_as = alliance_inviter
+							FRA = { save_event_target_as =  alliance_applicant }	
+							FRA = { set_country_flag = alliance_applicant@ROOT }
+							news_event = { id = r56i.event.16 hours = 12 }
+						}				
+					}
+				}
+				add_ideas = rt56_USA_founder_of_nato_idea
+			}
+
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = yes
+				}
+				set_faction_name = USA_nato_faction
+				add_ideas = rt56_USA_founder_of_nato_idea
+			}
+			if = {
+				limit = {
+					is_in_faction = no
+				}
+				create_faction = USA_nato_faction
+				add_ideas = rt56_USA_founder_of_nato_idea
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = BEL_volunteer_corps }
+				}
+				set_rule = { can_send_volunteers = yes }
+				add_ideas = BEL_volunteer_corps
+			}
+		}
+		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -4772,17 +6335,15 @@ focus_tree = {
 	focus = {
 		id = r56_USA_coordinate_research_effort
 		icon = GFX_goal_tfv_generic_tech_sharing
-		prerequisite = { focus = r56_USA_guide_true_democracies }
+		prerequisite = { focus = r56_USA_foundation_of_NATO }
 		available = {
 			has_government = democratic
 			is_in_faction = yes
 		}
-
-		
 		
 		x = -1
-		y = 1
-		relative_position_id = r56_USA_guide_true_democracies
+		y = 2
+		relative_position_id = r56_USA_foundation_of_NATO
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -4800,95 +6361,65 @@ focus_tree = {
 	}
 
 	focus = {
-		id = r56_USA_return_to_europe
-		icon = GFX_Goal_USA_Global_Hegemony
-		prerequisite = { focus = r56_USA_foundation_of_NATO }
-		available = {
-			has_government = democratic
-		}
-
-		
-		
-		x = 4
-		y = 1
-		relative_position_id = r56_USA_foundation_of_NATO
-		cost = 8
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = rt56_USA_watching_over_pacific_idea
-				}
-				swap_ideas = {
-					remove_idea = rt56_USA_watching_over_pacific_idea
-					add_idea = rt56_USA_watching_over_europe_idea
-				}
-			}
-			else = {
-				add_ideas = rt56_USA_watching_over_europe_idea
-				custom_effect_tooltip = USA_NATO_overwatch_tt
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-
-	focus = {
 		id = r56_USA_enact_marshall_plan
 		icon = GFX_goal_generic_bills
 		prerequisite = { focus = r56_USA_return_to_europe }
-		prerequisite = { focus = r56_USA_guide_true_democracies }
 		available = {
 			has_government = democratic
 			has_war = no
-			OR = {
-				GER = {
-					exists = yes
-					has_government = democratic
-				}
-				WGR = {
-					exists = yes
-					has_government = democratic
-				}
-			}
+			# OR = {	#predates Germany by a year
+			# 	GER = {
+			# 		exists = yes
+			# 		has_government = democratic
+			# 	}
+			# 	WGR = {
+			# 		exists = yes
+			# 		has_government = democratic
+			# 	}
+			# }
 		}
 
 		
 		
-		x = 1
+		x = -3
 		y = 1
-		relative_position_id = r56_USA_guide_true_democracies
+		relative_position_id = r56_USA_return_to_europe
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			if = {
-				limit = {
-					GER = {
-						exists = yes
-						has_government = democratic
-					}
-				}
-				add_timed_idea = { idea = GER_marshall_plan_idea days = 720 }
-			}
-			if = {
-				limit = {
-					WGR = {
-						exists = yes
-						has_government = democratic
-					}
-				}
-				add_timed_idea = { idea = GER_marshall_plan_idea days = 720 }
-			}
-			every_other_country = {
-				limit = {
-					is_in_faction_with = USA
-				}
-				add_timed_idea = { idea = GER_marshall_plan_idea days = 720 }
-			}
-			add_timed_idea = { idea = r56_financing_marshall_plan days = 280 }
+            every_other_country = {
+                limit = {
+                    NOT = {
+                        has_war_with =  ROOT
+                    }
+                    OR = {
+                        any_subject_country = {
+                            capital_scope = {
+                                is_on_continent = europe
+                            }
+                        }
+                        AND = {
+                            capital_scope = {
+                                is_on_continent = europe
+                            }
+                            NOT = {
+                                original_tag = FIN
+                                has_government = fascism #Bad Franco!
+								AND = {
+									is_subject = yes
+									NOT = {
+										is_subject_of = ROOT
+									}
+								}
+                            }
+                        }
+                    }
+                }
+                country_event = cold_war.4
+            }
+			add_timed_idea = { idea = r56_financing_marshall_plan days = 360 }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }	
 	}
@@ -5015,6 +6546,19 @@ focus_tree = {
 			any_country = {
 				original_tag = SPR
 				exists = yes
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+			OR = {	#can either invite to faction, or has a valid wargoal target
+				is_faction_leader = yes
+				any_country = {
+					original_tag = SPR
+					exists = yes
+					NOT = {
+						has_government = democratic
+					}
+				}
 			}
 		}
 
@@ -5065,6 +6609,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
+					is_faction_leader = yes
 					any_country = {
 						original_tag = SPR
 						has_civil_war = no
@@ -5096,8 +6641,12 @@ focus_tree = {
 				exists = yes
 				has_civil_war = no
 				is_puppet = no
+
 				NOT = {
-					has_government = democratic
+					OR = {
+						has_government = democratic
+						has_war_with = ROOT
+					}
 				}
 			}
 		}
@@ -5494,7 +7043,10 @@ focus_tree = {
 			YUG = {
 				exists = yes
 				NOT = {
-					is_in_faction_with = USA
+					OR = {
+						is_in_faction_with = USA
+						has_war_with = ROOT
+					}
 				}
 			}
 		}
@@ -5694,6 +7246,12 @@ focus_tree = {
 			any_other_country = {
 				is_major = yes
 				has_government = communism
+				NOT = {
+					OR = {
+						is_in_faction_with = USA
+						has_war_with = ROOT
+					}
+				}
 			}
 		}
 
@@ -5777,6 +7335,19 @@ focus_tree = {
 	focus = {
 		id = USA_reestablish_the_gold_standard
 		icon = GFX_focus_usa_reestablish_the_gold_standard
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					has_completed_focus = USA_continue_the_new_deal
+				}
+			}
+		}
 		x = 6
 		y = 0
 		relative_position_id = USA_continue_the_new_deal
@@ -5792,16 +7363,16 @@ focus_tree = {
 		mutually_exclusive = { focus = USA_continue_the_new_deal }
 		available = {
 			has_government = democratic
-			
+			NOT = {
+				has_country_leader = { ruling_only = yes character = USA_franklin_delano_roosevelt }
+			}
 		}
 
-		
-		
-		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
 			add_ideas = USA_gold_standard
 			USA_congress_small_opposition = yes
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 	focus = {
@@ -5979,15 +7550,32 @@ focus_tree = {
 		relative_position_id = USA_reestablish_the_gold_standard
 		cost = 5
 
+		available = {
+			congress_low_support_trigger = yes
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 		allow_branch = {
 			has_dlc = "Man the Guns"
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					has_completed_focus = USA_continue_the_new_deal
+				}
+			}			
 		}
 		
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		completion_reward = {
+			add_war_support = -0.05
+			add_stability = 0.05
 			custom_effect_tooltip = available_political_advisor
 		    show_ideas_tooltip = charles_coughlin
 			add_popularity = { ideology = fascism popularity = 0.05 }
@@ -6010,6 +7598,7 @@ focus_tree = {
 		    	}
 		    	add_ideas = charles_coughlin
 		    }
+			USA_congress_small_opposition = yes #Making rushing alt USA a little harder in Rt56
 		}
 	}
 	focus = {
@@ -6019,7 +7608,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_america_first }
 		relative_position_id = USA_america_first
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -6048,7 +7637,7 @@ focus_tree = {
 		prerequisite = { focus = USA_extend_the_chinese_exclusion_acts }
 		prerequisite = { focus = USA_labour_management_relations_act }
 		relative_position_id = USA_america_first
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -6057,7 +7646,7 @@ focus_tree = {
 		
 		
 		
-		search_filters = {FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
 		    show_ideas_tooltip = USA_joseph_mccarthy
@@ -6073,8 +7662,8 @@ focus_tree = {
 		prerequisite = { focus = USA_empower_the_huac }
 
 		relative_position_id = USA_america_first
-		cost = 5
-
+		cost = 10
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_STABILITY }
 		ai_will_do = {
 			factor = 1
 		}
@@ -6129,7 +7718,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_america_first }
 		relative_position_id = USA_america_first
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -6180,7 +7769,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_ally_with_the_silver_shirts }
 		relative_position_id = USA_ally_with_the_silver_shirts
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -6202,7 +7791,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_national_prosperity_program }
 		relative_position_id = USA_ally_with_the_silver_shirts
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -6227,7 +7816,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_national_prosperity_program }
 		relative_position_id = USA_ally_with_the_silver_shirts
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -6249,7 +7838,7 @@ focus_tree = {
 		prerequisite = { focus = USA_privatize_the_TVA }
 		prerequisite = { focus = USA_de_regulate_the_banking_sector }
 		relative_position_id = USA_ally_with_the_silver_shirts
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -6265,6 +7854,30 @@ focus_tree = {
 				add_idea = USA_national_employment_strategy
 			}
 			USA_great_depression_level_down = yes
+		}
+	}
+	focus = {
+		id = USA_collaboration_with_the_mafia
+		icon = GFX_focus_generic_conspiracy
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_national_employment_strategy }
+		relative_position_id = USA_national_employment_strategy
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			fascism > 0.2
+		}
+		
+		search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_EQUIPMENT FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			custom_effect_tooltip = USA_collaboration_with_the_mafia_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = USA_frank_nitti
 		}
 	}
 	focus = {
@@ -6298,6 +7911,8 @@ focus_tree = {
 		relative_position_id = USA_invite_foreign_support
 		cost = 5
 
+		search_filters = { FOCUS_FILTER_AIR_XP }
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -6315,7 +7930,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_send_lindbergh_to_germany }
 		relative_position_id = USA_send_lindbergh_to_germany
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -6349,21 +7964,92 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_send_lindbergh_to_germany }
 		relative_position_id = USA_invite_foreign_support
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
 		}
-
-		
-		
-		
 
 		completion_reward = {
 			unlock_decision_tooltip = USA_raise_the_free_corps 
 			custom_effect_tooltip = USA_raise_the_free_corps_tt
 		}
 	}
+
+	focus = {
+		id = USA_enforced_loyalty
+		icon = GFX_goal_generic_secret_police_2
+		cost = 10
+		prerequisite = {
+			focus = USA_recruit_the_free_corps
+			focus = USA_work_with_the_bund
+		}
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						has_government = fascism
+					}
+				}
+				congress_high_support_trigger = yes
+			}
+			else = {
+				congress_low_support_trigger = yes
+			}
+		}
+
+		relative_position_id = USA_recruit_the_free_corps
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+					has_intelligence_agency = yes
+					NOT = {
+						has_done_agency_upgrade = upgrade_interrogation_techniques
+					}
+				}
+				upgrade_intelligence_agency = upgrade_interrogation_techniques
+			}
+			else_if = {
+				limit = {
+					has_dlc = "La Resistance"
+					NOT = {
+						has_intelligence_agency = yes
+					}
+				}
+				create_intelligence_agency = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = r56i_laws_security_balanced
+						has_idea = r56i_laws_security_rights
+						has_idea = r56i_laws_security_order
+					}
+				}
+				custom_effect_tooltip = EFFECT_CHANGE_LAW_r56i_laws_social
+				show_ideas_tooltip = r56i_laws_security_order
+				hidden_effect = {
+					add_ideas = r56i_laws_security_order
+				}
+				
+			}
+			add_tech_bonus = {
+				name = mp_tech_bonus_name
+				bonus = 3
+				uses = 1
+				category = military_police_tech
+			}
+			USA_congress_small_opposition = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ESPIONAGE FOCUS_FILTER_USA_CONGRESS }
+	}
+
 	focus = {
 		id = USA_honor_the_confederacy
 		icon = GFX_focus_usa_honor_the_confederacy
@@ -6389,6 +8075,17 @@ focus_tree = {
 				country_exists = CSA
 			}
 			has_dlc = "Man the Guns"
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					has_completed_focus = USA_continue_the_new_deal
+				}
+			}
 		}
 
 		available = {
@@ -6398,7 +8095,7 @@ focus_tree = {
 				has_government = neutrality
 			}
 			NOT = {
-				has_country_leader = { ruling_only = yes name = "Douglas MacArthur" }
+				has_country_leader = { ruling_only = yes character = USA_douglas_macarthur }
 			}
 			NOT = {
 				country_exists = CSA
@@ -6409,6 +8106,9 @@ focus_tree = {
 			unlock_decision_category_tooltip = USA_honor_the_confederacy
 			custom_effect_tooltip = USA_honor_the_confederacy_tt
 			every_state = {
+				limit = {
+					is_core_of = CSA
+				}
 				remove_core_of = CSA
 			}
 		}
@@ -6464,7 +8164,9 @@ focus_tree = {
 		prerequisite = { focus = USA_cult_of_washington }
 		relative_position_id = USA_cult_of_washington
 		cost = 5
-
+		
+		search_filters = { FOCUS_FILTER_ALLIANCE }
+		
 		ai_will_do = {
 			factor = 50
 		}
@@ -6520,8 +8222,8 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_honor_the_confederacy focus = USA_cult_of_washington }
 		relative_position_id = USA_honor_the_confederacy
-		cost = 5
-
+		cost = 10
+		search_filters = { FOCUS_FILTER_STABILITY }
 		ai_will_do = {
 			factor = 7
 		}
@@ -6585,7 +8287,9 @@ focus_tree = {
 		relative_position_id = USA_war_powers_act
 		mutually_exclusive = { focus = USA_invite_cuba }
 		cost = 10
-
+		
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -6668,6 +8372,7 @@ focus_tree = {
 		prerequisite = { focus = USA_war_powers_act }
 		relative_position_id = USA_war_powers_act
 		mutually_exclusive = { focus = USA_seize_cuba }
+		search_filters = { FOCUS_FILTER_ALLIANCE }
 		ai_will_do = {
 			factor = 50
 		}
@@ -6728,6 +8433,8 @@ focus_tree = {
 		mutually_exclusive = { focus = USA_invite_synarchist_mexico }
 		relative_position_id = USA_war_powers_act
 		cost = 10
+		
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 
 		ai_will_do = {
 			factor = 5
@@ -6768,6 +8475,7 @@ focus_tree = {
 		prerequisite = { focus = USA_seize_cuba focus = USA_invite_cuba }
 		mutually_exclusive = { focus = USA_eliminate_the_southern_threat }
 		relative_position_id = USA_seize_cuba
+		search_filters = { FOCUS_FILTER_ALLIANCE }
 		ai_will_do = {
 			factor = 50
 		}
@@ -6806,7 +8514,9 @@ focus_tree = {
 		relative_position_id = USA_war_powers_act
 		mutually_exclusive = { focus = USA_ally_the_new_canada }
 		cost = 10
-
+		
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		
 		ai_will_do = {
 			factor = 4
 		}
@@ -6852,6 +8562,9 @@ focus_tree = {
 		prerequisite = { focus = USA_manifest_destiny }
 		relative_position_id = USA_manifest_destiny
 		mutually_exclusive = { focus = USA_the_canadian_corridor }
+
+		search_filters = { FOCUS_FILTER_ALLIANCE }
+
 		ai_will_do = {
 			factor = 50
 		}
@@ -6926,6 +8639,9 @@ focus_tree = {
 						is_in_faction_with = USA 
 					}
 					exists = yes
+					NOT = {
+						is_puppet = yes
+					}
 				}
 				country_event = mtg_usa_north_american_dominion.1
 			}
@@ -6939,6 +8655,8 @@ focus_tree = {
 		prerequisite = { focus = USA_north_american_dominion }
 		relative_position_id = USA_war_powers_act
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 
 		ai_will_do = {
 			factor = 5
@@ -7109,6 +8827,8 @@ focus_tree = {
 		relative_position_id = USA_war_powers_act
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -7212,6 +8932,8 @@ focus_tree = {
 		prerequisite = { focus = USA_pacific_pacification }
 		relative_position_id = USA_war_powers_act
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 
 		ai_will_do = {
 			factor = 1
@@ -7391,6 +9113,8 @@ focus_tree = {
 		prerequisite = { focus = USA_protect_south_america }
 		relative_position_id = USA_war_powers_act
 		cost = 10
+		
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 
 		ai_will_do = {
 			factor = 1
@@ -7437,23 +9161,53 @@ focus_tree = {
  	focus = {
 		id = USA_war_plans_division
 		icon = GFX_goal_CAN_scheme_no1
-		x = 49
+		x = 51
 		y = 0
 		offset = {
-			x = -30
+			x = -40
 			y = 0
 			trigger = {
 				not = { has_dlc = "Man the Guns" }
+			}
+		}
+		offset = {
+			x = -18
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = USA_continue_the_new_deal
+				has_dlc = "Man the Guns"
+			}
+		}
+		offset = {
+			x = -10
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = USA_reestablish_the_gold_standard
+				has_dlc = "Man the Guns"
 			}
 		}
 		available = {
 			has_completed_focus = USA_war_department
 		}
 		
-		cost = 5
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_NAVY_XP }
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				surrender_progress > 0.01
+				factor = 250 #oh shit, oh shit, oh shit.
+			}
 		}
 
 		completion_reward = {
@@ -7464,6 +9218,118 @@ focus_tree = {
 			custom_effect_tooltip = available_chief_of_army
 			show_ideas_tooltip = walter_krueger
 			unlock_decision_category_tooltip = USA_war_plans
+		}
+	}
+	focus = {
+		id = USA_homeland_security
+		icon = GFX_goal_generic_defence
+		x = -7
+		y = 1
+		prerequisite = { focus = USA_war_plans_division }
+		relative_position_id = USA_war_plans_division
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				surrender_progress > 0.01
+				factor = 250 #oh shit, oh shit, oh shit.
+			}
+		}
+
+		available = {
+			if = { #Makes it so it can be put at the top of the focus list without the AI taking it when it's not needed
+				limit = {
+					is_ai = yes
+				}
+				ROOT = {
+					surrender_progress > 0.01
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						surrender_progress < 0.01
+					}
+				}
+				congress_low_support_trigger = yes
+			}
+			ROOT = {
+				has_defensive_war = yes
+				has_war_support > 0.20
+			}
+		}
+		
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_intelligence_agency = no
+					has_dlc = "La Resistance"
+				}
+				add_command_power = 5
+				create_intelligence_agency = {
+					name = "Federal Bureau of Investigation"
+					icon = GFX_intelligence_agency_logo_usa_fbi
+				}
+			}
+			else = {
+				add_command_power = 25
+			}
+			add_ideas = rt56_USA_homeland_secuirty
+			custom_effect_tooltip = available_political_advisor
+		    show_ideas_tooltip = rt56_j_edgar_hoover
+			if = {
+				limit = {
+					ROOT = {
+						surrender_progress < 0.01
+					}
+				}
+				USA_congress_small_opposition = yes
+			}
+		}
+	}
+
+	focus = {
+		id = USA_war_plan_blue
+		icon = GFX_goal_USA_over_there
+		x = -7
+		y = 2
+		prerequisite = { focus = USA_homeland_security }
+		relative_position_id = USA_war_plans_division
+		cost = 10
+
+		allow_branch = {
+			CSA = {
+				exists = no
+			}
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes	
+
+		available = {
+			ROOT = {
+				surrender_progress > 0.02
+				has_defensive_war = yes
+				has_war_support > 0.25
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				surrender_progress > 0.01
+				factor = 250 #oh shit, oh shit, oh shit.
+			}
+		}
+
+		completion_reward = {
+			add_command_power = 25
+			unlock_decision_category_tooltip = USA_war_plan_blue_cat
 		}
 	}
 	focus = {
@@ -7531,7 +9397,17 @@ focus_tree = {
 			}			
 		}
 
-		
+
+		available = {
+			any_other_country = {
+				original_tag = MEX
+				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}		
 		
 		
 
@@ -7567,6 +9443,10 @@ focus_tree = {
 			any_other_country = {
 				original_tag = CAN
 				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
 			}
 		}
 
@@ -7690,9 +9570,55 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = USA_guantanamo_bay_forward_base
+		icon = GFX_goal_VEN_focus_on_caribbean
+		x = -1
+		y = 4
+		prerequisite = { focus = USA_war_plan_gray }
+		relative_position_id = USA_intervention_in_the_americas
+		cost = 10
+
+		available = {
+			controls_state = 1050
+		}
+
+		ai_will_do = {
+			factor = 1			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			1050 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 13334
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 13334
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 13334
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
 		id = USA_hemisphere_defense
 		icon = GFX_Goal_USA_befriend_america
-		x = 0
+		x = 1
 		y = 4
 		prerequisite = { focus = USA_war_plan_gray }
 		relative_position_id = USA_intervention_in_the_americas
@@ -7751,49 +9677,44 @@ focus_tree = {
 				}
 				create_faction = USA_hemisphere_defense_faction
 			}
-			if = {
+			every_country = {
 				limit = {
-					is_faction_leader = yes
-				}
-				every_country = {
-					limit = {
-						is_in_faction = no
-						has_government = ROOT
-						not = { has_war_with = ROOT }
-						OR = {
-							original_tag = CUB
-							original_tag = CAN
-							original_tag = MEX
-							original_tag = BRA
-							original_tag = ARG
-							original_tag = URG
-							original_tag = CHL
-							original_tag = PAN
-							original_tag = PAR
-							original_tag = VEN
-							original_tag = PRU
-							original_tag = BOL
-							original_tag = COL
-							original_tag = ECU
-							original_tag = HON
-							original_tag = DOM
-							original_tag = HAI
-							original_tag = GUA
-							original_tag = COS
-							original_tag = ELS
-							original_tag = NIC
-							original_tag = JAM
-							original_tag = BAH
-							original_tag = BLZ
-							original_tag = BAS
-							original_tag = GDL
-							original_tag = PUE
-							original_tag = TRI
-							original_tag = CRC
-						}
+					is_in_faction = no
+					#has_government = ROOT
+					not = { has_war_with = ROOT }
+					OR = {
+						original_tag = CUB
+						original_tag = CAN
+						original_tag = MEX
+						original_tag = BRA
+						original_tag = ARG
+						original_tag = URG
+						original_tag = CHL
+						original_tag = PAN
+						original_tag = PAR
+						original_tag = VEN
+						original_tag = PRU
+						original_tag = BOL
+						original_tag = COL
+						original_tag = ECU
+						original_tag = HON
+						original_tag = DOM
+						original_tag = HAI
+						original_tag = GUA
+						original_tag = COS
+						original_tag = ELS
+						original_tag = NIC
+						original_tag = JAM
+						original_tag = BAH
+						original_tag = BLZ
+						original_tag = BAS
+						original_tag = GDL
+						original_tag = PUE
+						original_tag = TRI
+						original_tag = CRC
 					}
-					country_event = generic.5
 				}
+				country_event = generic.5
 			}
 		}
 	}
@@ -7843,10 +9764,15 @@ focus_tree = {
 			}			
 		}
 
+
 		available = {
 			any_other_country = {
 				original_tag = FRA
 				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
 			}
 		}
 
@@ -7883,10 +9809,15 @@ focus_tree = {
 			}
 		}
 	
+
 		available = {
 			any_other_country = {
 				original_tag = ITA
 				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
 			}
 		}
 			
@@ -7906,6 +9837,7 @@ focus_tree = {
 		id = USA_war_plan_black
 		icon = GFX_focus_attack_germany
 		prerequisite = { focus = USA_intervention_in_europe }
+
 		available = {
 			any_other_country = {
 				OR = {
@@ -7914,11 +9846,13 @@ focus_tree = {
 					original_tag = WGR
 					original_tag = PRE
 				}
-				
 				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
 			}
 		}
-
 		continue_if_invalid = yes
 		available_if_capitulated = yes
 
@@ -8063,6 +9997,17 @@ focus_tree = {
 			}
 		}
 
+		available = {
+			any_other_country = {
+				original_tag = SOV
+				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -8083,9 +10028,7 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 1
-		}
-
-		
+		}		
 		
 		
 
@@ -8119,6 +10062,17 @@ focus_tree = {
 					}
 					has_civil_war = no
 				}				
+			}
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = ENG
+				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
 			}
 		}
 
@@ -8159,6 +10113,10 @@ focus_tree = {
 			any_other_country = {
 				original_tag = RAJ
 				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
 			}
 		}
 
@@ -8193,17 +10151,16 @@ focus_tree = {
 				}				
 			}
 		}
-
 		available = {
 			any_other_country = {
 				original_tag = AST
 				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
 			}
 		}
-
-		
-		
-		
 
 		completion_reward = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_scarlet_garnet show_effect_tooltip = yes show_modifiers = yes }
@@ -8256,7 +10213,16 @@ focus_tree = {
 		#ai_will_do = {
 		#	factor = 1
 		#}
-
+		available = {
+			any_other_country = {
+				original_tag = JAP
+				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
 
 		completion_reward = {
 			JAP = {
@@ -8288,7 +10254,18 @@ focus_tree = {
 				}				
 			}
 		}
-		
+
+		available = {
+			any_other_country = {
+				original_tag = CHI
+				exists = yes
+				NOT = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+
 		bypass = {
 			any_other_country = {
 				original_tag = CHI
@@ -8306,7 +10283,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_defense_of_the_pacific
-		icon = GFX_goal_generic_occupy_states_coastal
+		icon = GFX_focus_GER_sentinels_of_the_pacific
 		prerequisite = { focus = USA_war_plan_yellow focus = USA_war_plan_orange }
 		available = {
 			JAP = {
@@ -8411,16 +10388,42 @@ focus_tree = {
 	focus = {
 		id = USA_war_department
 		icon = GFX_Goal_USA_War_dep
-		x = 74
+		x = 75
 		y = 0
 		offset = {
-			x = -30
+			x = -40
 			y = 0
 			trigger = {
 				not = { has_dlc = "Man the Guns" }
 			}
 		}
-		cost = 5
+		offset = {
+			x = -18
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = USA_continue_the_new_deal
+				has_dlc = "Man the Guns"
+			}
+		}
+		offset = {
+			x = -10
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = USA_reestablish_the_gold_standard
+				has_dlc = "Man the Guns"
+			}
+		}
+		cost = 5 # really doesn't give that much
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_NAVY_XP }
 
 		ai_will_do = {
 			factor = 1
@@ -8447,6 +10450,8 @@ focus_tree = {
 		relative_position_id = USA_war_department
 		cost = 5
 
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER FOCUS_FILTER_USA_CONGRESS }
+
 		ai_will_do = {
 			factor = 1.1
 			modifier = {
@@ -8458,7 +10463,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_war = yes
-				threat > 0.25
+				threat > 0.20
 				has_war_support > 0.25
 			}
 			if = {
@@ -8476,7 +10481,6 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		
-		search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
 			army_experience = 5
 			show_unit_leaders_tooltip = USA_john_lee
@@ -8485,6 +10489,12 @@ focus_tree = {
 			add_timed_idea = {
 				idea = rt56_USA_mobilize_the_national_guard
 				days = 365
+			}
+			if = {
+				limit = {
+					has_country_flag = r56_usa_desperate_measures_flag
+				}
+				unlock_decision_tooltip = { decision = USA_raise_new_national_guard_units show_effect_tooltip = yes } 
 			}
 			if = {
 				limit = {
@@ -8510,7 +10520,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_mobilize_the_railways
-		icon = GFX_goal_CAN_railways
+		icon = GFX_goal_generic_construct_infrastructure
 		x = -14
 		y = 1
 		prerequisite = { focus = USA_war_department }
@@ -8524,7 +10534,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_war = yes
-				threat > 0.25
+				threat > 0.20
 				has_war_support > 0.20
 			}
 			if = {
@@ -8546,10 +10556,24 @@ focus_tree = {
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = train_equipment
-				amount = 35
+				amount = 50
 			}
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = USA_lima_locomotive_works
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "Arms Against Tyranny"
+					}
+				}
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = USA_lima_locomotive_works
+			}
+			else = {
+				unlock_military_industrial_organization_tooltip = mio:USA_lima_locomotive_works_organization 
+
+				mio:USA_lima_locomotive_works_organization = {
+					add_mio_funds = 500
+				}				
+			}
 			add_timed_idea = {
 				idea = r56_USA_mobilize_the_railways_idea
 				days = 365
@@ -8567,13 +10591,11 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					AND = {
-						360 = {
-							is_fully_controlled_by = ROOT
-						}
-						359 = {
-							is_fully_controlled_by = ROOT
-						}
+					360 = {
+						is_fully_controlled_by = ROOT
+					}
+					359 = {
+						is_fully_controlled_by = ROOT
 					}
 				} #NJ Coast->Philly
 				build_railway = { 
@@ -8582,17 +10604,15 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					AND = {
-						367 = {
-							is_fully_controlled_by = ROOT
-						}
-						366 = {
-							is_fully_controlled_by = ROOT
-						}
+					367 = {
+						is_fully_controlled_by = ROOT
+					}
+					366 = {
+						is_fully_controlled_by = ROOT
 					}
 				} #Bama to Nofla connection
 				build_railway = { 
-					path = { 10520 10352 10407 12353 }
+					path = { 10520 10352 10380 10407 12353 }
 				}
 			}
 			if = {
@@ -8624,7 +10644,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_mobilize_the_railways }
 		relative_position_id = USA_mobilize_the_railways
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -8670,7 +10690,15 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				set_state_flag = USA_support_rock_island_state_flag
+				set_state_flag = USA_the_worlds_loco_works_state_flag
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:USA_lima_locomotive_works_organization  = {
+					add_mio_funds = 1000 
+				}
 			}
 		}
 	}
@@ -8682,7 +10710,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_mobilize_the_railways }
 		relative_position_id = USA_mobilize_the_railways
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -8705,17 +10733,31 @@ focus_tree = {
 		
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = general_motor_electrco_motive_loco_works
 			if = {
 				limit = {
-					not = {
+					NOT = {
+						has_dlc = "Arms Against Tyranny"
+					}
+				}
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = general_motor_electrco_motive_loco_works
+			}
+			else = {
+				unlock_military_industrial_organization_tooltip = mio:USA_general_motor_electrco_motive_loco_works_organization
+
+				mio:USA_general_motor_electrco_motive_loco_works_organization = {
+					add_mio_funds = 500
+				}				
+			}
+			if = {
+				limit = {
+					NOT = {
 						has_tech = r56_postwar_train
 					}
 				}
 				add_tech_bonus = {
-					name = r56_dieselisation_bonus
-					ahead_reduction = 2.5
+					name = USA_continue_dieselisation
+					ahead_reduction = 3.0
 					bonus = 1.0
 					uses = 1
 					technology = r56_postwar_train
@@ -8750,7 +10792,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -8762,7 +10804,7 @@ focus_tree = {
 					threat < 0.5
 					has_war = no
 				}
-				congress_medium_support_trigger = yes
+				congress_high_support_trigger = yes
 			}
 			else = {
 				congress_low_support_trigger = yes
@@ -8800,6 +10842,15 @@ focus_tree = {
 				}
 				USA_congress_medium_opposition = yes
 			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				swap_ideas = { #punishment for doing this focus early 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
+			}
 		}
 	}
 	focus = {
@@ -8810,6 +10861,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = USA_selective_training_act
 		cost = 5
+		
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -8846,7 +10900,9 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_selective_training_act }
 		relative_position_id = USA_selective_training_act
-		cost = 5
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		ai_will_do = {
 			factor = 1
@@ -8854,8 +10910,17 @@ focus_tree = {
 
 		available = {
 			has_tech = interwar_antitank
-			has_army_manpower = {
-				size > 650000
+			if = {
+				limit = {
+					ROOT = {
+						has_full_control_of_state = 371
+					}
+				}
+				divisions_in_state = {
+					size > 1
+					state = 371
+				}
+
 			}
 		}
 		
@@ -8868,14 +10933,7 @@ focus_tree = {
 		
 		completion_reward = {
 			army_experience = 25
-			add_doctrine_cost_reduction = {
-				name = USA_louisiana_maneuvers
-				cost_reduction = 0.75
-				uses = 1
-				category = land_doctrine
-			}
-			
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			custom_effect_tooltip = r56_USA_louisiana_maneuvers_oob_tt
 			hidden_effect = {
 				load_oob = "USA_louisiana_reward_oob"
 			}
@@ -8889,7 +10947,7 @@ focus_tree = {
 					parent_version = 0
 					modules = {
 						main_armament_slot = tank_high_velocity_cannon
-						turret_type_slot = tank_platform_mount_turret
+						turret_type_slot = r56_tank_platform_mount_turret
 						suspension_type_slot = tank_wheeled_suspension
 						armor_type_slot = tank_riveted_armor
 						engine_type_slot = tank_gasoline_engine
@@ -8898,8 +10956,14 @@ focus_tree = {
 						tank_nsb_engine_upgrade = 3
 						tank_nsb_armor_upgrade = 2
 					}
-					icon = "gfx/interface/technologies/USA_basic_light_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+					#icon = "gfx/interface/technologies/USA_basic_light_tank_destroyer.dds" #DLC icon, as allied tank pack is unrecognised by the game in dlc conditions, reactivate later with both dlcs as conditions
 				}
+			}
+			add_doctrine_cost_reduction = {
+				name = USA_louisiana_maneuvers
+				cost_reduction = 0.75
+				uses = 1
+				category = land_doctrine
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -8916,7 +10980,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
 				name = USA_airborne_divisions
@@ -8925,12 +10989,25 @@ focus_tree = {
 				category = para_tech
 				category = transport_plane_tech
 			}
-			add_tech_bonus = {
-				name = USA_airborne_divisions
-				bonus = 1.0
-				uses = 1
-				category = r56_special_forces_training_tech 
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_doctrine_cost_reduction = {
+					cost_reduction = 0.5
+					uses = 1
+					category = cat_paratroopers_doctrine
+				}
 			}
+			else = {
+				add_tech_bonus = {
+					name = special_forces_bonus
+					bonus = 0.5
+					uses = 1
+					category = r56_special_forces_training_tech 
+				}	
+			}	
+
 			add_ideas = USA_airborne_divisions
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = USA_james_gavin_token		
@@ -8944,7 +11021,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_louisiana_maneuvers }
 		relative_position_id = USA_louisiana_maneuvers
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -8953,7 +11030,7 @@ focus_tree = {
 				manpower_per_military_factory <  1000
 			}			
 		}
-
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = USA_army_of_the_united_states
@@ -8962,11 +11039,26 @@ focus_tree = {
 				category = land_doctrine
 			}
 			add_ideas = USA_army_of_the_united_states
+			if = {
+				limit = {
+					has_idea = rt56_naval_funding_favoritism
+				}
+				remove_ideas = rt56_naval_funding_favoritism
+			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				swap_ideas = { 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
+			}
 		}
 	}
 	focus = {
 		id = USA_womens_armed_service_integration_act
-		icon = GFX_goal_womens_rights2
+		icon = GFX_goal_womens_rights
 		x = 0
 		y = 1
 		prerequisite = { focus = USA_army_of_the_united_states }
@@ -8999,17 +11091,33 @@ focus_tree = {
 		relative_position_id = USA_army_of_the_united_states
 		cost = 5
 
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
+
 		ai_will_do = {
 			factor = 1
 		}
-
 		completion_reward = {
 			show_unit_leaders_tooltip = USA_lucian_truscott
 			army_experience = 15
-		
-			add_ideas = scuffed_army_rangers_idea
-			
-			#custom_effect_tooltip = USA_army_rangers_tt
+			#hidden_effect = {
+				set_technology = { USA_army_rangers = 1 }
+			#}
+			custom_effect_tooltip = USA_army_rangers_tt
+			if = {
+				limit = {
+					has_idea = rt56_naval_funding_favoritism
+				}
+				remove_ideas = rt56_naval_funding_favoritism
+			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				swap_ideas = { 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
+			}
 		}
 	}
 	
@@ -9036,8 +11144,6 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 1
 				}
 			}
-			#custom_effect_tooltip = USA_build_the_pentagon_tt
-			#hidden_effect = { country_event = { id = r56_usa_pentagon.1 days = 730 } }
 		}
 	}
 	focus = {
@@ -9097,6 +11203,15 @@ focus_tree = {
 				}
 				set_state_flag = USA_support_rock_island_state_flag
 			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				swap_ideas = { #punishment for doing this focus early 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
+			}
 		}
 	}
 	
@@ -9147,7 +11262,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			add_tech_bonus = {
 				name = special_bonus
@@ -9155,8 +11270,8 @@ focus_tree = {
 				uses = 1
 				category = engineers_tech
 			}
-			add_ideas = {scuffed_bangalore_torpedo}
 			army_experience = 15
+			set_technology = { USA_bangalore_torpedo = 1 }
 			custom_effect_tooltip = USA_bangalore_torpedo_tt
 		}
 	}
@@ -9178,10 +11293,9 @@ focus_tree = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
-				OR = {
 				has_tech = basic_medium_tank_chassis
+				has_tech = improved_medium_tank_chassis
 				has_tech = basic_heavy_tank_chassis
-				}
 				has_tech = armor_tech_1
 				has_tech = engine_tech_1
 				OR = {
@@ -9230,7 +11344,7 @@ focus_tree = {
 				}
 				else_if = {
 					limit = {
-						has_tech = decimetric_radar
+						has_tech = cavity_magnatron
 					}
 					create_equipment_variant = {
 						name = "M3 Lee"
@@ -9331,7 +11445,7 @@ focus_tree = {
 					}
 					else_if = {
 						limit = {
-							has_tech = decimetric_radar
+							has_tech = cavity_magnatron
 						}
 						create_equipment_variant = {
 							name = "M4 Sherman"
@@ -9430,7 +11544,7 @@ focus_tree = {
 					}
 					else_if = {
 						limit = {
-							has_tech = decimetric_radar
+							has_tech = cavity_magnatron
 						}
 						create_equipment_variant = {
 							name = "M4 Sherman"
@@ -9526,7 +11640,7 @@ focus_tree = {
 				}
 				else_if = {
 					limit = {
-						has_tech = decimetric_radar
+						has_tech = cavity_magnatron
 					}
 					create_equipment_variant = {
 						name = "M6 Heavy Tank"
@@ -9589,6 +11703,10 @@ focus_tree = {
 						icon = "gfx/interface/technologies/USA_basic_heavy_tank.dds"
 					}
 				}
+				add_breakthrough_progress = {
+					specialization = specialization_land
+					value = 0.5
+				}
 			}
 		}
 	}
@@ -9630,6 +11748,432 @@ focus_tree = {
 				custom_effect_tooltip = available_designer
 				show_ideas_tooltip = tank_destroyer_board
 			}
+			
+			if = {
+				limit = {
+					NOT = { has_dlc = "No Step Back" }
+				}
+				add_tech_bonus = {
+					name = armor_bonus
+					bonus = 1
+					uses = 1
+					technology = improved_light_td
+					technology = advanced_light_td
+					technology = advanced_light_tank_td_a
+					technology = advanced_light_tank_td_b
+					technology = basic_medium_td
+					technology = improved_medium_td
+					technology = advanced_medium_td				
+				}
+			}
+			
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				if = {
+					limit = {
+						has_tech = antitank4 #tank will use tank_high_velocity_cannon_2
+					}
+					if = {
+						limit = {
+							has_tech = centimetric_radar
+						}
+						create_equipment_variant = {
+							name = "M10 Wolverine"
+							type = medium_tank_destroyer_chassis_1
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon_2
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_bogie_suspension
+								armor_type_slot = tank_riveted_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_3
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 4
+							}
+							#icon = "gfx/interface/technologies/USA_basic_medium_tank_destroyer.dds" #DLC icon, as allied tank pack is unrecognised by the game in dlc conditions, reactivate later with both dlcs as conditions
+						}
+					}
+					else_if = {
+						limit = {
+							has_tech = cavity_magnatron
+						}
+						create_equipment_variant = {
+							name = "M10 Wolverine"
+							type = medium_tank_destroyer_chassis_1
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon_2
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_bogie_suspension
+								armor_type_slot = tank_riveted_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_2
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 4
+							}
+							icon = "gfx/interface/technologies/USA_basic_medium_tank_destroyer.dds" #DLC icon, as allied tank pack is unrecognised by the game in dlc conditions, reactivate later with both dlcs as conditions
+						}
+					}
+					else_if = {
+						limit = {
+							has_tech = radio
+						}
+						create_equipment_variant = {
+							name = "M10 Wolverine"
+							type = medium_tank_destroyer_chassis_1
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon_2
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_bogie_suspension
+								armor_type_slot = tank_riveted_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_1
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 4
+							}
+							icon = "gfx/interface/technologies/USA_basic_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else = {
+						create_equipment_variant = {
+							name = "M10 Wolverine"
+							type = medium_tank_destroyer_chassis_1
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon_2
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_bogie_suspension
+								armor_type_slot = tank_riveted_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 4
+							}
+							icon = "gfx/interface/technologies/USA_basic_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+				}
+				else = {
+					#tank will use tank_high_velocity_cannon
+					if = {
+						limit = {
+							has_tech = centimetric_radar
+						}
+						create_equipment_variant = {
+							name = "M10 Wolverine"
+							type = medium_tank_destroyer_chassis_1
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_bogie_suspension
+								armor_type_slot = tank_riveted_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_3
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 4
+							}
+							icon = "gfx/interface/technologies/USA_basic_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else_if = {
+						limit = {
+							has_tech = cavity_magnatron
+						}
+						create_equipment_variant = {
+							name = "M10 Wolverine"
+							type = medium_tank_destroyer_chassis_1
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_bogie_suspension
+								armor_type_slot = tank_riveted_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_2
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 4
+							}
+							icon = "gfx/interface/technologies/USA_basic_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else_if = {
+						limit = {
+							has_tech = radio
+						}
+						create_equipment_variant = {
+							name = "M10 Wolverine"
+							type = medium_tank_destroyer_chassis_1
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_bogie_suspension
+								armor_type_slot = tank_riveted_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_1
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 4
+							}
+							icon = "gfx/interface/technologies/USA_basic_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else = {
+						create_equipment_variant = {
+							name = "M10 Wolverine"
+							type = medium_tank_destroyer_chassis_1
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_bogie_suspension
+								armor_type_slot = tank_riveted_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 4
+							}
+							icon = "gfx/interface/technologies/USA_basic_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+				}
+				
+				
+				if = {
+					limit = {
+						has_tech = antitank4 #tank will use tank_high_velocity_cannon_2
+					}
+					if = {
+						limit = {
+							has_tech = centimetric_radar
+						}
+						create_equipment_variant = {
+							name = "M18 Hellcat"
+							type = medium_tank_destroyer_chassis_2
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon_2
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_torsion_bar_suspension
+								armor_type_slot = tank_welded_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_3
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 3
+							}
+							icon = "gfx/interface/technologies/USA_improved_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else_if = {
+						limit = {
+							has_tech = cavity_magnatron
+						}
+						create_equipment_variant = {
+							name = "M18 Hellcat"
+							type = medium_tank_destroyer_chassis_2
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon_2
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_torsion_bar_suspension
+								armor_type_slot = tank_welded_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_2
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 3
+							}
+							icon = "gfx/interface/technologies/USA_improved_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else_if = {
+						limit = {
+							has_tech = radio
+						}
+						create_equipment_variant = {
+							name = "M18 Hellcat"
+							type = medium_tank_destroyer_chassis_2
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon_2
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_torsion_bar_suspension
+								armor_type_slot = tank_welded_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_1
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 3
+							}
+							icon = "gfx/interface/technologies/USA_improved_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else = {
+						create_equipment_variant = {
+							name = "M18 Hellcat"
+							type = medium_tank_destroyer_chassis_2
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon_2
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_torsion_bar_suspension
+								armor_type_slot = tank_welded_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 3
+							}
+							icon = "gfx/interface/technologies/USA_improved_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+				}
+				else = {
+					#tank will use tank_high_velocity_cannon
+					if = {
+						limit = {
+							has_tech = centimetric_radar
+						}
+						create_equipment_variant = {
+							name = "M18 Hellcat"
+							type = medium_tank_destroyer_chassis_2
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_torsion_bar_suspension
+								armor_type_slot = tank_welded_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_3
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 3
+							}
+							icon = "gfx/interface/technologies/USA_improved_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else_if = {
+						limit = {
+							has_tech = cavity_magnatron
+						}
+						create_equipment_variant = {
+							name = "M18 Hellcat"
+							type = medium_tank_destroyer_chassis_2
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_torsion_bar_suspension
+								armor_type_slot = tank_welded_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_2
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 3
+							}
+							icon = "gfx/interface/technologies/USA_improved_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else_if = {
+						limit = {
+							has_tech = radio
+						}
+						create_equipment_variant = {
+							name = "M18 Hellcat"
+							type = medium_tank_destroyer_chassis_2
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_torsion_bar_suspension
+								armor_type_slot = tank_welded_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = tank_radio_1
+								special_type_slot_3 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 3
+							}
+							icon = "gfx/interface/technologies/USA_improved_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+					else = {
+						create_equipment_variant = {
+							name = "M18 Hellcat"
+							type = medium_tank_destroyer_chassis_2
+							parent_version = 0
+							modules = {
+								main_armament_slot = tank_high_velocity_cannon
+								turret_type_slot = tank_medium_three_man_tank_turret
+								suspension_type_slot = tank_torsion_bar_suspension
+								armor_type_slot = tank_welded_armor
+								engine_type_slot = tank_diesel_engine
+								special_type_slot_1 = sloped_armor
+								special_type_slot_2 = easy_maintenance
+							}
+							upgrades = {
+								tank_nsb_engine_upgrade = 8
+								tank_nsb_armor_upgrade = 3
+							}
+							icon = "gfx/interface/technologies/USA_improved_medium_tank_destroyer.dds" #DLC icon, maybe revisit for non-dlc owners
+						}
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -9647,7 +12191,13 @@ focus_tree = {
 		}
 
 		available = {
-
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				has_tech = advanced_medium_tank_chassis
+				has_tech = artillery4
+			}
 		}
 
 		completion_reward = {
@@ -9664,6 +12214,109 @@ focus_tree = {
 			ELSE = {
 				custom_effect_tooltip = available_designer
 				show_ideas_tooltip = detroit_arsenal
+			}
+			
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				
+				if = {
+					limit = {
+						has_tech = centimetric_radar
+					}
+					create_equipment_variant = {
+						name = "T20 M27"
+						type = medium_tank_chassis_3
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_medium_cannon_2
+							turret_type_slot = tank_medium_three_man_tank_turret
+							suspension_type_slot = tank_torsion_bar_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = sloped_armor
+							special_type_slot_2 = easy_maintenance
+							special_type_slot_3 = tank_radio_3
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 7
+							tank_nsb_armor_upgrade = 8
+						}
+						icon = "gfx/interface/technologies/USA_adv_main_tank.dds"
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = cavity_magnatron
+					}
+					create_equipment_variant = {
+						name = "T20 M27"
+						type = medium_tank_chassis_3
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_medium_cannon_2
+							turret_type_slot = tank_medium_three_man_tank_turret
+							suspension_type_slot = tank_torsion_bar_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = sloped_armor
+							special_type_slot_2 = easy_maintenance
+							special_type_slot_3 = tank_radio_2
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 7
+							tank_nsb_armor_upgrade = 8
+						}
+						icon = "gfx/interface/technologies/USA_adv_main_tank.dds"
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = radio
+					}
+					create_equipment_variant = {
+						name = "T20 M27"
+						type = medium_tank_chassis_3
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_medium_cannon_2
+							turret_type_slot = tank_medium_three_man_tank_turret
+							suspension_type_slot = tank_torsion_bar_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = sloped_armor
+							special_type_slot_2 = easy_maintenance
+							special_type_slot_3 = tank_radio_1
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 7
+							tank_nsb_armor_upgrade = 8
+						}
+						icon = "gfx/interface/technologies/USA_adv_main_tank.dds"
+					}
+				}
+				else = {
+					create_equipment_variant = {
+						name = "T20 M27"
+						type = medium_tank_chassis_3
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_medium_cannon_2
+							turret_type_slot = tank_medium_three_man_tank_turret
+							suspension_type_slot = tank_torsion_bar_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = sloped_armor
+							special_type_slot_2 = easy_maintenance
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 7
+							tank_nsb_armor_upgrade = 8
+						}
+						icon = "gfx/interface/technologies/USA_adv_main_tank.dds"
+					}
+				}
 			}
 		}
 	}
@@ -9732,7 +12385,7 @@ focus_tree = {
 					}
 					else_if = {
 						limit = {
-							has_tech = decimetric_radar
+							has_tech = cavity_magnatron
 						}
 						create_equipment_variant = {
 							name = "M24 Chaffee"
@@ -9800,6 +12453,21 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_funding_favoritism
+				}
+				remove_ideas = rt56_naval_funding_favoritism
+			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				swap_ideas = { 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
+			}
 		}
 	}
 	focus = {
@@ -9812,11 +12480,14 @@ focus_tree = {
 		relative_position_id = USA_build_the_pentagon
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_USA_CONGRESS }
+
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			has_war_support > 0.10
 			if = {
 				limit = {
 					threat < 0.5
@@ -9833,11 +12504,23 @@ focus_tree = {
 			add_ideas = r56_USA_90_division_gamble
 			if = {
 				limit = {
+					has_war_support < 0.4
+					has_war_support > 0.2
 					has_war = no
 				}
-				custom_effect_tooltip = USA_victory_program_focus_tt
 				add_stability = -0.1
 			}
+			else_if = {
+				limit = {
+					has_war_support < 0.2
+					has_war = no
+				}
+				add_stability = -0.25
+			}
+			else = {
+
+			}
+			USA_congress_small_opposition = yes
 		}
 	}
 	focus = {
@@ -9850,11 +12533,14 @@ focus_tree = {
 		relative_position_id = USA_build_the_pentagon
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			has_war_support > 0.10
 			if = {
 				limit = {
 					threat < 0.5
@@ -9874,8 +12560,26 @@ focus_tree = {
 					has_war = no
 				}
 				custom_effect_tooltip = USA_victory_program_focus_tt
-				add_stability = -0.1
+				if = {
+					limit = {
+						has_war_support < 0.4
+						has_war_support > 0.2
+						has_war = no
+					}
+					add_stability = -0.1
+				}
+				else_if = {
+					limit = {
+						has_war_support < 0.2
+						has_war = no
+					}
+					add_stability = -0.25
+				}
+				else = {
+
+				}
 			}
+			USA_congress_small_opposition = yes
 		}
 	}
 	focus = {
@@ -9886,6 +12590,8 @@ focus_tree = {
 		prerequisite = { focus = USA_90_division_gamble focus = USA_victory_program }
 		relative_position_id = USA_90_division_gamble
 		cost = 10
+		
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_NAVY_XP }
 
 		ai_will_do = {
 			factor = 1
@@ -9900,6 +12606,21 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = USA_war_department
 				add_idea = USA_department_of_defense
+			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_funding_favoritism
+				}
+				remove_ideas = rt56_naval_funding_favoritism
+			}
+			if = {
+				limit = {
+					has_idea = rt56_naval_first_funding
+				}
+				swap_ideas = { 
+					remove_idea = rt56_naval_first_funding
+					add_idea = rt56_naval_funding_favoritism
+				}
 			}
 		}
 	}
@@ -9922,19 +12643,33 @@ focus_tree = {
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP }
 	
 		completion_reward = {
 			air_experience = 25
 			if = {
 				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = USA_air_war_plans_division
+					technology = photo_reconnaisance
+					bonus = 1.0
+					uses = 1
+				}	
+			}
+			else_if = {
+				limit = {
 					has_dlc = "La Resistance"
+					NOT = {
+						has_dlc = "By Blood Alone"
+					}
 				}
 				add_tech_bonus = {
 					name = scout_plane
-					bonus = 0.75
-					uses = 2
-					category = air_equipment
+					bonus = 1.0
+					uses = 1
+					category = cat_scout_plane
 				}				
 			}		
 			add_doctrine_cost_reduction = {
@@ -9956,6 +12691,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = USA_air_war_plans_division
 		cost = 10
+		
+		search_filters = { FOCUS_FILTER_AIR_XP }
+
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -9983,12 +12721,39 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = CAS_effort
-				uses = 1
-				bonus = 1.0
-				category = cas_bomber
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = CAS_effort
+					technology = aa_cannon_1
+					technology = aa_cannon_2
+					uses = 1
+					bonus = 1.0
+				}
+				create_equipment_variant = {
+					name = "A-36 'Apache' " #
+					type = small_plane_cas_airframe_1
+					modules = {
+						fixed_main_weapon_slot = heavy_mg_2x
+						fixed_auxiliary_weapon_slot_1 = bomb_locks
+						engine_type_slot = engine_2_1x
+						special_type_slot_1 = dive_brakes_small
+					}
+					obsolete = yes
+					icon = "GFX_USA_CAS1_medium"
+				}
 			}
+			else = {
+				add_tech_bonus = {
+					name = CAS_effort
+					uses = 1
+					bonus = 1.0
+					category = cas_bomber
+				}
+			}
+			
 		}
 	}
 	focus = {
@@ -9999,21 +12764,36 @@ focus_tree = {
 		y = 2
 		relative_position_id = USA_air_support
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP }
+
 		#ai_will_do = {
 		#	factor = 1
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			air_experience = 25
-			add_tech_bonus = {
-				name = USA_TAC
-				uses = 1
-				bonus = 2.0
-				category = tactical_bomber
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = USA_TAC
+					uses = 1
+					bonus = 1.0
+					category = medium_air
+				}
 			}
+			else = {
+				add_tech_bonus = {
+					name = USA_TAC
+					uses = 1
+					bonus = 1.0
+					category = tactical_bomber
+				}
+			}
+			air_experience = 25
 		}
 	}
 	focus = {
@@ -10032,15 +12812,9 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = CAS_effort
-				uses = 1
-				bonus = 2.0
-				category = air_equipment
-			}
 			add_doctrine_cost_reduction = {
 				name = USA_us_army_airforce
-				uses = 2
+				uses = 1
 				cost_reduction = 0.5
 				category = air_doctrine
 			}
@@ -10056,6 +12830,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = USA_air_war_plans_division
 		cost = 10
+		
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -10086,18 +12863,20 @@ focus_tree = {
 		y = 2
 		relative_position_id = USA_strategic_bombing
 		cost = 10
+		
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP }
+		
 		#ai_will_do = {
 		#	factor = 1
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
 			air_experience = 25
 			add_tech_bonus = {
 				name = USA_combined_bomber_offensive
-				bonus = 3.0
+				bonus = 1.0
 				uses = 1
 				category = heavy_air
 			}
@@ -10123,11 +12902,24 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = USA_flying_fortress
-				bonus = 3.0
-				uses = 1
-				category = cat_strategic_bomber
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = USA_flying_fortress
+					bonus = 1.0
+					uses = 1
+					category = heavy_air
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = USA_flying_fortress
+					bonus = 1.0
+					uses = 1
+					category = cat_strategic_bomber
+				}
 			}
 			add_ideas = r56_USA_flying_fortress
 		}
@@ -10150,7 +12942,7 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = USA_us_air_force
-				uses = 2
+				uses = 1
 				cost_reduction = 0.5
 				category = air_doctrine
 			}
@@ -10173,17 +12965,48 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = USA_escort_fighters
-				bonus = 1
-				uses = 1
-				category = light_fighter
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = USA_escort_fighters
+					bonus = 1
+					uses = 1
+					category = light_air
+				}
+				add_tech_bonus = {
+					name = USA_escort_fighters
+					bonus = 1
+					uses = 1
+					category = medium_air
+				}
+				create_equipment_variant = {
+					name = "P-38 Lightning" 
+					type = medium_plane_fighter_airframe_1
+					parent_version = 0
+					modules = {
+						fixed_main_weapon_slot = heavy_mg_4x
+						fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
+						engine_type_slot = engine_2_2x
+						special_type_slot_1 = empty
+					}
+					icon = "GFX_USA_heavy_fighter1_medium"
+				}
 			}
-			add_tech_bonus = {
-				name = USA_escort_fighters
-				bonus = 3.0
-				uses = 1
-				category = cat_heavy_fighter
+			else = {
+				add_tech_bonus = {
+					name = USA_escort_fighters
+					bonus = 1
+					uses = 1
+					category = light_fighter
+				}
+				add_tech_bonus = {
+					name = USA_escort_fighters
+					bonus = 3.0
+					uses = 1
+					category = cat_heavy_fighter
+				}
 			}
 		}
 	}
@@ -10214,6 +13037,13 @@ focus_tree = {
 				uses = 3
 				category = jet_technology
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.75
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = r56_generic_jet_idea
 		}
 	}
 
@@ -10231,12 +13061,15 @@ focus_tree = {
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
 		cost = 10
-
+		
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
+		
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			has_war_support > 0.05
 			if = {
 				limit = {
 					threat < 0.5
@@ -10273,14 +13106,7 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = {FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
-			if = {
-				limit = {
-					 has_war_support < 0.4 
-				}
-				USA_congress_medium_opposition = yes
-			}
 			if = { 
 				limit = { 
 					378 = {
@@ -10319,6 +13145,16 @@ focus_tree = {
 					}
 				}
 			}
+			swap_ideas = { #punishment for doing this focus early 
+				remove_idea = rt56_naval_funding_favoritism 
+				add_idea = 	rt56_naval_first_funding
+			}
+			if = {
+				limit = {
+					 has_war_support < 0.4 
+				}
+				USA_congress_medium_opposition = yes
+			}
 		}
 	}
 	focus = {
@@ -10328,7 +13164,7 @@ focus_tree = {
 		y = 0
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_two_ocean_navy_act
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -10344,9 +13180,17 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = USA_maritime_commission
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:USA_brooklyn_naval_yard_organization = {
+					add_mio_funds = 250
+				}
+			}
 		}
 	}
-
+	
 	focus = {
 		id = USA_liberty_ships
 		icon = GFX_goal_liberty_ships
@@ -10355,6 +13199,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = USA_maritime_commission
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
 
 		ai_will_do = {
 			factor = 0.1
@@ -10371,6 +13217,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			navy_experience = 25
 			add_ideas = liberty_ships_focus
 		}
 	}
@@ -10381,6 +13228,9 @@ focus_tree = {
 		x = -3
 		y = 1
 		cost = 5
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
+		
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -10395,6 +13245,15 @@ focus_tree = {
 				limit = { has_idea = bureau_of_ordnance_spirit }
 				remove_ideas = bureau_of_ordnance_spirit
 			}
+			if = {
+				limit = {
+					has_idea =  rt56_naval_funding_favoritism
+				}
+				swap_ideas = { #punishment for doing this focus early 
+					remove_idea = rt56_naval_funding_favoritism
+					add_idea = rt56_naval_first_funding
+				}
+			}	
 		}
 	}
 	
@@ -10406,7 +13265,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = USA_bureau_of_ships
-		cost = 5
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -10465,16 +13324,16 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -10482,10 +13341,10 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -10493,10 +13352,10 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -10510,7 +13369,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = USA_battleship_primacy
-		cost = 5
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -10522,7 +13381,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = USA_advanced_mahanian_doctrine
 				cost_reduction = 0.5
-				uses = 3
+				uses = 2
 				category = naval_doctrine
 			}
 		}
@@ -10535,7 +13394,8 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_expand_shipyard_facilities focus = USA_advanced_mahanian_doctrine }
 		relative_position_id = USA_battleship_primacy
-		cost = 5
+		cost = 10
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -10622,26 +13482,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = USA_increased_repair_capabilities
-		icon = GFX_goal_generic_expand_the_naval_industry
-		prerequisite = { focus = USA_advanced_basing focus = USA_naval_radar }
-		x = 2
-		y = 1
-		relative_position_id = USA_advanced_basing
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 4
-		}
-
-		completion_reward = {	
-			add_ideas = ENG_expand_the_repair_yards
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_IMPROVEMENT }
-	}
-	
-	focus = {
 		id = USA_carrier_primacy
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = USA_bureau_of_ships }
@@ -10649,7 +13489,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = USA_bureau_of_ships
-		cost = 5
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -10660,7 +13500,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = USA_carrier_primacy
-				bonus = 2.0
+				bonus = 1.0
 				uses = 2
 				category = cv_tech
 			}
@@ -10685,7 +13525,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = USA_carrier_primacy
-		cost = 5
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -10749,7 +13589,11 @@ focus_tree = {
 				bonus = 1.0
 				category = radar_tech
 			}
-			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.75
+			}
 		}
 	}
 
@@ -10780,21 +13624,23 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = USA_escort_effort
-		cost = 5
+		cost = 10
+		
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
+		
 		#ai_will_do = {
 		#	factor = 1
 		#}
 
 		available_if_capitulated = yes
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
 			navy_experience = 25
 			add_doctrine_cost_reduction = {
 				name = USA_convoy_tactics
 				cost_reduction = 0.5
-				uses = 3
-				category = naval_doctrine
+				uses = 2
+				category = convoy_defense_tree
 			}
 			if = {
 				limit = {
@@ -10816,10 +13662,14 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_bureau_of_ships }
 		relative_position_id = USA_bureau_of_ships
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
+		}
+
+		available = {
+			is_special_project_completed = sp:sp_naval_cruiser_submarine
 		}
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -10830,12 +13680,21 @@ focus_tree = {
 				uses = 2
 				category = ss_tech
 			}
-			if = {
+
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.25
+			}
+
+			IF = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}
-				set_technology = { cruiser_submarines = 1 }
+				add_ideas = fleet_submarine_specialization_mtg
 			}
+			ELSE = {
+				add_ideas = fleet_submarine_specialization
+			}	
 		}
 	}
 
@@ -10846,7 +13705,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_fleet_submarines }
 		relative_position_id = USA_bureau_of_ships
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -10875,7 +13734,7 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = USA_fund_the_navy
-				uses = 3
+				uses = 2
 				cost_reduction = 0.5
 				category = naval_doctrine
 			}
@@ -10915,333 +13774,10 @@ focus_tree = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
-				if = {
-					limit = {
-						NOT = { has_tech = improved_light_tank_chassis }
-						NOT = { has_tech = flamethrower }
-					}
-					custom_effect_tooltip = USA_expand_the_USMC_satan_tt
-				}
-				else = {
-					if = {
-						limit = {
-							has_tech = centimetric_radar
-						}
-						create_equipment_variant = {
-							name = "M3A1 Satan"
-							type = light_tank_chassis_2
-							parent_version = 0
-							modules = {
-								main_armament_slot = tank_small_cannon_2
-								turret_type_slot = tank_light_two_man_tank_turret
-								suspension_type_slot = tank_bogie_suspension
-								armor_type_slot = tank_welded_armor
-								engine_type_slot = tank_gasoline_engine
-								special_type_slot_1 = sloped_armor
-								special_type_slot_2 = flamethrower
-								special_type_slot_3 = additional_machine_guns
-								special_type_slot_4 = tank_radio_3
-							}
-							upgrades = {
-								tank_nsb_engine_upgrade = 5
-								tank_nsb_armor_upgrade = 6
-							}
-							icon = "gfx/interface/technologies/USA_imp_light_tank.dds"
-						}
-					}
-					else_if = {
-						limit = {
-							has_tech = decimetric_radar
-						}
-						create_equipment_variant = {
-							name = "M3A1 Satan"
-							type = light_tank_chassis_2
-							parent_version = 0
-							modules = {
-								main_armament_slot = tank_small_cannon_2
-								turret_type_slot = tank_light_two_man_tank_turret
-								suspension_type_slot = tank_bogie_suspension
-								armor_type_slot = tank_welded_armor
-								engine_type_slot = tank_gasoline_engine
-								special_type_slot_1 = sloped_armor
-								special_type_slot_2 = flamethrower
-								special_type_slot_3 = additional_machine_guns
-								special_type_slot_4 = tank_radio_2
-							}
-							upgrades = {
-								tank_nsb_engine_upgrade = 5
-								tank_nsb_armor_upgrade = 6
-							}
-							icon = "gfx/interface/technologies/USA_imp_light_tank.dds"
-						}
-					}
-					else_if = {
-						limit = {
-							has_tech = radio
-						}
-						create_equipment_variant = {
-							name = "M3A1 Satan"
-							type = light_tank_chassis_2
-							parent_version = 0
-							modules = {
-								main_armament_slot = tank_small_cannon_2
-								turret_type_slot = tank_light_two_man_tank_turret
-								suspension_type_slot = tank_bogie_suspension
-								armor_type_slot = tank_welded_armor
-								engine_type_slot = tank_gasoline_engine
-								special_type_slot_1 = sloped_armor
-								special_type_slot_2 = flamethrower
-								special_type_slot_3 = additional_machine_guns
-								special_type_slot_4 = tank_radio_1
-							}
-							upgrades = {
-								tank_nsb_engine_upgrade = 5
-								tank_nsb_armor_upgrade = 6
-							}
-							icon = "gfx/interface/technologies/USA_imp_light_tank.dds"
-						}
-					}
-					else = {
-						create_equipment_variant = {
-							name = "M3A1 Satan"
-							type = light_tank_chassis_2
-							parent_version = 0
-							modules = {
-								main_armament_slot = tank_small_cannon_2
-								turret_type_slot = tank_light_two_man_tank_turret
-								suspension_type_slot = tank_bogie_suspension
-								armor_type_slot = tank_welded_armor
-								engine_type_slot = tank_gasoline_engine
-								special_type_slot_1 = sloped_armor
-								special_type_slot_2 = flamethrower
-								special_type_slot_3 = additional_machine_guns
-								special_type_slot_4 = tank_radio_3
-							}
-							upgrades = {
-								tank_nsb_engine_upgrade = 5
-								tank_nsb_armor_upgrade = 6
-							}
-							icon = "gfx/interface/technologies/USA_imp_light_tank.dds"
-						}
-					}
-				}
-				
-				if = {
-					limit = {
-						NOT = { has_tech = improved_medium_tank_chassis }
-						NOT = { has_tech = flamethrower }
-					}
-					custom_effect_tooltip = USA_expand_the_USMC_zippo_tt
-				}
-				else = {
-					if = {
-						limit = {
-							has_tech = artillery4 #tank will use tank_medium_cannon_2
-						}
-						if = {
-							limit = {
-								has_tech = centimetric_radar
-							}
-							create_equipment_variant = {
-								name = "M4 Zippo"
-								type = medium_tank_chassis_2
-								parent_version = 0
-								modules = {
-									main_armament_slot = tank_medium_cannon_2
-									turret_type_slot = tank_medium_three_man_tank_turret
-									suspension_type_slot = tank_bogie_suspension
-									armor_type_slot = tank_welded_armor
-									engine_type_slot = tank_gasoline_engine
-									special_type_slot_1 = sloped_armor
-									special_type_slot_2 = flamethrower
-									special_type_slot_3 = easy_maintenance
-									special_type_slot_4 = tank_radio_3
-								}
-								upgrades = {
-									tank_nsb_engine_upgrade = 5
-									tank_nsb_armor_upgrade = 7
-								}
-								icon = "gfx/interface/technologies/USA_imp_main_tank.dds"
-							}
-						}
-						else_if = {
-							limit = {
-								has_tech = decimetric_radar
-							}
-							create_equipment_variant = {
-								name = "M4 Zippo"
-								type = medium_tank_chassis_2
-								parent_version = 0
-								modules = {
-									main_armament_slot = tank_medium_cannon_2
-									turret_type_slot = tank_medium_three_man_tank_turret
-									suspension_type_slot = tank_bogie_suspension
-									armor_type_slot = tank_welded_armor
-									engine_type_slot = tank_gasoline_engine
-									special_type_slot_1 = sloped_armor
-									special_type_slot_2 = flamethrower
-									special_type_slot_3 = easy_maintenance
-									special_type_slot_4 = tank_radio_2
-								}
-								upgrades = {
-									tank_nsb_engine_upgrade = 5
-									tank_nsb_armor_upgrade = 7
-								}
-								icon = "gfx/interface/technologies/USA_imp_main_tank.dds"
-							}
-						}
-						else_if = {
-							limit = {
-								has_tech = radio
-							}
-							create_equipment_variant = {
-								name = "M4 Zippo"
-								type = medium_tank_chassis_2
-								parent_version = 0
-								modules = {
-									main_armament_slot = tank_medium_cannon_2
-									turret_type_slot = tank_medium_three_man_tank_turret
-									suspension_type_slot = tank_bogie_suspension
-									armor_type_slot = tank_welded_armor
-									engine_type_slot = tank_gasoline_engine
-									special_type_slot_1 = sloped_armor
-									special_type_slot_2 = flamethrower
-									special_type_slot_3 = easy_maintenance
-									special_type_slot_4 = tank_radio_1
-								}
-								upgrades = {
-									tank_nsb_engine_upgrade = 5
-									tank_nsb_armor_upgrade = 7
-								}
-								icon = "gfx/interface/technologies/USA_imp_main_tank.dds"
-							}
-						}
-						else = {
-							create_equipment_variant = {
-								name = "M4 Zippo"
-								type = medium_tank_chassis_2
-								parent_version = 0
-								modules = {
-									main_armament_slot = tank_medium_cannon_2
-									turret_type_slot = tank_medium_three_man_tank_turret
-									suspension_type_slot = tank_bogie_suspension
-									armor_type_slot = tank_welded_armor
-									engine_type_slot = tank_gasoline_engine
-									special_type_slot_1 = sloped_armor
-									special_type_slot_2 = flamethrower
-									special_type_slot_3 = easy_maintenance
-								}
-								upgrades = {
-									tank_nsb_engine_upgrade = 5
-									tank_nsb_armor_upgrade = 7
-								}
-								icon = "gfx/interface/technologies/USA_imp_main_tank.dds"
-							}
-						}
-					}
-					else = {
-						#tank will use tank_medium_cannon
-						if = {
-							limit = {
-								has_tech = centimetric_radar
-							}
-							create_equipment_variant = {
-								name = "M4 Zippo"
-								type = medium_tank_chassis_2
-								parent_version = 0
-								modules = {
-									main_armament_slot = tank_medium_cannon
-									turret_type_slot = tank_medium_three_man_tank_turret
-									suspension_type_slot = tank_bogie_suspension
-									armor_type_slot = tank_welded_armor
-									engine_type_slot = tank_gasoline_engine
-									special_type_slot_1 = sloped_armor
-									special_type_slot_2 = flamethrower
-									special_type_slot_3 = easy_maintenance
-									special_type_slot_4 = tank_radio_3
-								}
-								upgrades = {
-									tank_nsb_engine_upgrade = 5
-									tank_nsb_armor_upgrade = 7
-								}
-								icon = "gfx/interface/technologies/USA_imp_main_tank.dds"
-							}
-						}
-						else_if = {
-							limit = {
-								has_tech = decimetric_radar
-							}
-							create_equipment_variant = {
-								name = "M4 Zippo"
-								type = medium_tank_chassis_2
-								parent_version = 0
-								modules = {
-									main_armament_slot = tank_medium_cannon
-									turret_type_slot = tank_medium_three_man_tank_turret
-									suspension_type_slot = tank_bogie_suspension
-									armor_type_slot = tank_welded_armor
-									engine_type_slot = tank_gasoline_engine
-									special_type_slot_1 = sloped_armor
-									special_type_slot_2 = flamethrower
-									special_type_slot_3 = easy_maintenance
-									special_type_slot_4 = tank_radio_2
-								}
-								upgrades = {
-									tank_nsb_engine_upgrade = 5
-									tank_nsb_armor_upgrade = 7
-								}
-								icon = "gfx/interface/technologies/USA_imp_main_tank.dds"
-							}
-						}
-						else_if = {
-							limit = {
-								has_tech = radio
-							}
-							create_equipment_variant = {
-								name = "M4 Zippo"
-								type = medium_tank_chassis_2
-								parent_version = 0
-								modules = {
-									main_armament_slot = tank_medium_cannon
-									turret_type_slot = tank_medium_three_man_tank_turret
-									suspension_type_slot = tank_bogie_suspension
-									armor_type_slot = tank_welded_armor
-									engine_type_slot = tank_gasoline_engine
-									special_type_slot_1 = sloped_armor
-									special_type_slot_2 = flamethrower
-									special_type_slot_3 = easy_maintenance
-									special_type_slot_4 = tank_radio_1
-								}
-								upgrades = {
-									tank_nsb_engine_upgrade = 5
-									tank_nsb_armor_upgrade = 7
-								}
-								icon = "gfx/interface/technologies/USA_imp_main_tank.dds"
-							}
-						}
-						else = {
-							create_equipment_variant = {
-								name = "M4 Zippo"
-								type = medium_tank_chassis_2
-								parent_version = 0
-								modules = {
-									main_armament_slot = tank_medium_cannon
-									turret_type_slot = tank_medium_three_man_tank_turret
-									suspension_type_slot = tank_bogie_suspension
-									armor_type_slot = tank_welded_armor
-									engine_type_slot = tank_gasoline_engine
-									special_type_slot_1 = sloped_armor
-									special_type_slot_2 = flamethrower
-									special_type_slot_3 = easy_maintenance
-								}
-								upgrades = {
-									tank_nsb_engine_upgrade = 5
-									tank_nsb_armor_upgrade = 7
-								}
-								icon = "gfx/interface/technologies/USA_imp_main_tank.dds"
-							}
-						}
-					}
+				custom_effect_tooltip = r56_zippo_satan
+				hidden_effect = {
+					r56_m3a1_satan_tank_template = yes
+					r56_m4_zippo_tank_template = yes
 				}
 			}
 			unlock_decision_tooltip = { decision = cite_a_marine_unit show_effect_tooltip = yes } 		
@@ -11295,7 +13831,6 @@ focus_tree = {
 			#}
 		}
 		
-		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
 			add_ideas = r56_usa_three_dimensional_assault_force
 		}

@@ -106,10 +106,8 @@ SOU = { #Tag for Stalinist SOV with other options in case it doesn't exist.
 		base = 1 
 		modifier = {
 			add = 1
-			AND = {
 			has_cosmetic_tag = SOV_right_opposition
 			exists = yes
-			}
 		}
 		modifier = {
 			add = 2
@@ -158,6 +156,31 @@ SB3 = {
 
 SB4 = {
 	variable = SWI.SWI_country_to_appease_4
+}
+
+FNO = { # Alias for Fascist Norway 
+	original_tag = NOR 
+	has_government = fascism
+}
+
+FGR = {
+	original_tag = GER
+		country_score = {
+		base = 1
+		modifier = {
+			add = 1
+			has_government = neutrality
+		}
+		modifier = {
+			add = 1
+			tag = var:GLOBAL.platonic_fascist_bully
+		}
+		modifier = {
+			add = 5
+			has_government = fascism	
+			exists = yes 
+		}
+	}
 }
 
 # operative operation target

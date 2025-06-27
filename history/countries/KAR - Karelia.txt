@@ -16,15 +16,29 @@ set_technology = {
 	tech_support = 1
 	infantry_weapons = 1
 }
-if = {
+if = {	#same as Soviets
 	limit = { has_dlc = "By Blood Alone" }
 		set_technology = {
 			iw_small_airframe = 1
+			aa_lmg = 1
+			aa_cannon_1 = 1
+			early_bombs = 1
+			engines_1 = 1
+			engines_2 = 1
+			iw_medium_airframe = 1
+			iw_large_airframe = 1
+			basic_small_airframe = 1
+			basic_medium_airframe = 1
+			aircraft_construction = 1
 		}
 	else = {
 		set_technology = {
 			early_fighter = 1
-				
+			fighter1 = 1
+			early_bomber = 1
+			strategic_bomber1 = 1
+			naval_bomber1 = 1
+			flying_boat = 1
 		}
 	}
 }
@@ -68,53 +82,14 @@ set_politics = {
 	ruling_party = neutrality
 	last_election = "1931.1.15"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
 	neutrality = 60
 	communism = 40
 }
 
-create_country_leader = {
-	name = "Otto Wille Kuusinen"
-	desc = "POLITICS_OTTO_WILLE_KUUSINEN_DESC"
-	picture = "gfx/leaders/FIN/r56_portrait_FIN_Otto_Wille_Kuusinen.dds"
-	expire = "1972.1.1"
-	ideology = stalinism
-	traits = {
-		
-	}
-}
-
-create_country_leader = {
-	name = "Committee of Karelia"
-	desc = "POLITICS_COMMITTEE_OF_KARELIA_DESC"
-	picture = "r56_portrait_KAR_committee.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Committee of Karelia"
-	desc = "POLITICS_COMMITTEE_OF_KARELIA_DESC"
-	picture = "r56_portrait_KAR_committee.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Committee of Karelia"
-	desc = "POLITICS_COMMITTEE_OF_KARELIA_DESC"
-	picture = "r56_portrait_KAR_committee.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
+recruit_character = KAR_otto_wille_kuusinen
+recruit_character = KAR_committee_of_karelia
+recruit_character = KAR_ukki_vainamoinen
+recruit_character = KAR_jalmari_takkinen

@@ -12,13 +12,21 @@ country_event = { #Malian Federation
 
 	option = {
 		name = r56_mali.1.a
-		ai_chance = { factor = 70 }
+		ai_chance = { base = 70 }
 		MLI = {
 			annex_country = {
     			target = ROOT
 				transfer_troops = yes
 			}
 			add_stability = -0.02
+			if = {
+				limit = {
+					NOT = {
+						has_idea = generic_recent_political_unification
+					}
+				}
+				add_ideas = generic_recent_political_unification
+			}
 			if = {
 				limit = {
 					num_of_controlled_states > 5
@@ -38,8 +46,8 @@ country_event = { #Malian Federation
 		
 	}
 	option = { # Refuse
-		name = r56_moldova.1.b
-	  	ai_chance = { factor = 30 }
+		name = r56_mali.1.b
+	  	ai_chance = { base = 30 }
 		MLI = {
 			country_event = {
 				id = r56_mali.3
@@ -64,6 +72,14 @@ country_event = { #annexation offer accepted
 				transfer_troops = yes
 			}
 			add_stability = -0.02
+			if = {
+				limit = {
+					NOT = {
+						has_idea = generic_recent_political_unification
+					}
+				}
+				add_ideas = generic_recent_political_unification
+			}
 		}		
 	}
 }

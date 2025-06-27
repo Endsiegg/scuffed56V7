@@ -16,18 +16,14 @@ country_event = {
 	option = {
 		name = r56_australia.1.a # The Earl of Gowrie will make a good Governor-General.
 		add_political_power = 5
-		create_country_leader = {
-			name = "Alexander Hore-Ruthven"
-			desc = "POLITICS_ALEXANDER_HORE_RUTHVEN_DESC"
-			picture = "r56_portrait_AST_Alexander_Hore_Ruthven.dds"
-			expire = "1965.1.1"
-			ideology = centrism
-			traits = {
-						colonial_economist
-						governor_general
-						EGY_respectful_govenor
-				#
+		add_country_leader_role = {
+			character = AST_alexander_hore_ruthven
+			country_leader = {
+			  ideology= oligarchism
+			  traits = { governor_general }
+			  expire="1965.1.1"
 			}
+			promote_leader = yes
 		}
 		hidden_effect = {
 			country_event = {
@@ -38,7 +34,7 @@ country_event = {
 	}
 }
 
-# New Governor-General (Alexander Hore-Ruthven)
+# New Governor-General (Prince Henry, Duke of Gloucester)
 country_event = {
 	id = r56_australia.2
 	title = r56_australia.1.t	# Appointment of the new Governor-General.
@@ -57,15 +53,14 @@ country_event = {
 	option = {
 		name = r56_australia.2.a # HRH The Duke of Gloucester will make a good Governor-General.
 		add_political_power = 5
-		create_country_leader = {
-			name = "Prince Henry, Duke of Gloucester"
-			desc = "POLITICS_DUKE_OF_GLOUCESTER_DESC"
-			picture = "r56_portrait_AST_Prince_Henry.dds"
-			expire = "1965.1.1"
-			ideology = centrism
-			traits = {
-				#
+		add_country_leader_role = {
+			character = AST_prince_henry
+			country_leader = {
+			  ideology= oligarchism
+			  traits = { governor_general }
+			  expire="1965.1.1"
 			}
+			promote_leader = yes
 		}
 	}
 }
@@ -103,13 +98,13 @@ country_event = {
 	desc = {
 		text = r56_australia.4.uap
 		trigger = {
-			has_country_leader = { ruling_only = yes name = "Joseph Lyons" }
+			has_country_leader = { ruling_only = yes character = AST_joseph_lyons }
 		}
 	}
 	desc = {
 		text = r56_australia.4.labor
 		trigger = {
-			NOT = { has_country_leader = { ruling_only = yes name = "Joseph Lyons" } }
+			NOT = { has_country_leader = { ruling_only = yes character = AST_joseph_lyons } }
 		}
 	}
 	picture = GFX_report_event_AST_funeral
@@ -120,7 +115,7 @@ country_event = {
 		name = r56_australia.4.a
 		if = {
 			limit = {
-				has_country_leader = { ruling_only = yes name = "Joseph Lyons" }
+				has_country_leader = { ruling_only = yes character = AST_joseph_lyons }
 			}
 			kill_country_leader = yes
 			AST_set_earle_page = yes
@@ -152,27 +147,6 @@ country_event = {
 	}
 }
 
-# Death of John Curtin - Sender
-country_event = {
-	id = r56_australia.6
-	title = r56_australia.6.t
-	desc = r56_australia.6.d
-	picture = GFX_report_event_AST_funeral_2
-
-	hidden = yes
-	
-	is_triggered_only = yes
-
-	immediate = {
-		if = {
-			limit = {
-				has_government = democratic
-			}
-			country_event = r56_australia.7
-		}
-	}
-}
-
 # Death of John Curtin
 country_event = {
 	id = r56_australia.7
@@ -180,24 +154,27 @@ country_event = {
 	desc = {
 		text = r56_australia.7.labor
 		trigger = {
-			has_country_leader = { ruling_only = yes name = "John Curtin" }
+			has_country_leader = { character = AST_john_curtin ruling_only = yes }
 		}
 	}
 	desc = {
 		text = r56_australia.7.uap
 		trigger = {
-			NOT = { has_country_leader = { ruling_only = yes name = "John Curtin" } }
+			NOT = { has_country_leader = { character = AST_john_curtin ruling_only = yes } }
 		}
 	}
 	picture = GFX_report_event_AST_funeral_2
 	
 	is_triggered_only = yes
 
+	trigger = {
+		has_government = democratic
+	}
 	option = {
 		name = r56_australia.7.a
 		if = {
 			limit = {
-				has_country_leader = { ruling_only = yes name = "John Curtin" }
+				has_country_leader = { character = AST_john_curtin ruling_only = yes }
 			}
 			kill_country_leader = yes
 			AST_set_ben_chifley = yes
@@ -221,11 +198,14 @@ country_event = { #1937 Election
 
 	option = {
 		name = r56_australia.8.a # Go UAP!
+
+		add_political_power = 25 # new mandate, reward the historical option
+
 		hidden_effect = {
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 10
+			base = 10
 			modifier = {
 				OR = {
 					has_country_flag = AST_AI_RANDOM_DEMOCRATIC_ALTERNATE 
@@ -240,13 +220,15 @@ country_event = { #1937 Election
 	}
 
 	option = {
-		name = r56_australia.8.b # Go Labour!
+		name = r56_australia.8.b # Go Labor!
+
 		AST_set_john_curtin = yes
+
 		hidden_effect = {
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 5
+			base = 5
 			modifier = {
 				factor = 0
 				OR = {
@@ -279,12 +261,14 @@ country_event = { #1937 Election
 
 	option = {
 		name = r56_australia.country_win # Country Party!?
+
 		AST_set_earle_page = yes
+
 		hidden_effect = {
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				factor = 0
 				OR = {
@@ -320,7 +304,7 @@ country_event = { #1937 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 
@@ -339,7 +323,7 @@ country_event = { #1937 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 }
@@ -366,7 +350,7 @@ country_event = { #1940 Election
 			set_country_flag = AST_1940_election
 		}
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 	}
 
@@ -377,7 +361,7 @@ country_event = { #1940 Election
 			set_country_flag = AST_1940_election
 		}
 		ai_chance = {
-			factor = 7
+			base = 7
 			modifier = {
 				factor = 0
 				OR = {
@@ -416,7 +400,7 @@ country_event = { #1940 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				factor = 0
 				OR = {
@@ -452,7 +436,7 @@ country_event = { #1940 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 
@@ -471,7 +455,7 @@ country_event = { #1940 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 }
@@ -501,7 +485,7 @@ country_event = { #1943 Election
 			NOT = { has_country_flag = AST_menzies_ousted }
 		}
 		ai_chance = {
-			factor = 8
+			base = 8
 			modifier = {
 				factor = 0
 				OR = {
@@ -548,7 +532,7 @@ country_event = { #1943 Election
 			set_country_flag = AST_1943_election
 		}
 		ai_chance = {
-			factor = 5
+			base = 5
 			modifier = {
 				factor = 0
 				OR = {
@@ -570,13 +554,23 @@ country_event = { #1943 Election
 	}
 
 	option = {
-		name = r56_australia.10.b # Go Labour!
-		AST_set_john_curtin = yes
+		name = r56_australia.10.b # Go Labor!
+
+		if = {
+			limit = {
+				has_country_leader = { character = AST_john_curtin ruling_only = yes }
+			}
+			add_political_power = 25
+		}
+		else = {
+			AST_set_john_curtin = yes
+		}
+
 		hidden_effect = {
 			set_country_flag = AST_1943_election
 		}
 		ai_chance = {
-			factor = 15
+			base = 15
 			
 		}
 	}
@@ -596,7 +590,7 @@ country_event = { #1943 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 
@@ -615,7 +609,7 @@ country_event = { #1943 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 }
@@ -642,7 +636,7 @@ country_event = { #1946 Election
 			set_country_flag = AST_1946_election
 		}
 		ai_chance = {
-			factor = 5
+			base = 5
 			modifier = {
 				factor = 0
 				OR = {
@@ -670,7 +664,7 @@ country_event = { #1946 Election
 			set_country_flag = AST_1946_election
 		}
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 	}
 
@@ -701,7 +695,7 @@ country_event = { #1946 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				factor = 0
 				OR = {
@@ -737,7 +731,7 @@ country_event = { #1946 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 
@@ -756,7 +750,7 @@ country_event = { #1946 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 }
@@ -783,7 +777,7 @@ country_event = { #1949 Election
 			set_country_flag = AST_1949_election
 		}
 		ai_chance = {
-			factor = 15
+			base = 15
 		}
 	}
 
@@ -794,7 +788,7 @@ country_event = { #1949 Election
 			set_country_flag = AST_1949_election
 		}
 		ai_chance = {
-			factor = 5
+			base = 5
 			modifier = {
 				factor = 0
 				OR = {
@@ -824,7 +818,7 @@ country_event = { #1949 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				factor = 0
 				OR = {
@@ -860,7 +854,7 @@ country_event = { #1949 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 
@@ -879,7 +873,7 @@ country_event = { #1949 Election
 			set_country_flag = AST_1937_election
 		}
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 }
@@ -943,7 +937,9 @@ country_event = {
 	option = { # Yes
 		name = r56_australia.15.a
 		effect_tooltip = {
-			annex_country = { target = MAL transfer_troops = yes }
+			AST = {
+				puppet = MAL
+			}
 		}
 		hidden_effect = {
 			AST = {
@@ -964,7 +960,7 @@ country_event = {
 	option = { # No
 		name = r56_australia.15.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		hidden_effect = {
 			AST = {
@@ -988,7 +984,7 @@ country_event = {
 
 	option = { 
 		name = r56_australia.16.a
-		annex_country = { target = MAL transfer_troops = yes }
+		puppet = MAL
 		if = {
 			limit = {
 				MAL = {

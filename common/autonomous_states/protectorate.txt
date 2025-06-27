@@ -31,18 +31,10 @@ autonomy_state = {
 	}
 
 	allowed = {
-		has_dlc = "Together for Victory"
-		OR = {
-			original_tag = OMA
-			original_tag = BHU
-			original_tag = NEP
-			original_tag = EGY
-			tag = ALB
+		NOT = {
+			has_autonomy_state = autonomy_dominion
 		}
-		if = {
-			limit = { has_dlc = "Death or Dishonor" }
-			NOT = { has_government = fascism }
-		}
+		NOT = { has_government = fascism }
 		NOT = {
 			has_game_rule = {
 				rule = colour_of_subjects_setting
@@ -52,7 +44,7 @@ autonomy_state = {
 	}
 	can_take_level = {
 		NOT = {
-		#	original_tag = IEA
+			original_tag = AOI
 		}	
 	}	
 	can_lose_level = {
@@ -98,18 +90,10 @@ autonomy_state = {
 	}
 
 	allowed = {
-		has_dlc = "Together for Victory"
-		OR = {
-			original_tag = OMA
-			original_tag = BHU
-			original_tag = NEP
-			original_tag = EGY
-			tag = ALB
+		NOT = {
+			has_autonomy_state = autonomy_dominion
 		}
-		if = {
-			limit = { has_dlc = "Death or Dishonor" }
-			NOT = { has_government = fascism }
-		}
+		NOT = { has_government = fascism }
 		has_game_rule = {
 			rule = colour_of_subjects_setting
 			option = SUBJECT_COLOUR_ON
@@ -117,7 +101,7 @@ autonomy_state = {
 	}
 	can_take_level = {
 		NOT = {
-			#original_tag = IEA
+			original_tag = AOI
 		}	
 	}	
 	can_lose_level = {

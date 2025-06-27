@@ -27,7 +27,7 @@ recruit_character = CAN_r56_adrien_arcand		#fascist demagogue
 recruit_character = CAN_r56_adrien_arcand2		#2nd political role, fascist propagandist with fascism modifier
 recruit_character = CAN_tim_buck
 recruit_character = CAN_john_buchan
-recruit_character = CAN_thomas_victor_anderson
+#recruit_character = CAN_thomas_victor_anderson
 recruit_character = CAN_charles_foulkes
 recruit_character = CAN_andrew_mcnaughton
 recruit_character = CAN_harry_crerar
@@ -53,7 +53,7 @@ recruit_character = CAN_r56_george_croil		#air theorist with different condition
 recruit_character = CAN_harold_edwards
 recruit_character = CAN_raymond_collishaw
 recruit_character = CAN_guy_simonds
-recruit_character = CAN_gino_verchiella
+#recruit_character = CAN_gino_verchiella		#deleted in vanilla, presumably due to trait overlap with air chief lloyd_samuel_breadner
 recruit_character = CAN_john_murchie
 recruit_character = CAN_frederick_m_w_harvey
 recruit_character = CAN_ernest_james_renaud
@@ -69,7 +69,8 @@ recruit_character = CAN_james_ilsley
 recruit_character = CAN_louis_st_laurent
 recruit_character = CAN_c_d_howe
 recruit_character = CAN_henry_angus
-#recruit_character = QBC_lea_roback
+recruit_character = CAN_lea_roback
+recruit_character = CAN_first_nations_council
 
 #r56 tree, many work for both actually, r56 removed from name because duplicates are above
 recruit_character = CAN_william_daum_euler
@@ -84,6 +85,12 @@ recruit_character = CAN_j_b_salsberg			#union boss
 recruit_character = CAN_john_ross_taylor		#fascist terror prince
 recruit_character = CAN_arthur_cardin			#very conditional cpt of industry
 
+recruit_character = CAN_elsie_macgill
+recruit_character = CAN_frederic_worthington
+recruit_character = CAN_bernice_weldon_sargent
+recruit_character = CAN_george_laurence
+recruit_character = ENG_charles_goodeve
+
 set_research_slots = 4
 set_country_flag = monroe_doctrine
 set_stability = 0.7
@@ -94,24 +101,20 @@ if = {
 	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "CAN_1936_air_bba"
 		set_technology = {
+			iw_large_airframe = 1
+			early_bombs = 1
 			aa_lmg = 1
 			engines_1 = 1
-			engines_2 = 1
-			early_bombs = 1
 			aircraft_construction = 1
 			iw_small_airframe = 1
-			iw_medium_airframe = 1
-			iw_large_airframe = 1
-			basic_medium_airframe = 1
-			basic_small_airframe = 1
 		}
 	else = {
 		set_air_oob = "CAN_1936_air_legacy"	
-		set_technology = {
-				
-							
-			CAS1 = 1
+		set_technology = {				
 			early_fighter = 1
+			early_bomber = 1
+			naval_bomber1 = 1
+			flying_boat = 1
 		}
 	}
 }
@@ -131,8 +134,6 @@ set_technology = {
 	tech_engineers = 1
 	tech_recon = 1
 	gw_artillery = 1
-	interwar_antiair = 1
-	
 	transport = 1
 	trench_warfare = 1
 	fleet_in_being = 1
@@ -164,6 +165,7 @@ if = {
 if = {
 	limit = {
 		has_dlc = "La Resistance"
+		CAN = { is_ai = no }
 	}
 	set_technology = {
 		armored_car1 = 1
@@ -188,46 +190,11 @@ if = {
 	}
 }
 
-
-
-if = {
-	limit = { NOT = { has_dlc = "Together for Victory" } }
-	set_cosmetic_tag = CAN_ALY
-}
-if = {
-	limit = { has_dlc = "Together for Victory" }
-	set_cosmetic_tag = CAN_UK
-
-	add_to_tech_sharing_group = commonwealth_research
-}
-
-if =  {
-	limit = { 
-		OR = {
-			NOT = {
-				has_global_flag = can_tfv_focus_tree
-			}
-			QBC = { exists = no }
-		}
-	}
-	add_ideas = r56_CAN_quebec_conscription_idea
-	#466 = {
-	#	add_state_modifier = {
-	#		modifier = {
-	#			local_manpower = -0.75
-	#		}
-	#	}
-	#}
-	#468 = {
-	#	add_state_modifier = {
-	#		modifier = {
-	#			local_manpower = -0.75
-	#		}
-	#	}
-	#}
-}
+set_cosmetic_tag = CAN_UK
+add_to_tech_sharing_group = commonwealth_research
 
 add_ideas = {
+	r56_CAN_quebec_conscription_idea
 	r56_CAN_great_depression_01
 	r56_CAN_the_big_cut_01
 	r56_CAN_royal_twenty_centers
@@ -262,10 +229,6 @@ set_popularities = {
 set_convoys = 100
 set_stability = 0.70
 
-#if = {
-#	limit = {
-#		has_dlc = "Together for Victory"
-#	}
 #	create_corps_commander = {
 #		name = "Charles Foulkes"
 #		gfx = "GFX_CAN_charles_foulkes"
@@ -275,18 +238,6 @@ set_stability = 0.70
 #		defense_skill = 2
 #		planning_skill = 4
 #		logistics_skill = 3
-#	}
-#	else = {
-#		create_corps_commander = {
-#			name = "Charles Foulkes"
-#			portrait_path = gfx/leaders/CAN/r56_portrait_CAN_Charles_Foulkes.dds
-#			traits = {  }
-#			skill = 4
-#			attack_skill = 4
-#			defense_skill = 2
-#			planning_skill = 4
-#			logistics_skill = 3
-#		}
 #	}
 #}
 #

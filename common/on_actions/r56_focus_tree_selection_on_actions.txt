@@ -7,24 +7,306 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			### Australia [AST] [TFV]
+			### Afghanistan [AFG] [GOE]
 			if = {
 				limit = {
-					
-	#					has_dlc = "Together for Victory"
+					has_game_rule = {
+						rule = AFG_focus_tree_selection
+						option = STANDARD_TREE
+					}
+					has_dlc = "Graveyard of Empires"
 				}
-			#	set_global_flag = ast_tfv_focus_tree
-				AST = {
-					load_focus_tree = r56_australian_focus
-					add_ideas = AST_R56_great_depression_1
-					add_ideas = AST_R56_memories_of_gallipoli
+				set_global_flag = afg_dlc_focus_tree
+				AFG = {
+					load_focus_tree = afghanistan_tree
+
+					remove_ideas = AFG_decentralized_economy
+					remove_ideas = AFG_illiteracy
+					remove_ideas = r56_AFG_zahir_shah_idea
+					remove_ideas = AFG_bank_millie_afghan
+					remove_dynamic_modifier = {
+						modifier = AFG_afghan_army
+					}
+
+					set_variable = { AFG_electrification_cooldown = 0 }
+				
+					#### Ideas/Modifiers/Variables ####
+				
+					add_ideas = AFG_mohammad_zahir_shah_ns
+					add_ideas = AFG_pashtunwali
+					add_ideas = AFG_turkish_military_mission
+					# Variables for subsistence economy modifier
+					set_variable = { AFG_economy_production_efficiency_gain_factor = -0.5 }
+					set_variable = { AFG_economy_production_max_efficiency_factor = -0.35 }
+					set_variable = { AFG_economy_industrial_capacity_factor = -0.5 }
+					set_variable = { AFG_stability_factor_dm = 0.2 }
+					add_dynamic_modifier = { modifier = AFG_subsistence_economy_modifier }
+				
+					#Variables for Quami modifier
+					set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_defence_factor = 0.05 }
+					set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_speed_factor = 0.05 }
+					set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_max_org_factor = 0.05 }
+					set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_attack_factor = 0 }
+					#set_variable = { AFG_MODIFIER_CAVALRY_ATTACK_FACTOR = 0 }
+					#set_variable = { AFG_MODIFIER_CAVALRY_DEFENCE_FACTOR = 0}
+					set_variable = { AFG_modifier_army_sub_unit_cavalry_attack_factor = 0 }
+					set_variable = { AFG_modifier_army_sub_unit_cavalry_defence_factor = 0 }
+					set_variable = { AFG_modifier_army_sub_unit_cavalry_speed_factor = 0 }
+					set_variable = { AFG_army_core_defence_factor = 0 }
+					set_variable = { AFG_acclimatization_cold_climate_gain_factor = 0 }
+					set_variable = { AFG_acclimatization_hot_climate_gain_factor = 0 }
+					set_variable = { AFG_conscription_factor = 0.2 }
+					set_variable = { AFG_experience_gain_army_factor = 0 }
+					set_variable = { AFG_training_time_factor = 0 }
+					set_variable = { AFG_max_planning_factor = 0 }
+					set_variable = { AFG_planning_speed = 0 }
+				
+				
+					add_dynamic_modifier = {
+						modifier = AFG_quami_modifier
+					}
+				
+					#variables for Nufus modifier
+				
+					set_variable = { AFG_experience_gain_army_factor = 0.02 }
+					set_variable = { AFG_army_org_factor = 0 }
+					set_variable = { AFG_army_core_defence_factor = 0.03 }
+					set_variable = { AFG_army_armor_defence_factor = 0 }
+					set_variable = { AFG_army_armor_attack_factor = 0 }
+					set_variable = { AFG_army_artillery_attack_factor = 0 }
+					set_variable = { AFG_army_artillery_defence_factor = 0 }
+					set_variable = { AFG_conscription_factor = 0 }
+					set_variable = { AFG_training_time_factor = 0 }
+					set_variable = { AFG_conscription = 0 }
+					set_variable = { AFG_army_defence_factor = 0 }
+					set_variable = { AFG_army_attack_factor = 0 }
+					set_variable = { AFG_special_forces_cap = 0 }
+					set_variable = { AFG_special_forces_out_of_supply_factor = 0 }
+					set_variable = { AFG_extra_marine_supply_grace = 0 }
+					set_variable = { AFG_max_planning_factor = 0 }
+					set_variable = { AFG_planning_speed = 0 }
+					set_variable = { AFG_max_command_power_mult = 0 }
+					set_variable = { AFG_command_power_gain_mult = 0 }
+					set_variable = { AFG_acclimatization_cold_climate_gain_factor = 0 }
+					set_variable = { AFG_acclimatization_hot_climate_gain_factor = 0 }
+				
+					# Varaibles for Amanullah modifier
+				
+					set_variable = { AFG_amanullah_modifier_stability_factor = -0.05 }
+					set_variable = { AFG_amanullah_modifier_fascism_drift = 0.01 }
+					set_variable = { AFG_amanullah_modifier_core_defense_factor = 0 }
+					set_variable = { AFG_amanullah_modifier_core_attack_factor = 0 }
+				
+					# Variables for 1923 constitution modifier 
+				
+					set_variable = { AFG_1923_const_modifier_stability_factor = -0.1 }
+					set_variable = { AFG_1923_const_modifier_mobilization_laws_cost_factor = -0.25 }
+					set_variable = { AFG_1923_const_modifier_political_advisor_cost_factor = -0.25 }
+					set_variable = { AFG_1923_const_modifier_production_speed_industrial_complex_factor = 0.1 }
+					set_variable = { AFG_1923_const_modifier_research_speed_factor = 0 }
+					set_variable = { AFG_1923_const_modifier_production_factory_efficiency_gain_factor = 0 }
+					set_variable = { AFG_1923_const_modifier_production_factory_max_efficiency_factor = 0 }
+				
+					every_owned_state = {
+						limit = {
+							is_owned_by = AFG
+						}
+						set_variable = { AFG_state_development_production_speed = -0.2 }
+						set_variable = { AFG_state_development_state_resources_factor = -0.2 }
+						set_variable = { AFG_state_production_speed_infrastructure_factor = -0.2 }
+				
+						add_dynamic_modifier = {
+							modifier = AFG_economic_regionalism
+						}
+					}
+				
+					every_owned_state = {
+						limit = {
+							OR = { 
+								state = 1005
+								state = 1007
+							}
+						}
+						add_dynamic_modifier = { 
+							modifier = AFG_disgruntled_minority
+						}
+					}
+				
+					set_politics = {
+						ruling_party = neutrality
+						last_election = "1936.1.1"
+						election_frequency = 48
+						elections_allowed = no
+					}
+					
+					set_popularities = {
+						fascism = 10
+						communism = 0
+						democratic = 15
+						neutrality = 75
+					}
+					set_war_support = 0.1
+				
+					set_stability = 0.0
+				
+					set_variable = { AFG_levy_cap_max = 24 }
+					set_variable = { AFG_levy_cap_min = 0 }
+					set_variable = { AFG_levy_cap = 6 }
+					set_variable = { AFG_levy_deployed = 0 }
+					clamp_variable = {
+						var = AFG_levy_cap
+						min = AFG_levy_cap_min
+						max = AFG_levy_cap_max
+					}
+				
+					division_template = {
+						name = "Pashtun Levy"		
+						#division_names_group = 
+						is_locked = yes
+						force_allow_recruiting = no
+						regiments = {
+							irregular_infantry = { x = 0 y = 0 }
+							irregular_infantry = { x = 0 y = 1 }
+							irregular_infantry = { x = 1 y = 0 }
+							irregular_infantry = { x = 1 y = 1 }
+							irregular_infantry = { x = 2 y = 0 }
+							irregular_infantry = { x = 2 y = 1 }
+						}
+						#override_model = AFG_militia_entity #r56 can cause bug, TODO - reenable in the future
+						override_model = middle_eastern_gfx_infantry_0_entity
+					}
+				
+					set_country_flag = AFG_quami_is_active
 				}
 			}
 
+			### Austria [AUS] [GOT]
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = AUS_focus_tree_selection
+						option = STANDARD_TREE
+					}
+					has_dlc = "Gotterdammerung"
+				}
+				set_global_flag = aus_dlc_focus_tree
+				set_global_flag = AUS_minigame_disabled
+				AUS = {
+					load_focus_tree = austria_focus_tree
+					remove_country_leader_trait = AUS_rock_and_a_hard_place
+					remove_country_leader_trait = dislikes_germany
+					add_country_leader_trait = AUS_under_german_pressure
+					remove_ideas = {
+						AUS_july_followed_june
+						AUS_memories_of_februarkampfe
+						AUS_president_miklas
+						AUS_great_depression
+						AUS_thousand_mark_ban
+						AUS_reliant_on_lon_1
+						AUS_ernst_rudiger_starhemberg_r56
+					}
+					AUS_set_austrofascism_defaults = yes
+					AUS_set_monarchy_restored_defauts = yes
+					AUS_set_farr_defaults = yes
+					AUS_set_doth_defalts = yes
+					AUS_set_aggression_defaults = yes
+					AUS_set_austromarxism_defaults = yes
+					AUS_set_peoples_army_defaults = yes
+					AUS_set_empire_restored_defaults = yes
+					AUS_set_airforce_defaults = yes
+					AUS_set_army_defaults = yes
+					AUS_set_army_monarcy_defaults = yes
+					AUS_set_navy_defaults = yes
+					AUS_set_compensation_for_guarantee_defaults = yes
+
+
+					add_ideas = {
+						AUS_widespread_unemployment
+						AUS_phonix_insurance
+						AUS_recovering_from_the_depression
+					}
+
+					add_timed_idea = {
+						idea = AUS_treaty_of_saint_germain_en_laye
+						days = 1657
+					}
+
+					add_dynamic_modifier= {
+						modifier = AUS_austrofascism 
+					}	
+
+					add_opinion_modifier = {
+						target = GER
+						modifier = AUS_austrofascism_opm
+					}	
+
+					load_oob = "AUS_ww_1936"
+
+					# rules are set here
+
+					country_lock_all_division_template = yes
+				}
+			}
+			else = {
+				AUS = {
+					add_ideas = AUS_ernst_rudiger_starhemberg_r56
+					set_power_balance = {
+						id = AUS_heimwehr_power_balance
+						set_default = yes
+					}
+					country_event = {
+						id = austria.133
+						days = 1
+					}
+					
+					country_event = {
+						id = austria.127
+						days = 190
+					}
+
+					set_variable = { r56_bundeslaender_current = -1 }
+					set_country_flag = austrian_pre_coup_powerstruggle			
+					set_variable = { r56_bundeslaender_burgenland_frame = 1 }
+					set_variable = { r56_bundeslaender_kaernten_frame = 3 }
+					set_variable = { r56_bundeslaender_niederoesterreich_frame = 6 }
+					set_variable = { r56_bundeslaender_oberoesterreich_frame = 1 }
+					set_variable = { r56_bundeslaender_salzburg_frame = 3 }
+					set_variable = { r56_bundeslaender_steiermark_frame = 3 }
+					set_variable = { r56_bundeslaender_suedtirol_frame = 7 }
+					set_variable = { r56_bundeslaender_tirol_frame = 2 }
+					set_variable = { r56_bundeslaender_vorarlberg_frame = 6 }
+					set_variable = { r56_bundeslaender_wien_frame = 1 }
+					r56_bundeslaender_calculate_divisions = yes
+					set_variable = { r56_bundeslaender_GOV = 3 }
+					set_variable = { r56_bundeslaender_NAZI = 10 }
+					activate_mission = AUS_bundeslaender_salzburg_nazi_rising
+					set_variable = { AUS_fortified_states = 0 }
+
+					load_oob = "r56_AUS_1936"
+					set_party_name = {
+					    ideology = fascism
+					    long_name = "Vaterländische Front"
+					    name = "VF" #
+					}
+					set_party_name = {
+					    ideology = neutrality
+					    long_name = "Haus Habsburg"
+					    name = "Haus Habsburg" #
+					}
+					retire_character = AUS_franz_winkler
+					if = {
+						limit = { has_character = AUS_adolf_hoch }
+						retire_character = AUS_adolf_hoch
+					}
+				}
+			}
 			### Bulgaria [BUL] [BFTB]
 			if = {
 				limit = {
-					
+					has_game_rule = {
+						rule = BUL_focus_tree_selection
+						option = STANDARD_TREE
+					}
 					has_dlc = "Battle for the Bosporus"
 				}
 				set_global_flag = bul_bftb_focus_tree
@@ -78,6 +360,9 @@ on_actions = {
 					set_variable = { BUL_faction_low_decrease = -5 }
 					set_variable = { BUL_faction_medium_decrease = -10 }
 					set_variable = { BUL_faction_high_decrease = -15 }
+					set_variable = { BUL_zveno_coup_timer_delay_low = 7 } #Time to be added to zveno coup timer when completing certain internal faction decisions related to the Zveno
+					set_variable = { BUL_zveno_coup_timer_delay_medium = 15 } #Time to be added to zveno coup timer when completing certain internal faction decisions related to the Zveno
+					set_variable = { BUL_zveno_coup_timer_delay_high = 30 } #Time to be added to zveno coup timer when completing certain internal faction decisions related to the Zveno
 					set_variable = { BUL_ff_missions_base_days_to_add = 90 } #Base amount of days to be added to Impending FF Coup mission
 					set_variable = { BUL_ff_missions_popularity_factor = 5 } #More popularity means more days to add
 					set_variable = { BUL_ff_missions_loyalty_factor = -2 } #More loyalty means less days to add
@@ -178,57 +463,231 @@ on_actions = {
 				}
 			}
 
-			### Canada [CAN] [TFV]
+			### Belgium & Congo [BEL & COG] [GOT]
 			if = {
 				limit = {
-					
+					has_game_rule = {
+						rule = BEL_focus_tree_selection
+						option = STANDARD_TREE
+					}
+					has_dlc = "Gotterdammerung"
 				}
-			#	set_global_flag = can_tfv_focus_tree
-				CAN = {
-					load_focus_tree = r56_canadian_focus
-					add_ideas = r56_CAN_volunteers_01
-					add_ideas = r56_CAN_royal_twenty_centers
-					add_ideas = r56_CAN_the_big_cut_01
-					add_ideas = r56_CAN_nonindependent_airforce_01
-					add_ideas = r56_CAN_great_depression_01
-					add_ideas = r56_CAN_quebec_conscription_idea
+				set_global_flag = bel_dlc_focus_tree
+				BEL = {
+					load_focus_tree = belgium_focus
+					remove_ideas = BEL_leopold3
+					remove_ideas = BEL_pillarized_society
+					remove_ideas = BEL_peacetime_national_union
+					remove_ideas = BEL_linguistic_question_in_military
+					remove_ideas = BEL_recovery_from_the_great_depression1
+					remove_ideas = BEL_digging_of_the_albert_canal
+					remove_ideas = BEL_BEL_LUX_customs_union
+					add_ideas = {
+						BEL_language_barriers_ns
+						BEL_chasseurs_ardennais_ns
+					}
+					add_dynamic_modifier = {
+						modifier = BEL_scars_of_ww1_dynamic_modifier
+					}
+					set_variable = { BEL_scars_of_ww1_war_support_factor = -0.3 }
+					set_variable = { BEL_scars_of_ww1_production_speed_arms_factory_factor = -0.2 }
+					set_variable = { BEL_scars_of_ww1_army_org_factor = -0.15 }
+					set_variable = { BEL_scars_of_ww1_conscription_factor = -0.15 }
+				
+					# Corruption
+					add_dynamic_modifier = {
+						modifier = BEL_corruption_dynamic_modifier
+					}
+					set_variable = { BEL_corruption_political_power_gain = -0.25 }
+					set_variable = { BEL_corruption_stability_factor = -0.20 }
+					set_variable = { BEL_corruption_production_speed_buildings_factor = -0.20 }
+					set_variable = { BEL_corruption_fascism_drift = 0.10 }
+				
+					# Economic Downturn
+					add_dynamic_modifier = {
+						modifier = BEL_economic_downturn_dynamic_modifier
+					}
+					set_variable = { BEL_economic_downturn_consumer_goods_factor = 0.25 }
+				
+					# King Leopold
+					set_country_flag = BEL_leopold_flag
+
+					#DLC Autonomy Level
+					set_autonomy = {
+						target = COG
+						autonomous_state = autonomy_colony
+						freedom_level = 0.2
+					}
+				}
+
+				#COG
+				set_global_flag = COG_no_jft_done  # No focuses have yet to be completed in the JFT
+
+				### Set National Spirits ###
+				COG = {
+					# Setup 1936 politics - need to be reset because of Autonomy change - DLC values
+					set_politics = {
+						ruling_party = neutrality
+						last_election = "1936.1.1"
+						election_frequency = 48
+						elections_allowed = no
+					}
+					set_popularities = {
+						neutrality = 80
+						democratic = 20
+					}
+
+					load_focus_tree = congo_focus
+					add_country_leader_trait = pro_allied_governor_general
+					remove_ideas = COG_force_publique_conscription
+
+					add_ideas = {
+						COG_the_invisible_roof
+						COG_vast_decentralized_state_idea
+						# Adding the Belgian Minister of Colonies as a locked advisor
+						BEL_albert_de_vleeschauwer
+					}
+
+					### Set dynamic modifiers ###
+					add_dynamic_modifier = {
+						modifier = COG_force_publique
+					}
+
+					# The Force Publique Modifier
+					set_variable = { BEL.COG_force_publique_army_leader_cost_factor = 1.0 }
+					set_variable = { BEL.COG_force_publique_acclimatization_hot_climate_gain_factor = 0.15 }
+					set_variable = { BEL.COG_force_publique_command_power_gain_mult = -0.5 }
+					set_variable = { BEL.COG_force_publique_max_command_power = -50 }
+					set_variable = { BEL.COG_force_publique_army_core_defence_factor = 0.05 }
+					set_variable = { BEL.COG_force_publique_equipment_capture_factor = 0.1 }
+					set_variable = { BEL.COG_force_publique_supply_consumption_factor = -0.05 }
+					set_variable = { BEL.COG_force_publique_resistance_target = -0.05 }
+					set_variable = { BEL.COG_force_publique_autonomy_gain = -0.2 }
+					set_variable = { BEL.COG_force_publique_conscription_factor = 0 }
+					set_variable = { BEL.COG_force_publique_army_core_attack_factor = 0 }
+					set_variable = { BEL.COG_force_publique_army_attack_factor = 0 }
+					set_variable = { BEL.COG_force_publique_army_defence_factor = 0 }
+					set_variable = { BEL.COG_force_publique_conscription = 0 }
+					set_variable = { BEL.COG_force_publique_air_training_xp_gain_factor = 0 }
+					set_variable = { BEL.COG_force_publique_production_speed_air_base_factor = 0 }
+					set_variable = { BEL.COG_force_publique_experience_loss_factor = 0 }
+					set_variable = { BEL.COG_force_publique_army_morale_factor = 0 }
+
+					# The Model Colony Modifier
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_political_power_factor = -0.1 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_war_support_factor = -0.05 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_production_speed_buildings_factor = 0.03 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_democratic_drift = 0.01 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_autonomy_gain_global_factor = 0.00 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_research_speed_factor = 0.01 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_consumer_goods_factor = 0.0 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_local_resources_factor = 0.0 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_stability_factor = 0.0 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_production_speed_industrial_complex_factor = 0.0 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_autonomy_gain = 0.0 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_trade_laws_cost_factor = 0.0 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_production_speed_infrastructure_factor = 0.0 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_production_speed_supply_node_factor = 0.0 }
+					set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_industrial_capacity_dockyard = 0.0 }
+
+					# The Armée Nationale Congolaise Modifier
+					set_variable = { COG_armee_nationale_congolaise_modifier_army_leader_cost_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_acclimatization_hot_climate_gain_factor = 0.0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_command_power_gain_mult = 0.0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_max_command_power = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_army_core_defence_factor = 0.0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_equipment_capture_factor = 0.0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_supply_consumption_factor = 0.0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_resistance_target = 0.0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_autonomy_gain = 0.0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_conscription_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_army_core_attack_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_army_attack_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_army_defence_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_conscription = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_air_training_xp_gain_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_production_speed_air_base_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_experience_loss_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_army_morale_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_experience_gain_navy = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_spotting_chance = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_experience_gain_air = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_experience_gain_army = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_recon_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_ground_attack_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_industrial_capacity_factory = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_army_org_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_non_core_manpower = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_cas_damage_reduction = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_dig_in_speed_factor = 0 }
+					set_variable = { COG_armee_nationale_congolaise_modifier_training_time_factor = 0 }
+
+					country_event = belgium.177
 				}
 			}
-			### Soviet Union [SOV] [Modern] [Old]
-			#if = {
-			#	limit = {
-			#		NOT = {
-			#			has_start_date > 1945.01.01 #for one of my other submods
-			#		}
-			#	}
-			#	#set_global_flag = sov_old_focus_tree
-			#	SOV = {
-			#		load_focus_tree = soviet_focus
-			#		set_division_template_lock = {
-			#			division_template = "NKVD Pogranichnaya Diviziya"
-			#			is_locked = no
-			#		}
-			#		SOV_konstantin_nechaev = {
-			#			set_character_flag = SOV_exiled_flag
-			#		}
-			#		SOV_anatoly_rogozhin = {
-			#			set_character_flag = SOV_exiled_flag
-			#		}
-			#		remove_ideas = SOV_politicized_military
-			#		remove_dynamic_modifier = { modifier = SOV_the_red_army_dynamic_modifier }
-			#		remove_dynamic_modifier = { modifier = SOV_soviet_airforce_dynamic_modifier }
-			#		remove_dynamic_modifier = { modifier = SOV_second_five_year_plan_dynamic_modifier}
-			#		add_ideas = {
-			#			SOV_soviet_mobilization
-			#			SOV_poorly_educated_population
-			#			SOV_politicized_military_1
-			#		}			
-			#	}
-			#}
+			else_if = {
+				limit = {
+					has_dlc = "Gotterdammerung"
+				}
+				768 = {
+					remove_dynamic_modifier = {
+						modifier = COG_rwandan_separatism_modifier
+					}	
+				}
+				769 = {
+					remove_dynamic_modifier = {
+						modifier = COG_burundian_separatism_modifier
+					}	
+				}
+			}
+
+			### Denmark [DEN] [AAT]
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = DEN_focus_tree_selection
+						option = STANDARD_TREE
+					}
+					has_dlc = "Arms Against Tyranny"
+				}
+				set_global_flag = DEN_use_DLC_tree
+				DEN = {
+					load_focus_tree = danish_focus
+					set_stability = 0.5
+					remove_ideas = {
+						#DEN_King_Christian_X
+						DEN_stagnant_economy
+						DEN_Disarmed_Military
+					}
+					remove_dynamic_modifier = { modifier = r56_army_disorginization }
+					remove_dynamic_modifier = { modifier = r56_danish_lower_strata }
+					remove_dynamic_modifier = { modifier = r56_danish_middle_strata }
+					remove_dynamic_modifier = { modifier = r56_danish_upper_strata }
+					set_power_balance = {
+						id = DEN_balance_of_power
+						set_default = no  # whether or not to reset the power balance to the initial value, default = no
+						set_value = -0.1
+					}
+					set_country_flag = DEN_danish_election_flag
+					add_dynamic_modifier = { modifier = DEN_neglected_military_dynamic_modifier }
+					add_dynamic_modifier = { modifier = DEN_economic_crisis_dynamic_modifier }
+					add_dynamic_modifier = { modifier = DEN_industrial_capability_dynamic_modifier }
+					set_popularities = {
+						democratic = 94
+						fascism = 2
+						communism = 3
+						neutrality = 1
+					}
+				}
+			}
+
 			### Estonia [EST] [NSB]
 			if = {# MOD. OPT
 				limit = {
-					
+					has_game_rule = {
+						rule = EST_focus_tree_selection
+						option = STANDARD_TREE
+					}
 					has_dlc = "No Step Back"
 				}
 				set_global_flag = EST_vanilla_focus_tree
@@ -238,7 +697,6 @@ on_actions = {
 						EST_student_protests
 					}
 					add_ideas = {
-						limited_conscription
 						democratic_opposition
 						EST_vaps_idea_1
 					}
@@ -247,41 +705,13 @@ on_actions = {
 				}
 			}
 
-
-			### Ethiopia [ETH] [R56] [WTT]
-
-			if = {
-				limit = {
-					
-				}
-					ETH = {
-					load_focus_tree = ethiopia_tree
-					}
-				}
-			
-
-
-
-			### Germany [GER] [BASE] [WTT]
-			# if = {
-			# 	limit = {
-			# 		has_game_rule = {
-			# 			rule = GER_focus_tree_selection
-			# 			option = STANDARD_TREE
-			# 		}
-			# 	}
-			# 	set_global_flag = ger_standard_focus_tree
-			# 	GER = {
-			# 		remove_ideas = GER_enigma_machine0
-			# 		add_ideas = GER_mefo_bills_1
-			# 		activate_mission = GER_mefo_bills_mission
-			# 	}
-			# }
-
 			### Greece [GRE] [BFTB]
 			if = { #MOD. OPT.
 				limit = {
-					
+					has_game_rule = {
+						rule = GRE_focus_tree_selection
+						option = STANDARD_TREE
+					}
 					has_dlc = "Battle for the Bosporus"
 				}
 				set_global_flag = gre_bftb_focus_tree
@@ -345,17 +775,18 @@ on_actions = {
 						target = HUN
 						modifier = BFTB_balkan_pact_enemy
 					}
-					set_country_flag = GRE_factions_unlocked
 
 					set_variable = { var = GRE_debt_to_the_ifc_britain_var value = 10 }
 					set_variable = { var = GRE_debt_to_the_ifc_france_var value = 10 }
 					set_variable = { var = GRE_debt_to_the_ifc_italy_var value = 10 }
 					set_variable = { var = GRE_debt_to_the_ifc_paid_var value = 0 }
 					#set_country_flag = GRE_1936_election
-					set_variable = { var = GRE_monarchist_loyalty value = 2 }
-					set_variable = { var = GRE_fascist_loyalty value = 0 }
-					set_variable = { var = GRE_communist_loyalty value = -1 }
-					set_variable = { var = GRE_republican_loyalty value = -2 }
+					set_country_flag = GRE_factions_unlocked
+					set_variable = { var  = GRE_monarchist_loyalty value = 2 }		#matches the vanilla
+					set_variable = { var  = GRE_republican_loyalty value = -1 }
+					set_variable = { var  = GRE_communist_loyalty value = -1 }
+					set_variable = { var  = GRE_fascist_loyalty value = -2 }
+					GRE_political_instability_update_effect = yes
 					add_opinion_modifier = {
 						target = GER
 						modifier = GRE_strong_trading_ties
@@ -414,15 +845,19 @@ on_actions = {
 			### Netherlands [HOL] [WTT]
 			if = {
 				limit = {
+					has_game_rule = {
+						rule = HOL_focus_tree_selection
+						option = STANDARD_TREE
+					}
 					has_dlc = "Man the Guns"
 				}
 				set_global_flag = hol_mtg_focus_tree
 				HOL = {
 					load_focus_tree = netherlands_focus
 					remove_ideas = HOL_reliance_on_the_gold_standard
-					#remove_ideas =	tblra_pillarized_society
-					#remove_ideas =	tblra_peacetime_national_union
-					#remove_ideas =	tblra_recovery_from_the_great_depression1
+					remove_ideas =	BEL_pillarized_society
+					remove_ideas =	BEL_peacetime_national_union
+					remove_ideas =	BEL_recovery_from_the_great_depression1
 					remove_ideas =	HOL_dutch_plane_requirements_list
 					add_country_leader_trait = strict_austerity_adherent
 					add_ideas = {
@@ -435,10 +870,63 @@ on_actions = {
 				}
 			}
 
+			### Norway [NOR] [AAT]
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = NOR_focus_tree_selection
+						option = STANDARD_TREE
+					}
+					has_dlc = "Arms Against Tyranny"
+				}
+				set_global_flag = NOR_use_DLC_tree
+				NOR = {
+					load_focus_tree = norwegian_focus
+					remove_ideas = {
+						NOR_haakon
+						NOR_policy_of_disarmament
+						NOR_aftermath_of_the_depression_3
+					}
+					add_ideas = {
+						NOR_complacent_cabinet_ns
+						NOR_obsolete_armed_forces_ns_1
+						NOR_the_hard_thirties_ns
+						NOR_anti_communist_sentiment_ns
+						NOR_crumbling_fortifications_ns
+						NOR_birger_ljungberg
+						NOR_kristian_laake_ac
+					}
+					add_country_leader_role = {
+						character = NOR_fredrik_wedel_jarlsberg
+						country_leader={
+							ideology=despotism
+							expire="1965.1.1.1"
+							traits = { NOR_shrewd_regent }
+							id=-1
+						}
+					}
+					add_country_leader_role = {
+						character = NOR_josef_terboven
+						country_leader={
+							ideology=nazism
+							expire="1965.1.1.1"
+							traits = { NOR_ruthless_administrator }
+							id=-1
+						}
+					}
+					NOR_vidkun_quisling = {
+						add_country_leader_trait = NOR_fascist_lackey	#is modified by focus tree
+					}
+				}
+			}
+
 			### Latvia [LAT] [NSB]
 			if = {# MOD. OPT
 				limit = {
-					
+					has_game_rule = {
+						rule = LAT_focus_tree_selection
+						option = STANDARD_TREE
+					}
 					has_dlc = "No Step Back"
 				}
 				set_global_flag = LAT_vanilla_focus_tree
@@ -457,7 +945,10 @@ on_actions = {
 			### Lithuania [LIT] [NSB]
 			if = {# MOD. OPT
 				limit = {
-					
+					has_game_rule = {
+						rule = LIT_focus_tree_selection
+						option = STANDARD_TREE
+					}
 					has_dlc = "No Step Back"
 				}
 				set_global_flag = LIT_vanilla_focus_tree
@@ -478,46 +969,11 @@ on_actions = {
 					}
 					set_variable = { var = iron_wolf_days_var value = 100 }
 				}
-			}
-
-			### Manchuria [MAN] [WTT]
-			if = {
-				limit = {
-					
-					has_dlc = "Waking the Tiger"
-				}
-				set_global_flag = MAN_r56_focus_tree
-				MAN = {
-					load_focus_tree = MAN_focus
-					add_ideas = MAN_dongbei_partisan
-					add_ideas =	MAN_reliant_idea
-					add_ideas =	MAN_opium_plantation
-					if = {
-						limit = {
-							has_dlc = "Together for Victory"
-						}
-						MAN_puyi_tfv = {
-							promote_character = {
-								ideology = rexism 
-							} 
-						}
-						MAN_puyi_tfv = {
-							promote_character = {
-								ideology = despotism 
-							} 
-						} 
-					}
-					else = {
-						MAN_puyi = {
-							promote_character = {
-								ideology = rexism 
-							} 
-						}
-						MAN_puyi = {
-							promote_character = {
-								ideology = despotism 
-							} 
-						} 
+				else = {
+					LIT = {	#R56 tree has own version of Snieckus who otherwise doesnt take priority
+						retire_character = LIT_antanas_snieckus
+						retire_character = LIT_zigmas_angarietis
+						retire_character = LIT_kazys_grinius
 					}
 				}
 			}
@@ -525,109 +981,103 @@ on_actions = {
 			### Mexico [MEX] [MTG]
 			if = { #MOD. Small OP
 				limit = {
-					
+					has_game_rule = {
+						rule = MEX_focus_tree_selection
+						option = STANDARD_TREE
+					}
 					has_dlc = "Man the Guns"
 				}
 				set_global_flag = mex_mtg_focus_tree
 				MEX = {
 					load_focus_tree = mexico_focus_tree
-					load_mtg_mexico = yes
-					remove_ideas = MEX_constable_army
-				}
-			}
-
-			### New Zealand [NZL] [TFV]
-			if = {
-				limit = {
-					
-	#					has_dlc = "Together for Victory"
-				}
-			#	set_global_flag = nzl_tfv_focus_tree
-				NZL = {
-					load_focus_tree = r56_new_zealander_focus
-					add_ideas = NZL_a_poor_army
-					add_ideas = NZL_destruction_of_the_lee_afair
-					add_ideas = NZL_upset_maori_population
+					remove_ideas = {
+						MEX_porfiriato_heritage_idea
+						MEX_maximato_legacy
+						MEX_jenkins_blockade
+						MEX_constable_army
+						MEX_low_literacy_rate
+					}
+					add_ideas = {
+						MEX_callistas
+						MEX_church_power_2
+						MEX_oil_concessions
+						MEX_politicised_army
+						MEX_cedillo_tension_2
+						MEX_high_illiteracy
+					}
+				
+					set_stability = 0.2
+					set_war_support = 0.1
+					set_politics = {
+						ruling_party = neutrality
+						last_election = "1934.7.1"
+						election_frequency = 72
+						elections_allowed = yes
+					}
+					set_popularities = {
+						democratic = 18
+						fascism = 20
+						communism = 9
+						neutrality = 53
+					}
 				}
 			}
 
 			### Portugal [POR] [LAR]
-			if = {# MOD. OPT
+			if = {	# MOD. OPT
 				limit = {
-					
-					has_dlc = "La Resistance"
+					has_game_rule = {
+						rule = POR_focus_tree_selection
+						option = STANDARD_TREE
+					}
 				}
 				set_global_flag = por_lar_focus_tree
 				POR = {
 					load_focus_tree = portuguese_focus
+					remove_ideas = POR_lackluster_armed_forces
+					remove_ideas =	POR_disgruntled_republicans
+					remove_ideas =	POR_austerity_measures
+					remove_ideas = POR_harrowing_illiteracy
 					add_ideas = POR_unreliable_army
 					add_ideas = POR_unstable_republic
-
-					ENG = {
-						add_opinion_modifier = {
-							target = POR
-							modifier  = POR_anglo_portuguese_alliance
-						}
-					}
-
-					POR = {
-						add_opinion_modifier = {
-							target = ENG
-							modifier  = POR_anglo_portuguese_alliance
-						}
-					}
-
-					GER = {
-						add_opinion_modifier = {
-							target = POR
-							modifier = fascism_leanings_good
-						}
-					}
-
-					ITA = {
-						add_opinion_modifier = {
-							target = POR
-							modifier = fascism_leanings_good
-						}
-					}
+					set_variable = { POR_our_path_to_economic_development_decisions_taken = 0 }		#Variable used in the focus tree
 				}
 			}
-			else = {
+			else = { 
 				set_global_flag = POR_R56_focus_tree
+				892 = { set_compliance = 55 } 
+				540 = { set_compliance = 55 } 
+				891 = { set_compliance = 35 }
+				796 = { set_compliance = 42 }
+				544 = { set_compliance = 42 }
+				896 = { set_compliance = 37 }
+				897 = { set_compliance = 37 }
+				296 = { set_compliance = 30 }
+				702 = { set_compliance = 30 }
+				705 = { set_compliance = 45 }
+				321 = { set_compliance = 45 }
+				729 = { set_compliance = 40 }
+				721 = { set_compliance = 35 }
 			}
-
-			### India [RAJ] [TFV]
+		
+			### Iceland [ICE] [AAT]
 			if = {
 				limit = {
-					
-	#					has_dlc = "Together for Victory"
-				}
-			#	set_global_flag = raj_tfv_focus_tree
-				RAJ = {
-					load_focus_tree = r56_india
-					add_ideas = RAJ_Agrarian_Economy
-					add_ideas = RAJ_Caste_Debuff_3
-					add_ideas = RAJ_Princely_States
-				}
-			}
-
-			### South Africa [SAF] [TFV]
-			if = {
-				limit = { has_dlc = "Together for Victory" }
-				if = {
-					limit = {
-						
-	#						has_dlc = "Together for Victory"
+					has_game_rule = {
+						rule = ICE_focus_tree_selection
+						option = STANDARD_TREE
 					}
-				#	set_global_flag = saf_tfv_focus_tree
-					SAF = {
-						load_focus_tree = r56_south_africa_focus
-						add_ideas =	SAF_pierre_van_ryneveld
-						add_ideas =	SAF_pierre_van_ryneveld2
-						add_ideas =	SAF_untrained_staff_officers
-						add_opinion_modifier = { target = ENG modifier = SAF_anti_british_sentiment }
-						add_to_tech_sharing_group = commonwealth_research
+					has_dlc = "Arms Against Tyranny"
+				}
+				set_global_flag = ICE_use_DLC_tree
+				ICE = {
+					load_focus_tree = iceland_tree
+					add_ideas = isolation
+					add_dynamic_modifier = {
+						modifier = ICE_the_icelandic_economy_modifier
 					}
+					remove_ideas = ICE_christian_x_r56
+					add_ideas = ICE_christian_x
 				}
 			}
 
@@ -635,7 +1085,10 @@ on_actions = {
 			if = {
 				limit = {
 					OR = {
-						
+						has_game_rule = {
+							rule = SPR_focus_tree_selection
+							option = R56_TREE
+						}
 						NOT = {
 							has_dlc = "La Resistance"
 						}
@@ -644,59 +1097,145 @@ on_actions = {
 				SPR = {
 					set_global_flag = spr_r56_focus_tree
 					set_country_flag = spr_r56_focus_tree
-					load_focus_tree = spanish_focus
+					load_focus_tree = Spain_focus
 					remove_ideas = 	SPA_carlism_1
 					remove_ideas = SPR_military_disloyalty
 					remove_ideas =  SPR_political_violence
 					remove_ideas = SPR_national_strikes_3
 					add_ideas = SPR_the_black_years
-					remove_unit_leader = 1102
-					remove_unit_leader = 1103
-					remove_unit_leader = 1104
-					remove_unit_leader = 1105
-					remove_unit_leader = 1106
-					remove_unit_leader = 1107
-					remove_unit_leader = 1108
-					remove_unit_leader = 1109
-					remove_unit_leader = 1110
-					remove_unit_leader = 1111
-					remove_unit_leader = 1112
-					remove_unit_leader = 1113
-					remove_unit_leader = 1114
-					remove_unit_leader = 1115
-					remove_unit_leader = 1116
-					remove_unit_leader = 1117
-					remove_unit_leader = 1118
-					#remove_unit_leader = 6008
+					if = { limit = { has_unit_leader = 1102 } random_unit_leader = { limit = { has_id = 1102 } retire = yes } }
+					if = { limit = { has_unit_leader = 1103 } random_unit_leader = { limit = { has_id = 1103 } retire = yes } }
+					if = { limit = { has_unit_leader = 1104 } random_unit_leader = { limit = { has_id = 1104 } retire = yes } }
+					if = { limit = { has_unit_leader = 1105 } random_unit_leader = { limit = { has_id = 1105 } retire = yes } }
+					if = { limit = { has_unit_leader = 1106 } random_unit_leader = { limit = { has_id = 1106 } retire = yes } }
+					if = { limit = { has_unit_leader = 1107 } random_unit_leader = { limit = { has_id = 1107 } retire = yes } }
+					if = { limit = { has_unit_leader = 1108 } random_unit_leader = { limit = { has_id = 1108 } retire = yes } }
+					if = { limit = { has_unit_leader = 1109 } random_unit_leader = { limit = { has_id = 1109 } retire = yes } }
+					if = { limit = { has_unit_leader = 1110 } random_unit_leader = { limit = { has_id = 1110 } retire = yes } }
+					if = { limit = { has_unit_leader = 1111 } random_unit_leader = { limit = { has_id = 1111 } retire = yes } }
+					if = { limit = { has_unit_leader = 1112 } random_unit_leader = { limit = { has_id = 1112 } retire = yes } }
+					if = { limit = { has_unit_leader = 1113 } random_unit_leader = { limit = { has_id = 1113 } retire = yes } }
+					if = { limit = { has_unit_leader = 1114 } random_unit_leader = { limit = { has_id = 1114 } retire = yes } }
+					if = { limit = { has_unit_leader = 1115 } random_unit_leader = { limit = { has_id = 1115 } retire = yes } }
+					if = { limit = { has_unit_leader = 1116 } random_unit_leader = { limit = { has_id = 1116 } retire = yes } }
+					# made appear at start, then character is transferred in civil war
+					# if = { limit = { has_unit_leader = 1117 } random_unit_leader = { limit = { has_id = 1117 } retire = yes } }
+					if = { limit = { has_unit_leader = 1118 } random_unit_leader = { limit = { has_id = 1118 } retire = yes } }
+					# if = { limit = { has_unit_leader = 6008 } random_unit_leader = { limit = { has_id = 6008 } retire = yes } }
+					# ensures dlc state modifiers aren't there for the entire game.
+					165 = {
+						if = {
+							limit = {
+								has_dynamic_modifier = { modifier = autonomous_state }
+							}
+							remove_dynamic_modifier = { modifier = autonomous_state }
+						}
+					}
+					171 = {
+						if = {
+							limit = {
+								has_dynamic_modifier = { modifier = autonomous_state }
+							}
+							remove_dynamic_modifier = { modifier = autonomous_state }
+						}
+					}
+					792 = {
+						if = {
+							limit = {
+								has_dynamic_modifier = { modifier = autonomous_state }
+							}
+							remove_dynamic_modifier = { modifier = autonomous_state }
+						}
+					}
+					SPA_francisco_franco = {
+						add_country_leader_role = {
+							promote_leader = yes
+							country_leader = {
+								ideology=falangism
+								expire="1965.1.1"
+								traits = {
+									generallissimo
+									army_connections	#definitely had some, so why not add as a default trait to him?
+								}
+							}
+						}
+					}
 					create_country_leader = {
 						name = "Alejandro Lerroux"
 						id = 1100
 						desc = " "
 						picture = "gfx/leaders/SPR/r56_portrait_SPR_Alejandro_Lerroux.dds"
 						expire = "1965.1.1"
-						ideology = centrism
+						ideology = moderatism
 						traits = {
 							corrupt				#Straperlo affair legacy
 							popular_figurehead2	#known for his rhetorics
 						}
 					}
-					create_country_leader = {
-						name = "Francisco Franco"
-						desc = " "
-						picture = "GFX_portrait_spain_francisco_franco"
-						expire = "1965.1.1"
-						ideology = fascism_ideology
-						traits = {
-							army_connections	#definitely had some, so why not add as a default trait to him?
-						}
+					set_popularities = {
+						democratic = 47
+						fascism = 46
+						communism = 7
 					}
+					set_war_support = 0.2
+					set_stability = 0.3
+				}
+			}
+
+			### Sweden [SWE] [AAT]
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWE_focus_tree_selection
+						option = STANDARD_TREE
+					}
+					has_dlc = "Arms Against Tyranny"
+				}
+				set_global_flag = SWE_use_DLC_tree
+				SWE = {
+					load_focus_tree = sweden_focus
+					remove_ideas = {
+						SWE_neutrality_idea_sweden
+						SWE_nationalist_military_garrisons_rebellious
+						SWE_kungen_gustaf_v_idea
+						SWE_swedish_disarmament_idea
+						SWE_swedish_german_trade_0_idea
+					}
+					add_ideas = {
+						#SWE_historical_trade_with_Germany CUT
+						SWE_hungershield
+						SWE_severe_lack_of_ammunition
+						#SWE_standardized_equipment
+						SWE_gustaf_v_idea
+					}
+					if = {
+						limit = {
+							has_idea = SWE_en_svensk_tiger
+						}
+						remove_ideas = SWE_en_svensk_tiger
+					}
+					else_if = {
+						limit = {
+							has_idea = SWE_en_svensk_tiger_lar
+						}
+						remove_ideas = SWE_en_svensk_tiger_lar
+					}
+					SWE_gosta_bagge = {
+						remove_country_leader_trait = SWE_conservatist
+						add_country_leader_trait = SWE_minor_opposition_party_in_power
+						add_country_leader_trait = minister_of_ecclesiastical_affairs
+					}
+					retire_character = SWE_commune_council	#takes the place of nils_flyg who should be the leader for the DLC tree (until events replace him)
 				}
 			}
 
 			### Switzerland [SWI] [BBA]
 			if = {# MOD. OPT
 				limit = {
-					
+					has_game_rule = {
+						rule = SWI_focus_tree_selection
+						option = STANDARD_TREE
+					}
 					has_dlc = "By Blood Alone"
 				}
 				SWI = {
@@ -712,14 +1251,18 @@ on_actions = {
 			else = {
 				set_global_flag = SWI_R56_focus_tree
 				SWI = {
-					load_focus_tree = swiss_focus
+					load_focus_tree = swiss_r56_focus
 					remove_ideas = SWI_swiss_neutrality
 					remove_ideas = SWI_citizen_militia_1
 					remove_ideas = SWI_foreign_fascist_propaganda
 					remove_ideas = SWI_johannes_baumann
 					remove_ideas = SWI_giuseppe_motta
-					#remove_ideas = SWI_albert_meyer	#BBA character anyway
-
+					if = {
+						limit = {
+							has_dlc = "By Blood Alone"
+						}
+						remove_ideas = SWI_albert_meyer
+					}
 					add_ideas = {
 						SWI_swiss_neutral
 						SWI_special_conscription
@@ -728,47 +1271,23 @@ on_actions = {
 				}
 			}
 
-			### Denmark [DEN] [AAT]
-			# if = {
-			# 	limit = {
-			# 		has_game_rule = {
-			# 			rule = DEN_focus_tree_selection
-			# 			option = STANDARD_TREE
-			# 		}
-			# 		has_dlc = "Arms Against Tyranny"
-			# 	}
-			# 	set_global_flag = DEN_use_DLC_tree
-			# 	DEN = {
-			# 		load_focus_tree = danish_focus
-			# 		set_stability = 0.5
-			# 		add_ideas = DEN_declaration_of_neutrality
-			# 		remove_ideas = {
-			# 			DEN_King_Christian_X
-			# 			DEN_stagnant_economy
-			# 			DEN_Disarmed_Military
-			# 		}
-			# 		remove_dynamic_modifier = { modifier = r56_army_disorginization }
-			# 		set_power_balance = {
-			# 			id = DEN_balance_of_power
-			# 			set_default = no  # whether or not to reset the power balance to the initial value, default = no
-			# 			set_value = -0.1
-			# 		}
-			# 		set_country_flag = DEN_danish_election_flag
-			# 		add_dynamic_modifier = { modifier = DEN_neglected_military_dynamic_modifier }
-			# 		add_dynamic_modifier = { modifier = DEN_economic_crisis_dynamic_modifier }
-			# 		add_dynamic_modifier = { modifier = DEN_industrial_capability_dynamic_modifier }
-			# 	}
-			# }
-
 			### Turkey [TUR] [BFTB]
 			if = {
 				limit = {
-					
+					has_game_rule = {
+						rule = TUR_focus_tree_selection
+						option = STANDARD_TREE
+					}
 					has_dlc = "Battle for the Bosporus"
 				}
 				set_global_flag = tur_bftb_focus_tree
 				TUR = {
-					remove_ideas = 	TUR_recovering_from_the_war_for_independence
+					remove_ideas = { 
+						TUR_traumatized_nation
+						TUR_army_of_the_grand_national_assembly_idea	
+						TUR_sectarianism
+						TUR_peace_at_home_peace_in_the_world_idea
+					}
 					add_country_leader_trait = father_of_the_turks
 					remove_country_leader_trait = indomitable_perseverance
 					remove_country_leader_trait = headstrong
@@ -824,55 +1343,44 @@ on_actions = {
 					356 = {
 						add_dynamic_modifier = { modifier = islamist_opposition }
 					}
-					221 = { set_state_flag = TUR_ottoman_claim_flag }
-					212 = { set_state_flag = TUR_ottoman_claim_flag }
-					48 = { set_state_flag = TUR_ottoman_claim_flag }
-					184 = { set_state_flag = TUR_ottoman_claim_flag }
-					731 = { set_state_flag = TUR_ottoman_claim_flag }
-					185 = { set_state_flag = TUR_ottoman_claim_flag }
-					187 = { set_state_flag = TUR_ottoman_claim_flag }
-					677 = { set_state_flag = TUR_ottoman_claim_flag }
-					799 = { set_state_flag = TUR_ottoman_claim_flag }
-					680 = { set_state_flag = TUR_ottoman_claim_flag }
-					553 = { set_state_flag = TUR_ottoman_claim_flag }
-					554 = { set_state_flag = TUR_ottoman_claim_flag }
-					676 = { set_state_flag = TUR_ottoman_claim_flag }
-					675 = { set_state_flag = TUR_ottoman_claim_flag }
-					291 = { set_state_flag = TUR_ottoman_claim_flag }
-					182 = { set_state_flag = TUR_ottoman_claim_flag }
-					164 = { set_state_flag = TUR_ottoman_claim_flag }
-					183 = { set_state_flag = TUR_ottoman_claim_flag }
-
+					add_dynamic_modifier = { modifier = TUR_disorganized_armed_forces_dynamic_modifier }
+					set_variable = { TUR_armed_forces_war_support_factor_var = -0.15 }
+					set_variable = { TUR_armed_forces_army_org_factor_var = -0.1 }
+					set_variable = { TUR_armed_forces_army_speed_factor_var = -0.1 }
+					set_variable = { TUR_armed_forces_training_time_var = 0.25 }
+					set_variable = { TUR_armed_forces_naval_coordination_var = -0.15 }
+					set_variable = { TUR_armed_forces_air_accidents_var = 0.15 }
+					set_variable = { TUR_armed_forces_minimum_training_level_var = -0.1 }
 					add_ideas = {
 						TUR_kemalist_army_officers_limited_power_loyal
 						TUR_sectarian_woes
-						TUR_disorganised_armed_forces
 						TUR_debt_council
+						TUR_ismet_inonu
 					}
 
 					353 = {
-	#						start_resistance = yes
+#						start_resistance = yes
 						set_compliance = 20
 						set_resistance = 10
 						set_garrison_strength = 1.0
 					}
 
 					350 = {
-	#						start_resistance = yes
+#						start_resistance = yes
 						set_compliance = 25
 						set_resistance = 15
 						set_garrison_strength = 1.0
 					}
 
 					352 = {
-	#						start_resistance = yes
+#						start_resistance = yes
 						set_compliance = 10
 						set_resistance = 15
 						set_garrison_strength = 0.75
 					}
 
 					800 = {
-	#						start_resistance = yes
+#						start_resistance = yes
 						set_compliance = 10
 						set_resistance = 15
 						set_garrison_strength = 0.75
@@ -910,6 +1418,474 @@ on_actions = {
 					add_opinion_modifier = {
 						target = HUN
 						modifier = BFTB_balkan_pact_enemy
+					}
+				}
+			}
+			else = {
+				353 = {
+					set_compliance = 13
+					set_resistance = 7
+					set_garrison_strength = 1.0
+					add_dynamic_modifier = { modifier = r56tree_kurdish_separatism }
+				}
+				350 = {
+					set_compliance = 36
+					set_resistance = 2
+					set_garrison_strength = 1.0
+					add_dynamic_modifier = { modifier = r56tree_limited_kurdish_separatism }
+				}
+				800 = {
+					set_compliance = 25
+					set_resistance = 5
+					set_garrison_strength = 1.0
+					add_dynamic_modifier = { modifier = r56tree_kurdish_separatism }
+				}
+				352 = {
+					set_compliance = 30
+					set_resistance = 2
+					set_garrison_strength = 1.0
+					add_dynamic_modifier = { modifier = r56tree_limited_kurdish_separatism }
+				}
+			}
+			## Iraq [IRQ] [GoE]
+			if = {
+				limit = {
+					has_dlc = "Graveyard of Empires"
+					has_game_rule = {
+						rule = IRQ_focus_tree_selection
+						option = STANDARD_TREE
+					}
+				}
+				set_global_flag = irq_dlc_focus_tree
+				ENG = {
+					add_opinion_modifier = {
+						target = IRQ
+						modifier = IRQ_anglo_iraqi_treaty_in_place_opm
+					}	
+				}
+				IRQ = {
+					load_focus_tree = iraq_focus
+					set_stability = 0.5		#Vanilla doesn't set a base value, which means it's 50%.
+					set_war_support = 0.5
+
+					add_opinion_modifier = {
+						target = ENG
+						modifier = IRQ_anglo_iraqi_treaty_in_place_opm
+					}
+
+					add_country_leader_role = {	
+						character = IRQ_rashid_ali_algaylani
+						country_leader = {
+							expire = "1965.1.1.1"
+							id=-1
+							ideology = fascism_ideology
+							traits = { IRQ_arab_fascist_politician }
+						}
+					}
+
+					IRQ_salah_al_din_al_sabbagh = { set_character_flag = IRQ_golden_square_char }
+					IRQ_mahmud_salman = { set_character_flag = IRQ_golden_square_char }
+					IRQ_fahmi_said = { set_character_flag = IRQ_golden_square_char }
+					IRQ_kamil_shabib = { set_character_flag = IRQ_golden_square_char }
+
+					676 = { 
+						add_dynamic_modifier = { modifier = KUR_resistance_modifier }
+					}
+					1049 = { 
+						add_dynamic_modifier = { modifier = KUR_resistance_modifier }
+					}
+					1048 = { 
+						add_dynamic_modifier = { modifier = KUR_resistance_modifier }
+					}
+
+					remove_ideas = {
+						IRQ_religious_schism
+						IRQ_military_conflict
+						IRQ_oil_concessions
+					}
+					add_ideas = {
+						IRQ_ghazi_i
+						IRQ_golden_square
+						IRQ_anglo_iraqi_treaty
+						IRQ_agrarian_society
+					}
+
+					#variables for Royal Iraqi Army modifier
+					set_variable = { IRQ_experience_gain_army_factor = -0.03 }
+					set_variable = { IRQ_army_org_factor = -0.05 }
+					set_variable = { IRQ_army_core_defence_factor = 0 }
+					set_variable = { IRQ_army_core_attack_factor = 0 }
+					set_variable = { IRQ_army_armor_defence_factor = 0 }
+					set_variable = { IRQ_army_armor_attack_factor = 0 }
+					set_variable = { IRQ_army_artillery_attack_factor = 0 }
+					set_variable = { IRQ_army_artillery_defence_factor = 0 }
+					set_variable = { IRQ_conscription_factor = -0.05 }
+					set_variable = { IRQ_training_time_factor = 0 }
+					set_variable = { IRQ_conscription = 0 }
+					set_variable = { IRQ_army_defence_factor = 0 }
+					set_variable = { IRQ_army_attack_factor = 0 }
+					set_variable = { IRQ_special_forces_cap = 0 }
+					set_variable = { IRQ_special_forces_out_of_supply_factor = 0 }
+					set_variable = { IRQ_extra_marine_supply_grace = 0 }
+					set_variable = { IRQ_max_planning_factor = 0 }
+					set_variable = { IRQ_planning_speed = -0.1 }
+					set_variable = { IRQ_max_command_power_mult = 0 }
+					set_variable = { IRQ_command_power_gain_mult = 0 }
+					set_variable = { IRQ_acclimatization_cold_climate_gain_factor = 0 }
+					set_variable = { IRQ_acclimatization_hot_climate_gain_factor = 0.15 }
+					set_variable = { IRQ_motorized_attack_factor = 0 }
+					set_variable = { IRQ_mechanized_attack_factor = 0 }
+					set_variable = { IRQ_modifier_army_sub_unit_cavalry_attack_factor = 0 }
+					set_variable = { IRQ_modifier_army_sub_unit_cavalry_defence_factor = 0 }
+					set_variable = { IRQ_modifier_army_sub_unit_cavalry_speed_factor = 0 }
+					add_dynamic_modifier = { modifier = IRQ_royal_army_modifier }
+
+					#Variables for Air Force Modifier 
+					set_variable = { IRQ_air_accidents_factor = -0.1 }
+					set_variable = { IRQ_air_ace_generation_chance_factor = 0 }
+					set_variable = { IRQ_air_weather_penalty = -0.05 }
+					set_variable = { IRQ_air_training_xp_gain_factor = 0 }
+					set_variable = { IRQ_air_manpower_requirement_factor = 0 }
+					set_variable = { IRQ_air_agility_factor = 0 }
+					set_variable = { IRQ_air_nav_efficiency = 0 }
+					set_variable = { IRQ_air_cas_efficiency = 0 }
+					set_variable = { IRQ_air_strategic_bomber_bombing_factor = 0 }
+					set_variable = { IRQ_air_range_factor = 0 }
+					set_variable = { IRQ_air_fuel_consumption_factor = 0 }
+					set_variable = { IRQ_air_superiority_efficiency = 0 }
+
+					#Variables for Navy
+					set_variable = { IRQ_navy_refit_speed = 0 }
+					set_variable = { IRQ_navy_repair_speed_factor = 0 }
+					set_variable = { IRQ_experience_gain_navy = 0.1 }
+					set_variable = { IRQ_mines_planting_by_fleets_factor = 0 }
+					set_variable = { IRQ_navy_anti_air_attack_factor = 0 }
+					set_variable = { IRQ_navy_spirit_category_type_cost_factor = 0 }
+					set_variable = { IRQ_convoy_retreat_speed = 0 }
+					set_variable = { IRQ_spotting_chance = 0 }
+					set_variable = { IRQ_production_speed_dockyard_factor = 0 }
+					set_variable = { IRQ_industrial_capacity_dockyard = 0 }
+					set_variable = { IRQ_extra_marine_supply_grace = 0 }
+					set_variable = { IRQ_naval_invasion_capacity = 0 }
+					set_variable = { IRQ_naval_mines_effect_reduction = 0 }
+					set_variable = { IRQ_experience_gain_navy_unit_factor = 0.1 }
+					set_variable = { IRQ_naval_coordination = 0 }
+					set_variable = { IRQ_naval_equipment_upgrade_xp_cost = 0 }
+					set_variable = { IRQ_naval_morale_factor = 0 }
+					set_variable = { IRQ_screening_efficiency = 0 }
+					set_variable = { IRQ_convoy_escort_efficiency = 0 }
+					set_variable = { IRQ_navy_capital_ship_defence_factor = 0 }
+					set_variable = { IRQ_naval_accidents_chance = 0 }
+					set_variable = { IRQ_navy_screen_defence_factor = 0 }
+					set_variable = { IRQ_production_speed_coastal_bunker_factor = 0 }
+				}
+			}
+			else = {
+				IRQ = {
+					country_event = {	# Golden Square Coup
+						id = iraq_hist.1
+						days = 1948
+					}
+					country_event = { # Death of Ghazi I
+						id = r56_iraq.26
+						days = 1189
+					}
+					set_party_name = { 
+						ideology = fascism
+						long_name = "Al-Murabba al-Dhahabī (Golden Square)" 
+						name = "Al-Murabba al-Dhahabī" 
+					}
+					promote_character = IRQ_ghazi_i
+					add_country_leader_role = {		#To overwrite the character file, for instances of R56 tree with GOE enabled. 
+						character = IRQ_rashid_ali_algaylani
+						country_leader = {
+							expire = "1965.1.1.1"
+							id=-1
+							ideology = fascism_ideology
+							traits = { # trying to represent his political XP and opposition to Britain
+								silent_mule
+								r56_trait_opposed_to_democracy
+							}
+						}
+					}
+				}
+			}
+			## Afghanistan [AFG] [GoE]
+			if = {
+				limit = {
+					has_dlc = "Graveyard of Empires"
+					always = no
+					# has_game_rule = {
+					# 	rule = AFG_focus_tree_selection
+					# 	option = STANDARD_TREE
+					# }
+				}
+				set_global_flag = afg_dlc_focus_tree
+				AFG = {
+					load_focus_tree = afghanistan_tree
+					set_politics = {
+						ruling_party = neutrality
+						last_election = "1936.1.1"
+						election_frequency = 48
+						elections_allowed = no
+					}
+					set_popularities = {
+						fascism = 10
+						communism = 0
+						democratic = 15
+						neutrality = 75
+					}
+					set_war_support = 0.1
+					set_stability = 0.0
+					promote_character = AFG_mohammed_zahir_shah
+					set_country_leader_ideology = despotism
+					remove_country_leader_trait = PER_reza_shah_modernizer_new
+					remove_country_leader_trait = charismatic_monarch
+					set_variable = { AFG_electrification_cooldown = 0 }
+					remove_dynamic_modifier = {
+						modifier = AFG_afghan_army
+					}
+					every_owned_state = {
+						limit = {
+							NOT = {
+								state = 267
+							}
+						}
+						clr_state_flag = AFG_tribal_state_flag
+					}
+					remove_power_balance = {
+						id = AFG_power_balance
+					}
+					diplomatic_relation = {
+						country = SOV
+						relation = non_aggression_pact
+						active = no
+					}
+					diplomatic_relation = {
+						country = TUR
+						relation = non_aggression_pact
+						active = no
+					}
+					diplomatic_relation = {
+						country = TUR
+						relation = guarantee
+						active = no
+					}
+					remove_opinion_modifier = {
+						target = TUR
+						modifier = historical_ties
+					}
+					add_ai_strategy = {
+						type = befriend
+						id = TUR
+						value = -35
+					}
+					add_ai_strategy = {
+						type = support
+						id = TUR
+						value = -25
+					}
+					add_ai_strategy = {
+						type = diplo_action_acceptance
+						id = TUR
+						value = -15
+					}
+					add_ai_strategy = {
+						type = alliance
+						id = TUR
+						value = -10
+					}
+					TUR = {
+						diplomatic_relation = {
+							country = AFG
+							relation = guarantee
+							active = no
+						}
+						remove_opinion_modifier = {
+							target = AFG
+							modifier = historical_ties
+						}
+						add_ai_strategy = {
+							type = befriend
+							id = AFG
+							value = -35
+						}
+						add_ai_strategy = {
+							type = support
+							id = AFG
+							value = -25
+						}
+						add_ai_strategy = {
+							type = diplo_action_acceptance
+							id = AFG
+							value = -15
+						}
+						add_ai_strategy = {
+							type = alliance
+							id = AFG
+							value = -10
+						}
+					}
+					# STARTING IDEAS #
+					remove_ideas = {
+						AFG_decentralized_economy
+						AFG_illiteracy
+						r56_AFG_zahir_shah_idea
+						AFG_bank_millie_afghan
+						limited_conscription
+						civilian_economy
+						limited_exports
+					}
+					add_ideas = {
+						AFG_mohammad_zahir_shah_ns
+						AFG_pashtunwali
+						AFG_turkish_military_mission
+						volunteer_only
+						export_focus
+						civilian_economy
+					}
+					# SUBSISTENCE ECONOMY VARIABLES #
+					set_variable = { AFG_economy_production_efficiency_gain_factor = -0.5 }
+					set_variable = { AFG_economy_production_max_efficiency_factor = -0.35 }
+					set_variable = { AFG_economy_industrial_capacity_factor = -0.5 }
+					set_variable = { AFG_stability_factor_dm = 0.2 }
+					add_dynamic_modifier = { modifier = AFG_subsistence_economy_modifier }
+					# QUAMI VARIABLES #
+					set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_defence_factor = 0.05 }
+					set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_speed_factor = 0.05 }
+					set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_max_org_factor = 0.05 }
+					set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_attack_factor = 0 }
+					set_variable = { AFG_modifier_army_sub_unit_cavalry_attack_factor = 0 }
+					set_variable = { AFG_modifier_army_sub_unit_cavalry_defence_factor = 0 }
+					set_variable = { AFG_modifier_army_sub_unit_cavalry_speed_factor = 0 }
+					set_variable = { AFG_army_core_defence_factor = 0 }
+					set_variable = { AFG_acclimatization_cold_climate_gain_factor = 0 }
+					set_variable = { AFG_acclimatization_hot_climate_gain_factor = 0 }
+					set_variable = { AFG_conscription_factor = 0.2 }
+					set_variable = { AFG_experience_gain_army_factor = 0 }
+					set_variable = { AFG_training_time_factor = 0 }
+					set_variable = { AFG_max_planning_factor = 0 }
+					set_variable = { AFG_planning_speed = 0 }
+					add_dynamic_modifier = {
+						modifier = AFG_quami_modifier
+					}
+					# NUFUS VARIABLES #
+					set_variable = { AFG_experience_gain_army_factor = 0.02 }
+					set_variable = { AFG_army_org_factor = 0 }
+					set_variable = { AFG_army_core_defence_factor = 0.03 }
+					set_variable = { AFG_army_armor_defence_factor = 0 }
+					set_variable = { AFG_army_armor_attack_factor = 0 }
+					set_variable = { AFG_army_artillery_attack_factor = 0 }
+					set_variable = { AFG_army_artillery_defence_factor = 0 }
+					set_variable = { AFG_conscription_factor = 0 }
+					set_variable = { AFG_training_time_factor = 0 }
+					set_variable = { AFG_conscription = 0 }
+					set_variable = { AFG_army_defence_factor = 0 }
+					set_variable = { AFG_army_attack_factor = 0 }
+					set_variable = { AFG_special_forces_cap = 0 }
+					set_variable = { AFG_special_forces_out_of_supply_factor = 0 }
+					set_variable = { AFG_extra_marine_supply_grace = 0 }
+					set_variable = { AFG_max_planning_factor = 0 }
+					set_variable = { AFG_planning_speed = 0 }
+					set_variable = { AFG_max_command_power_mult = 0 }
+					set_variable = { AFG_command_power_gain_mult = 0 }
+					set_variable = { AFG_acclimatization_cold_climate_gain_factor = 0 }
+					set_variable = { AFG_acclimatization_hot_climate_gain_factor = 0 }
+					# AMANULLAH VARIABLES #
+					set_variable = { AFG_amanullah_modifier_stability_factor = -0.05 }
+					set_variable = { AFG_amanullah_modifier_fascism_drift = 0.01 }
+					set_variable = { AFG_amanullah_modifier_core_defense_factor = 0 }
+					set_variable = { AFG_amanullah_modifier_core_attack_factor = 0 }
+					# 1923 CONSTITUTION VARIABLES #
+					set_variable = { AFG_1923_const_modifier_stability_factor = -0.1 }
+					set_variable = { AFG_1923_const_modifier_mobilization_laws_cost_factor = -0.25 }
+					set_variable = { AFG_1923_const_modifier_political_advisor_cost_factor = -0.25 }
+					set_variable = { AFG_1923_const_modifier_production_speed_industrial_complex_factor = 0.1 }
+					set_variable = { AFG_1923_const_modifier_research_speed_factor = 0 }
+					set_variable = { AFG_1923_const_modifier_production_factory_efficiency_gain_factor = 0 }
+					set_variable = { AFG_1923_const_modifier_production_factory_max_efficiency_factor = 0 }
+					# ECONOMIC REGIONALISM #
+					every_owned_state = {
+						limit = {
+							is_owned_by = AFG
+						}
+						set_variable = { AFG_state_development_production_speed = -0.2 }
+						set_variable = { AFG_state_development_state_resources_factor = -0.2 }
+						set_variable = { AFG_state_production_speed_infrastructure_factor = -0.2 }
+						add_dynamic_modifier = {
+							modifier = AFG_economic_regionalism
+						}
+					}
+					# DISGRUNTLED MINORITY #
+					every_owned_state = {
+						limit = {
+							OR = { 
+								state = 1005
+								state = 1007
+							}
+						}
+						add_dynamic_modifier = { 
+							modifier = AFG_disgruntled_minority
+						}
+					}
+					# ARMY VARIABLES #
+					set_variable = { AFG_levy_cap_max = 24 }
+					set_variable = { AFG_levy_cap_min = 0 }
+					set_variable = { AFG_levy_cap = 6 }
+					set_variable = { AFG_levy_deployed = 0 }
+					clamp_variable = {
+						var = AFG_levy_cap
+						min = AFG_levy_cap_min
+						max = AFG_levy_cap_max
+					}
+					division_template = {
+						name = "Pashtun Levy"		
+						#division_names_group = 
+						is_locked = yes
+						force_allow_recruiting = no
+						regiments = {
+							irregular_infantry = { x = 0 y = 0 }
+							irregular_infantry = { x = 0 y = 1 }
+							irregular_infantry = { x = 1 y = 0 }
+							irregular_infantry = { x = 1 y = 1 }
+							irregular_infantry = { x = 2 y = 0 }
+							irregular_infantry = { x = 2 y = 1 }
+						}
+						override_model = AFG_militia_entity
+					}
+				}
+			}
+			## British Raj [RAJ] [GoE]
+			RAJ = {
+				if = {
+					limit = {
+						has_dlc = "Graveyard of Empires"
+						always = no
+						# has_game_rule = {
+						# 	rule = RAJ_focus_tree_selection
+						# 	option = STANDARD_TREE
+						# }
+					}
+					load_focus_tree = indian_focus_goe
+					set_global_flag = raj_dlc_focus_tree
+					add_dynamic_modifier = { modifier = idea_RAJ_agrarian_society } 		
+					set_variable = { RAJ_agrarian_society_conscription_factor = -0.72 } #3
+					set_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor = 2.16 } #9
+					set_variable = { RAJ_agrarian_society_mobilization_speed = -0.72 } #3
+					add_ideas = idea_RAJ_great_depression_1
+					remove_ideas = {
+						RAJ_Agrarian_Economy
+						RAJ_Caste_Debuff_3
+						RAJ_Princely_States
+					}
+					else = {
+						country_event = { id = india.1 days = 32 }
+						set_power_balance = {
+							id = r56_south_asia_religious_bop 
+							left_side = r56_south_asia_religious_majority
+							right_side = r56_south_asia_religious_minority
+							set_value = -0.50
+						}
 					}
 				}
 			}

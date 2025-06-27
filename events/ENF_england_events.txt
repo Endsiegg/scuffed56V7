@@ -13,7 +13,7 @@ country_event = {
 		
 	option = {
 		name = englandmod.1.a
-		ai_chance = { factor = 99 }
+		ai_chance = { base = 99 }
 		ENG = { remove_from_faction = ENG }
 		GER = { add_to_faction = ENG }
 		ENG = {
@@ -29,7 +29,7 @@ country_event = {
 	}
 	option = {
 		name = englandmod.1.b
-		ai_chance = { factor = 1 }
+		ai_chance = { base = 1 }
 	}
 }
 
@@ -45,7 +45,7 @@ country_event = {
 	option = {
 		name = englandmod.5.a
 		ai_chance = {
-			factor = 80
+			base = 80
 			modifier = {
 				factor = 0
 				any_other_country = {
@@ -64,7 +64,7 @@ country_event = {
 	option = {
 		name = englandmod.5.b
 		ai_chance = {
-			factor = 20
+			base = 20
 			modifier = {
 				factor = 0
 				OR = {
@@ -145,11 +145,11 @@ country_event = {
 	
 	option = {
 		name = englandmod.8.a
-		ai_chance = { factor = 99 }
+		ai_chance = { base = 99 }
 		ENG = {
 			if = {
 				limit = { is_in_faction = no }
-				create_faction = "imperial_fascist_league"
+				create_faction = imperial_fascist_league
 			}
 		}
 		ENG = {	add_to_faction = POR }
@@ -166,7 +166,7 @@ country_event = {
 	}
 	option = {
 		name = englandmod.8.b
-		ai_chance = { factor = 1 }
+		ai_chance = { base = 1 }
 		ENG = {	
 			country_event = { id = englandmod.10 days = 1 }
 		}
@@ -212,11 +212,11 @@ country_event = {
 	
 	option = {
 		name = englandmod.11.a
-		ai_chance = { factor = 99 }
+		ai_chance = { base = 99 }
 		ENG = {
 			if = {
 				limit = { is_in_faction = no }
-				create_faction = "imperial_fascist_league"
+				create_faction = imperial_fascist_league
 			}
 		}
 		ENG = {	add_to_faction = ITA }
@@ -233,7 +233,7 @@ country_event = {
 	}
 	option = {
 		name = englandmod.11.b
-		ai_chance = { factor = 1 }
+		ai_chance = { base = 1 }
 		ENG = {	
 			country_event = { id = englandmod.13 days = 1 }
 		}
@@ -279,11 +279,11 @@ country_event = {
 	
 	option = {
 		name = englandmod.14.a
-		ai_chance = { factor = 99 }
+		ai_chance = { base = 99 }
 		ENG = {
 			if = {
 				limit = { is_in_faction = no }
-				create_faction = "imperial_fascist_league"
+				create_faction = imperial_fascist_league
 			}
 		}
 		ENG = {	add_to_faction = POL }
@@ -300,7 +300,7 @@ country_event = {
 	}
 	option = {
 		name = englandmod.14.b
-		ai_chance = { factor = 1 }
+		ai_chance = { base = 1 }
 		ENG = {	
 			country_event = { id = englandmod.16 days = 1 }
 		}
@@ -346,11 +346,11 @@ country_event = {
 	
 	option = {
 		name = englandmod.17.a
-		ai_chance = { factor = 95 }
+		ai_chance = { base = 95 }
 		ENG = {
 			if = {
 				limit = { is_in_faction = no }
-				create_faction = "imperial_fascist_league"
+				create_faction = imperial_fascist_league
 			}
 		}
 		ENG = {	add_to_faction = JAP }
@@ -367,7 +367,7 @@ country_event = {
 	}
 	option = {
 		name = englandmod.17.b
-		ai_chance = { factor = 5 }
+		ai_chance = { base = 5 }
 		ENG = {	
 			country_event = { id = englandmod.19 days = 1 }
 		}
@@ -413,11 +413,11 @@ country_event = {
 	
 	option = {
 		name = englandmod.20.a
-		ai_chance = { factor = 90 }
+		ai_chance = { base = 90 }
 		ENG = {
 			if = {
 				limit = { is_in_faction = no }
-				create_faction = "imperial_fascist_league"
+				create_faction = imperial_fascist_league
 			}
 		}
 		ENG = {	add_to_faction = VEN }
@@ -434,7 +434,7 @@ country_event = {
 	}
 	option = {
 		name = englandmod.20.b
-		ai_chance = { factor = 10 }
+		ai_chance = { base = 10 }
 		ENG = {	
 			country_event = { id = englandmod.22 days = 1 }
 		}
@@ -482,12 +482,12 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = englandmod.23.a
-		ai_chance = { factor = 90 }
+		ai_chance = { base = 90 }
 			remove_ideas = dominion_fascist_influence
 		}
 	option = {
 		name = englandmod.23.b
-		ai_chance = { factor = 10 }
+		ai_chance = { base = 10 }
 		set_country_flag = kept_dominion_fascist_influence	
 		}
 	mean_time_to_happen = {
@@ -502,87 +502,8 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = englandmod.99.a
-		ai_chance = { factor = 100 }
 	}
 }
-
-##SOV accepts Franco-Soviet Treaty
-#news_event = {
-#    id = newsmod.1
-#    title = newsmod.1.t
-#    desc = newsmod.1.d
-#    picture = GFX_news_event_hitler_handshake
-##major = yes will make it so the world gets this news event
-#    major = yes
-#
-#    is_triggered_only = yes
-#
-#    #Soviet Response
-#    option = {
-#        name = newsmod.1.a
-#        trigger = {
-#            tag = SOV
-#        }
-#    }
-#
-#    #France response
-#    option = {
-#        name = newsmod.1.b
-#        trigger = {
-#            tag = FRA
-#        }
-#    }
-#
-#    #Global Response
-#    option = {
-#        name = newsmod.1.c
-#        trigger = {
-#            NOT = {
-#                tag = FRA
-#                tag = SOV
-#            }
-#        }
-#	}
-#}
-
-#Japan Accepts French Alliance Offer
-#news_event = {
-#    id = newsmod.2
-#    title = newsmod.2.t
-#    desc = newsmod.2.d
-#    picture = GFX_news_event_040
-#
-#    major = yes
-#
-#    is_triggered_only = yes
-#
-#    #French Response
-#    option = {
-#        name = newsmod.2.a
-#        trigger = {
-#            tag = FRA
-#        }
-#    }
-#
-#    #Japan response
-#    option = {
-#        name = newsmod.2.b
-#        trigger = {
-#            tag = JAP
-#        }
-#    }
-#
-#    #Global Response
-#    option = {
-#        name = newsmod.2.c
-#        trigger = {
-#            NOT = {
-#                tag = FRA
-#                tag = JAP
-#            }
-#        }
-#	}
-#}
 
 #Germany Accepts British Empire Into Axis
 news_event = {
@@ -637,252 +558,6 @@ news_event = {
 				tag = SAF
 				tag = NZL
 				tag = RAJ
-            }
-        }
-	}
-}
-
-#Germany Accepts Italian Alliance Offer
-news_event = {
-    id = newsmod.4
-    title = newsmod.4.t
-    desc = newsmod.4.d
-    picture = GFX_news_event_040
-
-    major = yes
-
-    is_triggered_only = yes
-
-    #Italian Response
-    option = {
-        name = newsmod.4.a
-        trigger = {
-            tag = ITA
-        }
-    }
-
-    #German response
-    option = {
-        name = newsmod.4.b
-        trigger = {
-            tag = GER
-        }
-    }
-
-    #Global Response
-    option = {
-        name = newsmod.4.c
-        trigger = {
-            NOT = {
-                tag = ITA
-                tag = GER
-            }
-        }
-	}
-}
-
-#Italy and Allies White Peace
-news_event = {
-    id = newsmod.5
-    title = newsmod.5.t
-    desc = newsmod.5.d
-    picture = GFX_news_event_040
-
-    major = yes
-
-    is_triggered_only = yes
-
-    #Italian Response
-    option = {
-        name = newsmod.5.a
-        trigger = {
-            tag = ITA
-        }
-    }
-
-    #German response
-    option = {
-        name = newsmod.5.b
-        trigger = {
-            tag = GER
-        }
-    }
-
-    #Global Response
-    option = {
-        name = newsmod.5.c
-        trigger = {
-            NOT = {
-                tag = ITA
-                tag = GER
-            }
-        }
-	}
-}
-
-#Italy joins Allies
-news_event = {
-    id = newsmod.6
-    title = newsmod.6.t
-    desc = newsmod.6.d
-    picture = GFX_news_event_040
-
-    major = yes
-
-    is_triggered_only = yes
-
-    #Italian Response
-    option = {
-        name = newsmod.6.a
-        trigger = {
-            tag = ITA
-        }
-    }
-
-    #German response
-    option = {
-        name = newsmod.6.b
-        trigger = {
-            tag = GER
-        }
-    }
-
-    #Global Response
-    option = {
-        name = newsmod.6.c
-        trigger = {
-            NOT = {
-                tag = ITA
-                tag = GER
-            }
-        }
-	}
-}
-
-#Assassination of Mussolini
-news_event = {
-    id = newsmod.7
-    title = newsmod.7.t
-    desc = newsmod.7.d
-    picture = GFX_news_event_generic_funeral
-
-    major = yes
-
-    is_triggered_only = yes
-
-    #Italian Response
-    option = {
-        name = newsmod.7.a
-        trigger = {
-            tag = ITA
-        }
-    }
-
-    #Global Response
-    option = {
-        name = newsmod.7.b
-        trigger = {
-            NOT = {
-                tag = ITA
-            }
-        }
-	}
-}
-
-#Soviets Accept Italian Alliance Offer
-news_event = {
-    id = newsmod.8
-    title = newsmod.8.t
-    desc = newsmod.8.d
-    picture = GFX_news_event_040
-
-    major = yes
-
-    is_triggered_only = yes
-
-    #Italian Response
-    option = {
-        name = newsmod.8.a
-        trigger = {
-            tag = ITA
-        }
-    }
-
-    #Soviet response
-    option = {
-        name = newsmod.8.b
-        trigger = {
-            tag = SOV
-        }
-    }
-
-    #Global Response
-    option = {
-        name = newsmod.8.c
-        trigger = {
-            NOT = {
-                tag = ITA
-                tag = SOV
-            }
-        }
-	}
-}
-
-#Pope Expelled From Italy?
-news_event = {
-    id = newsmod.9
-    title = newsmod.9.t
-    desc = newsmod.9.d
-    picture = GFX_news_event_040
-
-    major = yes
-
-    is_triggered_only = yes
-
-    #Italian Response
-    option = {
-        name = newsmod.9.a
-        trigger = {
-            tag = ITA
-        }
-    }
-
-    #Global Response
-    option = {
-        name = newsmod.9.b
-        trigger = {
-            NOT = {
-                tag = ITA
-            }
-        }
-	}
-}
-
-#Deposition of King Emmanuel III
-news_event = {
-    id = newsmod.10
-    title = newsmod.10.t
-    desc = newsmod.10.d
-    picture = GFX_news_event_040
-
-    major = yes
-
-    is_triggered_only = yes
-
-    #Italian Response
-    option = {
-        name = newsmod.10.a
-        trigger = {
-            tag = ITA
-        }
-    }
-
-    #Global Response
-    option = {
-        name = newsmod.10.b
-        trigger = {
-            NOT = {
-                tag = ITA
             }
         }
 	}

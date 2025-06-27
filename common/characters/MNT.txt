@@ -1,7 +1,4 @@
 characters = {
-	
-
-
 	MNT_kristo_popovic = {
 		name = "Krsto Popović"
 		portraits = {
@@ -9,12 +6,12 @@ characters = {
 				large = GFX_portrait_europe_generic_land_19
 			}
 		}
-		country_leader = {
-			ideology = oligarchism
-			traits = { }
-			expire = "1947.1.1.1"
-			id = -1
-		}
+		#country_leader = {
+		#	ideology = oligarchism
+		#	traits = { }
+		#	expire = "1947.1.1.1"
+		#	id = -1
+		#}
 
 		corps_commander = { 
 			traits = { old_guard harsh_leader }
@@ -32,6 +29,20 @@ characters = {
 		}
 	}
 
+	MNT_michael_petrovic_njegos={
+		name="Mihailo Petrović-Njegoš"
+		portraits={
+			civilian={
+				large="gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_4.dds"
+			}
+		}
+		country_leader={
+			ideology=absolute_monarchism
+			traits={ modernizer_and_diplomat } 
+			expire="1965.1.1"
+			id=-1
+		}
+	}
 
 	MNT_blazo_jovanovic = {
 		name = "Blažo Jovanović"
@@ -60,7 +71,6 @@ characters = {
 			}
 		}
 	}
-
 
 	MNT_blazo_dukanovic = {
 		name = "Blažo Đukanović"
@@ -105,5 +115,4 @@ characters = {
 			id = -1
 		}
 	}
-
 }

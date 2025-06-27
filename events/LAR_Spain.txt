@@ -14,10 +14,28 @@ country_event = {
 	trigger = {
 		tag = SPR
 		has_dlc = "La Resistance"
+		NOT = { has_global_flag = SPR_R56_focus_tree } # R56
 	}
 
 	immediate = {
 		hidden_effect = {
+			# R56
+			retire_ideology_leader = democratic
+			create_country_leader = {
+				name = "Manuel Azaña"
+				picture = "Portrait_Spain_Manuel_Azana.dds"
+				expire = "1965.1.1"
+				ideology = socialism
+				traits = {
+					figurehead_president
+				}
+			}
+			set_party_name = { 
+			    ideology = democratic 
+			    long_name = SPR_izquierda_republicana_party_long 
+			    name = SPR_izquierda_republicana_party
+			}
+			###
 			set_country_flag = SPR_spanish_elections_flag
 			if = {
 				limit = {
@@ -94,9 +112,26 @@ country_event = {
 				has_completed_focus = SPA_a_great_spain
 			}
 		}
+		remove_ideas = SPR_government_power_struggle # R56
 		add_popularity = {
 			ideology = communism
 			popularity = 0.1
+		}
+		effect_tooltip = { # R56
+			create_country_leader = {
+				name = "Manuel Azaña"
+				picture = "Portrait_Spain_Manuel_Azana.dds"
+				expire = "1965.1.1"
+				ideology = socialism
+				traits = {
+					figurehead_president
+				}
+			}
+			set_party_name = { 
+			    ideology = democratic 
+			    long_name = SPR_izquierda_republicana_party_long 
+			    name = SPR_izquierda_republicana_party
+			}
 		}
 		add_political_power = 5
 		if = {
@@ -132,9 +167,27 @@ country_event = {
 				has_completed_focus = SPR_the_popular_front
 			}
 		}
+		remove_ideas = SPR_government_power_struggle # R56
 		add_popularity = {
 			ideology = fascism
 			popularity = 0.1
+		}
+		effect_tooltip = { # R56
+			retire_ideology_leader = democratic
+			create_country_leader = {
+				name = "Manuel Azaña"
+				picture = "Portrait_Spain_Manuel_Azana.dds"
+				expire = "1965.1.1"
+				ideology = socialism
+				traits = {
+					figurehead_president
+				}
+			}
+			set_party_name = { 
+			    ideology = democratic 
+			    long_name = SPR_izquierda_republicana_party_long 
+			    name = SPR_izquierda_republicana_party
+			}
 		}
 		if = {
 			limit = {
@@ -210,17 +263,18 @@ country_event = {
 					clr_country_flag = SPR_nationalist_spain_flag
 					drop_cosmetic_tag = yes
 					set_country_flag = SPR_republican_spain_flag
-					# if = {
-					# 	limit = {
-					# 		has_game_rule = {
-					# 			rule = spr_fragmentation_status
-					# 			option = SPR_EU4
-					# 		}
-					# 	}
-					# 	set_cosmetic_tag = SPR_republican_castille
-					# }
+					if = {
+						limit = {
+							has_game_rule = {
+								rule = spr_fragmentation_status
+								option = SPR_EU4
+							}
+						}
+						set_cosmetic_tag = SPR_republican_castille
+					}
+					else = {
 						set_cosmetic_tag = SPR_republican_spain
-					
+					}
 					set_politics = {
 						ruling_party = democratic
 					}
@@ -229,37 +283,39 @@ country_event = {
 						neutrality = 11
 						communism = 39
 					}
-					retire_ideology_leader = democratic
+					retire_ideology_leader = democratic # R56
 					retire_ideology_leader = neutrality
 					retire_ideology_leader = communism
 				}
 				SPD = { # Remove Carlist/Falangist country leaders for new SPD tag
 					retire_ideology_leader = fascism
 					retire_ideology_leader = neutrality
+					# R56
 					create_country_leader = {
 						name = "Manuel Azaña"
-						desc = "POLITICS_MANUEL_AZANA_DESC"
-						picture = GFX_portrait_Manuel_Azana
+						picture = "Portrait_Spain_Manuel_Azana.dds"
 						expire = "1965.1.1"
-						ideology = conservatism
+						ideology = socialism
 						traits = {
 							figurehead_president
 						}
 					}
+					###
 				}
 				# Switch the tag alias for the player's country - the player goes from SPR to SPA
 				set_country_flag = SPR_nationalist_spain_flag
-				# if = {
-				# 	limit = {
-				# 		has_game_rule = {
-				# 			rule = spr_fragmentation_status
-				# 			option = SPR_EU4
-				# 		}
-				# 	}
-				# 	set_cosmetic_tag = SPR_nationalist_castille
-				# }
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = spr_fragmentation_status
+							option = SPR_EU4
+						}
+					}
+					set_cosmetic_tag = SPR_nationalist_castille
+				}
+				else = {
 					set_cosmetic_tag = SPR_nationalist_spain
-				
+				}
 				set_politics = {
 					ruling_party = neutrality
 				}
@@ -271,21 +327,22 @@ country_event = {
 				    ideology = communism
 				    popularity = -0.1
 				}
-				kill_country_leader = yes
-				create_country_leader = {
-					name = "José Sanjurjo"
-					desc = "POLITICS_JOSE_SANJURJO_DESC"
-					picture = "GFX_portrait_SPA_jose_sanjurjo"
-					expire = "1965.1.1"
-					ideology = despotism
-					traits = {
-						the_lion_of_the_rif
+				add_country_leader_role = { # R56
+					character = SPA_jose_sanjurjo
+					country_leader = {
+						ideology = military_junta
+						traits = {
+							the_lion_of_the_rif
+						}
+						expire = "1965.1.1"
 					}
+					promote_leader = yes 
 				}
+				save_event_target_as = nationalist_spain_target # R56
 				# Add Nationalist and Republican Garrison division templates
 				division_template = {
 					name = "Guarnición Nacionalista"
-				#	is_locked = yes
+					is_locked = yes
 					template_counter = 6
 					division_names_group = SPR_INF_02
 					regiments = {
@@ -295,9 +352,10 @@ country_event = {
 					}
 				}
 				SPD = {
+					save_event_target_as = republican_spain_target # R56
 					division_template = {
 						name = "Guarnición Republicana"
-					#	is_locked = yes
+						is_locked = yes
 						template_counter = 6
 						division_names_group = SPD_INF_01
 						regiments = {
@@ -472,11 +530,11 @@ country_event = {
 						NOT = { has_country_flag = SPR_enlarge_the_weapon_caches_flag }
 					}
 					transfer_units_fraction = {
-						target = SPD
+						target = event_target:republican_spain_target # R56
 						size = 0.5 # Fallback in case one of the ratios below are not stipulated
 						stockpile_ratio = 0.5
 						army_ratio = 0.5
-						navy_ratio = 0.5
+						navy_ratio = 0.9 # R56
 						air_ratio = 0.5
 						keep_unit_leaders = {
 						    
@@ -492,11 +550,11 @@ country_event = {
 						NOT = { has_country_flag = SPR_disband_the_army_flag }
 					}
 					transfer_units_fraction = {
-						target = SPD
+						target = event_target:republican_spain_target # R56
 						size = 0.5
 						stockpile_ratio = 0.8
 						army_ratio = 0.5
-						navy_ratio = 0.5
+						navy_ratio = 0.95 # R56
 						air_ratio = 0.5
 						keep_unit_leaders = {
 						    
@@ -511,11 +569,11 @@ country_event = {
 						has_country_flag = SPR_disband_the_army_flag
 					}
 					transfer_units_fraction = {
-						target = SPD
+						target = event_target:republican_spain_target # R56
 						size = 0.5
 						stockpile_ratio = 0.8
 						army_ratio = 0.8
-						navy_ratio = 0.5
+						navy_ratio = 1.0 # R56
 						air_ratio = 0.5
 						keep_unit_leaders = {
 						    
@@ -532,9 +590,9 @@ country_event = {
 					}
 					division_template = {
 						name = "División del Ejército de África"
-						template_counter = 4
+						# template_counter = 4 # R56
 						division_names_group = SPR_INF_06
-						regiments = {
+						regiments = { # R56
 							shocktroop = { x = 0 y = 0 }
 							shocktroop = { x = 0 y = 1 }
 							shocktroop = { x = 0 y = 2 }
@@ -550,22 +608,39 @@ country_event = {
 							engineer = { x = 0 y = 1 }
 						}
 					}
-					290 = {
-						create_unit = {
-							division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
-							owner = SPA
-						}
-						create_unit = {
-							division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
-							owner = SPA
-						}
-						create_unit = {
-							division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
-							owner = SPA
-						}
-						if = {
+					if = { limit = { owns_state = 290 } # R56
+						290 = {
+							create_unit = {
+								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+								owner = SPA
+							}
+							create_unit = {
+								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+								owner = SPA
+							}
+							create_unit = {
+								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+								owner = SPA
+							}
+							if = {
+								limit = {
+									ROOT = { NOT = { has_country_flag = SPR_disband_the_army_flag } }
+								}
+								create_unit = {
+									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+									owner = SPA
+								}
+								create_unit = {
+									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+									owner = SPA
+								}
+							}
+						}							
+					}
+					else = { # R56
+						random_owned_controlled_state = {	#Spawn those in capitalin case no African forces present?
 							limit = {
-								ROOT = { NOT = { has_country_flag = SPR_disband_the_army_flag } }
+								is_capital = yes
 							}
 							create_unit = {
 								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
@@ -574,6 +649,23 @@ country_event = {
 							create_unit = {
 								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
 								owner = SPA
+							}
+							create_unit = {
+								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+								owner = SPA
+							}
+							if = {
+								limit = {
+									ROOT = { NOT = { has_country_flag = SPR_disband_the_army_flag } }
+								}
+								create_unit = {
+									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+									owner = SPA
+								}
+								create_unit = {
+									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+									owner = SPA
+								}
 							}
 						}
 					}
@@ -651,6 +743,7 @@ country_event = {
 								has_id = 1104
 								has_id = 1105
 								has_id = 1106
+								is_character = SPR_enrique_lister
 							}
 						}
 						add_unit_leader_trait = trait_SPR_stalinist_loyalties
@@ -715,6 +808,67 @@ country_event = {
 					}
 					add_civil_war_target = SPD
 				}
+				# R56 Nationalists we added
+				create_corps_commander = {
+					name = "Andres Saliquet"
+					portrait_path = GFX_portrait_SPR_Andres_Saliquet
+					traits = { infantry_officer harsh_leader trait_SPA_nationalist_sympathies }
+					skill = 3
+					attack_skill = 4
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 1
+				}
+				create_corps_commander = {
+					name = "Alfredo Kindelán"
+					portrait_path = GFX_portrait_SPR_Alfredo_Kindelan
+					traits = { air_force_ties trait_SPA_nationalist_sympathies }
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				create_corps_commander = {
+					name = "Luis Orgaz Yoldi"
+					portrait_path = GFX_portrait_SPR_Luis_Orgaz_Yoldi
+					traits = { decided_planner trait_SPA_nationalist_sympathies }
+					skill = 2
+					attack_skill = 1
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 3
+					}
+				create_corps_commander = {
+					name = "José Moscardó Ituarte"
+					portrait_path = GFX_portrait_SPR_Jose_Moscardo_Ituarte
+					traits = { commando urban_assault_specialist trait_SPA_nationalist_sympathies }
+					skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 2
+				}
+				create_corps_commander = {
+					name = "Fernando Barrón y Ortiz"
+					portrait_path = GFX_portrait_SPR_Fernando_Barron
+					traits = { infantry_officer trait_SPA_nationalist_sympathies }
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				create_navy_leader = {
+					name = "Rafael Estrada y Arnáiz"
+					portrait_path = GFX_portrait_SPR_Rafael_Estrada
+					traits = { superior_tactician trait_SPA_nationalist_sympathies }
+					skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					maneuvering_skill = 2
+					coordination_skill = 1	
+				}
 				# 2 Republican and 1 Nationalist garrisons spawned on all states with WEAK Nationalist control (except for Northern Garrison states)
 				every_owned_state = {
 					limit = {
@@ -767,22 +921,20 @@ country_event = {
 				if = {
 					limit = {
 						has_country_flag = SPA_negotiate_carlist_support_flag
-						OR = {
-							is_ai = no
-							is_historical_focus_on = no
-						}
+						# OR = { # R56
+						# 	is_ai = no
+						# 	is_historical_focus_on = no
+						# }
 					}
 					division_template = {
 						name = "Requeté Carlista"
 						template_counter = 8
 						division_names_group = SPR_INF_03
-					#	is_locked = yes
+						is_locked = yes
 						regiments = {
 							infantry = { x = 0 y = 0 }
 							infantry = { x = 0 y = 1 }
 							infantry = { x = 0 y = 2 }
-							infantry = { x = 0 y = 3 }
-							infantry = { x = 1 y = 0 }
 						}
 					}
 					172 = {
@@ -805,13 +957,11 @@ country_event = {
 						name = "Requeté Carlista"
 						template_counter = 8
 						division_names_group = SPR_INF_03
-					#	is_locked = yes
+						is_locked = yes
 						regiments = {
 							infantry = { x = 0 y = 0 }
 							infantry = { x = 0 y = 1 }
 							infantry = { x = 0 y = 2 }
-							infantry = { x = 0 y = 3 }
-							infantry = { x = 1 y = 0 }
 						}
 					}
 					172 = {
@@ -847,7 +997,7 @@ country_event = {
 						name = "División de la Guardia de Asalto"
 						template_counter = 5
 						division_names_group = SPR_INF_05
-					#	is_locked = yes
+						is_locked = yes
 						regiments = {
 							infantry = { x = 0 y = 0 }
 							infantry = { x = 0 y = 1 }
@@ -920,7 +1070,7 @@ country_event = {
 							name = "Brigada de la Guardia Civil"
 							template_counter = 7
 							division_names_group = SPR_INF_04
-					#		is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -1306,7 +1456,7 @@ country_event = {
 						name = "Brigada de la Guardia Civil"
 						template_counter = 7
 						division_names_group = SPR_INF_04
-					#	is_locked = yes
+						is_locked = yes
 						regiments = {
 							infantry = { x = 0 y = 0 }
 							infantry = { x = 0 y = 1 }
@@ -1436,7 +1586,7 @@ country_event = {
 							name = "División de la Guardia de Asalto"
 							template_counter = 5
 							division_names_group = SPR_INF_05
-						#	is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -1641,7 +1791,7 @@ country_event = {
 						name = "División de la Guardia de Asalto"
 						template_counter = 5
 						division_names_group = SPR_INF_05
-					#	is_locked = yes
+						is_locked = yes
 						regiments = {
 							infantry = { x = 0 y = 0 }
 							infantry = { x = 0 y = 1 }
@@ -1655,7 +1805,7 @@ country_event = {
 						name = "Brigada de la Guardia Civil"
 						template_counter = 7
 						division_names_group = SPR_INF_04
-					#	is_locked = yes
+						is_locked = yes
 						regiments = {
 							infantry = { x = 0 y = 0 }
 							infantry = { x = 0 y = 1 }
@@ -1853,7 +2003,7 @@ country_event = {
 							name = "Brigada de Juventudes Sindicales"
 							template_counter = 0
 							division_names_group = SPD_INF_02
-						#	is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -2127,7 +2277,7 @@ country_event = {
 							name = "Brigada Popular"
 							template_counter = 13
 							division_names_group = SPD_INF_03
-						#	is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -2334,14 +2484,14 @@ country_event = {
 					10 = {
 						modifier = {
 							factor = 0
-							has_country_flag = SPR_secure_the_guardia_civil_flag
+							has_country_flag = SPR_secure_the_guardia_de_asalto_flag # R56 vanilla fix
 						}
 						SPD = { unlock_national_focus = SPR_secure_the_guardia_de_asalto }
 					}
 					10 = {
 						modifier = {
 							factor = 0
-							has_country_flag = SPR_secure_the_guardia_de_asalto_flag
+							has_country_flag = SPR_secure_the_guardia_civil_flag # R56 vanilla fix
 						}
 						SPD = { unlock_national_focus = SPR_secure_the_guardia_civil }
 					}
@@ -2469,32 +2619,32 @@ country_event = {
 			}
 			hidden_effect = {
 				set_country_flag = SPR_republican_spain_flag
-				# if = {
-				# 	# limit = {
-				# 	# 	has_game_rule = {
-				# 	# 	#	rule = spr_fragmentation_status
-				# 	# 		option = SPR_EU4
-				# 	# 	}
-				# 	# }
-				# 	set_cosmetic_tag = SPR_republican_castille
-				# }
-				# else = {
-				# 	set_cosmetic_tag = SPR_republican_spain
-				# }
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = spr_fragmentation_status
+							option = SPR_EU4
+						}
+					}
+					set_cosmetic_tag = SPR_republican_castille
+				}
+				else = {
+					set_cosmetic_tag = SPR_republican_spain
+				}
 				SPA = {
 					retire_ideology_leader = democratic
-					retire_ideology_leader = neutrality
+					# retire_ideology_leader = neutrality # R56
 					retire_ideology_leader = communism
-					kill_country_leader = yes
-					create_country_leader = {
-						name = "José Sanjurjo"
-						desc = "POLITICS_JOSE_SANJURJO_DESC"
-						picture = "GFX_portrait_SPA_jose_sanjurjo"
-						expire = "1965.1.1"
-						ideology = despotism
-						traits = {
-							the_lion_of_the_rif
+					add_country_leader_role = { # R56
+						character = SPA_jose_sanjurjo
+						country_leader = {
+							ideology = military_junta
+							traits = {
+								the_lion_of_the_rif
+							}
+							expire = "1965.1.1"
 						}
+						promote_leader = yes 
 					}
 					set_popularities = {
 						democratic = 5
@@ -2502,24 +2652,41 @@ country_event = {
 						neutrality = 44
 						fascism = 48
 					}
-					transfer_state = 177
-					177 = { set_state_flag = SPR_sided_with_nationalists_flag }
-					transfer_state = 178
-					178 = { set_state_flag = SPR_sided_with_nationalists_flag }
+					if = { # R56
+						limit = {
+							SPR = {
+								owns_state = 177
+							}
+						}
+						transfer_state = 177
+						177 = { set_state_flag = SPR_sided_with_nationalists_flag }						
+					}
+					if = { # R56 - with new little Canary Islands releasable, this might happen too
+						limit = {
+							SPR = {
+								owns_state = 178
+							}
+						}
+						transfer_state = 178
+						178 = { set_state_flag = SPR_sided_with_nationalists_flag }						
+					}
 				}
-				SPD = {
+				SPD = { # R56
 					retire_ideology_leader = fascism
 					retire_ideology_leader = neutrality
 					create_country_leader = {
 						name = "Manuel Azaña"
-						desc = "POLITICS_MANUEL_AZANA_DESC"
-						picture = GFX_portrait_Manuel_Azana
+						picture = "Portrait_Spain_Manuel_Azana.dds"
 						expire = "1965.1.1"
-						ideology = conservatism
+						ideology = socialism
 						traits = {
 							figurehead_president
 						}
 					}
+					set_politics = {
+						ruling_party = democratic
+					}
+					save_event_target_as = republican_spain_target
 				}
 				add_popularity = {
 				    ideology = fascism
@@ -2531,7 +2698,7 @@ country_event = {
 				}
 				division_template = {
 					name = "Guarnición Republicana"
-				#	is_locked = yes
+					is_locked = yes
 					template_counter = 6
 					division_names_group = SPD_INF_01
 					regiments = {
@@ -2541,9 +2708,10 @@ country_event = {
 					}
 				}
 				SPA = {
+					save_event_target_as = nationalist_spain_target # R56
 					division_template = {
 						name = "Guarnición Nacionalista"
-					#	is_locked = yes
+						is_locked = yes
 						template_counter = 6
 						division_names_group = SPR_INF_02
 						regiments = {
@@ -2558,8 +2726,16 @@ country_event = {
 						has_country_flag = SPA_the_army_of_africa_flag
 					}
 					SPA = {
-						transfer_state = 290
-						290 = { set_state_flag = SPR_sided_with_nationalists_flag }
+						if = { # R56
+							limit = {
+								any_other_country = {
+									original_tag = SPR
+									owns_state = 290
+								}
+							}
+							transfer_state = 290
+							290 = { set_state_flag = SPR_sided_with_nationalists_flag }
+						}
 						division_template = {
 							name = "División del Ejército de África"
 							template_counter = 4
@@ -2580,22 +2756,39 @@ country_event = {
 								engineer = { x = 0 y = 1 }
 							}
 						}
-						290 = {
-							create_unit = {
-								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
-								owner = SPA
-							}
-							create_unit = {
-								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
-								owner = SPA
-							}
-							create_unit = {
-								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
-								owner = SPA
-							}
-							if = {
+						if = { limit = { owns_state = 290 } # R56
+							290 = {
+								create_unit = {
+									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+									owner = SPA
+								}
+								create_unit = {
+									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+									owner = SPA
+								}
+								create_unit = {
+									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+									owner = SPA
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { has_country_flag = SPR_disband_the_army_flag } }
+									}
+									create_unit = {
+										division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+										owner = SPA
+									}
+									create_unit = {
+										division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+										owner = SPA
+									}
+								}
+							}							
+						}
+						else = { # R56
+							random_owned_controlled_state = {	#Spawn those in capitalin case no African forces present?
 								limit = {
-									ROOT = { NOT = { has_country_flag = SPR_disband_the_army_flag } }
+									is_capital = yes
 								}
 								create_unit = {
 									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
@@ -2604,6 +2797,23 @@ country_event = {
 								create_unit = {
 									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
 									owner = SPA
+								}
+								create_unit = {
+									division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+									owner = SPA
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { has_country_flag = SPR_disband_the_army_flag } }
+									}
+									create_unit = {
+										division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+										owner = SPA
+									}
+									create_unit = {
+										division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
+										owner = SPA
+									}
 								}
 							}
 						}
@@ -2614,11 +2824,11 @@ country_event = {
 						NOT = { has_completed_focus = SPR_enlarge_the_weapon_caches }
 					}
 					transfer_units_fraction = {
-						target = SPA
+						target = event_target:nationalist_spain_target # R56
 						size = 0.5 # Fallback in case one of the ratios below are not stipulated
 						stockpile_ratio = 0.5
 						army_ratio = 0.5
-						navy_ratio = 0.5
+						navy_ratio = 0.2 # R56
 						air_ratio = 0.5
 						keep_unit_leaders = {
 						    
@@ -2634,11 +2844,11 @@ country_event = {
 						NOT = { has_completed_focus = SPR_disband_the_army }
 					}
 					transfer_units_fraction = {
-						target = SPA
+						target = event_target:nationalist_spain_target # R56
 						size = 0.5
 						stockpile_ratio = 0.2
 						army_ratio = 0.5
-						navy_ratio = 0.5
+						navy_ratio = 0.1 # R56
 						air_ratio = 0.5
 						keep_unit_leaders = {
 						    
@@ -2653,11 +2863,11 @@ country_event = {
 						has_completed_focus = SPR_disband_the_army
 					}
 					transfer_units_fraction = {
-						target = SPA
+						target = event_target:nationalist_spain_target # R56
 						size = 0.5
 						stockpile_ratio = 0.2
 						army_ratio = 0.2
-						navy_ratio = 0.5
+						navy_ratio = 0.0 # R56
 						air_ratio = 0.5
 						keep_unit_leaders = {
 						    
@@ -2797,6 +3007,49 @@ country_event = {
 					}
 					add_civil_war_target = SPD
 				}
+				#Republicans we added
+			#	create_corps_commander = {
+			#		name = "Enrique Lister"
+			#		portrait_path = "gfx/leaders/SPR/r56_portrait_SPR_Enrique_Lister.dds"
+			#		traits = { politically_connected infantry_officer trickster trait_SPR_stalinist_loyalties }
+			#		id = 1175
+			#		skill = 3
+			#		attack_skill = 2
+			#		defense_skill = 3
+			#		planning_skill = 3
+			#		logistics_skill = 2
+			#	}
+			#	create_corps_commander = {
+			#		name = "Segismundo Casado"
+			#		portrait_path = "gfx/leaders/SPR/r56_portrait_SPR_Segismondo_Casado.dds"
+			#		traits = { infantry_officer }
+			#		skill = 2
+			#		attack_skill = 1
+			#		defense_skill = 1
+			#		planning_skill = 3
+			#		logistics_skill = 2
+			#	}
+			#	create_corps_commander = {
+			#		name = "Sebastián Pozas"
+			#		portrait_path = "gfx/leaders/SPR/r56_portrait_SPR_Sebastian_Pozas.dds"
+			#		traits = { trait_SPR_republican_loyalties }
+			#		skill = 1
+			#		id = 1176
+			#		attack_skill = 1
+			#		defense_skill = 1
+			#		planning_skill = 1
+			#		logistics_skill = 1
+			#	}
+			#	create_navy_leader = {
+			#		name = "Luis González de Ubieta"
+			#		portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_3.dds"
+			#		traits = { spotter }
+			#		skill = 2
+			#		attack_skill = 1
+			#		defense_skill = 2
+			#		maneuvering_skill = 3
+			#		coordination_skill = 1	
+			#	}
 				every_owned_state = {
 					limit = {
 						check_variable = { var = SPA_garrison_control value = 2 compare = equals }
@@ -2884,13 +3137,11 @@ country_event = {
 							name = "Requeté Carlista"
 							template_counter = 8
 							division_names_group = SPR_INF_03
-						#	is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
 								infantry = { x = 0 y = 2 }
-								infantry = { x = 0 y = 3 }
-								infantry = { x = 1 y = 0 }
 							}
 						}
 					}
@@ -2926,7 +3177,7 @@ country_event = {
 							name = "División de la Guardia de Asalto"
 							template_counter = 5
 							division_names_group = SPR_INF_05
-							#is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -3000,7 +3251,7 @@ country_event = {
 							name = "Brigada de la Guardia Civil"
 							template_counter = 7
 							division_names_group = SPR_INF_04
-						#	is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -3396,7 +3647,7 @@ country_event = {
 							name = "Brigada de la Guardia Civil"
 							template_counter = 7
 							division_names_group = SPR_INF_04
-							#is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -3527,7 +3778,7 @@ country_event = {
 							name = "División de la Guardia de Asalto"
 							template_counter = 5
 							division_names_group = SPR_INF_05
-						#	is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -3733,7 +3984,7 @@ country_event = {
 							name = "División de la Guardia de Asalto"
 							template_counter = 5
 							division_names_group = SPR_INF_05
-					#		is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -3747,7 +3998,7 @@ country_event = {
 							name = "Brigada de la Guardia Civil"
 							template_counter = 7
 							division_names_group = SPR_INF_04
-						#	is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -3945,7 +4196,7 @@ country_event = {
 							name = "Brigada de Juventudes Sindicales"
 							template_counter = 0
 							division_names_group = SPD_INF_02
-						#	is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -4148,7 +4399,7 @@ country_event = {
 							name = "Brigada Popular"
 							template_counter = 13
 							division_names_group = SPD_INF_03
-						#	is_locked = yes
+							is_locked = yes
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
@@ -5462,6 +5713,10 @@ country_event = {
 						check_variable = { var = SPA_garrison_control value = 4 compare = less_than }
 					}
 				}
+				modifier = { # Preventing potential error log and logic breaking due to all options in the random list returning 0.
+					add = 0.01
+					always = yes
+				}
 				country_event = { id = lar_spain.5 days = 1 random_days = 9 }
 			}
 		}
@@ -5479,7 +5734,7 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			set_global_flag = scw_frontlines_solidify
+			# set_global_flag = scw_frontlines_solidify # R56
 			remove_ideas = SPA_planned_uprising
 			every_state = {
 				limit = {
@@ -5507,8 +5762,9 @@ country_event = {
 					}
 				}
 				set_state_flag = SPR_unplanned_offensive_flag
-				add_dynamic_modifier = {
-					modifier = unplanned_offensive
+				add_province_modifier = { # R56
+					static_modifiers = { unplanned_offensive }
+					province = { all_provinces = yes }
 				}
 			}
 		}
@@ -5548,8 +5804,9 @@ country_event = {
 						state = 794
 					}
 				}
-				add_dynamic_modifier = {
-					modifier = unplanned_offensive
+				add_province_modifier = { # R56
+					static_modifiers = { unplanned_offensive }
+					province = { all_provinces = yes }
 				}
 			}
 		}
@@ -5911,7 +6168,7 @@ country_event = {
 					template_counter = 8
 					priority = 1
 					division_names_group = SPR_INF_03
-				#	is_locked = yes
+					is_locked = yes
 					regiments = {
 						infantry = { x = 0 y = 0 }
 						infantry = { x = 0 y = 1 }
@@ -6168,6 +6425,38 @@ country_event = {
 					}
 				}
 			}
+			if = { # R56 - Adapting Portugal
+				limit = {
+					POR = { 
+						has_country_flag = POR_iberian_union_possible_flag
+						NOT = { has_government = neutrality }
+						OR = {
+							has_war_with = SPA
+							has_war_with = SPR
+							has_war_with = SPD
+							has_war_with = SPB
+						}
+					}
+				}
+				POR = {
+					add_to_war = {
+						targeted_alliance = SPD
+						enemy = SPB
+						hostility_reason = asked_to_join
+					}
+				}
+				random_country = {
+					limit = {
+						original_tag = POR
+						has_government = neutrality
+					}
+					add_to_war = { 
+						targeted_alliance = SPA 
+						enemy = SPB
+						hostility_reason = asked_to_join 
+					}
+				}
+			}
 			if = { #Country supporting SPA
 				limit = {
 					any_country = { has_country_flag = supports_SPA_flag }
@@ -6302,33 +6591,34 @@ country_event = {
 				clr_country_flag = SPR_carlist_spain_flag
 				drop_cosmetic_tag = yes
 				set_country_flag = SPR_nationalist_spain_flag
-				# if = {
-				# 	limit = {
-				# 		has_game_rule = {
-				# 			rule = spr_fragmentation_status
-				# 			option = SPR_EU4
-				# 		}
-				# 	}
-				# 	set_cosmetic_tag = SPR_nationalist_castille
-				# }
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = spr_fragmentation_status
+							option = SPR_EU4
+						}
+					}
+					set_cosmetic_tag = SPR_nationalist_castille
+				}
+				else = {
 					set_cosmetic_tag = SPR_nationalist_spain
-				
+				}
 			}
 			clr_country_flag = SPR_nationalist_spain_flag
 			drop_cosmetic_tag = yes
 			set_country_flag = SPR_carlist_spain_flag
-			# if = {
-			# 	limit = {
-			# 		has_game_rule = {
-			# 			rule = spr_fragmentation_status
-			# 			option = SPR_EU4
-			# 		}
-			# 	}
-			# 	set_cosmetic_tag = SPR_carlist_castille
-			# }
-			# else = {
-			# 	set_cosmetic_tag = SPR_carlist_spain
-			# }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = spr_fragmentation_status
+						option = SPR_EU4
+					}
+				}
+				set_cosmetic_tag = SPR_carlist_castille
+			}
+			else = {
+				set_cosmetic_tag = SPR_carlist_spain
+			}
 			if = {
 				limit = {
 					any_state = {
@@ -6652,6 +6942,38 @@ country_event = {
 					}
 				}
 			}
+			if = { # R56 Adapting Portugal
+				limit = {
+					POR = { 
+						has_country_flag = POR_iberian_union_possible_flag
+						NOT = { has_government = neutrality }
+						OR = {
+							has_war_with = SPA
+							has_war_with = SPR
+							has_war_with = SPD
+							has_war_with = SPB
+						}
+					}
+				}
+				POR = {
+					add_to_war = {
+						targeted_alliance = SPD
+						enemy = SPB
+						hostility_reason = asked_to_join
+					}
+				}
+				random_country = {
+					limit = {
+						original_tag = POR
+						has_government = neutrality
+					}
+					add_to_war = { 
+						targeted_alliance = SPA 
+						enemy = SPB
+						hostility_reason = asked_to_join 
+					}
+				}
+			}
 			every_state = {
 				limit = {
 					has_state_flag = SPR_core_of_spain_flag
@@ -6806,7 +7128,7 @@ country_event = {
 					}
 					create_country_leader = {
 						name = "Julián Gorkin"
-						desc = "POLITICS_JULIAN_GORKIN_DESC"
+						# desc = "POLITICS_JULIAN_GORKIN_DESC" # R56
 						picture = "GFX_portrait_SPR_julian_gorkin"
 						expire = "1965.1.1"
 						ideology = anarchist_communism
@@ -6896,7 +7218,7 @@ country_event = {
 					}
 					create_country_leader = {
 						name = "Anarchist Commune"
-						desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
+						# desc = "POLITICS_ANARCHIST_COMMUNE_DESC" # R56
 						picture = "GFX_portrait_SPR_anarchist_commune"
 						expire = "1965.1.1"
 						ideology = anarchism
@@ -7126,7 +7448,7 @@ country_event = {
 					template_counter = 0
 					priority = 1
 					division_names_group = SPD_INF_04
-				#	is_locked = yes
+					is_locked = yes
 					regiments = {
 						infantry = { x = 0 y = 0 }
 						infantry = { x = 0 y = 1 }
@@ -7285,14 +7607,13 @@ country_event = {
 				}
 				set_party_name = { ideology = neutrality long_name = SPR_neutrality_anarchism_party_long name = SPR_neutrality_anarchism_party }
 				set_party_name = { ideology = communism long_name = SPR_communism_independent_party_long name = SPR_communism_independent_party }
-				create_country_leader = {
-					name = "Anarchist Commune"
-					desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
-					picture = "GFX_portrait_SPR_anarchist_commune"
+				create_country_leader = { # R56
+					name = "Julián Gorkin"
+					picture = "GFX_portrait_SPR_julian_gorkin"
 					expire = "1965.1.1"
-					ideology = anarchism
+					ideology = marxism
 					traits = {
-						our_right_to_survive
+						militant_socialist
 					}
 				}
 				unlock_national_focus = SPR_the_popular_front
@@ -7351,6 +7672,38 @@ country_event = {
 							has_country_flag = POR_non_aligned_portugal_supports_SPA_flag
 						}
 						add_to_war = { targeted_alliance = SPA enemy = SPC hostility_reason = asked_to_join }
+					}
+				}
+			}
+			if = { # R56 - Adapting Portugal
+				limit = {
+					POR = { 
+						has_country_flag = POR_iberian_union_possible_flag
+						NOT = { has_government = neutrality }
+						OR = {
+							has_war_with = SPA
+							has_war_with = SPR
+							has_war_with = SPD
+							has_war_with = SPB
+						}
+					}
+				}
+				POR = {
+					add_to_war = {
+						targeted_alliance = SPD
+						enemy = SPC
+						hostility_reason = asked_to_join
+					}
+				}
+				random_country = {
+					limit = {
+						original_tag = POR
+						has_government = neutrality
+					}
+					add_to_war = { 
+						targeted_alliance = SPA 
+						enemy = SPC 
+						hostility_reason = asked_to_join 
 					}
 				}
 			}
@@ -7507,41 +7860,17 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			if = { #If POUM split + Right Oppo is in charge + tehy are supporting the POUM -> Then their volunteers stay in SPC
+			every_other_country = { # R56
 				limit = {
-					has_completed_focus = SPR_the_anti_fascist_workers_revolution
-					SOV = {
-						has_completed_focus = SOV_covert_support_for_spanish_poum
-						has_completed_focus = SOV_coup_detat
-					}
-				}
-				every_other_country = { #Exclude SOV
-					limit = {
-						NOT = { tag = SOV }
-						ROOT = {
-							has_volunteers_amount_from = {
-							    tag = PREV
-							    count > 0
-							}
+					ROOT = {
+						has_volunteers_amount_from = {
+						    tag = PREV
+						    count > 0
 						}
 					}
-					recall_volunteers_from = ROOT
 				}
+				recall_volunteers_from = ROOT
 			}
-			else = {
-				every_other_country = { #Default
-					limit = {
-						ROOT = {
-							has_volunteers_amount_from = {
-							    tag = PREV
-							    count > 0
-							}
-						}
-					}
-					recall_volunteers_from = ROOT
-				}
-			}
-			
 			set_global_flag = SPR_anarchist_uprising_flag
 			set_global_flag = { flag = SPR_civil_war_startup value = 1 days = 3 } # Make AI avoid attacking for a few days
 			if = {
@@ -7554,17 +7883,17 @@ country_event = {
 				set_party_name = { ideology = communism long_name = SPR_communism_independent_party_long name = SPR_communism_independent_party }
 				create_country_leader = {
 					name = "Julián Gorkin"
-					desc = "POLITICS_JULIAN_GORKIN_DESC"
+					# desc = "POLITICS_JULIAN_GORKIN_DESC" # R56
 					picture = "GFX_portrait_SPR_julian_gorkin"
 					expire = "1965.1.1"
-					ideology = anarchist_communism
+					ideology = marxism # R56
 					traits = {
 						militant_socialist
 					}
 				}
 				create_country_leader = {
 					name = "Anarchist Commune"
-					desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
+					# desc = "POLITICS_ANARCHIST_COMMUNE_DESC" # R56
 					picture = "GFX_portrait_SPR_anarchist_commune"
 					expire = "1965.1.1"
 					ideology = anarchism
@@ -7608,10 +7937,10 @@ country_event = {
 				set_party_name = { ideology = communism long_name = SPR_communism_independent_party_long name = SPR_communism_independent_party }
 				create_country_leader = {
 					name = "Julián Gorkin"
-					desc = "POLITICS_JULIAN_GORKIN_DESC"
+					# desc = "POLITICS_JULIAN_GORKIN_DESC" # R56
 					picture = "GFX_portrait_SPR_julian_gorkin"
 					expire = "1965.1.1"
-					ideology = anarchist_communism
+					ideology = marxism # R56
 					traits = {
 						militant_socialist
 					}
@@ -7633,16 +7962,6 @@ country_event = {
 					    popularity = 1
 					}
 				}
-				#create_field_marshal = {
-				#	name = "José Rovira"
-				#	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
-				#	traits = { infantry_officer politically_connected }
-				#	skill = 3
-				#    attack_skill = 2
-				#    defense_skill = 2
-				#    planning_skill = 2
-				#    logistics_skill = 3
-				#}
 				add_field_marshal_role = { #TODO_Manu: All these guys should be handled with the new char system
 					character = SPR_jose_rovira
 					traits = { infantry_officer politically_connected }
@@ -7716,33 +8035,34 @@ country_event = {
 				clr_country_flag = SPR_anarchist_spain_flag
 				drop_cosmetic_tag = yes
 				set_country_flag = SPR_republican_spain_flag
-				# if = {
-				# 	limit = {
-				# 		has_game_rule = {
-				# 			rule = spr_fragmentation_status
-				# 			option = SPR_EU4
-				# 		}
-				# 	}
-				# 	set_cosmetic_tag = SPR_republican_castille
-				# }
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = spr_fragmentation_status
+							option = SPR_EU4
+						}
+					}
+					set_cosmetic_tag = SPR_republican_castille
+				}
+				else = {
 					set_cosmetic_tag = SPR_republican_spain
-				
+				}
 			}
 			clr_country_flag = SPR_republican_spain_flag
 			drop_cosmetic_tag = yes
 			set_country_flag = SPR_anarchist_spain_flag
-			# if = {
-			# 	limit = {
-			# 		has_game_rule = {
-			# 			rule = spr_fragmentation_status
-			# 			option = SPR_EU4
-			# 		}
-			# 	}
-			# 	set_cosmetic_tag = SPR_anarchist_castille
-			# }
-			# else = {
-			# 	set_cosmetic_tag = SPR_anarchist_spain
-			# }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = spr_fragmentation_status
+						option = SPR_EU4
+					}
+				}
+				set_cosmetic_tag = SPR_anarchist_castille
+			}
+			else = {
+				set_cosmetic_tag = SPR_anarchist_spain
+			}
 			if = {
 				limit = {
 					controls_state = 165
@@ -8178,10 +8498,9 @@ country_event = {
 			SPD = {
 				create_country_leader = {
 					name = "Manuel Azaña"
-					desc = "POLITICS_MANUEL_AZANA_DESC"
-					picture = GFX_portrait_Manuel_Azana
+					picture = "Portrait_Spain_Manuel_Azana.dds"
 					expire = "1965.1.1"
-					ideology = conservatism
+					ideology = socialism
 					traits = {
 						figurehead_president
 					}
@@ -8310,6 +8629,38 @@ country_event = {
 					add_to_war = { targeted_alliance = SPB enemy = SPD hostility_reason = asked_to_join }
 				}
 			}
+			if = { # R56 - Adapting Portugal
+				limit = {
+					POR = { 
+						has_country_flag = POR_iberian_union_possible_flag
+						NOT = { has_government = neutrality }
+						OR = {
+							has_war_with = SPA
+							has_war_with = SPR
+							has_war_with = SPD
+							has_war_with = SPB
+						}
+					}
+				}
+				POR = {
+					add_to_war = {
+						targeted_alliance = SPD
+						enemy = SPC
+						hostility_reason = asked_to_join
+					}
+				}
+				random_country = {
+					limit = {
+						original_tag = POR
+						has_government = neutrality
+					}
+					add_to_war = { 
+						targeted_alliance = SPA 
+						enemy = SPC 
+						hostility_reason = asked_to_join 
+					}
+				}
+			}
 
 			#Transfer Portuguese revolted ships (if any) to Republican Spain
 			if = {
@@ -8393,7 +8744,7 @@ country_event = {
 				}
 				create_country_leader = {
 					name = "Anarchist Commune"
-					desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
+					# desc = "POLITICS_ANARCHIST_COMMUNE_DESC" # R56
 					picture = "GFX_portrait_SPR_anarchist_commune"
 					expire = "1965.1.1"
 					ideology = anarchism
@@ -8429,10 +8780,10 @@ country_event = {
 				}
 				create_country_leader = {
 					name = "Julián Gorkin"
-					desc = "POLITICS_JULIAN_GORKIN_DESC"
+					# desc = "POLITICS_JULIAN_GORKIN_DESC" # R56
 					picture = "GFX_portrait_SPR_julian_gorkin"
 					expire = "1965.1.1"
-					ideology = anarchist_communism
+					ideology = marxism # R56
 					traits = {
 						militant_socialist
 					}
@@ -9329,6 +9680,21 @@ country_event = {
 		}
 		custom_effect_tooltip = lar_spain.34.b_tt
 	}
+	option = { # Choose third King
+		name = lar_spain.34.c
+		trigger = {
+			NOT = {
+				PRU = {
+					has_completed_focus = PRU_invite_carlos # I could allow it if Karl Pius/Carlos is already in power in Peru leading to a personal union but that would be quite OP, moreover he only claimed the Carlist throne in 1943 and he wasn't an obvious pick
+				}
+			}
+		}
+		ai_chance = {
+			base = 2 # it shouldn't be common considering that he only proclaimed himself as 
+		}
+		set_country_flag = SPB_karl_pius_king # ensure that the flag is correctly integrated in RT56
+		custom_effect_tooltip = lar_spain.34.c_tt
+	}
 }
 
 # Spain - Restore the Monarchy - ### DEPRECATED, replaced by News Event ###
@@ -9350,12 +9716,14 @@ country_event = {
 			}
 			create_country_leader = {
 				name = "Javier I"
-				desc = "POLITICS_JAVIER_I_DESC"
+				# desc = "POLITICS_JAVIER_I_DESC" # R56
 				picture = "GFX_portrait_SPA_xavier_of_bourbon_parma"
 				expire = "1965.1.1"
 				ideology = despotism
 				traits = {
 					the_sacred_king
+					r56_trait_opposed_to_communism # R56
+					r56_trait_opposed_to_democracy # R56
 				}
 			}
 		}
@@ -9366,12 +9734,13 @@ country_event = {
 			}
 			create_country_leader = {
 				name = "Alfonso XIII"
-				desc = "POLITICS_ALFONSO_XIII_DESC"
+				# desc = "POLITICS_ALFONSO_XIII_DESC" # R56
 				picture = "GFX_portrait_SPA_alfonso_xiii"
 				expire = "1965.1.1"
 				ideology = despotism
 				traits = {
 					disgraced_monarch
+					r56_trait_opposed_to_communism # R56
 				}
 			}
 		}
@@ -9382,12 +9751,13 @@ country_event = {
 			}
 			create_country_leader = {
 				name = "Jaime IV"
-				desc = "POLITICS_JAIME_IV_DESC"
+				# desc = "POLITICS_JAIME_IV_DESC" # R56
 				picture = "GFX_portrait_fra_infante_jaime"
 				expire = "1965.1.1"
-				ideology = despotism
+				ideology = absolute_monarchism # R56
 				traits = {
 					the_legitimist
+					r56_trait_opposed_to_communism # R56
 				}
 			}
 		}
@@ -9593,6 +9963,7 @@ country_event = {
 				transfer_state = 459
 				transfer_state = 460
 				transfer_state = 513
+				transfer_state = 933 # R56
 				transfer_state = 514
 				transfer_state = 458
 				transfer_state = 665
@@ -9645,13 +10016,14 @@ country_event = {
 				add_state_claim = 459
 				add_state_claim = 460
 				add_state_claim = 513
+				add_state_claim = 933 # R56
 				add_state_claim = 514
 				add_state_claim = 458
 				add_state_claim = 665
 				create_wargoal = {
 					type = take_state_focus
 					target = ROOT
-					generator = { 461 462 459 460 513 514 458 665 }
+					generator = { 461 462 459 460 513 933 514 458 665 } # R56
 					expire = 0
 				}
 			}
@@ -9680,6 +10052,7 @@ country_event = {
 		transfer_state = 459
 		transfer_state = 460
 		transfer_state = 513
+		transfer_state = 933 # R56
 		transfer_state = 514
 		transfer_state = 458
 		transfer_state = 665
@@ -9702,13 +10075,14 @@ country_event = {
 		add_state_claim = 459
 		add_state_claim = 460
 		add_state_claim = 513
+		add_state_claim = 933 # R56
 		add_state_claim = 514
 		add_state_claim = 458
 		add_state_claim = 665
 		create_wargoal = {
 			type = take_state_focus
 			target = FROM
-			generator = { 461 462 459 460 513 514 458 665 }
+			generator = { 461 462 459 460 513 933 514 458 665 } # R56
 			expire = 0
 		}
 	}
@@ -9754,7 +10128,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				focus_progress = {
-					focus = FRA_the_legitimate_heir
+					focus = FRA_side_with_the_orleanists # R56
 					progress > 0
 				}
 			}
@@ -9819,7 +10193,7 @@ country_event = {
 	id = lar_spain.44
 	title = lar_spain.44.t
 	desc = lar_spain.44.desc
-	picture = GFX_report_event_read_write
+	picture = GFX_report_event_polish_cult # R56
 	
 	is_triggered_only = yes
 	
@@ -10017,11 +10391,12 @@ country_event = {
 				retire_country_leader = yes
 				create_country_leader = {
 					name = "Anarchist Commune"
-					desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
+					# desc = "POLITICS_ANARCHIST_COMMUNE_DESC" # R56
 					picture = "GFX_portrait_SPR_anarchist_commune"
 					expire = "1965.1.1"
 					ideology = anarchism
 					traits = {
+						our_right_to_survive # R56
 					}
 				}
 			}
@@ -10262,7 +10637,7 @@ country_event = {
 			}
 			has_volunteers_amount_from = {
 			    tag = ROOT
-			    count > 0
+			    count > 2 # R56 - was 0, you have to devote yourselves to it and not just meme Soviets out -	Fantom
 			}
 			has_completed_focus = SPR_relocate_the_gold_reserves
 		}
@@ -10734,10 +11109,8 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		hidden_effect = {
-			end_puppet = FROM
-			remove_from_faction = FROM
-		}
+		end_puppet = FROM
+		remove_from_faction = FROM
 	}
 	
 	option = { # Ok
@@ -11108,12 +11481,13 @@ country_event = {
 				kill_country_leader = yes
 				create_country_leader = {
 					name = "Jaime IV"
-					desc = "POLITICS_JAIME_IV_DESC"
+					# desc = "POLITICS_JAIME_IV_DESC" # R56
 					picture = "GFX_portrait_fra_infante_jaime"
 					expire = "1965.1.1"
-					ideology = despotism
+					ideology = absolute_monarchism # R56
 					traits = {
-						
+						the_legitimist # R56
+						r56_trait_opposed_to_communism # R56
 					}
 				}
 			}
@@ -11133,12 +11507,13 @@ country_event = {
 				kill_country_leader = yes
 				create_country_leader = {
 					name = "Jaime IV"
-					desc = "POLITICS_JAIME_IV_DESC"
+					# desc = "POLITICS_JAIME_IV_DESC" # R56
 					picture = "GFX_portrait_fra_infante_jaime"
 					expire = "1965.1.1"
 					ideology = despotism
 					traits = {
-						
+						the_legitimist # R56
+						r56_trait_opposed_to_communism # R56
 					}
 				}
 			}
@@ -11156,17 +11531,18 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		hidden_effect = {
-			kill_country_leader = yes
-			create_country_leader = {
-				name = "Military Junta"
-				desc = "POLITICS_MILITARY_JUNTA_DESC"
-				picture = "GFX_portrait_SPA_military_junta"
-				expire = "1965.1.1"
-				ideology = despotism
-				traits = {
-					divided_interests
+		hidden_effect = { # R56
+			retire_character = SPA_jose_sanjurjo
+			add_country_leader_role = {
+				character = SPA_military_junta
+				country_leader = {
+					ideology = military_junta
+					traits = {
+						divided_interests
+					}
+					expire = "1965.1.1"
 				}
+				promote_leader = yes 
 			}
 		}
 	}
@@ -11175,18 +11551,16 @@ country_event = {
 		name = lar_spain.78.a
 		effect_tooltip = {
 			custom_effect_tooltip = lar_spain.78_tt
-			hidden_effect = {
-				kill_country_leader = yes
-			}
-			create_country_leader = {
-				name = "Military Junta"
-				desc = "POLITICS_MILITARY_JUNTA_DESC"
-				picture = "GFX_portrait_SPA_military_junta"
-				expire = "1965.1.1"
-				ideology = despotism
-				traits = {
-					divided_interests
+			add_country_leader_role = { # R56
+				character = SPA_military_junta
+				country_leader = {
+					ideology = military_junta
+					traits = {
+						divided_interests
+					}
+					expire = "1965.1.1"
 				}
+				promote_leader = yes 
 			}
 		}
 	}
@@ -11215,6 +11589,7 @@ country_event = {
 			add_core_of = ROOT
 		}
 		annex_country = { target = FRA transfer_troops = yes }
+		set_cosmetic_tag = FRANCO_SPAIN # R56
 	}
 }
 
@@ -11230,7 +11605,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 2
+		days = 720 # R56 - was days = 2, serioiusly??? - Fantom
 	}
 
 	fire_only_once = yes
@@ -11238,11 +11613,9 @@ country_event = {
 	hidden = yes
 
 	immediate = {
-		hidden_effect = {
-			SPA_francisco_franco = {
-				set_portraits = {
-					civilian = { large =  GFX_portrait_spain_francisco_franco_old }
-				}
+		SPA_francisco_franco = {
+			set_portraits = {
+				civilian = { large =  GFX_portrait_spain_francisco_franco_old }
 			}
 		}
 	}
@@ -11253,7 +11626,7 @@ country_event = {
 	id = lar_spain.81
 	title = lar_spain.81.t
 	desc = lar_spain.81.desc
-	picture = GFX_report_event_generic_parliament
+	picture = GFX_report_event_spanish_emigres # R56
 	
 	is_triggered_only = yes
 	
@@ -11270,7 +11643,7 @@ country_event = {
 	id = lar_spain.82
 	title = lar_spain.82.t
 	desc = lar_spain.82.desc
-	picture = GFX_report_event_generic_parliament
+	picture = GFX_report_event_MON_soviet_ties # R56
 	
 	is_triggered_only = yes
 
@@ -11320,22 +11693,9 @@ country_event = {
 	id = lar_spain.83
 	title = lar_spain.83.t
 	desc = lar_spain.83.desc
-	picture = GFX_report_event_generic_parliament
+	picture = GFX_report_event_spanish_parliament # R56
 
-	trigger = {
-		tag = SOV
-		any_country = {
-			original_tag = SPR
-			focus_progress = {
-			    focus = SPR_subvert_soviet_control
-			    progress > 0.1
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 2
-	}
+	is_triggered_only = yes # R56
 
 	fire_only_once = yes
 
@@ -11359,12 +11719,24 @@ country_event = {
 		transfer_state = 165
 		transfer_state = 167
 		transfer_state = 794
+		hidden_effect = { # R56 - Added a bit compliance on top, just for immersion that somebody wanted to assist the Soviets there
+			every_controlled_state = {
+				limit = {
+					OR = {
+						state = 165
+						state = 167
+						state = 794
+					}
+				}
+				set_compliance = 12
+			}
+		}
 		hidden_effect = { SPD = { country_event = { id = lar_spain.84 } } }
 		division_template = {
 			name = "Spanish Loyalist Division"
 			priority = 1
 			division_names_group = SOV_INF_01
-		#	is_locked = yes
+			is_locked = yes
 			regiments = {
 				infantry = { x = 0 y = 0 }
 				infantry = { x = 0 y = 1 }
@@ -11634,63 +12006,88 @@ country_event = {
 		}
 	}
 }
+# R56 - This event is never meant to trigger because SPR_always_false was set up - reason to space it out  - Fantom
 
-# Event for Spain that the president is dismissed
-country_event = {
-	id = lar_spain.90
-	title = lar_spain.90.t
-	desc = lar_spain.90.desc
-	picture = GFX_report_event_generic_parliament
+# # Event for Spain that the president is dismissed
+# country_event = {
+# 	id = lar_spain.90
+# 	title = lar_spain.90.t
+# 	desc = lar_spain.90.desc
+# 	picture = GFX_report_event_generic_parliament
 
-	trigger = {
-		tag = SPR
-		date > 1936.4.20
-		NOT = { has_global_flag = spanish_civil_war }
-	}
+# 	trigger = {
+# 		tag = SPR
+# 		date > 1936.4.20
+# 		NOT = { has_global_flag = spanish_civil_war }
+# 	}
 
-	mean_time_to_happen = {
-		days = 2
-	}
+# 	mean_time_to_happen = {
+# 		days = 2
+# 	}
 
-	fire_only_once = yes
+# 	fire_only_once = yes
 
-	option = { # Ok
-		name = lar_spain.90.a
-		if = {
-			limit = {
-				has_dlc = "La Resistance"
-			}
-			if = {
-				limit = {
-					has_completed_focus = SPR_the_popular_front
-				}
-				remove_ideas = SPR_government_power_struggle
-				add_political_power = 10
-			}
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Manuel Azaña"
-				desc = "POLITICS_MANUEL_AZANA_DESC"
-				picture = GFX_portrait_Manuel_Azana
-				expire = "1965.1.1"
-				ideology = conservatism
-				traits = {
-					figurehead_president
-				}
-			}
-		}
-		else = {
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Manuel Azaña"
-				desc = "POLITICS_MANUEL_AZANA_DESC"
-				picture = GFX_portrait_Manuel_Azana
-				expire = "1965.1.1"
-				ideology = conservatism
-				traits = {
-		
-				}
-			}
-		}
-	}
-}
+# 	option = { # Ok
+# 		name = lar_spain.90.a
+# 		if = {
+# 			limit = {
+# 				has_dlc = "La Resistance"
+# 			}
+# 			if = {
+# 				limit = {
+# 					has_completed_focus = SPR_the_popular_front
+# 				}
+# 				remove_ideas = SPR_government_power_struggle
+# 				add_political_power = 10
+# 			}
+# 			retire_country_leader = yes
+# 			add_country_leader_role = {
+# 				character = SPR_manuel_azana
+# 				country_leader = {
+# 				 	ideology = conservatism
+# 				 	traits = { figurehead_president }
+# 				 	expire = "1965.1.1"
+# 				}
+# 				promote_leader = yes
+# 			}
+# 		}
+# 		else = {
+# 			retire_country_leader = yes
+# 			add_country_leader_role = {
+# 				character = SPR_manuel_azana
+# 				country_leader = {
+# 				 	ideology = conservatism
+# 				 	traits = { }
+# 				 	expire = "1965.1.1"
+# 				}
+# 				promote_leader = yes
+# 			}
+# 		}
+# 	}
+# }
+
+
+# # Spain unites the Hispanics!
+# news_event = {
+# 	id = lar_spain.100
+# 	title = lar_spain.100.t
+# 	desc = lar_spain.100.d
+# 	picture = GFX_news_event_journalists_speech
+	
+# 	major = yes
+	
+# 	is_triggered_only = yes
+	
+# 	option = {
+# 		name = lar_spain.100.a
+# 		trigger = {
+# 			NOT = {
+# 				original_tag = SPR
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = lar_spain.100.b
+# 		trigger = { original_tag = SPR }
+# 	}
+# } 

@@ -10689,7 +10689,7 @@ formable_nations_mod_category = {
 				controls_state = 594
 				controls_state = 591
 			}
-			JAP_is_intigrating_china = yes
+		#	JAP_is_intigrating_china = yes
 		}
 		cost = 100
 		days_remove = 120
@@ -10703,33 +10703,6 @@ formable_nations_mod_category = {
 		}
 		remove_effect = {
 			clr_country_flag = JAP_intigrating_china
-			if = {
-				limit = { has_idea = JAP_imperial_ambitions_met }
-				swap_ideas = {
-					remove_idea = JAP_imperial_ambitions_met
-					add_idea = JAP_imperial_ambitions_met_1
-				}
-			}
-			if = {
-				limit = { has_idea = JAP_imperial_ambitions_met_1 }
-				swap_ideas = {
-					remove_idea = JAP_imperial_ambitions_met_1
-					add_idea = JAP_imperial_ambitions_met_2
-				}
-			}
-			IF = {
-				limit = { has_idea = JAP_production }
-					modify_timed_idea = {
-						idea = JAP_production
-						days = 30
-			  }
-			}
-			else = {
-				add_timed_idea = {
-					idea = JAP_production
-					days = 30
-				}
-			}
 			##GUANGXI
 				593 = { add_core_of = ROOT }
 				592 = { add_core_of = ROOT }
@@ -10774,7 +10747,7 @@ formable_nations_mod_category = {
 			controls_state = 752
 			controls_state = 751
 		}
-		JAP_is_intigrating_china = yes
+	#	JAP_is_intigrating_china = yes
 	}
 	cost = 100
 	days_remove = 120
@@ -10789,33 +10762,6 @@ formable_nations_mod_category = {
 
 	remove_effect = {
 		clr_country_flag = JAP_intigrating_china
-		if = {
-			limit = { has_idea = JAP_imperial_ambitions_met }
-			swap_ideas = {
-				remove_idea = JAP_imperial_ambitions_met
-				add_idea = JAP_imperial_ambitions_met_1
-			}
-		}
-		if = {
-			limit = { has_idea = JAP_imperial_ambitions_met_1 }
-			swap_ideas = {
-				remove_idea = JAP_imperial_ambitions_met_1
-				add_idea = JAP_imperial_ambitions_met_2
-			}
-		}
-		IF = {
-			limit = { has_idea = JAP_production }
-				modify_timed_idea = {
-					idea = JAP_production
-					days = 30
-		  }
-		}
-		else = {
-			add_timed_idea = {
-				idea = JAP_production
-				days = 30
-			}
-		}
 		605 = {
 			add_resource = {
 				amount = 20
@@ -10869,7 +10815,7 @@ available = {
 		controls_state = 606
 		controls_state = 607
 	}
-	JAP_is_intigrating_china = yes
+#	JAP_is_intigrating_china = yes
 }
 cost = 100
 days_remove = 120
@@ -10885,33 +10831,6 @@ complete_effect = {
 
 remove_effect = {
 	clr_country_flag = JAP_intigrating_china
-	if = {
-		limit = { has_idea = JAP_imperial_ambitions_met }
-		swap_ideas = {
-			remove_idea = JAP_imperial_ambitions_met
-			add_idea = JAP_imperial_ambitions_met_1
-		}
-	}
-	if = {
-		limit = { has_idea = JAP_imperial_ambitions_met_1 }
-		swap_ideas = {
-			remove_idea = JAP_imperial_ambitions_met_1
-			add_idea = JAP_imperial_ambitions_met_2
-		}
-	}
-	IF = {
-		limit = { has_idea = JAP_production }
-			modify_timed_idea = {
-				idea = JAP_production
-				days = 30
-	  }
-	}
-	else = {
-		add_timed_idea = {
-			idea = JAP_production
-			days = 30
-		}
-	}
 	##inner china
 		600 = { add_core_of = ROOT }
 		595 = { add_core_of = ROOT }
@@ -10958,7 +10877,7 @@ available = {
 		controls_state = 754
 		controls_state = 753
 	}
-	JAP_is_intigrating_china = yes
+#	JAP_is_intigrating_china = yes
 }
 cost = 100
 days_remove = 120
@@ -10973,33 +10892,6 @@ complete_effect = {
 
 remove_effect = {
 	clr_country_flag = JAP_intigrating_china
-	if = {
-		limit = { has_idea = JAP_imperial_ambitions_met }
-		swap_ideas = {
-			remove_idea = JAP_imperial_ambitions_met
-			add_idea = JAP_imperial_ambitions_met_1
-		}
-	}
-	if = {
-		limit = { has_idea = JAP_imperial_ambitions_met_1 }
-		swap_ideas = {
-			remove_idea = JAP_imperial_ambitions_met_1
-			add_idea = JAP_imperial_ambitions_met_2
-		}
-	}
-	IF = {
-		limit = { has_idea = JAP_production }
-			modify_timed_idea = {
-				idea = JAP_production
-				days = 30
-	  }
-	}
-	else = {
-		add_timed_idea = {
-			idea = JAP_production
-			days = 30
-		}
-	}
 	##northern china
 		615 = { add_core_of = ROOT }
 		612 = { add_core_of = ROOT }

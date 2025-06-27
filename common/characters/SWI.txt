@@ -3,7 +3,7 @@ characters={
 		name="Wilhelm Gustloff"
 		portraits={
 			civilian={
-				large="gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+				large="gfx/leaders/SWI/r56_portrait_SWI_Wilhelm_Gustloff.dds"
 			}
 		}
 		country_leader={
@@ -27,7 +27,7 @@ characters={
 			expire="1965.1.1"
 			id=21003
 			traits = {
-				POL_Heavy_Industry_Emphasis
+				heavy_industry_emphasis_trait
 			}
 		}
 	}
@@ -82,8 +82,8 @@ characters={
 			legacy_id=-1
 		}		
 	}
-	SWI_jakob_labhardt={	#r56
-		name="Jakob Labhardt"
+	SWI_jakob_labhart_r56={	#r56
+		name="Jakob Labhart"
 		portraits={
 			army={
 				large="gfx/leaders/SWI/r56_portrait_SWI_Jakob_Labhardt.dds"
@@ -97,7 +97,10 @@ characters={
 			planning_skill=2
 			logistics_skill=1
 			legacy_id=-1
-		}		
+			visible = {
+				has_global_flag = SWI_R56_focus_tree
+			}
+		}
 	}
 	SWI_jean_de_muralt={
 		name=SWI_jean_de_muralt
@@ -169,24 +172,30 @@ characters={
 		}
 	}
 	SWI_august_haefeli={	#r56
-		advisor={
-			slot = high_command
-			idea_token = SWI_august_haefeli
-			ledger = air
-			allowed = {
-				original_tag = SWI
-			}
-			traits = {
-				air_chief_all_weather_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
+		#advisor={
+		#	slot = air_chief
+		#	idea_token = SWI_august_haefeli
+		#	allowed = {
+		#		original_tag = SWI
+		#	}
+		#	traits = {
+		#		air_chief_night_operations_2
+		#	}
+		#	cost = 100
+		#	ai_will_do = {
+		#		factor = 1.000
+		#	}
+		#}
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_gifted_engineer }
+			skills = {
+				specialization_air = 1
 			}
 		}
 		name=SWI_august_haefeli
 		portraits={
 			army={
+				large = GFX_portrait_generic_europe_male_08
 				small="GFX_idea_generic_air_europe_3"
 			}
 		}
@@ -215,7 +224,7 @@ characters={
 		}
 	}
 
-	SWI_etienne_primault={
+	SWI_etienne_primault={ #instructing officer for the aircraft and anti-aircraft troops and military pilots
 		name=SWI_etienne_primault
 		portraits={
 			army={
@@ -230,7 +239,7 @@ characters={
 				original_tag = SWI
 			}
 			traits = {
-				air_air_superiority_2
+				air_air_combat_training_2
 			}
 			cost = 100
 			ai_will_do = {
@@ -250,7 +259,7 @@ characters={
 			}
 			cost = 50
 			ai_will_do = {
-				factor = 1.000
+				factor = 0
 			}
 		}
 		name=SWI_heinrich_rengel
@@ -322,154 +331,193 @@ characters={
 			}
 		}
 	}
-
-	SWI_paul_scherrer={	#56
+	SWI_gottlieb_duttweiler={	#56
 		advisor={
-			cost = 100
+			cost = 100	#was 50 but all theorists were nerfed
 			slot = theorist
-			idea_token = SWI_paul_scherrer
-			ledger = army
+			idea_token = SWI_gottlieb_duttweiler
+			ledger = navy
 			allowed = {
 				original_tag = SWI
 			}
-			research_bonus = {	#is this still necessary?
-				nuclear = 0.15
+			available = {
+				has_completed_focus = SWI_naval_doc
 			}
 			traits = {
-				nuclear_scientist
+				merchant_mariner
+			}
+		}
+		name=SWI_gottlieb_duttweiler
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+	}
+	SWI_paul_scherrer={	#56
+		# advisor={
+		# 	cost = 100
+		# 	slot = theorist
+		# 	idea_token = SWI_paul_scherrer
+		# 	ledger = army
+		# 	allowed = {
+		# 		original_tag = SWI
+		# 	}
+		# 	research_bonus = {	#is this still necessary?
+		# 		nuclear = 0.15
+		# 	}
+		# 	traits = {
+		# 		nuclear_scientist
+		# 	}
+		# }
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist }
+			skills = {
+				specialization_nuclear = 1
 			}
 		}
 		name=SWI_paul_scherrer
 		portraits={
 			army={
 				small="GFX_idea_generic_political_advisor_europe_3"
+				large = GFX_portrait_generic_europe_male_05
+			}
+		}
+	}
+	SWI_jakob_huber_r56 = {
+		name=SWI_jakob_huber
+		portraits={
+			army={
+				small="GFX_idea_jakob_huber"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SWI_jakob_huber
+			allowed = {
+				original_tag = SWI
+			}
+			visible = {
+				has_global_flag = SWI_R56_focus_tree
+			}
+			traits = {
+				army_chief_defensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
 	SWI_jakob_huber={	#r56 and vanilla character - merged
-
-		#NO BBA
-		instance = {
-			allowed = {NOT = { has_dlc = "By Blood Alone" } }
-			name=SWI_jakob_huber
-			portraits={
-				army={
-					small="GFX_idea_jakob_huber"
+		name=SWI_jakob_huber
+		portraits={
+			civilian={
+				small="GFX_portrait_SWI_jakob_huber_small"
+				large="GFX_portrait_SWI_jakob_huber"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SWI_jakob_huber_army_chief
+			allowed = {
+				original_tag = SWI
+				SWI_bba = yes
+			}
+			available = {
+				ROOT = { has_completed_focus = SWI_frontier_defense_plan }
+			}
+			visible = {
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
 				}
 			}
-			advisor={
-				slot = army_chief
-				idea_token = SWI_jakob_huber
-				allowed = {
-					original_tag = SWI
+			traits = {
+				army_chief_reform_3
+			}
+			cost = 0
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 0
+					SWI_is_historical_ai = yes 
 				}
-				traits = {
-					army_chief_defensive_2
+
+			}
+		}
+		#advisor={
+		#	cost = 100
+		#	slot = theorist
+		#	idea_token = SWI_jakob_huber_theorist
+		#	ledger = army
+		#	allowed = {
+		#		original_tag = SWI
+		#	}
+		#	visible = {
+		#		NOT = {
+		#			has_global_flag = SWI_R56_focus_tree
+		#		}
+		#	}
+		#	available = {
+		#		ROOT = { has_completed_focus = SWI_frontier_defense_plan }
+		#	}			
+		#	traits = {
+		#		military_theorist
+		#	}
+		#}
+
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_jakob_huber
+			allowed  = {
+				original_tag  = SWI
+			}
+			visible = {
+				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
 				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
+			}
+			
+			available = {
+				SWI_can_be_councilor = yes
+			}
+			traits  = {
+				SWI_militaristic_nationalist 
+			}
+			on_add = {
+				SWI_on_add_councilors = yes
+			}
+			on_remove = {
+				SWI_on_remove_councilor = yes
+			}
+
+			can_be_fired = no
+
+			ai_will_do = {
+				base = 4000
+				modifier = {
+					factor = 5 
+					SWI_AI_is_imperial = yes 
+				}
+				modifier = {
+					factor = 0.1
+					SWI_is_historical_ai = yes
 				}
 			}
 		}
-		instance = {
-			allowed = {
-				has_dlc = "By Blood Alone"
-			}
-			name=SWI_jakob_huber
-			portraits={
-				civilian={
-					small="GFX_portrait_SWI_jakob_huber_small"
-					large="GFX_portrait_SWI_jakob_huber"
+		corps_commander={
+			traits={ trait_cautious }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+			visible = {
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
 				}
-			}
-			advisor={
-				slot = army_chief
-				idea_token = SWI_jakob_huber_army_chief
-				allowed = {
-					original_tag = SWI
-					SWI_bba = yes
-				}
-				available = {
-					ROOT = { has_completed_focus = SWI_frontier_defense_plan }
-				}
-				traits = {
-					army_chief_reform_3
-				}
-				cost = 0
-				ai_will_do = {
-					base = 1
-					modifier = {
-						factor = 0
-						SWI_is_historical_ai = yes 
-					}
-	
-				}
-			}
-			advisor={
-				cost = 100
-				slot = theorist
-				idea_token = SWI_jakob_huber_theorist
-				ledger = army
-				allowed = {
-					original_tag = SWI
-				}
-				visible = {
-					
-				}
-				available = {
-					ROOT = { has_completed_focus = SWI_frontier_defense_plan }
-				}			
-				traits = {
-					military_theorist
-				}
-			}
-	
-			advisor={
-				slot = political_advisor
-				idea_token = SWI_jakob_huber
-				allowed  = {
-					original_tag  = SWI
-				}
-				visible = {
-					SWI_councilor_visible = yes
-				}
-				
-				available = {
-					SWI_can_be_councilor = yes
-				}
-				traits  = {
-					SWI_militaristic_nationalist 
-				}
-				on_add = {
-					SWI_on_add_councilors = yes
-				}
-				on_remove = {
-					SWI_on_remove_councilor = yes
-				}
-	
-				removal_cost = -1
-	
-				ai_will_do = {
-					base = 4000
-					modifier = {
-						factor = 5 
-						SWI_AI_is_imperial = yes 
-					}
-					modifier = {
-						factor = 0.1
-						SWI_is_historical_ai = yes
-					}
-				}
-			}
-			corps_commander={
-				traits={ trait_cautious }
-				skill=2
-				attack_skill=1
-				defense_skill=3
-				planning_skill=2
-				logistics_skill=1
-				legacy_id=-1
 			}
 		}
 	}
@@ -482,14 +530,14 @@ characters={
 				original_tag = SWI
 			}
 			traits = {
-				air_bomber_interception_2
+				air_chief_all_weather_2
 			}
 			cost = 100
 			ai_will_do = {
 				factor = 1.000
 			}
 		}
-		name=SWI_friedrich_rihner
+		name="Fritz Rihner" #germany wiki listed firstname as fritz
 		portraits={
 			army={
 				small="GFX_idea_generic_air_europe_3"
@@ -519,28 +567,31 @@ characters={
 		}		
 	}
 	SWI_dr_max={	#r56
-		advisor={
-			slot = political_advisor
-			idea_token = SWI_dr_max
-			allowed  = {
-				original_tag  = SWI
-			}
-			traits  = {
-				fascist_demagogue
-			}
-		}
 		name=SWI_dr_max
 		portraits={
 			army={
 				small="GFX_idea_generic_political_advisor_europe_4"
 			}
 		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_dr_max
+			allowed  = {
+				original_tag  = SWI
+			}
+			visible = {
+				has_global_flag = SWI_R56_focus_tree
+			}
+			traits  = {
+				fascist_demagogue
+			}
+		}
 	}
-	SWI_hans_oprecht={	#r56 and vanilla character - merged
-
-		#NO BBA
-		instance = {
-			allowed = {NOT = { has_dlc = "By Blood Alone" } }
+	SWI_hans_oprecht_r56={
+		instance = { #No BBA 
+			allowed = {
+				NOT = { has_dlc = "By Blood Alone" }	
+			}	
 			name=SWI_hans_oprecht
 			portraits={
 				army={
@@ -553,20 +604,22 @@ characters={
 				allowed  = {
 					original_tag  = SWI
 				}
+				visible = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 				traits  = {
 					democratic_reformer
 				}
 			}
 		}
-		instance = {
+		instance = { #BBA - same but DLC image
 			allowed = {
 				has_dlc = "By Blood Alone"
 			}
 			name=SWI_hans_oprecht
 			portraits={
-				civilian={
+				army={
 					small="GFX_portrait_SWI_hans_oprecht_small"
-					large="GFX_portrait_SWI_hans_oprecht"
 				}
 			}
 			advisor={
@@ -576,33 +629,58 @@ characters={
 					original_tag  = SWI
 				}
 				visible = {
-					SWI_councilor_visible = yes
-				}
-				available = {
-					SWI_can_be_councilor = yes
+					has_global_flag = SWI_R56_focus_tree
 				}
 				traits  = {
-					SWI_trade_unionist 
+					democratic_reformer
 				}
-				on_add = {
-					SWI_on_add_councilors = yes
+			}
+		}
+	}
+	SWI_hans_oprecht={
+		name=SWI_hans_oprecht
+		portraits={
+			civilian={
+				small="GFX_portrait_SWI_hans_oprecht_small"
+				large="GFX_portrait_SWI_hans_oprecht"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_hans_oprecht
+			allowed  = {
+				original_tag  = SWI
+			}
+			visible = {
+				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
 				}
-				on_remove = {
-					SWI_on_remove_councilor = yes
+			}
+			available = {
+				SWI_can_be_councilor = yes
+			}
+			traits  = {
+				SWI_trade_unionist 
+			}
+			on_add = {
+				SWI_on_add_councilors = yes
+			}
+			on_remove = {
+				SWI_on_remove_councilor = yes
+			}
+			
+			can_be_fired = no
+
+			ai_will_do = {
+				base = 2000
+				modifier = {
+					factor = 5 
+					SWI_AI_is_imperial = yes 
 				}
-				
-				removal_cost = -1
-	
-				ai_will_do = {
-					base = 2000
-					modifier = {
-						factor = 5 
-						SWI_AI_is_imperial = yes 
-					}
-					modifier = {
-						factor = 7
-						SWI_AI_is_dem_exp = yes 
-					}
+				modifier = {
+					factor = 7
+					SWI_AI_is_dem_exp = yes 
 				}
 			}
 		}
@@ -663,15 +741,6 @@ characters={
 		}
 	}
 
-
-
-
-
-
-
-
-
-
 	####################### VANILLA CHARACTERS #######################################
 	
 	SWI_federal_assembly={	#moved to be BBA character
@@ -705,12 +774,12 @@ characters={
 				traits = { great_council }
 				id=-1
 			}
-			country_leader={
-				ideology=centrism
-				expire="1965.1.1"
-				traits = { great_council }
-				id=-1
-			}
+			#country_leader={
+			#	ideology=centrism
+			#	expire="1965.1.1"
+			#	traits = { great_council }
+			#	id=-1
+			#}
 		}
 		instance = { #BBA
 			allowed = {has_dlc = "By Blood Alone"}
@@ -753,6 +822,9 @@ characters={
 				}
 				visible = {
 					SWI_councilor_visible = yes
+					NOT = {
+						has_global_flag = SWI_R56_focus_tree
+					}
 				}
 				available = {
 					SWI_can_be_councilor = yes
@@ -768,7 +840,7 @@ characters={
 				}
 
 	
-				removal_cost = -1
+				can_be_fired = no
 
 				ai_will_do = {
 					base = 4000
@@ -834,7 +906,12 @@ characters={
 				has_dlc = "By Blood Alone"
 			}
 			available = {
-				ROOT = { has_completed_focus = SWI_promote_guisan }
+				has_completed_focus = SWI_promote_guisan
+			}
+			visible = {
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			traits = {
 				SWI_commander_in_chief
@@ -849,30 +926,30 @@ characters={
 	SWI_hans_oehler={
 
 		#NO BBA
-		instance = {
-			allowed = {NOT = {has_dlc = "By Blood Alone"}}
-			name=SWI_hans_oehler
-			portraits={
-				army={
-					small="GFX_idea_generic_navy_europe_2"
-				}
-			}
-			advisor={
-				slot = high_command
-				idea_token = SWI_hans_oehler
-				ledger = navy
-				allowed = {
-					original_tag = SWI
-				}
-				traits = {
-					navy_capital_ship_1
-				}
-				cost = 50
-				ai_will_do = {
-					base = 200
-				}
-			}
-		}	
+		#instance = {
+		#	allowed = {NOT = {has_dlc = "By Blood Alone"}}
+		#	name=SWI_hans_oehler
+		#	portraits={
+		#		army={
+		#			small="GFX_idea_generic_navy_europe_2"
+		#		}
+		#	}
+		#	advisor={
+		#		slot = high_command
+		#		idea_token = SWI_hans_oehler
+		#		ledger = navy
+		#		allowed = {
+		#			original_tag = SWI
+		#		}
+		#		traits = {
+		#			navy_capital_ship_1
+		#		}
+		#		cost = 50
+		#		ai_will_do = {
+		#			base = 200
+		#		}
+		#	}
+		#}	
 		#BBA
 		instance = {
 			allowed = {has_dlc = "By Blood Alone"}
@@ -883,21 +960,21 @@ characters={
 					large="GFX_Portrait_Europe_Generic_navy_2"
 				}
 			}
-			advisor={
-				slot = high_command
-				idea_token = SWI_hans_oehler_high_command
-				ledger = navy
-				allowed = {
-					original_tag = SWI
-				}
-				traits = {
-					navy_capital_ship_2
-				}
-				cost = 100
-				ai_will_do = {
-					base = 200
-				}
-			}
+			#advisor={
+			#	slot = high_command
+			#	idea_token = SWI_hans_oehler_high_command
+			#	ledger = navy
+			#	allowed = {
+			#		original_tag = SWI
+			#	}
+			#	traits = {
+			#		navy_capital_ship_2
+			#	}
+			#	cost = 100
+			#	ai_will_do = {
+			#		base = 200
+			#	}
+			#}
 			advisor={
 				slot = political_advisor
 				idea_token = SWI_hans_oehler
@@ -906,6 +983,9 @@ characters={
 				}
 				visible = {
 					SWI_councilor_visible = yes
+					NOT = {
+						has_global_flag = SWI_R56_focus_tree
+					}
 				}
 				available = {
 					SWI_can_be_councilor = yes
@@ -921,7 +1001,7 @@ characters={
 					SWI_on_remove_councilor = yes
 				}
 	
-				removal_cost = -1
+				can_be_fired = no
 				ai_will_do = {
 					base = 4000
 					modifier = {
@@ -959,6 +1039,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -973,7 +1056,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 4000 
@@ -1029,6 +1112,9 @@ characters={
 				}
 				visible = {
 					SWI_councilor_visible = yes
+					NOT = {
+						has_global_flag = SWI_R56_focus_tree
+					}
 				}
 				available = {
 					SWI_can_be_councilor = yes
@@ -1043,7 +1129,7 @@ characters={
 					SWI_on_remove_councilor = yes
 				}
 
-				removal_cost = -1
+				can_be_fired = no
 
 				ai_will_do = {
 					base = 4000
@@ -1066,6 +1152,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1080,7 +1169,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 			
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 2000 
@@ -1108,6 +1197,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1122,7 +1214,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 2000
@@ -1150,6 +1242,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1164,7 +1259,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 4000
@@ -1188,6 +1283,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1203,7 +1301,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 4000
@@ -1239,6 +1337,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1253,7 +1354,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000 
@@ -1282,6 +1383,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1296,7 +1400,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -1321,6 +1425,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1335,7 +1442,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 
 			ai_will_do = {
@@ -1347,11 +1454,17 @@ characters={
 			}
 			
 		}
-		name=SWI_eduard_von_steiger
+		country_leader={
+			ideology= oligarchism
+			traits = {
+				noble_beurocrat	
+			}
+		}
+		name="Eduard von Steiger"
 		portraits={
 			civilian={
 				small="GFX_portrait_SWI_eduard_von_steiger_small"
-				large="GFX_portrait_SWI_eduard_von_steiger"
+				large="gfx/leaders/SWI/r56_portrait_SWI_Eduard_von_Steiger.dds"
 			}
 		}
 	}
@@ -1365,6 +1478,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1379,7 +1495,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 4000
@@ -1407,6 +1523,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1421,7 +1540,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 4000
@@ -1450,6 +1569,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1464,7 +1586,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -1482,7 +1604,7 @@ characters={
 				}
 			}			
 		}
-		name=SWI_rudolf_roessler
+		name="Rudolf Roessler"
 		portraits={
 			civilian={
 				small="GFX_portrait_SWI_rudolf_roessler_small"
@@ -1501,6 +1623,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 				has_completed_focus = SWI_gotthard_union
 			}
 			available = {
@@ -1516,7 +1641,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -1544,6 +1669,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1558,7 +1686,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 2000
@@ -1582,6 +1710,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1596,7 +1727,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 2000
@@ -1628,6 +1759,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1642,7 +1776,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -1667,6 +1801,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1682,7 +1819,7 @@ characters={
 			}
 
 
-			removal_cost = -1
+			can_be_fired = no
 			ai_will_do = {
 				base = 4000
 				modifier = {
@@ -1710,6 +1847,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1732,7 +1872,7 @@ characters={
 				}
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 		}
 		name=SWI_enrico_celio
@@ -1753,6 +1893,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 				has_completed_focus = SWI_gotthard_union
 			}
 			available = {
@@ -1768,7 +1911,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -1804,6 +1947,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1830,7 +1976,7 @@ characters={
 				}
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 		}
 		name=SWI_ernst_nobs
@@ -1851,6 +1997,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1865,7 +2014,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -1894,6 +2043,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1908,7 +2060,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -1940,6 +2092,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 				has_completed_focus = SWI_gotthard_union
 			}
 			available = {
@@ -1955,7 +2110,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -1982,6 +2137,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -1997,7 +2155,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 			
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 4000
@@ -2039,11 +2197,14 @@ characters={
 			}
 			available = {
 				SWI_can_be_councilor = yes
-				has_completed_focus = SWI_the_national_front
+				has_completed_focus = SWI_back_the_national_front
 				NOT = { has_completed_focus = SWI_ban_national_movement_for_switzerland }
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			traits  = {
 				SWI_fascist_recruiter 
@@ -2055,7 +2216,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 			
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 4000
@@ -2089,11 +2250,14 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
 				NOT = {has_completed_focus = SWI_ban_national_movement_for_switzerland}
-				has_completed_focus = SWI_the_national_front
+				has_completed_focus = SWI_back_the_national_front
 			}
 			traits  = {
 				SWI_fascist 
@@ -2105,7 +2269,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 4000
@@ -2142,6 +2306,11 @@ characters={
 			allowed  = {
 				original_tag  = SWI
 			}
+			visible = {
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
+			}
 			available = {
 				SWI_can_be_councilor = yes
 				has_completed_focus = SWI_panoramaheim_branch
@@ -2157,7 +2326,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 4000
@@ -2189,6 +2358,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -2204,7 +2376,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 4000
@@ -2228,29 +2400,29 @@ characters={
 
 	SWI_adolf_furrer={
 		
-		advisor={
-			slot = high_command
-			idea_token = SWI_adolf_furrer
-			ledger = army
-			
-			allowed = {
-				SWI_bba = yes
-			}
-			
-			visible = {
-				
-			}
-			available = {
-				
-			}
-			traits = {
-				army_infantry_1
-			}
-			cost = 100
-			ai_will_do = {
-				base = 200
-			}
-		}
+		#advisor={
+		#	slot = high_command
+		#	idea_token = SWI_adolf_furrer
+		#	ledger = army
+		#	
+		#	allowed = {
+		#		SWI_bba = yes
+		#	}
+		#	
+		#	visible = {
+		#		
+		#	}
+		#	available = {
+		#		
+		#	}
+		#	traits = {
+		#		army_infantry_1
+		#	}
+		#	cost = 100
+		#	ai_will_do = {
+		#		base = 200
+		#	}
+		#}
 		advisor={
 			slot = political_advisor
 			idea_token = SWI_adolf_furrer
@@ -2259,6 +2431,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -2273,7 +2448,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -2311,9 +2486,12 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 2000
@@ -2335,6 +2513,11 @@ characters={
 			allowed  = {
 				original_tag  = SWI
 			}
+			visible = {
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
+			}
 			available = {
 				SWI_can_be_councilor = yes
 				has_global_flag = scw_over
@@ -2350,7 +2533,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 2000
@@ -2385,6 +2568,11 @@ characters={
 			allowed  = {
 				original_tag  = SWI
 			}
+			visible = {
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
+			}
 			available = {
 				SWI_can_be_councilor = yes
 			}
@@ -2398,7 +2586,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 2000
@@ -2444,6 +2632,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -2458,7 +2649,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 2000
@@ -2475,27 +2666,27 @@ characters={
 
 	SWI_jakob_labhart={
 		
-		advisor={
-			slot = high_command
-			idea_token = SWI_jakob_labhart_high_command
-			ledger = army
-			allowed = {
-				SWI_bba = yes 
-			}
-			visible = {
-				
-			}
-			available = {
-				
-			}
-			traits = {
-				army_artillery_2
-			}
-			cost = 100
-			ai_will_do = {
-				base = 0
-			}
-		}
+		#advisor={
+		#	slot = high_command
+		#	idea_token = SWI_jakob_labhart_high_command
+		#	ledger = army
+		#	allowed = {
+		#		SWI_bba = yes 
+		#	}
+		#	visible = {
+		#		
+		#	}
+		#	available = {
+		#		
+		#	}
+		#	traits = {
+		#		army_artillery_2
+		#	}
+		#	cost = 100
+		#	ai_will_do = {
+		#		base = 0
+		#	}
+		#}
 
 		advisor={
 			cost = 100
@@ -2524,6 +2715,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 			}
 			available = {
 				SWI_can_be_councilor = yes
@@ -2538,7 +2732,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 			
 			ai_will_do = {
 				base = 4000
@@ -2561,6 +2755,11 @@ characters={
 			planning_skill=2
 			logistics_skill=3
 			legacy_id=-1
+			visible = {
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
+			}
 		}
 
 		name=SWI_jakob_labhart
@@ -2572,14 +2771,17 @@ characters={
 		}
 	}
 
-	SWI_roger_masson={
-		#NO BBA
+	SWI_roger_masson_r56 = {
 		instance = {
-			allowed = {NOT = {has_dlc = "By Blood Alone"}}
+			allowed = {
+				NOT = {
+					has_dlc = "By Blood Alone"
+				}
+			}
 			name=SWI_roger_masson
 			portraits={
 				army={
-					small="GFX_idea_generic_army_europe_3"
+					small="GFX_idea_generic_army_europe_3"	#non-DLC
 				}
 			}
 			advisor={
@@ -2587,6 +2789,9 @@ characters={
 				idea_token = SWI_roger_masson
 				allowed  = {
 					original_tag  = SWI
+				}
+				visible = {
+					has_global_flag = SWI_R56_focus_tree
 				}
 				traits  = {
 					army_chief_organizational_3 
@@ -2597,7 +2802,6 @@ characters={
 				}
 			}
 		}
-
 		instance = {
 			allowed = {
 				has_dlc = "By Blood Alone"
@@ -2605,44 +2809,241 @@ characters={
 			name=SWI_roger_masson
 			portraits={
 				army={
-					large="GFX_portrait_SWI_roger_masson"
-					small="GFX_portrait_SWI_roger_masson_small"
+					small="GFX_portrait_SWI_roger_masson_small"	#DLC
 				}
 			}
 			advisor={
-				slot = political_advisor
+				slot = army_chief
 				idea_token = SWI_roger_masson
 				allowed  = {
 					original_tag  = SWI
 				}
-				
 				visible = {
-					SWI_councilor_visible = yes
-				}
-				available = {
-					SWI_can_be_councilor = yes
+					has_global_flag = SWI_R56_focus_tree
 				}
 				traits  = {
-					SWI_intelligence_officer 
+					army_chief_organizational_3 
 				}
-				on_add = {
-					SWI_on_add_councilors = yes
-				}
-				on_remove = {
-					SWI_on_remove_councilor = yes
-				}
-
-				removal_cost = -1
-
+				cost = 150
 				ai_will_do = {
-					base = 500
-					modifier = {
-						factor = 7 
-						has_intelligence_agency = yes						
-					}
+					factor = 1.000
 				}
-				
 			}
+		}
+	}
+
+	SWI_jules_borel = {
+		name = "Jules Borel"
+		portraits = {
+			army = {
+				large = "gfx/leaders/SWI/Portrait_SWI_Generic_land_2.dds"
+				small = "GFX_kr_portrait_europe_generic_land_2_small"
+			}
+		}
+		corps_commander = {
+			traits = {  trait_cautious inflexible_strategist }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = SWI_jules_borrel
+			ledger = army
+			allowed = {
+				original_tag = SWI
+			}
+			available = {
+				if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					has_completed_focus = SWI_frontier_defense_plan
+				}
+			}
+			traits = {
+				army_chief_morale_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	SWI_pierre_de_muralt = { #cavalry officer
+		name = "Pierre de Muralt"
+		portraits = {
+			army = {
+				small = "GFX_kr_portrait_europe_generic_land_1_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SWI_pierre_de_muralt
+			allowed = {
+				original_tag = SWI
+			}	
+            traits = { army_cavalry_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	SWI_paul_vollenwieder = {#supreme field physician of the army from 1936 to 1945
+		name = "Paul Vollenweider"
+		portraits = {
+			army = {
+				small = "GFX_kr_portrait_europe_generic_land_3_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SWI_paul_vollenwieder 
+			allowed = {
+				original_tag = SWI
+			}	
+            traits = { army_regrouping_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	SWI_otto_hilfiker = {#commander of engineers 1939
+		name = "Otto Hilfiker"
+		portraits = {
+			army = {
+				small = "GFX_kr_portrait_europe_generic_land_4_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SWI_otto_hilfiker
+			allowed = {
+				original_tag = SWI
+			}	
+            traits = { army_entrenchment_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	SWI_rudolf_probst = {#commander of infantry 1939
+		name = "Rudolf Probst"
+		portraits = {
+			army = {
+				small = "GFX_kr_portrait_europe_generic_land_8_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SWI_rudolf_probst 
+			allowed = {
+				original_tag = SWI
+			}	
+            traits = { army_infantry_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	SWI_roger_dollfus_de_volckersberg = {#Ruggero Dollfus
+		name = "Roger Dollfus de Volckersberg"
+		portraits = {
+			army = {
+				small = "GFX_kr_portrait_europe_generic_land_9_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SWI_roger_dollfus_de_volckersberg
+			allowed = {
+				original_tag = SWI
+			}	
+            traits = { army_logistics_2 } #bit of a random trait but better then nothing
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	SWI_karl_heinz_ignas = {#generic
+		name = "Karl-Heinz Ignaz"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SWI_karl_heinz_ignas 
+			allowed = {
+				original_tag = SWI
+			}	
+            traits = { navy_capital_ship_2 } #bit of a random trait but better then nothing
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	SWI_roger_masson={
+		name=SWI_roger_masson
+		portraits={
+			army={
+				large="GFX_portrait_SWI_roger_masson"
+				small="GFX_portrait_SWI_roger_masson_small"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_roger_masson
+			allowed  = {
+				original_tag  = SWI
+			}
+			
+			visible = {
+				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
+			}
+			available = {
+				SWI_can_be_councilor = yes
+			}
+			traits  = {
+				SWI_intelligence_officer 
+			}
+			on_add = {
+				SWI_on_add_councilors = yes
+			}
+			on_remove = {
+				SWI_on_remove_councilor = yes
+			}
+
+			can_be_fired = no
+
+			ai_will_do = {
+				base = 500
+				modifier = {
+					factor = 7 
+					has_intelligence_agency = yes						
+				}
+			}
+			
 		}
 	}
 
@@ -2685,6 +3086,9 @@ characters={
 				idea_token = SWI_giuseppe_motta
 				visible = {
 					SWI_councilor_visible = yes
+					NOT = {
+						has_global_flag = SWI_R56_focus_tree
+					}
 				}
 				available = {
 					SWI_can_be_councilor = yes
@@ -2702,7 +3106,7 @@ characters={
 					SWI_on_remove_councilor = yes
 				}
 
-				removal_cost = -1
+				can_be_fired = no
 
 				ai_will_do = {
 					base = 4000
@@ -2761,6 +3165,9 @@ characters={
 				}
 				visible = {
 					SWI_councilor_visible = yes
+					NOT = {
+						has_global_flag = SWI_R56_focus_tree
+					}
 				}
 				available = {
 					SWI_can_be_councilor = yes
@@ -2776,7 +3183,7 @@ characters={
 					SWI_on_remove_councilor = yes
 				}
 
-				removal_cost = -1
+				can_be_fired = no
 				
 				ai_will_do = {
 					base = 4000
@@ -2786,6 +3193,36 @@ characters={
 					}
 				}
 				
+			}
+		}
+	}
+
+	SWI_franz_joseph_ii={	#r56
+		name="Franz Joseph II"
+		portraits={
+			civilian={
+				small="GFX_idea_LIE_advisor_franz_joseph_ii"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			allowed  = {
+				original_tag  = SWI
+			}
+			idea_token = SWI_franz_joseph_ii
+			visible = {
+				has_country_flag = LIE_prince_in_exile
+				LIE = {
+					NOT = {
+						has_government = neutrality
+					}
+				}
+				NOT = {
+					has_government = communism
+				}
+			}
+			traits  = {
+				LIE_the_exiled_prince
 			}
 		}
 	}
@@ -2806,6 +3243,9 @@ characters={
 			}
 			visible = {
 				SWI_councilor_visible = yes
+				NOT = {
+					has_global_flag = SWI_R56_focus_tree
+				}
 				has_completed_focus = SWI_gotthard_union
 			}
 			available = {
@@ -2821,7 +3261,7 @@ characters={
 				SWI_on_remove_councilor = yes
 			}
 
-			removal_cost = -1
+			can_be_fired = no
 
 			ai_will_do = {
 				base = 4000
@@ -2894,7 +3334,7 @@ characters={
 			}
 			cost = 200
 			ai_will_do = {
-				factor = 100
+				factor = 0
 			}
 			available = {
 				hidden_trigger = { has_country_flag = SWI_von_trapp_hired }
@@ -2914,6 +3354,37 @@ characters={
 
 			visible = {
 				hidden_trigger = { has_country_flag = SWI_von_trapp_hired }
+			}
+		}
+	}
+
+	SWI_jakob_ackeret = {
+		name = "Jakob Ackeret"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_europe_male_02
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_brilliant_theorist }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
+	SWI_heinrich_mohaupt = {
+		name = "Heinrich Mohaupt"
+		portraits = {
+			army = {
+				large = GFX_portrait_generic_europe_male_13
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_fast_learner }
+			skills = {
+				specialization_land = 1
 			}
 		}
 	}

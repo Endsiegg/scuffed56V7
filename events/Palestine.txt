@@ -8,12 +8,8 @@ add_namespace = palestine
 		desc =  palestine.1.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.1.a
-			ai_chance = { factor = 1 }
 			set_politics = {
 				ruling_party = fascism
 				elections_allowed = no 
@@ -27,9 +23,6 @@ add_namespace = palestine
 		title = palestine.2.t
 		desc =  palestine.2.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.2.a
@@ -47,9 +40,6 @@ add_namespace = palestine
 		desc =  palestine.3.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.3.a
 			add_political_power = -75
@@ -63,9 +53,6 @@ add_namespace = palestine
 		title = palestine.4.t
 		desc =  palestine.4.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.4.a
@@ -97,9 +84,6 @@ add_namespace = palestine
 		desc =  palestine.5.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.5.a
 			add_political_power = -75
@@ -114,9 +98,6 @@ add_namespace = palestine
 		desc =  palestine.6.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.6.a
 			army_experience = 25
@@ -127,7 +108,7 @@ add_namespace = palestine
 			}
 			set_country_flag = PAL_nll_favored
 			ai_chance = {
-				factor = 1
+				base = 1
 				modifier = {
 					factor = 0
 					has_game_rule = {
@@ -154,7 +135,7 @@ add_namespace = palestine
 			}
 			set_country_flag = PAL_smc_favored
 			ai_chance = {
-				factor = 1
+				base = 1
 				modifier = {
 					factor = 0
 					has_game_rule = {
@@ -172,9 +153,6 @@ add_namespace = palestine
 		title = palestine.7.t
 		desc =  palestine.7.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.7.a
@@ -195,9 +173,6 @@ add_namespace = palestine
 		desc =  palestine.8.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.8.a
 			add_stability = -0.1
@@ -209,9 +184,6 @@ add_namespace = palestine
 		title = palestine.9.t
 		desc =  palestine.9.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.9.a
@@ -241,9 +213,6 @@ add_namespace = palestine
 		desc =  palestine.10.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.10.a
 			add_stability = 0.05
@@ -264,9 +233,6 @@ add_namespace = palestine
 		title = palestine.11.t
 		desc =  palestine.11.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.11.a
@@ -289,9 +255,6 @@ add_namespace = palestine
 		desc =  palestine.12.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.12.a
 			add_popularity = {
@@ -307,9 +270,6 @@ add_namespace = palestine
 		title = palestine.13.t
 		desc =  palestine.13.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.13.a
@@ -346,9 +306,6 @@ add_namespace = palestine
 		desc =  palestine.14.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.14.a
 			add_political_power = -75
@@ -365,9 +322,6 @@ add_namespace = palestine
 		title = palestine.15.t
 		desc =  palestine.15.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.15.a	
@@ -389,12 +343,9 @@ add_namespace = palestine
 		desc =  palestine.16.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option ={
 			name = palestine.16.a
-			ai_chance = { factor = 70 }	
+			ai_chance = { base = 70 }	
 			add_stability = -0.05
 			PAL = {
 				country_event = palestine.17
@@ -406,7 +357,7 @@ add_namespace = palestine
 
 		option ={
 			name =  palestine.16.b 
-			ai_chance = { factor = 30 }
+			ai_chance = { base = 30 }
 			ROOT = {
 				add_stability = 0.05
 			}
@@ -429,18 +380,15 @@ add_namespace = palestine
 		desc = palestine.17.d
 		is_triggered_only = yes
 
-			trigger = {
-			}
-
 		option ={
 			name = palestine.17.a
-			ai_chance = { factor = 50 }	
+			ai_chance = { base = 50 }	
 			add_stability = -0.1
 		}
 
 		option ={
 			name =  palestine.17.b 
-			ai_chance = { factor = 50 }
+			ai_chance = { base = 50 }
 			PAL = {
 				create_wargoal = { 
 					type = annex_everything 
@@ -486,7 +434,7 @@ add_namespace = palestine
 		is_triggered_only = yes
 		option = {
 			ai_chance = {
-				factor = 10
+				base = 10
 				modifier = {
 					has_war = yes
 					factor = 2
@@ -508,7 +456,7 @@ add_namespace = palestine
 		}
 		option = {
 			ai_chance = {
-				factor = 10
+				base = 10
 			}
 			name = mandate_palestine.112.b
 			effect_tooltip = {
@@ -764,14 +712,9 @@ add_namespace = palestine
 		title = palestine.30.t
 		desc = palestine.30.d
 		is_triggered_only = yes
-
-		
-			trigger = {
-			}
-
 		option ={
 			name = palestine.30.a
-			ai_chance = { factor = 30 }	
+			ai_chance = { base = 30 }	
 			add_stability = -0.05
 			PAL = {
 				country_event = palestine.31
@@ -780,7 +723,7 @@ add_namespace = palestine
 
 		option ={
 			name = palestine.30.b
-			ai_chance = { factor = 30 }
+			ai_chance = { base = 30 }
 			PAL = {
 				country_event = palestine.32
 			}
@@ -822,14 +765,9 @@ add_namespace = palestine
 		title = palestine.30.t
 		desc = palestine.31.d
 		is_triggered_only = yes
-
-		
-			trigger = {
-			}
-
 		option ={
 			name = palestine.30.a
-			ai_chance = { factor = 30 }	
+			ai_chance = { base = 30 }	
 			add_stability = -0.05
 			PAL = {
 				country_event = palestine.34
@@ -838,7 +776,7 @@ add_namespace = palestine
 
 		option = {
 			name = palestine.30.b
-			ai_chance = { factor = 30 }
+			ai_chance = { base = 30 }
 			PAL = {
 				country_event = palestine.35
 			}
@@ -850,11 +788,6 @@ add_namespace = palestine
 		title = palestine.34.t
 		desc =  palestine.31.d
 		is_triggered_only = yes
-
-		
-			trigger = {
-			}
-
 		option = {
 			name = palestine.31.a
 			add_stability = -0.05
@@ -886,13 +819,10 @@ add_namespace = palestine
 		title = palestine.36.t
 		desc = palestine.36.d
 		is_triggered_only = yes
-
-			trigger = {
-			}
 	
 		option = {
 			name = palestine.36.a
-			ai_chance = { factor = 10 }
+			ai_chance = { base = 10 }
 			add_popularity = { ideology = PAL popularity = 0.05 }
 			set_capital = { state = 966 }
 			trigger = {
@@ -902,7 +832,7 @@ add_namespace = palestine
 
 		option = {
 			name = palestine.36.b
-			ai_chance = { factor = 80 }
+			ai_chance = { base = 80 }
 			add_stability = 0.05
 			if = {
 				limit = {
@@ -928,7 +858,7 @@ add_namespace = palestine
 
 		option = {
 			name = palestine.36.c
-			ai_chance = { factor = 10 }
+			ai_chance = { base = 10 }
 			add_stability = -0.05
 			set_capital = { state = 949 }
 			add_war_support = 0.1
@@ -945,9 +875,6 @@ add_namespace = palestine
 		desc =  palestine.37.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.37.a
 			promote_character = {
@@ -963,9 +890,6 @@ add_namespace = palestine
 		desc =  palestine.38.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.38.a
 			promote_character = {
@@ -980,9 +904,6 @@ add_namespace = palestine
 		title = palestine.39.t
 		desc =  palestine.39.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.39.a
@@ -1005,12 +926,9 @@ add_namespace = palestine
 		desc =  palestine.40.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.40.a
-			ai_chance = { factor = 50 }	#yes
+			ai_chance = { base = 50 }	#yes
 			add_political_power = 200
 			add_stability = -0.1
 			PAL = {
@@ -1019,7 +937,7 @@ add_namespace = palestine
 		}
 		option = {
 			name = palestine.40.b #no
-			ai_chance = { factor = 50 }	
+			ai_chance = { base = 50 }	
 			add_political_power = -75
 			PAL = {
 				country_event = palestine.42
@@ -1032,9 +950,6 @@ add_namespace = palestine
 		title = palestine.41.t
 		desc =  palestine.41.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.41.a
@@ -1053,9 +968,6 @@ add_namespace = palestine
 		desc =  palestine.42.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.42.a
 			create_wargoal = {
@@ -1071,17 +983,14 @@ add_namespace = palestine
 		desc =  palestine.43.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
-			ai_chance = { factor = 99 }	
+			ai_chance = { base = 99 }	
 			name = palestine.43.a
 		}
 
 		option = {
-			ai_chance = { factor = 1 }	
-			name = palestine.43.a
+			ai_chance = { base = 1 }	
+			name = palestine.43.b
 			add_political_power = -100
 			add_popularity = {
 				ideology = fascism
@@ -1104,9 +1013,6 @@ add_namespace = palestine
 		desc =  palestine.44.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.44.a
 			add_timed_idea = { idea = PAL_islamists_funded days = 365 }
@@ -1121,9 +1027,6 @@ add_namespace = palestine
 		title = palestine.45.t
 		desc =  palestine.45.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.45.a
@@ -1140,9 +1043,6 @@ add_namespace = palestine
 		desc =  palestine.58.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.58.a
 		}
@@ -1153,9 +1053,6 @@ add_namespace = palestine
 		title = palestine.59.t
 		desc =  palestine.59.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.59.a
@@ -1181,7 +1078,7 @@ add_namespace = palestine
 				}
 			}
 			ai_chance = {
-				factor = 1
+				base = 1
 				modifier = {
 					factor = 0
 					has_game_rule = {
@@ -1208,7 +1105,7 @@ add_namespace = palestine
      			trait = PAL_defiant_mufti 
 			}
 			ai_chance = {
-				factor = 1
+				base = 1
 				modifier = {
 					factor = 0
 					has_game_rule = {
@@ -1232,9 +1129,6 @@ add_namespace = palestine
 		title = palestine.60.t
 		desc =  palestine.60.d
 		is_triggered_only = yes
-
-		trigger = {
-		}
 
 		option = {
 			name = palestine.60.a
@@ -1308,6 +1202,15 @@ add_namespace = palestine
 			}
 			if = {
 				limit = {
+					controls_state = 966
+				}
+				set_province_name = {
+					id = 13443
+					name = "Al-Khalil"
+				}
+			}
+			if = {
+				limit = {
 					controls_state = 1016
 				}
 				set_province_name = { id = 1086 name = "Al-Quds" }
@@ -1335,12 +1238,9 @@ add_namespace = palestine
 		desc =  palestine.62.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.62.a
-			ai_chance = { factor = 50 }	
+			ai_chance = { base = 50 }	
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.5
@@ -1381,12 +1281,9 @@ add_namespace = palestine
 		desc =  palestine.63.d
 		is_triggered_only = yes
 
-		trigger = {
-		}
-
 		option = {
 			name = palestine.63.a
-			ai_chance = { factor = 50 }	
+			ai_chance = { base = 50 }	
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.2
@@ -1413,14 +1310,9 @@ add_namespace = palestine
 		desc =  palestine.64.d
 		is_triggered_only = yes
 		fire_only_once = yes
-		
-
-		trigger = {	
-		}
-
 		option = {
 			name = palestine.64.a
-			ai_chance = { factor = 99 }
+			ai_chance = { base = 99 }
 			white_peace = PAL
 			if = {
 				limit = {
@@ -1442,7 +1334,7 @@ add_namespace = palestine
 
 		option = {
 			name = palestine.64.b
-			ai_chance = { factor = 1 }
+			ai_chance = { base = 1 }
 			add_stability = -0.05
 			add_political_power = -75
 		}
@@ -1454,14 +1346,9 @@ add_namespace = palestine
 		desc =  palestine.65.d
 		is_triggered_only = yes
 		fire_only_once = yes
-		
-
-		trigger = {	
-		}
-
 		option = {
 			name = palestine.65.a
-			ai_chance = { factor = 99 }
+			ai_chance = { base = 99 }
 			white_peace = PAL
 			PAL = {
 				transfer_state = 453
@@ -1492,7 +1379,7 @@ add_namespace = palestine
 
 		option = {
 			name = palestine.65.b
-			ai_chance = { factor = 1 }
+			ai_chance = { base = 1 }
 			add_stability = -0.1
 			add_political_power = -150
 			add_ideas = PAL_exhausted_army
@@ -1533,7 +1420,6 @@ country_event = {
     			attacker = {
        				state = 966
        				num_provinces = 4
-        			modifier = 0.1
         			dig_in_factor = 0
         			terrain_factor = 0
 					on_win = palestine.68

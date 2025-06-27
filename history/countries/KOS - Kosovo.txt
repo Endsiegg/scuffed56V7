@@ -1,8 +1,5 @@
-﻿capital = 812
+﻿capital = 802
 
-#oob = "KSV_1936"
-
-set_convoys = 5
 set_war_support = 0.35
 set_stability = 0.60
 set_research_slots = 3
@@ -18,22 +15,6 @@ set_technology = {
 	r56_guerilla_warfare = 1 
 }
 
-if = {
-	limit = { has_dlc = "By Blood Alone" }
-		set_technology = {
-			iw_small_airframe = 1
-		}
-	else = {
-		set_technology = {
-
-						
-			CAS1 = 1
-			early_fighter = 1		
-
-		}
-	}
-}
-
 set_politics = {
 	ruling_party = communism
 	last_election = "1936.1.1"
@@ -47,43 +28,40 @@ set_popularities = {
 	neutrality = 25
 }
 
-create_country_leader = {
-	name = "Fadil Hoxha"
-	desc = "FADIL_HOXHA_DESC"
-	picture ="gfx/leaders/r56_generic/r56_portrait_Sweden_Generic_land_3.dds"
+create_country_leader = {#landowner from a ottoman albanian noble family
+	name = "Gani Bey Kryeziu"
+	picture ="gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_4.dds"
 	expire = "1965.1.1"
-	ideology = leninism
+	ideology = oligarchism
 	traits = {
-		fierce_patriot
+		landowner
+		anti_communist
 	}
 }
 create_country_leader = {
 	name = "Xhafer Deva"
-	desc = "FADIL_HOXHA_DESC"
 	picture ="gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_1.dds"
 	expire = "1965.1.1"
-	ideology = nazism
+	ideology = fascism_ideology
 	traits = {
 		fierce_patriot
 	}
 }
-create_country_leader = {
-	name = "Hysen Tërpeza"
-	desc = "FADIL_HOXHA_DESC"
+create_country_leader = {#moderate-conservative democratic kosovo albanian politician
+	name = "Rexhep Shala"
 	picture ="gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_3.dds"
 	expire = "1965.1.1"
 	ideology = conservatism
 	traits = {
-
+		NOR_oppportunistic_officer
 	}
 }
 create_country_leader = {
-	name = "Hafëz Jusuf Azemi"
-	desc = "FADIL_HOXHA_DESC"
-	picture = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
+	name = "Mehmed Hoxha"
+	picture = "gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_7.dds"
 	expire = "1965.1.1"
-	ideology = centrism
+	ideology = leninism
 	traits = {
-		
+		socialist_writer
 	}
 }

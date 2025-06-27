@@ -201,7 +201,7 @@ operation_targeted_plant_false_new_order_intel = { ### 15 3/35
 		NOT = {
 			OR = {
 				original_tag = USA
-				has_country_leader = { ruling_only = no name = "Franklin Delano Roosevelt" }
+				has_country_leader = { character = USA_franklin_delano_roosevelt ruling_only = no }
 			}
 			
 		}		
@@ -393,5 +393,230 @@ operation_targeted_plant_false_new_order_intel = { ### 15 3/35
 		exfiltration_border = { base = 30 }
 		exfiltration_go_to_ground = { base = 30 }
 		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+operation_targeted_steal_the_stone_of_scone = { ### 
+	icon = GFX_operations_boost_resistance
+	map_icon = GFX_operations_boost_resistance_map
+	name = operation_steal_the_stone_of_scone # Operation Black Adder
+	desc = operation_steal_the_stone_of_scone_desc
+	priority = 1500
+	days = 90
+
+	allowed = {
+		original_tag = SCO
+		has_completed_focus = SCO_devise_cunning_plans
+
+	}
+	network_strength = 50
+	operatives = 2
+
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		NOT = {
+			has_country_flag = SCO_has_the_stone_of_scone
+		}
+
+	}
+	available = {
+		network_strength = {
+			target = ENG
+			state = 126
+			value > 60
+		}		
+	}	
+
+	equipment = {
+		support_equipment = 25
+		infantry_equipment = 300
+		motorized_equipment = 5
+		civilian_factories = {
+			amount = 1
+			days = 60
+		}
+	}
+	risk_chance = 0.5
+	experience = 10
+	outcome_modifiers = { operation_outcome }
+	risk_modifiers = { operation_risk }
+	cost_modifiers = { operation_cost }
+	
+	
+	outcome_execute = { # SCOPE_OPERATION
+		ENG = { country_event = r56_scotland.5 }
+		ROOT = { country_event = r56_scotland.6 }
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { 
+			base = 25 
+			modifier = {
+				OR = {
+					ROOT = {
+						OR = {
+							NOT = {
+								any_controlled_state = {
+									is_coastal = yes
+								} 
+							}
+							NOT = {
+								OR = {
+									has_tech = early_submarine
+									has_tech = early_ship_hull_submarine
+								}
+							}
+						}
+
+	
+					}				
+					FROM = {
+						NOT = {
+							any_controlled_state = {
+								is_coastal = yes
+							} 
+						}
+					}
+				}
+				factor = 0
+			}		
+		}
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+	}
+	phases = {
+		targeted_take_the_stone_of_scone = { base = 100 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+operation_ajax = {
+	icon = GFX_operations_coup_government
+	map_icon = GFX_operations_coup_government_map
+	name = operation_ajax
+	desc = operation_ajax_desc
+	priority = 15
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible = {
+		num_of_operatives > 1
+		FROM = {
+			original_tag = PER
+		}
+		PER = {
+			has_completed_focus = PER_undermine_the_shah
+			is_subject = no
+			has_war = no
+		}
+		NOT = {
+			has_global_flag = r56_hide_operation_ajax
+		}
+	}
+
+	equipment = {
+		civilian_factories = {
+			amount = 3
+			days = 30
+		}
+	}
+
+	outcome_execute = { # SCOPE_OPERATION
+		PER = {
+			promote_character = PER_mohammed_reza_pahlavi
+			add_ideas = PER_american_iranian_oil_company
+			if = {
+				limit = {
+					HOL = {
+						has_government = democratic
+						NOT = {
+							has_global_flag = r56_HOL_in_yalta
+							has_war_with = ROOT
+						}
+					}
+				}
+				add_ideas = PER_royal_dutch_shell
+			}
+			if = {
+				limit = {
+					FRA = {
+						has_government = democratic
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				add_ideas = PER_francaise_des_petroles
+			}
+			if = {
+				limit = {
+					ENG = {
+						has_government = democratic
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				add_ideas = PER_anglo_iranian_oil_company_post_war
+			}
+			ENG = {
+				diplomatic_relation = {
+					country = PREV
+					relation = embargo
+					active = no
+				}
+			}
+			if = {
+				limit = {
+					has_idea = PER_economy_without_oil
+				}
+				remove_ideas = PER_economy_without_oil
+			}
+		}
+	}
+	
+	days = 60
+	network_strength = 70
+	operatives = 2
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+	}
+	phases = {
+		targeted_instigate_protests = { base = 100 }
+	}
+	phases = { #exfiltration
+		exfiltration_border = { base = 30 }
 	}
 }
