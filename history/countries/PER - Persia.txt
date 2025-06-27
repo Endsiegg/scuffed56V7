@@ -100,28 +100,6 @@ if = {
 		icon = "GFX_POR_early_fighter_medium"
 	}
 }
-if = {
-	limit = {
-		NOT = { has_dlc = "By Blood Alone" }
-	}
-	set_air_oob = "PER_1936_air_legacy"
-	set_technology = {
-		early_fighter = 1
-		CAS1 = 1
-	}
-	create_equipment_variant = {
-		name = "Hawker Audax"
-		type = cas_equipment_0
-		upgrades = {
-			plane_cas_upgrade = 2
-			plane_range_upgrade = 0
-			plane_engine_upgrade = 1
-			plane_reliability_upgrade = 3
-		}
-		obsolete = yes
-		icon = "GFX_POR_early_fighter_medium"
-	}
-}
 
 set_politics = {
 	ruling_party = neutrality

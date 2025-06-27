@@ -1418,64 +1418,7 @@ if = {
 	}
 }
 
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "By Blood Alone"
-		}
-	}
-	create_equipment_variant = {
-		name = "Bf 109 A"
-		type = fighter_equipment_1
-		upgrades = {
-			plane_gun_upgrade = 0
-			plane_range_upgrade = 0  
-			plane_engine_upgrade = 1
-			plane_reliability_upgrade = 0
-		}
-		icon = "GFX_GER_fighter1_medium"
-	}	
-	create_equipment_variant = {
-		name = "Bf 109 B"
-		type = fighter_equipment_1
-		upgrades = {
-			plane_gun_upgrade = 0
-			plane_range_upgrade = 0  
-			plane_engine_upgrade = 1
-			plane_reliability_upgrade = 1
-		}
-		icon = "GFX_GER_fighter1_medium"
-	}	
-	create_equipment_variant = {
-		name = "Ju 86"
-		type = tac_bomber_equipment_0
-		upgrades = {
-			plane_tac_bomb_upgrade = 5
-			plane_range_upgrade = 5
-			plane_engine_upgrade = 5
-			plane_reliability_upgrade = 5
-		}
-		obsolete = yes
-	}
 
-	create_equipment_variant = {
-		name = "Do 17"
-		type = tac_bomber_equipment_0
-		upgrades = {
-			plane_tac_bomb_upgrade = 5
-			plane_range_upgrade = 1
-			plane_engine_upgrade = 1
-			plane_reliability_upgrade = 5
-		}
-		obsolete = yes
-	}
-	
-	add_equipment_to_stockpile = {
-		type = CAS_equipment_0
-		producer = "GER"
-		amount = 430
-	}	
-}
 if = {
 	limit = {
 		has_dlc = "By Blood Alone"

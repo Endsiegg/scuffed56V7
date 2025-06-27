@@ -829,95 +829,6 @@ if = {
 }
 
 if = {
-	limit = { NOT = { has_dlc = "By Blood Alone" } }
-	create_equipment_variant = {
-		name = "P-12"
-		type = fighter_equipment_0
-		upgrades = {
-			plane_gun_upgrade = 1
-			plane_range_upgrade = 5
-			plane_engine_upgrade = 0
-			plane_reliability_upgrade = 6
-		}
-		icon = "GFX_TUR_early_fighter_medium"
-	}
-
-	create_equipment_variant = {
-		name = "P-26"
-		type = fighter_equipment_0
-		upgrades = {
-			plane_gun_upgrade = 2
-			plane_range_upgrade = 5
-			plane_engine_upgrade = 5
-			plane_reliability_upgrade = 7
-		}
-		icon = "GFX_USA_light_plane_2_medium"
-	}
-
-	create_equipment_variant = {
-		name = "FF"
-		type = cv_fighter_equipment_0
-		upgrades = {
-			cv_plane_gun_upgrade = 2
-			cv_plane_range_upgrade = 4
-			plane_engine_upgrade = 5
-			plane_reliability_upgrade = 7
-		}
-		icon = "GFX_USA_cv_early_fighter_fifi_medium"
-	}
-
-	create_equipment_variant = {
-		name = "A-12"
-		type = CAS_equipment_0
-		upgrades = {
-			plane_cas_upgrade = 4
-			plane_range_upgrade = 2
-			plane_engine_upgrade = 0
-			plane_reliability_upgrade = 6
-		}
-		obsolete = yes
-		icon = "GFX_USA_CAS_a12_medium"
-	}
-
-	create_equipment_variant = {
-		name = "B-18"
-		type = tac_bomber_equipment_0
-		upgrades = {
-			plane_tac_bomb_upgrade = 5
-			plane_range_upgrade = 0
-			plane_engine_upgrade = 4
-			plane_reliability_upgrade = 5
-		}
-		icon = "GFX_USA_heavy_plane_3_medium"
-	}
-
-	add_equipment_to_stockpile = {
-		type = cv_fighter_equipment_0
-		producer = "USA"
-		variant_name = "FF"
-		amount = 18
-	}
-
-	add_equipment_to_stockpile = {
-		type = cv_fighter_equipment_0
-		producer = "USA"
-		amount = 180
-	}
-
-	add_equipment_to_stockpile = {
-		type = cv_CAS_equipment_0
-		producer = "USA"
-		amount = 40
-	}
-
-	add_equipment_to_stockpile = {
-		type = cv_nav_bomber_equipment_0
-		producer = "USA"
-		amount = 167
-	}
-}
-
-if = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
@@ -967,9 +878,9 @@ if = {
 		type = infantry_equipment_1
 		upgrades = {
 			INF_reliability_upgrade = 1
-			INF_SA_upgrade = 3
-			INF_HA_upgrade = 0
-			INF_defence_upgrade = 0
+			#INF_SA_upgrade = 3
+			#INF_HA_upgrade = 0
+			#INF_defence_upgrade = 0
 		}
 	}
 if = {
