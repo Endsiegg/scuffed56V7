@@ -1841,7 +1841,7 @@ focus_tree = {
 		}
 
 		available = {
-			amount_research_slots < 7
+		#	amount_research_slots < 7
 		}
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -2025,7 +2025,7 @@ focus_tree = {
 		prerequisite = { focus = USA_war_propaganda }
 		mutually_exclusive = { focus = USA_focus_on_asia }
 		relative_position_id = USA_war_propaganda
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -2075,7 +2075,7 @@ focus_tree = {
 		prerequisite = { focus = USA_war_propaganda }
 		mutually_exclusive = { focus = USA_focus_on_europe }
 		relative_position_id = USA_war_propaganda
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2395,7 +2395,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = USA_war_propaganda
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -2441,7 +2441,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = USA_office_of_strategic_services
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -3385,7 +3385,7 @@ focus_tree = {
 				}
 				add_timed_idea = {
 					idea = rt56_the_gaint_wakes_idea
-					days = 30
+					days = 180
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
@@ -10644,7 +10644,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_mobilize_the_railways }
 		relative_position_id = USA_mobilize_the_railways
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -10710,7 +10710,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_mobilize_the_railways }
 		relative_position_id = USA_mobilize_the_railways
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -10900,7 +10900,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_selective_training_act }
 		relative_position_id = USA_selective_training_act
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 
@@ -13164,7 +13164,7 @@ focus_tree = {
 		y = 0
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_two_ocean_navy_act
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -13326,14 +13326,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_ideas = ENG_expand_the_repair_yards
 			random_owned_controlled_state = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -13341,10 +13342,10 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -13352,10 +13353,10 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -13624,7 +13625,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = USA_escort_effort
-		cost = 10
+		cost = 5
 		
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
 		
@@ -13662,7 +13663,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_bureau_of_ships }
 		relative_position_id = USA_bureau_of_ships
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -13748,7 +13749,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = USA_fund_the_navy
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -13818,7 +13819,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = USA_expand_the_USMC
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}

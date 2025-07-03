@@ -610,7 +610,7 @@ ideas = {
 			equipment_bonus = {
 				convoy = {
 					instant = yes
-					surface_visibility = -0.1
+					build_cost_ic = -0.10
 				}
 			}
 		}
@@ -745,7 +745,7 @@ ideas = {
 			equipment_bonus = {
 				submarine = {
 					instant = yes
-					sub_visibility = -0.03
+					sub_visibility = -0.1
 					torpedo_attack = 0.10
 				}
 			}
@@ -802,8 +802,10 @@ ideas = {
 			}
 
 			modifier = {
+			#	air_strategic_bomber_bombing_factor = 0.05
+			#	air_air_superiority_attack_factor = 0.05
 				air_strategic_bomber_bombing_factor = 0.05
-				air_air_superiority_attack_factor = 0.05
+				air_escort_efficiency = 0.05
 			}
 		}
 
@@ -878,7 +880,7 @@ ideas = {
 			equipment_bonus = {
 				armor = {
 					instant = yes
-					breakthrough = 0.02
+					breakthrough = 0.05
 				}
 			}
 		}
@@ -971,9 +973,12 @@ ideas = {
 			}
 
 			modifier = {
-				air_close_air_support_attack_factor = 0.05
-				air_strategic_bomber_attack_factor = 0.05
+			#	air_close_air_support_attack_factor = 0.05
+			#	air_strategic_bomber_attack_factor = 0.05
+				air_close_air_support_org_damage_factor = 0.05
+				air_bombing_targetting = 0.05
 				aircraft_manufacturer_cost_factor = -0.2
+				military_industrial_organization_design_team_change_cost = -0.2
 			}
 		}
 
@@ -987,6 +992,7 @@ ideas = {
 
 			modifier = {
 				naval_manufacturer_cost_factor = -0.20
+				military_industrial_organization_design_team_change_cost = -0.2
 			}
 
 			equipment_bonus = {

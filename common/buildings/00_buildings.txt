@@ -73,6 +73,7 @@ buildings = {
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 19
 		value = 1
+		infrastructure_construction_effect = yes
 		spawn_point = special_project_facility_spawn 
 		specialization = { specialization_land }
 		tags = { facility }
@@ -207,12 +208,12 @@ buildings = {
 		hide_if_missing_tech = yes
 		show_modifier = yes
 		state_modifiers = {
-			local_supplies_for_controller = 0.1
+			local_supplies_for_controller = 0.15
 			state_bunker_max_level_terrain_limit = 2
 			state_coastal_bunker_max_level_terrain_limit = 2
-			enemy_attrition = 0.1
-			state_production_speed_bunker_factor = 0.1
-			state_production_speed_coastal_bunker_factor = 0.1
+			enemy_attrition = 0.15
+			state_production_speed_bunker_factor = 0.2
+			state_production_speed_coastal_bunker_factor = 0.2
 		}		
 	}
 
@@ -239,6 +240,7 @@ buildings = {
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 18
 		value = 1
+		infrastructure_construction_effect = yes
 		spawn_point = naval_base_spawn 
 		specialization = { specialization_naval }
 		tags = { facility }
@@ -275,8 +277,8 @@ buildings = {
 		show_on_map = 1
 		base_cost = 14500
 		icon_frame = 10
-		#local_resources_oil = 1 # May use local_resources_ + any resource name
-		local_resources_rubber = 1 # May use local_resources_ + any resource name
+		local_resources_oil = 1 # May use local_resources_ + any resource name
+		#local_resources_rubber = 1 # May use local_resources_ + any resource name
 		refinery = yes
 		value = 5
 		infrastructure_construction_effect = yes
@@ -311,7 +313,7 @@ buildings = {
 		}
 		
 		level_cap = {
-			shares_slots = yes
+			state_max = 3
 		}
 	}
 
@@ -472,6 +474,7 @@ buildings = {
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 20
 		value = 1
+		infrastructure_construction_effect = yes
 		spawn_point = special_project_facility_spawn
 		specialization = { specialization_nuclear }
 		need_supply = yes
@@ -505,6 +508,7 @@ buildings = {
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 17
 		value = 1
+		infrastructure_construction_effect = yes
 		spawn_point = special_project_facility_spawn 
 		specialization = { specialization_air}
 		tags = { facility }

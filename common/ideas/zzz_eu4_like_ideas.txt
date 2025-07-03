@@ -360,8 +360,10 @@ ideas = {
 			}
 
 			modifier = {
-				air_interception_agility_factor = 0.05
-				air_air_superiority_agility_factor = 0.05
+				#air_interception_agility_factor = 0.05
+				#air_air_superiority_agility_factor = 0.05
+				air_intercept_efficiency = 0.05
+				air_superiority_efficiency = 0.05
 			}
 		}
 		idea_group_3_6 = {
@@ -2414,7 +2416,8 @@ ideas = {
 			}
 
 			modifier = {
-				air_interception_attack_factor = 0.05
+			#	air_interception_attack_factor = 0.05
+				air_intercept_efficiency = 0.1
 			}
 		}
 		idea_group_18_4 = {
@@ -3236,8 +3239,10 @@ ideas = {
 			}
 
 			modifier = {
-				air_close_air_support_defence_factor = 0.05
-				air_strategic_bomber_defence_factor = 0.05
+			#	air_close_air_support_defence_factor = 0.05
+			#	air_strategic_bomber_defence_factor = 0.05
+				air_cas_efficiency = 0.1
+				air_strategic_bomber_defence_factor = 0.1
 			}
 		}
 		idea_group_24_4 = {
@@ -3253,8 +3258,10 @@ ideas = {
 			}
 
 			modifier = {
-				air_close_air_support_attack_factor = 0.05
-				air_strategic_bomber_attack_factor = 0.05
+			#	air_close_air_support_attack_factor = 0.05
+			#	air_strategic_bomber_attack_factor = 0.05
+				air_close_air_support_org_damage_factor = 0.1
+				air_cas_efficiency = 0.05
 			}
 		}
 		idea_group_24_5 = {
@@ -3302,8 +3309,17 @@ ideas = {
 				check_variable = { completed_ideas_of_group_24 > 6 }
 			}
 
-			modifier = {
-				air_strategic_bomber_agility_factor = 0.05
+			# modifier = {
+			# 	air_strategic_bomber_agility_factor = 0.05
+			# }
+
+			equipment_bonus = {
+				strategic_bomber = {
+					instant = yes
+					maximum_speed = 0.1
+					reliability = 0.1
+					air_attack = 0.1
+				}
 			}
 		}
 		idea_group_24_8 = {
