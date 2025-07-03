@@ -397,7 +397,7 @@ focus_tree = {
 	focus = { # R56
 		id = GER_exploit_trade_dependence
 		icon = GFX_focus_GRE_Combat_depression
-		cost = 10
+		cost = 5
 		prerequisite = { focus = GER_abolish_price_controls }
 		x = -1
 		y = 1
@@ -711,13 +711,13 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_industrial_expansion
-		cost = 10
+		cost = 5
 		available = {
 			42 = {
 				is_fully_controlled_by = ROOT
 				is_demilitarized_zone = no
 			}
-			has_tech = excavation3
+			#has_tech = excavation3
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
@@ -795,9 +795,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_industrial_expansion
-		cost = 10
+		cost = 5
 		available = {
-			has_tech = advanced_machine_tools
+			#has_tech = advanced_machine_tools
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -810,7 +810,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				998 = { add_extra_state_shared_building_slots = 1 } # R56
+				998 = { add_extra_state_shared_building_slots = 2 } # R56
 			}
 			if = {
 				limit = {
@@ -818,7 +818,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				61 = { add_extra_state_shared_building_slots = 1 }
+				61 = { add_extra_state_shared_building_slots = 2 }
 			}
 			if = {
 				limit = {
@@ -826,7 +826,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				62 = { add_extra_state_shared_building_slots = 1 }
+				62 = { add_extra_state_shared_building_slots = 2 }
 			}
 			if = {
 				limit = {
@@ -834,7 +834,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				63 = { add_extra_state_shared_building_slots = 1 }
+				63 = { add_extra_state_shared_building_slots = 2 }
 			}
 			if = {
 				limit = {
@@ -842,7 +842,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				5 = { add_extra_state_shared_building_slots = 1 }
+				5 = { add_extra_state_shared_building_slots = 2 }
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -864,7 +864,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_agricultural_reforms
-		cost = 10
+		cost = 5
 		available = {
 			OR ={
 				59 = { #Hannover
@@ -1243,7 +1243,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_construct_the_reichsautobahn
-		cost = 10
+		cost = 5
 		available = {
 			51 = { 
 				is_fully_controlled_by = ROOT
@@ -1299,7 +1299,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = GER_construct_the_reichsautobahn
-		cost = 5
+		cost = 3
 		available = {
 			is_subject = no
 			AND = {
@@ -1408,10 +1408,10 @@ focus_tree = {
 						}
 					}
 					59 = { #Hannover
-						add_extra_state_shared_building_slots = 2
+						add_extra_state_shared_building_slots = 3
 						add_building_construction = {
 							type = industrial_complex
-							level = 2
+							level = 3
 							instant_build = yes
 						}
 						add_dynamic_modifier = { modifier = r56_GER_kdf_wagen_scheme  days = 180 } # R56
@@ -1427,10 +1427,10 @@ focus_tree = {
 								include_locked = yes
 							}
 						}
-						add_extra_state_shared_building_slots = 2
+						add_extra_state_shared_building_slots = 3
 						add_building_construction = {
 							type = industrial_complex
-							level = 2
+							level = 3
 							instant_build = yes
 						}
 						add_dynamic_modifier = { modifier = r56_GER_kdf_wagen_scheme days = 180 } # R56
@@ -1879,7 +1879,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 				}
 				random_select_amount = 4
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1931,10 +1931,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			add_stability = -0.05
+			add_stability = -0.025
 			add_popularity = {
 			    ideology = ROOT
-			    popularity = -0.05
+			    popularity = -0.025
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -2003,7 +2003,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 6
+					amount = 16
 				}
 			}
 			
@@ -2217,7 +2217,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_seize_foreign_industries
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = excavation_tech
 			}
@@ -2230,7 +2230,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = 0.1
+				GER_industrial_consumer_goods_factor = -0.2
 				tooltip = consumer_goods_factor_tt
 			}
 			if = {
@@ -2286,10 +2286,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 65 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = synthetic_refinery
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2373,20 +2373,20 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		bypass = {
-			OR = {
-				has_resources_in_country = {
-					resource = oil
-					amount > 149
-					extracted = yes
-				}
-				any_subject_country = {
-					has_resources_in_country = {
-						resource = oil
-						amount > 149
-						extracted = yes
-					}
-				}
-			}
+			# OR = {
+			# 	has_resources_in_country = {
+			# 		resource = oil
+			# 		amount > 149
+			# 		extracted = yes
+			# 	}
+			# 	any_subject_country = {
+			# 		has_resources_in_country = {
+			# 			resource = oil
+			# 			amount > 149
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# }
 		}
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
@@ -2403,10 +2403,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 57 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = synthetic_refinery
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2470,20 +2470,20 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		bypass = {
-			OR = {
-				has_resources_in_country = {
-					resource = rubber
-					amount > 99
-					extracted = yes
-				}
-				any_subject_country = {
-					has_resources_in_country = {
-						resource = rubber
-						amount > 99
-						extracted = yes
-					}
-				}
-			}
+			# OR = {
+			# 	has_resources_in_country = {
+			# 		resource = rubber
+			# 		amount > 99
+			# 		extracted = yes
+			# 	}
+			# 	any_subject_country = {
+			# 		has_resources_in_country = {
+			# 			resource = rubber
+			# 			amount > 99
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# }
 		}
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
@@ -2499,10 +2499,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 65 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = rubber_refinery # R56
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2563,7 +2563,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = GER_seize_foreign_industries
-		cost = 10
+		cost = 5
 		available = {
 			all_core_state = {
 				is_fully_controlled_by = ROOT
@@ -2746,7 +2746,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			every_core_state = {
+			51 = {
 				limit = {
 					is_fully_controlled_by = ROOT
 					free_building_slots = {
@@ -2755,7 +2755,41 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				random_select_amount = 2
+				#random_select_amount = 2
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			989 = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				#random_select_amount = 2
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			563 = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				#random_select_amount = 2
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -2764,9 +2798,19 @@ focus_tree = {
 				}
 			}
 
+
 			custom_effect_tooltip = generic_skip_one_line_tt # R56
 			if = { limit = { 51 = { is_fully_controlled_by = ROOT } } # R56
 				51 = { add_dynamic_modifier = {  modifier = r56_concentrated_armament_program scope = GER } }
+			}
+				if = { limit = { 989 = { is_fully_controlled_by = ROOT } } # R56
+				989 = { add_dynamic_modifier = {  modifier = r56_concentrated_armament_program scope = GER } }
+			}
+				if = { limit = { 563 = { is_fully_controlled_by = ROOT } } # R56
+				563 = { add_dynamic_modifier = {  modifier = r56_concentrated_armament_program scope = GER } }
+			}
+				if = { limit = { 1053 = { is_fully_controlled_by = ROOT } } # R56
+				1053 = { add_dynamic_modifier = {  modifier = r56_concentrated_armament_program scope = GER } }
 			}
 		}
 	}
@@ -2908,9 +2952,9 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = GER_concentrated_armament_program
-		cost = 10
+		cost = 5
 		available = {
-			has_war_with_major = yes
+			#has_war_with_major = yes
 			has_civil_war = no
 		}
 
@@ -2974,7 +3018,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_zentrale_planung
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -3026,7 +3070,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_zentrale_planung
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -4366,7 +4410,7 @@ focus_tree = {
 					add_mio_funds_gain_factor = 0.25
 					add_mio_research_bonus = 0.05
 
-					unlock_mio_trait_tooltip = GER_mio_trait_schwerer_panzerspahwagen
+					complete_mio_trait = GER_mio_trait_schwerer_panzerspahwagen
 					#unlock_mio_trait_tooltip = 
 				}
 			}
@@ -4478,8 +4522,8 @@ focus_tree = {
 					add_mio_funds_gain_factor = 0.25
 					add_mio_research_bonus = 0.05
 
-					unlock_mio_trait_tooltip = GER_mio_trait_continental_ag_tires
-					unlock_mio_trait_tooltip = GER_mio_trait_ford_facilities
+					complete_mio_trait = GER_mio_trait_continental_ag_tires
+					complete_mio_trait = GER_mio_trait_ford_facilities
 				}
 				mio:GER_daimler_benz_organization = {
 					add_mio_size = 1
@@ -5068,7 +5112,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = GER_advanced_panzer_research
-				#ahead_reduction = 1
+				ahead_reduction = 1
 				bonus = 1
 				uses = 1
 				category = cat_medium_armor
@@ -5351,7 +5395,7 @@ focus_tree = {
 		x = 8
 		y = 7
 		
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -5359,7 +5403,7 @@ focus_tree = {
 			has_war_with_major = yes
 			OR = {
 				surrender_progress > 0.01
-				casualties_k > 2000
+			#	casualties_k > 2000
 			}
 		}
 		completion_reward = {
@@ -5379,20 +5423,20 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_desperate_measures
-		cost = 5
+		cost = 3
 		available = {
 			has_war_with_major = yes
 			OR = {
 				surrender_progress > 0.03
-				casualties_k > 3000
+				#casualties_k > 3000
 			}
 		}
 		ai_will_do = {
 			factor = 5
 		}
 		completion_reward = {
-			add_to_variable = { GER_greater_collaborator_conscription_non_core_manpower = 0.01 } 
-			add_to_variable = { GER_greater_collaborator_conscription_required_garrison_factor = -0.01 } 
+			add_to_variable = { GER_greater_collaborator_conscription_non_core_manpower = 0.05 } 
+			add_to_variable = { GER_greater_collaborator_conscription_required_garrison_factor = -0.05 } 
 			custom_effect_tooltip = GER_greater_collaborator_conscription_tt
 			every_state = {
 				limit = {
@@ -5464,7 +5508,7 @@ focus_tree = {
 			has_war_with_major = yes
 			OR = {
 				surrender_progress > 0.03
-				casualties_k > 3000
+			#	casualties_k > 3000
 			}
 		}
 		ai_will_do = {
@@ -5581,24 +5625,24 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = GER_desperate_measures
-		cost = 5
+		cost = 3
 		available = {
 			has_war_with_major = yes
 			OR = {
 				surrender_progress > 0.05
-				casualties_k > 4000
+				#casualties_k > 4000
 			}
 		}
 		completion_reward = {
 			add_to_variable = { GER_found_the_volkssturm_conscription_factor = 0.05 } 
-			add_to_variable = { GER_werewolves_resistance_growth_on_our_occupied_states = 0.25 }
+			add_to_variable = { GER_werewolves_resistance_growth_on_our_occupied_states = 0.5 }
 			custom_effect_tooltip = GER_werewolves_tt
-			add_manpower = 10000
+			add_manpower = 20000
 			custom_effect_tooltip = GER_found_the_volkssturm_stockpile_tt
 			hidden_effect = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 1000
+					amount = 30000
 					variant_name = "Volkssturm Small Arms"
 				}
 			}
@@ -5616,7 +5660,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = GER_desperate_measures
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 5
 		}
@@ -5624,11 +5668,11 @@ focus_tree = {
 			has_war_with_major = yes
 			OR = {
 				surrender_progress > 0.05
-				casualties_k > 4000
+			#	casualties_k > 4000
 			}
 		}
 		completion_reward = {
-			add_to_variable = { GER_front_line_cities_production_speed_bunker_factor = 0.05 } 
+			add_to_variable = { GER_front_line_cities_production_speed_bunker_factor = 0.10 } 
 			custom_effect_tooltip = GER_front_line_cities_2_tt
 			every_state = {
 				limit = {
@@ -5673,7 +5717,7 @@ focus_tree = {
 				hidden_effect = {
 					add_building_construction = {
 						type = bunker
-						level = 1
+						level = 5
 						instant_build = yes
 						province = {
 							limit_to_victory_point = yes
@@ -5700,7 +5744,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = GER_desperate_measures
-		cost = 5
+		cost = 3
 		available = {
 			has_war_with_major = yes
 			surrender_progress > 0.05
@@ -5768,7 +5812,7 @@ focus_tree = {
 					64 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 9496
 							instant_build = yes
 						}
@@ -5781,7 +5825,7 @@ focus_tree = {
 					62 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 3207
 							instant_build = yes
 						}
@@ -5794,7 +5838,7 @@ focus_tree = {
 					63 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 6282
 							instant_build = yes
 						}
@@ -5807,7 +5851,7 @@ focus_tree = {
 					68 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 3572
 							instant_build = yes
 						}
@@ -5820,7 +5864,7 @@ focus_tree = {
 					66 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 3438
 							instant_build = yes
 						}
@@ -5834,7 +5878,7 @@ focus_tree = {
 					989 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 6469
 							instant_build = yes
 						}
@@ -5847,7 +5891,7 @@ focus_tree = {
 					989 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 6570
 							instant_build = yes
 						}
@@ -5860,7 +5904,7 @@ focus_tree = {
 					989 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 529
 							instant_build = yes
 						}
@@ -5873,7 +5917,7 @@ focus_tree = {
 					922 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 6444
 							instant_build = yes
 						}
@@ -5886,7 +5930,7 @@ focus_tree = {
 					922 = {
 						add_building_construction = {
 							type = bunker
-							level = 1
+							level = 5
 							province = 6488
 							instant_build = yes
 						}
@@ -5944,7 +5988,7 @@ focus_tree = {
 							}
 							add_building_construction = {
 								type = bunker
-								level = 2
+								level = 5
 								province = 6521
 								instant_build = yes
 							}
@@ -5955,7 +5999,7 @@ focus_tree = {
 							}
 							add_building_construction = {
 								type = bunker
-								level = 1
+								level = 5
 								province = 11444
 								instant_build = yes
 							}
@@ -5966,7 +6010,7 @@ focus_tree = {
 							}
 							add_building_construction = {
 								type = bunker
-								level = 1
+								level = 5
 								province = 11505
 								instant_build = yes
 							}
@@ -5977,7 +6021,7 @@ focus_tree = {
 							}
 							add_building_construction = {
 								type = bunker
-								level = 1
+								level = 5
 								province = 9428
 								instant_build = yes
 							}
@@ -5987,7 +6031,7 @@ focus_tree = {
 			}
 			add_timed_idea = {
 				idea = r56_a_world_in_flames_idea
-				days = 90
+				days = 180
 			}
 		}
 		search_filters = {
@@ -6863,7 +6907,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_form_the_jagdwaffe
-		cost = 10
+		cost = 5
 		available = {
 			GER_hermann_goring = {
 				is_air_chief = no
@@ -6910,7 +6954,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = GER_reorganize_the_luftwaffe
-		cost = 10
+		cost = 5
 		available = {
 			GER_hermann_goring = {
 				is_air_chief = no
@@ -7060,7 +7104,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = GER_reorganize_the_luftwaffe
-		cost = 10
+		cost = 5
 		available = {
 			has_war_with_major = yes
 		}
@@ -7082,7 +7126,7 @@ focus_tree = {
 		relative_position_id = GER_defense_of_the_reich
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}
@@ -7712,7 +7756,7 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				mio:GER_germaniawerft_organization = {
-					unlock_mio_trait_tooltip = GER_mio_trait_history_of_battleships
+					complete_mio_trait = GER_mio_trait_history_of_battleships
 					#unlock_mio_trait_tooltip = 
 				}
 			}
@@ -7730,7 +7774,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_plan_z
-		cost = 10
+		cost = 5
 		available = {
 			#NOT = { has_completed_focus = GER_high_seas_fleet }
 		}
@@ -7777,9 +7821,9 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_expand_kriegsmarinewerft
-				bonus = 0.5
+				bonus = 1
 				uses = 1
-				category = bc_tech
+				category = bb_tech
 			}
 			add_tech_bonus = {
 				name = GER_expand_kriegsmarinewerft
@@ -7798,7 +7842,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_2
+					type = ship_hull_heavy_3
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_3
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -7816,25 +7860,25 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Bismarck"
 					requested_factories = 1
-					progress = 0.3
+					progress = 0.5
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Tirpitz"
 					requested_factories = 1
-					progress = 0.15
+					progress = 0.4
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -7851,7 +7895,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_2
+					type = ship_hull_heavy_3
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_2
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -7869,25 +7913,25 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Bismarck"
 					requested_factories = 1
-					progress = 0.3
+					progress = 0.5
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Tirpitz"
 					requested_factories = 1
-					progress = 0.15
+					progress = 0.4
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -7904,7 +7948,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_2
+					type = ship_hull_heavy_3
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_3
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -7922,25 +7966,25 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Bismarck"
 					requested_factories = 1
-					progress = 0.3
+					progress = 0.5
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Tirpitz"
 					requested_factories = 1
-					progress = 0.15
+					progress = 0.4
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -7957,7 +8001,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_2
+					type = ship_hull_heavy_3
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_2
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -7975,25 +8019,25 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Bismarck"
 					requested_factories = 1
-					progress = 0.3
+					progress = 0.5
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Tirpitz"
 					requested_factories = 1
-					progress = 0.15
+					progress = 0.4
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -8064,10 +8108,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 807 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -8168,7 +8212,7 @@ focus_tree = {
 						}
 						name = "Graf Zeppelin"
 						requested_factories = 1
-						progress = 0.3
+						progress = 0.4
 						amount = 1
 						industrial_manufacturer = mio:GER_deutsche_werke_organization
 					}
@@ -8272,10 +8316,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -8284,7 +8328,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_grosskampfschiff_construction
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = bb_tech
 			}
@@ -8335,7 +8379,7 @@ focus_tree = {
 					}
 					name = "Hutten"
 					requested_factories = 1
-					progress = 0.2
+					progress = 0.3
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -8347,7 +8391,7 @@ focus_tree = {
 					}
 					name = "Berlichingen"
 					requested_factories = 1
-					progress = 0.1
+					progress = 0.2
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -8399,7 +8443,7 @@ focus_tree = {
 					add_mio_funds_gain_factor = 0.25
 					add_mio_research_bonus = 0.05
 
-					unlock_mio_trait_tooltip = GER_mio_trait_h_class_battleships
+					complete_mio_trait = GER_mio_trait_h_class_battleships
 					#unlock_mio_trait_tooltip = 
 				}
 			}
@@ -8414,7 +8458,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_construct_aircraft_carriers
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -8511,7 +8555,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = GER_re_establish_the_seekriegsleitung
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = naval_doctrine
 			}
 
@@ -8668,7 +8712,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_marinestosstrupp
-		cost = 10
+		cost = 5
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GER_controls_an_atantic_island_tt
@@ -8822,7 +8866,7 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = GER_trade_interdiction
-				cost_reduction = 0.25
+				cost_reduction = 0.5
 				uses = 2
 				category = trade_interdiction_tree	
 			}
@@ -8881,7 +8925,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_cruiser_warfare
-				bonus = 0.5
+				bonus = 2
 				uses = 1
 				category = cl_tech
 			}
@@ -8963,7 +9007,7 @@ focus_tree = {
 					add_mio_funds_gain_factor = 0.25
 					add_mio_research_bonus = 0.05
 
-					unlock_mio_trait_tooltip = GER_mio_trait_heavy_raiders
+					complete_mio_trait = GER_mio_trait_heavy_raiders
 					#unlock_mio_trait_tooltip = 
 				}
 			}
@@ -8989,7 +9033,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = GER_cruiser_warfare
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = ca_tech
 			}
@@ -9042,7 +9086,9 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				mio:GER_blohm_und_voss_organization = {
-					unlock_mio_trait_tooltip = GER_mio_trait_o_class_battlecruisers
+					#add_mio_size = 1
+					complete_mio_trait = GER_mio_trait_o_class_battlecruisers
+				#	unlock_mio_trait_tooltip = GER_mio_trait_o_class_battlecruisers
 				}
 			}
 		}
@@ -9213,12 +9259,12 @@ focus_tree = {
 					add_mio_funds_gain_factor = 0.25
 					add_mio_research_bonus = 0.05
 
-					unlock_mio_trait_tooltip = GER_mio_trait_ocean_u_boats
-					unlock_mio_trait_tooltip = GER_mio_trait_kilian_submarine_bunker
-					unlock_mio_trait_tooltip = GER_mio_trait_atlantic_raiders
+					complete_mio_trait = GER_mio_trait_ocean_u_boats
+					complete_mio_trait = GER_mio_trait_kilian_submarine_bunker
+					complete_mio_trait = GER_mio_trait_atlantic_raiders
 				}
 				mio:GER_blohm_und_voss_organization = {
-					unlock_mio_trait_tooltip = GER_mio_trait_u_boat_yards
+					complete_mio_trait = GER_mio_trait_u_boat_yards
 				}
 			}
 		}
@@ -9232,7 +9278,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_panzerschiff_raiders
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -9566,7 +9612,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = GER_remilitarize_the_rhineland
 
-		cost = 5
+		cost = 1
 
 		available = {
 			if = {
@@ -9739,7 +9785,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = GER_war_preparations
-		cost = 10
+		cost = 5
 		available = {
 			is_subject = no
 			has_war = no
@@ -9778,7 +9824,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_war_preparations
-		cost = 10
+		cost = 5
 
 		allow_branch = {
 			has_dlc = "La Resistance"
@@ -11565,7 +11611,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_first_vienna_award
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -14716,7 +14762,7 @@ focus_tree = {
 		x = 8
 		y = 1
 		relative_position_id = GER_anschluss
-		cost = 10
+		cost = 5
 
 		mutually_exclusive = {
 			focus = GER_resolve_the_balkan_flank
@@ -15285,7 +15331,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = GER_first_ljubljana_award
 
-		cost = 10
+		cost = 5
 
 		bypass = {
 			OR = {
@@ -23373,7 +23419,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = GER_prioritize_economic_growth
 
-		cost = 10
+		cost = 5
 
 		available = {
 			is_subject = no
