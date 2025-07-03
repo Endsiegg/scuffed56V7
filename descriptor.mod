@@ -11,9 +11,8 @@ tags={
 	"National Focuses"
 	"Technologies"
 }
-name="SCUFFED 56V7"
+name="SCUFFEDV7"
 replace_path="history/states"
 replace_path="map/strategicregions"
-replace_path="common/national_focus"
-supported_version="1.16.*"
-remote_file_id="2791104354"
+supported_version="1.16.9"
+remote_file_id="3510253748"
