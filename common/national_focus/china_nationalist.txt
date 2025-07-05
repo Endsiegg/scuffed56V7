@@ -407,10 +407,10 @@ focus_tree = {
 		
 		x = 4
 		y = 1
-		cost = 8
+		cost = 5
 		
 		completion_reward = {
-			army_experience = 10
+			army_experience = 25
 			if = {
 				limit = {
 					613 = {
@@ -590,10 +590,10 @@ focus_tree = {
 		
 		x = 6
 		y = 1
-		cost = 8
+		cost = 5
 		
 		completion_reward = {
-			army_experience = 10
+			army_experience = 25
 			597 = {
 				if = {
 					limit = {
@@ -721,7 +721,7 @@ focus_tree = {
 		}
 		x = 4
 		y = 3
-		cost = 8
+		cost = 5
 		
 		ai_will_do = {
 			factor = 20
@@ -994,7 +994,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_1
 		x = 17
 		y = 0
-		cost = 8
+		cost = 5
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1007,10 +1007,10 @@ focus_tree = {
 					}
 					is_controlled_by = ROOT
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1031,7 +1031,7 @@ focus_tree = {
 		icon = GFX_goal_generic_railroad
 		x = 21
 		y = 1
-		cost = 8
+		cost = 5
 		prerequisite = { focus = KMT_industrial_effort }
 		prerequisite = { focus = KMT_science_effort }
 
@@ -1049,7 +1049,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 15
 		y = 1
-		cost = 14.3
+		cost = 10
 		prerequisite = { focus = KMT_industrial_effort }
 		available = {
 			OR = {
@@ -1672,7 +1672,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_2
 		x = 17
 		y = 1
-		cost = 14.4
+		cost = 10
 		prerequisite = { focus = KMT_industrial_effort }
 		available = {
 			OR = {
@@ -2346,7 +2346,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_industrial_effort }
 		x = 13
 		y = 2
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}
@@ -2417,7 +2417,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_fortify_coast focus = KMT_revive_jiangnan_shipyard }
 		x = 7
 		y = 4
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -3120,7 +3120,7 @@ focus_tree = {
 		}
 		x = 19
 		y = 1
-		cost = 14.4
+		cost = 10
 		
 		completion_reward = {
 			every_controlled_state = {
@@ -3175,7 +3175,7 @@ focus_tree = {
 		icon = GFX_goal_CHI_academia_sinica
 		x = 22
 		y = 0
-		cost = 8
+		cost = 5
 		
 		completion_reward = {
 			add_ideas = KMT_science_funding
@@ -3216,7 +3216,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_industrial_effort }
 		x = 20
 		y = 4
-		cost = 8
+		cost = 5
 		bypass = {
 			GER = {
 				NOT = {
@@ -4617,7 +4617,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_national_defense_council }
 		x = 10
 		y = 1
-		cost = 8
+		cost = 5
 		
 		available = {
 			ENG = {
@@ -5068,7 +5068,7 @@ focus_tree = {
 				has_war_with = RAJ
 			}
 		}
-		cost = 8
+		cost = 5
 		x = 10
 		y = 2
 		
@@ -5339,7 +5339,7 @@ focus_tree = {
 		icon = GFX_goal_generic_expand_the_naval_industry
 		x = 9
 		y = 3
-		cost = 8
+		cost = 5
 		prerequisite = { focus = KMT_armament_effort }
 		bypass = {
 			custom_trigger_tooltip =  {
@@ -5380,10 +5380,10 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}							
 				}
@@ -5399,10 +5399,10 @@ focus_tree = {
 						}
 						is_controlled_by = ROOT
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -5460,7 +5460,7 @@ focus_tree = {
 		icon = GFX_goal_generic_war_factory
 		x = 13
 		y = 3
-		cost = 8
+		cost = 5
 		prerequisite = { focus = KMT_armament_effort }
 		bypass = {
 			custom_trigger_tooltip =  {
@@ -5501,10 +5501,10 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
-						level = 1
+						level = 2
 						instant_build = yes
 					}							
 				}
@@ -5520,10 +5520,10 @@ focus_tree = {
 						}
 						is_controlled_by = ROOT
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -5557,7 +5557,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_political_effort }
 		x = 42
 		y = 1
-		cost = 40
+		cost = 10
 		#cost = 50
 
 		cancel_if_invalid = no
@@ -5589,7 +5589,7 @@ focus_tree = {
 		icon = GFX_goal_CHI_big_rear
 		x = 46
 		y = 0
-		cost = 14.3
+		cost = 10
 		
 		available = {
 			surrender_progress > 0.1
@@ -6364,7 +6364,7 @@ focus_tree = {
 		}
 		continue_if_invalid = yes
 		available_if_capitulated = yes
-		cost = 14.3
+		cost = 10
 		
 		
 		completion_reward = {
