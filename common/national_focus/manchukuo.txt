@@ -19,7 +19,7 @@
 		x = 14
 		y = 0
 
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -40,7 +40,7 @@
 		y = 1
 		relative_position_id = MAN_pacify_the_countryside
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -51,7 +51,7 @@
 		search_filters = {FOCUS_FILTER_ARMY_XP}
 
 		completion_reward = {
-			army_experience = 30
+			army_experience = 50
 		}
 	}
 
@@ -63,7 +63,7 @@
 		y = 1
 		relative_position_id = MAN_army_modernization
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -78,7 +78,7 @@
 	focus = {
 		id = MAN_winter_training
 		icon = GFX_goal_generic_cold_war
-		cost = 8
+		cost = 5
 		prerequisite = {
 			focus = MAN_mukden_military_academy
 		}
@@ -126,7 +126,7 @@
 		y = 1
 		relative_position_id = MAN_pacify_the_countryside
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -141,7 +141,7 @@
 		complete_tooltip = {
 			every_state = {
 				limit = { has_state_flag = MAN_invite_japanese_settlers_2IC }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -154,7 +154,7 @@
 			random_owned_controlled_state = {
 				limit = { is_fully_controlled_by = ROOT }
 				add_manpower = 25417
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -165,7 +165,7 @@
 			random_owned_controlled_state = {
 				limit = { is_fully_controlled_by = ROOT }
 				add_manpower = 33846
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -184,7 +184,7 @@
 		y = 1
 		relative_position_id = MAN_invite_japanese_settlers
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -197,7 +197,7 @@
 					is_fully_controlled_by = ROOT
 					is_core_of = ROOT
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 			}
 		}
 	}
@@ -239,20 +239,20 @@
 		}
 
 		available = {
-			OR = {
+			#OR = {
 				num_of_factories > 50
-				all_state = {
-					OR = {
-						NOT = { is_core_of = CHI }
-						NOT = { is_core_of = PRC }
-						OR = {
-							is_controlled_by = ROOT
-							CONTROLLER = { is_in_faction_with = ROOT }
-							CONTROLLER = { is_subject_of = ROOT }
-						}
-					}
-				}
-			}
+			#	all_state = {
+			#		OR = {
+			#			NOT = { is_core_of = CHI }
+			#			NOT = { is_core_of = PRC }
+			#			OR = {
+			#				is_controlled_by = ROOT
+			#				CONTROLLER = { is_in_faction_with = ROOT }
+			#				CONTROLLER = { is_subject_of = ROOT }
+			#			}
+			#		}
+			#	}
+			#
 		}
 		
 		available_if_capitulated = yes
@@ -298,7 +298,7 @@
 		y = 1
 		relative_position_id = MAN_trade_delegation
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
@@ -347,7 +347,7 @@
 		y = 1
 		relative_position_id = MAN_expand_the_textile_industry
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -376,10 +376,10 @@
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 716 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = fuel_silo
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}			
@@ -392,7 +392,7 @@
 			}
 			add_tech_bonus = {
 				name = excavation_tech_bonus_name
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = excavation_tech
 			}			
@@ -409,7 +409,7 @@
 		y = 4
 		relative_position_id = MAN_army_modernization
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 6
@@ -610,18 +610,18 @@
 		completion_reward = {
 			add_ideas = MAN_yoshisuke_aikawa
 			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
 			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 12
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -649,19 +649,19 @@
 			add_ideas = MAN_naoki_hoshino
 			random_owned_controlled_state = {
 				limit = { is_fully_controlled_by = ROOT }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
 			random_owned_controlled_state = {
 				limit = { is_fully_controlled_by = ROOT }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}	
@@ -676,7 +676,7 @@
 		y = 1
 		relative_position_id = MAN_support_aikawa
 
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -732,7 +732,7 @@
 		y = 1
 		relative_position_id = MAN_support_hoshino
 
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -773,10 +773,10 @@
 		completion_reward = {
 			add_political_power = 50
 			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -791,7 +791,7 @@
 		y = 1
 		relative_position_id = MAN_total_economic_coherence
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
@@ -846,7 +846,7 @@
 		y = 1
 		relative_position_id = MAN_invite_japanese_investors
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
@@ -929,7 +929,7 @@
 		y = 1
 		relative_position_id = MAN_invite_japanese_investors
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -940,7 +940,7 @@
 			add_tech_bonus = {
 				name = MAN_develop_aluminum_sources
 				bonus = 1.0
-				uses = 1
+				uses = 2
 				category = excavation_tech
 			}
 			unlock_decision_tooltip = MAN_develop_kirin_aluminium_deposits
@@ -955,7 +955,7 @@
 		y = 1
 		relative_position_id = MAN_develop_aluminum_sources
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
@@ -1075,7 +1075,7 @@
 		y = 1
 		relative_position_id = MAN_total_economic_coherence
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1088,10 +1088,10 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			716 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1106,7 +1106,7 @@
 		y = 1
 		relative_position_id = MAN_mukden_arsenal
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1205,7 +1205,7 @@
 		x = 0
 		y = 1
 		relative_position_id = MAN_officer_academies
-		cost = 8
+		cost = 5
 		available = {
 			is_subject_of = JAP
 		}
@@ -1249,7 +1249,7 @@
 		y = 2
 		relative_position_id = MAN_officer_academies
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1330,18 +1330,18 @@
 		completion_reward = {
 			navy_experience = 25
 			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
 			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1356,7 +1356,7 @@
 		y = 1
 		relative_position_id = MAN_military_supplies_requisition_law
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1370,7 +1370,7 @@
 			add_doctrine_cost_reduction = {
 				name = MAN_self_sufficient_military
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 			add_ideas = MAN_self_sufficient_military_idea
@@ -1427,7 +1427,7 @@
 		y = 1
 		relative_position_id = MAN_self_sufficient_military
 
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1497,7 +1497,7 @@
 		y = 6
 		relative_position_id = MAN_first_five_year_plan
 
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1572,7 +1572,7 @@
 		y = 7
 		relative_position_id = MAN_first_five_year_plan
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
