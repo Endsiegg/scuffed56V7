@@ -11,7 +11,7 @@ tags={
 	"National Focuses"
 	"Technologies"
 }
-name="SCUFFED56V7"
+name="SCUFFEDV7"
 replace_path="history/states"
 replace_path="map/strategicregions"
 supported_version="1.16.9"
