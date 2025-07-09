@@ -717,7 +717,7 @@ focus_tree = {
 				is_fully_controlled_by = ROOT
 				is_demilitarized_zone = no
 			}
-			#has_tech = excavation3
+			has_tech = excavation3
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
@@ -797,7 +797,7 @@ focus_tree = {
 		relative_position_id = GER_industrial_expansion
 		cost = 5
 		available = {
-			#has_tech = advanced_machine_tools
+			has_tech = advanced_machine_tools
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -987,7 +987,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_war = yes
-				threat > 0.15
+				threat > 0.30
 			}
 		}
 
@@ -2747,14 +2747,6 @@ focus_tree = {
 
 		completion_reward = {
 			51 = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
 				#random_select_amount = 2
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2764,14 +2756,6 @@ focus_tree = {
 				}
 			}
 			989 = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
 				#random_select_amount = 2
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2781,14 +2765,6 @@ focus_tree = {
 				}
 			}
 			563 = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
 				#random_select_amount = 2
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
