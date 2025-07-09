@@ -18,10 +18,10 @@ equipment_modules = {
 		
 		add_stats = {
 			lg_attack = 1
-			build_cost_ic = 90	
+			build_cost_ic = 45	
 		}
 		multiply_stats = {
-			naval_speed = -0.01
+			#naval_speed = -0.01
 		}
 		add_average_stats = {
 			lg_armor_piercing = 1
@@ -276,6 +276,7 @@ equipment_modules = {
 		}
 		multiply_stats = {
 			naval_speed = -0.05
+			max_strength = 0.4
 		}
 		add_average_stats = {
 			hg_armor_piercing = 31
@@ -303,6 +304,7 @@ equipment_modules = {
 		}
 		multiply_stats = {
 			naval_speed = -0.05
+			max_strength = 0.4
 		}
 		add_average_stats = {
 			hg_armor_piercing = 36
@@ -335,6 +337,7 @@ equipment_modules = {
 		}
 		multiply_stats = {
 			naval_speed = -0.05
+			max_strength = 0.4
 		}
 		add_average_stats = {
 			hg_armor_piercing = 40
@@ -369,6 +372,7 @@ equipment_modules = {
 		}
 		multiply_stats = {
 			naval_speed = -0.05
+			max_strength = 0.4
 		}
 		add_average_stats = {
 			hg_armor_piercing = 45 # R56
@@ -406,7 +410,7 @@ equipment_modules = {
 		}
 		multiply_stats = {
 			naval_speed = -0.025 # R56
-			max_strength = 0.4
+			max_strength = 0.5
 		}
 		add_average_stats = {
 			hg_armor_piercing = 50 # R56
@@ -440,7 +444,7 @@ equipment_modules = {
 			hg_armor_piercing = 22
 		}
 		build_cost_resources = {
-			steel = 1
+			steel = 0
 		}
 
 		forbid_module_categories = {
@@ -531,7 +535,7 @@ equipment_modules = {
 			module_category = ship_medium_battery
 			convert_cost_ic = 500
 			convert_cost_resources = {
-				steel = 2
+				steel = 1
 			}
 		}
 		can_convert_from = {
@@ -641,7 +645,7 @@ equipment_modules = {
 			module_category = ship_medium_battery
 			convert_cost_ic = 400
 			convert_cost_resources = {
-				steel = 1
+				steel = 0
 			}
 		}
 		can_convert_from = {
@@ -1193,7 +1197,7 @@ equipment_modules = {
 			naval_heavy_gun_hit_chance_factor = 0.025
 			build_cost_ic = 130
 			surface_detection = 7
-			sub_detection = 2
+			sub_detection = 3
 		}
 		
 		can_convert_from = {
@@ -1213,7 +1217,7 @@ equipment_modules = {
 			naval_light_gun_hit_chance_factor = 0.05
 			naval_heavy_gun_hit_chance_factor = 0.05
 			surface_detection = 12
-			sub_detection = 6
+			sub_detection = 7
 			build_cost_ic = 160
 		}
 		can_convert_from = {
@@ -2310,7 +2314,7 @@ equipment_modules = {
 		
 		add_stats = {
 			sub_attack = 8
-			build_cost_ic = 60
+			build_cost_ic = 30
 		}
 
 		can_convert_from = {
@@ -2330,8 +2334,8 @@ equipment_modules = {
 		parent = ship_depth_charge_1
 		
 		add_stats = {
-			sub_attack = 12 # R56
-			build_cost_ic = 60
+			sub_attack = 12 # ENDSIEG
+			build_cost_ic = 45
 		}
 
 		can_convert_from = {
@@ -2351,8 +2355,8 @@ equipment_modules = {
 		parent = ship_depth_charge_2
 		
 		add_stats = {
-			sub_attack = 16 # R56
-			build_cost_ic = 90
+			sub_attack = 16 # ENDSIEG
+			build_cost_ic = 60
 		}
 
 		can_convert_from = {
@@ -2372,8 +2376,8 @@ equipment_modules = {
 		parent = ship_depth_charge_3
 		
 		add_stats = {
-			sub_attack = 20 # R56
-			build_cost_ic = 120
+			sub_attack = 20 # ENDSIEG
+			build_cost_ic = 75
 		}
 
 		can_convert_from = {
@@ -2501,7 +2505,7 @@ ship_light_battery_sub = {
 		parent = ship_airplane_launcher_1
 		add_stats = {
 			surface_detection = 10
-			sub_detection = 7
+			sub_detection = 10
 			build_cost_ic = 100
 		}
 		can_convert_from = {
