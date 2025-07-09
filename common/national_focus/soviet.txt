@@ -761,35 +761,17 @@ focus_tree = {
 				limit = {
 					check_variable = { temp_targets_index = 3 compare = less_than }
 					any_owned_state = {
-						infrastructure < 3
-						free_building_slots = {
-							building = fuel_silo
-							size > 0
-							include_locked = yes
-						}
 						NOT = { has_state_flag = SOV_increase_state_reserves_flag }
 					}
 				}
 				if = { #If possible, prio low-infrastructure states for silos
 					limit = {
 						any_owned_state = {
-							infrastructure < 3
-							free_building_slots = {
-								building = fuel_silo
-								size > 0
-								include_locked = yes
-							}
 							NOT = { has_state_flag = SOV_increase_state_reserves_flag }
 						}
 					}
 					random_owned_controlled_state = {
 						limit = {
-							infrastructure < 3
-							free_building_slots = {
-								building = fuel_silo
-								size > 0
-								include_locked = yes
-							}
 							NOT = { has_state_flag = SOV_increase_state_reserves_flag }
 						}
 						set_state_flag = SOV_increase_state_reserves_flag
@@ -804,11 +786,6 @@ focus_tree = {
 				else = {
 					random_owned_controlled_state = {
 						limit = {
-							free_building_slots = {
-								building = fuel_silo
-								size > 0
-								include_locked = yes
-							}
 							NOT = { has_state_flag = SOV_increase_state_reserves_flag }
 						}
 						set_state_flag = SOV_increase_state_reserves_flag
