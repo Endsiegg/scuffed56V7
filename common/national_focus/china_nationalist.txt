@@ -36,7 +36,7 @@ focus_tree = {
 		
 		x = 2
 		y = 0
-		cost = 5
+		cost = 8
 		
 		ai_will_do = {
 			factor = 1
@@ -82,7 +82,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_political_power = 150
+			add_political_power = 125
 			add_stability = -0.05
 			custom_effect_tooltip = KMT_no_united_front_unless_xian_incident_agreed_tt																			 
 		}
@@ -126,9 +126,9 @@ focus_tree = {
 		
 		x = 2
 		y = 1
-		cost = 5
+		cost = 8
 		completion_reward = {
-			SHX = { country_event = { id = kmt.1  hours = 8 }}
+			SHX = { country_event = { id = kmt.1  hours = 16 }}
 		}
 	}
 	
@@ -197,7 +197,7 @@ focus_tree = {
 		
 		x = 0
 		y = 2
-		cost = 5
+		cost = 8
 		
 		available = { 
 			r56_script_i_am_sane = yes
@@ -248,10 +248,10 @@ focus_tree = {
 				}
 				add_opinion_modifier = { target = ROOT modifier = no_collaboration_with_CHI_COM }
 			}
-			army_experience = 5
+			#army_experience = 5
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.8
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -994,7 +994,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_1
 		x = 17
 		y = 0
-		cost = 5
+		cost = 8
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1827,7 +1827,7 @@ focus_tree = {
 		x = 12
 		y = 1
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -2346,7 +2346,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_industrial_effort }
 		x = 13
 		y = 2
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 5
 		}
@@ -2394,7 +2394,7 @@ focus_tree = {
 			focus = KMT_armament_effort
 		}
 		relative_position_id = KMT_armament_effort
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -3175,7 +3175,7 @@ focus_tree = {
 		icon = GFX_goal_CHI_academia_sinica
 		x = 22
 		y = 0
-		cost = 5
+		cost = 8
 		
 		completion_reward = {
 			add_ideas = KMT_science_funding
@@ -3216,7 +3216,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_industrial_effort }
 		x = 20
 		y = 4
-		cost = 5
+		cost = 8
 		bypass = {
 			GER = {
 				NOT = {
@@ -3588,7 +3588,7 @@ focus_tree = {
 		icon = GFX_focus_chi_legislative_yuan
 		x = 33
 		y = 0
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			add_political_power = 120
@@ -5319,7 +5319,7 @@ focus_tree = {
 		relative_position_id = KMT_dare_to_die_corps
 		x = 0
 		y = 1
-		cost = 7.2
+		cost = 8
 		ai_will_do = {
 			factor = 10
 		}
@@ -5460,7 +5460,7 @@ focus_tree = {
 		icon = GFX_goal_generic_war_factory
 		x = 13
 		y = 3
-		cost = 5
+		cost = 8
 		prerequisite = { focus = KMT_armament_effort }
 		bypass = {
 			custom_trigger_tooltip =  {
@@ -5589,7 +5589,7 @@ focus_tree = {
 		icon = GFX_goal_CHI_big_rear
 		x = 46
 		y = 0
-		cost = 10
+		cost = 12
 		
 		available = {
 			surrender_progress > 0.1
@@ -6812,7 +6812,7 @@ focus_tree = {
 		}
 		continue_if_invalid = yes
 		available_if_capitulated = yes
-		cost = 8
+		cost = 10
 		
 		select_effect = {
 			country_event = { id = lti.1 }
