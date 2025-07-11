@@ -331,7 +331,7 @@ enact_age_ability_effect = {
 		limit = {
 			check_variable = { age_ability = 65 }
 		}
-		add_offsite_building = { type = industrial_complex level = 2 }
+		add_offsite_building = { type = industrial_complex level = 10 }
 	}
 	hidden_effect = {
 		meta_effect = {
@@ -340,7 +340,7 @@ enact_age_ability_effect = {
 			}
 			ABILITY = "[?age_ability]"
 		}
-		subtract_from_variable = { current_splendor = 800 }
+		subtract_from_variable = { current_splendor = 100 }
 		add_to_array = { currently_selected_age_abilities = age_ability }
 	}
 }
