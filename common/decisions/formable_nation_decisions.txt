@@ -14994,7 +14994,7 @@ greater_italy_category = {
 		}
 
 		available = {
-			has_completed_focus = ITA_towards_a_greater_italy
+			#has_completed_focus = ITA_towards_a_greater_italy
 			custom_trigger_tooltip = {
 				tooltip = greater_italy_required_states
 				controls_state = 852 # Istria
@@ -15017,33 +15017,33 @@ greater_italy_category = {
 			custom_trigger_tooltip = {
 				tooltip = greater_italy_required_other_states 
 				AND = {
-					OR = {
-						ITA = { 
-						controls_state = 1 # Corsica 
-						}
-						any_country = {
-							is_subject_of = ITA
-							controls_state = 1 # Corsica
-						}
-					}
-					OR = {
-						ITA = { 
-						controls_state = 846 # Ticino 
-						}
-						any_country = {
-							is_subject_of = ITA
-							controls_state = 846 # Ticino
-						}
-					}
-					OR = {
-						ITA = { 
-						controls_state = 735 # Savoy 
-						}
-						any_country = {
-							is_subject_of = ITA
-							controls_state = 735 # Savoy
-						}
-					}
+					#OR = {
+					#	ITA = { 
+					#	controls_state = 1 # Corsica 
+					#	}
+					#	any_country = {
+					#		is_subject_of = ITA
+					#		controls_state = 1 # Corsica
+					#	}
+					#}
+					#OR = {
+					#	ITA = { 
+					#	controls_state = 846 # Ticino 
+					#	}
+					#	any_country = {
+					#		is_subject_of = ITA
+					#		controls_state = 846 # Ticino
+					#	}
+					#}
+					#OR = {
+					#	ITA = { 
+					#	controls_state = 735 # Savoy 
+					#	}
+					#	any_country = {
+					#		is_subject_of = ITA
+					#		controls_state = 735 # Savoy
+					#	}
+					#}
 					OR = {
 						ITA = { 
 						controls_state = 163 # Zara 
@@ -15080,24 +15080,24 @@ greater_italy_category = {
 							controls_state = 853 # Ljubljana
 						}
 					}
-					OR = {
-						ITA = { 
-						controls_state = 116 # Malta 
-						}
-						any_country = {
-							is_subject_of = ITA
-							controls_state = 116 # Malta
-						}
-					}
-					OR = {
-						ITA = { 
-						controls_state = 182 # Crete 
-						}
-						any_country = {
-							is_subject_of = ITA
-							controls_state = 182 # Crete
-						}
-					}
+					#OR = {
+					#	ITA = { 
+					#	controls_state = 116 # Malta 
+					#	}
+					#	any_country = {
+					#		is_subject_of = ITA
+					#		controls_state = 116 # Malta
+					#	}
+					#}
+					#OR = {
+					#	ITA = { 
+					#	controls_state = 182 # Crete 
+					#	}
+					#	any_country = {
+					#		is_subject_of = ITA
+					#		controls_state = 182 # Crete
+					#	}
+					#}
 					OR = {
 						ITA = { 
 						controls_state = 164 # Dodecaneso 
@@ -15128,9 +15128,6 @@ greater_italy_category = {
 			hidden_effect = { 
 
 				# Corsica
-				ITA = {
-					transfer_state = 1
-				}
 				1 = { 
 					add_core_of = ROOT
 					set_state_name = ITA_italian_corsica_name
@@ -15139,17 +15136,10 @@ greater_italy_category = {
 				    id = 3838 
 				    name = ITA_italian_ajaccio_name   
 				} 
-				
 				# Ticino
-				ITA = {
-					transfer_state = 846
-				}
 				846 = { add_core_of = ROOT }
 				
 				# Savoy
-				ITA = {
-					transfer_state = 735
-				}
 				735 = { 
 					add_core_of = ROOT
 					set_state_name = ITA_italian_savoy_name
@@ -15161,14 +15151,16 @@ greater_italy_category = {
 				set_province_name = {
 				    id = 778  
 				    name = ITA_italian_annecy_name
-				} 
-				 
+				} 	
+
+		
+	 
+				###### YUGO CORES
 				# Zara
 				ITA = {
 					transfer_state = 163
 				} 
 				163 = { add_core_of = ROOT }
-				
 				# Dalmatia
 				ITA = {
 					transfer_state = 103
@@ -15206,17 +15198,91 @@ greater_italy_category = {
 				    id = 9627
 				    name = ITA_italian_ljubljana_name
 				}
-
-				# Malta
-				ITA = {
-					transfer_state = 116
+				# PODRA
+				102 = { 
+					add_core_of = ROOT
 				}
+				#PREKMURJE
+				956 = { 
+					add_core_of = ROOT
+				}
+				#ZAGREB
+				109 = { 
+					add_core_of = ROOT
+				}
+				#KRAJINA
+				961 = { 
+					add_core_of = ROOT
+				}
+				#SLAVONIJA
+				959 = { 
+					add_core_of = ROOT
+				}
+				#POSAVINA
+				962 = { 
+					add_core_of = ROOT
+				}
+				#HERZEGOVINA
+				804 = { 
+					add_core_of = ROOT
+				}
+				#PODRINJE
+				104 = { 
+					add_core_of = ROOT
+				}
+				#RASKA
+				963 = { 
+					add_core_of = ROOT
+				}
+				#SUMADIJA
+				107 = { 
+					add_core_of = ROOT
+				}
+				#SREM
+				952 = { 
+					add_core_of = ROOT
+				}
+				#BATSCHKA
+				45 = { 
+					add_core_of = ROOT
+				}
+				#WEST BANAT
+				764 = { 
+					add_core_of = ROOT
+				}
+				#POMORAV
+				108 = { 
+					add_core_of = ROOT
+				}
+				#KOSOVO
+				953 = { 
+					add_core_of = ROOT
+				}
+				#METHOHIJA
+				802 = { 
+					add_core_of = ROOT
+				}
+				#TETOVO
+				950 = { 
+					add_core_of = ROOT
+				}
+				#PIROT
+				803 = { 
+					add_core_of = ROOT
+				}
+				#MAKEDONIJA
+				106 = { 
+					add_core_of = ROOT
+				}	
+				########## END OF YUGO CORES ######
+				#ALBANIA
+				910 = { add_core_of = ROOT }
+				44 = { add_core_of = ROOT }
+				805 = { add_core_of = ROOT }
+				# Malta
 				116 = { add_core_of = ROOT }
 
 				# Crete
-				ITA = {
-					transfer_state = 182
-				}
 				182 = { 
 					add_core_of = ROOT 
 					set_state_name = ITA_italian_crete_name

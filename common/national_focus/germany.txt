@@ -1807,17 +1807,17 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			add_stability = -0.05
+			add_stability = -0.03
 			add_popularity = {
 			    ideology = ROOT
-			    popularity = -0.05
+			    popularity = -0.03
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = -0.05
+				GER_industrial_consumer_goods_factor = -0.15
 				tooltip = consumer_goods_factor_tt
 			}
 			GER_reduce_mefo_bills_penalty = yes
@@ -9391,7 +9391,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = GER_prioritize_economic_growth
 
-		cost = 5
+		cost = 4
 
 		bypass = {
 			42 = { is_demilitarized_zone = no } #RHINELAND
@@ -9474,46 +9474,46 @@ focus_tree = {
 						ideology = nazism
 						trait = rearmer
 				   }
-					army_experience = 100
+					army_experience = 200
 					add_offsite_building = {
-						type = arms_factory level = 6
+						type = arms_factory level = 20
 					}
 					add_offsite_building = {
-						type = industrial_complex level = 6
+						type = industrial_complex level = 20
 					}
 					add_equipment_to_stockpile = {
 						type = infantry_equipment
-						amount = 25000
+						amount = 50000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = artillery_equipment
-						amount = 500
+						amount = 2000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = support_equipment
-						amount = 750
+						amount = 2000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = motorized_equipment
-						amount = 500
+						amount = 2000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = medium_tank_chassis
-						amount = 350
+						amount = 2000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = light_tank_chassis
-						amount = 250
+						amount = 2000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = anti_air_equipment
-						amount = 500
+						amount = 2000
 						producer = GER
 					}			
 				}
@@ -11280,39 +11280,39 @@ focus_tree = {
 					}
 					army_experience = 100
 					add_offsite_building = {
-						type = arms_factory level = 5
+						type = arms_factory level = 10
 					}
 					add_offsite_building = {
-						type = industrial_complex level = 5
+						type = industrial_complex level = 10
 					}
 					add_equipment_to_stockpile = {
 						type = infantry_equipment
-						amount = 25000
+						amount = 250000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = artillery_equipment
-						amount = 500
+						amount = 5000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = support_equipment
-						amount = 1750
+						amount = 17500
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = motorized_equipment
-						amount = 500
+						amount = 5000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = medium_tank_chassis
-						amount = 500
+						amount = 5000
 						producer = GER
 					}
 					add_equipment_to_stockpile = {
 						type = anti_air_equipment
-						amount = 500
+						amount = 5000
 						producer = GER
 					}			
 				}
@@ -21206,24 +21206,21 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					59 = { is_fully_controlled_by = ROOT }
+					66 = { is_fully_controlled_by = ROOT }
 				}
-				59 = { #Hannover
+				66 = { #Hannover
 					add_resource = {
 						type = steel
-						amount = 6
+						amount = 8
 					}
 					add_dynamic_modifier = { 
 						modifier = GER_four_year_plan_initiative_modifier
 						scope = GER
 					}
 				}
-				random_core_state = {
+				every_core_state = {
 					limit = {
 						is_fully_controlled_by = ROOT
-						NOT = {
-							state = 59
-						}
 						OR = {
 							has_resources_amount = {
 								resource = oil
@@ -21257,6 +21254,7 @@ focus_tree = {
 							}
 						}
 					}
+					random_select_amount = 2
 					add_dynamic_modifier = { 
 						modifier = GER_four_year_plan_initiative_modifier
 						scope = GER
@@ -21300,7 +21298,7 @@ focus_tree = {
 							}
 						}
 					}
-					random_select_amount = 2
+					random_select_amount = 3
 					add_dynamic_modifier = { 
 						modifier = GER_four_year_plan_initiative_modifier
 						scope = GER
