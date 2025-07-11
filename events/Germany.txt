@@ -2776,7 +2776,7 @@ country_event = {
 			remove_from_faction = CZE
 		}
 	}
-	option = { # Support the Czechs
+	#option = { # Support the Czechs
 		name = germany.40.b
 		ai_chance = {
 			factor = 10
@@ -2904,7 +2904,7 @@ country_event = {
 		CZE = {
 			add_opinion_modifier = { target = ROOT modifier = offered_support }
 		}
-	}
+	#}
 }
 
 # France (Britain Backs Down)
@@ -3010,7 +3010,7 @@ country_event = {
 			}
 		}
 	}
-	option = { # Support the Czechs alone
+	#option = { # Support the Czechs alone
 		name = germany.41.b 
 		trigger = { is_puppet = no }
 		ai_chance = {
@@ -3156,7 +3156,7 @@ country_event = {
 			limit = { NOT = { has_completed_focus = FRA_little_entente } }
 			add_stability = 0.05
 		}
-	}
+	#}
 }
 
 # France (Britain Supports the Czechs)
@@ -4117,8 +4117,8 @@ country_event = {
 		#	limit = {
 		#		has_global_flag = ger_vanilla_focus_tree
 		#	}
-			custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
-			GER_mefo_bills_level_down = yes
+		#	custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		#	GER_mefo_bills_level_down = yes
 		#}
 		
 		USA = {	#USA can denounce the aggression
@@ -4268,8 +4268,8 @@ country_event = {
 		#	limit = {
 		#		has_global_flag = ger_vanilla_focus_tree
 		#	}
-			custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
-			GER_mefo_bills_level_down = yes
+		#	custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		#	GER_mefo_bills_level_down = yes
 		#}
 		hidden_effect = {
 			if = { #Fate of Rutenia event chain
@@ -4556,7 +4556,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = { # This means war!
+#	option = { # This means war!
 		name = germany.60.a
 		ai_chance = {
 			factor = 1
@@ -4615,7 +4615,7 @@ country_event = {
 				}
 			}
 		}
-	}
+#	}
 
 	option = { # Diplomatic response
 		name = germany.60.b
@@ -4666,7 +4666,7 @@ country_event = {
 			country_event = { hours = 6 id = germany.63 }
 		}
 	}
-	option = { # Support France
+#	option = { # Support France
 		name = germany.61.b
 		trigger = {
 			NOT = {
@@ -4725,7 +4725,7 @@ country_event = {
 		FRA = {
 			country_event = { hours = 6 id = germany.64 }
 		}
-	}
+#	}
 }
 
 # British Response (French Want Peace)
@@ -4750,7 +4750,7 @@ country_event = {
 		}
 		add_opinion_modifier = { target = GER modifier = protest_action }
 		GER = {
-			add_war_support = 0.1
+			add_war_support = 0.15
 		}
 	}
 
@@ -4778,7 +4778,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = { # Push Ahead
+	#option = { # Push Ahead
 		name = germany.63.a
 		ai_chance = {
 			factor = 60
@@ -4822,7 +4822,7 @@ country_event = {
 				}
 			}
 		}
-	}
+	#}
 	option = { # Back Down
 		name = germany.63.b
 		ai_chance = { factor = 40 }
@@ -5055,7 +5055,7 @@ country_event = {
 		}
 		add_opinion_modifier = { target = GER modifier = protest_action }
 		GER = {
-			add_war_support = 0.1
+			add_war_support = 0.15
 		}
 	}
 }
