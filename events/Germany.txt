@@ -3581,6 +3581,7 @@ country_event = {
 		69 = { add_core_of = GER }
 		GER = { transfer_state = 69 }
 		1078 = { add_core_of = GER }
+		GER = { transfer_state = 1078 }
 		if = {
 			limit = {
 				AUS = { 
@@ -4327,10 +4328,12 @@ country_event = {
 		#	limit = {
 		#		has_global_flag = ger_vanilla_focus_tree
 		#	}
-			custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
-			GER_mefo_bills_level_down = yes
+		#	#custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		#	GER_mefo_bills_level_down = yes
 		#}
-		
+		GER_czechoslovakia_modify_mefo_bills_or_economy_of_conquest = yes
+		GER_seize_gold_reserves_in_europe_peacefully = yes
+		add_to_variable = { var = GER_mefo_bill_counter value = -10 }		
 		hidden_effect = {
 			if = { #Fate of Ruthenia event chain
 				limit = {
@@ -4356,9 +4359,7 @@ country_event = {
 			}
 		}
 
-		GER_czechoslovakia_modify_mefo_bills_or_economy_of_conquest = yes
-		GER_seize_gold_reserves_in_europe_peacefully = yes
-		add_to_variable = { var = GER_mefo_bill_counter value = -10 }
+
 	}
 }
 
@@ -6977,7 +6978,9 @@ country_event = {
 					}
 				}
 				annex_country = { target = YUG transfer_troops = no }
+			#	custom_effect_tooltip = yugoslavia_mefo_bills_tt
 				GER_yugoslavia_modify_mefo_bills_or_economy_of_conquest = yes
+				GER_seize_gold_reserves_in_europe_peacefully = yes
 				add_to_variable = { var = GER_mefo_bill_counter value = -10 }
 			}
 		}
@@ -7033,8 +7036,12 @@ country_event = {
 				news_event = { hours = 6 id = news.169 }
 			}
 		}
-		# custom_effect_tooltip = yugoslavia_mefo_bills_tt
+	#	custom_effect_tooltip = yugoslavia_mefo_bills_tt
 		# GER_mefo_bills_level_down = yes
+		GER_yugoslavia_modify_mefo_bills_or_economy_of_conquest = yes
+		GER_seize_gold_reserves_in_europe_peacefully = yes
+
+		add_to_variable = { var = GER_mefo_bill_counter value = -10 }
 	}
 
 	option = {
@@ -7171,7 +7178,9 @@ country_event = {
 					}
 				}
 				annex_country = { target = YUG transfer_troops = no }
-				custom_effect_tooltip = yugoslavia_mefo_bills_tt
+				#custom_effect_tooltip = yugoslavia_mefo_bills_tt
+				GER_yugoslavia_modify_mefo_bills_or_economy_of_conquest = yes
+				#GER_seize_gold_reserves_in_europe_peacefully = yes
 				add_to_variable = { var = GER_mefo_bill_counter value = -10 }
 			}
 		}
@@ -7293,9 +7302,11 @@ country_event = {
 				news_event = { hours = 6 id = news.169 }
 			}
 		}
-		custom_effect_tooltip = yugoslavia_mefo_bills_tt
-		GER_mefo_bills_level_down = yes
-
+	#	custom_effect_tooltip = yugoslavia_mefo_bills_tt
+		#GER_mefo_bills_level_down = yes
+		GER_yugoslavia_modify_mefo_bills_or_economy_of_conquest = yes
+		GER_seize_gold_reserves_in_europe_peacefully = yes
+		add_to_variable = { var = GER_mefo_bill_counter value = -10 }
 	}
 
 	option = {
@@ -7483,6 +7494,8 @@ country_event = {
 					set_global_flag = GER_fate_of_yugoslavia_puppet_CRO_YUG
 					news_event = { hours = 6 id = news.169 }
 				}
+				GER_yugoslavia_modify_mefo_bills_or_economy_of_conquest = yes
+				add_to_variable = { var = GER_mefo_bill_counter value = -10 }				
 			}
 		}
 
@@ -7665,8 +7678,11 @@ country_event = {
 				news_event = { hours = 6 id = news.169 }
 			}
 		}
-		custom_effect_tooltip = yugoslavia_mefo_bills_tt
-		GER_mefo_bills_level_down = yes
+		#custom_effect_tooltip = yugoslavia_mefo_bills_tt
+		#GER_mefo_bills_level_down = yes
+		GER_yugoslavia_modify_mefo_bills_or_economy_of_conquest = yes
+		GER_seize_gold_reserves_in_europe_peacefully = yes
+		add_to_variable = { var = GER_mefo_bill_counter value = -10 }
 	}
 }
 
@@ -9725,6 +9741,11 @@ country_event = {
 		transfer_state = 1078
 		add_state_core = 74
 		transfer_state = 74
+
+		GER_czechoslovakia_modify_mefo_bills_or_economy_of_conquest = yes
+		GER_seize_gold_reserves_in_europe_peacefully = yes
+
+		set_country_flag = sudetenland_acquired #Unused flag for now
 	}
 }
 
