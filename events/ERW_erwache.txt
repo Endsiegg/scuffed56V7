@@ -410,55 +410,55 @@ country_event = {
 		}
 		custom_effect_tooltip = GAME_OVER_TT
 	}
-	#option = { # Refuse 
-		name = germany.28.b
-		trigger = {
-			NOT = {
-				AND = {
-					OR = {
-						has_cosmetic_tag = AUS_EMPIRE
-						has_cosmetic_tag = AUSHUN
-					}
-					has_government = democratic 
-				}
-				AND = {
-					has_government = neutrality
-					NOT = {
-						has_cosmetic_tag = AUS_REPUBLIC
-					}
-				} 
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-			modifier = {	#adds a degree of randomness, but will not push over the top
-				add = 80
-				ITA = {
-					OR = {
-						has_completed_focus = ITA_guarantee_austrian_independence
-						is_in_faction_with = AUS
-					}
-				}
-			}
-		}
-		GER = {
-			add_opinion_modifier = { target = ROOT modifier = GER_anschluss_rejected }
-			country_event = { hours = 2 id = erwache.9 }
-			if = { limit = { is_in_faction_with = AUS }
-				remove_from_faction = AUS
-			}
-		}
+	# #option = { # Refuse 
+	# 	name = germany.28.b
+	# 	trigger = {
+	# 		NOT = {
+	# 			AND = {
+	# 				OR = {
+	# 					has_cosmetic_tag = AUS_EMPIRE
+	# 					has_cosmetic_tag = AUSHUN
+	# 				}
+	# 				has_government = democratic 
+	# 			}
+	# 			AND = {
+	# 				has_government = neutrality
+	# 				NOT = {
+	# 					has_cosmetic_tag = AUS_REPUBLIC
+	# 				}
+	# 			} 
+	# 		}
+	# 	}
+	# 	ai_chance = {
+	# 		base = 50
+	# 		modifier = {
+	# 			factor = 0
+	# 			is_historical_focus_on = yes
+	# 		}
+	# 		modifier = {	#adds a degree of randomness, but will not push over the top
+	# 			add = 80
+	# 			ITA = {
+	# 				OR = {
+	# 					has_completed_focus = ITA_guarantee_austrian_independence
+	# 					is_in_faction_with = AUS
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# 	GER = {
+	# 		add_opinion_modifier = { target = ROOT modifier = GER_anschluss_rejected }
+	# 		country_event = { hours = 2 id = erwache.9 }
+	# 		if = { limit = { is_in_faction_with = AUS }
+	# 			remove_from_faction = AUS
+	# 		}
+	# 	}
 		
-		hidden_effect = {
-			set_country_flag = AUS_anschluss_rejected
-		}
+	# 	hidden_effect = {
+	# 		set_country_flag = AUS_anschluss_rejected
+	# 	}
 
-		custom_effect_tooltip = AUS_germany_back_down_maybe
-	#}
+	# 	custom_effect_tooltip = AUS_germany_back_down_maybe
+	# #}
 	option = { # Refuse Empire
 		name = germany.28.c
 		trigger = {
