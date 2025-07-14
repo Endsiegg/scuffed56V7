@@ -326,6 +326,7 @@ enact_age_ability_effect = {
 			threat = -10
 			name = age_ability_8
 		}
+		add_to_variable = { current_splendor = 800 }
 	}
 	else_if = {
 		limit = {
@@ -340,7 +341,7 @@ enact_age_ability_effect = {
 			}
 			ABILITY = "[?age_ability]"
 		}
-		subtract_from_variable = { current_splendor = 100 }
+		subtract_from_variable = { current_splendor = 800 }
 		add_to_array = { currently_selected_age_abilities = age_ability }
 	}
 }
