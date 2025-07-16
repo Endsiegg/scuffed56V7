@@ -7,13 +7,14 @@ sub_units = {
 		priority = 1198
 		ai_priority = 100
 		active = yes
+		is_artillery_brigade = yes
 		
 		type = {
 			infantry
 			artillery
 		}
 
-		group = infantry
+		group = combat_support
 		
 		categories = {
 			category_army
@@ -82,13 +83,14 @@ sub_units = {
 		priority = 1198
 		ai_priority = 100
 		active = yes
+		is_artillery_brigade = yes
 		
 		type = {
 			motorized
 			artillery
 		}
 
-		group = mobile
+		group = mobile_combat_support
 		
 		categories = {
 			category_army
@@ -100,6 +102,11 @@ sub_units = {
 		combat_width = 3
 		transport = motorized_equipment
 		manpower = 500
+
+		essential = {
+			motorized_equipment
+		}
+
 		need = {
 			artillery_equipment = 36
 			motorized_equipment = 36
@@ -156,13 +163,14 @@ sub_units = {
 		priority = 1199
 		ai_priority = 100
 		active = yes
+		is_artillery_brigade = yes
 		
 		type = {
 			infantry
 			artillery
 		}
 
-		group = infantry
+		group = combat_support
 		
 		categories = {
 			category_army
@@ -229,13 +237,14 @@ sub_units = {
 		priority = 1199
 		ai_priority = 100
 		active = yes
+		is_artillery_brigade = yes
 		
 		type = {
 			motorized
 			artillery
 		}
 
-		group = mobile
+		group = mobile_combat_support
 		
 		categories = {
 			category_army
@@ -303,6 +312,7 @@ sub_units = {
 		priority = 1199
 		ai_priority = 100
 		active = no
+		is_artillery_brigade = yes
 		
 		type = {
 			artillery
@@ -327,7 +337,7 @@ sub_units = {
 		
 		manpower = 500
 		max_organisation = 0
-		default_morale = 0.2
+		default_morale = 0.1
 		max_strength = 0.6
 		training_time = 120
 		weight = 0.5

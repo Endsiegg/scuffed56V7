@@ -17,7 +17,7 @@ sub_units = {
 			anti_air
 		}
 		
-		group = infantry
+		group = combat_support
 		
 		categories = {
 			category_army
@@ -78,7 +78,7 @@ sub_units = {
 			anti_air
 		}
 		
-		group = mobile
+		group = mobile_combat_support
 		
 		categories = {
 			category_army
@@ -98,9 +98,12 @@ sub_units = {
 		
 		supply_consumption = 0.15
 		transport = motorized_equipment
+		essential = {
+			motorized_equipment
+		}
 		need = {
 			anti_air_equipment = 30
-			motorized_equipment = 50
+			motorized_equipment = 30
 		}
 
 		forest = {
