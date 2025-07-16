@@ -37,8 +37,8 @@ NDefines.NProduction.CONVOY_MAX_NAV_FACTORIES_PER_LINE = 50
 NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 30
 NDefines.NProduction.FLOATING_HARBOR_MAX_NAV_FACTORIES_PER_LINE = 10
 NDefines.NProduction.RAILWAY_GUN_MAX_MIL_FACTORIES_PER_LINE = 10
-NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 3.5
-NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 4.0
+NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 3.0
+NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 3.75
 NDefines.NProduction.MIN_LAND_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.5   --Cost for army refits
 NDefines.NProduction.MIN_NAVAL_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.1 --Cost for navy refits
 ---------------------------------
@@ -125,8 +125,8 @@ NDefines.NMilitary.PLAN_PROVINCE_HIGH_VP_IMPORTANCE_AREA = 10.0 -- vanilla 10
 NDefines.NMilitary.PLAN_PROVINCE_LOW_VP_IMPORTANCE_FRONT = 4.0 -- 2.0
 NDefines.NMilitary.PLAN_PROVINCE_MEDIUM_VP_IMPORTANCE_FRONT = 6.0 -- 2.25
 NDefines.NMilitary.PLAN_PROVINCE_HIGH_VP_IMPORTANCE_FRONT = 8.0 -- 2.75
-NDefines.NMilitary.PEN_VS_AVERAGE = 0.6 -- 0.4
-NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.8 -- 0.4
+NDefines.NMilitary.PEN_VS_AVERAGE = 0.4 -- 0.4
+NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.4 -- 0.4
 
 -- Addition with 1.3.2
 NDefines.NMilitary.PLAN_PORVINCE_PORT_BASE_IMPORTANCE = 18.0		-- increased from 12.0 ; Added importance for area defense province with a port

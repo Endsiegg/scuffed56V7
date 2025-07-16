@@ -55,7 +55,7 @@ sub_units = {
 		priority = 600
 		ai_priority = 200
 		active = yes
-		affects_speed = yes
+	#	affects_speed = yes
 
 		type = {
 			infantry
@@ -258,14 +258,14 @@ sub_units = {
 		amphibious = {
 			attack = 0.5
 		}
-		hills = {
-			attack = -0.15
-			movement = -0.10
-		}
-		mountain = {
-			attack = -0.20
-			movement = -0.20
-		}
+		# hills = {
+		# 	attack = -0.15
+		# 	movement = -0.10
+		# }
+		# mountain = {
+		# 	attack = -0.20
+		# 	movement = -0.20
+		# }
 	}
 	
 	mountaineers = {
@@ -419,7 +419,7 @@ sub_units = {
 
 		#defensive abilities
 		defense = 0.1
-		hardness = 0.1
+		#hardness = 0.1
 
 		#Size Definitions
 		max_strength = 23 #was 22
@@ -431,10 +431,8 @@ sub_units = {
 		training_time = 120
 		suppression = 1.5
 		weight = 0.5
-		supply_consumption = 0.06
+		supply_consumption = 0.05
 		breakthrough = 0.4
-		#initiative = 0.08 #Previous value was equivalent to 1942 Signals tech
-		defense = 0.1 
 
 		can_be_parachuted = yes
 	
@@ -443,7 +441,9 @@ sub_units = {
 		}
 
 		plains = {
-			attack = 0.05 #prefered landing and fighting terrian 
+			attack = 0.1 #prefered landing and fighting terrian 
+			defence = 0.1
+			movement = 0.2
 		}
 	}
 	

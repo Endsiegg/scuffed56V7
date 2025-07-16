@@ -197,7 +197,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Reform_the_Colonial_Economy
 	icon = GFX_focus_RAJ_clamp_down_on_corruption
-	cost = 8
+	cost = 5
 	mutually_exclusive = {
 		focus = RAJ_Foster_Private_Investment
 		focus = RAJ_Establish_the_Planning_Commission
@@ -293,7 +293,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Common_Economic_Policy
 	icon = GFX_1_6_goal_ENG_service_overseas
-	cost = 8
+	cost = 5
 	x = 59
 	ai_will_do = { factor = 1 }
 	offset = {
@@ -540,7 +540,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Cooperation_with_the_Princes
 	icon = GFX_goal_generic_aristocratic_cooperation
-	cost = 8
+	cost = 5
 	prerequisite = {
 		focus = RAJ_Reform_the_Colonial_Economy
 	}
@@ -571,7 +571,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Expand_Tata_Steel
 	icon = GFX_focus_generic_steel
-	cost = 8
+	cost = 5
 	prerequisite = {
 		focus = RAJ_Cooperation_with_the_Princes
 	}
@@ -663,7 +663,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Commercial_Port_Expansion
 	icon = GFX_goal_navy_funding
-	cost = 8
+	cost = 5
 	ai_will_do = { factor = 1 }
 	prerequisite = {
 		focus = RAJ_Reform_the_Colonial_Economy
@@ -788,7 +788,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Invite_Mining_Companies
 	icon = GFX_goal_generic_mining_iron
-	cost = 8
+	cost = 5
 	ai_will_do = { factor = 5 }
 	prerequisite = {
 		focus = RAJ_Commercial_Port_Expansion
@@ -1069,7 +1069,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_The_Indian_Merchant_Navy
 	icon = GFX_goal_generic_navigate_the_seas
-	cost = 8
+	cost = 5
 	ai_will_do = { factor = 1 }
 	prerequisite = {
 		focus = RAJ_Reinvigorate_Imperial_Shipping
@@ -1697,7 +1697,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Further_British_Investments
 	icon = GFX_1_6_goal_ENG_sun_never_sets
-	cost = 8
+	cost = 5
 	ai_will_do = { factor = 1 }
 	prerequisite = {
 		focus = RAJ_Reinvigorate_Imperial_Shipping
@@ -1787,7 +1787,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Resources_for_the_Home_Isles
 	icon = GFX_focus_ENG_home_defense
-	cost = 8
+	cost = 5
 	ai_will_do = { factor = 1 }
 	available = {
 		is_subject = yes
@@ -1864,10 +1864,10 @@ shared_focus = {
 					is_core_of = ROOT
 					state_population_k > 1000
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1897,10 +1897,10 @@ shared_focus = {
 				is_core_of = ROOT
 				state_population_k > 1000
 			}
-			add_extra_state_shared_building_slots = 1
+			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
 				type = arms_factory
-				level = 1
+				level = 2
 				instant_build = yes
 			}
 		}
@@ -2051,7 +2051,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Burmese_Mountain_Fortresses
 	icon = GFX_goal_generic_defense_of_the_lands
-	cost = 17.15
+	cost = 5
 	ai_will_do = { 
 		factor = 1 
 		modifier = {
@@ -2084,7 +2084,7 @@ shared_focus = {
 	select_effect = {
 		add_timed_idea = {
 			idea = RAJ_Running_Fort_Construction
-			days = 120
+			days = 35
 		}
 	}
 	completion_reward = {
@@ -2092,7 +2092,7 @@ shared_focus = {
 		effect_tooltip = {
 			add_timed_idea = {
 				idea = RAJ_Running_Fort_Construction
-				days = 120
+				days = 35
 			}
 		}
 		custom_effect_tooltip = backslashn
@@ -2195,7 +2195,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Fortify_the_Western_Mountain_Ranges
 	icon = GFX_goal_generic_nested_fortifications
-	cost = 8
+	cost = 5
 	prerequisite = {
 		focus = RAJ_Burmese_Mountain_Fortresses
 	}
@@ -2226,7 +2226,7 @@ shared_focus = {
 	select_effect = {
 		add_timed_idea = {
 			idea = RAJ_Running_Fort_Construction
-			days = 70
+			days = 35
 		}
 	}
 	completion_reward = {
@@ -2234,7 +2234,7 @@ shared_focus = {
 		effect_tooltip = {
 			add_timed_idea = {
 				idea = RAJ_Running_Fort_Construction
-				days = 70
+				days = 35
 			}
 		}
 		custom_effect_tooltip = backslashn
@@ -2309,7 +2309,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Himalayan_Fortifications
 	icon = GFX_goal_generic_fortification
-	cost = 8
+	cost = 5
 	prerequisite = {
 		focus = RAJ_Burmese_Mountain_Fortresses
 	}
@@ -2338,7 +2338,7 @@ shared_focus = {
 	select_effect = {
 		add_timed_idea = {
 			idea = RAJ_Running_Fort_Construction
-			days = 70
+			days = 35
 		}
 	}
 	completion_reward = {
@@ -2346,7 +2346,7 @@ shared_focus = {
 		effect_tooltip = {
 			add_timed_idea = {
 				idea = RAJ_Running_Fort_Construction
-				days = 70
+				days = 35
 			}
 		}
 		custom_effect_tooltip = backslashn
@@ -2412,7 +2412,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Reform_the_Royal_Indian_Navy
 	icon = GFX_goal_RAJ_native_navy
-	cost = 8
+	cost = 5
 	ai_will_do = { 
 		factor = 1 
 	}
@@ -2447,7 +2447,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Arabian_Sea_Coastal_Defenses
 	icon = GFX_goal_generic_defense_of_the_shores
-	cost = 8
+	cost = 5
 	ai_will_do = { 
 		factor = 2
 		modifier = {
@@ -2482,7 +2482,7 @@ shared_focus = {
 	select_effect = {
 		add_timed_idea = {
 			idea = RAJ_Running_Fort_Construction
-			days = 70
+			days = 35
 		}
 	}
 	completion_reward = {
@@ -2548,7 +2548,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Bengal_Bay_Coastal_Defenses
 	icon = GFX_focus_generic_coastal_fort
-	cost = 8
+	cost = 5
 	ai_will_do = { 
 		factor = 2
 		modifier = {
@@ -2580,7 +2580,7 @@ shared_focus = {
 	select_effect = {
 		add_timed_idea = {
 			idea = RAJ_Running_Fort_Construction
-			days = 70
+			days = 35
 		}
 	}
 	completion_reward = {
@@ -2588,7 +2588,7 @@ shared_focus = {
 		effect_tooltip = {
 			add_timed_idea = {
 				idea = RAJ_Running_Fort_Construction
-				days = 70
+				days = 35
 			}
 		}
 		custom_effect_tooltip = backslashn
@@ -3242,7 +3242,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Indianise_the_Royal_Indian_Navy
 	icon = GFX_goal_ENG_sailor_enlistment
-	cost = 8
+	cost = 5
 	ai_will_do = { 
 		factor = 1
 	}
@@ -3289,7 +3289,7 @@ shared_focus = {
 		FOCUS_FILTER_RESEARCH
 	}
 	available = {
-		date > 1939.1.1
+	#	date > 1939.1.1
 	}
 	completion_reward = {
 		add_tech_bonus = {
@@ -3305,7 +3305,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_British_Arms_Shipments
 	icon = GFX_goal_ammunitions
-	cost = 8
+	cost = 5
 	ai_will_do = { 
 		factor = 1
 	}
@@ -3344,7 +3344,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Request_British_Hurricanes
 	icon = GFX_goal_ENG_coa_air_force
-	cost = 8
+	cost = 5
 	ai_will_do = { 
 		factor = 20
 	}
@@ -3660,7 +3660,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Expand_the_Military_Academy
 	icon = GFX_focus_RAJ_lions_of_the_great_war 
-	cost = 8
+	cost = 5
 	prerequisite = {
 		focus = RAJ_Reform_the_British_Indian_Army
 	}
@@ -3700,7 +3700,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Innovations_in_Doctrine
 	icon = GFX_goal_mobile_warfare
-	cost = 8
+	cost = 5
 	ai_will_do = { 
 		factor = 1
 	}
@@ -3728,7 +3728,7 @@ shared_focus = {
 shared_focus = {
 	id = RAJ_Refine_Contemporary_Doctrines
 	icon = GFX_goal_mass_assault
-	cost = 8
+	cost = 5
 	ai_will_do = { 
 		factor = 10
 	}

@@ -738,13 +738,12 @@ modern_radio = {
 
 		# can build radars/radar boost in air/sea combat depends on radar level
 
-		allow = {
-			ROOT = {
-				is_special_project_completed = sp:sp_air_radar
-			}
-		}
+		# allow = {
+		# 	ROOT = {
+		# 		is_special_project_completed = sp:sp_air_radar
+		# 	}
+		# }
 
-		is_special_project_tech = yes
 		
 		coordination_bonus = 0.01 #CHANGE  radio_detection_sp_1_tt changing this
 		research_cost = 1.25
@@ -792,8 +791,14 @@ modern_radio = {
 
 		on_research_complete = {
 			custom_effect_tooltip = {
-				localization_key = SP_UNLOCK_PROJECT
-				PROJECT = sp_air_centimetric_radar
+			complete_special_project = {
+			project = sp:sp_air_radar
+			}
+				#localization_key = SP_UNLOCK_PROJECT
+				#PROJECT = sp_air_centimetric_radar
+			}
+			complete_special_project = {
+				project = sp:sp_air_radar
 			}
 		}
 	}

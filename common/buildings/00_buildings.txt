@@ -275,7 +275,7 @@ buildings = {
 
 	synthetic_refinery = {
 		show_on_map = 1
-		base_cost = 14500
+		base_cost = 12500
 		icon_frame = 10
 		local_resources_oil = 1 # May use local_resources_ + any resource name
 		#local_resources_rubber = 1 # May use local_resources_ + any resource name
@@ -304,7 +304,7 @@ buildings = {
 		value = 5
 		infrastructure_construction_effect = yes
 		fuel_silo = yes
-		
+		per_level_extra_cost = -500		
 		show_modifier = yes
 		country_modifiers = {
 			modifiers = {
@@ -365,7 +365,7 @@ buildings = {
 		disabled_in_dmz = yes
 		spawn_point = rocket_site_spawn
 		level_cap = {
-			state_max = 2
+			state_max = 3
 			shares_slots = yes
 			exclusive_with = mega_gun_emplacement
 		}
@@ -583,6 +583,7 @@ buildings = {
 		spawn_point = locks_spawn
 		damage_factor = -1
 		is_buildable = no
+		always_shown = yes
 		#province_damage_modifiers = { flooded }
 		state_damage_modifier = { kiel_canal_damaged_modifier }
 		only_display_if_exists = yes
