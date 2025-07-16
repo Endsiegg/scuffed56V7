@@ -3242,22 +3242,13 @@ focus_tree = {
 
 			custom_effect_tooltip = GER_fortify_the_vaterland_unlock_decision_tt
 			if = { # R56
-				limit = {
-					has_character = GER_erich_brandenberger
-				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 				custom_effect_tooltip = available_military_high_command
 				show_ideas_tooltip = GER_erich_brandenberger_idea
 				custom_effect_tooltip = generic_skip_one_line_tt
-				every_unit_leader = {
-					limit = {
-						is_character = GER_erich_brandenberger
-						NOT = {
-							has_trait = inflexible_strategist
-						}
-					}
+				GER_erich_brandenberger = {
 					add_trait = {trait = inflexible_strategist}
-				}
+				}	
 			}
 		}
 	}
