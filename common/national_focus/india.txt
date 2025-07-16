@@ -68,7 +68,7 @@ focus_tree = {
 	focus = {
 		id = RAJ_Linlithgows_Reign
 		icon = GFX_focus_usa_voter_registration_act
-		cost = 8.00
+		cost = 5.00
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		ai_will_do = {
 			factor = 50
@@ -2858,7 +2858,7 @@ focus_tree = {
 		id = RAJ_Assemble_the_Constitutional_Assembly
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		icon = GFX_goal_generic_liberty
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 10 }
 		available = {
 			has_government = democratic
@@ -4831,7 +4831,7 @@ focus_tree = {
 		id = RAJ_Assemble_our_Cabinet
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		icon = GFX_goal_generic_parliament
-		cost = 8.00
+		cost = 5.00
 		select_effect = {
 			country_event = {
 				id = r56_raj.115
@@ -4876,7 +4876,7 @@ focus_tree = {
 				id = r56_raj.112
 				hours = 12
 			}
-			add_political_power = 75
+			add_political_power = 100
 		}
 
 	}
@@ -4897,7 +4897,7 @@ focus_tree = {
 				id = r56_raj.113
 				hours = 12
 			}
-			add_political_power = 75
+			add_political_power = 100
 		}
 
 	}
@@ -4929,7 +4929,7 @@ focus_tree = {
 		id = RAJ_Railway_Expansion_Act
 		icon = GFX_cold_railway
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 10 }
 		available = {
 			OR = { 
@@ -4965,7 +4965,7 @@ focus_tree = {
 		id = RAJ_Agricultural_Stabilisation_Act
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		icon = GFX_goal_generic_agriculture
-		cost = 8.00
+		cost = 5.00
 		available = {
 			OR = { 
 				is_holding_vote = no
@@ -5001,7 +5001,7 @@ focus_tree = {
 		id = RAJ_Educational_Reform_Act
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		icon = GFX_goal_generic_double_research
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 10 }
 		prerequisite = {
 			focus = RAJ_Wheat_Exports
@@ -5033,7 +5033,7 @@ focus_tree = {
 		id = RAJ_Insurance_Act
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		icon = GFX_goal_generic_land_seizure
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 10 }
 		prerequisite = {
 			focus = RAJ_Civil_Aviation_Expansion
@@ -5065,7 +5065,7 @@ focus_tree = {
 		id = RAJ_War_Powers_Act
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		icon = GFX_focus_generic_support_the_left_right
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = RAJ_Our_First_Order_of_Business
 		}
@@ -5102,7 +5102,7 @@ focus_tree = {
 		id = RAJ_New_Excavation_Companies
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		icon = GFX_goal_excavation
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = RAJ_Railway_Expansion_Act
 		}
@@ -5128,7 +5128,7 @@ focus_tree = {
 		id = RAJ_New_Industrial_Centers
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		icon = GFX_goal_generic_royal_industry
-		cost = 8.00
+		cost = 5.00
 		available = {
 			has_country_flag = Railway_Expansion_Act_passed
 		}
@@ -5202,7 +5202,7 @@ focus_tree = {
 		id = RAJ_Expand_Urban_Centers
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		icon = GFX_goal_generic_housing
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = RAJ_Agricultural_Stabilisation_Act
 		}
@@ -5259,7 +5259,7 @@ focus_tree = {
 		id = RAJ_Department_of_War_Studies
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		icon = GFX_goal_italy_redirect_military_fundings
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 5 }
 		available = {
 			has_country_flag = Educational_Reform_Act_passed
@@ -5288,7 +5288,7 @@ focus_tree = {
 		id = RAJ_Open_for_Business
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		icon = GFX_goal_generic_positive_trade_relations_gold
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 5 }
 		available = {
 			has_country_flag = Insurance_Act_passed
@@ -5316,7 +5316,7 @@ focus_tree = {
 		id = RAJ_Healthcare_Investments
 		icon = GFX_goal_medicine
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 5 }
 		available = {
 			has_country_flag = Insurance_Act_passed
@@ -5352,7 +5352,7 @@ focus_tree = {
 	focus = {
 		id = RAJ_Civil_Aviation_Expansion
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 8.00
+		cost = 5.00
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		available = {
 			has_country_flag = Railway_Expansion_Act_passed
@@ -5406,7 +5406,7 @@ focus_tree = {
 		id = RAJ_Wheat_Exports
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		icon = GFX_goal_generic_wheat
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 5 }
 		available = {
 			has_country_flag = Agricultural_Stabilisation_Act_passed
@@ -5436,7 +5436,7 @@ focus_tree = {
 		id = RAJ_Primary_Education
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		icon = GFX_goal_generic_education
-		cost = 8.00
+		cost = 5.00
 		available = {
 			has_country_flag = Educational_Reform_Act_passed
 		}
@@ -5464,7 +5464,7 @@ focus_tree = {
 		id = RAJ_Drought_Prevention_Measures
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		icon = GFX_goal_treaty_peoples
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 10 }
 		available = {
 			has_country_flag = Agricultural_Stabilisation_Act_passed
@@ -5487,7 +5487,7 @@ focus_tree = {
 		id = RAJ_Bolster_our_Security_Forces
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		icon = GFX_goal_arrests
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 5 }
 		available = {
 			has_country_flag = Insurance_Act_passed
@@ -5524,7 +5524,7 @@ focus_tree = {
 		id = RAJ_Arms_Industry_Expansion
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		icon = GFX_focus_generic_army_modernizations
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 10 }
 		available = {
 			has_country_flag = War_Powers_Act_passed
@@ -5576,7 +5576,7 @@ focus_tree = {
 		id = RAJ_Implement_Conscription
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		icon = GFX_goal_ENG_imperial_conscription
-		cost = 8.00
+		cost = 5.00
 		available = {
 			has_country_flag = War_Powers_Act_passed
 		}
@@ -5602,7 +5602,7 @@ focus_tree = {
 		id = RAJ_The_August_Offer
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		icon = GFX_goal_generic_risky_deal
-		cost = 8.00
+		cost = 5.00
 		ai_will_do = { factor = 5 }
 		available = {
 			has_country_flag = War_Powers_Act_passed
