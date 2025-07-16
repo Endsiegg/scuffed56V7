@@ -1,33 +1,20 @@
 MAN_default_plan = {
 	name = "Manchukuo default plan"
-	desc = "Behaviour for Manchukuo until they decide on one of the branches"
+	desc = "Behavior for Manchukuo until they decide on one of the branches"
 
 	allowed = {
 		original_tag = MAN
 	}
 	enable = {
-		has_focus_tree = manchukuo_focus
-		OR = {
-			has_country_flag = MAN_AI_RANDOM_INDEPENDENCE
-			is_subject = no
-			has_game_rule = {
-				rule = MAN_ai_behavior
-				option = INDEPENDENCE
-			}
-		}
+		is_historical_focus_on = no
 	}
 	abort = {
 		has_completed_focus = MAN_assertiveness
-
+		
 	}
 
 	ai_national_focuses = {
 		MAN_pacify_the_countryside
-		CHI_invite_foreign_investors
-		MAN_trade_delegation
-		MAN_army_modernization
-		MAN_expand_the_textile_industry
-		MAN_law_university
 		MAN_assertiveness
 	}
 
@@ -38,6 +25,10 @@ MAN_default_plan = {
 	research = {
 		infantry_weapons = 15.0
 		industry = 10.0
+	}
+
+	ideas = {
+
 	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)
@@ -53,13 +44,12 @@ MAN_default_plan = {
 
 MAN_alternate_plan_assertive = {
 	name = "Manchukuo plan for Assertiveness"
-	desc = "Behaviour for Manchukuo when they decide to go assertive"
+	desc = "Behavior for Manchukuo when they decide to go assertive"
 
 	allowed = {
 		original_tag = MAN
 	}
 	enable = {
-		has_focus_tree = manchukuo_focus
 		has_completed_focus = MAN_assertiveness
 	}
 	abort = {
@@ -73,14 +63,11 @@ MAN_alternate_plan_assertive = {
 		MAN_bolster_nationalism
 		MAN_local_arms_procurement
 		MAN_purge_the_general_affairs_council
-		CHI_mission_to_germany
-		CHI_purchase_tanks
-		CHI_chinese_panzers
-		CHI_tank_plant
+		MAN_independence_war
 	}
 
 	focus_factors = {
-
+		
 	}
 
 	research = {
@@ -99,6 +86,9 @@ MAN_alternate_plan_assertive = {
 		id = GER
 		value = 100
 	}
+	ideas = {
+
+	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)
 	# Recommended around 1.0. Useful for relation between plans
@@ -113,13 +103,12 @@ MAN_alternate_plan_assertive = {
 
 MAN_alternate_plan_independent = {
 	name = "Manchukuo plan for Independence"
-	desc = "Behaviour for Manchukuo when they have achieved independence after going assertive"
+	desc = "Behavior for Manchukuo when they have achieved independence after going assertive"
 
 	allowed = {
 		original_tag = MAN
 	}
 	enable = {
-		has_focus_tree = manchukuo_focus
 		has_completed_focus = MAN_independence_war
 		not = {
 			has_war_with = JAP
@@ -131,11 +120,11 @@ MAN_alternate_plan_independent = {
 	}
 
 	ai_national_focuses = {
-
+		
 	}
 
 	focus_factors = {
-
+		
 		MAN_imperial_divinity = 5
 		MAN_imperial_university = 10
 		MAN_reform_the_civil_service = 5
@@ -145,19 +134,23 @@ MAN_alternate_plan_independent = {
 		infantry_weapons = 15.0
 		artillery = 15.0
 	}
+
+	ideas = {
+
+	}
 	ai_strategy = {
-		type = antagonize
-		id = "JAP"
+		type = antagonize 
+		id = "JAP"			
 		value = 500
 	}
 	ai_strategy = {
-		type = conquer
-		id = "CHI"
+		type = conquer 
+		id = "CHI"			
 		value = 200
 	}
 	ai_strategy = {
-		type = conquer
-		id = "PRC"
+		type = conquer 
+		id = "PRC"			
 		value = 200
 	}
 
@@ -173,3 +166,95 @@ MAN_alternate_plan_independent = {
 }
 
 
+MAN_we_are_japan_now = {
+	name = "Kwantung Army"
+	desc = "Behaviour for Manchukuo if they go kwantung army"
+
+	allowed = {
+		original_tag = MAN
+	}
+	enable = {
+		has_focus_tree = manchukuo_focus
+		JAP = {
+			OR = {
+				has_completed_focus = JAP_strengthen_civilian_government
+				has_completed_focus = JAP_the_unthinkable_option
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = MAN_alliance_with_the_kwantung_army
+		JAP = {
+			OR = {
+				has_completed_focus = JAP_purge_the_kodoha_faction
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		MAN_pacify_the_countryside
+		MAN_obedience
+		MAN_exile_takeover
+		MAN_reorganize_the_nation
+		MAN_dockyard_conversion
+		MAN_a_bleak_outlook
+		MAN_prepare_for_the_strike
+		MAN_first_five_year_plan
+		MAN_support_naoki_hoshino
+		MAN_request_zaibatsu_investment_on_military_industry
+		MAN_prepare_for_war
+		MAN_for_the_emperor
+		MAN_embracing_the_kodoha
+		MAN_begin_the_nanshin_ron
+		MAN_kwantung_military_advisors
+		MAN_increase_opium_production
+		MAN_guard_the_skies
+		MAN_acquire_the_north_manchu_railway
+		MAN_expand_showa_steel_works
+	}
+
+	focus_factors = {
+
+	}
+	ai_strategy = {
+		type = conquer 
+		id = "CHI"			
+		value = 200
+	}
+	ai_strategy = {
+		type = conquer 
+		id = "PRC"			
+		value = 200
+	}
+	traits = {
+		popular_figurehead = 100
+	}
+	
+	research = {
+		infantry_weapons = 15.0
+		artillery = 15.0
+		armor = 0.0
+		air_equipment = 0.0
+	}
+	ai_strategy = {
+		type = antagonize
+		id = CHI
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = GER
+		value = 100
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
