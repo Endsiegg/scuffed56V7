@@ -116,7 +116,7 @@ technologies = {
 		}
 
 		enable_equipment_modules = { 
-			#flamethrower now a SP
+		#	flamethrower #now a SP
 		}
 
 		categories = {
@@ -173,15 +173,18 @@ technologies = {
 		}
 
 		on_research_complete = {
-			if = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
-				custom_effect_tooltip = {
-					localization_key = SP_UNLOCK_PROJECT
-					PROJECT = sp_land_flamethrower_tank	
-				}
+			complete_special_project = {
+			project = sp:sp_land_flamethrower_tank
 			}
+			# if = {
+			# 	limit = {
+			# 		has_dlc = "No Step Back"
+			# 	}
+			# 	custom_effect_tooltip = {
+			# 		localization_key = SP_UNLOCK_PROJECT
+			# 		PROJECT = sp_land_flamethrower_tank	
+			# 	}
+			# }
 		}
 	}
 ###------> Old Engineers <><> <><> <><> <><> <><>
