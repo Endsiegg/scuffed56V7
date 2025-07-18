@@ -21,8 +21,8 @@ NDefines.NDiplomacy.OPINION_FOR_DEMO_FROM_WT_GENERATION = -1.0		-- How much less
 --NDefines.NFocus.FOCUS_POINT_DAYS = 3.5
 ----------------------------------
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 30						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
-NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.1 -- 0.05
-NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 40 -- 24
+NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.0 -- 0.05
+NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 1000 -- 24
 NDefines.NCountry.STARTING_COMMAND_POWER = 10.0	-- 0				-- starting command power for every country
 NDefines.NCountry.GIE_EXILE_ARMY_LEADER_START_LEVEL = 1	--Starting level for exile leader  -- why 3?!
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
