@@ -26,6 +26,7 @@ NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 1000 -- 24
 NDefines.NCountry.STARTING_COMMAND_POWER = 10.0	-- 0				-- starting command power for every country
 NDefines.NCountry.GIE_EXILE_ARMY_LEADER_START_LEVEL = 1	--Starting level for exile leader  -- why 3?!
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
+NDefines.NCountry.BASE_MOBILIZATION_SPEED = 0.005
 ----------------------------------
 NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0					-- XP cost for adding a new equipment module in an empty slot when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0				-- XP cost for replacing one equipment module with an unrelated module when creating an equipment variant.
