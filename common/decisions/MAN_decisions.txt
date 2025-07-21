@@ -11,7 +11,7 @@ MAN_banditry_category = {
 
 	MAN_pacify_bandits_in_the_northern_countryside = {
 
-		icon = oppression
+		icon = generic_oppression
 		
 		available = {
 			has_completed_focus = MAN_pacify_the_countryside
@@ -23,7 +23,7 @@ MAN_banditry_category = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = {
+ 			highlight_state_targets = {
 				state = 714
 			} 
 		}
@@ -44,8 +44,9 @@ MAN_banditry_category = {
 		visible = {
 			NOT = { has_active_mission = MAN_maintain_northern_control }
 			has_country_flag = MAN_northern_bandits
-			has_idea = MAN_banditry
 		}
+
+		is_good = yes
 
 		complete_effect = {
 			activate_mission = MAN_maintain_northern_control
@@ -55,7 +56,7 @@ MAN_banditry_category = {
 
 	MAN_hunt_down_northern_bandits = {
 
-		icon = oppression
+		icon = generic_oppression
 
 		available = {
 			has_completed_focus = MAN_pacify_the_countryside
@@ -66,14 +67,14 @@ MAN_banditry_category = {
 		cost = 0
 
 		highlight_states = {
-			highlight_state_targets = {
-				state = 714
+		highlight_state_targets = {
+			state = 714
 			} 
 		}
 		visible = {
 			has_country_flag = MAN_northern_bandits
-			has_idea = MAN_banditry
 		}
+		is_good = yes
 
 		fire_only_once = yes
 
@@ -107,20 +108,19 @@ MAN_banditry_category = {
 					NOT = { has_country_flag = MAN_western_bandits }
 				}
 				remove_ideas = MAN_banditry
-								
 			}
 		}
 	}
 
 	MAN_maintain_northern_control = {
 
-		icon = civil_support
+		icon = generic_civil_support
 
 		available = {
 			always = no
 		}
 
-		days_mission_timeout = 180
+		days_mission_timeout = MAN_main_control_timer?180
 
 		activation = {
 			always = no #Triggered from effect
@@ -134,13 +134,13 @@ MAN_banditry_category = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = {
-				state = 714
+		highlight_state_targets = {
+			state = 714
 			} 
 		}
 
 		visible = {
-			has_idea = MAN_banditry
+			
 		}
 
 		is_good = yes
@@ -154,7 +154,7 @@ MAN_banditry_category = {
 					NOT = { has_country_flag = MAN_eastern_bandits }
 					NOT = { has_country_flag = MAN_western_bandits }
 				}
-				remove_ideas = MAN_banditry				
+				remove_ideas = MAN_banditry
 			}
 		}
 	}
@@ -167,7 +167,7 @@ MAN_banditry_category = {
 
 	MAN_pacify_bandits_in_the_eastern_countryside = {
 
-		icon = oppression
+		icon = generic_oppression
 		
 		available = {
 			has_completed_focus = MAN_pacify_the_countryside
@@ -200,8 +200,9 @@ MAN_banditry_category = {
 		visible = {
 			NOT = { has_active_mission = MAN_maintain_eastern_control }
 			has_country_flag = MAN_eastern_bandits
-			has_idea = MAN_banditry
 		}
+
+		is_good = yes
 
 		complete_effect = {
 			activate_mission = MAN_maintain_eastern_control
@@ -211,7 +212,7 @@ MAN_banditry_category = {
 
 	MAN_hunt_down_eastern_bandits = {
 
-		icon = oppression
+		icon = generic_oppression
 
 		available = {
 			has_completed_focus = MAN_pacify_the_countryside
@@ -221,16 +222,17 @@ MAN_banditry_category = {
 
 		visible = {
 			has_country_flag = MAN_eastern_bandits
-			has_idea = MAN_banditry
 		}
 
 		cost = 0
 
 		highlight_states = {
-			highlight_state_targets = {
+ 			highlight_state_targets = {
 				state = 717
 			} 
 		}
+
+		is_good = yes
 
 		fire_only_once = yes
 
@@ -264,20 +266,19 @@ MAN_banditry_category = {
 					NOT = { has_country_flag = MAN_western_bandits }
 				}
 				remove_ideas = MAN_banditry
-				
 			}
 		}
 	}
 
 	MAN_maintain_eastern_control = {
 
-		icon = civil_support
+		icon = generic_civil_support
 
 		available = {			
 			always = no
 		}
 
-		days_mission_timeout = 180
+		days_mission_timeout = MAN_main_control_timer?180
 
 		activation = {
 			always = no #Triggered from effect
@@ -291,13 +292,13 @@ MAN_banditry_category = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = {
+ 			highlight_state_targets = {
 				state = 717
 			} 
 		}
 
 		visible = {
-			has_idea = MAN_banditry
+			
 		}
 
 		is_good = yes
@@ -324,7 +325,7 @@ MAN_banditry_category = {
 	
 	MAN_pacify_bandits_in_the_western_countryside = {
 
-		icon = oppression
+		icon = generic_oppression
 		
 		available = {
 			has_completed_focus = MAN_pacify_the_countryside
@@ -336,7 +337,7 @@ MAN_banditry_category = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = {
+ 			highlight_state_targets = {
 				state = 610
 			} 
 		}
@@ -357,8 +358,9 @@ MAN_banditry_category = {
 		visible = {
 			NOT = { has_active_mission = MAN_maintain_western_control }
 			has_country_flag = MAN_western_bandits
-			has_idea = MAN_banditry
 		}
+
+		is_good = yes
 
 		complete_effect = {
 			activate_mission = MAN_maintain_western_control
@@ -368,7 +370,7 @@ MAN_banditry_category = {
 
 	MAN_hunt_down_western_bandits = {
 
-		icon = oppression
+		icon = generic_oppression
 
 		available = {
 			has_completed_focus = MAN_pacify_the_countryside
@@ -379,15 +381,16 @@ MAN_banditry_category = {
 		cost = 0
 
 		highlight_states = {
-			highlight_state_targets = {
+ 			highlight_state_targets = {
 				state = 610
 			} 
 		}
 
 		visible = {
 			has_country_flag = MAN_western_bandits
-			has_idea = MAN_banditry
 		}
+
+		is_good = yes
 
 		fire_only_once = yes
 
@@ -427,13 +430,13 @@ MAN_banditry_category = {
 
 	MAN_maintain_western_control = {
 
-		icon = civil_support
+		icon = generic_civil_support
 
 		available = {			
 			always = no
 		}
 
-		days_mission_timeout = 180
+		days_mission_timeout = MAN_main_control_timer?180
 
 		activation = {
 			always = no #Triggered from effect
@@ -453,7 +456,7 @@ MAN_banditry_category = {
 		}
 
 		visible = {
-			has_idea = MAN_banditry
+			
 		}
 
 		is_good = yes
@@ -474,12 +477,10 @@ MAN_banditry_category = {
 
 	MAN_bandit_raids = {
 
-		icon = civil_support
+		icon = generic_civil_support
 
 		available = {
-			NOT = {	
-				has_idea = MAN_banditry
-			}
+			NOT = { has_idea = MAN_banditry }
 		}
 
 		days_mission_timeout = 180
@@ -489,7 +490,7 @@ MAN_banditry_category = {
 		}
 
 		visible = {
-			has_idea = MAN_banditry
+			
 		}		
 
 		fixed_random_seed = no
@@ -778,29 +779,10 @@ MAN_banditry_category = {
 			delete_unit_template_and_units = { division_template = "Redemption Army" }
 			clr_country_flag = MAN_bandits_recruited
 		}
-	}	
-}
-MAN_war_preparations = {
-	MAN_lead_the_army_in_person = {
-		available = {
-			has_country_leader = {
-				character = MAN_puyi
-				ruling_only = yes
-			}
-		}
-
-		icon = generic_army_support
-		fire_only_once = yes
-		cost = 25
-
-		visible = {
-			has_completed_focus = MAN_independence_war
-		}
-		complete_effect = {
-			add_war_support = 0.01
-			set_country_flag = MAN_pu_yi_lead_the_army_in_person
-		}		
 	}
+}
+
+MAN_war_preparations = {
 	MAN_raise_manchu_banner = {
 		available = {
 			has_war = yes
@@ -815,8 +797,6 @@ MAN_war_preparations = {
 		ai_will_do = {
 			factor = 10
 		}
-		icon = generic_military
-		
 		complete_effect = {
 			division_template = {
 				name = "Manchu Banner"
@@ -875,9 +855,6 @@ MAN_war_preparations = {
 	}
 
 	MAN_disband_the_banners = {
-
-		icon = generic_military
-
 		available = { 
 
 		}
@@ -898,12 +875,10 @@ MAN_war_preparations = {
 		}
 	}
 	MAN_fund_underground_gun_shops = {
-
-		icon = generic_industry
-
 		available = {
 			has_completed_focus = MAN_local_arms_procurement
 			has_completed_focus = MAN_purge_the_general_affairs_council
+			has_war_with = JAP
 		}
 		visible = {
 			OR = {
@@ -916,6 +891,7 @@ MAN_war_preparations = {
 			NOT = {
 				has_idea = MAN_underground_gun_shops
 			}
+			has_war_with = JAP
 		}
 		cost = 50
 		ai_will_do = {
@@ -927,9 +903,6 @@ MAN_war_preparations = {
 		}
 	}
 	MAN_remove_underground_gun_shops = {
-
-		icon = generic_industry
-
 		available = {
 			has_idea = MAN_underground_gun_shops
 		}
@@ -950,9 +923,6 @@ MAN_war_preparations = {
 		}
 	}
 	MAN_divert_machine_tools = {
-
-		icon = generic_construction
-
 		available = {
 			
 		}
@@ -1007,57 +977,7 @@ MAN_war_preparations = {
 			}
 		}
 	}
-	MAN_turn_over_the_rfr = {
-
-		icon = oppression
-
-		available = {
-			SOV = {
-				NOT = {
-					has_completed_focus = SOV_beaten_but_not_defeated
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = MAN_staff_the_court_with_manchus
-			SOV = {
-				NOT = {
-					has_completed_focus = SOV_beaten_but_not_defeated
-				}
-			}
-		}
-
-		cost = 15
-		ai_will_do = {
-			factor = 10
-		}
-		days_remove = 30
-		fire_only_once = yes
-		complete_effect = {
-			add_stability = 0.02
-		}
-		remove_effect = {
-			add_popularity = {
-				ideology = fascism
-				popularity = -0.15
-			}
-			SOV = {
-				add_opinion_modifier = {
-					modifier = helped_to_arrest_konstantin
-					target = MAN
-				}
-				add_popularity = {
-					ideology = fascism
-					popularity = -0.02
-				}
-				SOV_paranoia_low_decrease_effect = yes
-			}
-		}
-	}
 	MAN_prepare_to_seize_arms = {
-
-		icon = generic_operation
-
 		available = {
 			has_completed_focus = MAN_purge_the_general_affairs_council
 			command_power > 29
@@ -1065,6 +985,7 @@ MAN_war_preparations = {
 		visible = {
 			has_completed_focus = MAN_purge_the_general_affairs_council
 			check_variable = { var = MAN_seize_arms_prep value = 50 compare = less_than }
+			is_subject_of = JAP
 		}
 		cost = 0
 		ai_will_do = {
@@ -1090,9 +1011,6 @@ MAN_war_preparations = {
 		}
 	}
 	MAN_seize_arms = {
-
-		icon = generic_operation
-
 		available = {
 			has_completed_focus = MAN_independence_war
 			has_war_with = JAP
@@ -1138,7 +1056,7 @@ MAN_war_preparations = {
 					add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 2000 producer = JAP }
 				}
 			}
-			if = { #TODO_GABRIEL: fix tanks for dlc/nondlc
+			if = {
 				limit = {
 					NOT = {
 						has_dlc = "No Step Back"
@@ -1230,6 +1148,7 @@ MAN_war_preparations = {
 		}
 	}
 }
+
 prospect_for_resources = {
 
 	MAN_develop_kirin_aluminium_deposits = { #328
@@ -1250,6 +1169,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
+			has_completed_focus = MAN_develop_aluminum_sources
 			controls_state = 328
 			328 = {
 				NOT = {
@@ -1275,7 +1195,7 @@ prospect_for_resources = {
 			328 = {
 				add_resource = {
 					type = aluminium
-					amount = 24
+					amount = 12
 				}
 			}
 		}	
@@ -1301,6 +1221,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
+			has_completed_focus = MAN_expand_showa_steel_works
 			controls_state = 716
 			716 = {
 				NOT = {
@@ -1323,7 +1244,7 @@ prospect_for_resources = {
 			716 = {
 				add_resource = {
 					type = steel
-					amount = 24
+					amount = 16
 				}
 			}
 		}
@@ -1333,76 +1254,170 @@ prospect_for_resources = {
 		}
 	}
 }
+MAN_the_greatest_struggle = {
 
-foreign_politics = {
-	core_outer_manchuria_decision = {
+	MAN_seek_investments = {
 
-		icon = generic_form_nation
-		allowed = { original_tag = MAN }
+		icon = GFX_decision_generic_factory
+
+		allowed = {
+			original_tag = MAN
+		}
 
 		available = {
-			408 = {
-				is_controlled_by = ROOT
-				OR = {
-					compliance > 50
-					is_core_of = ROOT
-				}
-			}
-			409 = {
-				is_controlled_by = ROOT
-				OR = {
-					compliance > 50
-					is_core_of = ROOT
-				}
-			}
-			560 = {
-				is_controlled_by = ROOT
-				OR = {
-					compliance > 50
-					is_core_of = ROOT
-				}
-			}
-			561 = {
-				is_controlled_by = ROOT
-				OR = {
-					compliance > 50
-					is_core_of = ROOT
-				}
-			}
-			657 = {
-				is_controlled_by = ROOT
-				OR = {
-					compliance > 50
-					is_core_of = ROOT
-				}
-			}
+			
 		}
+
 		visible = {
-			OR = {
-				has_completed_focus = MAN_reclaim_the_entierty_of_manchuria_puppet
-				has_completed_focus = MAN_reclaim_the_entierty_of_manchuria
-			}
+			has_completed_focus = MAN_a_bleak_outlook
 		}
+
+		days_remove = 90
+		days_re_enable = 60
+
+		cost = 100
 		fire_only_once = yes
-		cost = 200
+		ai_will_do = {
+			factor = 1000
+		}
 
-		complete_effect = {
-			add_state_core = 408
-			add_state_core = 409
-			add_state_core = 560
-			add_state_core = 561
-			add_state_core = 657
-			hidden_effect = {
-				remove_state_claim = 408
-				remove_state_claim = 409
-				remove_state_claim = 560
-				remove_state_claim = 561
-				remove_state_claim = 657
+		remove_effect = {
+			add_offsite_building = { type = industrial_complex level = 3 }
+		}
+	}
+	
+	MAN_foreign_arm_deposits = {
+
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAN
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_completed_focus = MAN_a_bleak_outlook
+		}
+
+		days_remove = 90
+		days_re_enable = 60
+
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1000
+		}
+
+
+		remove_effect = {
+			add_offsite_building = { type = arms_factory level = 3 }
+		}
+	}
+	
+	MAN_for_one_thousand_years_of_greatness = {
+
+		icon = GFX_decision_jap_pacific_guardian
+
+		allowed = {
+			original_tag = MAN
+		}
+
+		available = {
+			has_war_with = JAP
+		}
+
+		visible = {
+			has_completed_focus = MAN_a_bleak_outlook
+			JAP = { exists = yes }
+		}
+
+		days_remove = 210
+
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1000
+		}
+
+		modifier = {
+			amphibious_invasion = 0.1
+			amphibious_invasion_defence = 0.1
+		}
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+		}
+	}
+	MAN_for_one_thousand_years_of_greatness1 = {
+
+		icon = GFX_decision_jap_pacific_guardian
+
+		allowed = {
+			original_tag = MAN
+		}
+
+		available = {
+			has_war_with = CHI
+		}
+
+		visible = {
+			has_completed_focus = MAN_a_bleak_outlook
+			CHI = { exists = yes }
+		}
+
+		days_remove = 210
+
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1000
+		}
+		targeted_modifier = {
+			tag = CHI
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+		}
+	}
+}
+
+MAN_espouse_legitimacy = {
+	MAN_restore_legitimacy = {
+
+		icon = GFX_decision_generic_monarchy
+
+		allowed = {
+			original_tag = MAN
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_completed_focus = MAN_chinese_leadership
+			OR = {
+				has_idea = MAN_low_legitimacy_5
+				has_idea = MAN_low_legitimacy_4
+				has_idea = MAN_low_legitimacy_3
+				has_idea = MAN_low_legitimacy_2
+				has_idea = MAN_low_legitimacy_1
 			}
 		}
 
+		days_remove = 90
+		cost = 50
+
+		fire_only_once = no
 		ai_will_do = {
-			factor = 500
+			factor = 1000
+		}
+
+		remove_effect = {
+			MAN_low_legitimacy_level_down = yes
 		}
 	}
 }

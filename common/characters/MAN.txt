@@ -1,144 +1,54 @@
 characters={
-	MAN_puyi = {
-		name= "Aisin Gioro Puyi"
+	MAN_aisin_gioro_puyi={
+		name=MAN_aisin_gioro_puyi
 		portraits={
 			civilian={
-				large="gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
-				small = "gfx/interface/ideas/man/advisors/r56_idea_MAN_advisor_puyi_civ.dds"
-			}
-			army = {
-				large = "gfx/leaders/MAN/r56_portrait_MAN_Pu_Yi_Commander.dds"
-				small = "gfx/interface/ideas/man/advisors/r56_idea_MAN_Pu_Yi.dds"
+				large=GFX_portrait_MAN_aisin_gioro_puyi
 			}
 		}
 		country_leader={
-			ideology= fascism_ideology
-			expire="1967.7.17.1"
+			ideology=rexism
+			traits={ puppet_emperor }
+			expire="1960.1.1.1"
 			id=-1
-			traits={
-				puppet_emperor
-			}
 		}
 		country_leader={
-			ideology= absolute_monarchism
-			expire="1967.7.17.1"
+			ideology=despotism
+			traits={ puppet_emperor }
+			expire="1960.1.1.1"
 			id=-1
-			traits={
-				puppet_emperor
-			}
-		}
-		field_marshal = {
-			traits = { politically_connected media_personality }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-			visible = {
-				has_country_flag = MAN_pu_yi_lead_the_army_in_person
-				has_country_leader = {
-					character = MAN_puyi
-					ruling_only = yes
-				}
-			}
 		}
 	}
-	
-	MAN_zhang_jinghui={
-		name= "Zhang Jinghui"
-		portraits={
-			civilian = {
-				large= "gfx/leaders/MAN/r56_portrait_MAN_zhang_jinghui.dds"
-				small= "gfx/interface/ideas/man/advisors/r56_idea_MAN_advisor_zhang_jinghui_civ.dds"
-			}
-		}
-		country_leader={
-			ideology= fascism_ideology
-			expire="1959.11.1.1"
-			id=-1
-			traits={
-				puppet_prime_minister_fascism
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zhang_jinghui_civilian
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				NOT = {
-					has_country_leader = {
-						character = MAN_zhang_jinghui
-						ruling_only = yes
-					}
-				}
-			}
-			traits = {
-				puppet_prime_minister_fascism
-			}
-		}
-		corps_commander = {
-			traits = { infantry_officer }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
-			legacy_id = -1
-		}
-	}
-	
-	MAN_zang_shiyi = {
-		name = "Zang Shiyi"
+	####GUY ISEARCHED UP WAS COMMUNIST?????
+	MAN_zhao_shangzhi={
+		name=MAN_zhao_shangzhi
 		portraits={
 			civilian={
-				large="gfx/leaders/MAN/r56_portrait_MAN_zang_shiyi.dds"
-				small="GFX_idea_MAN_advisor_zang_shiyi"
-			}
-			army={
-				large="gfx/leaders/MAN/r56_portrait_MAN_zang_shiyi.dds"
-				small="GFX_idea_MAN_advisor_zang_shiyi_military"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = zang_shiyi
-			allowed = {
-				original_tag  = MAN
-			}
-			available = {
-				NOT = { 
-					has_country_leader = { 
-						character = MAN_zang_shiyi
-						ruling_only = yes 
-					} 
-				}
-			}
-			traits = {
-				popular_figurehead
+				large=GFX_portrait_MAN_zhao_shangzhi
 			}
 		}
 		country_leader={
-			ideology= conservatism
-			expire="1965.1.1"
+			ideology=conservatism
+			traits={ national_integralist }
+			expire="1956.1.1.12"
 			id=-1
-			traits={
-				army_connections popular_figurehead
-			}
-		}
-		corps_commander = {
-			traits = { politically_connected cavalry_officer }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 1
-			legacy_id = -1
 		}
 	}
-	
+	#MAN_changlin_linge={
+	#	name=MAN_changlin_linge
+	#	portraits={
+	#		civilian={
+	#			large=GFX_portrait_MAN_changlin_linge
+	#		}
+	#	}
+	#	country_leader={
+	#		ideology=anti_revisionism
+	#		traits={ silent_workhorse }
+	#		expire="1941.1.1.12"
+	#		id=-1
+	#	}
+	#}
+	####NON EXILE ---> PURGE
 	MAN_ma_zhanshan = {
 		name = "Ma Zhanshan"
 		portraits={
@@ -156,8 +66,11 @@ characters={
 			allowed = {
 				original_tag  = MAN
 			}
+			visible = {
+				has_completed_focus = MAN_independence_war
+			}
 			available = {
-				has_government = communism
+				has_completed_focus = MAN_independence_war
 			}
 			traits = {
 				army_chief_offensive_2
@@ -165,10 +78,10 @@ characters={
 		}
 		country_leader={
 			ideology= marxism
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 			traits={
-
+				guerilla_warfare_expert
 			}
 		}
 		field_marshal = {
@@ -180,119 +93,380 @@ characters={
 			logistics_skill = 2
 			legacy_id = -1
 			visible = { 
-				has_government = communism
+				has_completed_focus = MAN_independence_war
 			}
 		}
 	}
-	
-	MAN_runqi = {
-		name = "Runqi"
+	####NON EXILE ----> PURGE
+	MAN_zhang_haipeng={
+		name=MAN_zhang_haipeng
 		portraits={
-			civilian={
-				small = "gfx/interface/ideas/man/advisors/kr_idea_MAN_advisor_runqi.dds"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = runqi
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				royal
-			}
-		}
-	}
-	
-	MAN_lian_yu = {
-		name = "Lian Yu"
-		portraits={
-			civilian={
-				small = "gfx/interface/ideas/idea_generic_fascist_asia.dds"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = lian_yu
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				fascist_demagogue
-			}
-		}
-	}
-	
-	MAN_zhao_shangzhi = {
-		name = "Zhao Shangzi"
-		portraits={
-			civilian={
-				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_2.dds"
-			}
 			army={
-				large = "gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
-				small = "gfx/interface/ideas/idea_asia_generic_land_2.dds"
+				large="GFX_portrait_man_zhang_haipeng"
+				small="GFX_idea_MAN_zhang_haipeng"
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zhao_shangzhi
-			allowed = {
-				original_tag = MAN
+		corps_commander={
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
 			}
-			traits = {
-				communist_revolutionary
-			}
-		}
-		corps_commander = {
-			traits = { guerilla_fighter }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 2
-			legacy_id = -1
-			visible = { 
-				has_government = communism
-			}
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
 		}
 	}
-	
-	MAN_megata_toshiro = {
-		name = MAN_megata_toshiro
+	#####NON EXILE ---> PURGE
+	MAN_zhang_jinghui={
+		name= "Zhang Jinghui"
 		portraits={
-			civilian={
-				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_2.dds"
+			army={
+				large="GFX_portrait_man_zhang_jinghui"
+				small="GFX_idea_MAN_zhang_jinghui"
 			}
 		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
 		advisor = {
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
 			slot = political_advisor
-			idea_token = MAN_megata_toshiro
+			idea_token = zhang_jinghui_civilian
 			allowed = {
 				original_tag = MAN
 			}
 			available = {
-				is_subject_of = JAP
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
 			}
 			traits = {
-				armaments_organizer
-			}
-			on_add = {
-				owner = {
-					if = {
-						limit = {
-							is_subject = yes
-						}
-						add_autonomy_ratio = {
-							value = -0.1
-							localization = MAN_megata_toshiro
-						}
-					}
-				}
+				puppet_prime_minister_fascism
 			}
 		}
 	}
-	
+	####NON EXILE PURGE
+	MAN_aisin_gioro_xiqia={
+		name=MAN_aisin_gioro_xiqia
+		portraits={
+			army={
+				large="GFX_portrait_man_aisin_gioro_xiqia"
+				small="GFX_idea_MAN_aisin_gioro_xiqia"
+			}
+		}
+		corps_commander={
+			traits={ career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	####NON EXILE
+	MAN_yoshiko_kawashima={
+		name=MAN_yoshiko_kawashima
+		portraits={
+			army={
+				large="GFX_portrait_man_yoshiko_kawashima"
+				small="GFX_idea_MAN_yoshiko_kawashima"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = yoshiko_kawashima
+			ledger = army
+			allowed = {
+				original_tag = MAN
+				has_dlc = "Waking the Tiger"
+			}
+			traits = {
+				head_of_intelligence
+			}
+		}
+		gender = female
+		corps_commander={
+			traits={ cavalry_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	### THEORISTS ###
+
+	# Claire Lee Chennault is in shared file
+	#####NON EXILE PURGE
+	MAN_hung_zhehuang={
+		name=MAN_hung_zhehuang
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+		advisor={
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			cost = 100
+			slot = theorist
+			idea_token = MAN_hung_zhehuang
+			ledger = army
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = {
+				military_theorist
+			}
+		}
+	}
+	####NONEXILE ---> PURGE
+	MAN_xian_yuan={
+		name=MAN_xian_yuan
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_asia_1"
+			}
+		}
+		advisor={
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			cost = 100	
+			slot = theorist
+			idea_token = MAN_xian_yuan
+			ledger = navy
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = {
+				naval_theorist
+			}
+		}
+	}
+	####NON EXILE PURGE
+	MAN_deng_linge={
+		name=MAN_deng_linge
+		portraits={
+			army={
+				small="GFX_idea_generic_air_asia_2"
+			}
+		}
+		advisor={
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			cost = 100
+			slot = theorist
+			idea_token = MAN_deng_linge
+			ledger = air
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = {
+				air_warfare_theorist
+			}
+		}
+	}
+
+
+	### ARMY CHIEFS ###
+
+	# Alexander von Falkenhausen in shared file
+	###NON EXILE ---> PURGE
+	MAN_guan_xingde={
+		name=MAN_guan_xingde
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_4"
+			}
+		}
+		advisor={	
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			slot = army_chief
+			idea_token = MAN_guan_xingde
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+	### NAVY CHIEFS ###
+		###NON EXILE ----> PURGE
+		MAN_yin_zuoqian={
+		name=MAN_yin_zuoqian
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_asia_3"
+			}
+		}
+		advisor={
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			slot = navy_chief
+			idea_token = MAN_yin_zuoqian
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				navy_chief_decisive_battle_1
+			}
+			cost =  50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+	### AIR CHIEFS ###
+
+	# Claire Lee Chennault is in shared file
+	####EXILE
+	MAN_nakajima_kesago={
+		name=MAN_nakajima_kesago
+		portraits={
+			army={
+				small="GFX_idea_generic_air_asia_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = MAN_nakajima_kesago
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				air_chief_ground_support_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+	### MILITARY HIGH COMMAND ###
+	###EXILE??
+	MAN_yonimitsu_kasahara={
+		name=MAN_yonimitsu_kasahara
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MAN_yonimitsu_kasahara
+			ledger = army
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				army_concealment_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	####EXILE??
+	MAN_kyoiji_tomonaga={
+		name=MAN_kyoiji_tomonaga
+		portraits={
+			army={
+				small="GFX_idea_generic_air_asia_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MAN_kyoiji_tomonaga
+			ledger = army
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				air_air_superiority_1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	###NON EXILE --> PURGE
+	MAN_hesehn_tiemei={
+		name=MAN_hesehn_tiemei
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+		advisor={
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			slot = high_command
+			idea_token = MAN_hesehn_tiemei
+			ledger = army
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				army_logistics_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	####NON EXILE ->>PURGE
 	MAN_sun_qichang = {
 		name = "Sun Qichang"
 		portraits={
@@ -301,6 +475,11 @@ characters={
 			}
 		}
 		advisor = {
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
 			slot = political_advisor
 			idea_token = sun_qichang
 			allowed = {
@@ -311,7 +490,115 @@ characters={
 			}
 		}
 	}
-	
+	####NON EXILE ->> PURGE
+	MAN_megata_toshiro = {
+		name=MAN_megata_toshiro
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_2"
+			}
+		}	
+
+		advisor = {
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			slot = political_advisor
+			idea_token = MAN_megata_toshiro
+			allowed = {
+				original_tag = MAN
+			}
+			cost = 150
+			traits = { armaments_organizer }
+			ai_will_do = {
+				factor = 0.250
+			}
+		}
+	}
+	MAN_songgotu_zhanshan = {
+		name=MAN_songgotu_zhanshan
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_1"
+			}
+		}	
+
+		advisor = {
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			slot = political_advisor
+			idea_token = MAN_songgotu_zhanshan
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = MAN_invite_japanese_investors
+			}
+			cost = 150
+			traits = { economist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	####+Exile
+	MAN_naoki_hoshino = {
+		name = "Hoshino Naoki"
+		portraits={
+			civilian={
+				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_3.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = naoki_hoshino
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = MAN_support_naoki_hoshino
+				OR = {
+					is_puppet_of = JAP
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			traits = {
+				war_economist_trait
+			}
+		}
+	}
+	###+EXILE 
+	MAN_yoshisuke_aikawa = {
+		name = "Aikawa Yoshisuke"
+		portraits={
+			civilian={
+				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_2.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = yoshisuke_aikawa
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = MAN_support_aikawa_yoshisuke
+				OR = {
+					is_puppet_of = JAP
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			traits = {
+				founder_of_nissan_trait
+			}
+		}
+	}
+	####NON EXILE ->>PURGE
 	MAN_zheng_xiaoxu = {
 		name = "Zheng Xiaoxu"
 		portraits={
@@ -320,72 +607,70 @@ characters={
 			}
 		}
 		advisor = {
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
 			slot = political_advisor
 			idea_token = zheng_xiaoxu
 			allowed = {
 				original_tag = MAN
 			}
 			traits = {
-				silent_workhorse
+				national_integralist
 			}
 		}
 	}
-	
-	MAN_xie_jieshi = {
-		name = MAN_xie_jieshi
+	###NON EXILE --> purge
+	MAN_lian_yu = {
+		name = "Lian Yu"
+		portraits={
+			civilian={
+				small = "gfx/interface/ideas/idea_generic_fascist_asia.dds"
+			}
+		}
+		advisor = {
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
+			}
+			slot = political_advisor
+			idea_token = lian_yu
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				fascist_demagogue
+			}
+		}
+	}
+	####NON EXILE --> PURGE
+	MAN_runqi = {
+		name = "Runqi"
 		portraits={
 			civilian={
 				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_3.dds"
 			}
 		}
 		advisor = {
-			slot = political_advisor
-			idea_token = MAN_xie_jieshi
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				AFG_minister_foreign_affairs
-			}
-		}
-	}
-	
-	MAN_yoshisuke_aikawa = {
-		name = MAN_yoshisuke_aikawa
-		portraits={
-			civilian={
-				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_2.dds"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = MAN_yoshisuke_aikawa
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				is_subject_of = JAP
-				has_completed_focus = MAN_support_aikawa
-			}
-			traits = {
-				captain_of_industry
-			}
-			on_add = {
-				owner = {
-					if = {
-						limit = {
-							is_subject = yes
-						}
-						add_autonomy_ratio = {
-							value = -0.2
-							localization = MAN_yoshisuke_aikawa
-						}
-					}
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
 				}
 			}
+			slot = political_advisor
+			idea_token = runqi
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				royalist_bulldog
+			}
 		}
 	}
-	
+	####NON EXILE ---> PURGE
 	MAN_lu_ronghuan = {
 		name = "Lu Ronghuan"
 		portraits={
@@ -398,6 +683,11 @@ characters={
 			idea_token = MAN_lu_ronghuan
 			allowed = {
 				original_tag = MAN
+			}
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_exile_takeover
+				}
 			}
 			available = {
 				OR = {
@@ -412,155 +702,21 @@ characters={
 			}
 		}
 	}
-	
-	MAN_kim_chang_ryong = {
-		name = "Kim Chang-ryong"
-		portraits = {
-			civilian = {
-				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_3.dds"
-			}
-			army = {
-				large = "gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
-				small = "gfx/interface/ideas/idea_asia_generic_land_4.dds"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = MAN_kim_chang_ryong
-			allowed = {
-				original_tag  = MAN
-			}
-			available = {
-				OR = { 
-					is_subject_of = JAP
-					NOT = {
-						has_government = communism
-					}
-				}
-				KOR = {
-					NOT = {
-						has_idea = kim_chang_ryong
-					}
-				}
-			}
-			traits = {
-				head_of_intelligence
-			}
-		}
-		corps_commander = {
-			traits = { promising meticulous politically_connected }
-			skill = 2
-			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 1
-			legacy_id = -1
-			visible = {
-				OR = { 
-					is_subject_of = JAP
-					NOT = {
-						has_government = communism
-					}
-				}
-				KOR = {
-					NOT = {
-						has_idea = kim_chang_ryong
-					}
-				}
-			}
-		}
-	}
-	
-	MAN_zhang_yangqing = {
-		name = "Zhang Yangqing"
-		portraits={
-			civilian={
-				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_3.dds"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zhang_yangqing
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				smooth_talking_charmer
-			}
-		}
-	}
-	
-	MAN_naoki_hoshino = {
-		name = MAN_naoki_hoshino
-		portraits={
-			civilian={
-				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_3.dds"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = MAN_naoki_hoshino
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				is_subject_of = JAP
-				has_completed_focus = MAN_support_hoshino
-			}
-			traits = {
-				war_industrialist
-			}
-			on_add = {
-				owner = {
-					if = {
-						limit = {
-							is_subject = yes
-						}
-						add_autonomy_ratio = {
-							value = -0.3
-							localization = MAN_naoki_hoshino
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	MAN_ruan_zhenduo = {
-		name = "Ruan Zhenduo"
-		portraits={
-			civilian={
-				small = "gfx/interface/ideas/idea_generic_political_advisor_asia_2.dds"
-			}
-		}
-		country_leader={
-			ideology= fascism_ideology
-			expire="1967.7.17.1"
-			id=-1
-			traits={
-				eager_collaborator
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = ruan_zhenduo
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				education_reformer
-			}
-		}
-	}
-	
-	#military theorists and advisors#
-	
-
-	MAN_kenkichi_ueda={
+	####EXILE
+	MAN_kenkichi_ueda = {
 		name= MAN_kenkichi_ueda
 		portraits={
 			army={
-				small = "gfx/interface/ideas/idea_JAP_kenkichi_ueda.dds"
+				large=GFX_portrait_JAP_kenkichi_ueda
+				small=GFX_portrait_JAP_kenkichi_ueda_small
+			}
+		}
+		country_leader = {
+			ideology = rexism
+			expire = "1965.1.1.1"
+			traits = { 
+				kwantung_leader
+				kwantung_exile
 			}
 		}
 		advisor={
@@ -569,24 +725,24 @@ characters={
 			allowed = {
 				original_tag = MAN
 			}
-			
+			cost = 100
 			available = {
-				OR = {
-					has_completed_focus = MAN_establish_continental_frontier_army
-					has_completed_focus = MAN_the_kwantung_connection
+				NOT = {
+					has_completed_focus = MAN_independence_war
 				}
 			}
 			traits = {
-				army_regrouping_3
+				army_infantry_2
 			}
 		}
 	}
-
+	####EXILE
 	MAN_toshizo_nishio={
 		name= MAN_toshizo_nishio 
 		portraits={
 			army={
-				small = "gfx/interface/ideas/idea_JAP_toshizo_nishio.dds"
+				large=GFX_portrait_JAP_toshizo_nishio
+				small=GFX_portrait_JAP_toshizo_nishio_small
 			}
 		}
 		advisor={
@@ -595,23 +751,38 @@ characters={
 			allowed = {
 				original_tag = MAN
 			}
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_independence_war
+				}
+			}
+			cost = 100
 			available = {
-				OR = {
-					has_completed_focus = MAN_establish_continental_frontier_army
-					has_completed_focus = MAN_the_kwantung_connection
+				NOT = {
+					has_completed_focus = MAN_independence_war
 				}
 			}
 			traits = {
-				superior_firepower_expert
+				grand_battle_plan_expert
 			}
 		}
 	}
-
-	MAN_itagaki_seishiro={
+	####EXILE
+	MAN_itagaki_seishiro ={
 		name= MAN_itagaki_seishiro 
 		portraits={
 			army={
-				small = "gfx/interface/ideas/idea_JAP_seishiro_itagaki.dds"
+				large=GFX_portrait_JAP_seishiro_itagaki
+				small=GFX_portrait_JAP_seishiro_itagaki_small
+			}
+		}
+		country_leader = {
+			ideology = rexism
+			expire = "1965.1.1.1"
+			traits = { 
+				kwantung_intelligence
+				kwantung_staff
+				kwantung_exile
 			}
 		}
 		advisor={
@@ -620,15 +791,18 @@ characters={
 			allowed = {
 				original_tag = MAN
 			}
-			
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_independence_war
+				}
+			}
 			available = {
-				OR = {
-					has_completed_focus = MAN_establish_continental_frontier_army
-					has_completed_focus = MAN_the_kwantung_connection
+				NOT = {
+					has_completed_focus = MAN_independence_war
 				}
 			}
 			traits = {
-				army_infantry_2
+				army_regrouping_2
 			}
 		}
 		advisor={
@@ -637,8 +811,16 @@ characters={
 			allowed = {
 				original_tag = MAN
 			}
+			visible = {
+				NOT = {
+					has_completed_focus = MAN_independence_war
+				}
+			}
 			available = {
-				is_subject_of = JAP
+				OR = {
+					has_completed_focus = MAN_exile_takeover
+					is_subject_of = JAP
+				}
 			}
 			traits = {
 				military_theorist
@@ -658,41 +840,36 @@ characters={
 			}
 		}
 	}
-	
+	#####EXILE
 	MAN_doihara_kenji={
 		name= MAN_doihara_kenji
 		portraits={
 			army={
-				small = "gfx/interface/ideas/idea_JAP_kenji_doihara.dds"
-				
-			}
-			civilian = {
-				large = "gfx/leaders/JAP/Portrait_Japan_Kenji_Doihara.dds"
+				small="GFX_idea_kenji_doihara"
+				large=GFX_portrait_JAP_kenji_doihara
 			}
 		}
-		country_leader = {
-			ideology = fascism_ideology
-			expire="1967.7.17.1"
-			traits = {
-				army_connections
-			}
-		}
+		
 		advisor={
 			slot = army_chief
 			idea_token = doihara_kenji
 			allowed = {
 				original_tag = MAN
 			}
-			available = {
-				is_subject_of = JAP
+			visible = {
 				NOT = {
-					has_country_leader = {
-						character = MAN_doihara_kenji
-					}
+					has_completed_focus = MAN_independence_war
+				}
+			}
+			cost = 100
+			available = {
+				OR = {
+					has_completed_focus = MAN_exile_takeover
+					is_subject_of = JAP
 				}
 			}
 			traits = {
-				lawrence_of_manchuria
+				army_chief_offensive_2
 			}
 			on_add = {
 				owner = {
@@ -709,661 +886,146 @@ characters={
 			}
 		}
 	}
-
-	MAN_kishi_nobosuke = {
-		name= MAN_kishi_nobosuke 
+	####NON EXILE
+	MAN_zang_shiyi = {
+		name = "Zang Shiyi"
 		portraits={
 			civilian={
-				large="gfx/leaders/MAN/rt56_portrait_MAN_kishi_nobosuke.dds"
-				small = "gfx/interface/ideas/man/advisors/rt56_idea_MAN_kishi_nobosuke.dds"
-			}
-		}
-		country_leader={
-			ideology= fascism_ideology
-			expire="1967.7.17.1"
-			id=-1
-			traits={
-				monster_of_the_showa_era
+				small="GFX_idea_generic_political_advisor_asia_2"
 			}
 		}
 		advisor={
+			visible = {
+				has_completed_focus = MAN_exile_takeover
+			}
 			slot = political_advisor
-			idea_token = MAN_kishi_nobosuke
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				is_subject_of = JAP
-				NOT = {
-					has_country_leader = {
-						character = MAN_kishi_nobosuke
-					}
-				}
-			}
-			traits = {
-				economic_manager
-			}
-			on_add = {
-				owner = {
-					if = {
-						limit = {
-							is_subject = yes
-						}
-						add_autonomy_ratio = {
-							value = -0.15
-							localization = MAN_kishi_nobosuke
-						}
-					}
-				}
-			}
-		}
-	}
-
-	MAN_qi_xieyuan = {
-		name= MAN_qi_xieyuan
-		portraits={
-			civilian={
-				large="gfx/leaders/MAN/KR_portrait_MAN_qi_xieyuan.dds"
-				small = "gfx/interface/ideas/man/advisors/kr_idea_MAN_qi_xieyuan.dds"
-			}
-		}
-		country_leader={
-			ideology= fascism_ideology
-			expire="1967.7.17.1"
-			id=-1
-		}
-		advisor={
-			slot = army_chief
-			idea_token = MAN_qi_xieyuan
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				is_subject_of = JAP
-			}
-			traits = {
-				army_chief_organizational_2
-			}
-			on_add = {
-				owner = {
-					if = {
-						limit = {
-							is_subject = yes
-						}
-						add_autonomy_ratio = {
-							value = -0.05
-							localization = MAN_qi_xieyuan
-						}
-					}
-				}
-			}
-		}
-		field_marshal = {
-			traits = { politically_connected old_guard organizer }
-			skill = 4
-			attack_skill = 3
-			defense_skill = 5
-			planning_skill = 4
-			logistics_skill = 2
-			visible = {
-				has_country_flag = xieyuan_wins
-			}
-		}
-	}
-
-	MAN_aisin_gioro_pujie = {
-		name= MAN_aisin_gioro_pujie
-		portraits={
-			civilian={
-				large="gfx/leaders/MAN/r56_portrait_MAN_Aisin_Gioro_Pujie.dds"
-			}
-		}
-		country_leader={
-			ideology= fascism_ideology
-			expire="1967.7.17.1"
-			id=-1
-		}
-		corps_commander = {
-			traits = { media_personality  }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			visible = {
-				has_country_flag = pujie_wins
-			}
-		}
-	}
-
-	
-	
-	MAN_muto_nobuyoshi={
-		name= MAN_muto_nobuyoshi
-		portraits={
-			army={
-				small = "gfx/interface/ideas/idea_JAP_nobuyoshi_muto.dds"
-			}
-		}
-		advisor={
-			slot = army_chief
-			idea_token = muto_nobuyoshi
-			allowed = {
-				original_tag = MAN
-			}
-			
-			available = {
-				is_subject_of = JAP
-			}
-			traits = {
-				army_chief_drill_1
-			}
-			on_add = {
-				owner = {
-					if = {
-						limit = {
-							is_subject = yes
-						}
-						add_autonomy_ratio = {
-							value = -0.05
-							localization = MAN_muto_nobuyoshi
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	MAN_kasahara_yukio={
-		name= MAN_yukio_kasahara
-		portraits={
-			army={
-				small = "gfx/interface/ideas/idea_asia_generic_land_5.dds"
-			}
-		}
-		advisor={
-			slot = army_chief
-			idea_token = kasahara_yukio
-			allowed = {
-				original_tag = MAN
-			}
-			
-			available = {
-				is_subject_of = JAP
-			}
-			traits = {
-				army_chief_reform_3
-			}
-			on_add = {
-				owner = {
-					if = {
-						limit = {
-							is_subject = yes
-						}
-						add_autonomy_ratio = {
-							value = -0.2
-							localization = MAN_yukio_kasahara
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	MAN_kimura_heitaro={
-		name= MAN_heitaro_kimura
-		portraits={
-			army={
-				small = "gfx/interface/ideas/idea_generic_army_asia_2.dds"
-			}
-		}
-		advisor={
-			slot = army_chief
-			idea_token = kimura_heitaro
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				is_subject_of = JAP
-			}
-			traits = {
-				army_chief_organizational_2
-			}
-			on_add = {
-				owner = {
-					if = {
-						limit = {
-							is_subject = yes
-						}
-						add_autonomy_ratio = {
-							value = -0.15
-							localization = MAN_heitaro_kimura
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	MAN_tong_jixu={
-		name= "Tong Jixu"
-		portraits={
-			army={
-				large = "gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
-				small = "gfx/interface/ideas/idea_asia_generic_land_1.dds"
-			}
-		}
-		advisor={
-			slot = theorist
-			idea_token = tong_jixu
+			idea_token = zang_shiyi
 			allowed = {
 				original_tag  = MAN
 			}
 			available = {
-				OR = {
-					has_completed_focus = MAN_assertiveness
-					NOT = {
-						is_subject_of = JAP
-					}
-				}					
-			}
-			traits = {
-				air_warfare_theorist
-			}
-		}
-		advisor={
-			slot = air_chief
-			idea_token = tong_jixu_air_chief
-			ledger = air
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				OR = {
-					has_completed_focus = MAN_assertiveness
-					NOT = {
-						is_subject_of = JAP
-					}
-				}	
-				NOT = {
-					has_idea = tong_jixu_high_command
-				}
-			}
-			traits = {
-				air_chief_reform_2
-			}
-			cost = 100
-		}
-		advisor={
-			slot = high_command
-			idea_token = tong_jixu_high_command
-			ledger = air
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				OR = {
-					has_completed_focus = MAN_assertiveness
-					NOT = {
-						is_subject_of = JAP
-					}
-				}					
-				NOT = {
-					has_idea = tong_jixu_air_chief
-				}
-			}
-			traits = {
-				air_air_combat_training_2
-			}
-			cost = 100
-		}
-		corps_commander = {
-			traits = { air_force_ties }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-			visible = {
-				OR = {
-					has_completed_focus = MAN_assertiveness
-					NOT = {
-						is_subject_of = JAP
-					}
-				}	
-			}
-		}
-	}
-	
-	MAN_koreshige_inuzuka={
-		name= "Koreshige Inuzuka"
-		portraits={
-			navy={
-				large = "gfx/leaders/MAN/r56_portrait_MAN_koreshige_inuzuka.dds"
-				small = "gfx/interface/ideas/man/advisors/r56_idea_MAN_advisor_koreshige_inuzuka.dds"
-			}
-		}
-		advisor={
-			slot = theorist
-			idea_token = koreshige_inuzuka_theorist
-			allowed = {
-				original_tag  = MAN
-			}
-			traits = {
-				naval_theorist
-			}
-			cost = 100
-		}
-		advisor={
-			slot = navy_chief
-			idea_token = koreshige_inuzuka_navy_chief
-			ledger = navy
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				navy_chief_decisive_battle_2
-			}
-			cost = 100
-		}
-		advisor={
-			slot = high_command
-			idea_token = koreshige_inuzuka_high_command
-			ledger = navy
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				NOT = {
-					has_idea = koreshige_inuzuka_navy_chief
-				}
-			}
-			traits = {
-				navy_screen_2
-			}
-			cost = 100
-		}
-		navy_leader = {
-			traits = { ironside }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			maneuvering_skill = 1
-			coordination_skill = 1
-			legacy_id = -1
-		}
-	}
-	
-	MAN_yu_zhishan={
-		name= "Yu Zhishan"
-		portraits={
-			army={
-				large = "gfx/leaders/MAN/r56_portrait_MAN_Yu_Zhisan.dds"
-				small= "gfx/interface/ideas/man/advisors/r56_idea_MAN_advisor_yu_zhishan.dds"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = yu_zhishan
-			ledger = army
-			allowed = {
-				original_tag = MAN
-			}
-			available = {
-				OR = {
-					has_completed_focus = MAN_assertiveness
-					NOT = {
-						is_subject_of = JAP
-					}
-				}
-			}
-			traits = {
-				army_regrouping_2
-			}
-			cost = 100
-		}
-		field_marshal = {
-			traits = { homeland_connoisseur }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 2
-			legacy_id = -1
-		}
-	}
-	
-	MAN_xiqia ={
-		name= "Aisin Gioro Xiqia"
-		portraits={
-			army={
-				large = "gfx/leaders/MAN/portrait_man_aisin_gioro_xiqia.dds"
-				small= "gfx/interface/ideas/idea_MAN_aisin_gioro_xiqia.dds"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = xiqia
-			ledger = army
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				army_logistics_1
-			}
-		}
-		corps_commander = {
-			traits = { career_officer }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 1
-			visible = {
-				OR = {								#linked with having Puyi as leader?
-					has_government = fascism
-					has_government = neutrality
-				}
-			}
-		}
-	}
-	
-	MAN_yoshiko_kawashima={
-		name= MAN_yoshiko_kawashima
-		portraits={
-			army={
-				large = "gfx/leaders/MAN/r56_portrait_MAN_Yoshiko_Kawashima.dds"
-				small= "gfx/interface/ideas/man/advisors/r56_idea_MAN_yoshiko_kawashima.dds"
-			}
-		}
-		gender = female
-		advisor={
-			slot = high_command
-			idea_token = yoshiko_kawashima_high_command
-			ledger = army
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				joan_of_arc_of_manchukuo
-			}
-			available = {
-				OR = {
-					has_government = neutrality
-					has_government = fascism
-				}
-				OR = {
-					is_subject = no
-					is_subject_of = JAP
-				}
 				
 			}
-		}
-		corps_commander={
-			traits={ cavalry_officer }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=2
-			logistics_skill=2
-			legacy_id=-1
-			visible = {
-				OR = {								#linked with having Puyi as leader?
-					has_government = fascism
-					has_government = neutrality
-				}
+			traits = {
+				popular_figurehead
 			}
 		}
 	}
-	
-	MAN_nakajima_kesago={
-		name= MAN_nakajima_kesago
+	###EXILE
+	MAN_yasuji_okamura = {
+		name = MAN_yasuji_okamura
 		portraits={
 			army={
-				small= "gfx/interface/ideas/idea_generic_air_asia_2.dds"
+				small="GFX_idea_yasuji_okamura"
+				large="gfx/leaders/JAP/Portrait_Japan_Yasuji_Okamura.dds"
+			}
+		}
+		#advisor={
+		#	available = {
+		#		has_completed_focus = MAN_exile_takeover
+		#	}
+		#	slot = high_command
+		#	idea_token = yasuji_okamura
+		#	ledger = army
+		#	visible = {
+		#		has_completed_focus = MAN_exile_takeover
+		#	}
+		#	allowed = {
+		#		original_tag = MAN
+		#	}
+		#	traits = {
+		#		army_infantry_3
+		#	}
+		#	cost = 100
+		#	ai_will_do = {
+		#		factor = 3.000
+		#		modifier = {
+		#			factor = 3.000
+		#		}
+		#	}
+		#}
+
+		
+		#corps_commander={
+		#	visible = {
+		#		has_completed_focus = MAN_exile_takeover
+		#	}
+		#	traits={ infantry_expert brilliant_strategist fortress_buster }
+		#	skill=3
+		#	attack_skill=3
+		#	defense_skill=1
+		#	planning_skill=1
+		#	logistics_skill=1
+		#	legacy_id=0
+		#}
+	}
+	####EXILE
+	MAN_hatazo_adachi = {
+		name = MAN_hatazo_adachi
+		portraits={
+			army={
+				large=GFX_portrait_JAP_hatazo_adachi
+				small=GFX_portrait_JAP_hatazo_adachi_small
 			}
 		}
 		advisor={
-			slot = air_chief
-			idea_token = nakajima_kesago
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				air_chief_ground_support_2
-			}
-		}
-	}
-	
-	MAN_grigory_semyonov = {
-		name = "Grigory Semyonov"
-		portraits = {
-			army = {
-				small = "gfx/interface/ideas/sov/advisors/r56_idea_SOV_Grigory_semenov.dds"
-				large = "gfx/leaders/SOV/r56_portrait_SOV_Grigory_semenov.dds"
-			}
-		}
-
-		corps_commander = {
-			traits = { cavalry_officer cavalry_leader }
-			skill = 3
-			attack_skill = 4
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 3
-			legacy_id = 0
-			visible = {
-				has_completed_focus = MAN_white_russian_advisers
-				SOV = {
-					NOT = {
-						has_completed_focus = SOV_approach_semyonov
-					}
-				}
-			}
-		}
-
-		advisor = {
-			slot = political_advisor
-			idea_token = MAN_grigory_semyonov
-			allowed = {
-				original_tag = MAN
-			}
 			available = {
-				custom_trigger_tooltip = {
-					tooltip = SOV_grigory_semyonov_man_tt
-					SOV_soviet_civil_war_not_started = yes 
-					NOT = { SOV = { has_completed_focus = SOV_approach_semyonov } }
-				}
-				has_completed_focus = MAN_white_russian_advisers
+				has_completed_focus = MAN_exile_takeover
+			}
+			slot = army_chief
+			idea_token = hatazo_adachi
+			ledger = army
+			visible = {
+				has_completed_focus = MAN_exile_takeover
+			}
+			allowed = {
+				original_tag = MAN
 			}
 			traits = {
-				ataman_transbaikal_host
+				army_chief_defensive_2
 			}
-		}		
-	}
-	
-	MAN_konstantin_nechayev = {
-		name = "Konstantin Nechayev"
-		portraits = {
-			army = {
-				large = "gfx/leaders/MAN/r56_portrait_MAN_konstantin_nechayev.dds"
-				small = "gfx/interface/ideas/man/advisors/r56_idea_MAN_advisor_konstantin_nechayev.dds"
+			cost = 100
+			ai_will_do = {
+				factor = 3.000
+				modifier = {
+					factor = 3.000
+				}
 			}
 		}
-		advisor = {
+	}
+	###EXILE
+	MAN_shunroku_hata ={
+		name = MAN_shunroku_hata
+		portraits={
+			army={
+				small="GFX_idea_shunroku_hata"
+				large="gfx/leaders/JAP/Portrait_Japan_Shunroku_Hata.dds"
+			}
+		}
+		advisor={
+			available = {
+				has_completed_focus = MAN_exile_takeover
+			}
 			slot = high_command
-			idea_token = MAN_konstantin_nechayev
+			idea_token = shunroku_hata
 			allowed = {
 				original_tag = MAN
 			}
-			available = {
-				NOT = {
-					SOV = { 
-						has_idea = SOV_konstantin_nechaev
-					}
-				}
-				has_completed_focus = MAN_white_russian_advisers
+			visible = {
+				has_completed_focus = MAN_exile_takeover
 			}
 			traits = {
-				army_chief_morale_1
+				army_artillery_2
 			}
-		}
-		field_marshal = {
-			traits = { infantry_officer war_hero }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 3
-			visible = {
-				NOT = {
-					SOV = { 
-						has_idea = SOV_konstantin_nechaev
-					}
-				}
-				has_completed_focus = MAN_white_russian_advisers
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
-	
-	#generals#
-	
-	MAN_urzhin_garmaev={
-		name= "Urzhin Garmaev"
-		portraits={
-			army={
-				large = "gfx/leaders/MAN/r56_portrait_MAN_Urzhin_Garmaev.dds"
-				small= "gfx/interface/ideas/man/advisors/r56_idea_MAN_advisor_yu_zhishan.dds"
-			}
-		}
-		corps_commander = {
-			traits = { combined_arms_expert }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
-			legacy_id = -1
-		}
-	}
-	
-	MAN_zhang_haipeng={
-		name= "Zhang Haipeng"
-		portraits={
-			army={
-				large = "gfx/leaders/MAN/portrait_man_zhang_haipeng.dds"
-				small= "gfx/interface/ideas/idea_MAN_zhang_haipeng.dds"
-			}
-		}
-		corps_commander = {
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
-			legacy_id = -1
-		}
-	}
-	
+	### POLITICAL ADVISORS ###
+
+	# Girgory Semyonov in Soviet file
+
+
 }

@@ -21,11 +21,12 @@ NDefines.NDiplomacy.OPINION_FOR_DEMO_FROM_WT_GENERATION = -1.0		-- How much less
 --NDefines.NFocus.FOCUS_POINT_DAYS = 3.5
 ----------------------------------
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 30						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
-NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.1 -- 0.05
-NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 40 -- 24
+NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.0 -- 0.05
+NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 1000 -- 24
 NDefines.NCountry.STARTING_COMMAND_POWER = 10.0	-- 0				-- starting command power for every country
 NDefines.NCountry.GIE_EXILE_ARMY_LEADER_START_LEVEL = 1	--Starting level for exile leader  -- why 3?!
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
+NDefines.NCountry.BASE_MOBILIZATION_SPEED = 0.005
 ----------------------------------
 NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0					-- XP cost for adding a new equipment module in an empty slot when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0				-- XP cost for replacing one equipment module with an unrelated module when creating an equipment variant.
@@ -201,6 +202,8 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 0.0, -- NAVAL_MINES_SWEEPING
 0.0, -- MISSION_RECON
 0.0, -- NAVAL_PATROL
+0,0, -- BARRAGE
+0,0, -- SAM
 }
 ---------------------------------
 NDefines.NNavy.SUPPLY_NEED_FACTOR = 3	--- 4
