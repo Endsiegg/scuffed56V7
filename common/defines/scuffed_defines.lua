@@ -86,6 +86,7 @@ NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 2.5		-- 2 Base year ahead 
 NDefines.NTechnology.BASE_TECH_COST = 100					-- 110 Base cost for a tech. multiplied with tech cost and ahead of time penalties
 NDefines.NTechnology.USE_BONUS_REGRET_TIMER = 10 -- 3
 ----------------------------------
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2
 NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 50
 NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 50
 NDefines.NMilitary.RECON_SKILL_IMPACT = 6
