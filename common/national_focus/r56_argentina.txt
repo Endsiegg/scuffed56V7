@@ -1,4 +1,5 @@
-﻿focus_tree = {
+﻿#!gfx:interface\r56_goals.gfx
+focus_tree = {
 		id = argentinian_focus
 		
 		country = {
@@ -48,7 +49,7 @@
 		mutually_exclusive = { focus = ARG_military_academy }
 		x = 4
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			OR = {
 				ENG = {
@@ -65,11 +66,7 @@
 				}				
 			}
 			NOT = {
-				OR = {
-					has_tech = r56_guerilla_warfare
-					is_researching_technology = r56_guerilla_warfare
-				}
-				
+				has_doctrine = r56_guerilla_warfare
 			}
 		}
 		ai_will_do = {
@@ -88,7 +85,7 @@
 		mutually_exclusive = { focus = ARG_external_advisors }
 		x = 6
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			army_experience = 10
 			add_doctrine_cost_reduction = {
@@ -107,7 +104,7 @@
 		prerequisite = { focus = ARG_external_advisors focus = ARG_military_academy }
 		x = 2
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_motorized_army
@@ -125,7 +122,7 @@
 		prerequisite = { focus = ARG_motorized_army }
 		x = 1
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_study_foreign_tanks
@@ -143,7 +140,7 @@
 		prerequisite = { focus = ARG_motorized_army }
 		x = 3
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_mechanized_experiments
@@ -163,7 +160,7 @@
 		prerequisite = { focus = ARG_study_foreign_tanks }
 		x = 1
 		y = 4
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_tanks_modernization
@@ -181,7 +178,7 @@
 		relative_position_id = ARG_tanks_modernization
 		x = 2
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 
 			if = {
@@ -219,7 +216,7 @@
 		mutually_exclusive = { focus = ARG_heavy_tanks_experiments }
 		x = 0
 		y = 5
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_cruiser_tanks_experiments
@@ -238,7 +235,7 @@
 		mutually_exclusive = { focus = ARG_cruiser_tanks_experiments }
 		x = 2
 		y = 5
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_heavy_tanks_experiments
@@ -256,7 +253,7 @@
 		prerequisite = { focus = ARG_external_advisors focus = ARG_military_academy }
 		x = 5
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			army_experience = 5
 			add_tech_bonus = {
@@ -275,7 +272,7 @@
 		prerequisite = { focus = ARG_study_foreign_equipment }
 		x = 5
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			army_experience = 5
 			add_tech_bonus = {
@@ -294,7 +291,7 @@
 		prerequisite = { focus = ARG_equipment_modernization }
 		x = 4
 		y = 4
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = arg_std_equipment
 		}
@@ -307,7 +304,7 @@
 		prerequisite = { focus = ARG_equipment_modernization }
 		x = 6
 		y = 4
-		cost = 8
+		cost = 10
 		completion_reward = {
 			army_experience = 5
 			add_tech_bonus = {
@@ -326,7 +323,7 @@
 		prerequisite = { focus = ARG_equipment_innovation }
 		x = 6
 		y = 5
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_special_forces
@@ -371,7 +368,7 @@
 		prerequisite = { focus = ARG_external_advisors focus = ARG_military_academy }
 		x = 8
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_artillery_modernization
@@ -389,7 +386,7 @@
 		prerequisite = { focus = ARG_artillery_modernization }
 		x = 8
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_specialized_artillery
@@ -472,7 +469,7 @@
 		prerequisite = { focus = ARG_navy_reform }
 		x = 12
 		y = 1
-		cost = 8
+		cost = 10
 		
 		available = {
 			any_state = {
@@ -587,7 +584,7 @@
 		prerequisite = { focus = ARG_state_dockyards }
 		x = 12
 		y = 2
-		cost = 8
+		cost = 10
 		
 		available = {
 			any_state = {
@@ -702,7 +699,7 @@
 		prerequisite = { focus = ARG_navy_reform }
 		x = 14
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			navy_experience = 50
 			add_ideas = arg_overseas_officers
@@ -716,7 +713,7 @@
 		prerequisite = { focus = ARG_overseas_officer_training }
 		x = 14
 		y = 3
-		cost = 8
+		cost = 10
 		
 		available = {
 			NOT = {
@@ -736,7 +733,7 @@
 		prerequisite = { focus = ARG_navy_reform }
 		x = 19
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = ARG_fleet_modernization
@@ -755,7 +752,7 @@
 		mutually_exclusive = { focus = ARG_submarines_modernization }
 		x = 16
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_screening_ships_modernization
@@ -791,7 +788,7 @@
 		prerequisite = { focus = ARG_screening_ships_modernization }
 		x = 16
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_cruisers_modernization
@@ -821,7 +818,7 @@
 		mutually_exclusive = { focus = ARG_screening_ships_modernization }
 		x = 18
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_submarines_modernization
@@ -850,7 +847,7 @@
 		prerequisite = { focus = ARG_submarines_modernization }
 		x = 18
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_submarines_experiments
@@ -882,7 +879,7 @@
 		mutually_exclusive = { focus = ARG_carrier_development }
 		x = 20
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_capital_ships_development
@@ -906,7 +903,7 @@
 		prerequisite = { focus = ARG_capital_ships_development }
 		x = 20
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_capital_ships_modernization
@@ -939,7 +936,7 @@
 		mutually_exclusive = { focus = ARG_capital_ships_development }
 		x = 22
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_carrier_development
@@ -965,7 +962,7 @@
 		prerequisite = { focus = ARG_carrier_development }
 		x = 22
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = ARG_carrier_modernization
@@ -1004,7 +1001,7 @@
 		prerequisite = { focus = ARG_cruisers_modernization focus = ARG_submarines_experiments focus = ARG_capital_ships_modernization focus = ARG_carrier_modernization }
 		x = 19
 		y = 4
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = SPR_navy_modernization
@@ -1077,7 +1074,7 @@
 		mutually_exclusive = { focus = ARG_bomber_modernization }
 		x = 23
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			if = {
 				limit = {
@@ -1179,7 +1176,7 @@
 		prerequisite = { focus = ARG_air_force_reform }
 		x = 26
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			air_experience = 50
 			add_ideas = arg_aviation_schools
@@ -1199,7 +1196,7 @@
 		prerequisite = { focus = ARG_aviation_schools }
 		x = 25
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = ARG_air_innovations
@@ -1225,7 +1222,7 @@
 		prerequisite = { focus = ARG_aviation_schools }
 		x = 27
 		y = 3
-		cost = 8
+		cost = 10
 		completion_reward = {
 			random_owned_state = {
 				prioritize = {26 }			
@@ -1253,7 +1250,7 @@
 		prerequisite = { focus = ARG_aviation_schools }
 		x = 26
 		y = 4
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = ARG_air_doctrine
@@ -1284,7 +1281,7 @@
 		prerequisite = { focus = ARG_carrier_modernization focus = ARG_air_innovations }
 		x = 23
 		y = 4
-		cost = 8
+		cost = 10
 		completion_reward = {
 			if = {
 				limit  = {
@@ -1319,7 +1316,7 @@
 			icon = GFX_goal_generic_consumer_goods
 			x = 34
 			y = 0
-			cost = 8
+			cost = 10
 
 			ai_will_do = {
 				factor = 20
@@ -1336,7 +1333,7 @@
 			prerequisite = { focus = ARG_industrial_census }
 			x = 31
 			y = 2
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				add_ideas = imports_substitution #Increase Building speed
@@ -1350,7 +1347,7 @@
 			prerequisite = { focus = ARG_end_of_economic_depresion }
 			x = 41
 			y = 1
-			cost = 8
+			cost = 10
 				
 			completion_reward = {
 				add_ideas = establish_the_bcra
@@ -1402,7 +1399,7 @@
 			prerequisite = { focus = ARG_end_of_economic_depresion }
 			x = 37
 			y = 1
-			cost = 8
+			cost = 10
 
 			bypass = {
 				custom_trigger_tooltip = {
@@ -1467,7 +1464,7 @@
 			prerequisite = { focus = ARG_mil_production_effort }
 			x = 37
 			y = 2
-			cost = 8
+			cost = 10
 
 			bypass = {
 				custom_trigger_tooltip = {
@@ -1532,7 +1529,7 @@
 			prerequisite = { focus = ARG_mil_production_effort_2 }
 			x = 37
 			y = 3
-			cost = 8
+			cost = 10
 
 			bypass = {
 				custom_trigger_tooltip = {
@@ -1597,7 +1594,7 @@
 		prerequisite = { focus = ARG_mil_production_effort_3 }
 		x = 37
 		y = 4
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 				add_tech_bonus = {
@@ -1649,7 +1646,7 @@
 				prerequisite = { focus = ARG_end_of_economic_depresion }
 				x = 34
 				y = 1
-				cost = 8
+				cost = 10
 				
 				completion_reward = {
 					random_owned_state = {
@@ -1717,7 +1714,7 @@
 				prerequisite = { focus = ARG_infrastructure_development }
 				x = 34
 				y = 2
-				cost = 8
+				cost = 10
 				
 				completion_reward = {
 					random_owned_state = {
@@ -1785,7 +1782,7 @@
 				prerequisite = { focus = ARG_imports_substitution focus = ARG_mil_production_effort_2 }
 				x = 34
 				y = 3
-				cost = 8
+				cost = 10
 
 				ai_will_do = {
 					factor = 150		
@@ -1804,7 +1801,7 @@
 				prerequisite = { focus = ARG_end_of_economic_depresion }
 				x = 31
 				y = 1
-				cost = 8
+				cost = 10
 				
 				completion_reward = {
 					add_ideas = arg_industrial_census
@@ -1848,7 +1845,7 @@
 				prerequisite = { focus = ARG_imports_substitution }
 				x = 31
 				y = 3
-				cost = 8
+				cost = 10
 				
 				completion_reward = {
 					random_owned_state = {
@@ -1891,7 +1888,7 @@
 			prerequisite = { focus = ARG_industrial_development }
 			x = 31
 			y = 4
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				random_owned_state = {
@@ -1934,7 +1931,7 @@
 			prerequisite = { focus = ARG_industrial_development_2 }
 			x = 31
 			y = 5
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				random_owned_state = {
@@ -1977,7 +1974,7 @@
 				prerequisite = { focus = ARG_imports_substitution }
 				x = 29
 				y = 3
-				cost = 8
+				cost = 10
 				
 				completion_reward = {
 					random_owned_state = {
@@ -2021,7 +2018,7 @@
 				prerequisite = { focus = ARG_technological_initiative }
 				x = 35
 				y = 4
-				cost = 8
+				cost = 10
 				
 				completion_reward = {
 					add_tech_bonus = {
@@ -2049,7 +2046,7 @@
 				prerequisite = { focus = ARG_pioneers focus = ARG_nuclear_committe focus = ARG_proving_grounds }
 				x = 36
 				y = 5
-				cost = 8
+				cost = 10
 				
 				completion_reward = {
 					add_tech_bonus = {
@@ -2081,7 +2078,7 @@
 				prerequisite = { focus = ARG_technological_initiative }
 				x = 33
 				y = 4
-				cost = 8
+				cost = 10
 				ai_will_do = {
 					factor = 1
 					modifier = {
@@ -2126,7 +2123,7 @@
 				prerequisite = { focus = ARG_nuclear_committe focus = ARG_pioneers }
 				x = 34
 				y = 5
-				cost = 8
+				cost = 10
 
 				ai_will_do = {
 					factor = 150		
@@ -2151,7 +2148,7 @@
 				icon = GFX_goal_generic_propaganda
 				x = 53
 				y = 0
-				cost = 8
+				cost = 10
 
 				ai_will_do = {
 					factor = 30		
@@ -2196,7 +2193,7 @@
 				mutually_exclusive = { focus = ARG_nationalism }
 				x = 49
 				y = 2
-				cost = 8
+				cost = 10
 
 				ai_will_do = {
 					factor = 3
@@ -2243,9 +2240,9 @@
 			}
 
 			completion_reward = {
-				add_political_power = 50
-				custom_effect_tooltip = available_political_advisor
-				show_ideas_tooltip = ARG_julio_meinvielle
+				add_political_power = 100
+				#custom_effect_tooltip = available_political_advisor
+				#show_ideas_tooltip = ARG_julio_meinvielle
 			}
 		}		
 		focus = {
@@ -2355,17 +2352,17 @@
 				prerequisite = { focus = ARG_militarism }
 				x = 43
 				y = 5
-				cost = 8
+				cost = 10
 
 				available = {
-					is_puppet = no
+					is_subject = no
 					has_army_manpower = { size > 450000 } 	
 					ENG = { owns_state = 299 }
 				}
 				
 				bypass = {
 					OR = {
-						ENG = { is_puppet_of = ARG }
+						ENG = { is_subject_of = ARG }
 						ARG = { owns_state = 299 }
 						has_war_with = ENG
 					}
@@ -2388,17 +2385,17 @@
 				prerequisite = { focus = ARG_malvinas_argentinas }
 				x = 43
 				y = 6
-				cost = 8
+				cost = 10
 
 				available = {
-					is_puppet = no
+					is_subject = no
 					has_army_manpower = { size > 450000 } 		
 					ENG = { owns_state = 720 }
 				}
 				
 				bypass = {
 					OR = {
-						ENG = { is_puppet_of = ARG }
+						ENG = { is_subject_of = ARG }
 						ARG = { owns_state = 720 }
 						has_war_with = ENG
 					}
@@ -2423,7 +2420,7 @@
 				cost = 5
 			
 				available = {
-					is_puppet = no
+					is_subject = no
 					has_army_manpower = { size > 100000 } 		
 				}
 				
@@ -2455,17 +2452,17 @@
 				prerequisite = { focus = ARG_claim_uruguay }
 				x = 41
 				y = 6
-				cost = 8
+				cost = 10
 				
 				available = {
 					country_exists = URG
-					is_puppet = no
+					is_subject = no
 					has_army_manpower = { size > 100000 } 		
 				}
 				
 				bypass = {
 					OR = {
-						URG = { is_puppet_of = ARG }
+						URG = { is_subject_of = ARG }
 						NOT = { country_exists = URG }
 						ARG = { 
 							owns_state = 300 							
@@ -2488,10 +2485,10 @@
 				prerequisite = { focus = ARG_uruguay_ocupation }
 				x = 42
 				y = 7
-				cost = 8
+				cost = 10
 				
 				available = {
-					is_puppet = no
+					is_subject = no
 					has_army_manpower = { size > 150000 } 		
 				}
 				
@@ -2527,10 +2524,10 @@
 				prerequisite = { focus = ARG_claim_paraguay }
 				x = 42
 				y = 8
-				cost = 8
+				cost = 10
 			
 				available = {
-					is_puppet = no
+					is_subject = no
 					has_army_manpower = { size > 150000 } 		
 				}
 				
@@ -2568,10 +2565,10 @@
 				prerequisite = { focus = ARG_uruguay_ocupation }
 				x = 40
 				y = 7
-				cost = 8
+				cost = 10
 				
 				available = {
-					is_puppet = no
+					is_subject = no
 					has_army_manpower = { size > 150000 } 		
 				}
 				
@@ -2618,14 +2615,14 @@
 			relative_position_id = ARG_claim_chile
 			x = 1
 			y = 2
-			cost = 8
+			cost = 10
 			
 			available = {
-				is_puppet = no
+				is_subject = no
 				has_army_manpower = { size > 200000 }
 				CHL = {
 					OR = {
-						is_puppet_of = ROOT
+						is_subject_of = ROOT
 						is_in_faction_with = ROOT
 						exists = no
 						num_of_controlled_states < 1
@@ -2633,7 +2630,7 @@
 				}
 				BOL = {
 					OR = {
-						is_puppet_of = ROOT
+						is_subject_of = ROOT
 						is_in_faction_with = ROOT
 						exists = no
 						num_of_controlled_states < 1
@@ -2650,7 +2647,7 @@
 				OR = {
 					NOT = { country_exists = BRA }
 					BRA = {
-						is_puppet_of = ROOT
+						is_subject_of = ROOT
 					}
 				}
 				
@@ -2682,7 +2679,7 @@
 			prerequisite = { focus = ARG_join_the_axis_r56 }
 			x = 41
 			y = 4
-			cost = 8
+			cost = 10
 			
 			available = {
 				country_exists = GER
@@ -2732,7 +2729,7 @@
 
 
 			available = {
-				is_puppet = no
+				is_subject = no
 				OR = {
 					has_government = fascism
 					fascism > 0.45
@@ -2759,7 +2756,7 @@
 
 			x = 42
 			y = 3
-			cost = 8
+			cost = 10
 			
 
 			
@@ -2951,7 +2948,7 @@
 			prerequisite = { focus = ARG_national_fanatism focus = ARG_join_the_axis_r56 }
 			x = 43
 			y = 4
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				if = {
@@ -2970,7 +2967,7 @@
 			prerequisite = { focus = ARG_national_fanatism }
 			x = 45
 			y = 4
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				add_ideas = military_youth_focus
@@ -2998,7 +2995,7 @@
 			prerequisite = { focus = ARG_military_youth }
 			x = 45
 			y = 5
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				add_ideas = paramilitarism_focus
@@ -3014,10 +3011,10 @@
 				mutually_exclusive = { focus = ARG_join_the_axis_r56 }
 				x = 44
 				y = 3
-				cost = 8
+				cost = 10
 
 				available = {
-					is_puppet = no
+					is_subject = no
 				}
 				
 				completion_reward = {
@@ -3035,7 +3032,7 @@
 				prerequisite = { focus = ARG_argentinas_destiny }
 				x = 51
 				y = 2
-				cost = 8
+				cost = 10
 				
 				available = {
 					country_exists = ENG
@@ -3112,7 +3109,7 @@
 				prerequisite = { focus = ARG_ussr_coop }
 				x = 48
 				y = 4
-				cost = 8
+				cost = 10
 
 				available = {
 					NOT = { has_war_with = SOV }
@@ -3149,7 +3146,7 @@
 				relative_position_id = ARG_ussr_research_agreement
 				x = 0
 				y = 1
-				cost = 8
+				cost = 10
 
 				available = {
 					NOT = { has_war_with = SOV }
@@ -3173,7 +3170,7 @@
 				mutually_exclusive = { focus = ARG_internationalism }
 				relative_position_id = ARG_ussr_four_year_plan
 				available = {
-					is_puppet = no
+					is_subject = no
 					OR = {
 						has_government = communism
 						communism > 0.4
@@ -3199,7 +3196,7 @@
 				}	
 				x = 0
 				y = 2
-				cost = 8
+				cost = 10
 				
 
 
@@ -3240,7 +3237,7 @@
 			prerequisite = { focus = ARG_land_of_the_worker }
 			x = 50
 			y = 3
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				if = {
@@ -3260,7 +3257,7 @@
 			relative_position_id = ARG_political_correctness
 			x = 0
 			y = 1
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				add_ideas = indoctrination_focus
@@ -3272,7 +3269,7 @@
 			id = ARG_communist_secret_police
 			text = POR_communist_secret_police
 			icon = GFX_focus_SOV_military_purge
-			cost = 8
+			cost = 10
 			prerequisite = {
 				focus = ARG_political_correctness
 			}
@@ -3397,7 +3394,7 @@
 			relative_position_id = ARG_indoctrination_focus
 			x = 0
 			y = 1
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				add_ideas = political_commissars_focus
@@ -3421,14 +3418,14 @@
 		}
 		focus = {
 			id = ARG_red_army
-			text = MLI_red_army
+			text = WAF_red_army
 			icon = GFX_postive_heroism
 			prerequisite = { focus = ARG_political_commissars }
 			x = 1
 			y = 1
 			relative_position_id = ARG_political_commissars
 		
-			cost = 8
+			cost = 10
 		
 			ai_will_do = {
 				factor = 12
@@ -3436,7 +3433,7 @@
 		
 			available = {
 				has_government = communism
-				land_doctrine_level > 0
+				has_100_land_doctrine_mastery = yes
 			}
 		
 			search_filters = { FOCUS_FILTER_MANPOWER }
@@ -3472,10 +3469,10 @@
 			relative_position_id = ARG_political_commissars
 			x = 0
 			y = 2
-			cost = 8
+			cost = 10
 			
 			available = {
-				is_puppet = no
+				is_subject = no
 			}
 			
 			completion_reward = {
@@ -3513,13 +3510,13 @@
 				NOT = {
 					URG = {
 						OR = {
-							is_puppet_of = ROOT
+							is_subject_of = ROOT
 							is_in_faction_with = ROOT
 						}
 						
 					}
 				}
-				is_puppet = no
+				is_subject = no
 				surrender_progress  < 0.1
 				has_army_manpower = { size > 100000 } 		
 			}
@@ -3553,16 +3550,16 @@
 		relative_position_id = ARG_internationalism
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		
 		available = {
-			is_puppet = no
+			is_subject = no
 			has_army_manpower = { size > 150000 } 		
 			surrender_progress  < 0.1
 			NOT = {
 				PAR = {
 					OR = {
-						is_puppet_of = ROOT
+						is_subject_of = ROOT
 						is_in_faction_with = ROOT
 					}
 					
@@ -3806,7 +3803,10 @@
 
 			completion_reward = {
 				set_rule = { can_create_factions = yes }
-				create_faction = la_patria_grande_faction
+				create_faction_from_template = {
+					name = la_patria_grande_faction
+					template = faction_template_regional
+				}
 				custom_effect_tooltip = ARG_la_patria_grande_tt
 				hidden_effect = {
 				#	if = { # this is bad design better but still bad version below
@@ -4051,7 +4051,7 @@
 			prerequisite = { focus = ARG_one_mind }
 			x = 55
 			y = 3
-			cost = 8
+			cost = 10
 								
 			completion_reward = {
 				add_manpower = 50000
@@ -4065,7 +4065,7 @@
 #				prerequisite = { focus = ARG_south_americas_talks }
 #				x = 55
 #				y = 4
-#				cost = 8
+#				cost = 10
 #				
 #				available = {
 #					country_exists = URG
@@ -4074,7 +4074,7 @@
 #				bypass = {
 #					OR = {
 #						NOT = { has_war_with = URG}
-#						URG = { is_puppet = yes }
+#						URG = { is_subject = yes }
 #					}
 #				}
 #				
@@ -4092,7 +4092,7 @@
 #				prerequisite = { focus = ARG_south_americas_talks }
 #				x = 55
 #				y = 6
-#				cost = 8
+#				cost = 10
 #				
 #				completion_reward = {
 #					BOL = {
@@ -4108,7 +4108,7 @@
 #				prerequisite = { focus = ARG_south_americas_talks }
 #				x = 55
 #				y = 5
-#				cost = 8
+#				cost = 10
 #				
 #				completion_reward = {
 #					PAR = {
@@ -4125,7 +4125,7 @@
 #			prerequisite = { focus = ARG_south_americas_talks }
 #			x = 55
 #			y = 7
-#			cost = 8
+#			cost = 10
 #				
 #			completion_reward = {
 #				CHL = {
@@ -4162,7 +4162,7 @@
 				
 			available = {
 				country_exists = BRA
-				BRA = { is_puppet = no}
+				BRA = { is_subject = no}
 			}
 				
 			cancel = {
@@ -4191,7 +4191,7 @@
 			
 			available = {
 					country_exists = BRA
-					BRA = { is_puppet = no}
+					BRA = { is_subject = no}
 				}
 				
 			cancel = {
@@ -4229,7 +4229,7 @@
 #				prerequisite = { focus = ARG_brazil_coop }
 #				x = 46
 #				y = 6
-#				cost = 8
+#				cost = 10
 #
 #				completion_reward = {
 #				
@@ -4266,7 +4266,7 @@
 			mutually_exclusive = { focus = ARG_external_help_focus }
 			x = 66
 			y = 3
-			cost = 8
+			cost = 10
 			ai_will_do = {
 				factor = 10
 			}
@@ -4289,7 +4289,7 @@
 			relative_position_id = ARG_neutrality
 			x = 0
 			y = 1
-			cost = 8
+			cost = 10
 				
 			completion_reward = {
 				add_ideas = arg_political_repression
@@ -4322,10 +4322,10 @@
 			relative_position_id = ARG_usa_coop
 			x = 1
 			y = 1
-			cost = 8
+			cost = 10
 			
 			available = {
-				is_puppet = no
+				is_subject = no
 				is_in_faction = no
 				any_other_country = {
 					is_major = yes
@@ -4383,7 +4383,7 @@
 			relative_position_id = ARG_join_the_defense_of_the_hemisphere
 			x = -1
 			y = 2
-			cost = 8
+			cost = 10
 
 			bypass = {
 				custom_trigger_tooltip = {
@@ -4444,7 +4444,7 @@
 			relative_position_id = ARG_join_the_defense_of_the_hemisphere
 			x = 0
 			y = 1
-			cost = 8
+			cost = 10
 
 			bypass = {
 	
@@ -4508,7 +4508,7 @@
 				prerequisite = { focus = ARG_usa_military_coop }
 				x = 59
 				y = 6
-				cost = 8
+				cost = 10
 				
 				completion_reward = {
 					add_tech_bonus = {
@@ -4535,7 +4535,7 @@
 			relative_position_id = ARG_uk_coop
 			x = 0
 			y = 1
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				add_timed_idea = { idea = arg_malbran days = 365 }
@@ -4555,7 +4555,7 @@
 			relative_position_id = ARG_eden_malbran_treaty
 			x = -1
 			y = 1
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				add_ideas = industrial_coop
@@ -4576,7 +4576,7 @@
 			relative_position_id = ARG_eden_malbran_treaty
 			x = 1
 			y = 1
-			cost = 8
+			cost = 10
 			
 			completion_reward = {
 				add_ideas = naval_coop
@@ -4593,7 +4593,7 @@
 			relative_position_id = ARG_uk_industrial_coop
 			x = 1
 			y = 1			
-			cost = 8
+			cost = 10
 			
 			available = {
 				OR = {

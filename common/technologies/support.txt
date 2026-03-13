@@ -74,7 +74,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 0.01
+		research_cost = 1.0
 		start_year = 1918
 		folder = {
 			name = support_folder
@@ -116,7 +116,7 @@ technologies = {
 		}
 
 		enable_equipment_modules = { 
-		#	flamethrower #now a SP
+			#flamethrower now a SP
 		}
 
 		categories = {
@@ -173,18 +173,15 @@ technologies = {
 		}
 
 		on_research_complete = {
-			complete_special_project = {
-			project = sp:sp_land_flamethrower_tank
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				custom_effect_tooltip = {
+					localization_key = SP_UNLOCK_PROJECT
+					PROJECT = sp_land_flamethrower_tank	
+				}
 			}
-			# if = {
-			# 	limit = {
-			# 		has_dlc = "No Step Back"
-			# 	}
-			# 	custom_effect_tooltip = {
-			# 		localization_key = SP_UNLOCK_PROJECT
-			# 		PROJECT = sp_land_flamethrower_tank	
-			# 	}
-			# }
 		}
 	}
 ###------> Old Engineers <><> <><> <><> <><> <><>

@@ -1,4 +1,5 @@
-﻿focus_tree = {
+﻿#!gfx:interface\r56_goals.gfx
+focus_tree = {
 	id = colombian_focus
 	
 	country = {
@@ -155,7 +156,7 @@
 		relative_position_id = COL_acerias_pdr
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2			
@@ -224,7 +225,7 @@
 		relative_position_id = COL_acerias_pdr
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -359,7 +360,7 @@
 		relative_position_id = COL_infrastructure_caribe
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -420,7 +421,7 @@
 		relative_position_id = COL_infrastructure_caribe
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -513,7 +514,7 @@
 		relative_position_id = COL_fortify_caribe
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -563,7 +564,7 @@
 		relative_position_id = COL_acerias_pdr
 		x = -3
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -604,7 +605,7 @@
 		relative_position_id = COL_coffe_growth
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -661,7 +662,7 @@
 		relative_position_id = COL_coffe_growth
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			OR = {
 				controls_state = 306
@@ -895,7 +896,7 @@
 		relative_position_id = COL_explore_amazonia
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			OR = {
 				controls_state = 306
@@ -962,7 +963,7 @@
 		relative_position_id = COL_infrastructure_caribe
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			num_of_factories > 25
 		}
@@ -983,7 +984,7 @@
 		cancel_if_invalid = no
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -1000,7 +1001,7 @@
 		relative_position_id = COL_extra_tech_slot_2
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			num_of_factories > 50
 		}
@@ -1034,7 +1035,7 @@
 		relative_position_id = COL_secret_weapons
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			IF = {	
 				limit = {
@@ -1240,7 +1241,7 @@
 		mutually_exclusive = { focus = COL_internationalism_focus }
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -1276,7 +1277,7 @@
 		relative_position_id = COL_nationalism_focus
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			army_experience = 15
 			if = {
@@ -1339,7 +1340,7 @@
 		relative_position_id = COL_militarism
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_popularity = {
 				ideology = fascism
@@ -1422,7 +1423,7 @@
 		}
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		icon = GFX_focus_generic_german_trade
 
 		completion_reward = {
@@ -1535,7 +1536,7 @@
 		mutually_exclusive = { focus = COL_nationalism_focus }
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -1571,7 +1572,7 @@
 		relative_position_id = COL_internationalism_focus
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1725,7 +1726,7 @@
 		relative_position_id = COL_political_correctness
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}
@@ -1847,7 +1848,7 @@
 		relative_position_id = COL_liberty_ethos
 		x = 1
 		y = 1
-		cost = 8		
+		cost = 10		
 		
 		completion_reward = {
 			add_political_power = 50
@@ -1935,7 +1936,7 @@
 		
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			if = {
 				limit = { NOT = { has_idea = neutrality_idea } }
@@ -1968,6 +1969,22 @@
 					}
 				}						
 			}	
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				OR = {
+					USA = {
+						NOT = {
+							is_in_faction_with = ENG
+						}
+					}
+					date < 1943.11.1
+				}
+			}
 		}
 
 		continue_if_invalid = yes
@@ -2064,7 +2081,7 @@
 		will_lead_to_war_with = ECU
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_war_support = 0.05
 			add_named_threat = { threat = 1 name = COL_gran_colombia }
@@ -2192,7 +2209,7 @@
 		will_lead_to_war_with = VEN
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			VEN = {
 				country_event = colombia.2
@@ -2233,7 +2250,7 @@
 		relative_position_id = COL_hermano_bolivariano
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		available = { 
 			is_subject = no
 			controls_state = 306 # Bogota
@@ -2360,7 +2377,7 @@
 		will_lead_to_war_with = PRU
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_war_support = 0.05
 			add_named_threat = { threat = 1 name = COL_war_with_andean_threat }
@@ -2402,7 +2419,7 @@
 		relative_position_id = COL_indoctrination_focus
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				has_government = democratic
@@ -2458,7 +2475,7 @@
 		will_lead_to_war_with = BOL
 		x = 3
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_war_support = 0.05
 			add_popularity = {
@@ -2498,7 +2515,7 @@
 		# available = { has_war = no }
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			controls_state = 302
 			controls_state = 303

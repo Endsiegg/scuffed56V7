@@ -3,7 +3,7 @@
 	shared_focus = {
 		id = ENG_welcome_british_exiles
 		icon = GFX_focus_eng_global_defense
-		cost = 8
+		cost = 10
 		prerequisite = {
 								
 		}
@@ -24,7 +24,7 @@
 			}
 		}
 		offset = {
-			x = 8
+			x = 10
 			y = 0
 			trigger = {
 				has_focus_tree = r56_australian_focus
@@ -232,7 +232,7 @@
 	shared_focus = {
 		id = ENG_recruit_volunteers
 		icon = GFX_focus_generic_manpower
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = ENG_welcome_british_exiles
 		}
@@ -303,28 +303,31 @@
 		}
 
 		completion_reward = {
-			create_operative_leader = {
-				bypass_recruitment = yes
-				nationalities = { ENG }
-				portrait_tag_override = ENG
+			custom_effect_tooltip = "We will gain access to 3 operatives with a British nationality."
+			hidden_effect = {
+				create_operative_leader = {
+					bypass_recruitment = yes
+					nationalities = { ENG }
+					portrait_tag_override = ENG
+				}
+				create_operative_leader = {
+					bypass_recruitment = yes
+					nationalities = { ENG WLS }
+					portrait_tag_override = ENG
+				}
+				create_operative_leader = {
+					bypass_recruitment = yes
+					nationalities = { ENG }
+					portrait_tag_override = ENG
+				}											
 			}
-			create_operative_leader = {
-				bypass_recruitment = yes
-				nationalities = { ENG WLS }
-				portrait_tag_override = ENG
-			}
-			create_operative_leader = {
-				bypass_recruitment = yes
-				nationalities = { ENG }
-				portrait_tag_override = ENG
-			}											
 		}
 		search_filters = { FOCUS_FILTER_ESPIONAGE }
 	}
 	shared_focus = {
 		id = ENG_landing_exercices
 		icon = GFX_goal_generic_amphibious_assault
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = ENG_welcome_british_exiles
 		}
@@ -379,7 +382,7 @@
 	shared_focus = {
 		id = ENG_reclaim_the_british_isles_exile
 		icon = GFX_focus_attack_britain
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = ENG_landing_exercices
 		}

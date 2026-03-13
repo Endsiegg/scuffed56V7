@@ -6,6 +6,7 @@
 ### search_filters = {FOCUS_FILTER_MANPOWER}
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = iceland_tree
 	
@@ -37,11 +38,11 @@ focus_tree = {
 
 	focus = {
 		id = ICE_expand_the_fishing_industry
-		icon = GFX_focus_generic_industry_1
+		icon = GFX_goal_NOR_fish
 		mutually_exclusive = { focus = ICE_mineral_prospecting }
 		x = 5
 		y = 0
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = ICE_fishing_industry
@@ -58,7 +59,7 @@ focus_tree = {
 
 		relative_position_id = ICE_expand_the_fishing_industry
 
-		cost = 8
+		cost = 10
 
 		available = {
 			100 = {
@@ -127,7 +128,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ICE_expand_the_fishing_industry
-		cost = 8
+		cost = 10
 		available = {
 
 		}
@@ -165,7 +166,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_mineral_prospecting
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			custom_effect_tooltip = off_shore_drilling_tt 
@@ -182,7 +183,7 @@ focus_tree = {
 
 		x = 11
 		y = 0
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -215,7 +216,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_expand_the_fishing_industry
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -269,7 +270,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_international_trade
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			custom_effect_tooltip = ICE_the_icelandic_economy_modifier_tt
@@ -309,7 +310,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_banking_on_the_future
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			IF = {
@@ -339,7 +340,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = ICE_hydroelectric_power
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -366,7 +367,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_hydroelectric_power
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -387,7 +388,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = ICE_hydroelectric_power
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -410,7 +411,7 @@ focus_tree = {
 
 		relative_position_id = ICE_develop_icelandic_shipping
 
-		cost = 8
+		cost = 10
 
 		available = {
 			100 = {
@@ -461,7 +462,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_develop_icelandic_shipping
-		cost = 8
+		cost = 10
 		available = {
 			100 = {
 				is_owned_and_controlled_by = ROOT
@@ -519,7 +520,7 @@ focus_tree = {
 
 		relative_position_id = ICE_heavy_industry
 
-		cost = 8
+		cost = 10
 
 
 		bypass = {
@@ -554,7 +555,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_heavy_industry
-		cost = 8
+		cost = 10
 		available = {
 			100 = {
 				is_fully_controlled_by = ROOT
@@ -599,7 +600,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_advanced_technology
-		cost = 8
+		cost = 10
 		available = {
 			100 = {
 				is_owned_and_controlled_by = ROOT
@@ -649,7 +650,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_reykjavik_dockyards
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 
@@ -671,7 +672,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_local_arms_industry
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -688,7 +689,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_industrial_research_school
-		cost = 8
+		cost = 10
 
 		available = {
 			num_of_factories > 10
@@ -726,7 +727,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_iceland_air
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
@@ -776,7 +777,7 @@ focus_tree = {
 		mutually_exclusive = { focus = ICE_not_our_king}
 		x = 17
 		y = 0
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			# add_popularity = {	#vanilla has no starting support, R56 does, therefore disabled to not immediately jump to 35% support
@@ -798,7 +799,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ICE_the_kingdom_of_iceland
-		cost = 8
+		cost = 10
 		available = {
 			threat > 0.05
 			OR = { 
@@ -850,7 +851,7 @@ focus_tree = {
 		x = 2
 		y = 1 
 		relative_position_id = ICE_the_kingdom_of_iceland
-		cost = 8
+		cost = 10
 		available = {
 			threat > 0.05
 		}
@@ -885,7 +886,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ICE_united_we_stand
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -986,7 +987,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_united_we_stand
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1025,7 +1026,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_united_we_stand
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1052,7 +1053,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_declare_absolute_neutrality
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1096,7 +1097,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_declare_absolute_neutrality
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1156,7 +1157,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_joint_shipbuilding_programme
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1195,7 +1196,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_patrolling_the_atlantic
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1241,7 +1242,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_royal_marines
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1275,7 +1276,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_infrastructure_projects
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1322,7 +1323,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_engineering_projects
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1351,7 +1352,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_joint_military_training
-		cost = 8
+		cost = 10
 		available = {
 			threat > 0.15
 			OR = { 
@@ -1390,7 +1391,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ICE_gardhur_airfield
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1417,7 +1418,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_gardhur_airfield
-		cost = 8
+		cost = 10
 		available = {
 			threat > 0.15
 			OR = { 
@@ -1445,7 +1446,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_the_merchant_fleet
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1503,7 +1504,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_political_unity
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -1562,7 +1563,7 @@ focus_tree = {
 		bypass = {
 			NOT = { is_subject_of = DEN}
 		}
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1590,7 +1591,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_not_standing_idly_by
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1617,7 +1618,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = ICE_political_unity
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1658,7 +1659,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_american_protection
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				is_subject_of = USA
@@ -1699,7 +1700,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_expanding_the_university_of_reykjavik
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1735,7 +1736,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_modernizing_the_island
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1777,7 +1778,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_fighting_as_equals
-		cost = 8
+		cost = 10
 		available = {
 			OR = {
 				101 = { is_owned_by = DEN }
@@ -1804,7 +1805,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_trade_relations
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				has_government = democratic 
@@ -1839,7 +1840,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_keflavik_airbase
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				is_subject_of = USA
@@ -1886,7 +1887,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_american_investments
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				is_subject_of = USA
@@ -1911,7 +1912,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_american_soldiers
-		cost = 8
+		cost = 10
 		available = {
 			OR = { 
 				is_subject_of = USA
@@ -1972,7 +1973,7 @@ focus_tree = {
 		mutually_exclusive = { focus = ICE_the_kingdom_of_iceland }
 		x = 28
 		y = 0
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_political_power = 75
@@ -1999,7 +2000,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ICE_not_our_king
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -2036,7 +2037,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_not_our_king
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_political_power = 100
@@ -2053,7 +2054,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ICE_expand_the_industrial_base
-		cost = 8
+		cost = 10
 		available = {
 			communism > 0.2
 		}
@@ -2082,7 +2083,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_expand_the_industrial_base
-		cost = 8
+		cost = 10
 		available = {
 			OR = {
 				communism > 0.1
@@ -2103,10 +2104,11 @@ focus_tree = {
 				popularity = -0.1
 			}
 
-			custom_effect_tooltip = ICE_completion_break_with_the_crown_tt
-			custom_effect_tooltip = ICE_the_icelandic_economy_modifier_tt
-
-			effect_tooltip = {
+			if = {
+				limit = {
+					has_completed_focus = ICE_break_with_the_crown
+				}
+				custom_effect_tooltip = ICE_the_icelandic_economy_modifier_tt
 				add_to_variable = {
 					ICE_economy_industrial_capacity_dockyard = 0.05
 					tooltip = industrial_capacity_dockyard_tt
@@ -2114,6 +2116,20 @@ focus_tree = {
 				add_to_variable = {
 					ICE_economy_industrial_capacity_factory = 0.05
 					tooltip = industrial_capacity_factory_tt
+				}
+				else = {
+					custom_effect_tooltip = ICE_completion_break_with_the_crown_tt
+					custom_effect_tooltip = ICE_the_icelandic_economy_modifier_tt
+					effect_tooltip = {
+						add_to_variable = {
+							ICE_economy_industrial_capacity_dockyard = 0.05
+							tooltip = industrial_capacity_dockyard_tt
+						}
+						add_to_variable = {
+							ICE_economy_industrial_capacity_factory = 0.05
+							tooltip = industrial_capacity_factory_tt
+						}
+					}
 				}
 			}
 		}
@@ -2126,7 +2142,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_anti_capitalist_propaganda
-		cost = 8
+		cost = 10
 		available = {
 			OR = {
 				communism > 0.1
@@ -2140,11 +2156,21 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY}
 
 		completion_reward = {
-			custom_effect_tooltip = ICE_completion_break_with_the_crown_tt
-			effect_tooltip = {
+			IF = {
+				limit = {
+					has_completed_focus = ICE_break_with_the_crown
+				}
 				add_manpower = 5000
 				add_war_support = 0.15
 				add_stability = 0.05
+				else = {
+					custom_effect_tooltip = ICE_completion_break_with_the_crown_tt
+					effect_tooltip = {
+						add_manpower = 5000
+						add_war_support = 0.15
+						add_stability = 0.05
+					}
+				}
 			}
 		}
 	}
@@ -2156,7 +2182,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_anti_capitalist_propaganda
-		cost = 8
+		cost = 10
 		available = {
 			fascism > 0.2
 		}
@@ -2230,7 +2256,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_prepare_for_the_revolution
-		cost = 8
+		cost = 10
 		available = {
 			fascism > 0.2
 			NOT = {
@@ -2260,7 +2286,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_general_strike
-		cost = 8
+		cost = 10
 		available = {
 			has_stability < 0.5
 			OR = {
@@ -2323,7 +2349,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ICE_break_with_the_crown
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT}
 
@@ -2364,7 +2390,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_break_with_the_crown
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -2421,7 +2447,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ICE_embrace_the_workers_revolution
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = {
@@ -2465,7 +2491,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_embrace_the_workers_revolution 
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -2499,7 +2525,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_state_corporatism
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_MANPOWER}
 
@@ -2516,7 +2542,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_state_corporatism
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
  
@@ -2550,8 +2576,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_international_brigades
-		cost = 8
-
+		cost = 10
+		available = {
+			ENG = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
 		completion_reward = {
 			custom_effect_tooltip = ICE_infiltrating_the_british_isles_tt
 			IF = {
@@ -2579,7 +2611,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_state_owned_industry
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			100 = {
@@ -2598,7 +2630,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_organize_the_greyshirts
-		cost = 8
+		cost = 10
 		available = {  
 		}
 
@@ -2617,7 +2649,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ICE_transformation_of_nature
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_MANPOWER}
 
@@ -2641,7 +2673,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_transformation_of_nature
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -2675,7 +2707,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_the_viking_spirit
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				owns_state = 101
@@ -2704,14 +2736,14 @@ focus_tree = {
 			101 = {
 				add_claim_by = ROOT
 			}
-			random_country = {
+			random_other_country = {
 				limit = {
 					owns_state = 101
 				}
 				country_event = {
 					id = iceland_events.20
 					days = 1
-					random_days = 2
+					random = 2
 				}
 			}
 			custom_effect_tooltip = if_they_accept_tt
@@ -2733,7 +2765,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_the_viking_spirit
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_ANNEXATION}
 
@@ -2772,7 +2804,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_reclaiming_the_empire
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_ANNEXATION}
 
@@ -2804,7 +2836,7 @@ focus_tree = {
 
 		x = 35
 		y = 0
-		cost = 8
+		cost = 10
 		available = {
 			threat > 0.1
 		}
@@ -2833,7 +2865,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ICE_the_armed_forces_of_iceland
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -2861,7 +2893,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_the_armed_forces_of_iceland
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -2896,7 +2928,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_a_naval_hub_in_the_atlantic
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -2927,7 +2959,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_an_airbase_in_the_sea
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -2964,7 +2996,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_an_airbase_in_the_sea
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -2994,7 +3026,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_flying_boats
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			air_experience = 75
@@ -3018,7 +3050,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_modernizing_the_coast_guard
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY}
 
@@ -3058,7 +3090,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_mine_iceland
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			custom_effect_tooltip = ICE_emergency_conversions_tt
@@ -3073,7 +3105,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ICE_support_equipment
-		cost = 8
+		cost = 10
 
 		mutually_exclusive = { focus = ICE_enact_conscription }
 
@@ -3091,7 +3123,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_support_equipment
-		cost = 8
+		cost = 10
 
 		mutually_exclusive = { focus = ICE_a_profesional_army }
 
@@ -3111,7 +3143,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_enact_conscription
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_MANPOWER}
 
@@ -3129,7 +3161,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ICE_a_profesional_army
-		cost = 8
+		cost = 10
 		available = { 
 		} 
 
@@ -3154,7 +3186,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ICE_a_profesional_army
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			
@@ -3177,7 +3209,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ICE_thungur_hnifur
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			swap_ideas = {
@@ -3195,7 +3227,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_thungur_hnifur
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			swap_ideas = {
@@ -3213,7 +3245,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ICE_thungur_hnifur
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			swap_ideas = {

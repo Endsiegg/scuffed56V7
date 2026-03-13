@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = Spain_focus
 	country = {
@@ -134,13 +135,13 @@ focus_tree = {
 
 	focus = {
 		id = SPR_the_army_of_africa_connection
-		icon = GFX_goal_EGY_suspend
+		icon = GFX_goal_islam_and_state
 		prerequisite = { focus = SPR_establish_a_conspiracy }
 		relative_position_id = SPR_back_the_ceda
 		x = 0
 		y = 2
 		
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -354,7 +355,7 @@ focus_tree = {
 		}
 	
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -518,7 +519,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_solidify_the_fronts_nat }
 		x = 0
 		y = 6
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -568,7 +569,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_equipment_shipments_r56_nat }
 		x = -1
 		y = 7
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -678,7 +679,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_solidify_the_fronts_spr }
 		x = 1
 		y = 6
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -728,7 +729,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_equipment_shipments_r56_spr }
 		x = 0
 		y = 7
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -761,7 +762,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_equipment_shipments_r56_nat }
 		x = 1
 		y = 7
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -788,7 +789,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_equipment_shipments_r56_spr }
 		x = 2
 		y = 7
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -825,7 +826,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_new_approach_spr }
 		x = 1
 		y = 8
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -864,7 +865,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_new_approach_nat }
 		x = 0
 		y = 8
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -882,7 +883,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Mil
 		icon = GFX_goal_generic_build_tank
-		cost = 8.00
+		cost = 10.00
 		x = 8
 		y = 0
 		available = {
@@ -910,54 +911,61 @@ focus_tree = {
 	focus = {
 		id = SPR_Naval
 		icon = GFX_goal_generic_build_navy
-		cost = 8.00
+		cost = 10.00
 		x = 15
 		y = 0
-			ai_will_do = {
-					factor = 5
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			NOT = {
+				has_idea = SPR_the_black_years
+			}
+			has_civil_war = no
+			any_controlled_state = {
+				is_coastal = yes
+			}
+		}
+		completion_reward = {
+			random_controlled_state = {
+				prioritize = { 171 }
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
 				}
-			available = {
-				NOT = {
-					has_idea = SPR_the_black_years
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
 				}
-				has_civil_war = no
-					any_state = {
-							is_coastal = yes
-							is_controlled_by = ROOT
-						}
-						AND = {
-							171 = {
-								is_controlled_by = ROOT
-							}
-							168 = {
-								is_controlled_by = ROOT
-							}
-						}
+			}
+			random_controlled_state = {
+				prioritize = { 168 }
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
 				}
-			completion_reward = {
-					171 = {
-							add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = dockyard
-									level = 2
-									instant_build = yes
-								}
-						}
-					168 = {
-							add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = dockyard
-									level = 2
-									instant_build = yes
-								}
-						}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
 				}
-				search_filters = { FOCUS_FILTER_INDUSTRY }
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
 		id = SPR_Air_Officers
 		icon = GFX_goal_spr_expand_airforce_academies
-		cost = 8.00
+		cost = 10.00
 		x = 20
 		y = 0
 		available = {
@@ -984,7 +992,7 @@ focus_tree = {
 	focus = {
 		id = SPR_post_depression_recovery
 		icon = GFX_goal_generic_construction
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 40
 		}
@@ -1019,7 +1027,7 @@ focus_tree = {
 	focus = {
 		id = SPR_increase_public_investments
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_post_depression_recovery
 		}
@@ -1104,7 +1112,7 @@ focus_tree = {
 	focus = {
 		id = SPR_create_the_ini
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_increase_public_investments
 		}
@@ -1133,7 +1141,7 @@ focus_tree = {
 	focus = {
 		id = SPR_create_instalaza
 		icon = GFX_goal_spr_fund_instalaza
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 30
 		}
@@ -1218,7 +1226,7 @@ focus_tree = {
 	focus = {
 		id = SPR_surevaluate_the_peseta
 		icon = GFX_focus_GRE_Combat_depression
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 35
 		}
@@ -1244,7 +1252,7 @@ focus_tree = {
 	focus = {
 		id = SPR_save_the_education_budget
 		icon = GFX_goal_generic_scientific_exchange
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_increase_public_investments
 		}
@@ -1265,7 +1273,7 @@ focus_tree = {
 	focus = {
 		id = SPR_repair_the_national_roads
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_surevaluate_the_peseta
 		}
@@ -1395,7 +1403,7 @@ focus_tree = {
 	focus = {
 		id = SPR_expand_the_mines
 		icon = GFX_goal_generic_construction2
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 20
 		}
@@ -1447,7 +1455,7 @@ focus_tree = {
 	focus = {
 		id = SPR_support_the_heavy_industry
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_create_instalaza
 		}
@@ -1564,7 +1572,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Equipment
 		icon = GFX_goal_generic_army
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Mil
 		}
@@ -1589,7 +1597,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Mot
 		icon = GFX_goal_generic_army_motorized
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Equipment
 		}
@@ -1616,7 +1624,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Mech
 		icon = GFX_goal_mechanized_offensive
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Mot
 		}
@@ -1639,7 +1647,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Domestic_Tanks
 		icon = GFX_goal_generic_army_tanks
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Mech
 		}
@@ -1665,7 +1673,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Foreign_Tanks
 		icon = GFX_goal_generic_military_deal
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Mech
 		}
@@ -1700,7 +1708,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Exercises
 		icon = GFX_goal_generic_position_armies
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Domestic_Tanks
 			focus = SPR_Foreign_Tanks
@@ -1728,7 +1736,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Expand
 		icon = GFX_goal_generic_army_doctrines
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Mil
 		}
@@ -1759,7 +1767,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Fortify_Islands
 		icon = GFX_goal_generic_construct_military
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Expand
 		}
@@ -1820,7 +1828,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Doctrine
 		icon = GFX_goal_generic_army_doctrines
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Fortify_Islands
 		}
@@ -1844,7 +1852,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Doc_Bonus_2
 		icon = GFX_goal_generic_army_artillery
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Doctrine
 		}
@@ -1868,7 +1876,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Doc_Wep
 		icon = GFX_goal_generic_military_sphere
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Doc_Bonus_2
 		}
@@ -1898,7 +1906,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Naval_2
 		icon = GFX_goal_spr_expand_secn
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Naval
 		}
@@ -1944,7 +1952,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Subs
 		icon = GFX_goal_generic_navy_submarine
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Naval_2
 		}
@@ -1968,7 +1976,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Screens
 		icon = GFX_goal_generic_navy_cruiser
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Naval_2
 		}
@@ -1993,7 +2001,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Capitals
 		icon = GFX_goal_generic_navy_battleship
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Naval_2
 		}
@@ -2018,7 +2026,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Carriers
 		icon = GFX_goal_generic_navy_carrier
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Capitals
 			focus = SPR_Subs
@@ -2052,7 +2060,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Nav_Air
 		icon = GFX_goal_generic_air_fighter
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Carriers
 		}
@@ -2082,7 +2090,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Air_Factories
 		icon = GFX_goal_generic_air_production
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Air_Officers
 		}
@@ -2111,7 +2119,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Fighters
 		icon = GFX_goal_generic_air_fighter2
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Air_Factories
 		}
@@ -2136,7 +2144,7 @@ focus_tree = {
 	focus = {
 		id = SPR_CAS
 		icon = GFX_goal_generic_CAS
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Fighters
 		}
@@ -2165,7 +2173,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Tac_Bomber
 		icon = GFX_goal_generic_air_naval_bomber
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Fighters
 		}
@@ -2193,7 +2201,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Air_Doctrine_2
 		icon = GFX_goal_generic_air_doctrine
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Tac_Bomber
 		}
@@ -2217,7 +2225,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Strat
 		icon = GFX_goal_generic_air_bomber
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Fighters
 		}
@@ -2246,7 +2254,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Air_Doctrine_3
 		icon = GFX_goal_generic_air_doctrine
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_Strat
 		}
@@ -2270,7 +2278,7 @@ focus_tree = {
 	focus = {
 		id = SPR_Air_Doctrine
 		icon = GFX_goal_generic_air_doctrine
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_CAS
 		}

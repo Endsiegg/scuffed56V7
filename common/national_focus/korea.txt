@@ -1,4 +1,5 @@
 #####---------------------------------------------------------------------> Mod by Sig "GreatExperiment" Altre
+#!gfx:interface\r56_goals.gfx
 
 focus_tree = {
 
@@ -24,7 +25,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 16
 		y = 0
-		cost = 8
+		cost = 10
 		mutually_exclusive = {
 			#focus = KOR_peoples_committee_of_korea 
 		}
@@ -102,7 +103,7 @@ focus_tree = {
 		relative_position_id = KOR_repeal_colonial_restrictions
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 12
 		}
@@ -127,7 +128,7 @@ focus_tree = {
 		relative_position_id = KOR_repeal_colonial_restrictions
 		x = 6
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -156,7 +157,7 @@ focus_tree = {
 		relative_position_id = KOR_repeal_colonial_restrictions
 		x = 3
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -191,7 +192,7 @@ focus_tree = {
 		relative_position_id = KOR_apply_democratic_program
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -200,7 +201,7 @@ focus_tree = {
 		}
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 		}
 		completion_reward = {
 			add_political_power = 200
@@ -217,7 +218,7 @@ focus_tree = {
 		relative_position_id = KOR_apply_democratic_program
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -254,13 +255,13 @@ focus_tree = {
 		relative_position_id = KOR_apply_democratic_program
 		x = -3
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 			
 			CHI = {
 				OR = {
@@ -284,7 +285,7 @@ focus_tree = {
 		relative_position_id = KOR_apply_democratic_program
 		x = 3
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -371,7 +372,7 @@ focus_tree = {
 		relative_position_id = KOR_repeal_colonial_restrictions
 		x = 9
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -411,7 +412,7 @@ focus_tree = {
 
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -494,7 +495,7 @@ focus_tree = {
 
 		x = 70
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -628,7 +629,7 @@ focus_tree = {
 		relative_position_id = KOR_hanjin_heavy_industries
 		x = -2
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -660,7 +661,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			set_country_flag = naval_effort_built
+			
 			if = {
 				limit = {
 						ROOT = {
@@ -703,7 +704,7 @@ focus_tree = {
 		x = -3
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -727,7 +728,7 @@ focus_tree = {
 		icon = GFX_focus_generic_destroyer
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -752,7 +753,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -776,7 +777,7 @@ focus_tree = {
 		icon = GFX_focus_generic_mine_warfare
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -811,7 +812,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = KOR_destroyer_focus
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -842,7 +843,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = KOR_destroyer_focus
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -872,14 +873,14 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-			has_tech = fleet_in_being
+			has_doctrine = new_fleet_in_being
 		}
 
 		completion_reward = {
@@ -899,7 +900,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = KOR_the_old_japanese_model
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -925,7 +926,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_battleship_focus
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1022,14 +1023,14 @@ focus_tree = {
 		x = -4
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-			has_tech = trade_interdiction
+			has_doctrine = new_convoy_raiding
 		}
 
 		completion_reward = {
@@ -1050,7 +1051,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1103,14 +1104,14 @@ focus_tree = {
 		x = -6
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-			has_tech = base_strike
+			has_doctrine = new_base_strike
 		}
 
 		completion_reward = {
@@ -1141,7 +1142,7 @@ focus_tree = {
 		relative_position_id = KOR_carrier_strikes		
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1168,7 +1169,7 @@ focus_tree = {
 		relative_position_id = KOR_naval_air_groups		
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1194,7 +1195,7 @@ focus_tree = {
 		relative_position_id = KOR_rise_of_the_chaebols
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1235,7 +1236,7 @@ focus_tree = {
 		relative_position_id = KOR_rise_of_the_chaebols
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1341,7 +1342,7 @@ focus_tree = {
 		relative_position_id = KOR_hyundai_engineering
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -1371,7 +1372,7 @@ focus_tree = {
 		relative_position_id = KOR_hyundai_vehicles
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1409,7 +1410,7 @@ focus_tree = {
 		relative_position_id = KOR_expand_jinsen_arsenal
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1433,7 +1434,7 @@ focus_tree = {
 		x = 4
 		y = 0
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1471,7 +1472,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_Industrial_Boom
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1549,7 +1550,7 @@ focus_tree = {
 		x = 0
 		y = 1		
 
-		cost = 8
+		cost = 10
 
 		available = {
 			num_of_factories > 49
@@ -1574,14 +1575,14 @@ focus_tree = {
 		relative_position_id = KOR_return_of_the_government_in_exile
 		x = 8
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		available = {
 			ROOT = {
 				NOT = {
-					is_puppet_of = JAP
+					is_subject_of = JAP
 				}
 			}
 		}
@@ -1611,7 +1612,7 @@ focus_tree = {
 		x = 10
 		y = 1
 		relative_position_id = KOR_experience_of_the_korean_liberation_army
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1633,7 +1634,7 @@ focus_tree = {
 		relative_position_id = KOR_army_reform
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1668,7 +1669,7 @@ focus_tree = {
 		y = 2
 
 		relative_position_id = KOR_army_reform
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1689,7 +1690,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = KOR_army_reform
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1712,7 +1713,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = KOR_equipment_effort
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1781,7 +1782,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = KOR_equipment_effort
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1806,7 +1807,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = KOR_equipment_effort_3
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1829,6 +1830,7 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
+					name = KOR_special_forces
 					cost_reduction = 0.5
 					uses = 1
 					category = special_forces_doctrine
@@ -1858,7 +1860,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = KOR_army_reform
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2024,7 +2026,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_motorization_effort
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2096,7 +2098,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_mechanization_effort
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2129,7 +2131,7 @@ focus_tree = {
 		relative_position_id = KOR_experience_of_the_korean_liberation_army
 		x = 18
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -2180,7 +2182,7 @@ focus_tree = {
 		relative_position_id = KOR_take_over_air_bases
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -2354,7 +2356,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_naval_bomber
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2380,7 +2382,7 @@ focus_tree = {
 		relative_position_id = KOR_experience_of_the_korean_liberation_army
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -2423,7 +2425,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_integrate_socialist_aligned_guerillas
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2435,7 +2437,7 @@ focus_tree = {
 				OR = {
 					if = {
 						limit = {
-							is_puppet = yes
+							is_subject = yes
 						}
 						OVERLORD = {
 							has_government = communism
@@ -2494,7 +2496,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = KOR_internationalism_focus
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 0
@@ -2564,7 +2566,7 @@ focus_tree = {
 #		relative_position_id = KOR_integrate_socialist_aligned_guerillas
 #		x = 0
 #		y = 1
-#		cost = 8
+#		cost = 10
 #		ai_will_do = {
 #			factor = 1
 #		}
@@ -2583,7 +2585,7 @@ focus_tree = {
 #		relative_position_id = KOR_remember_the_communes_of_manchuria
 #		x = 0
 #		y = 1
-#		cost = 8
+#		cost = 10
 #		ai_will_do = {
 #			factor = 1
 #		}
@@ -2601,16 +2603,16 @@ focus_tree = {
 		mutually_exclusive = { focus =  KOR_collaboration_with_overlord}
 		x = 24
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				is_puppet_of = JAP
+				is_subject_of = JAP
 			}
 		}
 		available = {
-			is_puppet_of = JAP
+			is_subject_of = JAP
 			OR = {
 				has_government = fascism
 				has_government = neutrality
@@ -2660,21 +2662,21 @@ focus_tree = {
 		mutually_exclusive = { focus =  KOR_collaboration_with_japan}
 		x = 26
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 			modifier = {
 				factor = 1000
 				NOT = {
-					is_puppet_of = JAP
+					is_subject_of = JAP
 				}
 				
 			}
 		}
 		available = {
-			is_puppet = yes
+			is_subject = yes
 			NOT = {
-				is_puppet_of = JAP
+				is_subject_of = JAP
 			}			
 			OR = {
 				has_government = fascism
@@ -2737,16 +2739,16 @@ focus_tree = {
 		relative_position_id = KOR_collaboration_with_japan
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 			modifier = {
 				factor = 1000
-				is_puppet_of = JAP
+				is_subject_of = JAP
 			}
 		}
 		available = {
-			is_puppet_of = JAP
+			is_subject_of = JAP
 			OR = {
 				has_government = fascism
 				has_government = neutrality
@@ -2778,7 +2780,7 @@ focus_tree = {
 		relative_position_id = KOR_experience_of_the_korean_liberation_army
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -2786,7 +2788,7 @@ focus_tree = {
 		available = {
 			ROOT = {
 				NOT = {
-					is_puppet_of = JAP
+					is_subject_of = JAP
 				}
 			}
 		}
@@ -2887,7 +2889,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_amnesty_for_ex_japanese_army_officers
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2902,7 +2904,7 @@ focus_tree = {
 				factor = 10
 				if = {
 					limit = {
-						is_puppet = yes
+						is_subject = yes
 					}
 					OVERLORD = {
 						has_government = fascism
@@ -2985,7 +2987,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_amnesty_for_ex_japanese_army_officers
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3032,7 +3034,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_restore_imperial_power
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 100
@@ -3082,7 +3084,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_nationalism_focus
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3114,7 +3116,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_militarism
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -3161,7 +3163,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_militarism
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3192,7 +3194,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_nationalism_focus
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3231,7 +3233,7 @@ focus_tree = {
 		icon = GFX_focus_generic_soviet_politics
 		x = 48
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -3256,7 +3258,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_peoples_committee_of_korea
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -3298,7 +3300,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_sideline_cho_man_sik
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -3335,7 +3337,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = KOR_supreme_leader
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -3376,7 +3378,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = KOR_supreme_leader
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -3417,7 +3419,7 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = KOR_supreme_leader
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -3434,7 +3436,7 @@ focus_tree = {
 				NOT = {
 					original_tag = PRC
 				}
-				is_puppet = no
+				is_subject = no
 			}
 			
 		}
@@ -3453,7 +3455,7 @@ focus_tree = {
 					NOT = {
 						original_tag = PRC
 					}
-					is_puppet = no
+					is_subject = no
 				}
 				country_event = {
 					id = generic.2
@@ -3476,7 +3478,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_supreme_leader
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -3512,7 +3514,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = KOR_peoples_committee_of_korea
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -3546,7 +3548,7 @@ focus_tree = {
 		relative_position_id = KOR_encourage_collectivism
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -3581,7 +3583,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = KOR_industrial_modernization_plan
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -3610,7 +3612,7 @@ focus_tree = {
 	focus = {
 		id = KOR_complete_collectivization
 		icon = GFX_goal_generic_agriculture
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = KOR_industrial_modernization_plan
 		}
@@ -3653,7 +3655,7 @@ focus_tree = {
 	focus = {
 		id = KOR_prosperity_propaganda
 		icon = GFX_goal_generic_farm_tractor
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = KOR_complete_collectivization
 		}
@@ -3679,7 +3681,7 @@ focus_tree = {
 		relative_position_id = KOR_industrial_modernization_plan
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -3719,7 +3721,7 @@ focus_tree = {
 		relative_position_id = KOR_industrial_modernization_plan
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -3766,7 +3768,7 @@ focus_tree = {
 		relative_position_id = KOR_metallurgy
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3794,7 +3796,7 @@ focus_tree = {
 		}
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -3802,11 +3804,9 @@ focus_tree = {
 		
 		available = {
 			has_government = communism
-			OR = {
-				is_researching_technology = mass_assault
-				is_researching_technology = r56_guerilla_warfare				
-				has_tech = mass_assault
-				has_tech = r56_guerilla_warfare
+			OR = {		
+				has_doctrine = mass_assault
+				has_doctrine = r56_guerilla_warfare
 			}
 		}
 		
@@ -3835,7 +3835,7 @@ focus_tree = {
 		relative_position_id = KOR_peoples_committee_of_korea
 		x = -4
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -3844,12 +3844,9 @@ focus_tree = {
 		available = {
 			has_government = communism
 			OR = {
-				is_researching_technology = grand_battle_plan
-				is_researching_technology = mobile_warfare
-				is_researching_technology = superior_firepower				
-				has_tech = grand_battle_plan
-				has_tech = mobile_warfare
-				has_tech = superior_firepower								
+				has_doctrine = grand_battleplan
+				has_doctrine = new_mobile_warfare
+				has_doctrine = superior_firepower								
 			}			
 		}
 		

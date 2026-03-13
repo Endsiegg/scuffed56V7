@@ -1,3 +1,21 @@
+game_rules_reminder_category = {
+	game_rules_reminder = {
+		icon = generic_political_discourse
+
+		available = {
+			hidden_trigger = {
+				NOT = { has_country_flag = r56_cflg_multiplayer }
+			}
+		}
+		activation = {
+			has_country_flag = r56_cflg_multiplayer #Only shows up when clicking 'Single Player' at start.
+		}
+		days_mission_timeout = 21
+		fire_only_once = yes
+		is_good = yes
+	}
+}
+
 naval_decision_category = {
 	dockyard_xp = {
 		icon = generic_naval
@@ -1219,13 +1237,13 @@ political_actions = {
 				OR = {
 					has_defensive_war = yes
 					surrender_progress > 0.25
-					has_tech = r56_milita_formation
+					has_doctrine = r56_guerilla_warfare
 				}
 			}
 			else = {
 				OR = {
 					surrender_progress > 0.35
-					has_tech = r56_milita_formation 
+					has_doctrine = r56_guerilla_warfare
 				}
 			}
 			command_power > 24
@@ -2390,6 +2408,7 @@ industrial_requisition_category = {
         	OR = {
         		has_idea = war_economy
         		has_idea = tot_economic_mobilisation
+        		has_idea = totaler_krieg_economy
 			}
 			NOT = {
 				has_government = democratic

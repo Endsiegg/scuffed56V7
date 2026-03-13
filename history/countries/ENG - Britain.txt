@@ -109,10 +109,8 @@ set_technology = {
 	#improved_light_tank = 1  # PLACEHOLDER
 	#basic_heavy_tank = 1  # PLACEHOLDER
 	#basic_medium_tank = 1 # PLACEHOLDER
-	trench_warfare = 1
-
+	
 	transport = 1
-	fleet_in_being = 1
 	electronic_mechanical_engineering = 1
 	radio = 1
 	radio_detection = 1
@@ -121,6 +119,8 @@ set_technology = {
 	marines = 1
 	basic_train = 1
 }
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
 
 complete_special_project = sp:sp_air_radar
 
@@ -286,7 +286,16 @@ set_popularities = {
 	communism = 1
 }
 
-create_faction = Allies
+create_faction_from_template = faction_template_allies
+IF= {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
+	add_faction_goal_slot = {
+		category  = long_term
+		value = 1 
+	}
+}
 add_to_faction = ENG
 #add_to_faction = FRA
 add_to_faction = CAN
@@ -370,7 +379,7 @@ recruit_character = ENG_cyril_newall
 recruit_character = ENG_sholto_douglas
 recruit_character = ENG_edward_ellington
 
-
+recruit_character = ENG_jack_churchill
 
 recruit_character = ENG_john_beckett
 recruit_character = ENG_corgis_1
@@ -424,6 +433,7 @@ recruit_character = ENG_frederick_whyte
 recruit_character = ENG_john_maynard_keynes
 recruit_character = ENG_andrew_duncan
 recruit_character = ENG_charles_collett
+recruit_character = ENG_archibald_sinclair
 
 #scientists
 recruit_character = ENG_john_cockcroft
@@ -436,7 +446,7 @@ recruit_character = ENG_nevil_shute
 recruit_character = ENG_robert_watson_watt
 recruit_character = ENG_barnes_wallis
 recruit_character = ENG_r56_percy_hobart
-
+recruit_character = ENG_william_birdwood
 
 country_event = { id = britain.16 days = 20 }		#George V dies
 country_event = { id = britain.17 days = 344 }		#Edward VIII abdicates for non-MtG people
@@ -1891,3 +1901,108 @@ if = {
 		icon = "GFX_ENG_flying_boat_medium"
 	}
 }
+
+if = {
+	limit = { NOT = { has_dlc = "By Blood Alone" } }
+
+	create_equipment_variant = {
+		name = "Hawker Fury" #also covers Gloster Gauntlet, Hawker Demon
+		type = fighter_equipment_0
+		upgrades = {
+			plane_gun_upgrade = 0
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 0
+		}
+		obsolete = yes
+		icon = "GFX_RAJ_early_fighter_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Fairey Gordon"
+		type = cas_equipment_0
+		upgrades = {
+			plane_cas_upgrade = 1
+			plane_range_upgrade = 2
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 3
+		}
+		obsolete = yes
+		icon = "GFX_PRC_early_fighter_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Hawker Audax"
+		type = cas_equipment_0
+		upgrades = {
+			plane_cas_upgrade = 2
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 1
+			plane_reliability_upgrade = 3
+		}
+		obsolete = yes
+		icon = "GFX_POR_early_fighter_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Vickers Vildebeest"
+		type = nav_bomber_equipment_0
+		upgrades = {
+			plane_naval_upgrade = 3
+			plane_range_upgrade = 5
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 4
+		}
+		icon = "GFX_POR_early_bomber_medium" #TODO GABRIEL: change if art in before release #you were cut short again Gabriel
+	}
+
+	create_equipment_variant = {
+		name = "Blackburn Shark"
+		type = cv_nav_bomber_equipment_0
+		upgrades = {
+			cv_plane_naval_upgrade = 2
+			cv_plane_range_upgrade = 3
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 3
+		}
+		icon = "GFX_SWE_naval_bomber1_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Handley Page Heyford"
+		type = tac_bomber_equipment_0
+		upgrades = {
+			plane_tac_bomb_upgrade = 0
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 0
+		}
+		icon = "GFX_ENG_iw_large_airframe_medium"
+		obsolete = yes
+	}
+
+	create_equipment_variant = {
+		name = "Bristol Blenheim"
+		type = tac_bomber_equipment_1
+		upgrades = {
+			plane_tac_bomb_upgrade = 0
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 0
+		}
+		icon = "GFX_TUR_tactical_bomber1_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Short Singapore" #For everything that is a flying boat
+		type = flying_boat_equipment_0
+		upgrades = {
+			plane_naval_upgrade = 2
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 2
+		}
+		icon = "GFX_ENG_flying_boat_medium"
+	}
+}
+

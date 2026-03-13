@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
     id = israel_focus
     country = {
@@ -99,10 +100,6 @@ focus_tree = {
 			hidden_effect = {
 				remove_ideas = MPL_collapse_no_focus
 			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_1
-				amount = 200
-			}
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.025
@@ -111,9 +108,14 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.025
 			}
-			
-			custom_effect_tooltip = newline_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			unlock_decision_category_tooltip = MPL_foreign_support_category
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 200
+			}
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -196,6 +198,7 @@ focus_tree = {
 				ideology = neutrality
 				popularity = -0.1
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			remove_ideas = ISR_disorganized_militias
 		}
 		search_filters = {
@@ -251,6 +254,27 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			army_experience = 20
+			if = {
+				limit = {
+					controls_province = 4088
+				}
+				1017 = {
+					create_unit = {
+						prioritize_location = 4088
+						division = "name = \"Negev Brigade \" division_template = \"Ugdat Hir\" start_experience_factor = 0.1 start_equipment_factor = 0 }" 
+						owner = ISR
+					}
+				}
+			}
+			else = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Negev Brigade \" division_template = \"Ugdat Hir\" start_experience_factor = 0.1 start_equipment_factor = 0 }" 
+						owner = ISR
+					}
+				}
+			}
 			if = {
 				limit = {
 					controls_province = 4088
@@ -275,27 +299,6 @@ focus_tree = {
 						level = 1
 						province = 4206
 						instant_build = yes
-					}
-				}
-			}
-			army_experience = 20
-			if = {
-				limit = {
-					controls_province = 4088
-				}
-				1017 = {
-					create_unit = {
-						prioritize_location = 4088
-						division = "name = \"Negev Brigade \" division_template = \"Ugdat Hir\" start_experience_factor = 0.1 start_equipment_factor = 0 }" 
-						owner = ISR
-					}
-				}
-			}
-			else = {
-				capital_scope = {
-					create_unit = {
-						division = "name = \"Negev Brigade \" division_template = \"Ugdat Hir\" start_experience_factor = 0.1 start_equipment_factor = 0 }" 
-						owner = ISR
 					}
 				}
 			}
@@ -414,17 +417,17 @@ focus_tree = {
 			hidden_effect = {
 				remove_ideas = MPL_collapse_no_focus
 			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_1
-				amount = 200
-			}
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.05
 			}
 			custom_effect_tooltip = ISR_significantly_strengthen_hatzohar
-			custom_effect_tooltip = newline_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_category_tooltip = MPL_foreign_support_category
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 200
+			}
 			add_to_variable = {
 				ISR_hatzohar_max_seats = 5
 			}
@@ -522,8 +525,9 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.1
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			remove_ideas = ISR_disorganized_militias
-			custom_effect_tooltip = newline_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 			country_event = {
 				id = israel.1
 				days = 1
@@ -556,10 +560,12 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			add_ideas = ISR_alei_barikadot
-			add_command_power = 20
 			army_experience = 10
+			add_command_power = 20
 			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ISR_alei_barikadot
+			custom_effect_tooltip = generic_skip_one_line_tt
 			ISR_menachem_begin = {
 				add_field_marshal_role = {
 					skill = 2
@@ -662,6 +668,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			army_experience = 15
 			1016 = {
 				add_building_construction = {
 					type = bunker
@@ -676,18 +683,18 @@ focus_tree = {
 				}
 				
 			}
-			
+			custom_effect_tooltip = generic_skip_one_line_tt
 			hidden_effect = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
 					amount = 500
 				}
 			}
-			army_experience = 15
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = -300
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			PAL = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment
@@ -695,6 +702,7 @@ focus_tree = {
 				}
 				add_manpower = -1000
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					1016 = {
@@ -788,6 +796,7 @@ focus_tree = {
 				days = 1 
 				random_hours = 12
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					controls_state = 1016
@@ -844,6 +853,7 @@ focus_tree = {
 				limit = {
 					owns_state = 966
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				966 = {
 					add_dynamic_modifier = {
 						modifier = r56_ISR_palestinian_resistance
@@ -855,6 +865,7 @@ focus_tree = {
 				limit = {
 					owns_state = 949
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				949 = {
 					add_dynamic_modifier = {
 						modifier = r56_ISR_palestinian_resistance
@@ -866,6 +877,7 @@ focus_tree = {
 				limit = {
 					owns_state = 454
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				454 = {
 					add_dynamic_modifier = {
 						modifier = r56_ISR_palestinian_resistance_low
@@ -877,6 +889,7 @@ focus_tree = {
 				limit = {
 					owns_state = 1016
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				1016 = {
 					add_dynamic_modifier = {
 						modifier = r56_ISR_palestinian_resistance_low
@@ -888,6 +901,7 @@ focus_tree = {
 				limit = {
 					owns_state = 1017
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				1017 = {
 					add_dynamic_modifier = {
 						modifier = r56_ISR_palestinian_resistance_low
@@ -2075,7 +2089,7 @@ focus_tree = {
 		relative_position_id = ISR_toe_line
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = ISR_toe_line
 		}
@@ -2201,7 +2215,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_recognize_beduin
 		}
-		cost = 8
+		cost = 10
 		bypass = {
 			OR = {
 				NOT = {
@@ -2339,7 +2353,7 @@ focus_tree = {
 			focus = ISR_two_state_solution
 			focus = ISR_levantine_commune
 		} 
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = ISR_shearim
 		}
@@ -2426,7 +2440,7 @@ focus_tree = {
 			focus = ISR_centre_victorious
 			focus = ISR_revisionist_revolution
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			custom_effect_tooltip = ISR_appeal_west_tt
 			hidden_effect = {
@@ -2961,7 +2975,7 @@ focus_tree = {
 			focus = ISR_herzl_successor
 			focus = ISR_sharett_diplomacy
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = ISR_rome_and_jerusalem
 		}
@@ -3300,7 +3314,7 @@ focus_tree = {
 		relative_position_id = ISR_strengthen_progressives
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = ISR_strengthen_progressives
 		}
@@ -3596,7 +3610,7 @@ focus_tree = {
 			focus = ISR_middle_class_investments
 			focus = ISR_expand_immigrant_infrastructure
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = ISR_legacy_of_basel
 		}
@@ -3736,7 +3750,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_periphery_investments
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = ISR_austerity
@@ -3756,7 +3770,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_push_military_industries
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = ISR_histadrut_start
@@ -3783,7 +3797,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_open_economy
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = ISR_the_five_mems
@@ -3833,7 +3847,7 @@ focus_tree = {
 		bypass = {
 			has_global_flag = MPL_jerusalem_conference
 		}
-		cost = 8 
+		cost = 10 
 		completion_reward = {
 			if = {
 				limit = {
@@ -3959,7 +3973,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_reject_lesser_israel
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			
 			454 = {
@@ -4111,7 +4125,7 @@ focus_tree = {
 		relative_position_id = ISR_reject_lesser_israel
 		x = 0 
 		y = 3
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = ISR_our_rightful_land
 			focus = ISR_abandon_eretz_yisrael
@@ -4206,7 +4220,7 @@ focus_tree = {
 			focus = ISR_centre_victorious
 			focus = ISR_revisionist_revolution
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			unlock_decision_category_tooltip = ISR_vote_president_category
 		}
@@ -4227,7 +4241,7 @@ focus_tree = {
 				random_hours = 12
 			}
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			custom_effect_tooltip = ISR_constitution_effect_tt
 		}
@@ -4673,7 +4687,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_am_yisrael_hai
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			create_wargoal = {
 				target = GER
@@ -4745,7 +4759,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_political_power = 100
 			add_war_support = 0.1
@@ -4772,7 +4786,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_irgun_in_power
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			
 			454 = {
@@ -5320,7 +5334,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_crown_of_david
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = ISR_fire_and_blood_1
 		}
@@ -5539,7 +5553,7 @@ focus_tree = {
 				is_subject = yes
 			}
 		}
-		cost = 8
+		cost = 10
 		will_lead_to_war_with = JOR
 		completion_reward = {
 			add_state_claim = 455
@@ -5599,7 +5613,22 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = "Alliance of the Periphery"
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				create_faction_from_template = {
+					template = faction_template_ISR_alliance_of_the_periphery
+					name = alliance_of_the_periphery
+				}
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				create_faction_from_template = {
+					template = faction_template_ISR_alliance_of_the_periphery
+					name = alliance_of_the_periphery
+				}
+			}
 		}
 	}
 
@@ -5728,7 +5757,7 @@ focus_tree = {
 				is_ally_with = EGY
 			}
 		}
-		cost = 8
+		cost = 10
 		will_lead_to_war_with = EGY
 		completion_reward = {
 			add_state_claim = 453
@@ -5749,7 +5778,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_the_italian_model
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			army_experience = 40
 			add_command_power = 10
@@ -5763,7 +5792,7 @@ focus_tree = {
 		relative_position_id = ISR_only_thus
 		x = -1
 		y = 3
-		cost = 8
+		cost = 10
 		bypass = {
 			OR = {
 				is_ally_with = 553.controller
@@ -5832,7 +5861,7 @@ focus_tree = {
 		}
 		will_lead_to_war_with = SYR
 		will_lead_to_war_with = FRA
-		cost = 8
+		cost = 10
 		completion_reward = {
 			if = {
 				limit = {
@@ -5894,7 +5923,7 @@ focus_tree = {
 		relative_position_id = ISR_only_thus
 		x = 0 
 		y = 4
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = ISR_support_maronite_lebanese
 			focus = ISR_partition_syria
@@ -5987,7 +6016,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_gather_outside_support
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_popularity = {
 				ideology = fascism
@@ -6007,7 +6036,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_avenge_tragedies
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_state_core = 966
 			add_state_claim = 995
@@ -6058,7 +6087,7 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			custom_effect_tooltip = ISR_if_not_has_jewish_militarism
 			effect_tooltip = {
@@ -6163,7 +6192,7 @@ focus_tree = {
 		relative_position_id = ISR_the_east_bank
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = ISR_the_east_bank
 		}
@@ -6229,7 +6258,7 @@ focus_tree = {
 		relative_position_id = ISR_the_east_bank
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = ISR_the_east_bank
 		}
@@ -6539,7 +6568,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_nile_to_euphrates
 		}
-		cost = 8 
+		cost = 10 
 		completion_reward = {
 			add_stability = -0.05
 			if = {
@@ -6570,7 +6599,7 @@ focus_tree = {
 		available = {
 			is_subject = no
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			if = {
 				limit = {
@@ -6891,7 +6920,7 @@ focus_tree = {
 		relative_position_id = ISR_formalize_military
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = MPL_professional_army
 			if = {
@@ -6918,7 +6947,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ISR_special_night_squads
 		}
-		cost = 8
+		cost = 10
 		relative_position_id = ISR_proffesional_army_training
 		x = 1
 		y = 1
@@ -7136,7 +7165,7 @@ focus_tree = {
 		relative_position_id = ISR_israeli_air_school		
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -7178,7 +7207,7 @@ focus_tree = {
 		relative_position_id = ISR_israeli_air_school		
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -7850,7 +7879,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ISR_provisional_government
 		text = MPL_open_tel_aviv_university
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 30
@@ -8023,7 +8052,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ISR_raise_jewish_militias
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 25
@@ -8277,7 +8306,7 @@ focus_tree = {
 			focus = ISR_ad_halom
 		}
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -8435,11 +8464,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_mastery_bonus = {
+				name = flexible_navy
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_convoy_raiding	
+			}
 			add_doctrine_cost_reduction = {
 				name = GER_trade_interdiction
 				cost_reduction = 0.5
-				uses = 2
-				category = trade_interdiction_tree
+				uses = 1
+				category = naval_doctrine
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -8564,7 +8599,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ISR_Sea_Dominance
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -8711,7 +8746,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ISR_Sea_Dominance
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 

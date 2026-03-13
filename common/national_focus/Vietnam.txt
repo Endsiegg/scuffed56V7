@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = Vietnam_focus
 	country = {
@@ -23,7 +24,7 @@ focus_tree = {
 			OR = {
 				AND = {
 					has_government = communism
-					is_puppet = yes
+					is_subject = yes
 					NOT = {
 						has_country_flag = la_lutte_victorious_flag
 					}
@@ -42,7 +43,7 @@ focus_tree = {
 	focus = {
 		id = VIN_three_together_system
 		icon = GFX_focus_generic_military_academy
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_ho_chi_minh_victorious
 		}
@@ -65,7 +66,7 @@ focus_tree = {
 	focus = {
 		id = VIN_cement_rule_in_the_villages
 		icon = GFX_goal_demand_sudetenland
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_ho_chi_minh_victorious
 		}
@@ -80,7 +81,7 @@ focus_tree = {
 	focus = {
 		id = VIN_land_reforms_program
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_three_together_system
 		}
@@ -98,7 +99,7 @@ focus_tree = {
 	focus = {
 		id = VIN_begin_the_five_years_plan
 		icon = GFX_goal_generic_soviet_construction
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_land_reforms_program
 		}
@@ -136,7 +137,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_permanent_siege
 		icon = GFX_goal_vietnam_the_siege
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_land_reforms_program
 		}
@@ -151,7 +152,7 @@ focus_tree = {
 	focus = {
 		id = VIN_political_reorganisation_of_the_army
 		icon = GFX_focus_generic_little_entente
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_permanent_siege
 		}
@@ -172,7 +173,7 @@ focus_tree = {
 	focus = {
 		id = VIN_asian_proletarian_solidarity
 		icon = GFX_focus_YUG_pan_slavic_congress
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_ho_chi_minh_victorious
 		}
@@ -181,10 +182,14 @@ focus_tree = {
 		}
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 		}
 		completion_reward = {
-			create_faction = ASIAN_PROLETARIAN_SOLIDARITY_FACTION
+			create_faction_from_template = {
+				template = faction_template_comintern
+				name = ASIAN_PROLETARIAN_SOLIDARITY_FACTION
+				icon = GFX_faction_logo_generic_9
+			}
 			set_rule = { can_create_factions = yes }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -195,7 +200,7 @@ focus_tree = {
 	focus = {
 		id = VIN_create_the_hanoi_group
 		icon = GFX_goal_tfv_generic_tech_sharing
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_asian_proletarian_solidarity
 		}
@@ -210,7 +215,7 @@ focus_tree = {
 	focus = {
 		id = VIN_finish_what_we_started
 		icon = GFX_goal_generic_major_war
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_asian_proletarian_solidarity
 		}
@@ -259,13 +264,13 @@ focus_tree = {
 	focus = {
 		id = VIN_woo_the_stalinists
 		icon = GFX_focus_chi_mission_to_the_soviet_union
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_ho_chi_minh_victorious
 		}
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 			SOV = {
 				NOT = { has_war_with = ROOT }
 				exists = yes
@@ -292,7 +297,7 @@ focus_tree = {
 	focus = {
 		id = VIN_prepare_for_the_worst
 		icon = GFX_goal_generic_construct_military
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_asian_proletarian_solidarity
 			focus = VIN_woo_the_stalinists
@@ -348,7 +353,7 @@ focus_tree = {
 	focus = {
 		id = VIN_anti_japanese_aim
 		icon = GFX_focus_attack_japan
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_woo_the_stalinists
 		}
@@ -362,7 +367,7 @@ focus_tree = {
 	focus = {
 		id = VIN_intervene_in_chineses_affairs
 		icon = GFX_focus_attack_china
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_finish_what_we_started
 			focus = VIN_anti_japanese_aim
@@ -387,7 +392,7 @@ focus_tree = {
 	focus = {
 		id = VIN_invite_soviet_industrial_experts
 		icon = GFX_focus_generic_soviet_politics
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_woo_the_stalinists
 		}
@@ -425,7 +430,7 @@ focus_tree = {
 	focus = {
 		id = VIN_immediate_land_reform
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_la_lutte_victorious
 		}
@@ -445,7 +450,7 @@ focus_tree = {
 	focus = {
 		id = VIN_minimal_socialist_bureaucracy
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_la_lutte_victorious
 		}
@@ -460,7 +465,7 @@ focus_tree = {
 	focus = {
 		id = VIN_encourage_inter_party_democracy
 		icon = GFX_goal_generic_major_alliance
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_immediate_land_reform
 		}
@@ -481,7 +486,7 @@ focus_tree = {
 	focus = {
 		id = VIN_personnal_armament_program
 		icon = GFX_goal_generic_small_arms
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_encourage_inter_party_democracy
 		}
@@ -495,7 +500,7 @@ focus_tree = {
 	focus = {
 		id = VIN_expand_the_workers_class
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_encourage_inter_party_democracy
 		}
@@ -510,7 +515,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_internal_fight_continues
 		icon = GFX_goal_generic_national_unity
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_expand_the_workers_class
 		}
@@ -531,7 +536,7 @@ focus_tree = {
 	focus = {
 		id = VIN_our_own_internationale
 		icon = GFX_focus_ger_great_red_menace
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_la_lutte_victorious
 		}
@@ -540,10 +545,14 @@ focus_tree = {
 		}
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 		}
 		completion_reward = {
-			create_faction = ASIAN_INTERNATIONALE_FACTION
+			create_faction_from_template = {
+				template = faction_template_world_revolution
+				name = ASIAN_INTERNATIONALE_FACTION
+				icon = GFX_faction_logo_4th_international
+			}
 			set_rule = { can_create_factions = yes }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -554,7 +563,7 @@ focus_tree = {
 	focus = {
 		id = VIN_invite_poum_officers
 		icon = GFX_goal_vietnam_cooperate_with_the_poum
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_our_own_internationale
 		}
@@ -568,12 +577,12 @@ focus_tree = {
 	focus = {
 		id = VIN_align_with_trotsky_regime
 		icon = GFX_goal_SOV_trotsky_victory
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_la_lutte_victorious
 		}
 		available = {
-			is_puppet = no
+			is_subject = no
 			is_in_faction = no
 			OR = {
 				MEX = {
@@ -646,7 +655,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_permanent_revolution_theory
 		icon = GFX_goal_support_fourth_int
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_our_own_internationale
 			focus = VIN_align_with_trotsky_regime
@@ -662,7 +671,7 @@ focus_tree = {
 	focus = {
 		id = VIN_strike_indochina
 		icon = GFX_goal_attack_indochina
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_permanent_revolution_theory
 		}
@@ -686,7 +695,7 @@ focus_tree = {
 	focus = {
 		id = VIN_arm_malaysians_communists
 		icon = GFX_goal_vietnam_strike_malaysia
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_permanent_revolution_theory
 		}
@@ -697,7 +706,7 @@ focus_tree = {
 			}
 			MAL = {
 				NOT = {
-					is_puppet_of = ENG
+					is_subject_of = ENG
 				}
 			}
 			}
@@ -707,7 +716,7 @@ focus_tree = {
 				NOT = {
 					has_government = communism
 				}
-				is_puppet_of = ENG
+				is_subject_of = ENG
 				NOT = {
 					has_war_with = VIN
 				}
@@ -725,7 +734,7 @@ focus_tree = {
 	focus = {
 		id = VIN_fullfil_our_duty
 		icon = GFX_goal_generic_war_with_comintern
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_arm_malaysians_communists
 		}
@@ -746,7 +755,7 @@ focus_tree = {
 	focus = {
 		id = VIN_mimic_the_red_army
 		icon = GFX_focus_generic_combined_arms
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_align_with_trotsky_regime
 		}
@@ -783,7 +792,7 @@ focus_tree = {
 	focus = {
 		id = VIN_vietnams_tridemism
 		icon = GFX_focus_generic_the_giant_wakes
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_vnqdd_in_power
 		}
@@ -798,7 +807,7 @@ focus_tree = {
 	focus = {
 		id = VIN_dan_toc
 		icon = GFX_focus_generic_support_the_left_right
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_vietnams_tridemism
 		}
@@ -813,7 +822,7 @@ focus_tree = {
 	focus = {
 		id = VIN_establish_the_ve_binh_cong_hoa
 		icon = GFX_focus_generic_little_entente
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_dan_toc
 		}
@@ -831,7 +840,7 @@ focus_tree = {
 	focus = {
 		id = VIN_dan_chu
 		icon = GFX_goal_support_democracy
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_vietnams_tridemism
 		}
@@ -846,7 +855,7 @@ focus_tree = {
 	focus = {
 		id = VIN_establish_the_regional_parliaments
 		icon = GFX_focus_hol_the_foundations_of_defense
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_dan_chu
 		}
@@ -864,7 +873,7 @@ focus_tree = {
 	focus = {
 		id = VIN_hanh_phuc
 		icon = GFX_goal_generic_consumer_goods
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_vietnams_tridemism
 		}
@@ -879,7 +888,7 @@ focus_tree = {
 	focus = {
 		id = VIN_gradual_agrarian_reform
 		icon = GFX_goal_agrarian_reform
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_hanh_phuc
 		}
@@ -897,7 +906,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_shining_dragon
 		icon = GFX_focus_generic_diplomatic_treaty
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_establish_the_ve_binh_cong_hoa
 		}
@@ -921,15 +930,15 @@ focus_tree = {
 	focus = {
 		id = VIN_help_the_kuomintang
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_vnqdd_in_power
 		}
 		available = {
-			is_puppet = no
+			is_subject = no
 			is_in_faction = no
 			CHI = {
-				is_puppet = no
+				is_subject = no
 				has_war = yes
 				OR = {
 					has_government = neutrality
@@ -953,7 +962,7 @@ focus_tree = {
 	focus = {
 		id = VIN_anti_japanese_guerrila_tactics
 		icon = GFX_focus_prc_infiltration
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_help_the_kuomintang
 		}
@@ -970,7 +979,7 @@ focus_tree = {
 	focus = {
 		id = VIN_influence_our_brothers
 		icon = GFX_goal_continuous_boost_freedom
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_help_the_kuomintang
 		}
@@ -1001,7 +1010,7 @@ focus_tree = {
 	focus = {
 		id = VIN_incochinese_neutrality
 		icon = GFX_goal_generic_neutrality_focus
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_vnqdd_in_power
 		}
@@ -1010,7 +1019,7 @@ focus_tree = {
 		}
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 		}
 		completion_reward = {
 			add_political_power = 200
@@ -1025,7 +1034,7 @@ focus_tree = {
 	focus = {
 		id = VIN_build_the_quang_bich_line
 		icon = GFX_focus_generic_coastal_fort
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_incochinese_neutrality
 			focus = VIN_help_the_kuomintang
@@ -1089,7 +1098,7 @@ focus_tree = {
 	focus = {
 		id = VIN_mutual_defensive_treaty
 		icon = GFX_goal_generic_national_unity
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_incochinese_neutrality
 		}
@@ -1153,7 +1162,7 @@ focus_tree = {
 	focus = {
 		id = VIN_reform_the_royal_administration
 		icon = GFX_focus_generic_treaty
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_new_emperor
 		}
@@ -1168,7 +1177,7 @@ focus_tree = {
 	focus = {
 		id = VIN_cooperation_with_landlords
 		icon = GFX_goal_generic_aristocratic_cooperation
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_reform_the_royal_administration
 		}
@@ -1183,7 +1192,7 @@ focus_tree = {
 	focus = {
 		id = VIN_centralise_the_regions
 		icon = GFX_goal_generic_political_pressure
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_new_emperor
 		}
@@ -1198,7 +1207,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_hoi_quy_toc
 		icon = GFX_focus_usa_voter_registration_act
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_centralise_the_regions
 		}
@@ -1216,7 +1225,7 @@ focus_tree = {
 	focus = {
 		id = VIN_royal_corporatism
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_cooperation_with_landlords
 		}
@@ -1234,7 +1243,7 @@ focus_tree = {
 	focus = {
 		id = VIN_crush_the_republicans
 		icon = GFX_goal_anti_comintern_pact
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_centralise_the_regions
 		}
@@ -1257,7 +1266,7 @@ focus_tree = {
 	focus = {
 		id = VIN_deploy_the_dan_quan_hoang_gia
 		icon = GFX_goal_generic_allies_build_infantry
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_crush_the_republicans
 		}
@@ -1275,10 +1284,10 @@ focus_tree = {
 	focus = {
 		id = VIN_cooperation_with_japan
 		icon = GFX_focus_chi_collaboration_with_the_japanese
-		cost = 8
+		cost = 10
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 			JAP = {
 				NOT = { has_war_with = ROOT }
 				exists = yes
@@ -1309,7 +1318,7 @@ focus_tree = {
 	focus = {
 		id = VIN_trade_with_the_reorganised_government
 		icon = GFX_goal_vietnam_trade_with_puppet_china
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_cooperation_with_japan
 		}
@@ -1317,15 +1326,15 @@ focus_tree = {
 			OR = {
 				CHI = {
 					exists = yes
-					is_puppet_of = JAP
+					is_subject_of = JAP
 				}
 				PGR = {
 					exists = yes
-					is_puppet_of = JAP
+					is_subject_of = JAP
 				}
 				RGR = {
 					exists = yes
-					is_puppet_of = JAP
+					is_subject_of = JAP
 				}
 			}
 		}
@@ -1334,7 +1343,7 @@ focus_tree = {
 				limit = {
 					CHI = {
 					exists = yes
-					is_puppet_of = JAP
+					is_subject_of = JAP
 				}
 				}
 				CHI = {
@@ -1348,7 +1357,7 @@ focus_tree = {
 					limit = {
 						PGR = {
 							exists = yes
-							is_puppet_of = JAP
+							is_subject_of = JAP
 						}
 					}
 						PGR = {
@@ -1377,7 +1386,7 @@ focus_tree = {
 	focus = {
 		id = VIN_cross_the_cangshan
 		icon = GFX_goal_generic_major_war
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_cooperation_with_japan
 		}
@@ -1407,13 +1416,13 @@ focus_tree = {
 	focus = {
 		id = VIN_the_lone_dragon
 		icon = GFX_goal_vietnam_lone_dragon
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_new_emperor
 		}
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 		}
 		mutually_exclusive = {
 			focus = VIN_cooperation_with_japan
@@ -1433,7 +1442,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_greater_vietnam_concept
 		icon = GFX_goal_vietnam_greater_vietnam
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_cooperation_with_japan
 			focus = VIN_the_lone_dragon
@@ -1464,7 +1473,7 @@ focus_tree = {
 	focus = {
 		id = VIN_rule_the_thais
 		icon = GFX_goal_vietnam_attack_siam
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_greater_vietnam_concept
 		}
@@ -1491,7 +1500,7 @@ focus_tree = {
 	focus = {
 		id = VIN_total_economic_mobilization
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_lone_dragon
 		}
@@ -1523,7 +1532,7 @@ focus_tree = {
 	focus = {
 		id = VIN_create_the_national_railway_administration
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 8
+		cost = 10
 		x = 50
 		y = 0
 
@@ -1597,7 +1606,7 @@ focus_tree = {
 	focus = {
 		id = VIN_nationalize_french_businesses
 		icon = GFX_focus_generic_self_management
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_create_the_national_railway_administration
 		}
@@ -1641,7 +1650,7 @@ focus_tree = {
 	focus = {
 		id = VIN_cqtbcnqg
 		icon = GFX_goal_generic_production2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_create_the_national_railway_administration
 		}
@@ -1661,7 +1670,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_roaring_dragon_theory
 		icon = GFX_goal_generic_construction
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_nationalize_french_businesses
 		}
@@ -1682,7 +1691,7 @@ focus_tree = {
 	focus = {
 		id = VIN_expand_the_coal_mines
 		icon = GFX_goal_generic_construction2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_roaring_dragon_theory
 		}
@@ -1756,7 +1765,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_new_agriculture_program
 		icon = GFX_goal_agrarian_reform
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_roaring_dragon_theory
 		}
@@ -1771,7 +1780,7 @@ focus_tree = {
 	focus = {
 		id = VIN_building_the_future
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_expand_the_coal_mines
 		}
@@ -1848,7 +1857,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_flying_dragon_theory
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_cqtbcnqg
 		}
@@ -1874,7 +1883,7 @@ focus_tree = {
 	focus = {
 		id = VIN_vietnam_national_university
 		icon = GFX_focus_research
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_roaring_dragon_theory
 			focus = VIN_the_flying_dragon_theory
@@ -1893,7 +1902,7 @@ focus_tree = {
 	focus = {
 		id = VIN_educate_the_peasants
 		icon = GFX_focus_generic_socialist_science
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_new_agriculture_program
 		}
@@ -1910,7 +1919,7 @@ focus_tree = {
 	focus = {
 		id = VIN_bidv
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_flying_dragon_theory
 		}
@@ -1925,7 +1934,7 @@ focus_tree = {
 	focus = {
 		id = VIN_expand_urban_schools
 		icon = GFX_focus_research2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_vietnam_national_university
 		}
@@ -1942,7 +1951,7 @@ focus_tree = {
 	focus = {
 		id = VIN_petrolimex
 		icon = GFX_goal_generic_oil_refinery
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_flying_dragon_theory
 		}
@@ -1964,7 +1973,7 @@ focus_tree = {
 	focus = {
 		id = VIN_habeco_investments
 		icon = GFX_goal_generic_consumer_goods
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_bidv
 		}
@@ -2041,7 +2050,7 @@ focus_tree = {
 	focus = {
 		id = VIN_expand_automobile_production
 		icon = GFX_goal_generic_army_motorized
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_habeco_investments
 		}
@@ -2072,7 +2081,7 @@ focus_tree = {
 	focus = {
 		id = VIN_reinvest_profits_in_military_production
 		icon = GFX_focus_generic_license_production
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_habeco_investments
 		}
@@ -2103,7 +2112,7 @@ focus_tree = {
 	focus = {
 		id = VIN_create_the_hanoi_arsenal
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_building_the_future
 		}
@@ -2133,7 +2142,7 @@ focus_tree = {
 	focus = {
 		id = VIN_expand_the_mekong_dams
 		icon = GFX_goal_power_plant
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_building_the_future
 		}
@@ -2207,7 +2216,7 @@ focus_tree = {
 	focus = {
 		id = VIN_begin_the_second_phase_of_the_industrial_plan
 		icon = GFX_focus_generic_industry_3
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_create_the_hanoi_arsenal
 		}
@@ -2225,7 +2234,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_commercial_pearl_of_asia
 		icon = GFX_focus_mex_privatisation
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_reinvest_profits_in_military_production
 		}
@@ -2262,7 +2271,7 @@ focus_tree = {
 	focus = {
 		id = VIN_invite_foreign_instructors
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_establish_the_national_army_of_vietnam
 		}
@@ -2279,7 +2288,7 @@ focus_tree = {
 	focus = {
 		id = VIN_new_rifles_for_a_new_army
 		icon = GFX_goal_generic_small_arms
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_establish_the_national_army_of_vietnam
 		}
@@ -2299,7 +2308,7 @@ focus_tree = {
 	focus = {
 		id = VIN_group_559
 		icon = GFX_goal_generic_construction2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_new_rifles_for_a_new_army
 		}
@@ -2319,7 +2328,7 @@ focus_tree = {
 	focus = {
 		id = VIN_new_entrenchment_tactics
 		icon = GFX_goal_generic_defence
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_group_559
 		}
@@ -2339,7 +2348,7 @@ focus_tree = {
 	focus = {
 		id = VIN_improve_inter_armies_communication
 		icon = GFX_goal_generic_radar
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_new_rifles_for_a_new_army
 		}
@@ -2357,7 +2366,7 @@ focus_tree = {
 	focus = {
 		id = VIN_forest_expertise
 		icon = GFX_goal_generic_forest_warfare
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_group_559
 		}
@@ -2378,7 +2387,7 @@ focus_tree = {
 	focus = {
 		id = VIN_forts_and_guerrilla
 		icon = GFX_goal_generic_fortify_city
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_new_entrenchment_tactics
 		}
@@ -2396,7 +2405,7 @@ focus_tree = {
 	focus = {
 		id = VIN_make_the_mountains_tremble
 		icon = GFX_goal_generic_army_artillery2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_new_rifles_for_a_new_army
 		}
@@ -2416,7 +2425,7 @@ focus_tree = {
 	focus = {
 		id = VIN_fast_and_powerful
 		icon = GFX_goal_generic_army_motorized
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_improve_inter_armies_communication
 		}
@@ -2439,7 +2448,7 @@ focus_tree = {
 	focus = {
 		id = VIN_national_defense_academy_of_vietnam
 		icon = GFX_focus_generic_military_academy
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_establish_the_national_army_of_vietnam
 		}
@@ -2460,7 +2469,7 @@ focus_tree = {
 	focus = {
 		id = VIN_national_defense_institute_of_sciences
 		icon = GFX_focus_research
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_national_defense_academy_of_vietnam
 		}
@@ -2478,7 +2487,7 @@ focus_tree = {
 	focus = {
 		id = VIN_tanks_experimentation
 		icon = GFX_goal_generic_army_tanks
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_fast_and_powerful
 		}
@@ -2501,7 +2510,7 @@ focus_tree = {
 	focus = {
 		id = VIN_the_rock_paper_scissors_strategy
 		icon = GFX_goal_generic_special_forces
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_national_defense_academy_of_vietnam
 		}
@@ -2564,7 +2573,7 @@ focus_tree = {
 	focus = {
 		id = VIN_build_the_nha_trang_dockyards
 		icon = GFX_goal_generic_construct_naval_dockyard
-		cost = 8
+		cost = 10
 		x = 67
 		y = 0
 
@@ -2587,6 +2596,7 @@ focus_tree = {
 					}
 				}
 				random_owned_controlled_state = {
+					prioritize = { 927 }
 					limit = {
 						is_coastal = yes
 						free_building_slots = {
@@ -2615,6 +2625,7 @@ focus_tree = {
 					}
 				}
 				random_owned_controlled_state = {
+					prioritize = { 927 }
 					limit = {
 						dockyard > 0
 						free_building_slots = {
@@ -2644,6 +2655,7 @@ focus_tree = {
 					}
 				}
 				random_state = {
+					prioritize = { 927 }
 					limit = {
 						controller = { tag = ROOT }
 						free_building_slots = {
@@ -2659,16 +2671,27 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-			}			
+			}
+			if = {
+				limit = { 927 = { is_controlled_by = ROOT } }
+				927 = {
+					add_building_construction = {
+					type = naval_base
+					province = 4405
+					level = 3
+					instant_build = yes
+					}
+				}
+			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 
 	}
 
 	focus = {
 		id = VIN_the_tiger_of_the_seas
 		icon = GFX_goal_generic_navy_submarine
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_build_the_nha_trang_dockyards
 		}
@@ -2692,7 +2715,7 @@ focus_tree = {
 	focus = {
 		id = VIN_protecting_the_pearl
 		icon = GFX_goal_generic_navy_battleship
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_build_the_nha_trang_dockyards
 		}
@@ -2718,7 +2741,7 @@ focus_tree = {
 	focus = {
 		id = VIN_establish_the_naval_staff
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_the_tiger_of_the_seas
 			focus = VIN_protecting_the_pearl
@@ -2739,7 +2762,7 @@ focus_tree = {
 	focus = {
 		id = VIN_light_cruisers_and_heavy_damages
 		icon = GFX_goal_generic_navy_cruiser
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_establish_the_naval_staff
 		}
@@ -2761,7 +2784,7 @@ focus_tree = {
 	focus = {
 		id = VIN_defeating_the_underwater_warfare
 		icon = GFX_goal_generic_navy_anti_submarine
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_establish_the_naval_staff
 		}
@@ -2782,7 +2805,7 @@ focus_tree = {
 	focus = {
 		id = VIN_chien_binh_bien
 		icon = GFX_goal_generic_amphibious_assault
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_light_cruisers_and_heavy_damages
 			focus = VIN_defeating_the_underwater_warfare
@@ -2811,7 +2834,7 @@ focus_tree = {
 	focus = {
 		id = VIN_form_the_national_air_force_of_vietnam
 		icon = GFX_goal_generic_build_airforce
-		cost = 8
+		cost = 10
 		x = 71
 		y = 0
 
@@ -2868,7 +2891,7 @@ focus_tree = {
 	focus = {
 		id = VIN_convert_civilian_planes
 		icon = GFX_goal_generic_production2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_form_the_national_air_force_of_vietnam
 		}
@@ -2886,7 +2909,7 @@ focus_tree = {
 	focus = {
 		id = VIN_establish_the_air_force_research_committee
 		icon = GFX_goal_generic_air_doctrine
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_form_the_national_air_force_of_vietnam
 		}
@@ -2906,7 +2929,7 @@ focus_tree = {
 	focus = {
 		id = VIN_develop_new_fighters
 		icon = GFX_goal_generic_air_fighter
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_convert_civilian_planes
 		}
@@ -2943,7 +2966,7 @@ focus_tree = {
 	focus = {
 		id = VIN_troops_destruction
 		icon = GFX_goal_generic_CAS
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_develop_new_fighters
 		}
@@ -2982,7 +3005,7 @@ focus_tree = {
 	focus = {
 		id = VIN_buildings_destruction
 		icon = GFX_goal_generic_air_bomber
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_develop_new_fighters
 		}
@@ -3024,7 +3047,7 @@ focus_tree = {
 	focus = {
 		id = VIN_ships_destruction
 		icon = GFX_goal_generic_air_naval_bomber
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VIN_troops_destruction
 			focus = VIN_buildings_destruction

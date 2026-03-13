@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = r56_uruguay_focus
 
@@ -251,7 +252,7 @@ focus_tree = {
 	focus = {
 		id = URG_invite_ford
 		icon = GFX_goal_generic_befriend_united_states
-		cost = 8
+		cost = 10
 		x = -4
 		y = 4
 		prerequisite = { focus = URG_study_the_new_weaponry }
@@ -323,7 +324,7 @@ focus_tree = {
 	focus = {
 		id = URG_invite_vickers
 		icon = GFX_focus_chi_british_cooperation
-		cost = 8
+		cost = 10
 		x = -2
 		y = 4
 		prerequisite = { focus = URG_study_the_new_weaponry }
@@ -407,7 +408,7 @@ focus_tree = {
 	focus = {
 		id = URG_mechanize_the_troops
 		icon = GFX_focus_CHL_domestic_production_of_the_willys_mb
-		cost = 8
+		cost = 10
 		x = -3
 		y = 5
 		prerequisite = { 
@@ -439,7 +440,7 @@ focus_tree = {
 	focus = {
 		id = URG_an_oriental_rifle
 		icon = GFX_goal_machine_gun
-		cost = 8
+		cost = 10
 		x = 0
 		y = 4
 		prerequisite = { 
@@ -521,7 +522,7 @@ focus_tree = {
 	focus = {
 		id = URG_renovate_the_colonial_forts
 		icon = GFX_goal_generic_fortification
-		cost = 8
+		cost = 10
 		x = 2
 		y = 4
 		prerequisite = { 
@@ -565,7 +566,7 @@ focus_tree = {
 	focus = {
 		id = URG_create_the_marine_corps
 		icon = GFX_goal_generic_marines2
-		cost = 8
+		cost = 10
 		x = 4
 		y = 4
 		prerequisite = { 
@@ -620,7 +621,7 @@ focus_tree = {
 	focus = {
 		id = URG_expand_the_CIACA
 		icon = GFX_goal_generic_army_artillery
-		cost = 8
+		cost = 10
 		x = 3
 		y = 5
 		prerequisite = { 
@@ -767,7 +768,7 @@ focus_tree = {
 	focus = {
 		id = URG_the_terra_dictatorship
 		icon = GFX_focus_generic_military_dictatorship
-		cost = 8
+		cost = 10
 		x = 56
 		y = 0
 		completion_reward = {
@@ -936,7 +937,7 @@ focus_tree = {
 	focus = {
 		id = URG_constitutional_reforms
 		icon = GFX_focus_hol_the_foundations_of_defense
-		cost = 8
+		cost = 10
 		prerequisite = { focus = URG_legalize_female_suffrage }
 		prerequisite = { focus = URG_authoritarian_liberalism }
 		prerequisite = { focus = URG_solidarismo }
@@ -974,7 +975,7 @@ focus_tree = {
 	focus = {
 		id = URG_axis_loans
 		icon = GFX_goal_generic_fascist_bills
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_constitutional_reforms
 		}
@@ -1026,7 +1027,7 @@ focus_tree = {
 	focus = {
 		id = URG_crackdown_on_the_revolutionaries
 		icon = GFX_goal_attack_communists
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_constitutional_reforms
 		}
@@ -1056,7 +1057,7 @@ focus_tree = {
 	focus = {
 		id = URG_1938_elections
 		icon = GFX_goal_generic_election
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_axis_loans focus = URG_crackdown_on_the_revolutionaries
 		}
@@ -1371,7 +1372,7 @@ focus_tree = {
 	focus = {
 		id = URG_switzerland_of_the_americas
 		icon = GFX_URG_focus_switzerland_of_the_americas
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_democracia_y_paz
 			focus = URG_legacy_of_saravia
@@ -1420,7 +1421,7 @@ focus_tree = {
 	focus = {
 		id = URG_join_the_allies
 		icon = GFX_allies
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_democracia_y_paz
 			focus = URG_legacy_of_saravia
@@ -1494,7 +1495,7 @@ focus_tree = {
 	focus = {
 		id = URG_expand_the_montevideo_treaty
 		icon = GFX_goal_uruguay_expand_the_treaty_of_montevideo
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_democracia_y_paz
 			focus = URG_legacy_of_saravia
@@ -1536,7 +1537,11 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = URG_montevideo_treaty
+			# create_faction = URG_montevideo_treaty
+			create_faction_from_template = {
+				template = faction_template_URG_hispanic_alliance_faction
+				name = URG_montevideo_treaty
+			}
 			every_country = {
 				limit = {
 					has_country_flag = hispanic
@@ -1564,7 +1569,7 @@ focus_tree = {
 	focus = {
 		id = URG_libertad_o_muerte
 		icon = GFX_goal_URG_army
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_expand_the_montevideo_treaty
 			focus = URG_switzerland_of_the_americas
@@ -1594,7 +1599,7 @@ focus_tree = {
 	focus = {
 		id = URG_take_a_stance
 		icon = GFX_focus_attack_germany
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_expand_the_montevideo_treaty
 			focus = URG_join_the_allies
@@ -1688,7 +1693,7 @@ focus_tree = {
 	focus = {
 		id = URG_western_commercial_relations
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_colorado_victory
 		}
@@ -1794,7 +1799,7 @@ focus_tree = {
 	focus = {
 		id = URG_modify_the_terrist_constitution
 		icon = GFX_goal_constitution
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_curtail_fascist_influence
 		}
@@ -1817,7 +1822,7 @@ focus_tree = {
 	focus = {
 		id = URG_execute_the_golpe_bueno
 		icon = GFX_goal_AFG_disband_loya_jirga
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_modify_the_terrist_constitution
 		}
@@ -1860,7 +1865,7 @@ focus_tree = {
 	focus = {
 		id = URG_public_works_projects
 		icon = GFX_focus_generic_public_works
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_execute_the_golpe_bueno
 		}
@@ -1905,7 +1910,7 @@ focus_tree = {
 	focus = {
 		id = URG_social_reforms
 		icon = GFX_goal_FRA_reynaud_economic_reforms
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_execute_the_golpe_bueno
 		}
@@ -1961,7 +1966,7 @@ focus_tree = {
 	focus = {
 		id = URG_americanismo
 		icon = GFX_focus_generic_befriend_usa
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_blanco_victory
 		}
@@ -1994,7 +1999,7 @@ focus_tree = {
 	focus = {
 		id = URG_privatization_efforts
 		icon = GFX_goal_generic_privatization
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_blanco_victory
 		}
@@ -2062,7 +2067,7 @@ focus_tree = {
 	focus = {
 		id = URG_anti_statism
 		icon = GFX_focus_DEN_limited_regulations
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_ruralismo
 		}
@@ -2093,7 +2098,7 @@ focus_tree = {
 	focus = {
 		id = URG_traditionalism
 		icon = GFX_goal_christianity_and_state
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_ruralismo
 		}
@@ -2137,7 +2142,7 @@ focus_tree = {
 	focus = {
 		id = URG_legacy_of_saravia
 		icon = GFX_goal_uruguay_legacy_of_saravia
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_undo_batllist_reforms
 		}
@@ -2153,7 +2158,7 @@ focus_tree = {
 	focus = {
 		id = URG_education_reforms
 		icon = GFX_goal_generic_double_research
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_colorado_victory
 			focus = URG_blanco_victory
@@ -2174,7 +2179,7 @@ focus_tree = {
 	focus = {
 		id = URG_memories_of_the_council
 		icon = GFX_focus_generic_court
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_education_reforms
 		}
@@ -2272,7 +2277,7 @@ focus_tree = {
 	focus = {
 		id = URG_nationalize_foreign_monopolies
 		icon = GFX_goal_generic_communist_industries
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_destroy_bipartidism
 		}
@@ -2348,7 +2353,7 @@ focus_tree = {
 	focus = {
 		id = URG_enshrine_worker_rights
 		icon = GFX_focus_generic_full_employment
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_socialist_victory
 		}
@@ -2374,7 +2379,7 @@ focus_tree = {
 	focus = {
 		id = URG_further_batllist_reforms
 		icon = GFX_generic_goal_communist_reforms
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_socialist_victory
 		}
@@ -2487,7 +2492,7 @@ focus_tree = {
 	focus = {
 		id = URG_champion_of_the_people
 		icon = GFX_focus_focus_fra_revolution_utmost
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_work_with_the_batllists
 			focus = URG_work_with_the_anarchists
@@ -2523,7 +2528,7 @@ focus_tree = {
 	focus = {
 		id = URG_cooperate_with_the_bonete_nazis
 		icon = GFX_focus_chi_mission_to_germany
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_revisionist_coup
 		}
@@ -2557,7 +2562,7 @@ focus_tree = {
 	focus = {
 		id = URG_create_the_JUP
 		icon = GFX_focus_generic_full_social_mobilization
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_cooperate_with_the_bonete_nazis
 		}
@@ -2577,7 +2582,7 @@ focus_tree = {
 	focus = {
 		id = URG_militarize_the_society
 		icon = GFX_focus_generic_fascist_troops
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_embrace_our_catholic_heritage
 		}
@@ -2612,7 +2617,7 @@ focus_tree = {
 	focus = {
 		id = URG_purge_batllist_influence
 		icon = GFX_goal_generic_secret_police_2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_cooperate_with_the_bonete_nazis focus = URG_embrace_our_catholic_heritage
 		}
@@ -2741,7 +2746,7 @@ focus_tree = {
 	focus = {
 		id = URG_platine_ambitions
 		icon = GFX_focus_generic_spread_fascism
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_join_the_axis
 			focus = URG_we_stand_alone
@@ -2849,7 +2854,7 @@ focus_tree = {
 	focus = {
 		id = URG_cross_the_andes
 		icon = GFX_goal_generic_attack_chile
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_march_on_buenos_aires
 		}
@@ -2887,7 +2892,7 @@ focus_tree = {
 	focus = {
 		id = URG_march_northwards
 		icon = GFX_focus_generic_attack_bolivia
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_march_on_buenos_aires
 		}
@@ -2925,7 +2930,7 @@ focus_tree = {
 	focus = {
 		id = URG_la_patria_o_la_tumba
 		icon = GFX_goal_uruguay_la_patria_o_la_tumba
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_repeat_the_paraguayan_war
 		}
@@ -2979,7 +2984,7 @@ focus_tree = {
 	focus = {
 		id = URG_cooperate_with_colorado_politicians
 		icon = GFX_goal_generic_dangerous_deal
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_communist_revolution
 		}
@@ -3008,7 +3013,7 @@ focus_tree = {
 	focus = {
 		id = URG_government_purges
 		icon = GFX_focus_SWE_attack_landsorganisationen
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_communist_revolution
 		}
@@ -3034,7 +3039,7 @@ focus_tree = {
 	focus = {
 		id = URG_one_union_for_all_workers
 		icon = GFX_goal_generic_karl_marx
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_government_purges
 			focus = URG_cooperate_with_colorado_politicians
@@ -3084,7 +3089,7 @@ focus_tree = {
 	focus = {
 		id = URG_reorganise_the_economy
 		icon = GFX_goal_generic_communist_economy
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_workers_militias
 		}
@@ -3228,6 +3233,17 @@ focus_tree = {
 					country_event = generic.2
 				}
 			}
+			else_if = {
+				limit = {
+					is_in_faction = no
+					has_dlc = "No Compromise, No Surrender"
+				}
+				create_faction_from_template = {
+					template = faction_template_world_revolution # use pan american mandate instead?
+					name = URG_communist_faction
+				}
+				add_faction_initiative = 1
+			}
 			else = {
 				set_rule = {
 					can_create_factions = yes
@@ -3353,7 +3369,7 @@ focus_tree = {
 	focus = {
 		id = URG_tiranos_temblad
 		icon = GFX_focus_SWE_refuge_for_revolutionaries
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_retake_the_misiones_orientales
 		}
@@ -3389,7 +3405,7 @@ focus_tree = {
 	focus = {
 		id = URG_protect_the_revolution
 		icon = GFX_goal_generic_communist_pride
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_tiranos_temblad
 		}
@@ -3412,7 +3428,7 @@ focus_tree = {
 	focus = {
 		id = URG_spread_the_revolution
 		icon = GFX_focus_ETH_freedom_at_gunpoint
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = URG_tiranos_temblad
 		}

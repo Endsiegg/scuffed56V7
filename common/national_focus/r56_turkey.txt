@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = turkish_focus_r56
 
@@ -55,7 +56,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_continue_the_push_for_autarky
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_tech = construction1
@@ -125,7 +126,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_expand_the_aegean_economic_heartland
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -158,7 +159,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_expand_the_aegean_economic_heartland
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -205,7 +206,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_expand_the_aegean_economic_heartland
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -226,7 +227,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = TUR_continue_the_push_for_autarky
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -274,7 +275,7 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = TUR_continue_the_push_for_autarky
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -393,7 +394,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_village_institutes_program
-		cost = 8
+		cost = 10
 		
 		available = {
 			custom_trigger_tooltip = {
@@ -431,7 +432,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_connecting_the_eastern_provinces
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -461,7 +462,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = TUR_the_industrialization_of_central_anatolia
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -653,7 +654,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_exploit_the_sivas_iron_mines
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -707,7 +708,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = TUR_exploit_the_sivas_iron_mines
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -779,7 +780,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_implement_western_electronics
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -846,7 +847,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_continue_the_military_reorganization
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -879,7 +880,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = TUR_rejuvenate_the_great_war_arsenal
-		cost = 8
+		cost = 10
 		
 		available = {
 			OR = {
@@ -981,7 +982,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_begin_economic_mobilization
-		cost = 8
+		cost = 10
 		
 		available = {
 			if = {
@@ -1029,7 +1030,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_begin_economic_mobilization
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_tech = advanced_machine_tools
@@ -1101,7 +1102,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_continue_the_military_reorganization
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1124,7 +1125,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_doctrine_on_western_lines
-		cost = 8
+		cost = 10
 		prerequisite = { 
 			focus = TUR_doctrine_on_western_lines 
 		}
@@ -1132,17 +1133,9 @@ focus_tree = {
 			focus = TUR_rejuvenate_the_great_war_arsenal			
 		}
 		available = {
-			OR = {		#Has 2nd of any doctrine tech.
-				custom_trigger_tooltip = {		#There are two techs called 'Delay'
-					tooltip = has_researched_delay_tt
-					OR = {
-						has_tech = delay
-						has_tech = sup_delay
-					}
-				}
-				has_tech = grand_battle_plan
-				has_tech = pocket_defence
-				has_tech = r56_double_envelopment
+			OR = {
+				has_200_land_doctrine_mastery = yes
+				has_200_air_doctrine_mastery = yes
 			}
 		}
 
@@ -1242,7 +1235,7 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = TUR_standardize_infantry_equipment
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1270,7 +1263,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_begin_mechanization_developments
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1304,7 +1297,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_infantry_advancements
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1601,7 +1594,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_found_an_air_war_academy
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1655,7 +1648,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_medium_bomber_focus
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1703,7 +1696,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_medium_bomber_focus
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1746,7 +1739,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = TUR_found_an_air_war_academy
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1807,7 +1800,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_continue_importing_western_designs
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1857,7 +1850,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_continue_importing_western_designs
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1925,7 +1918,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = TUR_continue_the_naval_expansion
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2016,7 +2009,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TUR_continue_the_naval_expansion
 		
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2155,7 +2148,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_continue_the_naval_expansion
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_full_control_of_state = 797
@@ -2187,7 +2180,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_continue_the_naval_expansion
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2211,7 +2204,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_doctrinal_advancement
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2247,7 +2240,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_doctrinal_advancement
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2278,7 +2271,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = TUR_doctrinal_advancement
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2311,7 +2304,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_balanced_navy
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 8
@@ -2344,7 +2337,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_r56_the_path_of_the_wolf
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2442,7 +2435,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_further_agricultural_cooperative_reform
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2696,7 +2689,7 @@ focus_tree = {
 		relative_position_id = TUR_renew_the_democratic_reforms
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2740,7 +2733,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_renew_the_democratic_reforms
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2916,7 +2909,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_accomplishing_ataturks_dream
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2976,7 +2969,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = TUR_expand_the_centralization_efforts
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -3121,7 +3114,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = TUR_solidify_the_dictatorship
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 25
@@ -3192,7 +3185,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_befriend_the_fascist_council
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -3536,7 +3529,7 @@ focus_tree = {
 		}
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		relative_position_id = TUR_consolidate_the_chp
 		
 		ai_will_do = {
@@ -3810,7 +3803,7 @@ focus_tree = {
 		}
 		x = -2
 		y = 2
-		cost = 8
+		cost = 10
 		relative_position_id = TUR_pan_turkism
 		
 		ai_will_do = {
@@ -3918,7 +3911,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_support_the_conservative_opposition
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -3962,7 +3955,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_support_the_conservative_opposition
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -4027,7 +4020,7 @@ focus_tree = {
 		x = 6
 		y = 1
 		relative_position_id = TUR_lead_the_rural_masses
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			custom_trigger_tooltip = {
@@ -4350,7 +4343,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_restore_the_imperial_divan
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -4497,7 +4490,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_continue_military_rule
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -4564,7 +4557,7 @@ focus_tree = {
 		x = 6
 		y = 1
 		relative_position_id = TUR_restore_the_imperial_borders
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4774,7 +4767,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_western_detente
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4811,7 +4804,7 @@ focus_tree = {
 	   
 	   	x = -2
 	   	y = 1
-	   	cost = 8
+	   	cost = 10
 	   	relative_position_id = TUR_restore_the_imperial_borders
 	   
 	   	ai_will_do = {
@@ -4902,7 +4895,7 @@ focus_tree = {
 	   
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		relative_position_id = TUR_claim_greater_syria
 	   
 		ai_will_do = {
@@ -5213,7 +5206,7 @@ focus_tree = {
 	   
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 		relative_position_id = TUR_reclaim_the_aegean_territories
 	   
 		ai_will_do = {
@@ -5266,7 +5259,7 @@ focus_tree = {
 	   
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		relative_position_id = TUR_reclaim_the_aegean_territories
 	   
 		ai_will_do = {
@@ -5359,7 +5352,7 @@ focus_tree = {
 	   
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		relative_position_id = TUR_claim_greater_bulgaria
 	   
 		ai_will_do = {
@@ -5474,7 +5467,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_the_fight_for_popular_mandate
-		cost = 8
+		cost = 10
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = TUR_ataturk_has_died_tt
@@ -5562,7 +5555,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_motion_with_four_signatures
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 7
@@ -5623,7 +5616,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_demand_free_elections
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 7
@@ -5819,7 +5812,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_amend_the_secular_policies
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 7
@@ -5873,7 +5866,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_amend_the_secular_policies
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 7
@@ -5924,7 +5917,7 @@ focus_tree = {
 
 		relative_position_id = TUR_continue_the_military_reorganization
 		
-		cost = 8
+		cost = 10
 
 		bypass = {
 			has_government = communism
@@ -6221,7 +6214,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = TUR_kemalisms_next_step_forward
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_completed_focus = TUR_village_institutes_program
@@ -6293,7 +6286,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_kemalisms_next_step_forward
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -6808,7 +6801,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_storm_the_grand_national_assembly
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -6874,7 +6867,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_forging_a_brighter_tomorrow
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -6904,7 +6897,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_forging_a_brighter_tomorrow
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -6950,7 +6943,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_cement_control_over_the_party
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -7001,7 +6994,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_pave_the_road_to_progress
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -7187,7 +7180,7 @@ focus_tree = {
 	focus = {
 		id = TUR_neutrality_through_deterrence
 		icon = GFX_goal_generic_military_sphere
-		cost = 8
+		cost = 10
 		prerequisite = { focus = TUR_the_montreux_convention_r56 }
 		mutually_exclusive = { focus = TUR_bicontinental_intervention }
 		relative_position_id = TUR_the_montreux_convention_r56
@@ -7282,7 +7275,7 @@ focus_tree = {
 	focus = {
 		id = TUR_american_lend_lease
 		icon = GFX_goal_generic_befriend_united_states
-		cost = 8
+		cost = 10
 		prerequisite = { 
 			focus = TUR_neutrality_through_deterrence
 			focus = TUR_bicontinental_intervention	
@@ -7374,7 +7367,7 @@ focus_tree = {
 	focus = {
 		id = TUR_limited_mutual_assistance	#With the British
 		icon = GFX_focus_generic_the_giant_wakes
-		cost = 8
+		cost = 10
 		prerequisite = { focus = TUR_anglo_turkish_friendship_agreement }
 		relative_position_id = TUR_anglo_turkish_friendship_agreement
 		x = 0
@@ -7468,7 +7461,7 @@ focus_tree = {
 	focus = {
 		id = TUR_soviet_turkish_trade_agreement
 		icon = GFX_focus_generic_public_works_A
-		cost = 8
+		cost = 10
 		prerequisite = { focus = TUR_renew_the_soviet_non_aggression_pact }
 		relative_position_id = TUR_renew_the_soviet_non_aggression_pact
 		x = 1
@@ -7517,7 +7510,7 @@ focus_tree = {
 	focus = {
 		id = TUR_amend_the_montreux_convention
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 8
+		cost = 10
 		prerequisite = { focus = TUR_renew_the_soviet_non_aggression_pact }
 		relative_position_id = TUR_renew_the_soviet_non_aggression_pact
 		x = -1
@@ -7610,7 +7603,7 @@ focus_tree = {
 	focus = {
 		id = TUR_clodius_agreement
 		icon = GFX_goal_italy_autarky
-		cost = 8
+		cost = 10
 		prerequisite = { focus = TUR_german_turkish_treaty_of_friendship }
 		relative_position_id = TUR_german_turkish_treaty_of_friendship
 		x = 0
@@ -7649,7 +7642,7 @@ focus_tree = {
 	focus = {
 		id = TUR_bicontinental_intervention
 		icon = GFX_goal_generic_territory_or_war
-		cost = 8
+		cost = 10
 		prerequisite = { focus = TUR_the_montreux_convention_r56 }
 		mutually_exclusive = { focus = TUR_neutrality_through_deterrence }
 		relative_position_id = TUR_the_montreux_convention_r56
@@ -7885,7 +7878,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = TUR_anti_colonial_action
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -7993,7 +7986,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_demand_french_withdrawal_from_syria
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -8034,7 +8027,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_destroy_iraqs_corrupt_monarchy
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -8096,7 +8089,7 @@ focus_tree = {
 	focus = {
 		id = TUR_regional_leadership
 		icon = GFX_goal_morale_bonus
-		cost = 8
+		cost = 10
 		prerequisite = { 
 			focus = TUR_cooperation_against_moscow 
 			focus = TUR_cooperation_against_berlin
@@ -8114,7 +8107,14 @@ focus_tree = {
 			is_in_faction = no
 		}
 		completion_reward = {
-			create_faction = TUR_ankara_pact
+			create_faction_from_template = faction_template_TUR_ankara_pact
+			if = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_faction_initiative = 1
+			}
+
 			if = {
 				limit = {
 					has_idea = TUR_bicontinental_intervention_idea

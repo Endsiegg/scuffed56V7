@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
     id = west_africa_focus
 
@@ -58,7 +59,7 @@ focus_tree = {
         x = -1
         y = 1
 		relative_position_id = WAF_institutional_establishment
-        cost = 8
+        cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
         ai_will_do = {
             factor = 10
@@ -66,18 +67,20 @@ focus_tree = {
 		available = {
 			is_subject = no
 			if = {
-				limit = {
-					tag = LIB
-				}
-				NOT = {
-					original_tag = LIB
-				}
+				limit = { tag = LIB }
+				NOT = { original_tag = LIB }
 			}
 			capital_scope = {
 				is_fully_controlled_by = ROOT
 			}
 		}
-        completion_reward = { 
+        completion_reward = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
             random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -108,11 +111,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = -0.10
-			}
-			add_stability = -0.05
         }    
     }
 	focus = {
@@ -122,7 +120,7 @@ focus_tree = {
         x = 0
         y = 2
 		relative_position_id = WAF_institutional_establishment
-        cost = 8
+        cost = 10
         search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
         ai_will_do = {
             factor = 10
@@ -136,6 +134,20 @@ focus_tree = {
 				hidden_trigger = {
 					tag = LIB #they have an army
 				}
+			}
+		}
+		bypass_effect = {
+			army_experience = 15
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = ROOT
 			}
 		}
         completion_reward = {
@@ -590,7 +602,7 @@ focus_tree = {
 		relative_position_id = WAF_military_coup		
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = fascism
@@ -616,7 +628,7 @@ focus_tree = {
 		relative_position_id = WAF_military_coup		
 		x = 1
 		y = 1
-		cost = 8			
+		cost = 10			
 		
 		available = {
 			has_government = fascism
@@ -677,7 +689,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_military_coup
 
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = fascism
@@ -827,7 +839,7 @@ focus_tree = {
         y = 1
         relative_position_id = WAF_propagate_marxist_ideas
     
-        cost = 8
+        cost = 10
     
         ai_will_do = {
             factor = 5
@@ -865,7 +877,7 @@ focus_tree = {
         y = 1
         relative_position_id = WAF_propagate_marxist_ideas
     
-        cost = 8
+        cost = 10
     
         ai_will_do = {
             factor = 15
@@ -1038,7 +1050,7 @@ focus_tree = {
         y = 1
         relative_position_id = WAF_join_the_comintern
     
-        cost = 8
+        cost = 10
     
         ai_will_do = {
             factor = 12
@@ -1066,7 +1078,7 @@ focus_tree = {
 			focus = WAF_red_army focus = WAF_mobilization_of_the_masses
 		}
 		relative_position_id = WAF_red_army
-		cost = 8
+		cost = 10
 		available = {
 			r56_script_i_am_sane = yes
 			is_subject = no
@@ -1361,7 +1373,7 @@ focus_tree = {
 			focus = WAF_mobilization_of_the_masses
 		}
 		relative_position_id = WAF_prepare_expansion
-		cost = 8
+		cost = 10
 		available = {
 			r56_script_i_am_sane = yes
 			is_subject = no
@@ -1741,6 +1753,7 @@ focus_tree = {
 			is_subject = no
 			is_in_faction = no
 			has_government = communism 
+			num_of_factories > 15
 		}
 		completion_reward = {
 			if = {
@@ -1758,9 +1771,18 @@ focus_tree = {
 				}
 				r56_other_faction_invite_communism_NOT_SOV = yes
 			}
-			else = {
-				set_rule = { can_create_factions = yes }
-				create_faction = "African Anti-Imperialist League"
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				create_faction_from_template = {
+					template = faction_template_SAF_faction_uotap 
+					name = african_anti_imperialist_league
+				}
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				create_faction = african_anti_imperialist_league
 			}
 		}
 		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_POLITICAL }
@@ -1773,7 +1795,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_lead_the_african_communist_movements
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -1826,7 +1848,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_find_close_allies
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1908,7 +1930,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_find_close_allies
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1985,7 +2007,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_red_army
 
-		cost = 8
+		cost = 10
 
 		available = {
 			has_war = yes
@@ -2070,7 +2092,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_empower_the_educated_elite
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -2100,7 +2122,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_gather_close_advisors
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -2219,7 +2241,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_empower_the_educated_elite
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -2256,7 +2278,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_everything_for_the_nation
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -2303,7 +2325,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_secret_police
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -2336,7 +2358,7 @@ focus_tree = {
 	focus = {
 		id = WAF_state_intervention
 		icon = GFX_goal_generic_state_economy
-		cost = 8
+		cost = 10
 		prerequisite = { focus = WAF_build_democratic_institutions focus = WAF_empower_the_educated_elite }
 		x = -1
 		y = 1
@@ -2370,7 +2392,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_state_intervention
 
-		cost = 8
+		cost = 10
 
 		available = {
 
@@ -2413,7 +2435,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_build_democratic_institutions
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2450,7 +2472,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_emphasize_religious_tolerance
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2485,7 +2507,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_emphasize_religious_tolerance
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2547,7 +2569,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_religious_political_justifications
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2578,7 +2600,7 @@ focus_tree = {
         mutually_exclusive = { focus = WAF_propose_a_west_african_federation }
 		relative_position_id = WAF_push_for_a_west_african_federation
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2588,11 +2610,25 @@ focus_tree = {
 			is_in_faction = no
 			has_capitulated = no
 			is_subject = no
+			num_of_factories > 25
 		}
 
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
-			create_faction = "West African Defense Treaty"
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				create_faction_from_template = {
+					template = faction_template_defensive_democratic 
+					name = west_african_defense_treaty
+					icon = GFX_faction_logo_generic_18
+				}
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				create_faction = west_african_defense_treaty
+			}
 			every_country = {
 				limit = {
 					OR = {
@@ -2636,7 +2672,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = WAF_west_african_defense_treaty
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2729,7 +2765,7 @@ focus_tree = {
         mutually_exclusive = { focus = WAF_west_african_defense_treaty }
 		relative_position_id = WAF_push_for_a_west_african_federation
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10

@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = netherlands_NOT_MTG_focus
 
@@ -28,7 +29,7 @@ focus_tree = {
 
 		x = 10
 		y = 0
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -119,7 +120,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production2
 		x = 14
 		y = 0
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -253,7 +254,7 @@ focus_tree = {
 		relative_position_id = HOL_technological_modernization
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -336,7 +337,7 @@ focus_tree = {
 		relative_position_id = HOL_electronic_innovations
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -369,7 +370,7 @@ focus_tree = {
 		relative_position_id = HOL_economic_recovery
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -446,7 +447,7 @@ focus_tree = {
 		relative_position_id = HOL_civilian_production
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -559,7 +560,7 @@ focus_tree = {
 #		relative_position_id = HOL_civilian_production
 #		x = 0
 #		y = 1
-#		cost = 8
+#		cost = 10
 #
 #		available_if_capitulated = yes
 #
@@ -597,7 +598,7 @@ focus_tree = {
 		relative_position_id = HOL_abandon_the_gold_standard_not_MTG
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -641,7 +642,7 @@ focus_tree = {
 #		relative_position_id = HOL_conservative_government
 #		x = -4
 #		y = 1
-#		cost = 8
+#		cost = 10
 
 #		available_if_capitulated = yes
 
@@ -734,7 +735,7 @@ focus_tree = {
 		relative_position_id = HOL_maintain_neutrality
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -762,7 +763,7 @@ focus_tree = {
 		relative_position_id = HOL_maintain_neutrality
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -791,7 +792,7 @@ focus_tree = {
 		relative_position_id = HOL_anti_revolutionary_measures
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -819,7 +820,7 @@ focus_tree = {
 		relative_position_id = HOL_anti_revolutionary_measures
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			INS = { is_puppet_of = HOL}
@@ -862,7 +863,7 @@ focus_tree = {
 		relative_position_id = HOL_diplomatic_cooperation
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -919,7 +920,7 @@ focus_tree = {
 		relative_position_id = HOL_foreign_guarantees
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -1065,7 +1066,7 @@ focus_tree = {
 		relative_position_id = HOL_british_alliance
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1129,7 +1130,7 @@ focus_tree = {
 		relative_position_id = HOL_conservative_government
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1218,7 +1219,7 @@ focus_tree = {
 		relative_position_id = HOL_support_trade
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1266,7 +1267,7 @@ focus_tree = {
 		}
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1313,7 +1314,7 @@ focus_tree = {
 		mutually_exclusive = { focus = HOL_foreign_guarantees focus = HOL_maintain_neutrality}
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1361,7 +1362,7 @@ focus_tree = {
 		relative_position_id = HOL_join_belgo_luxembourgian_customs_union
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -1397,7 +1398,11 @@ focus_tree = {
 
         completion_reward = {
             set_rule = { can_create_factions = yes }
-            create_faction = benelux_faction
+			create_faction_from_template = {
+				template = faction_template_defensive_democratic
+				name = HOL_benelux
+				icon = GFX_faction_logo_generic_13
+			}
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
@@ -1428,7 +1433,7 @@ focus_tree = {
 		relative_position_id = HOL_form_benelux
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -1494,7 +1499,7 @@ focus_tree = {
 		relative_position_id = HOL_abandon_the_gold_standard_not_MTG
 		x = -8
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1549,7 +1554,7 @@ focus_tree = {
 		relative_position_id = HOL_communist_electoral_success
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1569,7 +1574,7 @@ focus_tree = {
 		relative_position_id = HOL_state_security
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1614,7 +1619,7 @@ focus_tree = {
 		relative_position_id = HOL_align_the_military
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1653,7 +1658,7 @@ focus_tree = {
 		relative_position_id = HOL_join_comintern
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1682,7 +1687,7 @@ focus_tree = {
 		relative_position_id = HOL_communist_electoral_success
 		x = -4
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1742,7 +1747,7 @@ focus_tree = {
 		relative_position_id = HOL_communism_east_indies
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 		available = {
@@ -1788,7 +1793,7 @@ focus_tree = {
 		relative_position_id = HOL_communist_electoral_success
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1851,7 +1856,7 @@ focus_tree = {
 		relative_position_id = HOL_social_reforms
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 
@@ -1872,7 +1877,7 @@ focus_tree = {
 		relative_position_id = HOL_nationalization
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 
@@ -1971,7 +1976,7 @@ focus_tree = {
 		relative_position_id = HOL_abandon_the_gold_standard_not_MTG
 		x = 8
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -2034,7 +2039,7 @@ focus_tree = {
 		relative_position_id = HOL_NSB_electoral_success
 		x = 4
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			always = no
@@ -2058,7 +2063,7 @@ focus_tree = {
 		relative_position_id = HOL_NSB_electoral_success
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2123,7 +2128,7 @@ focus_tree = {
 		relative_position_id = HOL_NSB_electoral_success
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2176,7 +2181,7 @@ focus_tree = {
 		relative_position_id = HOL_mussert_guard
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2220,7 +2225,7 @@ focus_tree = {
 		relative_position_id = HOL_military_youth
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		
 
@@ -2263,7 +2268,7 @@ focus_tree = {
 		relative_position_id = HOL_NSB_electoral_success
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 		available = {
@@ -2361,7 +2366,7 @@ focus_tree = {
 		relative_position_id = HOL_influence_the_army
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 		available = {
@@ -2391,7 +2396,7 @@ focus_tree = {
 		relative_position_id = HOL_nederlandse_arbeidsdienst
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -2421,7 +2426,7 @@ focus_tree = {
 		relative_position_id = HOL_influence_the_army
 		x = 4
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 
@@ -2453,7 +2458,7 @@ focus_tree = {
 		relative_position_id = HOL_prepare_population_for_war
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2513,7 +2518,7 @@ focus_tree = {
 		relative_position_id = HOL_join_axis
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2563,7 +2568,7 @@ focus_tree = {
 		relative_position_id = HOL_prepare_population_for_war
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 		available = {
@@ -2610,7 +2615,7 @@ focus_tree = {
 		relative_position_id = HOL_prepare_population_for_war
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 		available = {
@@ -2662,7 +2667,7 @@ focus_tree = {
 #		relative_position_id = HOL_support_diets_fascists
 #		x = -1
 #		y = 1
-#		cost = 8
+#		cost = 10
 #
 #		
 
@@ -2683,7 +2688,7 @@ focus_tree = {
 		icon = GFX_goal_HOL_golden_lion
 		x = 28
 		y = 0
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2705,7 +2710,7 @@ focus_tree = {
 		relative_position_id = HOL_requirements_of_the_land_troops
 		x = 3
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2732,7 +2737,7 @@ focus_tree = {
 		relative_position_id = HOL_requirements_of_the_land_troops
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2786,7 +2791,7 @@ focus_tree = {
 		relative_position_id = HOL_modernize_the_field_artillery
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2893,7 +2898,7 @@ focus_tree = {
 		relative_position_id = HOL_requirements_of_the_land_troops
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2935,7 +2940,7 @@ focus_tree = {
 		relative_position_id = HOL_modernize_the_infantry
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -2989,7 +2994,7 @@ focus_tree = {
 		relative_position_id = HOL_modernize_the_infantry
 		x = 0
 		y = 3
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		bypass = { has_tech = motorised_infantry }
@@ -3022,7 +3027,7 @@ focus_tree = {
 		relative_position_id = HOL_infantry_motorization
 		x = -1
 		y = 3
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3048,7 +3053,7 @@ focus_tree = {
 		relative_position_id = HOL_infantry_motorization
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3118,7 +3123,7 @@ focus_tree = {
 		relative_position_id = HOL_infantry_motorization
 		x = 3
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3151,7 +3156,7 @@ focus_tree = {
 		relative_position_id = HOL_modernize_the_field_artillery
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3226,7 +3231,7 @@ focus_tree = {
 		relative_position_id = HOL_requirements_of_the_land_troops
 		x = -3
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3254,7 +3259,7 @@ focus_tree = {
 		relative_position_id = HOL_AA_needs
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -3411,7 +3416,7 @@ focus_tree = {
 		relative_position_id = HOL_small_airframes
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3597,7 +3602,7 @@ focus_tree = {
 		relative_position_id = HOL_small_airframes
 		x = 0
 		y = 3
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3638,7 +3643,7 @@ focus_tree = {
 		relative_position_id = HOL_aviation_industry
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3688,7 +3693,7 @@ focus_tree = {
 		relative_position_id = HOL_dogfight_competitions
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3721,7 +3726,7 @@ focus_tree = {
 		relative_position_id = HOL_radar
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3745,7 +3750,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		x = 40
 		y = 0
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3784,6 +3789,89 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "Man the Guns"
+					}
+				}
+				create_equipment_variant = {
+					name = "Tromp Class"
+					type = light_cruiser_2
+					upgrades = {
+						ship_reliability_upgrade = 3
+						ship_engine_upgrade = 3
+						ship_gun_upgrade = 2
+						ship_anti_air_upgrade = 2
+					}
+				}
+				add_equipment_production = {
+					equipment = {
+						type = light_cruiser_2
+						creator = "HOL" 
+						version_name = "Tromp Class"
+					}
+					name = "HrMs Tromp"
+					requested_factories = 1
+					progress = 0.5
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = light_cruiser_2
+						creator = "HOL" 
+						version_name = "Tromp Class"
+					}
+					name = "HrMs Jacob van Heemskerck"
+					requested_factories = 1
+					progress = 0.5
+					amount = 1
+				}
+			}
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					name = "Tromp Class"
+					type = ship_hull_cruiser_2
+					name_group = HOL_DD_HISTORICAL
+					parent_version = 0
+					modules = { #closs copy of uk Leander Class
+						fixed_ship_battery_slot = ship_light_medium_battery_2
+						fixed_ship_anti_air_slot = ship_anti_air_2
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = cruiser_ship_engine_2
+						fixed_ship_armor_slot = ship_armor_cruiser_2
+						fixed_ship_secondaries_slot = dp_ship_secondaries_1
+						front_1_custom_slot = empty
+						mid_1_custom_slot = ship_torpedo_2
+						mid_2_custom_slot = ship_airplane_launcher_1
+						rear_1_custom_slot = ship_light_battery_2
+					}
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_cruiser_2
+						creator = "HOL" 
+						version_name = "Tromp Class"
+					}
+					name = "HrMs Tromp" 
+					requested_factories = 1
+					progress = 0.8
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_cruiser_2
+						creator = "HOL" 
+						version_name = "Tromp Class"
+					}
+					name = "HrMs Jacob van Heemskerck" 
+					requested_factories = 1
+					progress = 0.8
+					amount = 1
+				}
+			}			
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -3795,7 +3883,7 @@ focus_tree = {
 		relative_position_id = HOL_naval_rearmement
 		x = -2
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3944,7 +4032,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HOL_naval_rearmement
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -3972,7 +4060,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HOL_naval_rearmement
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -4014,7 +4102,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOL_new_destroyer_class
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -4043,7 +4131,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HOL_naval_doctrine
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -4078,7 +4166,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HOL_naval_doctrine
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -4130,7 +4218,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOL_replace_the_soerabaja
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -4163,7 +4251,7 @@ focus_tree = {
 		relative_position_id = HOL_replace_the_soerabaja
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 
@@ -4201,7 +4289,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOL_replace_the_soerabaja
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -4232,7 +4320,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOL_increase_shipyards_production
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2

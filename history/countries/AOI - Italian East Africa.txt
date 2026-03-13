@@ -1,7 +1,5 @@
 ﻿capital = 271
 
-
-
 set_research_slots = 3
 set_stability = 0.4
 set_war_support = 0.3
@@ -21,13 +19,13 @@ set_technology = {
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-	trench_warfare = 1
-	fleet_in_being = 1
 	fuel_silos = 1
 	fuel_refining = 1
 	basic_train = 1
 }
 
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
 if = {
 	limit = {
 		has_dlc = "La Resistance"
@@ -151,6 +149,16 @@ recruit_character = AOI_vincenzo_de_feo
 ### VARIANTS ###
 # 1936 Start #
 #plane variants
+create_equipment_variant = {
+		name = "CR.42"
+		type = fighter_equipment_0
+		upgrades = {
+			plane_gun_upgrade = 1
+			plane_range_upgrade = 0  
+			plane_engine_upgrade = 2
+			plane_reliability_upgrade = 1
+		}
+}
 if = {
 	limit = {
 		has_dlc = "No Step Back"

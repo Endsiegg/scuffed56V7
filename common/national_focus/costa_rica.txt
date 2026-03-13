@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = r56_costa_rica_focus
 
@@ -34,7 +35,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 58
 		y = 0
@@ -236,7 +237,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
 		x = 4
 		y = 1
@@ -352,7 +353,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_approach_the_nazistas
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_IMPROVEMENT }
 		x = 1
 		y = 1
@@ -380,7 +381,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_approach_the_nazistas
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		x = -1
 		y = 1
@@ -419,7 +420,7 @@ focus_tree = {
 				NOT = { has_war_with = ROOT }
 			}
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_ALLIANCE } 
 		x = 2
 		y = 2
@@ -472,7 +473,7 @@ focus_tree = {
 		bypass = {
 			has_government = fascism
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 0
 		y = 2
@@ -503,7 +504,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_suspend_the_constitution
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		x = -1
 		y = 3
@@ -530,7 +531,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_suspend_the_constitution
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_ESPIONAGE }
 		x = 1
 		y = 3
@@ -583,7 +584,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_suspend_the_constitution
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 		x = 0
 		y = 4
@@ -639,7 +640,7 @@ focus_tree = {
 		available = {
 			controls_state = 937
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		x = -1
 		y = 5
@@ -667,7 +668,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_revenge_for_the_coto_war
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY }
 		x = 1
 		y = 5
@@ -748,7 +749,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_strengthen_democratic_institutions
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		x = 0
 		y = 1
@@ -839,7 +840,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		x = 4
 		y = 1
@@ -875,7 +876,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		x = 4
 		y = 2
@@ -908,7 +909,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_encourage_free_trade
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MILITARY_IMPROVEMENT }
 		x = -1
 		y = 2
@@ -936,7 +937,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_encourage_free_trade
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 		x = 1
 		y = 2
@@ -1024,7 +1025,7 @@ focus_tree = {
 			focus = COS_central_american_cooperation
 			focus = COS_join_the_allies
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		x = 0
 		y = 3
@@ -1074,7 +1075,7 @@ focus_tree = {
 				}
 			}
 		}	
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ALLIANCE }
 		x = -2
 		y = 3
@@ -1090,7 +1091,11 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = COS_OCAS_faction
+			create_faction_from_template = {
+				template = faction_template_regional
+				name = COS_OCAS_faction
+				icon = GFX_faction_logo_generic_17
+			}
 			every_other_country = {
 				limit = {
 					OR = {
@@ -1141,7 +1146,7 @@ focus_tree = {
 				}						
 			}	
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_ALLIANCE }
 		x = 2
 		y = 3
@@ -1196,7 +1201,7 @@ focus_tree = {
 		available = {
 			is_in_faction = yes
 		}	
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		x = 0
 		y = 4
@@ -1220,9 +1225,9 @@ focus_tree = {
 			focus = COS_scientific_exchange
 		}
 		available = {
-			is_puppet = no
+			is_subject = no
 		}	
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		x = 0
 		y = 5
@@ -1258,7 +1263,7 @@ focus_tree = {
 				is_subject_of = USA
 			}
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 		x = -2
 		y = 1
@@ -1354,7 +1359,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_ally_the_pvp
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		x = 0
 		y = 1
@@ -1393,7 +1398,7 @@ focus_tree = {
 
 	focus = {
 		id = COS_arrest_nazi_sympathizers
-		icon = GFX_focus_generic_anti_fascist_diplomacy
+		icon = GFX_goal_arrests
 		prerequisite = {
 			focus = COS_ally_the_pvp
 		}
@@ -1438,7 +1443,7 @@ focus_tree = {
 		bypass = {
 			has_government = communism
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 0
 		y = 2
@@ -1473,7 +1478,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = COS_follow_moscow
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 		x = 1
 		y = 3
@@ -1516,7 +1521,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = COS_comunismo_a_la_tica
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ALLIANCE }
 		x = -1
 		y = 3
@@ -1559,7 +1564,7 @@ focus_tree = {
 			focus = COS_comunismo_a_la_tica
 			focus = COS_follow_moscow
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 		x = 0
 		y = 4
@@ -1598,7 +1603,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_comunismo_a_la_tica
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		x = 1
 		y = 5
@@ -1624,7 +1629,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_follow_moscow
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		x = -2
 		y = 4
@@ -1653,7 +1658,7 @@ focus_tree = {
 		prerequisite = {
 			focus = COS_crack_down_on_monopolies
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 		x = -1
 		y = 5
@@ -1666,6 +1671,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			add_stability = -0.05
+			add_political_power = 100
 			random_owned_controlled_state = {
 				prioritize = { 316 }
 				limit = {
@@ -1682,8 +1689,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_stability = -0.05
-			add_political_power = 100
 		}
 	}
 
@@ -1698,7 +1703,7 @@ focus_tree = {
 		available = {
 			is_subject = no
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		x = 0
 		y = 8

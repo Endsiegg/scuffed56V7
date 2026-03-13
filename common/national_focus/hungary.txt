@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = hungarian_focus
 	
@@ -25,7 +26,7 @@ focus_tree = {
 		x = 4
 		y = 0
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {	#overriden by ai strategy plans
 			factor = 0
@@ -83,7 +84,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_balanced_budget
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -637,7 +638,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_invite_the_habsburg_prince
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -673,7 +674,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_protect_czechoslovakia
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -738,7 +739,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_claim_transylvania
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -879,7 +880,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_march_to_the_shore
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -967,7 +968,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_protect_czechoslovakia
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -1042,7 +1043,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_claim_galicia
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -1094,7 +1095,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_claim_the_bucovina
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -1200,14 +1201,15 @@ focus_tree = {
 				add_idea = HUN_hungarian_monarchy_democratic
 				remove_idea = HUN_hungarian_monarchy_2
 			}
-			create_country_leader = {
-				name = "Carl V Wilhelm"
-				desc = ""
-				picture = "gfx/leaders/HUN/Portrait_Hungary_Carl_V_Wilhelm.dds"
-				expire = "1965.1.1"
-				ideology = constitutional_monarchy
-				traits = {
-					popular_figurehead
+			add_country_leader_role = { #r56 converted from the legacy system
+				character = HUN_carl_wilhelm
+				country_leader = {
+					desc = ""
+					expire = "1965.1.1"
+					ideology = constitutional_monarchy
+					traits = {
+						popular_figurehead
+					}
 				}
 			}
 			add_ideas = HUN_dynastic_ties
@@ -1230,7 +1232,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_elect_a_democratic_king
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -1270,7 +1272,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_elect_a_democratic_king
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -1359,7 +1361,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_rapproachement_with_little_entente
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -1421,7 +1423,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_rapproachement_with_little_entente
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -1439,7 +1441,22 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = HUN_balkan_pact_preparation
 			set_rule = { can_create_factions = yes } 
-			create_faction = HUN_BALKAN_FACTION
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = faction_template_balkan_pact
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = {
+					template = faction_template_generic_regional
+					name = HUN_BALKAN_FACTION
+					icon = GFX_faction_logo_generic_2
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_POLITICAL }
 	}
@@ -1769,7 +1786,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = HUN_an_unlikely_alliance
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -1887,27 +1904,7 @@ focus_tree = {
 			POL = {
 				is_in_faction_with = ROOT 
 				is_puppet = no
-				if = {
-					limit = {
-						has_dlc = "La Resistance"
-						has_dlc = "Man the Guns"
-					}
-					has_completed_focus = POL_expand_polish_intelligence
-				}
-				else_if = {
-					limit = {
-						NOT = { has_dlc = "La Resistance" }
-						has_dlc = "Man the Guns"
-					}
-					has_completed_focus = POL_Polish_Cipher_Bureau_no_lar
-				}
-				else_if = {
-					limit = {
-						NOT = { has_dlc = "La Resistance" }
-						NOT = { has_dlc = "Man the Guns" }
-					}
-					has_completed_focus = POL_Polish_Cipher_Bureau_no_lar_no_mtg
-				}
+				has_completed_focus = POL_expand_polish_intelligence
 			}
 			if = {
 				limit = {
@@ -1922,7 +1919,7 @@ focus_tree = {
 		icon = GFX_focus_generic_cryptologic_bomb
 		x = 2
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}
@@ -2028,7 +2025,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_join_allies
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -2080,7 +2077,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_elect_a_king
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 20
@@ -2170,7 +2167,7 @@ focus_tree = {
 		}
 		relative_position_id = HUN_elect_a_fascist_king
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 25
@@ -2213,7 +2210,7 @@ focus_tree = {
 			x = -20
 		}
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 90
@@ -2431,7 +2428,7 @@ focus_tree = {
 		available = {
 
 			has_civil_war = no
-			has_country_leader = { ruling_only = yes name = "Ferenc Szalasi" }
+			has_country_leader = { ruling_only = yes character = HUN_ferenc_szalasi }
 			has_government = fascism
 			OR = {
 				has_completed_focus = HUN_war_games
@@ -2460,7 +2457,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_strengthen_fascists
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -2589,7 +2586,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_renounce_the_treaty_of_trianon
 
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			factor = 39
@@ -2753,7 +2750,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_protect_austria
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -2806,7 +2803,11 @@ focus_tree = {
 				limit = {
 					ITA = { is_in_faction = no }
 				}
-				create_faction = "Rome Protocols"
+				create_faction_from_template = {
+					template = faction_template_generic_dominance
+					name = HUN_PACT_OF_ROME_FACTION
+					icon = GFX_faction_logo_generic_3
+				}
 				news_event = {
 					id = r56_italy.9
 					days = 2
@@ -2909,7 +2910,7 @@ focus_tree = {
 			}			
 		}
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -2938,7 +2939,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_renounce_the_treaty_of_trianon
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -2975,7 +2976,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_renounce_the_treaty_of_trianon
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 0.1
@@ -3190,6 +3191,7 @@ focus_tree = {
 					has_government = neutrality
 					OR = {
 						has_completed_focus = GER_the_central_powers
+						has_completed_focus = GER_the_kaiser_rises
 						has_completed_focus = GER_restore_the_empire
 					}
 					is_faction_leader = yes
@@ -3245,7 +3247,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HUN_joint_aluminum_mining_company
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3256,6 +3258,7 @@ focus_tree = {
 						has_government = neutrality
 						OR = {
 							has_completed_focus = GER_the_central_powers
+							has_completed_focus = GER_the_kaiser_rises
 							has_completed_focus = GER_restore_the_empire
 						}
 						
@@ -3298,7 +3301,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_renounce_the_treaty_of_trianon
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
@@ -3382,7 +3385,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_reaffirm_territorial_claims
 		will_lead_to_war_with = ROM
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -3452,7 +3455,7 @@ focus_tree = {
 		relative_position_id = HUN_reaffirm_territorial_claims
 		will_lead_to_war_with = CZE
 		will_lead_to_war_with = SLO
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -3556,7 +3559,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_reaffirm_territorial_claims
 		will_lead_to_war_with = YUG
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -3671,7 +3674,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_reaffirm_territorial_claims
 		will_lead_to_war_with = SLO
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -3853,7 +3856,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_proclaim_greater_hungary
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -3994,7 +3997,7 @@ focus_tree = {
 		x = 5
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 0
@@ -4094,7 +4097,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_council_of_peoples_commissars
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -4120,7 +4123,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_council_of_peoples_commissars
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -4156,7 +4159,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_council_of_peoples_commissars
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -4330,14 +4333,13 @@ focus_tree = {
 						}
 					}
 				}
-				retire_country_leader = yes
-				create_country_leader = {
-					name = "Bela Kun"
-					picture = GFX_Portrait_hungary_bela_kun
-					expire = "1965.1.1"
-					ideology = marxism
-					traits = {
-						revolutionary_author
+				add_country_leader_role = {
+					character = HUN_bela_kun
+					promote_leader = yes
+					country_leader = {
+						ideology = marxism
+						traits = { revolutionary_author }
+						expire = "1965.1.1.1"
 					}
 				}
 			}
@@ -4388,7 +4390,10 @@ focus_tree = {
             }
             else = {			
 				set_rule = { can_create_factions = yes } 
-				create_faction = HUN_FACTION_COMMIE
+				create_faction_from_template = {
+					template = faction_template_POR_popular_front_bloc
+					name = HUN_FACTION_COMMIE
+				}
 				add_political_power = 75
 			}
 			if = {
@@ -4402,14 +4407,13 @@ focus_tree = {
 						}
 					}
 				}
-				retire_country_leader = yes
-				create_country_leader = {
-					name = "Béla Kun"
-					picture = GFX_Portrait_hungary_bela_kun
-					expire = "1965.1.1"
-					ideology = marxism
-					traits = {
-						revolutionary_author
+				add_country_leader_role = {
+					character = HUN_bela_kun
+					promote_leader = yes
+					country_leader = {
+						ideology = marxism
+						traits = { revolutionary_author }
+						expire = "1965.1.1.1"
 					}
 				}
 			}
@@ -4994,7 +4998,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_the_revolutionary_council
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -5065,7 +5069,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_the_revolutionary_council
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -5461,7 +5465,7 @@ focus_tree = {
 			}
 			x = -17
 		}
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 90
@@ -5490,7 +5494,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_industrial_revitalization
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -5637,7 +5641,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_industrial_revitalization
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -5687,7 +5691,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = HUN_industrial_revitalization
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 90
@@ -5717,7 +5721,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = HUN_industrial_revitalization
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 90
@@ -5740,7 +5744,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_industrial_revitalization
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 90
@@ -5772,7 +5776,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_announce_the_gyor_program
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
@@ -5823,7 +5827,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_civilian_industry
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -5891,7 +5895,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_invite_foreign_investors
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -5957,7 +5961,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_invite_foreign_investors
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -6007,7 +6011,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_invite_foreign_investors
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 100
@@ -6035,7 +6039,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_announce_the_gyor_program
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -6115,7 +6119,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_domestic_arms_industry
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -6146,7 +6150,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_domestic_arms_industry
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -6219,7 +6223,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_announce_the_gyor_program
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
@@ -6250,7 +6254,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_autarky
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
@@ -6304,7 +6308,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_announce_the_gyor_program
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
@@ -6385,7 +6389,7 @@ focus_tree = {
 			}
 			x = -17
 		}
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -6455,7 +6459,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_secret_rearmament
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -6507,7 +6511,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_secret_rearmament
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -6534,7 +6538,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_secret_rearmament
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -6622,7 +6626,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_secret_rearmament
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -6666,7 +6670,7 @@ focus_tree = {
 		y = 5
 		relative_position_id = HUN_establish_the_air_force
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 30
@@ -6685,7 +6689,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_indigenous_designs
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
@@ -6731,7 +6735,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_indigenous_designs
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
@@ -6780,7 +6784,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_indigenous_designs
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -6826,7 +6830,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_indigenous_designs
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -6871,7 +6875,7 @@ focus_tree = {
 		y = 5
 		relative_position_id = HUN_establish_the_air_force
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 30
@@ -6895,7 +6899,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_license_foreign_designs
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -6985,7 +6989,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_license_foreign_designs
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 30
@@ -7074,7 +7078,7 @@ focus_tree = {
 		y = 5
 		relative_position_id = HUN_establish_the_air_force
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 30
@@ -7109,7 +7113,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_joint_air_development
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 30
@@ -7148,7 +7152,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_bled_agreement
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -7192,7 +7196,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_army_maneuvers
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
@@ -7203,11 +7207,17 @@ focus_tree = {
 
 
 		completion_reward = {
-			add_doctrine_cost_reduction = {
+			add_doctrine_cost_reduction = { # focus was weak anyway so I just added master to the cost reduction
 				name = HUN_mobile_focus
 				cost_reduction = 0.5
 				uses = 1
 				category = cat_mobile_warfare
+			}
+			add_mastery_bonus = {
+				name = HUN_mobile_focus
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_mobile_warfare
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -7221,7 +7231,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_mobile_focus
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -7279,7 +7289,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_mobile_focus
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 30
@@ -7310,7 +7320,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_mobile_focus
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
@@ -7354,7 +7364,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_mobile_focus
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -7391,7 +7401,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_mobile_focus
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -7426,7 +7436,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_mobile_focus
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -7454,7 +7464,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_the_botond
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -7494,7 +7504,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_the_botond
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -7505,11 +7515,12 @@ focus_tree = {
 
 
 		completion_reward = {
-			add_doctrine_cost_reduction = {
+			add_mastery_bonus = {
 				name = HUN_mobile_corps_doctrine
-				cost_reduction = 0.5
-				uses = 2
-				category = cat_mobile_warfare
+				bonus = 0.25
+				days = 180
+				track = armor
+				
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -7528,7 +7539,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_army_maneuvers
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 80
@@ -7539,11 +7550,11 @@ focus_tree = {
 
 
 		completion_reward = {
-			add_doctrine_cost_reduction = {
+			add_mastery_bonus = {
 				name = HUN_home_defense
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_grand_battle_plan
+				bonus = 0.2
+				days = 180
+				grand_doctrine = grand_battleplan
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -7557,7 +7568,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_home_defense
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -7586,7 +7597,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_home_defense
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -7615,7 +7626,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_home_defense
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -7696,7 +7707,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_home_defense
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -7751,7 +7762,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_secret_rearmament
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -7794,7 +7805,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_naval_warfare
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -7813,11 +7824,17 @@ focus_tree = {
 
 		completion_reward = {
 			navy_experience = 15
+			add_mastery_bonus = {
+				name = HUN_restauration
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_fleet_in_being
+			}
 			add_doctrine_cost_reduction = {
 				name = HUN_restauration
 				cost_reduction = 0.5
-				uses = 3
-				category = cat_fleet_in_being
+				uses = 1
+				category = naval_doctrine
 			}
 
 		}
@@ -7832,7 +7849,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_naval_warfare
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -7867,7 +7884,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HUN_capital_ships
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -7921,7 +7938,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_naval_warfare
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -7938,12 +7955,19 @@ focus_tree = {
 
 		completion_reward = {
 			navy_experience = 15
+			
+			add_mastery_bonus = {
+				name = HUN_reform
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_convoy_raiding
+			}
+
 			add_doctrine_cost_reduction = {
 				name = HUN_reform
 				cost_reduction = 0.5
-				uses = 2
-				category = cat_trade_interdiction
-				category = cat_base_strike
+				uses = 1
+				category = naval_doctrine
 			}
 
 		}
@@ -7958,7 +7982,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_naval_warfare
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -7995,7 +8019,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_naval_warfare
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -8033,7 +8057,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_naval_warfare
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -8066,7 +8090,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = HUN_submarines
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -8113,7 +8137,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_naval_warfare
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50

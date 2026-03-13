@@ -35,19 +35,19 @@
 		mutually_exclusive = {
 			focus = SPR_nationalist_victory
 		}
-		x = 62
+		x = 36
 		y = 0
 
 	}
 	shared_focus = {
 		id = SPR_continue_azana_work
 		icon = GFX_focus_generic_the_giant_wakes
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 50
 		}
 		available = {
-			is_puppet = no
+			is_subject = no
 		}
 		prerequisite = {
 			focus = SPR_republican_victory
@@ -81,7 +81,7 @@
 	shared_focus = {
 		id = SPR_continue_the_secularization_policies
 		icon = GFX_focus_mex_triumph_over_the_cristeros
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 45
 		}
@@ -100,7 +100,7 @@
 	shared_focus = {
 		id = SPR_appease_the_workers
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SPR_continue_azana_work
 		}
@@ -121,7 +121,7 @@
 	shared_focus = {
 		id = SPR_uphold_the_1931_constitution
 		icon = GFX_goal_support_democracy
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 45
 		}
@@ -143,10 +143,10 @@
 	shared_focus = {
 		id = SPR_repair_relations_with_the_west
 		icon = GFX_focus_chi_british_cooperation
-		cost = 8.00
+		cost = 10.00
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 			ENG = {
 				is_faction_leader = yes
 				has_government = democratic
@@ -159,7 +159,25 @@
 			factor = 50
 		}
 		completion_reward = {
-			custom_effect_tooltip = SIA_closer_to_the_west_tooltip
+			if = {
+				limit = {
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+						has_capitulated = no
+						NOT = { has_war_with = ROOT }
+					}
+				}
+				ENG = {
+					country_event = generic.2
+				}
+			}
+			else = {
+				get_best_alliance_match_democratic_effect = yes
+				var:best_leader = {
+					country_event = generic.2
+				}
+			}
 		}
 		prerequisite = {
 			focus = SPR_uphold_the_1931_constitution
@@ -173,12 +191,20 @@
 	shared_focus = {
 		id = SPR_learn_from_the_royal_navy
 		icon = GFX_focus_generic_navy_battleship2
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 12
 		}
 		available = {
 			is_in_faction_with = ENG
+			count_triggers = {
+			    amount > 1
+				has_subdoctrine_in_track = submarines
+				has_subdoctrine_in_track = screens
+				has_subdoctrine_in_track = carriers
+				has_subdoctrine_in_track = capital_ships
+			}
+		
 		}
 		prerequisite = {
 			focus = SPR_repair_relations_with_the_west
@@ -187,8 +213,14 @@
 			add_tech_bonus = {
 				name = SPR_learn_from_the_royal_navy
 				bonus = 3.0
-				uses = 2
+				uses = 1
 				category = cat_fleet_in_being
+			}
+			add_daily_mastery = {
+				name = SPR_learn_from_the_royal_navy
+				amount = 0.3
+				days = 250
+				folder = naval
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -200,12 +232,12 @@
 	shared_focus = {
 		id = SPR_psoe_leadership
 		icon = GFX_focus_GRE_red_victory
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 50
 		}
 		available = {
-			is_puppet = no
+			is_subject = no
 		}
 		prerequisite = {
 			focus = SPR_republican_victory
@@ -244,7 +276,7 @@
 	shared_focus = {
 		id = SPR_the_left_front
 		icon = GFX_goal_FRA_pcf_sfio_coalition
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 45
 		}
@@ -263,7 +295,7 @@
 	shared_focus = {
 		id = SPR_socialize_the_means_of_production
 		icon = GFX_goal_FRA_industrial_decentralization
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 45
 		}
@@ -282,7 +314,7 @@
 	shared_focus = {
 		id = SPR_establish_soviet_democracy
 		icon = GFX_goal_generic_communist_pride
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 45
 		}
@@ -304,12 +336,12 @@
 	shared_focus = {
 		id = SPR_align_with_the_new_france
 		icon = GFX_focus_chi_reach_out_to_france
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 50
 		}
 		available = {
-			is_puppet = no
+			is_subject = no
 			is_in_faction = no
 			FRA = {
 				has_government = communism
@@ -341,7 +373,7 @@
 	shared_focus = {
 		id = SPR_confront_the_hearth_of_fascism
 		icon = GFX_focus_attack_italy
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 21
 		}
@@ -376,12 +408,12 @@
 	shared_focus = {
 		id = SPR_PCE_leadership
 		icon = GFX_goal_support_communism
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 50
 		}
 		available = {
-			is_puppet = no
+			is_subject = no
 		}
 		prerequisite = {
 			focus = SPR_republican_victory
@@ -406,7 +438,7 @@
 	shared_focus = {
 		id = SPR_purge_the_liberals
 		icon = GFX_goal_FRA_front_de_la_liberte
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 50
 		}
@@ -425,7 +457,7 @@
 	shared_focus = {
 		id = SPR_begin_collectivization
 		icon = GFX_focus_generic_soviet_politics
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 50
 		}
@@ -444,7 +476,7 @@
 	shared_focus = {
 		id = SPR_establish_the_oraa
 		icon = GFX_goal_HON_nkvd_assistance
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 40
 		}
@@ -465,12 +497,12 @@
 	shared_focus = {
 		id = SPR_join_the_comintern
 		icon = GFX_focus_chi_mission_to_the_soviet_union
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 50
 		}
 		available = {
-			is_puppet = no
+			is_subject = no
 			OR = {
 				has_government = communism
 				communism > 0.4
@@ -535,7 +567,7 @@
 	shared_focus = {
 		id = SPR_intervention_in_portugal
 		icon = GFX_goal_generic_attack_portugal
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 25
 		}
@@ -574,7 +606,7 @@
 	shared_focus = {
 		id = SPR_demand_gibraltar
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 8.00
+		cost = 10.00
 		ai_will_do = {
 			factor = 5
 		}

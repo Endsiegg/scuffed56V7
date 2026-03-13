@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = turkish_focus
 
@@ -132,7 +133,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = TUR_one_party_many_faces
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -318,7 +319,7 @@ focus_tree = {
 		x = -10
 		y = 1
 		relative_position_id = TUR_traditionalize_the_ataturk_legacy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 			modifier = {
@@ -379,7 +380,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_pivot_to_the_past
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -443,7 +444,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_back_the_traditionalist_cause
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -461,7 +462,10 @@ focus_tree = {
 				limit = {
 					is_in_faction = no
 				}
-				create_faction = muslim_league_faction
+				create_faction_from_template = {
+					template = faction_template_AFG_united_islamic_world_faction
+					name = muslim_league_faction
+				}
 			}
 			every_country = {
 				limit = {
@@ -477,6 +481,8 @@ focus_tree = {
 						original_tag = LEB
 						original_tag = PAL
 						original_tag = KUW
+						original_tag = QAT
+						original_tag = BAH
 					}
 				}
 				country_event = { id = generic.5 }
@@ -491,7 +497,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_the_true_muslim_unity
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -699,7 +705,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_back_the_traditionalist_cause
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -717,7 +723,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = TUR_return_of_the_sultan
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -843,7 +849,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = TUR_back_the_traditionalist_cause
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -866,7 +872,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_restore_the_divan
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -906,33 +912,30 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = TUR_reclaiming_our_lost_empire
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
 
 		bypass = {
-			ROOT = {
-				controls_state = 677
-				controls_state = 554
-				controls_state = 553
-				controls_state = 680
-			}
+			controls_state = 677
+			controls_state = 554
+			controls_state = 553
+			controls_state = 680
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			677 = {
-				controller = {
-					if = {
-						limit = {
-							controls_state = 554
-							controls_state = 553
-							controls_state = 680
-						}
-						country_event = { id = bftb_turkey.102 }
+			every_other_country = {
+				limit = {
+					OR = {
+						controls_state = 677
+						controls_state = 554
+						controls_state = 553
+						controls_state = 680
 					}
 				}
+				country_event = { id = bftb_turkey.102 }
 			}
 		}
 	}
@@ -1013,7 +1016,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_the_damascus_diktat
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -1099,7 +1102,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_revert_mesopotamian_campaign
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -1159,7 +1162,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_the_damascus_diktat
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -1218,7 +1221,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_reclaiming_our_lost_empire
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 			modifier = {
@@ -1280,7 +1283,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_the_red_apples_of_sevres
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -1353,15 +1356,95 @@ focus_tree = {
 	focus = {
 		id = TUR_join_the_central_powers
 		icon = GFX_focus_ger_revive_kaiserreich
-		available = {
-			OR = {
-				GER = { has_completed_focus = GER_the_central_powers }
-				GER = { has_completed_focus = GER_restore_the_empire }
-				HUN = { has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary }
-				AND = {
-					AUS = { has_completed_focus = AUS_past_glories }
-					exists = yes
-				}	
+		available = {	#56
+			IF = {
+				limit = {
+					has_dlc = "Gotterdammerung"
+				}
+				OR = {
+					GER = {
+						if = {	#For those with the GER gamerule for the r56 monarchist tree
+							limit = { 
+								has_game_rule = {
+									rule = GER_focus_tree_selection
+									option = R56_TREE
+								}
+							}
+							has_completed_focus = GER_the_kaiser_rises
+						}
+						else_if = {	#For those with the GER gamerule for the r56 monarchist tree
+							limit = { 
+								has_game_rule = {
+									rule = GER_focus_tree_selection
+									option = R56_TREE_OLD
+								}
+							}
+							has_completed_focus = GER_restore_the_empire
+						}
+						else = { has_completed_focus = GER_revive_the_kaiserreich_ww }
+						OR = {
+							is_in_faction = no
+							is_faction_leader = yes
+						}
+					}
+					HUN = {
+						has_completed_focus = wuw_HUN_the_lands_of_the_crown_of_saint_stephen
+						OR = {
+							is_in_faction = no
+							is_faction_leader = yes
+						}
+					}
+					AUS = {
+						if = {	#Support for default AUS tree
+							limit = { has_global_flag = aus_dlc_focus_tree }
+							has_completed_focus = AUS_reinstate_the_imperial_council
+						}
+						else = { has_completed_focus = AUS_past_glories }
+						OR = {
+							is_in_faction = no
+							is_faction_leader = yes
+						}
+					}
+				}
+			}
+			ELSE = {
+				OR = {
+					GER = {
+						OR = {
+							has_completed_focus = GER_the_kaiser_rises
+							has_completed_focus = GER_restore_the_empire
+						}
+						OR = {
+							is_in_faction = no
+							is_faction_leader = yes
+						}
+					}
+					HUN = {
+						OR = {
+							has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary 
+							has_completed_focus = HUN_moderate_restoration
+						}
+						OR = {
+							is_in_faction = no
+							is_faction_leader = yes
+						}
+					}
+					AND = {
+						custom_trigger_tooltip = {
+							tooltip = GRE_AUS_is_HUN_EMPIRE_tt
+							AUS = {
+								has_cosmetic_tag = HUN_EMPIRE
+							}
+						}
+						OR = {
+							is_in_faction = no
+							is_faction_leader = yes
+						}
+					}
+					AUS = {
+						has_completed_focus = AUS_past_glories
+					}
+				}
 			}
 		}
 		prerequisite = { focus = TUR_reclaiming_our_lost_empire }
@@ -1380,7 +1463,9 @@ focus_tree = {
 						has_government = neutrality
 						OR = {
 							has_completed_focus = GER_the_central_powers
+							has_completed_focus = GER_the_kaiser_rises
 							has_completed_focus = GER_restore_the_empire
+							has_completed_focus = GER_revive_the_kaiserreich_ww
 						}
 						
 						NOT = {
@@ -1400,7 +1485,10 @@ focus_tree = {
 					GER = { 
 						is_faction_leader = no
 						has_government = neutrality
-						NOT = { has_completed_focus = GER_the_central_powers }
+						NOT = {
+							has_completed_focus = GER_the_central_powers
+							has_completed_focus = GER_mitteleuropa
+						}
 						NOT = {
 							is_subject = yes
 						}
@@ -1411,7 +1499,11 @@ focus_tree = {
 				}
 				GER = {
 					set_rule = { can_create_factions = yes }
-					create_faction = GER_central_powers_faction
+					create_faction_from_template = {
+						template = faction_template_GER_mitteleuropa_alliance
+						name = GER_central_powers_faction
+						icon = GFX_faction_logo_generic_13
+					}
 					country_event = { id = generic.2 }
 				}
 			}
@@ -1420,7 +1512,7 @@ focus_tree = {
 					GER = { 
 						is_faction_leader = no
 						has_government = neutrality
-						NOT = { has_completed_focus = GER_restore_the_empire }
+						NOT = { has_completed_focus = GER_restore_the_empire has_completed_focus = GER_the_kaiser_rises }
 						NOT = {
 							is_subject = yes
 						}						
@@ -1428,21 +1520,33 @@ focus_tree = {
 				}
 				GER = {
 					set_rule = { can_create_factions = yes }
-					create_faction = GER_central_powers_faction
+					create_faction_from_template = {
+						template = faction_template_GER_mitteleuropa_alliance
+						name = GER_central_powers_faction
+						icon = GFX_faction_logo_generic_13
+					}
 					country_event = { id = generic.2 }
 				}
 			}
 			else_if = {
 				limit = {
-					HUN = { 
-						has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
+					HUN = {
+						OR = {
+							has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
+							has_completed_focus = HUN_moderate_restoration
+							has_completed_focus = wuw_HUN_the_lands_of_the_crown_of_saint_stephen
+						}
 						NOT = {
 							is_subject = yes
 						}					
 					}
 				}
 				set_rule = { can_create_factions = yes }
-				create_faction = GER_central_powers_faction
+				create_faction_from_template = {
+					template = faction_template_GER_mitteleuropa_alliance
+					name = GER_central_powers_faction
+					icon = GFX_faction_logo_generic_13
+				}
 				HUN = {
 					if = {
 						limit = { ROOT = { is_in_faction = yes } }
@@ -1482,7 +1586,11 @@ focus_tree = {
 				}
 				PRE = {
 					set_rule = { can_create_factions = yes }
-					create_faction = GER_central_powers_faction
+					create_faction_from_template = {
+						template = faction_template_GER_mitteleuropa_alliance
+						name = GER_central_powers_faction
+						icon = GFX_faction_logo_generic_13
+					}
 					country_event = { id = generic.2 }
 				}
 			}
@@ -1532,7 +1640,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_reaffirm_balkan_hegemony
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -1629,7 +1737,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TUR_reclaim_macedonia
 
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -1757,7 +1865,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_holding_our_first_multi_party_election
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -1891,7 +1999,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_lift_the_ban_on_other_political_parties
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -1972,7 +2080,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = TUR_the_sanayiciler
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 10
@@ -2356,7 +2464,7 @@ focus_tree = {
 		x = 9
 		y = 1
 		relative_position_id = TUR_fully_integrate_the_is_bank
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -2549,7 +2657,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = TUR_the_guardians_of_kemalism
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -2623,7 +2731,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = TUR_continue_the_policy_of_etatism
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -2795,7 +2903,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_reinvigorate_turkish_nationalism
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -2940,7 +3048,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_purify_the_diyanet
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -3096,7 +3204,7 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = TUR_revive_turkish_revolutionism
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -3368,7 +3476,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_create_the_turkish_workers_militia
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -3531,7 +3639,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_halk_ve_devlet
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -3806,7 +3914,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_the_anglo_turkish_agreement
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -3837,7 +3945,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_the_anglo_turkish_agreement
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -3952,7 +4060,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = TUR_reconfigure_our_foreign_policy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4052,7 +4160,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_the_chester_concession
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4196,7 +4304,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = TUR_join_the_allies
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4230,7 +4338,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_join_the_allies
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4310,7 +4418,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_british_dockyards_in_turkey
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4454,7 +4562,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = TUR_region_security_initiative
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4507,7 +4615,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_region_security_initiative
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4735,7 +4843,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_the_italo_turkish_friendship_treaty
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -4936,7 +5044,7 @@ focus_tree = {
 			base = 20
 		}	
 
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = POR_the_capital_of_espionage
 		}
@@ -5063,7 +5171,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_the_german_turkish_friendship_treaty
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5112,7 +5220,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_the_clodius_agreement
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5187,7 +5295,10 @@ focus_tree = {
 						is_in_faction = no
 					}
 				}
-				create_faction = TUR_covenant_of_the_mediterranean
+				create_faction_from_template = {
+					template = faction_template_ITA_italian_league
+					name = TUR_covenant_of_the_mediterranean
+				}
 				ITA = { country_event = { id = bftb_turkey.41 } }
 			}
 			if = {
@@ -5249,7 +5360,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_fate_of_greece
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -5308,7 +5419,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_solidify_the_iberian_flank
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5338,7 +5449,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_the_mediterranean_entente
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5475,7 +5586,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_collaborative_civil_works_programme
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5504,7 +5615,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_collaborative_civil_works_programme
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5575,12 +5686,12 @@ focus_tree = {
 
 	focus = {
 		id = TUR_increase_german_military_aid
-		icon = GFX_focus_generic_tank_production
+		icon = GFX_focus_BRA_acquire_german_tanks
 		prerequisite = { focus = TUR_join_the_axis }
 		x = -1
 		y = 1
 		relative_position_id = TUR_join_the_axis
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5684,12 +5795,12 @@ focus_tree = {
 
 	focus = {
 		id = TUR_integrate_german_officers_into_the_army
-		icon = GFX_focus_generic_manpower
+		icon = GFX_focus_generic_full_social_mobilization
 		prerequisite = { focus = TUR_increase_german_military_aid }
 		x = 0
 		y = 2
 		relative_position_id = TUR_increase_german_military_aid
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5715,7 +5826,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_join_the_axis
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5759,7 +5870,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_join_the_axis
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5778,7 +5889,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = TUR_join_the_axis
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5804,7 +5915,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_pack_for_a_long_winter
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -5873,7 +5984,7 @@ focus_tree = {
 		x = 1
 		y = 3
 		relative_position_id = TUR_the_tuz_golu_training_facility
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6030,7 +6141,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_renew_the_turkish_soviet_non_aggression_pact
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6107,7 +6218,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_the_batumi_accord
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6143,7 +6254,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = TUR_renew_the_turkish_soviet_non_aggression_pact
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6219,7 +6330,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_adana_to_baku_highway
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 			modifier = {
@@ -6265,7 +6376,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = TUR_readdress_the_montreux_convention
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6335,7 +6446,7 @@ focus_tree = {
 		x = -1
 		y = 3
 		relative_position_id = TUR_readdress_the_montreux_convention
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6362,7 +6473,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_readdress_the_montreux_convention
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6380,7 +6491,7 @@ focus_tree = {
 		x = 1
 		y = 3
 		relative_position_id = TUR_readdress_the_montreux_convention
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6408,7 +6519,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_strengthening_our_navies
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6503,7 +6614,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_readdress_the_montreux_convention
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6548,7 +6659,7 @@ focus_tree = {
 		prerequisite = { focus = TUR_reconfigure_our_foreign_policy }
 		x = 15
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 			modifier = {
@@ -6688,7 +6799,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_continue_to_prioritise_balkan_integrity
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -7133,7 +7244,18 @@ focus_tree = {
 						}
 
 					}
-					create_faction = TUR_balkan_pact
+					IF = {
+						limit = {
+							has_dlc = "No Compromise, No Surrender"
+						}
+						set_rule = { can_create_factions = yes }
+						create_faction_from_template = faction_template_TUR_balkan_pact
+						add_faction_initiative = 1
+					}
+					ELSE = {
+						set_rule = { can_create_factions = yes }
+						create_faction = TUR_balkan_pact
+					}
 					every_country = {
 						limit = {
 							OR = {
@@ -7224,7 +7346,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_reaffirm_the_balkan_pact
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -7276,7 +7398,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_reaffirm_the_balkan_pact
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -7344,7 +7466,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_three_year_industrial_plan
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -7431,7 +7553,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_create_the_balkan_central_bank
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -7478,7 +7600,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_joint_budgets_on_fortifications
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -7618,7 +7740,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_create_the_balkan_central_bank
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -7672,7 +7794,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_create_the_balkan_central_bank
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}	
@@ -7980,7 +8102,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_the_treaty_for_prosperity_and_trade
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 30
 		}
@@ -8193,7 +8315,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_the_treaty_for_prosperity_and_trade
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -8357,7 +8479,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_integrated_armed_forces
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -8392,7 +8514,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_the_balkan_academy_of_science
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -8464,7 +8586,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = TUR_engulf_the_akdeniz
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -8486,7 +8608,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_restoring_our_nations_pride
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 0
 		}
@@ -8522,7 +8644,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = TUR_misak_i_milli
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -8637,7 +8759,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_recover_the_kardzhali_vilayet
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -8782,7 +8904,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_recover_the_kardzhali_vilayet
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -8893,7 +9015,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_misak_i_milli
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9005,7 +9127,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_rebuke_the_treaty_of_kars
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9137,7 +9259,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_rebuke_the_treaty_of_kars
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9161,7 +9283,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = TUR_misak_i_milli
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9302,7 +9424,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_annul_the_ankara_anlasmasi
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9476,7 +9598,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = TUR_turanist_ambition
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9534,7 +9656,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TUR_turanist_ambition
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9549,7 +9671,7 @@ focus_tree = {
 						is_core_of = MON
 						is_core_of = MEN
 						is_core_of = TAN
-						is_core_of = TNG
+						is_core_of = KHM
 					}
 				}
 				add_claim_by = TUR
@@ -9601,11 +9723,56 @@ focus_tree = {
 			}
 			if = { 
 				limit = {
-					TNG = { exists = yes }
+					KHM = { exists = yes }
 				}
 				create_wargoal = {
 					type = annex_everything
-					target = TNG
+					target = KHM
+				}
+			}
+			if = { 
+				limit = {
+					SIC = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = SIC
+				}
+			}
+			if = { 
+				limit = {
+					XIC = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XIC
+				}
+			}
+			if = { 
+				limit = {
+					GDC = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = GDC
+				}
+			}
+			if = { 
+				limit = {
+					HBC = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = HBC
+				}
+			}
+			if = { 
+				limit = {
+					SND = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = SND
 				}
 			}
 			if = { 
@@ -9628,7 +9795,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_turanist_ambition
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9896,7 +10063,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_mechanising_our_army
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9958,7 +10125,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_embrace_military_tradition
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -9986,7 +10153,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_superiority_of_arms
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -10025,7 +10192,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_construct_the_cakmak_line
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -10296,7 +10463,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_accelerate_native_fighter_designs
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -10340,7 +10507,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = TUR_modernising_the_army
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -10381,7 +10548,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_expand_the_golcuk_naval_base
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -10473,11 +10640,12 @@ focus_tree = {
 				uses = 1
 				category = ss_tech
 			}
-			add_doctrine_cost_reduction = {
-				name = TUR_the_path_of_the_wolf
-				cost_reduction = 0.35
-				uses = 2
-				category = trade_interdiction_tree
+			add_mastery_bonus = {
+				name = flexible_navy
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_convoy_raiding
+				track = submarines
 			}
 		}
 	}
@@ -10491,7 +10659,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = TUR_relocate_from_yildiz_palace
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -10517,7 +10685,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TUR_fortified_defensive_bases
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}

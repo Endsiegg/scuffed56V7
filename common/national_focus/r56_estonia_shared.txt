@@ -28,7 +28,7 @@
 		icon = GFX_goal_generic_construct_civilian
 		x = 5
 		y = 0
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -134,7 +134,7 @@
 		prerequisite = { focus = EST_the_four_year_plan }
 		x = 4
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -196,7 +196,7 @@
 		prerequisite = { focus = EST_develop_our_railroads }
 		x = 7
 		y = 3
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -246,7 +246,7 @@
 		prerequisite = { focus = EST_prepare_for_war }
 		x = 7
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -278,7 +278,7 @@
 		prerequisite = { focus = EST_build_better_capital }
 		x = 4
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -348,7 +348,7 @@
 		icon = GFX_focus_generic_industry_3
 		x = 0
 		y = 5
-		cost = 8
+		cost = 10
 
 
 		ai_will_do = {
@@ -441,7 +441,7 @@ shared_focus = {
 		prerequisite = { focus = EST_start_central_industrial_region}
 		x = 7
 		y = 5
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -473,7 +473,7 @@ shared_focus = {
 		prerequisite = { focus = EST_start_central_industrial_region }
 		x = 5
 		y = 5
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -497,14 +497,11 @@ shared_focus = {
 		icon = GFX_focus_research
 		prerequisite = { focus = EST_more_civilian_factories_II focus = EST_invest_in_the_military_II}
 		available = {
-			OR = {
-				any_country = { has_added_tension_amount > 10 }
-				any_country = { threat > 0.15 }
-			}
+			has_full_control_of_state = 812
 		}
 		x = 2
 		y = 5
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -522,7 +519,7 @@ shared_focus = {
 
 		x = 12
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -585,7 +582,7 @@ shared_focus = {
 
 		x = 11
 		y = 0
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -612,7 +609,7 @@ shared_focus = {
 
 		x = 10
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -640,7 +637,7 @@ shared_focus = {
 
 		x = 9
 		y = 2
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -674,6 +671,7 @@ shared_focus = {
 
 		available = {
 			GER = {
+				exists = yes
 				NOT = {
 					has_war_with = ROOT
 				}
@@ -698,7 +696,7 @@ shared_focus = {
 		prerequisite = { focus = EST_foreign_cooperation }
 		x = 13
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -720,7 +718,7 @@ shared_focus = {
 
 		x = 13
 		y = 3
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -810,7 +808,7 @@ shared_focus = {
 		mutually_exclusive = { focus = EST_invest_in_the_military_II }
 		x = 1
 		y = 4
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -860,7 +858,7 @@ shared_focus = {
 		mutually_exclusive = { focus = EST_more_civilian_factories_II }
 		x = 3
 		y = 4
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -900,7 +898,7 @@ shared_focus = {
 		icon = GFX_focus_ger_bulwark_against_bolshevism
 		x = 11
 		y = 2
-		cost = 8
+		cost = 10
 
 		available = {
 			controls_state = 191
@@ -966,7 +964,7 @@ shared_focus = {
 
 		x = 14
 		y = 4
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -994,7 +992,7 @@ shared_focus = {
 
 		x = 12
 		y = 4
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1020,7 +1018,7 @@ shared_focus = {
 
 		x = 13
 		y = 5
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1053,7 +1051,7 @@ shared_focus = {
 
 		x = 19
 		y = 0
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1062,25 +1060,24 @@ shared_focus = {
 		available_if_capitulated = yes
 
 		complete_tooltip = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
 			add_ideas = aero_idea
-			random_owned_controlled_state = {
-				add_building_construction = {
-					type = air_base
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				add_building_construction = {
-					type = air_base
-					level = 1
-					instant_build = yes
-				}
-			}
 		}
 
 		completion_reward = {
-		    add_ideas = aero_idea
 			random_owned_controlled_state = {
 				prioritize = { 191 }
 				limit = {
@@ -1110,7 +1107,7 @@ shared_focus = {
 					instant_build = yes
 				}
 			}
-
+		    add_ideas = aero_idea
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1121,7 +1118,7 @@ shared_focus = {
 
 		x = 18
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1147,7 +1144,7 @@ shared_focus = {
 
 		x = 20
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1178,7 +1175,7 @@ shared_focus = {
 
 		x = 19
 		y = 2
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1204,7 +1201,7 @@ shared_focus = {
 
 		x = 17
 		y = 2
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1231,7 +1228,7 @@ shared_focus = {
 
 		x = 18
 		y = 3
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1259,7 +1256,7 @@ shared_focus = {
 
 		x = 20
 		y = 3
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1286,7 +1283,7 @@ shared_focus = {
 
 		x = 19
 		y = 4
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -1316,7 +1313,7 @@ shared_focus = {
     shared_focus = {
 		id = EST_build_paldiski_port
 		icon = GFX_goal_EST_coa_navy
-		x = 23
+		x = 24
 		y = 0
 		cost = 8
 		ai_will_do = {
@@ -1457,24 +1454,17 @@ shared_focus = {
 	shared_focus = {
 		id = EST_expand_port_paldiski
 		prerequisite = { focus = EST_build_paldiski_port }
+		relative_position_id = EST_build_paldiski_port
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 23
+		x = 0
 		y = 3
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 3
-			add_building_construction = {
-				type = dockyard
-				level = 3
-				instant_build = yes
-			}
-		}
 		completion_reward = {
 			if = {
 				limit = {
@@ -1536,7 +1526,6 @@ shared_focus = {
 						instant_build = yes
 					}
 				}
-				set_country_flag = naval_effort_built
 			}
 			if = {
 				limit = {
@@ -1574,9 +1563,10 @@ shared_focus = {
 		id = EST_escort_effort
 		icon = GFX_goal_generic_navy_anti_submarine
 		prerequisite = { focus = EST_build_paldiski_port }
-		x = 22
+		relative_position_id = EST_build_paldiski_port
+		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -1591,9 +1581,10 @@ shared_focus = {
 		id = EST_special_marine_forces
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = EST_escort_effort }
-		x = 22
-		y = 2
-		cost = 8
+		relative_position_id = EST_escort_effort
+		x = 0
+		y = 1
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -1619,10 +1610,11 @@ shared_focus = {
 	shared_focus = {
 		id = EST_navy_tactics
 		icon = GFX_goal_coastal_navy
-		x = 24
+		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = { focus = EST_build_paldiski_port }
+		relative_position_id = EST_build_paldiski_port
 		ai_will_do = {
 			factor = 1
 		}
@@ -1642,10 +1634,11 @@ shared_focus = {
 	shared_focus = {
 		id = EST_destroyer_focus
 		prerequisite = { focus = EST_navy_tactics }
+		relative_position_id = EST_navy_tactics
 		icon = GFX_focus_generic_destroyer
-		x = 24
-		y = 2
-		cost = 8
+		x = 0
+		y = 1
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
