@@ -9,6 +9,7 @@ add_namespace = SEA_japan_tokko_arrest_events
 add_namespace = SEA_japan_news_events
 add_namespace = SEA_japan_hidden_events
 add_namespace = SEA_japan_air_accidents_events
+add_namespace = SEA_border_incidents_events 
 
 add_namespace = SEA_imperial_influence_events
 
@@ -433,6 +434,13 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
+		unlock_decision_tooltip = {
+			decision = MEN_request_initiation_of_the_suiyuan_campaign_decision
+			show_effect_tooltip = no 
+		}	
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
 		FROM = {
 			country_event = {
 				# FROM folds
@@ -642,10 +650,10 @@ country_event = {
 				}	
 				factor = 2
 			}
-			modifier = {	#56 - Siam should be declared on as it's what historically happened
-				is_historical_focus_on = yes 	#56 - Adding support for SIA rework
-				add = 999	#56
-			}	#56
+			#modifier = {
+			#	is_historical_focus_on = yes 
+			#	factor = 0
+			#}
 		}
 
 		FROM = {
@@ -729,27 +737,6 @@ country_event = {
 			}
 		}
 
-	}
-	option = {	#56 - Adding support for SIA rework
-		name = SEA_japan_foreign_policy.81.a
-		ai_chance = {
-			base = 0
-			modifier = {
-				add = 999
-				FROM = {
-					has_government = fascism
-					has_completed_focus = SIA_phibuns_takeover_r56
-				}
-			}
-		}
-		effect_tooltip = {
-			custom_effect_tooltip = JAP_upon_the_completion_of_focus_strike_the_southern_road_tt_r56
-			create_wargoal = {
-				target = FROM
-				type = annex_everything
-				expire = 0
-			}
-		}
 	}
 }
 
@@ -1878,8 +1865,6 @@ country_event = {
 						state = 563
 						state = 566
 						state = 616
-						state = 1122	#56 - Pailingmiao
-						state = 1119	#56 - Alxa
 					}
 				}
 				transfer_state_to = ROOT
@@ -3801,277 +3786,568 @@ country_event = {
 
 		IF = {
 			limit = {
-				OR = {
-					has_government = democratic
-					has_government = communism
+				has_capitulated = no
+			}
+			IF = {
+				limit = {
+					OR = {
+						has_government = democratic
+						has_government = communism
+					}
 				}
-			}
-			start_civil_war = {
-			    ideology = JAP
-			    size = 0.7
-			    army_ratio = 0
-			    navy_ratio = 0
-			    air_ratio = 0
-			    states = all
-			    states_filter = {
-			    	OR = {
-#			    		state = 993	#56 - Not in RT56, no equivalent needed
-#			    		state = 999	#56 - Not in RT56, no equivalent needed
-#			    		state = 998	#56 - Not in RT56, no equivalent needed
-			    		state = 288
-			    		state = 640
-			    		state = 1019	#56 - Sagaing
-			    		state = 1020	#56 - Bago
-			    		state = 1018	#56 - Shanland
-#			    		state = 994	#56 - Not in RT56, no equivalent needed
-			    	}
-			        is_controlled_by = JAP
-			    }
-			    keep_all_characters = yes
-			    set_country_flag = BRM_japanese_burma_flag
-			    PREV = {  # Original country
-		            BRM_ba_maw = { # Character
-		                set_nationality = PREV.PREV
-		                # Transfers to breakaway
-		            }
-	        	}
-	        	IF = {
-	        		limit = {
-	        			PREV.PREV = {
-	        				NOT = {
-	        					has_country_leader = {
-	        						ruling_only = yes
-	        						character = BRM_ba_maw
-	        					}
-	        				}
-	        			}
-	        		}
-	        		PREV.PREV = {
-	        			add_country_leader_role = {
-	        				character = BRM_ba_maw
-	        				promote_leader = yes
-	        				country_leader = {
-	        					ideology = japan_militarism_ideology
-	        					expire = "1952.1.1.1"
-	        					traits = { mon_dynasty_descendant } 
-	        				}
-	        			}
-	        			promote_character = {
-	        				character = BRM_ba_maw 
-	        				ideology = fascism_ideology 
-	        			}	
-	        		}
-	        	}
-			}
+				start_civil_war = {
+				    ideology = JAP
+				    size = 0.7
+				    army_ratio = 0
+				    navy_ratio = 0
+				    air_ratio = 0
+				    states = all
+				    states_filter = {
+				    	OR = {
+				    		state = 993
+				    		state = 999
+				    		state = 998
+				    		state = 288
+				    		state = 640
+				    		state = 997
+				    		state = 996
+				    		state = 995
+				    		state = 994
+				    	}
+				        has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+				    }
+				    keep_all_characters = yes
+				    set_country_flag = BRM_japanese_burma_flag
+				    PREV = {  # Original country
+			            BRM_ba_maw = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+		        	}
+		        	IF = {
+		        		limit = {
+		        			PREV.PREV = {
+		        				NOT = {
+		        					has_country_leader = {
+		        						ruling_only = yes
+		        						character = BRM_ba_maw
+		        					}
+		        				}
+		        			}
+		        		}
+		        		PREV.PREV = {
+		        			add_country_leader_role = {
+		        				character = BRM_ba_maw
+		        				promote_leader = yes
+		        				country_leader = {
+		        					ideology = japan_militarism_ideology
+		        					expire = "1952.1.1.1"
+		        					traits = { mon_dynasty_descendant } 
+		        				}
+		        			}
+		        			promote_character = {
+		        				character = BRM_ba_maw 
+		        				ideology = fascism_ideology 
+		        			}	
+		        		}
+		        	}
+				}
 
-			random_country = {
-				limit = {
-					has_country_flag = BRM_japanese_burma_flag
-				}
-				set_cosmetic_tag = BRM_state_of_burma_japanese_splinter_tag
-				FROM = {
-					set_autonomy = {
-						target = PREV
-						autonomous_state = autonomy_wtt_imperial_protectorate
-						end_wars = no
-						end_civil_wars = no
-					}
-					PREV = {
-						country_event = {
-							id = SEA_japan_foreign_policy.59
-							hours = 0
-						}	
-					}
-				}
-				every_state = {
+				random_country = {
 					limit = {
-						is_core_of = BRM
-						is_controlled_by = JAP
+						has_country_flag = BRM_japanese_burma_flag
 					}
-					set_state_controller_to = PREV
+					set_cosmetic_tag = BRM_state_of_burma_japanese_splinter_tag
+					FROM = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_wtt_imperial_protectorate
+							end_wars = no
+							end_civil_wars = no
+						}
+						PREV = {
+							country_event = {
+								id = SEA_japan_foreign_policy.59
+								hours = 0
+							}	
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = BRM
+							has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+						}
+						set_state_controller_to = PREV
+					}
 				}
+				
 			}
-			
-		}
-		ELSE_IF = {
-			limit = {
-				has_government = neutrality
-			}
-			start_civil_war = {
-			    ideology = fascism
-			    size = 0.7
-			    army_ratio = 0
-			    navy_ratio = 0
-			    air_ratio = 0
-			    states = all
-			    states_filter = {
-			    	OR = {
-#			    		state = 993	#56 - Not in RT56, no equivalent needed
-#			    		state = 999	#56 - Not in RT56, no equivalent needed
-#			    		state = 998	#56 - Not in RT56, no equivalent needed
-			    		state = 288
-			    		state = 640
-			    		state = 1019	#56 - Sagaing
-			    		state = 1020	#56 - Bago
-			    		state = 1018	#56 - Shanland
-#			    		state = 994	#56 - Not in RT56, no equivalent needed
-			    	}
-			        is_controlled_by = JAP
-			    }
-			    keep_all_characters = yes
-			    set_country_flag = BRM_japanese_burma_flag
-			    PREV = {  # Original country
-		            BRM_ba_maw = { # Character
-		                set_nationality = PREV.PREV
-		                # Transfers to breakaway
-		            }
-	        	}
-	        	IF = {
-	        		limit = {
-	        			PREV.PREV = {
-	        				NOT = {
-	        					has_country_leader = {
-	        						ruling_only = yes
-	        						character = BRM_ba_maw
-	        					}
-	        				}
-	        			}
-	        		}
-	        		PREV.PREV = {
-	        			add_country_leader_role = {
-	        				character = BRM_ba_maw
-	        				promote_leader = yes
-	        				country_leader = {
-	        					ideology = japan_militarism_ideology
-	        					expire = "1952.1.1.1"
-	        					traits = { mon_dynasty_descendant } 
-	        				}
-	        			}
-	        			promote_character = {
-	        				character = BRM_ba_maw 
-	        				ideology = fascism_ideology 
-	        			}	
-	        		}
-	        	}
-			}
-			random_country = {
+			ELSE_IF = {
 				limit = {
-					has_country_flag = BRM_japanese_burma_flag
+					has_government = neutrality
 				}
-				set_cosmetic_tag = BRM_state_of_burma_japanese_splinter_tag
-				FROM = {
-					set_autonomy = {
-						target = PREV
-						autonomous_state = autonomy_wtt_imperial_protectorate
-						end_wars = no
-						end_civil_wars = no
-					}
-					PREV = {
-						country_event = {
-							id = SEA_japan_foreign_policy.59
-							hours = 2
-						}	
-					}
+				start_civil_war = {
+				    ideology = fascism
+				    size = 0.7
+				    army_ratio = 0
+				    navy_ratio = 0
+				    air_ratio = 0
+				    states = all
+				    states_filter = {
+				    	OR = {
+				    		state = 993
+				    		state = 999
+				    		state = 998
+				    		state = 288
+				    		state = 640
+				    		state = 997
+				    		state = 996
+				    		state = 995
+				    		state = 994
+				    	}
+				        has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+				    }
+				    keep_all_characters = yes
+				    set_country_flag = BRM_japanese_burma_flag
+				    PREV = {  # Original country
+			            BRM_ba_maw = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+		        	}
+		        	IF = {
+		        		limit = {
+		        			PREV.PREV = {
+		        				NOT = {
+		        					has_country_leader = {
+		        						ruling_only = yes
+		        						character = BRM_ba_maw
+		        					}
+		        				}
+		        			}
+		        		}
+		        		PREV.PREV = {
+		        			add_country_leader_role = {
+		        				character = BRM_ba_maw
+		        				promote_leader = yes
+		        				country_leader = {
+		        					ideology = japan_militarism_ideology
+		        					expire = "1952.1.1.1"
+		        					traits = { mon_dynasty_descendant } 
+		        				}
+		        			}
+		        			promote_character = {
+		        				character = BRM_ba_maw 
+		        				ideology = fascism_ideology 
+		        			}	
+		        		}
+		        	}
 				}
-				every_state = {
+				random_country = {
 					limit = {
-						is_core_of = BRM
-						is_controlled_by = JAP
+						has_country_flag = BRM_japanese_burma_flag
 					}
-					set_state_controller_to = PREV
+					set_cosmetic_tag = BRM_state_of_burma_japanese_splinter_tag
+					FROM = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_wtt_imperial_protectorate
+							end_wars = no
+							end_civil_wars = no
+						}
+						PREV = {
+							country_event = {
+								id = SEA_japan_foreign_policy.59
+								hours = 2
+							}	
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = BRM
+							has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+						}
+						set_state_controller_to = PREV
+					}
+				}
+			}
+			ELSE = {
+				start_civil_war = {
+				    ideology = neutrality
+				    size = 0.7
+				    army_ratio = 0
+				    navy_ratio = 0
+				    air_ratio = 0
+				    states = all
+				    states_filter = {
+				    	OR = {
+				    		state = 993
+				    		state = 999
+				    		state = 998
+				    		state = 288
+				    		state = 640
+				    		state = 997
+				    		state = 996
+				    		state = 995
+				    		state = 994
+				    	}
+				       has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+				    }
+				    keep_all_characters = yes
+				    set_country_flag = BRM_japanese_burma_flag
+				    PREV = {  # Original country
+			            BRM_myat_phaya_lat = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+		        	}
+		        	IF = {
+		        		limit = {
+		        			PREV.PREV = {
+		        				NOT = {
+		        					has_country_leader = {
+		        						ruling_only = yes
+		        						character = BRM_myat_phaya_lat
+		        					}
+		        				}
+		        			}
+		        		}
+		        		PREV.PREV = {
+		        			add_country_leader_role = {
+		        				character = BRM_myat_phaya_lat
+		        				promote_leader = yes
+		        				country_leader = {
+		        					ideology = emperor_fascism
+		        					expire = "1952.1.1.1"
+		        					traits = { konbuang_dynasty_descendant } 
+		        				}
+		        			}
+		        			promote_character = {
+		        				character = BRM_myat_phaya_lat 
+		        				ideology = despotism 
+		        			}	
+		        		}
+		        	}
+				}
+				random_country = {
+					limit = {
+						has_country_flag = BRM_japanese_burma_flag
+					}
+					set_cosmetic_tag = BRM_state_of_burma_japanese_splinter_tag
+					FROM = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_wtt_imperial_protectorate
+							end_wars = no
+							end_civil_wars = no
+						}
+						PREV = {
+							country_event = {
+								id = SEA_japan_foreign_policy.59
+								hours = 2
+							}	
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = BRM
+							has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+						}
+						set_state_controller_to = PREV
+					}
 				}
 			}
 		}
 		ELSE = {
-			start_civil_war = {
-			    ideology = neutrality
-			    size = 0.7
-			    army_ratio = 0
-			    navy_ratio = 0
-			    air_ratio = 0
-			    states = all
-			    states_filter = {
-			    	OR = {
-#			    		state = 993	#56 - Not in RT56, no equivalent needed
-#			    		state = 999	#56 - Not in RT56, no equivalent needed
-#			    		state = 998	#56 - Not in RT56, no equivalent needed
-			    		state = 288
-			    		state = 640
-			    		state = 1019	#56 - Sagaing
-			    		state = 1020	#56 - Bago
-			    		state = 1018	#56 - Shanland
-#			    		state = 994	#56 - Not in RT56, no equivalent needed
-			    	}
-			        is_controlled_by = JAP
-			    }
-			    keep_all_characters = yes
-			    set_country_flag = BRM_japanese_burma_flag
-			    PREV = {  # Original country
-		            BRM_myat_phaya_lat = { # Character
-		                set_nationality = PREV.PREV
-		                # Transfers to breakaway
-		            }
-	        	}
-	        	IF = {
-	        		limit = {
-	        			PREV.PREV = {
-	        				NOT = {
-	        					has_country_leader = {
-	        						ruling_only = yes
-	        						character = BRM_myat_phaya_lat
-	        					}
-	        				}
-	        			}
-	        		}
-	        		PREV.PREV = {
-	        			add_country_leader_role = {
-	        				character = BRM_myat_phaya_lat
-	        				promote_leader = yes
-	        				country_leader = {
-	        					ideology = emperor_fascism
-	        					expire = "1952.1.1.1"
-	        					traits = { konbuang_dynasty_descendant } 
-	        				}
-	        			}
-	        			promote_character = {
-	        				character = BRM_myat_phaya_lat 
-	        				ideology = despotism 
-	        			}	
-	        		}
-	        	}
-			}
-			random_country = {
+			set_global_flag = BRM_has_capped_flag 
+			every_core_state = {
 				limit = {
-					has_country_flag = BRM_japanese_burma_flag
+					has_state_flag = is_state_that_should_go_to_japanese_burma_flag
 				}
-				set_cosmetic_tag = BRM_state_of_burma_japanese_splinter_tag
-				FROM = {
-					set_autonomy = {
-						target = PREV
-						autonomous_state = autonomy_wtt_imperial_protectorate
-						end_wars = no
-						end_civil_wars = no
-					}
-					PREV = {
-						country_event = {
-							id = SEA_japan_foreign_policy.59
-							hours = 2
-						}	
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = BRM
-						is_controlled_by = JAP
-					}
-					set_state_controller_to = PREV
-				}
+				set_state_controller_to = ROOT
 			}
 		}
-		
 
 	}
 
+	after = {
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_global_flag = BRM_has_capped_flag
+				}
+				IF = {
+					limit = {
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+					start_civil_war = {
+					    ideology = JAP
+					    size = 0.7
+					    army_ratio = 0
+					    navy_ratio = 0
+					    air_ratio = 0
+					    states = all
+					    states_filter = {
+					    	OR = {
+					    		state = 993
+					    		state = 999
+					    		state = 998
+					    		state = 288
+					    		state = 640
+					    		state = 997
+					    		state = 996
+					    		state = 995
+					    		state = 994
+					    	}
+					        has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+					    }
+					    keep_all_characters = yes
+					    set_country_flag = BRM_japanese_burma_flag
+					    PREV = {  # Original country
+				            BRM_ba_maw = { # Character
+				                set_nationality = PREV.PREV
+				                # Transfers to breakaway
+				            }
+			        	}
+			        	IF = {
+			        		limit = {
+			        			PREV.PREV = {
+			        				NOT = {
+			        					has_country_leader = {
+			        						ruling_only = yes
+			        						character = BRM_ba_maw
+			        					}
+			        				}
+			        			}
+			        		}
+			        		PREV.PREV = {
+			        			add_country_leader_role = {
+			        				character = BRM_ba_maw
+			        				promote_leader = yes
+			        				country_leader = {
+			        					ideology = japan_militarism_ideology
+			        					expire = "1952.1.1.1"
+			        					traits = { mon_dynasty_descendant } 
+			        				}
+			        			}
+			        			promote_character = {
+			        				character = BRM_ba_maw 
+			        				ideology = fascism_ideology 
+			        			}	
+			        		}
+			        	}
+					}
+
+					random_country = {
+						limit = {
+							has_country_flag = BRM_japanese_burma_flag
+						}
+						set_cosmetic_tag = BRM_state_of_burma_japanese_splinter_tag
+						FROM = {
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_wtt_imperial_protectorate
+								end_wars = no
+								end_civil_wars = no
+							}
+							PREV = {
+								country_event = {
+									id = SEA_japan_foreign_policy.59
+									hours = 0
+								}	
+							}
+						}
+						every_state = {
+							limit = {
+								is_core_of = BRM
+								has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+							}
+							set_state_controller_to = PREV
+						}
+					}
+					
+				}
+				ELSE_IF = {
+					limit = {
+						has_government = neutrality
+					}
+					start_civil_war = {
+					    ideology = fascism
+					    size = 0.7
+					    army_ratio = 0
+					    navy_ratio = 0
+					    air_ratio = 0
+					    states = all
+					    states_filter = {
+					    	OR = {
+					    		state = 993
+					    		state = 999
+					    		state = 998
+					    		state = 288
+					    		state = 640
+					    		state = 997
+					    		state = 996
+					    		state = 995
+					    		state = 994
+					    	}
+					        has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+					    }
+					    keep_all_characters = yes
+					    set_country_flag = BRM_japanese_burma_flag
+					    PREV = {  # Original country
+				            BRM_ba_maw = { # Character
+				                set_nationality = PREV.PREV
+				                # Transfers to breakaway
+				            }
+			        	}
+			        	IF = {
+			        		limit = {
+			        			PREV.PREV = {
+			        				NOT = {
+			        					has_country_leader = {
+			        						ruling_only = yes
+			        						character = BRM_ba_maw
+			        					}
+			        				}
+			        			}
+			        		}
+			        		PREV.PREV = {
+			        			add_country_leader_role = {
+			        				character = BRM_ba_maw
+			        				promote_leader = yes
+			        				country_leader = {
+			        					ideology = japan_militarism_ideology
+			        					expire = "1952.1.1.1"
+			        					traits = { mon_dynasty_descendant } 
+			        				}
+			        			}
+			        			promote_character = {
+			        				character = BRM_ba_maw 
+			        				ideology = fascism_ideology 
+			        			}	
+			        		}
+			        	}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = BRM_japanese_burma_flag
+						}
+						set_cosmetic_tag = BRM_state_of_burma_japanese_splinter_tag
+						FROM = {
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_wtt_imperial_protectorate
+								end_wars = no
+								end_civil_wars = no
+							}
+							PREV = {
+								country_event = {
+									id = SEA_japan_foreign_policy.59
+									hours = 2
+								}	
+							}
+						}
+						every_state = {
+							limit = {
+								is_core_of = BRM
+								has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+							}
+							set_state_controller_to = PREV
+						}
+					}
+				}
+				ELSE = {
+					start_civil_war = {
+					    ideology = neutrality
+					    size = 0.7
+					    army_ratio = 0
+					    navy_ratio = 0
+					    air_ratio = 0
+					    states = all
+					    states_filter = {
+					    	OR = {
+					    		state = 993
+					    		state = 999
+					    		state = 998
+					    		state = 288
+					    		state = 640
+					    		state = 997
+					    		state = 996
+					    		state = 995
+					    		state = 994
+					    	}
+					       has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+					    }
+					    keep_all_characters = yes
+					    set_country_flag = BRM_japanese_burma_flag
+					    PREV = {  # Original country
+				            BRM_myat_phaya_lat = { # Character
+				                set_nationality = PREV.PREV
+				                # Transfers to breakaway
+				            }
+			        	}
+			        	IF = {
+			        		limit = {
+			        			PREV.PREV = {
+			        				NOT = {
+			        					has_country_leader = {
+			        						ruling_only = yes
+			        						character = BRM_myat_phaya_lat
+			        					}
+			        				}
+			        			}
+			        		}
+			        		PREV.PREV = {
+			        			add_country_leader_role = {
+			        				character = BRM_myat_phaya_lat
+			        				promote_leader = yes
+			        				country_leader = {
+			        					ideology = emperor_fascism
+			        					expire = "1952.1.1.1"
+			        					traits = { konbuang_dynasty_descendant } 
+			        				}
+			        			}
+			        			promote_character = {
+			        				character = BRM_myat_phaya_lat 
+			        				ideology = despotism 
+			        			}	
+			        		}
+			        	}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = BRM_japanese_burma_flag
+						}
+						set_cosmetic_tag = BRM_state_of_burma_japanese_splinter_tag
+						FROM = {
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_wtt_imperial_protectorate
+								end_wars = no
+								end_civil_wars = no
+							}
+							PREV = {
+								country_event = {
+									id = SEA_japan_foreign_policy.59
+									hours = 2
+								}	
+							}
+						}
+						every_state = {
+							limit = {
+								is_core_of = BRM
+								has_state_flag = is_state_that_should_go_to_japanese_burma_flag
+							}
+							set_state_controller_to = PREV
+						}
+					}
+				}
+			}
+		}
+	}
 	
 }
 
@@ -4435,289 +4711,592 @@ country_event = {
 
 		IF = {
 			limit = {
-				OR = {
-					has_government = democratic
-					has_government = communism
-				}
-			}
-			start_civil_war = {
-			    ideology = JAP
-			    size = 0.7
-			    army_ratio = 0
-			    navy_ratio = 0
-			    air_ratio = 0
-			    states = all
-			    states_filter = {
-			        is_controlled_by = JAP
-			    }
-			    keep_all_characters = yes
-			    set_country_flag = RAJ_japanese_azad_hind_state_flag
-			    IF = {
-			    	limit = {
-			    		PREV = {
-			    			NOT = {
-			    				has_completed_focus = RAJ_forward_bloc
-			    			}
-			    		}
-			    	}
-    			    PREV = {  # Original country
-    		            RAJ_subhas_chanda_bose = { # Character
-    		                set_nationality = PREV.PREV
-    		                # Transfers to breakaway
-    		            }
-    	        	}
-			    }
-			   	
-	        	IF = {
-	        		limit = {
-	        			PREV.PREV = {
-	        				NOT = {
-	        					has_country_leader = {
-	        						ruling_only = yes
-	        						character = RAJ_subhas_chanda_bose
-	        					}
-	        				}
-	        			}
-	        		}
-	        		PREV.PREV = {
-	        			add_country_leader_role = {
-	        				character = RAJ_subhas_chanda_bose
-	        				promote_leader = yes
-	        				country_leader = {
-	        					ideology = japan_militarism_ideology
-	        					expire = "1952.1.1.1"
-	        					traits = { nationalistic_freedom_fighter } 
-	        				}
-	        			}
-	        			add_country_leader_role = {
-	        				character = RAJ_subhas_chanda_bose
-	        				promote_leader = yes
-	        				country_leader = {
-	        					ideology = fascism_ideology
-	        					expire = "1952.1.1.1"
-	        					traits = { nationalistic_freedom_fighter } 
-	        				}
-	        			}
-	        		}
-	        	}
+				has_capitulated = no
 			}
 
-			random_country = {
+			IF = {
 				limit = {
-					has_country_flag = RAJ_japanese_azad_hind_state_flag
-				}
-				set_cosmetic_tag = RAJ_azad_hind_tag
-				FROM = {
-					set_autonomy = {
-						target = PREV
-						autonomous_state = autonomy_wtt_imperial_protectorate
-						end_wars = no
-						end_civil_wars = no
-					}
-					PREV = {
-						country_event = {
-							id = SEA_japan_foreign_policy.66
-							hours = 0
-						}	
+					OR = {
+						has_government = democratic
+						has_government = communism
 					}
 				}
-				every_state = {
+				start_civil_war = {
+				    ideology = JAP
+				    size = 0.7
+				    army_ratio = 0
+				    navy_ratio = 0
+				    air_ratio = 0
+				    states = all
+				    states_filter = {
+				        has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+				    }
+				    keep_all_characters = yes
+				    set_country_flag = RAJ_japanese_azad_hind_state_flag
+				    IF = {
+				    	limit = {
+				    		PREV = {
+				    			NOT = {
+				    				has_completed_focus = RAJ_forward_bloc
+				    			}
+				    		}
+				    	}
+	    			    PREV = {  # Original country
+	    		            RAJ_subhas_chanda_bose = { # Character
+	    		                set_nationality = PREV.PREV
+	    		                # Transfers to breakaway
+	    		            }
+	    	        	}
+				    }
+				   	
+		        	IF = {
+		        		limit = {
+		        			PREV.PREV = {
+		        				NOT = {
+		        					has_country_leader = {
+		        						ruling_only = yes
+		        						character = RAJ_subhas_chanda_bose
+		        					}
+		        				}
+		        			}
+		        		}
+		        		PREV.PREV = {
+		        			add_country_leader_role = {
+		        				character = RAJ_subhas_chanda_bose
+		        				promote_leader = yes
+		        				country_leader = {
+		        					ideology = japan_militarism_ideology
+		        					expire = "1952.1.1.1"
+		        					traits = { nationalistic_freedom_fighter } 
+		        				}
+		        			}
+		        			add_country_leader_role = {
+		        				character = RAJ_subhas_chanda_bose
+		        				promote_leader = yes
+		        				country_leader = {
+		        					ideology = fascism_ideology
+		        					expire = "1952.1.1.1"
+		        					traits = { nationalistic_freedom_fighter } 
+		        				}
+		        			}
+		        		}
+		        	}
+				}
+
+				random_country = {
 					limit = {
-						is_core_of = RAJ
-						is_controlled_by = JAP
+						has_country_flag = RAJ_japanese_azad_hind_state_flag
 					}
-					set_state_controller_to = PREV
+					set_cosmetic_tag = RAJ_azad_hind_tag
+					FROM = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_wtt_imperial_protectorate
+							end_wars = no
+							end_civil_wars = no
+						}
+						PREV = {
+							country_event = {
+								id = SEA_japan_foreign_policy.66
+								hours = 0
+							}	
+						}
+					}
+					every_state = {
+						limit = {
+							has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+						}
+						set_state_controller_to = PREV
+					}
+				}
+				
+			}
+			ELSE_IF = {
+				limit = {
+					has_government = neutrality
+				}
+				start_civil_war = {
+				    ideology = fascism
+				    size = 0.7
+				    army_ratio = 0
+				    navy_ratio = 0
+				    air_ratio = 0
+				    states = all
+				    states_filter = {
+				        has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+				    }
+				    keep_all_characters = yes
+				    set_country_flag = RAJ_japanese_azad_hind_state_flag
+				    IF = {
+				    	limit = {
+				    		PREV = {
+				    			NOT = {
+				    				has_completed_focus = RAJ_forward_bloc
+				    			}
+				    		}
+				    	}
+	    			    PREV = {  # Original country
+	    		            RAJ_subhas_chanda_bose = { # Character
+	    		                set_nationality = PREV.PREV
+	    		                # Transfers to breakaway
+	    		            }
+	    	        	}
+				    }
+				   	
+		        	IF = {
+		        		limit = {
+		        			PREV.PREV = {
+		        				NOT = {
+		        					has_country_leader = {
+		        						ruling_only = yes
+		        						character = RAJ_subhas_chanda_bose
+		        					}
+		        				}
+		        			}
+		        		}
+		        		PREV.PREV = {
+		        			add_country_leader_role = {
+		        				character = RAJ_subhas_chanda_bose
+		        				promote_leader = yes
+		        				country_leader = {
+		        					ideology = japan_militarism_ideology
+		        					expire = "1952.1.1.1"
+		        					traits = { nationalistic_freedom_fighter } 
+		        				}
+		        			}
+		        			add_country_leader_role = {
+		        				character = RAJ_subhas_chanda_bose
+		        				promote_leader = yes
+		        				country_leader = {
+		        					ideology = fascism_ideology
+		        					expire = "1952.1.1.1"
+		        					traits = { nationalistic_freedom_fighter } 
+		        				}
+		        			}
+		        		}
+		        	}
+				}
+
+				random_country = {
+					limit = {
+						has_country_flag = RAJ_japanese_azad_hind_state_flag
+					}
+					set_cosmetic_tag = RAJ_azad_hind_tag
+					FROM = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_wtt_imperial_protectorate
+							end_wars = no
+							end_civil_wars = no
+						}
+						PREV = {
+							country_event = {
+								id = SEA_japan_foreign_policy.66
+								hours = 0
+							}	
+						}
+					}
+					every_state = {
+						limit = {
+							has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+						}
+						set_state_controller_to = PREV
+					}
 				}
 			}
-			
-		}
-		ELSE_IF = {
-			limit = {
-				has_government = neutrality
-			}
-			start_civil_war = {
-			    ideology = fascism
-			    size = 0.7
-			    army_ratio = 0
-			    navy_ratio = 0
-			    air_ratio = 0
-			    states = all
-			    states_filter = {
-			        is_controlled_by = JAP
-			    }
-			    keep_all_characters = yes
-			    set_country_flag = RAJ_japanese_azad_hind_state_flag
-			    IF = {
-			    	limit = {
-			    		PREV = {
-			    			NOT = {
-			    				has_completed_focus = RAJ_forward_bloc
-			    			}
-			    		}
-			    	}
-    			    PREV = {  # Original country
-    		            RAJ_subhas_chanda_bose = { # Character
-    		                set_nationality = PREV.PREV
-    		                # Transfers to breakaway
-    		            }
-    	        	}
-			    }
-			   	
-	        	IF = {
-	        		limit = {
-	        			PREV.PREV = {
-	        				NOT = {
-	        					has_country_leader = {
-	        						ruling_only = yes
-	        						character = RAJ_subhas_chanda_bose
-	        					}
-	        				}
-	        			}
-	        		}
-	        		PREV.PREV = {
-	        			add_country_leader_role = {
-	        				character = RAJ_subhas_chanda_bose
-	        				promote_leader = yes
-	        				country_leader = {
-	        					ideology = japan_militarism_ideology
-	        					expire = "1952.1.1.1"
-	        					traits = { nationalistic_freedom_fighter } 
-	        				}
-	        			}
-	        			add_country_leader_role = {
-	        				character = RAJ_subhas_chanda_bose
-	        				promote_leader = yes
-	        				country_leader = {
-	        					ideology = fascism_ideology
-	        					expire = "1952.1.1.1"
-	        					traits = { nationalistic_freedom_fighter } 
-	        				}
-	        			}
-	        		}
-	        	}
+			ELSE = {
+				start_civil_war = {
+				    ideology = neutrality
+				    size = 0.7
+				    army_ratio = 0
+				    navy_ratio = 0
+				    air_ratio = 0
+				    states = all
+				    states_filter = {
+				        has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+				    }
+				    keep_all_characters = yes
+				    set_country_flag = RAJ_japanese_azad_hind_state_flag
+				    IF = {
+				    	limit = {
+				    		PREV = {
+				    			NOT = {
+				    				has_completed_focus = RAJ_forward_bloc
+				    			}
+				    		}
+				    	}
+	    			    PREV = {  # Original country
+	    		            RAJ_subhas_chanda_bose = { # Character
+	    		                set_nationality = PREV.PREV
+	    		                # Transfers to breakaway
+	    		            }
+	    	        	}
+				    }
+				   	
+		        	IF = {
+		        		limit = {
+		        			PREV.PREV = {
+		        				NOT = {
+		        					has_country_leader = {
+		        						ruling_only = yes
+		        						character = RAJ_subhas_chanda_bose
+		        					}
+		        				}
+		        			}
+		        		}
+		        		PREV.PREV = {
+		        			add_country_leader_role = {
+		        				character = RAJ_subhas_chanda_bose
+		        				promote_leader = yes
+		        				country_leader = {
+		        					ideology = japan_militarism_ideology
+		        					expire = "1952.1.1.1"
+		        					traits = { nationalistic_freedom_fighter } 
+		        				}
+		        			}
+		        			add_country_leader_role = {
+		        				character = RAJ_subhas_chanda_bose
+		        				promote_leader = yes
+		        				country_leader = {
+		        					ideology = fascism_ideology
+		        					expire = "1952.1.1.1"
+		        					traits = { nationalistic_freedom_fighter } 
+		        				}
+		        			}
+		        		}
+		        	}
+				}
+
+				random_country = {
+					limit = {
+						has_country_flag = RAJ_japanese_azad_hind_state_flag
+					}
+					set_cosmetic_tag = RAJ_azad_hind_tag
+					FROM = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_wtt_imperial_protectorate
+							end_wars = no
+							end_civil_wars = no
+						}
+						PREV = {
+							country_event = {
+								id = SEA_japan_foreign_policy.66
+								hours = 0
+							}	
+						}
+					}
+					every_state = {
+						limit = {
+							has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+						}
+						set_state_controller_to = PREV
+					}
+				}
 			}
 
-			random_country = {
-				limit = {
-					has_country_flag = RAJ_japanese_azad_hind_state_flag
-				}
-				set_cosmetic_tag = RAJ_azad_hind_tag
-				FROM = {
-					set_autonomy = {
-						target = PREV
-						autonomous_state = autonomy_wtt_imperial_protectorate
-						end_wars = no
-						end_civil_wars = no
-					}
-					PREV = {
-						country_event = {
-							id = SEA_japan_foreign_policy.66
-							hours = 0
-						}	
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = RAJ
-						is_controlled_by = JAP
-					}
-					set_state_controller_to = PREV
-				}
-			}
 		}
 		ELSE = {
-			start_civil_war = {
-			    ideology = neutrality
-			    size = 0.7
-			    army_ratio = 0
-			    navy_ratio = 0
-			    air_ratio = 0
-			    states = all
-			    states_filter = {
-			        is_controlled_by = JAP
-			    }
-			    keep_all_characters = yes
-			    set_country_flag = RAJ_japanese_azad_hind_state_flag
-			    IF = {
-			    	limit = {
-			    		PREV = {
-			    			NOT = {
-			    				has_completed_focus = RAJ_forward_bloc
-			    			}
-			    		}
-			    	}
-    			    PREV = {  # Original country
-    		            RAJ_subhas_chanda_bose = { # Character
-    		                set_nationality = PREV.PREV
-    		                # Transfers to breakaway
-    		            }
-    	        	}
-			    }
-			   	
-	        	IF = {
-	        		limit = {
-	        			PREV.PREV = {
-	        				NOT = {
-	        					has_country_leader = {
-	        						ruling_only = yes
-	        						character = RAJ_subhas_chanda_bose
-	        					}
-	        				}
-	        			}
-	        		}
-	        		PREV.PREV = {
-	        			add_country_leader_role = {
-	        				character = RAJ_subhas_chanda_bose
-	        				promote_leader = yes
-	        				country_leader = {
-	        					ideology = japan_militarism_ideology
-	        					expire = "1952.1.1.1"
-	        					traits = { nationalistic_freedom_fighter } 
-	        				}
-	        			}
-	        			add_country_leader_role = {
-	        				character = RAJ_subhas_chanda_bose
-	        				promote_leader = yes
-	        				country_leader = {
-	        					ideology = fascism_ideology
-	        					expire = "1952.1.1.1"
-	        					traits = { nationalistic_freedom_fighter } 
-	        				}
-	        			}
-	        		}
-	        	}
-			}
-
-			random_country = {
+			set_global_flag = RAJ_has_capped_flag 
+			every_core_state = {
 				limit = {
-					has_country_flag = RAJ_japanese_azad_hind_state_flag
+					has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
 				}
-				set_cosmetic_tag = RAJ_azad_hind_tag
-				FROM = {
-					set_autonomy = {
-						target = PREV
-						autonomous_state = autonomy_wtt_imperial_protectorate
-						end_wars = no
-						end_civil_wars = no
-					}
-					PREV = {
-						country_event = {
-							id = SEA_japan_foreign_policy.66
-							hours = 0
-						}	
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = RAJ
-						is_controlled_by = JAP
-					}
-					set_state_controller_to = PREV
-				}
+				set_state_controller_to = ROOT
 			}
 		}
 		
 
+	}
+
+	after = {
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_global_flag = RAJ_has_capped_flag
+				}
+				IF = {
+					limit = {
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+					start_civil_war = {
+					    ideology = JAP
+					    size = 0.7
+					    army_ratio = 0
+					    navy_ratio = 0
+					    air_ratio = 0
+					    states = all
+					    states_filter = {
+					        has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+					    }
+					    keep_all_characters = yes
+					    set_country_flag = RAJ_japanese_azad_hind_state_flag
+					    IF = {
+					    	limit = {
+					    		PREV = {
+					    			NOT = {
+					    				has_completed_focus = RAJ_forward_bloc
+					    			}
+					    		}
+					    	}
+		    			    PREV = {  # Original country
+		    		            RAJ_subhas_chanda_bose = { # Character
+		    		                set_nationality = PREV.PREV
+		    		                # Transfers to breakaway
+		    		            }
+		    	        	}
+					    }
+					   	
+			        	IF = {
+			        		limit = {
+			        			PREV.PREV = {
+			        				NOT = {
+			        					has_country_leader = {
+			        						ruling_only = yes
+			        						character = RAJ_subhas_chanda_bose
+			        					}
+			        				}
+			        			}
+			        		}
+			        		PREV.PREV = {
+			        			add_country_leader_role = {
+			        				character = RAJ_subhas_chanda_bose
+			        				promote_leader = yes
+			        				country_leader = {
+			        					ideology = japan_militarism_ideology
+			        					expire = "1952.1.1.1"
+			        					traits = { nationalistic_freedom_fighter } 
+			        				}
+			        			}
+			        			add_country_leader_role = {
+			        				character = RAJ_subhas_chanda_bose
+			        				promote_leader = yes
+			        				country_leader = {
+			        					ideology = fascism_ideology
+			        					expire = "1952.1.1.1"
+			        					traits = { nationalistic_freedom_fighter } 
+			        				}
+			        			}
+			        		}
+			        	}
+					}
+
+					random_country = {
+						limit = {
+							has_country_flag = RAJ_japanese_azad_hind_state_flag
+						}
+						set_cosmetic_tag = RAJ_azad_hind_tag
+						FROM = {
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_wtt_imperial_protectorate
+								end_wars = no
+								end_civil_wars = no
+							}
+							PREV = {
+								country_event = {
+									id = SEA_japan_foreign_policy.66
+									hours = 0
+								}	
+							}
+						}
+						every_state = {
+							limit = {
+								has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+							}
+							set_state_controller_to = PREV
+						}
+					}
+					
+				}
+				ELSE_IF = {
+					limit = {
+						has_government = neutrality
+					}
+					start_civil_war = {
+					    ideology = fascism
+					    size = 0.7
+					    army_ratio = 0
+					    navy_ratio = 0
+					    air_ratio = 0
+					    states = all
+					    states_filter = {
+					        has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+					    }
+					    keep_all_characters = yes
+					    set_country_flag = RAJ_japanese_azad_hind_state_flag
+					    IF = {
+					    	limit = {
+					    		PREV = {
+					    			NOT = {
+					    				has_completed_focus = RAJ_forward_bloc
+					    			}
+					    		}
+					    	}
+		    			    PREV = {  # Original country
+		    		            RAJ_subhas_chanda_bose = { # Character
+		    		                set_nationality = PREV.PREV
+		    		                # Transfers to breakaway
+		    		            }
+		    	        	}
+					    }
+					   	
+			        	IF = {
+			        		limit = {
+			        			PREV.PREV = {
+			        				NOT = {
+			        					has_country_leader = {
+			        						ruling_only = yes
+			        						character = RAJ_subhas_chanda_bose
+			        					}
+			        				}
+			        			}
+			        		}
+			        		PREV.PREV = {
+			        			add_country_leader_role = {
+			        				character = RAJ_subhas_chanda_bose
+			        				promote_leader = yes
+			        				country_leader = {
+			        					ideology = japan_militarism_ideology
+			        					expire = "1952.1.1.1"
+			        					traits = { nationalistic_freedom_fighter } 
+			        				}
+			        			}
+			        			add_country_leader_role = {
+			        				character = RAJ_subhas_chanda_bose
+			        				promote_leader = yes
+			        				country_leader = {
+			        					ideology = fascism_ideology
+			        					expire = "1952.1.1.1"
+			        					traits = { nationalistic_freedom_fighter } 
+			        				}
+			        			}
+			        		}
+			        	}
+					}
+
+					random_country = {
+						limit = {
+							has_country_flag = RAJ_japanese_azad_hind_state_flag
+						}
+						set_cosmetic_tag = RAJ_azad_hind_tag
+						FROM = {
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_wtt_imperial_protectorate
+								end_wars = no
+								end_civil_wars = no
+							}
+							PREV = {
+								country_event = {
+									id = SEA_japan_foreign_policy.66
+									hours = 0
+								}	
+							}
+						}
+						every_state = {
+							limit = {
+								has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+							}
+							set_state_controller_to = PREV
+						}
+					}
+				}
+				ELSE = {
+					start_civil_war = {
+					    ideology = neutrality
+					    size = 0.7
+					    army_ratio = 0
+					    navy_ratio = 0
+					    air_ratio = 0
+					    states = all
+					    states_filter = {
+					        has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+					    }
+					    keep_all_characters = yes
+					    set_country_flag = RAJ_japanese_azad_hind_state_flag
+					    IF = {
+					    	limit = {
+					    		PREV = {
+					    			NOT = {
+					    				has_completed_focus = RAJ_forward_bloc
+					    			}
+					    		}
+					    	}
+		    			    PREV = {  # Original country
+		    		            RAJ_subhas_chanda_bose = { # Character
+		    		                set_nationality = PREV.PREV
+		    		                # Transfers to breakaway
+		    		            }
+		    	        	}
+					    }
+					   	
+			        	IF = {
+			        		limit = {
+			        			PREV.PREV = {
+			        				NOT = {
+			        					has_country_leader = {
+			        						ruling_only = yes
+			        						character = RAJ_subhas_chanda_bose
+			        					}
+			        				}
+			        			}
+			        		}
+			        		PREV.PREV = {
+			        			add_country_leader_role = {
+			        				character = RAJ_subhas_chanda_bose
+			        				promote_leader = yes
+			        				country_leader = {
+			        					ideology = japan_militarism_ideology
+			        					expire = "1952.1.1.1"
+			        					traits = { nationalistic_freedom_fighter } 
+			        				}
+			        			}
+			        			add_country_leader_role = {
+			        				character = RAJ_subhas_chanda_bose
+			        				promote_leader = yes
+			        				country_leader = {
+			        					ideology = fascism_ideology
+			        					expire = "1952.1.1.1"
+			        					traits = { nationalistic_freedom_fighter } 
+			        				}
+			        			}
+			        		}
+			        	}
+					}
+
+					random_country = {
+						limit = {
+							has_country_flag = RAJ_japanese_azad_hind_state_flag
+						}
+						set_cosmetic_tag = RAJ_azad_hind_tag
+						FROM = {
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_wtt_imperial_protectorate
+								end_wars = no
+								end_civil_wars = no
+							}
+							PREV = {
+								country_event = {
+									id = SEA_japan_foreign_policy.66
+									hours = 0
+								}	
+							}
+						}
+						every_state = {
+							limit = {
+								has_state_flag = is_state_that_should_go_to_japanese_azad_hind_flag
+							}
+							set_state_controller_to = PREV
+						}
+					}
+				}
+			}
+		}
 	}
 
 	
@@ -5356,11 +5935,12 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		add_timed_idea = {
-			idea = SOV_full_focus_on_the_west
-			days = 365
-		}	
-
+		FROM = {
+			add_timed_idea = {
+				idea = SOV_full_focus_on_the_west
+				days = 365
+			}
+		}
 
 	}
 }
@@ -7052,6 +7632,7 @@ country_event = { #FROM proposes tightened federation
 				hours = 12
 			}
 		}
+		custom_effect_tooltip = GAME_OVER_TT
 		effect_tooltip = {
 			FROM = {
 				annex_country = {
@@ -7113,6 +7694,13 @@ country_event = { #FROM accepts tighter federation
 		}	
 		FROM = {
 			every_core_state = {
+				limit = {
+					OR = {
+						is_on_continent = asia 
+						is_on_continent = australia 
+						is_on_continent = middle_east 
+					}
+				}
 				add_core_of = ROOT
 			}
 		}
@@ -7215,9 +7803,9 @@ country_event = {
 					limit = {
 						OR = {
 							state = 336
-							state = 916	#56 - North Borneo
-							state = 1014	#56 - Brunei
-#							state = 1023	#56
+							state = 999
+							state = 1024
+							state = 1023
 							state = 333
 							state = 334
 							state = 724
@@ -7297,9 +7885,9 @@ country_event = {
 				limit = {
 					OR = {
 						state = 336
-						state = 916	#56 - North Borneo
-						state = 1014	#56 - Brunei
-#							state = 1023	#56
+						state = 999
+						state = 1024
+						state = 1023
 						state = 333
 						state = 334
 						state = 724
@@ -7448,112 +8036,6 @@ country_event = {
 		name = SEA_japan_foreign_policy.116.a
 		ai_chance = {
 			base = 10
-		}
-		hidden_effect = {	#56 - Adding support for SIA rework
-			if = {
-				limit = {
-					has_country_flag = JAP_is_supporting_siams_territorial_aspirations_r56
-					SIA = {
-						NOT = {
-							has_war_with = FROM
-							has_war_with = ROOT
-						}
-					}
-				}
-				if = {
-					limit = {
-						FRI = { has_country_flag = JAP_this_is_the_country_being_negotiated_at_the_moment }
-					}
-					926 = {	#Luang Prabang
-						if = {
-							limit = { is_controlled_by = FRI }
-							transfer_state_to = SIA
-						}
-					}
-					924 = {	#Champasak
-						if = {
-							limit = { is_controlled_by = FRI }
-							transfer_state_to = SIA
-						}
-					}
-					if = {
-						limit = {
-							SIA = {
-								OR = {
-									has_country_flag = SIA_is_claiming_small_border_states_and_laos
-									has_country_flag = SIA_is_claiming_all_of_laos_and_cambodia
-								}
-							}
-						}
-						670 = {	#Laos
-							if = {
-								limit = { is_controlled_by = FRI }
-								transfer_state_to = SIA
-							}
-						}
-					}
-					if = {
-						limit = {
-							SIA = { has_country_flag = SIA_is_claiming_all_of_laos_and_cambodia }
-						}
-						741 = {	#Cambodia
-							if = {
-								limit = { is_controlled_by = FRI }
-								transfer_state_to = SIA
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						LAO = { has_country_flag = JAP_this_is_the_country_being_negotiated_at_the_moment }
-					}
-					if = {
-						limit = {
-							SIA = {
-								OR = {
-									has_country_flag = SIA_is_claiming_small_border_states_and_laos
-									has_country_flag = SIA_is_claiming_all_of_laos_and_cambodia
-								}
-							}
-						}
-						SIA = { puppet = LAO }
-					}
-				}
-				else = {
-					926 = {	#Luang Prabang
-						if = {
-							limit = { is_controlled_by = LAO }
-							transfer_state_to = SIA
-						}
-					}
-					924 = {	#Champasak
-						if = {
-							limit = { is_controlled_by = LAO }
-							transfer_state_to = SIA
-						}
-					}
-				}
-				if = {
-					limit = {
-						CAM = { has_country_flag = JAP_this_is_the_country_being_negotiated_at_the_moment }
-					}
-					if = {
-						limit = {
-							SIA = { has_country_flag = SIA_is_claiming_all_of_laos_and_cambodia }
-						}
-						SIA = { puppet = CAM }
-					}
-					else = {
-						925 = {	#Batambang
-							if = {
-								limit = { is_controlled_by = CAM }
-								transfer_state_to = CAM
-							}
-						}
-					}
-				}
-			}
 		}
 
 		FROM = {
@@ -7800,11 +8282,6 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		IF = {
-			limit = { has_idea = MAN_communist_cells }
-			remove_ideas = MAN_communist_cells
-		}
-		clr_country_flag = MAN_economic_demands_tt
 		FROM = {		
 			every_army_leader = {
 				random_select_amount = 6
@@ -8201,8 +8678,8 @@ country_event = {
 			states = all
 			states_filter = {
 			    OR = {
-			    	state = 918	#56 - Hamgyong
-			    	state = 527	#56 - Pyeongang
+			    	state = 527
+			    	state = 1028
 			    	state = 525
 			    }
 			    is_controlled_by = ROOT
@@ -8275,9 +8752,9 @@ country_event = {
 			states = all
 			states_filter = {
 			    OR = {
-			    	state = 919	#56 - Jeolla
-			    	state = 920	#56 - Gyeosang
-			    	state = 917	#56 - Hwanghae
+			    	state = 1031
+			    	state = 1030
+			    	state = 1029
 			    }
 			    is_controlled_by = ROOT
 			}
@@ -8671,9 +9148,214 @@ country_event = {
 
 }
 
+# Merging with [MAN.GetNameDef] - event for Chinese non-MAN puppet of Japan
+country_event = {
+	id = SEA_japan_foreign_policy.137
+	title = SEA_japan_foreign_policy.137.t
+	desc = SEA_japan_foreign_policy.137.desc
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+
+	fire_only_once = no
+	
+	# [ROOT.GetLeader] will gain a good position, so we accept
+	option = { 
+		name = SEA_japan_foreign_policy.137.a
+		ai_chance = {
+			base = 100
+		}
+		
+		MAN = {
+			country_event = {
+				id = SEA_japan_foreign_policy.138
+				hours = 2
+				random_hours = 4
+			}	
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+		effect_tooltip = {
+			MAN = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}	
+			}	
+			every_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_core_of = MAN
+			}
+		}
+
+	}
+
+	# That would be the end to our autonomy, no!
+	option = { 
+		name = SEA_japan_foreign_policy.137.b
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -100
+		add_stability = -0.05
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = SEA_japan_foreign_policy.139
+				hours = 2
+			}	
+		}
+		MAN = {
+			country_event = {
+				id = SEA_japan_foreign_policy.139
+				hours = 2
+			}	
+		}
+
+	}
+
+}
+
+# [FROM.GetNameDefCap] Merges with Us - event for MAN
+country_event = {
+	id = SEA_japan_foreign_policy.138
+	title = SEA_japan_foreign_policy.138.t
+	desc = SEA_japan_foreign_policy.138.desc
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+
+	fire_only_once = no
+	
+	# [ROOT.GetLeader] will gain a good position in our government, so we see why they accepted
+	option = { 
+		name = SEA_japan_foreign_policy.138.a
+		
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}	
+			
+		every_state = {
+			limit = {
+				is_core_of = FROM
+			}
+			add_core_of = ROOT
+		}
+
+		FROM = {
+			clr_country_flag = MAN_is_seeking_to_annexing_us_flag
+		}
+
+		clr_global_flag = MAN_is_currently_seeking_to_merge_a_puppet_government_into_them_flag 
+
+	}
+
+}
+
+# [FROM.GetNameDefCap] Rejects the Merger - event for JAP and MAN 
+country_event = {
+	id = SEA_japan_foreign_policy.139
+	title = SEA_japan_foreign_policy.139.t
+	desc = SEA_japan_foreign_policy.139.desc
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+
+	fire_only_once = no
+	
+	# They will accept in due time..
+	option = { 
+		name = SEA_japan_foreign_policy.139.a
 
 
 
+	}
+
+}
+
+# [MAN.GetLeader] Seeks to Merge Puppet Administrations - event for Japan 
+country_event = {
+	id = SEA_japan_foreign_policy.140
+	title = SEA_japan_foreign_policy.140.t
+	desc = SEA_japan_foreign_policy.140.desc
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+
+	fire_only_once = no
+	
+	# Very well, it makes our administrative duties simpler
+	option = { 
+		name = SEA_japan_foreign_policy.140.a
+		ai_chance = {
+			base = 100
+		}
+		
+		random_subject_country = {
+			limit = {
+				has_country_flag = MAN_is_seeking_to_annexing_us_flag 
+			}
+			country_event = {
+				id = SEA_japan_foreign_policy.137
+				hours = 2
+				random_hours = 4
+			}	
+		}
+
+	}
+
+	# Sounds suspicious
+	option = { 
+		name = SEA_japan_foreign_policy.140.b
+		ai_chance = {
+			base = 0
+		}
+
+		FROM = {
+			country_event = {
+				id = SEA_japan_foreign_policy.141
+				hours = 2
+			}	
+		}
+
+	}
+
+}
+
+# [JAP.GetLeader] Rejects our Proposal - event for MAN  
+country_event = {
+	id = SEA_japan_foreign_policy.141
+	title = SEA_japan_foreign_policy.141.t
+	desc = SEA_japan_foreign_policy.141.desc
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+
+	fire_only_once = no
+	
+	# We will have to try again later... 
+	option = { 
+		name = SEA_japan_foreign_policy.141.a
+		
+		add_political_power = 50 
+		
+		random_subject_country = {
+			limit = {
+				has_country_flag = MAN_is_seeking_to_annexing_us_flag 
+			}
+			clr_country_flag = MAN_is_seeking_to_annexing_us_flag
+		}
+
+		clr_global_flag = MAN_is_currently_seeking_to_merge_a_puppet_government_into_them_flag 
+
+	}
+
+}
 
 
 
@@ -9029,6 +9711,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = JAP_emperor_hirohito_has_abdicated_flag
 			set_country_flag = JAP_yasuhito_is_the_current_regent_or_emperor_flag
+			set_country_flag = JAP_yasuhito_is_a_sessho_flag 
 			mark_focus_tree_layout_dirty = yes
 		}
 
@@ -9902,7 +10585,7 @@ country_event = {
 					}
 					transfer_state = 613
 				}
-				add_state_claim = 1113	#56 - Suzhou
+				add_state_claim = 1034
 			}
 			country_event = { id = SEA_japan_popup_events.21 }
 		}
@@ -9971,7 +10654,7 @@ country_event = {
 						is_subject_of = ROOT
 						NOT = {
 							OR = {
-								has_completed_focus = MAN_the_qing_restoration	#56 - Hopefully an okay equivalent to MAN_assertiveness? Ideally it'd be nice if there was a flag of sorts we could use to check if Manchu is engaged with the conspiracy.
+								has_completed_focus = MAN_assertiveness
 								has_completed_focus = MAN_tsr_assertiveness
 							}
 						}
@@ -10063,7 +10746,7 @@ country_event = {
 			}
 		}
 
-		add_state_claim = 1113	#56 - Suzhou
+		add_state_claim = 1034
 		
 		add_ai_strategy = {
 			type = antagonize
@@ -10092,17 +10775,7 @@ country_event = {
 		# Kick off the democratic civil war 
 
 		JAP_trigger_democratic_civil_war = yes
-		hidden_effect = {
-			IF = {
-				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = JAP
-						controls_state = 524
-					}
-				}
-				524 = { transfer_state_to = CUG }
-			}
-		}
+
 	}
 
 	after = {
@@ -10546,7 +11219,7 @@ country_event = {
 		}
 		trigger = {
 
-			1105 = {	#56 -	South Kyushu
+			1018 = {
 				NOT = {
 					has_dynamic_modifier = {
 						modifier = JAP_state_infiltrated_by_the_jcp
@@ -10559,7 +11232,7 @@ country_event = {
 
 		IF = {
 			limit = {
-				1105 = {	#56 -	South Kyushu
+				1018 = {
 					NOT = {
 						has_dynamic_modifier = {
 							modifier = JAP_state_infiltrated_by_the_jcp
@@ -10567,7 +11240,7 @@ country_event = {
 					}
 				}
 			}
-			1105 = {	#56 -	South Kyushu
+			1018 = {
 				IF = {
 					limit = {
 						has_dynamic_modifier = {
@@ -10618,17 +11291,6 @@ country_event = {
 		# Kick off the communist civil war 
 
 		JAP_trigger_communist_civil_war = yes
-		hidden_effect = { 
-			IF = {
-				limit = {
-					any_country_with_original_tag = {
-						original_tag_to_check = JAP
-						controls_state = 524
-					}
-				}
-				524 = { transfer_state_to = CUG }
-			}
-		}
 
 	}
 
@@ -11833,19 +12495,6 @@ country_event = {
 			transfer_state_to = ROOT
 			add_core_of = ROOT
 		}
-		IF = {
-			limit = {
-				745 = {
-					controller = {
-						original_tag = JAP
-					}
-				}
-			}
-			745 = {
-				transfer_state_to = ROOT
-				add_core_of = ROOT
-			}
-		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -11878,10 +12527,6 @@ country_event = {
 		
 		effect_tooltip = {
 			609 = {
-				transfer_state_to = FROM
-				add_core_of = FROM
-			}
-			745 = {
 				transfer_state_to = FROM
 				add_core_of = FROM
 			}
@@ -13339,6 +13984,8 @@ country_event = { #Build Carriers
 	option = { 
 		name = SEA_imperial_influence_events.00.a #Intentional
 
+		activate_mission = JAP_naval_faction_demands_more_carriers
+
 	}
 }
 
@@ -13353,7 +14000,8 @@ country_event = { #Build Carriers AND Battleships
 	option = { 
 		name = SEA_imperial_influence_events.00.a #Intentional
 
-		activate_mission = JAP_naval_faction_demands_more_carriers
+		activate_mission = JAP_naval_faction_demands_more_carriers_and_battleships
+
 	}
 }
 
@@ -13367,6 +14015,8 @@ country_event = { #Build Battleships
 
 	option = { 
 		name = SEA_imperial_influence_events.00.a #Intentional
+
+		activate_mission = JAP_naval_faction_demands_more_battleships
 
 	}
 }
@@ -13969,7 +14619,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		1020 = {	#56 - Bago
+		995 = { 
 			controller = {
 				OR = {
 					original_tag = JAP
@@ -13978,12 +14628,12 @@ news_event = {
 			}
 		}
 		OR = {
-			1020 = {	#56 - Bago
+			995 = {
 				is_owned_by = ENG
 			}
 			BRM = {
 				is_subject_of = ENG
-				owns_state = 1020	#56 - Bago
+				owns_state = 995
 			}
 		}
 		JAP = { has_war_with = ENG }
@@ -14032,6 +14682,312 @@ news_event = {
 				TAG = BRM 
 			}
 		}
+	}
+}
+
+
+### BORDER INCIDENT EVENTS ### 
+
+
+# Our Troops Move on Tauran - event for MON 
+country_event = {
+	id = SEA_border_incidents_events.1
+	title = SEA_border_incidents_events.1.t
+	desc = SEA_border_incidents_events.1.desc
+	picture = GFX_report_event_japanese_soldiers_03
+
+	is_triggered_only = yes
+
+	option = {
+		name = SEA_border_incidents_events.1.a
+		ai_chance = {
+			base = 100
+		}
+
+		IF = {
+			limit = {
+				MAN = {
+					is_subject = no 
+				}
+			}
+			MAN = {
+				country_event = {
+					id = SEA_border_incidents_events.2
+					hours = 6 
+				}
+			}
+		}
+		ELSE = {
+			MAN = {
+				OVERLORD = {
+					country_event = {
+						id = SEA_border_incidents_events.2
+						hours = 6 
+					}
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = if_they_back_down_or_lose_a_border_conflict_tt 
+
+		effect_tooltip = {
+			add_ideas = MON_income_from_hulunbuir_idea 
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			761 = {
+				add_core_of = MON
+			}
+		}
+
+	}
+	option = {
+		name = SEA_border_incidents_events.1.b
+		ai_chance = {
+			base = 0
+		}
+		
+		add_war_support = -0.05
+		add_political_power = -25 
+
+	}
+}
+
+# The Tauran Incident - event for JAP or MAN  
+country_event = {
+	id = SEA_border_incidents_events.2
+	title = SEA_border_incidents_events.2.t
+	desc = SEA_border_incidents_events.2.desc
+	picture = GFX_report_event_japanese_soldiers_03
+
+	is_triggered_only = yes
+
+	option = {
+		name = SEA_border_incidents_events.2.a
+		ai_chance = {
+			base = 75
+		}
+		
+		custom_effect_tooltip = MAN_we_must_assault_to_not_have_negatives_tt
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_global_flag = tauran_incident_has_begun_flag
+		activate_mission = JAP_tauran_border_incident_forgotten_1
+
+	}
+	option = {
+		name = SEA_border_incidents_events.2.b
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		add_political_power = -25
+		add_war_support = -0.02
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		MON = {
+			country_event = {
+				id = SEA_border_incidents_events.8
+				hours = 6
+			}	
+			effect_tooltip = {
+				add_ideas = MON_income_from_hulunbuir_idea 
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				761 = {
+					add_core_of = PREV
+				}
+			}
+		}
+
+	}
+}
+
+# The Tauran Incident - event for MAN if overlord JAP decided to engage in the conflict 
+country_event = {
+	id = SEA_border_incidents_events.3
+	title = SEA_border_incidents_events.3.t
+	desc = SEA_border_incidents_events.3.desc
+	picture = GFX_report_event_japanese_soldiers_03
+
+	is_triggered_only = yes
+
+	option = {
+		name = SEA_border_incidents_events.3.a
+
+		custom_effect_tooltip = MAN_we_must_assault_to_not_have_negatives_tt
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		set_global_flag = tauran_incident_has_begun_flag
+		activate_mission = JAP_tauran_border_incident_forgotten_1
+
+	}
+}
+
+# [FROM.GetAdjective] Troops Prepare to Assault Tauran - event for MON 
+country_event = {
+	id = SEA_border_incidents_events.4
+	title = SEA_border_incidents_events.4.t
+	desc = SEA_border_incidents_events.4.desc
+	picture = GFX_report_event_japan_army_mountainside
+
+	is_triggered_only = yes
+
+	option = {
+		name = SEA_border_incidents_events.4.a
+
+
+
+	}
+}
+
+# [MAN.GetAdjective] Victory at Lake Buir
+country_event = {
+	id = SEA_border_incidents_events.5
+	title = SEA_border_incidents_events.5.t
+	desc = SEA_border_incidents_events.5.desc
+	picture = GFX_report_event_japanese_transport_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = SEA_border_incidents_events.5.a
+		trigger = {
+			OR = {
+				original_tag = JAP
+				original_tag = MAN
+			}
+		}
+		
+		army_experience = 25 
+
+		add_political_power = 50 
+
+		hidden_effect = {
+			set_global_flag = JAP_did_the_tauran_border_war_flag
+		}
+
+	}
+	option = {
+		name = SEA_border_incidents_events.5.b
+		trigger = {
+			original_tag = MON
+		}
+
+		add_war_support = -0.05
+
+		add_political_power = -50
+
+	}
+}
+
+# [MAN.GetAdjective] Defeat at Lake Buir
+country_event = {
+	id = SEA_border_incidents_events.6
+	title = SEA_border_incidents_events.6.t
+	desc = SEA_border_incidents_events.6.desc
+	picture = GFX_report_event_japanese_soldiers_03
+
+	is_triggered_only = yes
+
+	option = {
+		name = SEA_border_incidents_events.6.a
+		trigger = {
+			OR = {
+				original_tag = JAP
+				original_tag = MAN
+			}
+		}
+		
+		add_war_support = -0.02
+
+		hidden_effect = {
+			set_global_flag = JAP_did_the_tauran_border_war_flag
+		}
+
+	}
+	option = {
+		name = SEA_border_incidents_events.6.b
+		trigger = {
+			original_tag = MON
+		}
+
+		add_ideas = MON_income_from_hulunbuir_idea 
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		761 = {
+			add_core_of = MON
+		}
+		
+	}
+
+}
+
+# Stalemate at Lake Buir 
+country_event = { 
+	id = SEA_border_incidents_events.7
+	title = SEA_border_incidents_events.7.t
+	desc = SEA_border_incidents_events.7.desc
+	picture = GFX_report_event_japanese_army_parade
+
+	is_triggered_only = yes
+
+	option = {
+		name = SEA_border_incidents_events.7.a
+		trigger = {
+			OR = {
+				original_tag = JAP
+				original_tag = MAN
+			}
+		}
+		
+		army_experience = 15  
+
+		hidden_effect = {
+			set_global_flag = JAP_did_the_tauran_border_war_flag
+		}
+
+	}
+	option = {
+		name = SEA_border_incidents_events.7.b
+		trigger = {
+			original_tag = MON
+		}
+
+		army_experience = 15  
+		
+	}
+}
+
+# [FROM.GetNameDefCap] Backs Down - event for MON 
+country_event = {
+	id = SEA_border_incidents_events.8
+	title = SEA_border_incidents_events.8.t
+	desc = SEA_border_incidents_events.8.desc
+	picture = GFX_report_event_japanese_soldiers_03
+
+	is_triggered_only = yes
+
+	option = {
+		name = SEA_border_incidents_events.8.a
+		
+		add_ideas = MON_income_from_hulunbuir_idea 
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		761 = {
+			add_core_of = MON
+		}
+
 	}
 }
 
