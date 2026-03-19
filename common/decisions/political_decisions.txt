@@ -2106,13 +2106,16 @@ political_actions = {
 			if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_country_flag = political_violence_resolved
 			}
         }
 	
 		modifier = {
-			fascism_drift = -0.10
+			fascism_drift = -0.05
 			stability_weekly = 0.007
 		}
 	
@@ -2120,7 +2123,7 @@ political_actions = {
 		cost = 50
 
 		complete_effect = {
-			add_stability = -0.05
+			add_stability = -0.1
 		}
 		
 		remove_effect = {
@@ -2171,13 +2174,16 @@ political_actions = {
 			if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_country_flag = political_violence_resolved
 			}
         }
 	
 		modifier = {
-			democratic_drift = -0.10
+			democratic_drift = -0.05
 			stability_weekly = 0.007
 		}
 	
@@ -2185,7 +2191,7 @@ political_actions = {
 		cost = 50
 
 		complete_effect = {
-			add_stability = -0.05
+			add_stability = -0.1
 		}
 		
 		remove_effect = {
@@ -2223,13 +2229,16 @@ political_actions = {
 			if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_country_flag = political_violence_resolved
 			}
         }
 	
 		modifier = {
-			communism_drift = -0.10
+			communism_drift = -0.05
 			stability_weekly = 0.007
 		}
 	
@@ -2237,7 +2246,7 @@ political_actions = {
 		cost = 50
 
 		complete_effect = {
-			add_stability = -0.05
+			add_stability = -0.1
 		}
 		
 		remove_effect = {
@@ -2269,13 +2278,16 @@ political_actions = {
 			if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_country_flag = political_violence_resolved
 			}
         }
 	
 		modifier = {
-			neutrality_drift = -0.10
+			neutrality_drift = -0.05
 			stability_weekly = 0.007
 		}
 	
@@ -2283,7 +2295,7 @@ political_actions = {
 		cost = 50
 
 		complete_effect = {
-			add_stability = -0.05
+			add_stability = -0.1
 		}
 		
 		remove_effect = {
@@ -2312,18 +2324,27 @@ political_actions = {
 				limit = {
 					tag = DEN
 					has_government = democratic
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_completed_focus = DEN_Crackdown_on_Political_Violence
 			}
 			else_if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_country_flag = political_violence_resolved
 			}
 			if = {
 				limit = {
 					tag = SWI
+					NOT = {
+						has_global_flag = SWI_R56_focus_tree
+					}
 				}
 				has_completed_focus = SWI_ban_foreign_nazi_propaganda
 			}
@@ -2348,7 +2369,7 @@ political_actions = {
 		}
 	
 		modifier = {
-			fascism_drift = -0.10
+			fascism_drift = -0.02
 		}
 	
 		days_remove = -1
@@ -2401,6 +2422,9 @@ political_actions = {
 				limit = {
 					tag = DEN
 					has_government = democratic
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_completed_focus = DEN_Crackdown_on_Political_Violence
 			}
@@ -2408,12 +2432,18 @@ political_actions = {
 				limit = {
 					tag = DEN
 					has_government = fascism
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_completed_focus = DEN_Consolidate_Media_Institutions
 			}
 			else_if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_country_flag = political_violence_resolved
 			}
@@ -2438,7 +2468,7 @@ political_actions = {
 		}
 	
 		modifier = {
-			democratic_drift = -0.10
+			democratic_drift = -0.02
 		}
 	
 		days_remove = -1
@@ -2491,6 +2521,9 @@ political_actions = {
 				limit = {
 					tag = DEN
 					has_government = democratic
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				NOT = { has_completed_focus = DEN_Popular_Front_against_Fascism }
 				has_completed_focus = DEN_Crackdown_on_Political_Violence
@@ -2498,6 +2531,9 @@ political_actions = {
 			else_if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_country_flag = political_violence_resolved
 			}
@@ -2534,7 +2570,7 @@ political_actions = {
 		}
 	
 		modifier = {
-			communism_drift = -0.10
+			communism_drift = -0.02
 		}
 	
 		days_remove = -1
@@ -2597,12 +2633,18 @@ political_actions = {
 				limit = {
 					tag = DEN
 					has_government = democratic
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_completed_focus = DEN_Crackdown_on_Political_Violence
 			}
 			else_if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_country_flag = political_violence_resolved
 			}
@@ -2627,7 +2669,7 @@ political_actions = {
 		}
 	
 		modifier = {
-			neutrality_drift = -0.10
+			neutrality_drift = -0.02
 		}
 	
 		days_remove = -1
@@ -2678,6 +2720,9 @@ political_actions = {
 			if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_completed_focus = DEN_Consolidate_Media_Institutions
 			}
@@ -2711,14 +2756,14 @@ political_actions = {
 		}
 	
 		modifier = {
-			communism_drift = -0.10
-			fascism_drift = 0.10
-			democratic_drift = -0.10
-			neutrality_drift = -0.10
+			communism_drift = -0.01
+			fascism_drift = 0.03
+			democratic_drift = -0.01
+			neutrality_drift = -0.01
 		}
 	
 		days_remove = 360
-		cost = 100
+		cost = 150
 	
 		ai_will_do = {
 			factor = 0
@@ -2741,6 +2786,9 @@ political_actions = {
 			if = {
 				limit = {
 					tag = DEN
+					NOT = {
+						has_global_flag = DEN_use_DLC_tree
+					}
 				}
 				has_country_flag = political_violence_resolved
 			}
@@ -2783,14 +2831,14 @@ political_actions = {
 		}
 		
 		modifier = {
-			communism_drift = -0.10
-			fascism_drift = -0.10
-			democratic_drift = 0.10
-			neutrality_drift = -0.10
+			communism_drift = -0.01
+			fascism_drift = -0.01
+			democratic_drift = 0.03
+			neutrality_drift = -0.01
 		}
 	
 		days_remove = 360
-		cost = 100
+		cost = 150
 	
 		ai_will_do = {
 			factor = 0
@@ -2840,14 +2888,14 @@ political_actions = {
 		}
 	
 		modifier = {
-			communism_drift = 0.10
-			fascism_drift = -0.10
-			democratic_drift = -0.10
-			neutrality_drift = -0.10
+			communism_drift = 0.03
+			fascism_drift = -0.01
+			democratic_drift = -0.01
+			neutrality_drift = -0.01
 		}
 	
 		days_remove = 360
-		cost = 100
+		cost = 150
 		
 		ai_will_do = {
 			factor = 0
@@ -2919,14 +2967,14 @@ political_actions = {
 		}
 	
 		modifier = {
-			communism_drift = -0.10
-			fascism_drift = -0.10
-			democratic_drift = -0.10
-			neutrality_drift = 0.10
+			communism_drift = -0.01
+			fascism_drift = -0.01
+			democratic_drift = -0.01
+			neutrality_drift = 0.03
 		}
 	
 		days_remove = 360
-		cost = 100
+		cost = 150
 		
 		ai_will_do = {
 			factor = 0

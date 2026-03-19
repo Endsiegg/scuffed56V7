@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = venice_focus
 	
@@ -19,7 +20,7 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 17
 		y = 0
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -46,7 +47,7 @@ focus_tree = {
 		relative_position_id = VNZ_army_effort
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -105,7 +106,7 @@ focus_tree = {
 		relative_position_id = VNZ_army_effort
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -132,7 +133,7 @@ focus_tree = {
 		relative_position_id = VNZ_motorization_effort
 		x = 3
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -154,7 +155,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_field_hospitals
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 4
@@ -194,7 +195,7 @@ focus_tree = {
 		relative_position_id = VNZ_army_effort
 		x = 1
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -217,7 +218,7 @@ focus_tree = {
 		relative_position_id = VNZ_equipment_effort
 		x = 1
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -239,7 +240,7 @@ focus_tree = {
 		y = 1
 
 		relative_position_id = VNZ_equipment_effort_2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -256,7 +257,7 @@ focus_tree = {
 		id = VNZ_alpini
 		text = ITA_alpini
 		icon = GFX_goal_generic_military_sphere
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VNZ_military_academy
 		}
@@ -283,7 +284,7 @@ focus_tree = {
 		relative_position_id = VNZ_alpini
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -303,6 +304,7 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
+					name = VNZ_special_forces
 					cost_reduction = 0.5
 					uses = 2
 					category = special_forces_doctrine
@@ -331,7 +333,7 @@ focus_tree = {
 		relative_position_id = VNZ_doctrine_effort
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -354,7 +356,7 @@ focus_tree = {
 		relative_position_id = VNZ_equipment_effort_2
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -377,7 +379,7 @@ focus_tree = {
 		relative_position_id = VNZ_motorization_effort
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -399,7 +401,7 @@ focus_tree = {
 		relative_position_id = VNZ_armor_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -422,7 +424,7 @@ focus_tree = {
 		icon = GFX_focus_SOV_flying_clubs
 		x = 1
 		y = 0
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -508,7 +510,7 @@ focus_tree = {
 		relative_position_id = VNZ_aviation_effort
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -544,7 +546,7 @@ focus_tree = {
 		relative_position_id = VNZ_fighter_focus
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -617,7 +619,7 @@ focus_tree = {
 		relative_position_id = VNZ_fighter_focus
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -705,7 +707,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_production_effort_3
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -724,7 +726,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = VNZ_aviation_effort_2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -755,7 +757,7 @@ focus_tree = {
 		relative_position_id = VNZ_aviation_effort_2
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -778,7 +780,7 @@ focus_tree = {
 		relative_position_id = VNZ_aviation_effort
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -823,7 +825,7 @@ focus_tree = {
 		mutually_exclusive = { focus = VNZ_long_range_naval_bomber }
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -865,7 +867,7 @@ focus_tree = {
 		mutually_exclusive = { focus = VNZ_bomber_focus }
 		x = 3
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -904,7 +906,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 10
 		y = 0
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1049,7 +1051,7 @@ focus_tree = {
 		relative_position_id = VNZ_naval_effort
 		x = 5
 		y = 3
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1077,7 +1079,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = VNZ_naval_effort
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}
@@ -1109,7 +1111,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = VNZ_reorient_towards_land_artillery
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}
@@ -1178,7 +1180,7 @@ focus_tree = {
 		relative_position_id = VNZ_naval_effort
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1213,7 +1215,7 @@ focus_tree = {
 		icon = GFX_focus_generic_mine_warfare
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1248,7 +1250,7 @@ focus_tree = {
 		relative_position_id = VNZ_naval_effort
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1284,7 +1286,7 @@ focus_tree = {
 		relative_position_id = VNZ_flexible_navy
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1321,7 +1323,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = VNZ_submarine_effort
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 20
@@ -1360,7 +1362,7 @@ focus_tree = {
 		relative_position_id = VNZ_skilled_pilots
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1424,11 +1426,9 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				set_country_flag = naval_effort_built
 			}
-			if = {
+			else_if = {
 				limit = {
-					NOT = { has_country_flag = naval_effort_built }
 					any_owned_state = {
 						dockyard > 0
 						free_building_slots = {
@@ -1454,11 +1454,9 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				set_country_flag = naval_effort_built
 			}
-			if = {
+			else_if = {
 				limit = {
-					NOT = { has_country_flag = naval_effort_built }
 					NOT = {
 						any_owned_state = {
 							free_building_slots = {
@@ -1527,7 +1525,7 @@ focus_tree = {
 		relative_position_id = VNZ_large_navy
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1564,7 +1562,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = VNZ_cruiser_effort
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1605,7 +1603,7 @@ focus_tree = {
 		relative_position_id = VNZ_submarine_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1643,7 +1641,7 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1708,7 +1706,7 @@ focus_tree = {
 		relative_position_id = VNZ_industrial_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -1773,7 +1771,7 @@ focus_tree = {
 		relative_position_id = VNZ_industrial_effort
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1828,7 +1826,7 @@ focus_tree = {
 		relative_position_id = VNZ_construction_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		ai_will_do = {
@@ -2410,7 +2408,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_Invite_American
 		
-		cost = 8
+		cost = 10
 	
 		available_if_capitulated = yes
 	
@@ -2549,7 +2547,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_Invite_American
 		
-		cost = 8
+		cost = 10
 	
 		available_if_capitulated = yes
 	
@@ -2657,7 +2655,7 @@ focus_tree = {
 		relative_position_id = VNZ_industrial_effort
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2692,7 +2690,7 @@ focus_tree = {
 		relative_position_id = VNZ_construction_effort_2
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2732,7 +2730,7 @@ focus_tree = {
 		available = {
 
         }		
-        cost = 8
+        cost = 10
 		
 		bypass = {
 		
@@ -2816,7 +2814,7 @@ focus_tree = {
 		relative_position_id = VNZ_construction_effort_3
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2864,7 +2862,7 @@ focus_tree = {
 		relative_position_id = VNZ_construction_effort_3
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2882,7 +2880,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_extra_tech_slot
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3000,7 +2998,7 @@ focus_tree = {
 		continue_if_invalid = yes
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3017,7 +3015,7 @@ focus_tree = {
 		relative_position_id = VNZ_construction_effort_3
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3099,7 +3097,7 @@ focus_tree = {
 		relative_position_id = VNZ_political_effort
 		x = -8
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			OR = {
 				has_government = communism
@@ -3178,7 +3176,7 @@ focus_tree = {
 		relative_position_id = VNZ_strikes_for_democracy
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			democratic > 0.4
 			NOT = {
@@ -3215,7 +3213,7 @@ focus_tree = {
 		relative_position_id = VNZ_representative_grand_council
 		x = -1
 		y = 2	
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_MANPOWER}
@@ -3231,7 +3229,7 @@ focus_tree = {
 		relative_position_id = VNZ_representative_grand_council
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			has_government = democratic
 			NOT = {
@@ -3364,7 +3362,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = VNZ_take_over_the_government
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3388,7 +3386,7 @@ focus_tree = {
 			focus = VNZ_take_over_the_government
 		}
 		relative_position_id = VNZ_take_over_the_government
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -3413,7 +3411,7 @@ focus_tree = {
 		relative_position_id = VNZ_representative_grand_council
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 
 		}	
@@ -3505,7 +3503,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = VNZ_leone_di_san_marco_party
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3534,7 +3532,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_internal_security_initiative
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3569,7 +3567,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_internal_security_initiative
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3697,7 +3695,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = VNZ_interventionism_focus
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		
@@ -3718,7 +3716,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_neutrality_focus
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		
@@ -3740,7 +3738,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_neutrality_focus
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		
@@ -3768,7 +3766,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = VNZ_Military_Build
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3813,7 +3811,7 @@ focus_tree = {
 	focus = {
 		id = VNZ_rally_the_industrialists
 		icon = GFX_goal_FRA_class_collaboration
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VNZ_venitian_fascism
 			focus = VNZ_leone_di_san_marco_party
@@ -3839,7 +3837,7 @@ focus_tree = {
 	focus = {
 		id = VNZ_economic_mobilisation
 		icon = GFX_goal_fascist_factory
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VNZ_rally_the_industrialists
 		}
@@ -3886,7 +3884,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = VNZ_economic_mobilisation
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -3894,7 +3892,7 @@ focus_tree = {
 
 		available = {
 			has_capitulated = no
-			is_puppet = no
+			is_subject = no
 			is_in_faction = no
 			
 		}
@@ -4001,7 +3999,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = VNZ_economic_mobilisation
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -4033,7 +4031,7 @@ focus_tree = {
 		}
 
 		available = {
-			is_puppet = no
+			is_subject = no
 			has_army_manpower = {
 				size > 149999
 			}
@@ -4122,7 +4120,7 @@ focus_tree = {
 	focus = {
 		id = VNZ_reintegrate_dalmatia
 		icon = GFX_goal_italy_italianize_dalmatia
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = VNZ_expand_the_terra_ferma
 		}
@@ -4135,7 +4133,7 @@ focus_tree = {
 		available = {
 			controls_state = 103
 			controls_state = 958
-			is_puppet = no
+			is_subject = no
 			has_army_manpower = {
 				size > 149999
 			}
@@ -4204,12 +4202,12 @@ focus_tree = {
 				exists = yes
 			}
 			OR = {
-				is_puppet = no
-				is_puppet_of = ITA
+				is_subject = no
+				is_subject_of = ITA
 			}
 			NOT = {
 				ITA = {
-					is_puppet_of = ROOT
+					is_subject_of = ROOT
 				}
 			}
 

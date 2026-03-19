@@ -393,14 +393,14 @@ motorised_infantry = 1
 	interwar_antitank = 1
 	#basic_heavy_tank = 1  # PLACEHOLDER
 	#basic_medium_tank = 1 # PLACEHOLDER
-	trench_warfare = 1
-	fleet_in_being = 1
 	fuel_silos = 1
 	fuel_refining = 1
 	tech_mountaineers = 1
 	shocktroops = 1
 	basic_train = 1
 }
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
 if = {
 	limit = {
 		has_dlc = "La Resistance"
@@ -600,6 +600,8 @@ recruit_character = ITA_italo_gariboldi
 recruit_character = ITA_attilio_terruzzi
 recruit_character = ITA_brunetto_brunetti
 recruit_character = ITA_annibale_bergonzoli
+recruit_character = ITA_pietro_barone
+recruit_character = ITA_oscar_di_giamberadino 
 #political
 #recruit_character = ITA_pietro_koch
 #recruit_character = ITA_pietro_gazzera		#second armament organizer...
@@ -806,6 +808,94 @@ if = {
 # 1936 Start #
 #plane variants
 if = {
+	limit = { NOT = { has_dlc = "By Blood Alone" } }
+	create_equipment_variant = {
+		name = "CR.20" #CR.20 / CR.25
+		type = fighter_equipment_0
+		upgrades = {
+			plane_gun_upgrade = 0
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 0
+		}
+		obsolete = yes
+		icon = "GFX_GEN_fighter_CR20_medium"
+	}
+	
+	create_equipment_variant = {
+		name = "CR.32" #
+		type = fighter_equipment_0
+		upgrades = {
+			plane_gun_upgrade = 3
+			plane_range_upgrade = 4
+			plane_engine_upgrade = 5
+			plane_reliability_upgrade = 7
+		}
+		icon = "GFX_ITA_early_fighter_medium"
+	}
+	
+	create_equipment_variant = {
+		name = "Ca.111" #
+		type = CAS_equipment_0
+		upgrades = {
+			plane_cas_upgrade = 2
+			plane_range_upgrade = 2
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 1
+		}
+		obsolete = yes
+		icon = "GFX_CHI_naval_bomber1_medium"
+	}	
+	
+	create_equipment_variant = {
+		name = "SM.81" #
+		type = tac_bomber_equipment_1 
+		upgrades = {
+			plane_tac_bomb_upgrade = 0
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 0
+		}
+		icon = "GFX_ITA_medium_bomber_SM81"
+	}
+	
+	create_equipment_variant = {
+		name = "SM.79" #
+		type = tac_bomber_equipment_1 
+		upgrades = {
+			plane_tac_bomb_upgrade = 0
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 0
+		}
+		icon = "GFX_ITA_flying_boat1_medium"
+	}
+
+	add_equipment_to_stockpile = {
+		type = fighter_equipment_0
+		producer = "ITA"
+		variant_name = "CR.20"
+		amount = 363 
+		#[https://aviation-safety.net for incident before 36.1.1]
+		#[Total of 235 CR.20bis + 204 CR.20 Asso / -1]
+		#[24 is in OOB]
+		#[12 CR.20bis to Hungary]
+		#[16 CR.20bis , 16 CR.20bisAQ to Austria / -2]
+		#[7 CR.20bis to Paraguay / -1]
+		#[CR.20 is excluded]
+	}
+	
+	add_equipment_to_stockpile = {
+		type = CAS_equipment_0
+		producer = "ITA"
+		amount = 183 
+		#[https://aviation-safety.net for incident before 36.1.1]
+		#[Total of 238 Ro.1 / -1]
+		#[24 is in I Gruppo RT]
+		#[24 is in II Gruppo RT]
+	}	
+}
+if = {
 	limit = { has_dlc = "By Blood Alone" }
 	create_equipment_variant = {
 		name = "CR.20" #CR.20 / CR.25
@@ -898,6 +988,19 @@ if = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			engine_type_slot = engine_1_3x
 			special_type_slot_1 = lmg_defense_turret
+		}
+		obsolete = yes
+		icon = "GFX_ITA_early_bomber_medium"
+	}
+
+	create_equipment_variant = {
+		name = "S.72" # Savoia-Marchetti S.72, used by CHI
+		type = medium_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = medium_bomb_bay
+			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
+			engine_type_slot = engine_1_3x
+			special_type_slot_1 = lmg_defense_turret_2x
 		}
 		obsolete = yes
 		icon = "GFX_ITA_early_bomber_medium"

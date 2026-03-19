@@ -1,6 +1,7 @@
 #people to search
 #Hermann Rauschning
 #why code for danzig?
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = danzig_focus
 
@@ -69,7 +70,7 @@ focus_tree = {
 		relative_position_id = DNZ_remove_lester
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -102,7 +103,7 @@ focus_tree = {
 		relative_position_id = DNZ_remove_lester
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		available = {
 			NOT = {
@@ -136,7 +137,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = DNZ_dissolve_the_zentrum_party
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 0
@@ -261,7 +262,7 @@ focus_tree = {
 		relative_position_id = DNZ_maintain_status_quo
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -283,7 +284,7 @@ focus_tree = {
 		relative_position_id = DNZ_reconcile_with_lester
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -303,7 +304,7 @@ focus_tree = {
 		icon = GFX_goal_industrial_investment
 		x = 10
 		y = 0
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -339,7 +340,7 @@ focus_tree = {
 		relative_position_id = DNZ_industrial_investments
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_manpower = 2000
@@ -365,7 +366,7 @@ focus_tree = {
 		relative_position_id = DNZ_industrial_investments
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = { DNZ_maintain_infrastructure_idea }
@@ -394,7 +395,7 @@ focus_tree = {
 		relative_position_id = DNZ_workers_front
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = { #change the effect of worker front to avoid repetition?
 			random_owned_controlled_state = {
@@ -433,7 +434,7 @@ focus_tree = {
 		relative_position_id = DNZ_building_industry
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			controls_state = 85
@@ -483,7 +484,7 @@ focus_tree = {
 		relative_position_id = DNZ_modernize_the_port
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
       		add_ideas = DNZ_invite_foreign_investors
@@ -498,7 +499,7 @@ focus_tree = {
 		relative_position_id = DNZ_building_industry
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			any_owned_state = {
@@ -544,7 +545,7 @@ focus_tree = {
 		relative_position_id = DNZ_support_german_businesses
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			NOT = {
@@ -592,7 +593,7 @@ focus_tree = {
 		relative_position_id = DNZ_german_industrial_ties
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -617,7 +618,7 @@ focus_tree = {
 		relative_position_id = DNZ_german_technology
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			num_of_factories > 50
@@ -635,7 +636,7 @@ focus_tree = {
 		relative_position_id = DNZ_german_technology
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			amount_research_slots > 4
@@ -677,7 +678,7 @@ focus_tree = {
 		icon = GFX_goal_generic_secret_police
 		x = 3
 		y = 0
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_stability = 0.05
@@ -704,7 +705,7 @@ focus_tree = {
 		relative_position_id = DNZ_modernize_the_police
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_manpower = 1000
@@ -726,7 +727,7 @@ focus_tree = {
 		relative_position_id = DNZ_modernize_the_police
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			army_experience = 15
@@ -757,7 +758,7 @@ focus_tree = {
 		relative_position_id = DNZ_modernize_the_police
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			army_experience = 10
@@ -777,7 +778,7 @@ focus_tree = {
 		relative_position_id = DNZ_danzig_military_institute
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_offsite_building = { type = arms_factory level = 1 }
@@ -805,7 +806,7 @@ focus_tree = {
 
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -826,7 +827,7 @@ focus_tree = {
 		relative_position_id = DNZ_smuggle_weapons
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
         completion_reward = {
             add_tech_bonus = {
@@ -853,7 +854,7 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			army_experience = 5
@@ -874,7 +875,7 @@ focus_tree = {
 		relative_position_id = DNZ_smuggle_weapons
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -895,7 +896,7 @@ focus_tree = {
 		relative_position_id = DNZ_motorization_effort
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -915,7 +916,7 @@ focus_tree = {
 		relative_position_id = DNZ_equipment_effort
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		completion_reward = {
             hidden_effect = {
@@ -944,7 +945,7 @@ focus_tree = {
 		relative_position_id = DNZ_danzig_military_institute
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		complete_tooltip = {
 			air_experience = 25
@@ -1029,7 +1030,7 @@ focus_tree = {
 		relative_position_id = DNZ_aviation_effort
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			if = {
@@ -1064,7 +1065,7 @@ focus_tree = {
 		relative_position_id = DNZ_aviation_effort
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			if = {
@@ -1103,7 +1104,7 @@ focus_tree = {
 		relative_position_id = DNZ_fighter_focus
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 
 		complete_tooltip = {
@@ -1191,7 +1192,7 @@ focus_tree = {
 		relative_position_id = DNZ_aviation_effort_2
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			if = {
@@ -1233,7 +1234,7 @@ focus_tree = {
 
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			any_controlled_state = {
@@ -1291,7 +1292,7 @@ focus_tree = {
 		relative_position_id = DNZ_establish_the_danzig_navy
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 
 		ai_will_do = {
@@ -1344,7 +1345,7 @@ focus_tree = {
 		relative_position_id = DNZ_establish_the_danzig_navy
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 
 		ai_will_do = {
@@ -1389,7 +1390,7 @@ focus_tree = {
 		relative_position_id = DNZ_flexible_navy
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 
 		ai_will_do = {
@@ -1424,7 +1425,7 @@ focus_tree = {
 		relative_position_id = DNZ_flexible_navy
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 
 		ai_will_do = {
@@ -1460,7 +1461,7 @@ focus_tree = {
 		relative_position_id = DNZ_submarine_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 
 		ai_will_do = {
@@ -1495,7 +1496,7 @@ focus_tree = {
 		relative_position_id = DNZ_cruiser_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 
 		ai_will_do = {

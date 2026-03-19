@@ -14,5 +14,5 @@ tags={
 name="SCUFFEDV7"
 replace_path="history/states"
 replace_path="map/strategicregions"
-supported_version="1.16.9"
+supported_version="1.17."
 remote_file_id="3510253748"

@@ -1,4 +1,5 @@
 #####-----> Rt56 Guatemala Tree <><> <><> <><>
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 
 	id = Guatemala_Focus
@@ -431,7 +432,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GUA_improve_national_infrastructure
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -490,7 +491,7 @@ focus_tree = {
 	focus = {
 		id = GUA_surveillance_state
 		icon = GFX_goal_generic_spy_connection
-		cost = 8
+		cost = 10
 		prerequisite = { focus = GUA_bolster_the_secret_police }
 		x = 0
 		y = 1
@@ -574,7 +575,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GUA_placate_the_landowners
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -598,7 +599,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GUA_placate_the_landowners
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -634,7 +635,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GUA_concessions_to_the_UFCo
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -667,7 +668,7 @@ focus_tree = {
 		relative_position_id = GUA_a_broken_promise
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			add_popularity = {
@@ -684,7 +685,7 @@ focus_tree = {
 		relative_position_id = GUA_a_broken_promise
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			army_experience = 15
@@ -701,7 +702,7 @@ focus_tree = {
 		relative_position_id = GUA_professionalize_the_military
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			add_stability = -0.05
@@ -723,7 +724,7 @@ focus_tree = {
 		relative_position_id = GUA_professionalize_the_military
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no
@@ -1154,7 +1155,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GUA_take_panama
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1301,7 +1302,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GUA_implement_social_reforms
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -1348,12 +1349,12 @@ focus_tree = {
 			add_equipment_to_stockpile = {
 				type = artillery_equipment
 				amount = 60
-				producer = CZE
+				producer = ITA
 			}
 			add_equipment_to_stockpile = {
 				type = anti_air_equipment
 				amount = 60
-				producer = CZE
+				producer = ITA
 			}
 			add_tech_bonus = {
 				name = infantry_artillery_bonus
@@ -1372,7 +1373,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GUA_implement_social_reforms
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -1393,7 +1394,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GUA_militarize_the_schools
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -1545,7 +1546,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GUA_join_the_allies
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -1586,21 +1587,21 @@ focus_tree = {
 			GUA_guiseppe_sotanis = {
 				is_hired_as_advisor = yes
 			}
-			ITA = {
+			USA = {
 				has_opinion = {
 					target = ROOT
 					value > 39
 				}
 			}
 			NOT = {
-				has_war_with = ITA
+				has_war_with = USA
 			}
 		}
 
 		bypass = {
 			OR = {
-				has_war_with = ITA
-				ITA = {
+				has_war_with = USA
+				USA = {
 					exists = no
 				}
 			}
@@ -1868,7 +1869,11 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.10
 			}
-			create_faction = "Ubicartist Restoration League"
+			create_faction_from_template = {
+				template = faction_template_generic
+				name = GUA_ubicartist_restoration_league_faction
+				icon = GFX_faction_logo_generic_7
+			}
 			every_state = {
 				limit = {
 					is_core_of = FRA
@@ -1969,7 +1974,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = GUA_ties_with_the_anti_bonapartists
 		}
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -2002,7 +2007,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = GUA_the_papal_compromise
 		}
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -2032,7 +2037,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GUA_the_papal_compromise
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -2106,7 +2111,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GUA_ties_with_the_anti_bonapartists
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}

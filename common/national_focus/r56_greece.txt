@@ -1,4 +1,5 @@
 #####-----> Rt56 Greece Tree <><> <><> <><>
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = r56_greek_focus
 
@@ -112,7 +113,7 @@ focus = {
 		prerequisite = { focus = GRE_economic_recovery }
 		x = 0
 		y = 3
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -252,7 +253,7 @@ focus = {
 		prerequisite = { focus = GRE_infrastructure_effort  }
 		x = 1
 		y = 4
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -370,7 +371,7 @@ focus = {
 		prerequisite = { focus = GRE_economic_recovery }
 		x = 2
 		y = 3
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -459,7 +460,7 @@ focus = {
 		prerequisite = { focus = GRE_industrial_effort_2 }
 		x = 1
 		y = 5
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}
@@ -480,7 +481,7 @@ focus = {
 		prerequisite = { focus = GRE_extra_tech_slot }
 		x = 1
 		y = 6
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -509,7 +510,7 @@ focus = {
 		prerequisite = { focus = GRE_extra_tech_slot }
 		x = -1
 		y = 6
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 4
 		}
@@ -647,7 +648,7 @@ focus = {
 		prerequisite = { focus = GRE_extra_tech_slot }
 		x = 3
 		y = 6
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 4
 		}
@@ -785,7 +786,7 @@ focus = {
 		x = 1
 		y = 7
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -897,7 +898,7 @@ focus = {
 		relative_position_id = GRE_polymer_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			num_of_factories > 99
 		}
@@ -913,7 +914,7 @@ focus = {
         prerequisite = { focus = GRE_industrial_effort }
 		x = -1
 		y = 4
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 15
 		}
@@ -943,7 +944,7 @@ focus = {
 
 	    completion_reward = {
 	       	add_doctrine_cost_reduction = {
-				name = SPR_navy_modernization
+				name = GRE_fund_the_navy
 				cost_reduction = 0.5
 				uses = 1
 				category = naval_doctrine
@@ -966,7 +967,7 @@ focus = {
 		prerequisite = { focus = GRE_civilian_shipbuilders }
 		x = 4
 		y = 3
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1064,7 +1065,7 @@ focus = {
 		mutually_exclusive = { focus = GRE_submarine_effort }
 		x = 3
 		y = 4
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1089,7 +1090,7 @@ focus = {
 		mutually_exclusive = { focus = GRE_light_ship_effort }
 		x = 5
 		y = 4
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1100,14 +1101,11 @@ focus = {
 				uses = 1
 				category = ss_tech
 			}
-			add_tech_bonus = {
-				name = sub_op_bonus
-				bonus = 1
-				uses = 2
-				technology = submarine_operations
-				technology = undersea_blockade
-				technology = convoy_interdiction
-				technology = submarine_offensive
+			add_doctrine_cost_reduction = {
+				name = GRE_submarine_effort
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -1120,7 +1118,7 @@ focus = {
 		prerequisite = { focus = GRE_fund_the_navy }
 		x = 8
 		y = 3
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -1155,7 +1153,7 @@ focus = {
 		mutually_exclusive = { focus = GRE_battleship_focus }
 		x = 7
 		y = 4
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 0.25
 		}
@@ -1178,7 +1176,7 @@ focus = {
 		prerequisite = { focus = GRE_carrier_focus }
 		x = 7
 		y = 5
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1199,10 +1197,12 @@ focus = {
 				uses = 2
 				technology = naval_bomber1
 				technology = naval_bomber2
-				technology = carrier_primacy
-				technology = carrier_task_forces
-				technology = floating_airfield_bs
-				technology = massed_strikes
+			}
+			add_doctrine_cost_reduction = {
+				name = GRE_base_strike
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -1216,7 +1216,7 @@ focus = {
 		mutually_exclusive = { focus = GRE_carrier_focus }
 		x = 9
 		y = 4
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -1237,7 +1237,7 @@ focus = {
 		x = 2
 		y = 1
 		relative_position_id = GRE_battleship_focus
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1272,7 +1272,7 @@ focus = {
 		prerequisite = { focus = GRE_battleship_focus }
 		x = 9
 		y = 5
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1306,7 +1306,7 @@ focus = {
 		prerequisite = { focus = GRE_base_strike focus = GRE_fleet_in_being }
 		x = 8
 		y = 6
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1400,7 +1400,7 @@ focus = {
 	    prerequisite = { focus = GRE_fund_the_navy }
 	    x = 6
 	    y = 3
-	    cost = 8
+	    cost = 10
 	    ai_will_do = {
 	        factor = 3
 	    }
@@ -1419,7 +1419,7 @@ focus = {
 		prerequisite = { focus = GRE_end_the_depression }
 		x = 12
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1507,7 +1507,7 @@ focus = {
 
 	    x = 4
 	    y = 2
-	    cost = 8
+	    cost = 10
 	    ai_will_do = {
 			factor = 3
 		}
@@ -1532,7 +1532,7 @@ focus = {
 		mutually_exclusive = { focus = GRE_cas_focus }
 		x = 11
 		y = 3
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1556,7 +1556,7 @@ focus = {
 		mutually_exclusive = { focus = GRE_fighter_focus }
 		x = 13
 		y = 3
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1584,7 +1584,7 @@ focus = {
 		}
 		x = 11
 		y = 4
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1613,7 +1613,7 @@ focus = {
 		prerequisite = { focus = GRE_fighter_focus focus = GRE_cas_focus }
 		x = 13
 		y = 4
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1662,7 +1662,7 @@ focus = {
 		x = -2
 		y = 1
 		relative_position_id = GRE_army_reform
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1685,7 +1685,7 @@ focus = {
 		x = 4
 		y = 1
 		relative_position_id = GRE_army_reform
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1708,7 +1708,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_army_reform
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1731,7 +1731,7 @@ focus = {
 		x = -2
 		y = 2
 		relative_position_id = GRE_army_reform
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1752,7 +1752,7 @@ focus = {
 		x = -2
 		y = 3
 		relative_position_id = GRE_army_reform
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1772,7 +1772,7 @@ focus = {
 		prerequisite = { focus = GRE_infantry_weapons }
 		x = 17
 		y = 5
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1792,7 +1792,7 @@ focus = {
 		prerequisite = { focus = GRE_motorization_effort }
 		x = 17
 		y = 6
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1878,7 +1878,7 @@ focus = {
 		prerequisite = { focus = GRE_armor_effort }
 		x = 19
 		y = 4
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -1907,7 +1907,7 @@ focus = {
 		x = 0
 		y = 2
 		relative_position_id = GRE_army_reform
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1925,7 +1925,7 @@ focus = {
 		prerequisite = { focus = GRE_land_doctrine_1 }
 		x = 13
 		y = 5
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -2011,7 +2011,7 @@ focus = {
 		mutually_exclusive = { focus = GRE_democratic_approach focus = GRE_aftermath_of_the_victory_of_the_people focus = GRE_national_security_concerns focus = GRE_reinforce_royal_dictatorship  }
 		x = 26
 		y = 1
-		cost = 8
+		cost = 10
 		relative_position_id = GRE_divided_nation
 		ai_will_do = {
 			factor = 2.5
@@ -2043,7 +2043,7 @@ focus = {
 		x = -2
 		y = 1
 		relative_position_id = GRE_national_union
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}
@@ -2063,7 +2063,7 @@ focus = {
 		x = 2
 		y = 1
 		relative_position_id = GRE_national_union
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -2106,9 +2106,6 @@ focus = {
 		}
 		completion_reward = {
 			add_political_power = 50
-			set_rule = {
-                can_create_factions = yes
-			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -2121,7 +2118,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_alliances
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 4
 		}
@@ -2135,6 +2132,9 @@ focus = {
 		id = GRE_dodecanese_for_membership
 		icon = GFX_focus_generic_italy_first
 		prerequisite = { focus = GRE_befriend_italy }
+		mutually_exclusive = {
+			focus = GRE_join_the_axis
+		}
 		x = 0
 		y = 1
 		available = {
@@ -2162,7 +2162,7 @@ focus = {
 		}
 		
 		relative_position_id = GRE_befriend_italy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -2180,7 +2180,7 @@ focus = {
 		x = -2
 		y = 1
 		relative_position_id = GRE_alliances
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2200,13 +2200,17 @@ focus = {
 		icon = GFX_focus_chi_mission_to_germany
 		text = GRE_join_the_axis
 		prerequisite = { focus = GRE_befriend_germany }
+		mutually_exclusive = {
+			focus = GRE_dodecanese_for_membership
+		}
 		x = 0
 		y = 1
 		relative_position_id = GRE_befriend_germany
 		cost = 2
 		ai_will_do = {
 			factor = 12
-		}		available = {
+		}
+		available = {
 			is_in_faction = no
 			is_puppet = no
 			has_government = fascism
@@ -2260,7 +2264,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_strategic_interests
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 9
 		}
@@ -2529,7 +2533,7 @@ focus = {
 		x = -2
 		y = 1
 		relative_position_id = GRE_reinforce_4th_of_august_regime
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -2568,7 +2572,7 @@ focus = {
 		x = -1
 		y = 2
 		relative_position_id = GRE_begin_reconstruction
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -2626,7 +2630,7 @@ focus = {
 		prerequisite = { focus = GRE_begin_reconstruction }
 		x = 1
 		y = 2
-		cost = 8
+		cost = 10
 		relative_position_id = GRE_begin_reconstruction
 		ai_will_do = {
 			factor = 3
@@ -2660,7 +2664,7 @@ focus = {
 		prerequisite = { focus = GRE_begin_reconstruction }
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		relative_position_id = GRE_begin_reconstruction
 		ai_will_do = {
 			factor = 4
@@ -2730,7 +2734,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_reinforce_4th_of_august_regime
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}
@@ -2771,7 +2775,7 @@ focus = {
 		x = 2
 		y = 1
 		relative_position_id = GRE_reinforce_4th_of_august_regime
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 9
 		}
@@ -2794,7 +2798,7 @@ focus = {
 		x = 4
 		y = 1
 		relative_position_id = GRE_reinforce_4th_of_august_regime
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -2812,7 +2816,7 @@ focus = {
 		x = -2
 		y = 1
 		relative_position_id = GRE_embrace_metaxism
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -2927,7 +2931,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_military_teachings
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 9
 		}
@@ -3026,7 +3030,7 @@ focus = {
 		x = -3
 		y = 1
 		relative_position_id = GRE_world_stage
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 7
 		}		available = {
@@ -3115,7 +3119,7 @@ focus = {
 	x = 0
 	y = 1
 	relative_position_id = GRE_promote_peace_in_the_balkans
-	cost = 8
+	cost = 10
 	ai_will_do = {
 		factor = 7
 		modifier  = {
@@ -3156,7 +3160,7 @@ focus = {
 	x = 2
 	y = 1
 	relative_position_id = GRE_world_stage
-	cost = 8
+	cost = 10
 	ai_will_do = {
 		factor = 5
 		modifier = {
@@ -3217,7 +3221,7 @@ focus = {
 	x = -1
 	y = 2
 	relative_position_id = GRE_world_stage
-	cost = 8
+	cost = 10
 	ai_will_do = {
 		factor = 7
 	}
@@ -3259,7 +3263,7 @@ focus = {
 		x = 1
 		y = 2
 		relative_position_id = GRE_world_stage
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 7
@@ -3303,7 +3307,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_metaxa_militarism
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 4
 		}
@@ -3326,7 +3330,7 @@ focus = {
 		y = 1
 		mutually_exclusive = { focus = GRE_national_security_concerns focus = GRE_aftermath_of_the_victory_of_the_people focus = GRE_reinforce_royal_dictatorship focus = GRE_national_union  }
 		relative_position_id = GRE_divided_nation
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 9
 		}
@@ -3356,7 +3360,7 @@ focus = {
 		x = -1
 		y = 1
 		relative_position_id = GRE_democratic_approach
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -3374,7 +3378,7 @@ focus = {
 		x = -2
 		y = 2
 		relative_position_id = GRE_democratic_approach
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -3394,7 +3398,7 @@ focus = {
 		x = 0
 		y = 2
 		relative_position_id = GRE_democratic_approach
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}
@@ -3414,7 +3418,7 @@ focus = {
 		x = -1
 		y = 3
 		relative_position_id = GRE_democratic_approach
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -3446,7 +3450,7 @@ focus = {
 		x = -1
 		y = 1
 		relative_position_id = GRE_democratic_economic_policy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -3464,7 +3468,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_democratic_economic_policy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 9
 		}
@@ -3483,7 +3487,7 @@ focus = {
 		x = 3
 		y = 1
 		relative_position_id = GRE_democratic_approach
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -3504,7 +3508,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_diplomatic_actions
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 8
 		}
@@ -3534,7 +3538,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_befriend_france
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -3597,7 +3601,7 @@ focus = {
 		x = 0
 		y = 2
 		relative_position_id = GRE_befriend_france
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 8
 		}
@@ -3626,7 +3630,7 @@ focus = {
 		x = 1
 		y = 3
 		relative_position_id = GRE_befriend_france
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -3743,7 +3747,7 @@ focus = {
 		x = -2
 		y = 0
 		relative_position_id = GRE_befriend_france
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 8
 		}
@@ -3769,7 +3773,7 @@ focus = {
 		x = -2
 		y = 0
 		relative_position_id = GRE_befriend_britain
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 8
 		}
@@ -3861,7 +3865,7 @@ focus = {
 		x = -1
 		y = 1
 		relative_position_id = GRE_welfare_state
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -3887,7 +3891,7 @@ focus = {
 		x = -5
 		y = 1
 		relative_position_id = GRE_allied_membership
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -3929,7 +3933,7 @@ focus = {
 		icon = GFX_goal_generic_occupy_states_ongoing_war
     	text = GRE_surprise_attack_italy
 		prerequisite = { focus = GRE_military_reforms }
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = GRE_military_reforms
 		cost = 5
@@ -3985,7 +3989,7 @@ focus = {
         x = -20
         y = 1
         relative_position_id = GRE_divided_nation
-        cost = 8
+        cost = 10
         ai_will_do = {
 			factor = 90
 		}
@@ -4183,7 +4187,7 @@ focus = {
 			y = 2
 			relative_position_id = GRE_deal_with_klaras
 
-			cost = 8
+			cost = 10
 
 			ai_will_do = {
 				factor = 10
@@ -4359,7 +4363,7 @@ focus = {
                 relative_position_id = GRE_fate_of_the_royal_family
                 x = 3
                 y = 2
-                cost = 8
+                cost = 10
                 ai_will_do = {
                     factor = 60
                 }
@@ -4459,7 +4463,7 @@ focus = {
 			relative_position_id = GRE_create_a_new_economic_plan
 			x = -1
 			y = 1
-			cost = 8
+			cost = 10
 			ai_will_do = {
 				factor = 60
 			}
@@ -4493,7 +4497,7 @@ focus = {
 			relative_position_id = GRE_reform_agricultural_economy
 			x = -2
 			y = 1
-			cost = 8
+			cost = 10
 			ai_will_do = {
 				factor = 60
 			}
@@ -4519,7 +4523,7 @@ focus = {
 			relative_position_id = GRE_reform_agricultural_economy
 			x = -2
 			y = 2
-			cost = 8
+			cost = 10
 			ai_will_do = {
 				factor = 60
 			}
@@ -4546,7 +4550,7 @@ focus = {
 			relative_position_id = GRE_marxs_dream
 			x = -3
 			y = 1
-			cost = 8
+			cost = 10
 			ai_will_do = {
 				factor = 60
 				modifier = {
@@ -4564,7 +4568,10 @@ focus = {
 
 			completion_reward = {
 				set_rule = { can_create_factions = yes }
-				create_faction = communist_balkan_faction
+				create_faction_from_template = {
+					template = faction_template_BUL_balkan_federation_of_socialist_republics
+					name = communist_balkan_faction
+				}
 				country_event = greece.79
 			}
 			search_filters = { FOCUS_FILTER_POLITICAL }
@@ -4578,7 +4585,7 @@ focus = {
 			relative_position_id = GRE_marxs_dream
 			x = 0
 			y = 1
-			cost = 8
+			cost = 10
 			ai_will_do = {
 				factor = 60
 			}
@@ -5112,7 +5119,7 @@ focus = {
 			relative_position_id = GRE_marxs_dream
 			x = 5
 			y = 1
-			cost = 8
+			cost = 10
 			ai_will_do = {
 				factor = 40
 			}
@@ -5136,7 +5143,7 @@ focus = {
 			relative_position_id = GRE_befriend_sov
 			x = 1
 			y = 1
-			cost = 8
+			cost = 10
 			ai_will_do = {
 				factor = 50
 			}
@@ -5212,7 +5219,7 @@ focus = {
 			relative_position_id = GRE_befriend_sov
 			x = 0
 			y = 3
-			cost = 8
+			cost = 10
 			ai_will_do = {
 				factor = 50
 			}
@@ -5276,7 +5283,7 @@ focus = {
 		x = -5
 		y = 1
 		relative_position_id = GRE_reinforce_royal_dictatorship
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -5421,7 +5428,7 @@ focus = {
 		x = 2
 		y = 0
 		relative_position_id = GRE_establish_the_royal_armory
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 30
 		}
@@ -5568,7 +5575,7 @@ focus = {
 		y = 1
 		relative_position_id = GRE_prepare_expansion
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -5813,7 +5820,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_devout_to_the_monarchy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -5876,7 +5883,7 @@ focus = {
 		x = 4
 		y = 1
 		relative_position_id = GRE_honor_byzantium
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -5921,7 +5928,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_no_allignment
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}

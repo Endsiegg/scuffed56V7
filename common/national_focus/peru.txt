@@ -1,4 +1,5 @@
-#####-----> Rt56 Generic Tree <><> <><> <><>
+#####-----> Rt56 Peruvian Focus Tree <><> <><> <><>
+#!gfx:interface\r56_goals.gfx
 
 ### search_filters = {FOCUS_FILTER_POLITICAL}
 ### search_filters = {FOCUS_FILTER_RESEARCH}
@@ -436,7 +437,7 @@ focus = {
 	x = -1
 	y = 7
 	relative_position_id = PRU_look_to_the_past
-	cost = 8
+	cost = 10
 	 search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
         ai_will_do = {
             factor = 10
@@ -472,7 +473,7 @@ focus = {
 	x = -4
 	y = 8
 	relative_position_id = PRU_look_to_the_past
-	cost = 8
+	cost = 10
 	 search_filters = {FOCUS_FILTER_INDUSTRY }
         ai_will_do = {
             factor = 10
@@ -824,7 +825,7 @@ focus = {
 	x = 0
 	y = 10
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -844,7 +845,7 @@ focus = {
 	x = 0
 	y = 11
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -885,7 +886,7 @@ focus = {
 	x = -2
 	y = 10
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -932,7 +933,7 @@ focus = {
 	x = -2
 	y = 11
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -1061,7 +1062,7 @@ focus = {
 	x = 0
 	y = 14
 
-	cost = 8
+	cost = 10
     available = {
 	 OR = {
 				AND = {
@@ -1441,13 +1442,15 @@ focus = {
 					}
 				}
 
-				create_country_leader = {
-					name = "Pedro III"
-					desc = " "
-					picture = "gfx/leaders/BRA/r56_portrait_BRA_PedroIII.dds"
-					expire = "1965.1.1"
-					ideology = absolute_monarchism
-					traits = { vfb_trait_dompedro_1 vfb_trait_dompedro_3 r56_trait_opposed_to_communism}
+				add_country_leader_role = {
+					character = BRA_pedro_henrique
+					promote_leader = yes
+					country_leader = {
+						desc = ""
+						expire = "1965.1.1"
+						ideology = absolute_monarchism
+						traits = { vfb_trait_dompedro_1 vfb_trait_dompedro_3 r56_trait_opposed_to_communism }
+					}
 				}
 				hidden_effect = { set_country_flag = bra_monarquia_flag }
 				hidden_effect = { set_country_flag = bra_monarquia_neutra_flag }
@@ -1500,7 +1503,7 @@ focus = {
 	x = -1
 	y = 15
 
-	cost = 8
+	cost = 10
     available = {
 		OR = {
 			AND = {
@@ -1683,7 +1686,7 @@ focus = {
 	x = 1
 	y = 15
 
-	cost = 8
+	cost = 10
     available = {
 		OR = {
 			AND = {
@@ -1881,7 +1884,7 @@ focus = {
 	relative_position_id = PRU_look_to_the_past
 	x = 0
 	y = 16
-	cost = 8
+	cost = 10
 
 	prerequisite = {
 		focus = PRU_restore_the_colombia_empire
@@ -1994,7 +1997,7 @@ focus = {
 	x = -4
 	y = 14
 
-	cost = 8
+	cost = 10
     available = {
 		OR = {
 			AND = {
@@ -2534,7 +2537,7 @@ focus = {
 
 
 focus = {
-	id = PRU_superiority_of_the_copper_race
+	id = PRU_strengthen_nationalist_rhetoric
 	prerequisite = { focus = PRU_the_inca_congress }
 	mutually_exclusive = { focus = PRU_red_pachamama}
 	mutually_exclusive = { focus = PRU_crown_an_inca }
@@ -2614,7 +2617,7 @@ focus = {
 
 focus = {
 	id = PRU_secure_the_future_of_the_nation
-	prerequisite = { focus = PRU_superiority_of_the_copper_race}
+	prerequisite = { focus = PRU_strengthen_nationalist_rhetoric}
 	icon = GFX_goal_generic_crisis
 	x = 1
 	y = 7
@@ -2722,20 +2725,62 @@ focus = {
 			limit = {
 				has_completed_focus = PRU_red_pachamama
 			}
-			create_faction = native_american_peoples_alliance
-		}
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = {
+					template = faction_template_CHL_indigenous_union
+					name = native_american_peoples_alliance
+				}
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				set_rule = { can_create_factions = yes }
+				create_faction = native_american_peoples_alliance
+			}
+		} #
 
 		if = {
 			limit = {
-				has_completed_focus = PRU_superiority_of_the_copper_race
+				has_completed_focus = PRU_strengthen_nationalist_rhetoric
 			}
-			create_faction = native_axis
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = {
+					template = faction_template_anti_communist
+					name = native_axis
+				}
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				set_rule = { can_create_factions = yes }
+				create_faction = native_axis
+			}
 		}
 		if = {
 			limit = {
 				has_completed_focus = PRU_organize_protests_in_the_south
 			}
-			create_faction = native_alliance
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = {
+					template = faction_template_defensive_democratic
+					name = native_alliance
+				}
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				set_rule = { can_create_factions = yes }
+				create_faction = native_alliance
+			}
 		}
 	}
 
@@ -2745,7 +2790,7 @@ focus = {
 focus = {
 	id = PRU_red_pachamama
 	prerequisite = { focus = PRU_the_inca_congress }
-	mutually_exclusive = { focus = PRU_superiority_of_the_copper_race }
+	mutually_exclusive = { focus = PRU_strengthen_nationalist_rhetoric }
 	mutually_exclusive = { focus = PRU_crown_an_inca }
 	icon = GFX_goal_PRU_tupac_amaru
 	x = 4
@@ -2822,7 +2867,7 @@ focus = {
 
 focus = {
 	id = PRU_illapa_the_thunder_of_the_andes
-	prerequisite = { focus = PRU_red_pachamama focus = PRU_superiority_of_the_copper_race }
+	prerequisite = { focus = PRU_red_pachamama focus = PRU_strengthen_nationalist_rhetoric }
 	icon = GFX_goal_generic_army
 	x = 3
 	y = 7
@@ -2845,7 +2890,7 @@ focus = {
 
 			if = {
 			limit = {
-				has_completed_focus = PRU_superiority_of_the_copper_race
+				has_completed_focus = PRU_strengthen_nationalist_rhetoric
 			}
 			swap_ideas = {
 			  remove_idea = PRU_inca_army_1_f
@@ -2913,7 +2958,7 @@ focus = {
 focus = {
 	id = PRU_crown_an_inca
     prerequisite = { focus =  PRU_the_inca_congress}
-	mutually_exclusive = { focus = PRU_superiority_of_the_copper_race }
+	mutually_exclusive = { focus = PRU_strengthen_nationalist_rhetoric }
 	mutually_exclusive = { focus = PRU_red_pachamama}
 	icon = GFX_goal_PRU_legacy_inca
 
@@ -3248,7 +3293,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			NOT = {
@@ -3384,7 +3429,7 @@ focus = {
 	x = -4
 	y = 3
 	relative_position_id = PRU_crown_an_inca
-	cost = 8
+	cost = 10
 	ai_will_do = {
 		factor = 10
 	}
@@ -3478,7 +3523,7 @@ focus = {
 
 			if = {
 			limit = {
-				has_completed_focus = PRU_superiority_of_the_copper_race
+				has_completed_focus = PRU_strengthen_nationalist_rhetoric
 			}
 			swap_ideas = {
 			  remove_idea = PRU_inca_army_3_f
@@ -3509,7 +3554,7 @@ focus = {
 	x = -5
 	y = 5
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -3567,7 +3612,7 @@ focus = {
 	x = -2
 	y = 6
 
-	cost = 8
+	cost = 10
     available = {
 		USA= {
 			exists = yes
@@ -3617,7 +3662,7 @@ focus = {
 	x = -6
 	y = 6
 
-	cost = 8
+	cost = 10
     available = {
 		ENG = {
 			exists = yes
@@ -3695,8 +3740,8 @@ focus = {
 
 	completion_reward = {
         set_rule = {
-         can_create_factions = yes
-         }
+        	can_create_factions = yes
+        }
 		add_war_support = 0.1
 		add_political_power = 40
 		if = {
@@ -3707,18 +3752,18 @@ focus = {
 			  remove_idea = PRU_inca_army_4_c
 		      add_idea = PRU_inca_army_5_c
 			}
-			}
+		}
 
-			if = {
+		if = {
 			limit = {
-				has_completed_focus = PRU_superiority_of_the_copper_race
+				has_completed_focus = PRU_strengthen_nationalist_rhetoric
 			}
 			swap_ideas = {
 			  remove_idea = PRU_inca_army_4_f
 		      add_idea = PRU_inca_army_5_f
 			}
-			}
-			if = {
+		}
+		if = {
 			limit = {
 				has_completed_focus = PRU_crown_an_inca
 			}
@@ -3727,12 +3772,10 @@ focus = {
 		      add_idea = PRU_inca_army_5
 			}
 			country_event = { hours = 5 id = peru.57 }
-			}
+		}
 		custom_effect_tooltip = PRU_unlock_exclu_oli
-		PRU = { 
-		
-				set_country_flag = PRU_oli_exclu
-			
+		PRU = {
+			set_country_flag = PRU_oli_exclu
 		}
 	}
 	search_filters = { FOCUS_FILTER_POLITICAL }
@@ -3748,7 +3791,7 @@ focus = {
 	
 		relative_position_id = PRU_restore_the_borders_of_the_empire
 	
-		cost = 8
+		cost = 10
 		available = {
 			has_country_leader = { ruling_only = yes character = PRU_Carlos_Francisco }	
 		    has_civil_war = no
@@ -3784,7 +3827,7 @@ focus = {
 	
 		relative_position_id = PRU_return_of_the_inkari
 	
-		cost = 8
+		cost = 10
 		available = {
 			
 		}
@@ -3829,7 +3872,7 @@ focus = {
 	
 		relative_position_id = PRU_return_of_the_inkari
 	
-		cost = 8
+		cost = 10
 		available = {
 			has_government = neutrality
 			is_subject = no
@@ -3891,7 +3934,7 @@ focus = {
 	
 		relative_position_id = PRU_return_of_the_inkari
 	
-		cost = 8
+		cost = 10
 		available = {
 			
 		}
@@ -3921,7 +3964,7 @@ focus = {
 	
 		relative_position_id = PRU_return_of_the_inkari
 	
-		cost = 8
+		cost = 10
 		available = {
 			
 		}
@@ -3948,7 +3991,7 @@ focus = {
 	
 		relative_position_id = PRU_return_of_the_inkari
 	
-		cost = 8
+		cost = 10
 		available = {
 			
 		}
@@ -4002,7 +4045,7 @@ focus = {
 	
 		relative_position_id = PRU_return_of_the_inkari
 	
-		cost = 8
+		cost = 10
 		available = {
 			
 		}
@@ -4028,7 +4071,7 @@ focus = {
 		relative_position_id = PRU_return_of_the_inkari
 		x = -2
 		y = 3
-		cost = 8
+		cost = 10
 
 		prerequisite = {
 			focus = PRU_das_inkareich
@@ -4140,7 +4183,7 @@ focus = {
 	
 		relative_position_id = PRU_return_of_the_inkari
 	
-		cost = 8
+		cost = 10
 
 		mutually_exclusive = {
 			focus = PRU_american_reich
@@ -4175,7 +4218,7 @@ focus = {
 	
 		relative_position_id = PRU_return_of_the_inkari
 	
-		cost = 8
+		cost = 10
 
 		available = {
 			
@@ -4336,7 +4379,7 @@ focus = {
 	x = -2
 	y = 7
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -4357,7 +4400,7 @@ focus = {
 	x = -6
 	y = 7
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -4418,7 +4461,7 @@ focus = {
 			}
 		}
 	}
-	cost = 8
+	cost = 10
 	ai_will_do = {
 		factor = 10
 	}
@@ -4467,7 +4510,7 @@ focus = {
 		relative_position_id = PRU_expel_europeans_from_south_america
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		prerequisite = {
 			focus = PRU_expel_europeans_from_south_america
@@ -4578,7 +4621,7 @@ focus = {
 		relative_position_id = PRU_expel_europeans_from_south_america
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		prerequisite = {
 			focus = PRU_expel_europeans_from_south_america
@@ -4957,7 +5000,7 @@ focus = {
      available = {
 
         }
-	cost = 8
+	cost = 10
 	ai_will_do = {
 		factor = 10
 	}
@@ -5075,7 +5118,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_hispanism
 
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no
@@ -5209,7 +5252,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_legacy_of_guayaquil_treaty
 		
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			has_army_manpower = { size > 60000 }
@@ -5280,7 +5323,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_reclaim_ecuador
 
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			has_army_manpower = { size > 90000 }
@@ -5357,7 +5400,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_reclaim_colombia
 
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			has_army_manpower = { size > 120000 }
@@ -5443,7 +5486,7 @@ focus = {
 			focus = PRU_legacy_of_guayaquil_treaty
 		}
 	
-		cost = 8
+		cost = 10
 	
 		available = {
 			is_subject = no
@@ -5466,7 +5509,22 @@ focus = {
 	
 		completion_reward = {
 			add_ideas = r56_CHL_hispanic_pan_nationalism
-			create_faction = union_hispanica
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = {
+					template = faction_template_PRU_union_hispanica_faction
+					name = union_hispanica
+				}
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				set_rule = { can_create_factions = yes }
+				create_faction = union_hispanica
+			}
+
 			every_other_country = {
 				limit = {
 					is_subject = no
@@ -5492,6 +5550,7 @@ focus = {
 				limit = {
 					is_subject = no
 					is_major = no #not targeting major countries
+					is_in_faction = no
 					NOT = { has_war_with = ROOT }
 					has_government = fascism
 					capital_scope = {
@@ -5524,7 +5583,7 @@ focus = {
             focus = PRU_secure_the_central_america
         }
 
-        cost = 8
+        cost = 10
 
         available = {
             is_subject = no
@@ -5563,7 +5622,7 @@ focus = {
 			focus = PRU_Support_the_banana_industry
 		}
 	
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			1051 = {
@@ -5655,7 +5714,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = PRU_secure_the_central_america
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			has_army_manpower = { size > 300000 }
@@ -5730,7 +5789,7 @@ focus = {
 	   x = 2
 	   y = 1
 	   relative_position_id = PRU_secure_the_central_america
-	   cost = 8
+	   cost = 10
 	   
 	   available = {
 		   is_subject = no
@@ -5848,7 +5907,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_prepare_for_another_pacific_war
 
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			has_army_manpower = { size > 70000 }
@@ -5919,7 +5978,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = PRU_reclaim_chile
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			factor = 10
@@ -5996,7 +6055,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_the_only_sun
 
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			OR = {
@@ -6143,7 +6202,21 @@ focus = {
 	}
 
 	completion_reward = {
-		create_faction = andean_pact
+		IF = {
+			limit = {
+				has_dlc = "No Compromise, No Surrender"
+			}
+			set_rule = { can_create_factions = yes }
+			create_faction_from_template = {
+				template = faction_template_regional_anti_communist
+				name = andean_pact
+			}
+			add_faction_initiative = 1
+		}
+		ELSE = {
+			set_rule = { can_create_factions = yes }
+			create_faction = andean_pact
+		}
 		BOL = {
 			country_event = generic.5
 		}
@@ -6159,7 +6232,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_alliance_with_bolivia
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -6204,7 +6277,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_alliance_with_bolivia
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -6250,7 +6323,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_celebration_of_the_andean_past
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -6396,7 +6469,7 @@ focus = {
 	x = -2
 	y = 2
 	relative_position_id = PRU_incaism
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 5
@@ -6541,7 +6614,7 @@ focus = {
 	x = -1
 	y = 1
 	relative_position_id = PRU_control_the_economy
-	cost = 8
+	cost = 10
 	 search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
             factor = 10
@@ -6559,7 +6632,7 @@ focus = {
 	x = 1
 	y = 1
 	relative_position_id = PRU_control_the_economy
-	cost = 8
+	cost = 10
 	 available = {
         OR= {
           has_completed_focus = PRU_Eradicate_the_traitors
@@ -6619,7 +6692,7 @@ focus = {
 	x = 1
 	y = 1
 	relative_position_id = PRU_inca_industry
-	cost = 8
+	cost = 10
 	ai_will_do = {
 		factor = 10
 	}
@@ -6728,7 +6801,22 @@ focus = {
 	completion_reward = {
 	  unlock_decision_category_tooltip = PRU_propagate_fascism_in_latin_america
 	  add_ideas = PRU_inti
-	  create_faction = runasimi_union
+		IF = {
+			limit = {
+				has_dlc = "No Compromise, No Surrender"
+			}
+			set_rule = { can_create_factions = yes }
+			create_faction_from_template = {
+				template = faction_template_PRU_runasimi_union
+				name = runasimi_union
+			}
+			add_faction_initiative = 1
+		}
+		ELSE = {
+			set_rule = { can_create_factions = yes }
+			create_faction = runasimi_union
+		}
+
 	  if = {
 		limit = {
 			BRA= {
@@ -7353,7 +7441,7 @@ focus = {
 		prerequisite = { focus = PRU_join_axis }
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 8
 		}
@@ -7427,7 +7515,7 @@ focus = {
 	x = 0
 	y = 2
 	relative_position_id = PRU_german_aeronautic_cooperation
-	cost = 8
+	cost = 10
 	 search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
         ai_will_do = {
             factor = 10
@@ -7482,7 +7570,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = PRU_trans_pacific_alliance
-	cost = 8
+	cost = 10
 	available = {
 		 JAP= {
                 exists = yes
@@ -7554,7 +7642,7 @@ focus = {
 	x = 0
 	y = 2
 	relative_position_id = PRU_japanece_naval_doctrine
-	cost = 8
+	cost = 10
 	 search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
         ai_will_do = {
             factor = 10
@@ -7610,7 +7698,7 @@ focus = {
 	y = 3
 	relative_position_id = PRU_incaism
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -7723,7 +7811,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_protest_against_the_cancellation
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -7888,7 +7976,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_nationalize_the_banking_sector
 
-	cost = 8
+	cost = 10
      available = {
 	}
 	ai_will_do = {
@@ -7909,7 +7997,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_reforma_agraria
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -7947,7 +8035,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_prolong_benavides_presidency
 
-	cost = 8
+	cost = 10
     available = {
 
 			has_country_flag  = PRU_benavides_democracy
@@ -7980,7 +8068,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_commit_to_democratic_election
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -8008,7 +8096,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_exile_luis_alberto_flores
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -8031,7 +8119,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_Recovering_from_the_civil_war
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -8053,7 +8141,7 @@ focus = {
 	y = 1
 	relative_position_id =  PRU_commit_to_democratic_election
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -8082,7 +8170,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_exile_haya_de_la_torre
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -8106,7 +8194,7 @@ focus = {
 	y = 3
 	relative_position_id = PRU_commit_to_democratic_election
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -8166,7 +8254,7 @@ focus = {
 	y = 4
 	relative_position_id = PRU_commit_to_democratic_election
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -8204,7 +8292,7 @@ focus = {
 	y = 5
 	relative_position_id = PRU_commit_to_democratic_election
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -8242,7 +8330,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_benavides_is_dead
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -8368,7 +8456,7 @@ focus = {
     mutually_exclusive = {
             focus = PRU_left_and_right_united
         }
-	cost = 8
+	cost = 10
 	available = {
 		OR = {
 		has_completed_focus = PRU_the_teachings_the_amauta
@@ -8459,7 +8547,7 @@ focus = {
 				relative_position_id = PRU_ask_for_enter_to_comintern
 				x = 3
 				y = 1
-				cost = 8
+				cost = 10
 
 				available = {
 					NOT = { has_war_with = SOV }
@@ -8482,7 +8570,7 @@ focus = {
 				relative_position_id = PRU_the_peruvian_five_year_plan
 				x = -2
 				y = 1
-				cost = 8
+				cost = 10
 
 				available = {
 					
@@ -8508,7 +8596,7 @@ focus = {
 		relative_position_id = PRU_the_peruvian_five_year_plan
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 0
 		}
@@ -8531,7 +8619,7 @@ focus = {
 		relative_position_id = PRU_request_soviet_support
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 0
 		}
@@ -8579,7 +8667,7 @@ focus = {
 		relative_position_id = PRU_collective_agriculture
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 0
 		}
@@ -8617,7 +8705,7 @@ focus = {
 	y = 1
 	relative_position_id =  PRU_radicalize_the_pcp
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 800000 }
@@ -8656,7 +8744,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_ask_for_enter_to_comintern
 
-	cost = 8
+	cost = 10
 	available = {
 	
 	}
@@ -8692,9 +8780,9 @@ focus = {
 		}
 		available = {
 				has_government = communism
-				land_doctrine_level > 0
+				has_100_land_doctrine_mastery = yes
 			}
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MANPOWER  }
 		completion_reward = {
@@ -8711,7 +8799,7 @@ focus = {
 		relative_position_id =  PRU_the_great_peruvian_red_army
 		x = 1
         y =1
-        cost = 8
+        cost = 10
 		available = {
             SOV = {
                 exists = yes
@@ -8798,7 +8886,7 @@ focus = {
         relative_position_id = PRU_the_great_peruvian_red_army
         x = -1
         y = 1
-        cost = 8
+        cost = 10
 
         prerequisite = {
             focus = PRU_the_great_peruvian_red_army
@@ -8850,7 +8938,7 @@ focus = {
         relative_position_id = PRU_acquire_soviet_tanks
         x = 1
 	    y = 1
-        cost = 8
+        cost = 10
 
         prerequisite = {
             focus = PRU_acquire_soviet_tanks
@@ -9200,7 +9288,7 @@ focus = {
 		relative_position_id = PRU_follow_in_the_footsteps_of_tupac_amaru
 		x = 3
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -9314,7 +9402,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_revive_the_bolivarian_dream
 		
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			has_army_manpower = { size > 60000 }
@@ -9388,7 +9476,7 @@ focus = {
 		x = -1
 		y = 2
 		relative_position_id = PRU_revive_the_bolivarian_dream
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			has_army_manpower = { size > 90000 }
@@ -9469,7 +9557,7 @@ focus = {
 		y = 3
 		relative_position_id = PRU_revive_the_bolivarian_dream
 
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			has_army_manpower = { size > 120000 }
@@ -9628,7 +9716,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_Bring_the_revolution_to_all_America
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		r56_script_i_am_sane = yes
@@ -9662,7 +9750,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_liberate_brazil
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		r56_script_i_am_sane = yes
@@ -9699,7 +9787,7 @@ focus = {
 	y = 2
 	relative_position_id = PRU_liberate_cub
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		CUB = { is_subject_of = PRU}
@@ -9764,7 +9852,7 @@ focus = {
 	y = 1
 	relative_position_id =PRU_rallying_the_peasants
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -9791,7 +9879,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_revolucion_restauradora
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -9898,7 +9986,7 @@ focus = {
 	x = 0
 	y = 2
 	relative_position_id = PRU_ochenio_de_Odria
-	cost = 8
+	cost = 10
 	 search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
         ai_will_do = {
             factor = 10
@@ -9985,7 +10073,7 @@ focus = {
 	x = 2
 	y = 3
 	relative_position_id = PRU_ochenio_de_Odria
-	cost = 8
+	cost = 10
 	 search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
         ai_will_do = {
             factor = 10
@@ -10037,7 +10125,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_select_a_successor_for_benavides
     mutually_exclusive = { focus = PRU_revolutionary_goverment}
-	cost = 8
+	cost = 10
 	available = {
 		has_country_leader = { character = PRU_ernesto_montagne_markholz ruling_only = yes }
     }
@@ -10060,7 +10148,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_select_a_successor_for_benavides
     mutually_exclusive = { focus =PRU_select_montagne_as_successor }
-	cost = 8
+	cost = 10
 	available = {
 		has_country_leader = { character = PRU_velasco_alvarado ruling_only = yes }
     }
@@ -10083,7 +10171,7 @@ focus = {
 	y = 2
 	relative_position_id = PRU_select_a_successor_for_benavides
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -10107,7 +10195,7 @@ focus = {
 	y = 3
 	relative_position_id = PRU_select_a_successor_for_benavides
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -10163,7 +10251,7 @@ focus = {
 	y = 4
 	relative_position_id = PRU_select_a_successor_for_benavides
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -10192,7 +10280,7 @@ focus = {
 	y = 5
 	relative_position_id = PRU_select_a_successor_for_benavides
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -10217,7 +10305,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_wake_up_a_giant
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -10415,7 +10503,7 @@ focus = {
 	y = 2
 	relative_position_id = PRU_wake_up_a_giant
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 70000 }
@@ -10458,7 +10546,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_hit_bolivia
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 70000 }
@@ -10499,7 +10587,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_hit_bolivia
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		any_neighbor_country = {
@@ -10543,7 +10631,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_hit_argentina
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 100000 }
@@ -10591,7 +10679,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_hit_argentina
 
-	cost = 8
+	cost = 10
 	available = {
 		any_neighbor_country = {
 			original_tag = VEN
@@ -10636,7 +10724,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_hit_argentina
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 100000 }
@@ -10675,7 +10763,7 @@ focus = {
 	y = 1
 	relative_position_id = PRU_hit_colombia
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 800000 }
@@ -10713,7 +10801,7 @@ focus = {
 	y = 2
 	relative_position_id = PRU_hit_colombia
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 1000000 }
@@ -10737,7 +10825,7 @@ focus = {
 	y = 5
 	relative_position_id = PRU_select_a_successor_for_benavides
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -10859,7 +10947,7 @@ focus = {
 		x = 6
 		y = 1
 		relative_position_id = PRU_mediate_between_the_parties
-	cost = 8
+	cost = 10
 	available = {
 		
       	}
@@ -10881,7 +10969,7 @@ focus = {
 		x = -1
 		y = 1
 		relative_position_id = PRU_freedom_defenders
-	cost = 8
+	cost = 10
 	available = {
 		OR  = {
 		has_government = democratic
@@ -10927,7 +11015,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = PRU_freedom_defenders
-	cost = 8
+	cost = 10
 	available = {
 	
 	}
@@ -10962,7 +11050,7 @@ focus = {
 		x = 0
 		y = 2
 		relative_position_id = PRU_freedom_defenders
-	cost = 8
+	cost = 10
 	available = {
 		 has_completed_focus = PRU_alerta_en_la_frontera
 		 controls_state = 490
@@ -11037,7 +11125,7 @@ focus = {
 #		y = 2
 #		relative_position_id = PRU_mediate_between_the_parties
 #
-#	cost = 8
+#	cost = 10
 #	available = {
 #		is_subject = no
 #		PRU = {
@@ -11105,7 +11193,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -11126,7 +11214,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -11173,7 +11261,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 		factor = 10
@@ -11256,7 +11344,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 10
@@ -11276,7 +11364,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
     available = {
 		OR= {
 		has_country_leader = { character = PRU_luis_eguiguren ruling_only = yes }
@@ -11311,7 +11399,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
     available = {
 		 OR = {
 		has_country_leader = { character = PRU_manuel_villaran ruling_only = yes }  
@@ -11337,7 +11425,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 10
@@ -11374,7 +11462,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
     available = {
 		OR= {
 		has_country_leader = { character = PRU_luis_eguiguren ruling_only = yes }
@@ -11403,7 +11491,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 10
@@ -11425,7 +11513,7 @@ focus = {
 	y = 4
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 10
@@ -11492,7 +11580,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 10
@@ -11538,7 +11626,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 10
@@ -11559,7 +11647,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 10
@@ -11585,7 +11673,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 10
@@ -11614,14 +11702,28 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 5
 	}
 
 	completion_reward = {
-		create_faction = lima_group
+		IF = {
+			limit = {
+				has_dlc = "No Compromise, No Surrender"
+			}
+			set_rule = { can_create_factions = yes }
+			create_faction_from_template = {
+				template = faction_template_anti_fascist
+				name = lima_group
+			}
+			add_faction_initiative = 1
+		}
+		ELSE = {
+			set_rule = { can_create_factions = yes }
+			create_faction = lima_group
+		}
 
 		if = {
 			limit = {
@@ -11834,7 +11936,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 
 	ai_will_do = {
 	factor = 10
@@ -11861,7 +11963,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 	available = {
 		has_government = democratic
 		is_subject = no
@@ -11919,7 +12021,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		JAP = {
@@ -11957,7 +12059,7 @@ focus = {
 
 	relative_position_id = PRU_mediate_between_the_parties
 
-	cost = 8
+	cost = 10
 	available = {
 		is_subject = no
 		GER = {
@@ -12064,7 +12166,7 @@ focus = {
 		y = 1
 		prerequisite = { focus = PRU_czech_equipment_aquisition }
 
-		cost = 8
+		cost = 10
 		relative_position_id = PRU_czech_equipment_aquisition
 
 		ai_will_do = {
@@ -12127,7 +12229,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_andean_warfare
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 25
@@ -12193,7 +12295,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_andean_warfare
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 25
@@ -12228,7 +12330,7 @@ focus = {
         relative_position_id = PRU_modernize_the_infantry_kit
         x = 0
         y = 1
-        cost = 8
+        cost = 10
         ai_will_do = {
             factor = 10
 		}
@@ -12286,7 +12388,7 @@ focus = {
 		x = 1
 		y = 2
 		relative_position_id = PRU_modernize_the_infantry_kit
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -12318,7 +12420,7 @@ focus = {
         x = -1
 		y = 1
 
-        cost = 8
+        cost = 10
         ai_will_do = {
             factor = 10
         }
@@ -12347,7 +12449,7 @@ focus = {
 		x = 2
 		y = 1
 		relative_position_id = PRU_andean_warfare
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -12369,7 +12471,7 @@ focus = {
 		x = 2
 		y = 2
 		relative_position_id = PRU_andean_warfare
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -12389,7 +12491,7 @@ focus = {
 		y = 1
 		prerequisite = { focus = PRU_czech_equipment_aquisition }
 
-		cost = 8
+		cost = 10
 		relative_position_id = PRU_czech_equipment_aquisition
 		ai_will_do = {
 			factor = 5
@@ -12445,7 +12547,7 @@ focus = {
 		y = 1
 		prerequisite = { focus = PRU_czech_tanks }
 
-		cost = 8
+		cost = 10
 		relative_position_id = PRU_czech_tanks
 		ai_will_do = {
 			factor = 5
@@ -12546,7 +12648,7 @@ focus = {
 
 		relative_position_id = PRU_italian_guns
 
-		cost = 8
+		cost = 10
         available = {
             ITA = {
                 exists = yes
@@ -12581,7 +12683,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_italian_guns
 
-		cost = 8
+		cost = 10
         available = {
             SOV = {
                 exists = yes
@@ -12609,7 +12711,7 @@ focus = {
 		y = 1
 		prerequisite = { focus = PRU_italian_guns }
 
-		cost = 8
+		cost = 10
 		relative_position_id = PRU_italian_guns
 		ai_will_do = {
 			factor = 5
@@ -12639,7 +12741,7 @@ focus = {
 		x = -1
 		y = 1
 		relative_position_id = PRU_expand_the_national_arsenal
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -12661,7 +12763,7 @@ focus = {
 		x = 22
         y = 0
 		relative_position_id = PRU_czech_equipment_aquisition
-        cost = 8
+        cost = 10
         ai_will_do = {
             factor = 10
         }
@@ -12774,7 +12876,7 @@ focus = {
 		relative_position_id = PRU_a_reborn_navy
 		x = 0
         y = 2
-        cost = 8
+        cost = 10
         search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		available = {
@@ -12807,7 +12909,7 @@ focus = {
 		relative_position_id = PRU_a_reborn_navy
 		x = 0
         y = 3
-        cost = 8
+        cost = 10
         search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		available = {
@@ -12841,7 +12943,7 @@ focus = {
 		relative_position_id = PRU_a_reborn_navy
 		x = 0
         y = 4
-        cost = 8
+        cost = 10
 
         search_filters = {FOCUS_FILTER_RESEARCH}
 		ai_will_do = {
@@ -12874,7 +12976,7 @@ focus = {
 		relative_position_id = PRU_a_reborn_navy
 		x = -3
         y = 2
-        cost = 8
+        cost = 10
         ai_will_do = {
             factor = 5
         }
@@ -12893,7 +12995,7 @@ focus = {
 		relative_position_id = PRU_a_reborn_navy
 		x = -4
         y = 3
-        cost = 8
+        cost = 10
 
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
@@ -12943,7 +13045,7 @@ focus = {
 		relative_position_id = PRU_a_reborn_navy
 		x = 3
         y = 2
-        cost = 8
+        cost = 10
 
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
@@ -12978,7 +13080,7 @@ focus = {
 		relative_position_id = PRU_a_reborn_navy
 		x = 2
         y = 3
-        cost = 8
+        cost = 10
 
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
@@ -13003,7 +13105,7 @@ focus = {
 		relative_position_id = PRU_a_reborn_navy
 		x = 4
         y = 3
-        cost = 8
+        cost = 10
 
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
@@ -13056,7 +13158,7 @@ focus = {
 		relative_position_id =  PRU_fly_with_the_sun
 		x = 0
         y = 3
-        cost = 8
+        cost = 10
         ai_will_do = {
             factor = 10
         }
@@ -13087,7 +13189,7 @@ focus = {
 		relative_position_id =  PRU_strengthen_the_air_force
 		x = -1
         y = 1
-        cost = 8
+        cost = 10
         ai_will_do = {
             factor = 10
         }
@@ -13117,7 +13219,7 @@ focus = {
 		relative_position_id =  PRU_strengthen_the_air_force
 		x = 0
         y = 2
-        cost = 8
+        cost = 10
         ai_will_do = {
             factor = 10
         }
@@ -13139,7 +13241,7 @@ focus = {
 		relative_position_id =  PRU_strengthen_the_air_force
 		x = 1
         y = 1
-        cost = 8
+        cost = 10
         search_filters = {FOCUS_FILTER_INDUSTRY}
         ai_will_do = {
             factor = 10
@@ -13315,7 +13417,7 @@ focus = {
 		relative_position_id =  PRU_fly_with_the_sun
 		x = 2
         y = 1
-        cost = 8
+        cost = 10
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
             factor = 10
@@ -13337,7 +13439,7 @@ focus = {
 		relative_position_id =  PRU_work_with_our_designs
 		x = 1
         y = 1
-        cost = 8
+        cost = 10
 
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
@@ -13360,7 +13462,7 @@ focus = {
 		relative_position_id =  PRU_work_with_our_designs
 		x = -1
         y = 1
-        cost = 8
+        cost = 10
         search_filters = {FOCUS_FILTER_RESEARCH}
         ai_will_do = {
             factor = 0.2
@@ -13568,7 +13670,7 @@ focus = {
 		icon = GFX_goal_generic_communist_industries
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = { focus = PRU_imitate_the_Soviet_model }
 		relative_position_id = PRU_imitate_the_Soviet_model
 		ai_will_do = {
@@ -13584,7 +13686,7 @@ focus = {
 		icon = GFX_goal_generic_commie_investments
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		prerequisite = { focus = PRU_forced_industrialization }
 		relative_position_id = PRU_imitate_the_Soviet_model
 		ai_will_do = {
@@ -13729,7 +13831,7 @@ focus = {
 		icon = GFX_goal_refining
 		x = -4
 		y = 2
-		cost = 8
+		cost = 10
 		prerequisite = { focus = PRU_ask_for_a_loan_to_germany focus = PRU_continue_leguias_plan focus = PRU_imitate_the_Soviet_model }
 		relative_position_id = PRU_rely_on_international_trade
 		ai_will_do = {
@@ -13810,7 +13912,7 @@ focus = {
 		icon = GFX_goal_generic_gold_money
 		x = -4
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = { focus = PRU_oil_industry_developments  focus = PRU_invite_foreign_experts }
 		prerequisite = { focus = PRU_railroad_investments }
 		relative_position_id = PRU_invite_foreign_experts
@@ -13850,7 +13952,7 @@ focus = {
 		icon = GFX_focus_CHL_work_on_the_panamerican_highway
 		x = -2
 		y = 5
-		cost = 8
+		cost = 10
 		prerequisite = { focus = PRU_stable_monetary_policy}
 		prerequisite = { focus = PRU_construction_industry }
 		relative_position_id = PRU_rely_on_international_trade
@@ -13950,7 +14052,7 @@ focus = {
 		icon = GFX_goal_generic_mining_iron
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = { focus = PRU_our_natural_resources}
 		relative_position_id = PRU_our_natural_resources
 		ai_will_do = {
@@ -14076,7 +14178,7 @@ focus = {
 		icon = GFX_goal_generic_basic_oil
 		x = 3
 		y = 6
-		cost = 8
+		cost = 10
 		prerequisite = { focus = PRU_create_the_BCR}
 		relative_position_id = PRU_implement_autarky
 		ai_will_do = {
@@ -14106,7 +14208,7 @@ focus = {
 		icon = GFX_goal_excavation
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = { focus = PRU_seize_the_gold_mines }
 		relative_position_id = PRU_seize_the_gold_mines
 		ai_will_do = {
@@ -14229,7 +14331,7 @@ focus = {
 		y = 1
 		relative_position_id = PRU_national_research_grants
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -14266,7 +14368,7 @@ focus = {
 		icon = GFX_goal_ammunitions
 		x = -2
 		y = 3
-		cost = 8
+		cost = 10
 		prerequisite = { focus = PRU_nationalize_the_railways focus = PRU_running_economy}
 		relative_position_id = PRU_finance_construction_programs
 		ai_will_do = {

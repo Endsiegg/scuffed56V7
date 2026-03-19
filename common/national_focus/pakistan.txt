@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
     id = pakistani_focus_tree
     country = {
@@ -88,7 +89,7 @@ focus_tree = {
     focus = {
         id = PAK_Allah_and_State
         icon = GFX_goal_islam_and_state
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Cement_Leaders_Rule
         }
@@ -104,7 +105,7 @@ focus_tree = {
     focus = {
         id = PAK_Pakistani_Nationalism
         icon = GFX_focus_AFG_pakistan_cold_war
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Allah_and_State
         }
@@ -123,7 +124,7 @@ focus_tree = {
     focus = {
         id = PAK_Work_for_Pakistan
         icon = GFX_goal_generic_strenght_through_industry
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Pakistani_Nationalism
         }
@@ -215,7 +216,7 @@ focus_tree = {
     focus = {
         id = PAK_Land_Reform
         icon = GFX_focus_generic_public_works_A
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Communist_Revolution
         }
@@ -233,7 +234,7 @@ focus_tree = {
     focus = {
         id = PAK_Collectivisation
         icon = GFX_goal_communist_factory
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Land_Reform
         }
@@ -248,7 +249,7 @@ focus_tree = {
     focus = {
         id = PAK_Economic_Planning
         icon = GFX_goal_generic_communist_economy
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Collectivisation
         }
@@ -296,7 +297,7 @@ focus_tree = {
     focus = {
         id = PAK_Secularism
         icon = GFX_goal_generic_peaceful_diplomacy
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Multipartism
         }
@@ -312,7 +313,7 @@ focus_tree = {
     focus = {
         id = PAK_Family_Programs
         icon = GFX_goal_womens_rights
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Secularism
         }
@@ -328,7 +329,7 @@ focus_tree = {
     focus = {
         id = PAK_Cement_Freedom_of_Speech
         icon = GFX_goal_free_trade
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Secularism
         }
@@ -348,7 +349,7 @@ focus_tree = {
     focus = {
         id = PAK_Attract_Foreign_Investement
         icon = GFX_goal_generic_economics_reform
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Cement_Freedom_of_Speech
         }
@@ -375,7 +376,7 @@ focus_tree = {
     focus = {
         id = PAK_Rebalance_the_Military_Budget
         icon = GFX_focus_generic_army_modernizations
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Family_Programs
         }
@@ -394,7 +395,7 @@ focus_tree = {
     focus = {
         id = PAK_International_Diplomcay
         icon = GFX_goal_generic_foreign_diplomacy
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Attract_Foreign_Investement
         }
@@ -472,7 +473,7 @@ focus_tree = {
     focus = {
         id = PAK_Crack_down_on_Socialist_Protests
         icon = GFX_goal_generic_anti_communism
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Fascist_Coup_d_etat
         }
@@ -488,7 +489,7 @@ focus_tree = {
     focus = {
         id = PAK_Assure_Loyalty_in_the_Army
         icon = GFX_goal_small_infantry
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Crack_down_on_Socialist_Protests
         }
@@ -504,7 +505,7 @@ focus_tree = {
     focus = {
         id = PAK_Encourage_Protectionism
         icon = GFX_goal_fascist_factory
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Fascist_Coup_d_etat
         }
@@ -521,7 +522,7 @@ focus_tree = {
     focus = {
         id = PAK_Militarism
         icon = GFX_goal_generic_multinational_army
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Encourage_Protectionism
         }
@@ -537,7 +538,7 @@ focus_tree = {
     focus = {
         id = PAK_Ally_the_High_Command
         icon = GFX_goal_generic_desert_warfare
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Allah_and_State
         }
@@ -553,7 +554,7 @@ focus_tree = {
     focus = {
         id = PAK_War_Propaganda
         icon = GFX_goal_generic_control_the_radio
-        cost = 8
+        cost = 10
 		
         prerequisite = {
             focus = PAK_Ally_the_High_Command
@@ -573,7 +574,7 @@ focus_tree = {
     focus = {
         id = PAK_Muslim_Diplomacy
         icon = GFX_goal_PAL_figure_of_islamism
-        cost = 8
+        cost = 10
 	available = {
 		is_in_faction = no
 	}
@@ -652,7 +653,20 @@ focus_tree = {
 					NOT = { is_in_faction = yes }
 					is_subject = no
 				}
-				create_faction = "Pan Muslim Pact"
+				IF = {
+					limit = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					create_faction_from_template = {
+						template = faction_template_PER_islamic_faction
+						name = pan_muslim_pact
+					}
+					add_faction_initiative = 1
+				}
+				ELSE = {
+					create_faction = pan_muslim_pact
+				}
+				
 				every_country = {
 					limit = {
 						OR = {
@@ -693,7 +707,7 @@ focus_tree = {
     focus = {
         id = PAK_Centralise_Power
         icon = GFX_goal_generic_political
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Increase_Police_Budget
         }
@@ -708,7 +722,7 @@ focus_tree = {
    focus = {
         id = PAK_Our_Own_Path
         icon = GFX_focus_AFG_pakistan_cold_war
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Militarism
             focus = PAK_A_Federal_Pakistan
@@ -732,7 +746,20 @@ focus_tree = {
 				limit = {
 					has_government = communism
 				}
-				create_faction = "Pan Asian People's Alliance"
+				IF = {
+					limit = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					create_faction_from_template = {
+						template = faction_template_world_revolution
+						name = pan_asian_peoples_alliance
+					}
+					add_faction_initiative = 1
+				}
+				ELSE = {
+					create_faction = pan_asian_peoples_alliance
+				}
+
 				every_country = {
 					limit = {
 						OR = {
@@ -763,7 +790,20 @@ focus_tree = {
 				limit = {
 					has_government = fascism
 				}
-				create_faction = "Neo Mughal Empire"
+				IF = {
+					limit = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					create_faction_from_template = {
+						template = faction_template_asian_dominance
+						name = neo_mughal_empire
+					}
+					add_faction_initiative = 1
+				}
+				ELSE = {
+					create_faction = neo_mughal_empire
+				}
+
 				every_country = {
 					limit = {
 						OR = {
@@ -797,7 +837,7 @@ focus_tree = {
     focus = {
         id = PAK_Increase_Police_Budget
         icon = GFX_goal_generic_seperation
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Assure_Loyalty_in_the_Army
         }
@@ -815,7 +855,7 @@ focus_tree = {
     focus = {
         id = PAK_Align_Japan
         icon = GFX_goal_JAP_defence
-        cost = 8
+        cost = 10
 		available = {
 			is_in_faction = no
 			OR = {
@@ -858,7 +898,7 @@ focus_tree = {
     focus = {
         id = PAK_The_Graveyard_of_Empires
         icon = GFX_goal_generic_attack_afghanistan
-        cost = 8
+        cost = 10
 		available = {
 			NOT = { is_in_faction_with = AFG }
 			surrender_progress < 0.1
@@ -905,7 +945,7 @@ focus_tree = {
 				}
 			}	
 		}
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_The_Graveyard_of_Empires
         }
@@ -923,7 +963,7 @@ focus_tree = {
     focus = {
         id = PAK_Into_India
         icon = GFX_focus_RAJ_british_investors
-        cost = 8
+        cost = 10
 		 ai_will_do = { factor = 1 }
 		available = {
 			NOT = { is_in_faction_with = RAJ }
@@ -959,7 +999,7 @@ focus_tree = {
     focus = {
         id = PAK_Into_the_Steppes
         icon = GFX_focus_generic_manpower
-        cost = 8
+        cost = 10
 		allow_branch = {
             OR = {
                 has_game_rule = {
@@ -1036,7 +1076,7 @@ focus_tree = {
     focus = {
         id = PAK_Economic_Cooperation
         icon = GFX_goal_generic_road
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Align_the_Soviet_Union
 			focus = PAK_Align_Japan
@@ -1106,7 +1146,7 @@ focus_tree = {
     focus = {
         id = PAK_Rely_on_the_Trade_Unions
         icon = GFX_focus_eng_concessions_to_the_trade_unions
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Seize_Royal_Assets
         }
@@ -1124,7 +1164,7 @@ focus_tree = {
     focus = {
         id = PAK_Seize_Royal_Assets
         icon = GFX_goal_generic_state_economy
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Unite_the_Proletariat
         }
@@ -1162,7 +1202,7 @@ focus_tree = {
     focus = {
         id = PAK_Workers_Culture
         icon = GFX_focus_por_workers_of_iberia
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Rely_on_the_Trade_Unions
         }
@@ -1177,7 +1217,7 @@ focus_tree = {
     focus = {
         id = PAK_Align_the_Soviet_Union
         icon = GFX_goal_generic_soviet_assistance
-        cost = 8
+        cost = 10
 		available = {
 			is_in_faction = no
             is_subject = no
@@ -1216,7 +1256,7 @@ focus_tree = {
     focus = {
         id = PAK_Ministry_of_Truth
         icon = GFX_goal_generic_communist_government2
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Economic_Planning
         }
@@ -1234,7 +1274,7 @@ focus_tree = {
     focus = {
         id = PAK_Curb_Extremists_Influence
         icon = GFX_goal_attack_communists
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Attract_Foreign_Investement
         }
@@ -1434,7 +1474,7 @@ focus_tree = {
     focus = {
         id = PAK_Think_Big
         icon = GFX_focus_generic_navy_research_bonus
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Form_the_Navy
         }
@@ -1474,7 +1514,7 @@ focus_tree = {
     focus = {
         id = PAK_Submarine_Support
         icon = GFX_goal_generic_navy_submarine
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Think_Big
         }
@@ -1558,7 +1598,7 @@ focus_tree = {
     focus = {
         id = PAK_Frigate_Based_Navy
         icon = GFX_focus_generic_cruiser2
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Coast_Protection
         }
@@ -1591,7 +1631,7 @@ focus_tree = {
     focus = {
         id = PAK_New_Fighter_Designs
         icon = GFX_goal_zero_blue
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Form_the_Air_Force
         }
@@ -1611,7 +1651,7 @@ focus_tree = {
     focus = {
         id = PAK_Invite_International_Experts
         icon = GFX_goal_generic_foreign_diplomacy
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_New_Fighter_Designs
         }
@@ -1631,7 +1671,7 @@ focus_tree = {
     focus = {
         id = PAK_Airbase_Expansion
         icon = GFX_goal_polish_military_aviation_exports
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Form_the_Air_Force
         }
@@ -1659,7 +1699,7 @@ focus_tree = {
     focus = {
         id = PAK_Ground_To_Air_Facilities
         icon = GFX_goal_airplane_hunt
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Airbase_Expansion
         }
@@ -1694,7 +1734,7 @@ focus_tree = {
     focus = {
         id = PAK_New_Artillery_Foundries
         icon = GFX_goal_generic_army_artillery2
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Reform_the_Army
         }
@@ -1715,7 +1755,7 @@ focus_tree = {
     focus = {
         id = PAK_Foreign_Equipment
         icon = GFX_focus_generic_license_production
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_New_Artillery_Foundries
         }
@@ -1733,7 +1773,7 @@ focus_tree = {
     focus = {
         id = PAK_Local_Arms_Developement
         icon = GFX_goal_generic_production
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_New_Artillery_Foundries
         }
@@ -1758,7 +1798,7 @@ focus_tree = {
     focus = {
         id = PAK_Central_Planning_Commision
         icon = GFX_goal_generic_position_armies
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Reform_the_Army
         }
@@ -1773,7 +1813,7 @@ focus_tree = {
     focus = {
         id = PAK_Fall_back_on_the_Great_War
         icon = GFX_goal_generic_army
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Central_Planning_Commision
         }
@@ -1793,7 +1833,7 @@ focus_tree = {
     focus = {
         id = PAK_Marines
         icon = GFX_goal_generic_amphibious_assault
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Frigate_Based_Navy
         }
@@ -1813,7 +1853,7 @@ focus_tree = {
     focus = {
         id = PAK_Naval_Bombers
         icon = GFX_goal_generic_air_fighter
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Invite_International_Experts
         }
@@ -1836,7 +1876,7 @@ focus_tree = {
     focus = {
         id = PAK_Radically_Different_Tactics
         icon = GFX_goal_generic_small_arms
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Central_Planning_Commision
         }
@@ -1856,7 +1896,7 @@ focus_tree = {
     focus = {
         id = PAK_Dicipline_Training
         icon = GFX_goal_control_army
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Radically_Different_Tactics
             focus = PAK_Fall_back_on_the_Great_War
@@ -1874,7 +1914,7 @@ focus_tree = {
     focus = {
         id = PAK_Bauxite_Mines
         icon = GFX_focus_generic_aluminum
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Ground_To_Air_Facilities
         }
@@ -1899,7 +1939,7 @@ focus_tree = {
     focus = {
         id = PAK_Steel_Mines
         icon = GFX_goal_BEL_steel
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Local_Arms_Developement
             focus = PAK_Foreign_Equipment
@@ -1922,7 +1962,7 @@ focus_tree = {
     focus = {
         id = PAK_Infrastructure_Along_the_Indus
         icon = GFX_goal_war_infrastructure
-        cost = 8
+        cost = 10
         x = 25
         y = 0
 		ai_will_do = { factor = 30 }
@@ -1944,7 +1984,7 @@ focus_tree = {
     focus = {
         id = PAK_Education_Reform
         icon = GFX_focus_AFG_education_reform
-        cost = 8
+        cost = 10
         x = 27
         y = 1
 		prerequisite = {
@@ -1963,7 +2003,7 @@ focus_tree = {
     focus = {
         id = PAK_Construction_Research
         icon = GFX_goal_generic_construct_infrastructure
-        cost = 8
+        cost = 10
 		available = {
 			has_completed_focus = PAK_Education_Reform
 		}
@@ -1986,7 +2026,7 @@ focus_tree = {
     focus = {
         id = PAK_Expand_the_Cities
         icon = GFX_goal_generic_citizens
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Infrastructure_Along_the_Indus
         }
@@ -2002,7 +2042,7 @@ focus_tree = {
     focus = {
         id = PAK_Expand_Industrial_Complexes
         icon = GFX_goal_generic_construct_civ_factory
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Expand_the_Cities
         }
@@ -2048,7 +2088,7 @@ focus_tree = {
     focus = {
         id = PAK_Expand_Heavy_Industries
         icon = GFX_goal_generic_construct_mil_factory
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Expand_the_Cities
         }
@@ -2100,7 +2140,7 @@ focus_tree = {
     focus = {
         id = PAK_Industrial_Research
         icon = GFX_focus_generic_industry_3
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Expand_Heavy_Industries
             focus = PAK_Expand_Industrial_Complexes
@@ -2125,7 +2165,7 @@ focus_tree = {
     focus = {
         id = PAK_Production_Research
         icon = GFX_goal_generic_production
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Expand_Heavy_Industries
         }
@@ -2152,7 +2192,7 @@ focus_tree = {
     focus = {
         id = PAK_Electrical_Research
         icon = GFX_goal_generic_scientific_exchange
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Education_Reform
         }
@@ -2172,7 +2212,7 @@ focus_tree = {
     focus = {
         id = PAK_Computer_Research
         icon = GFX_goal_generic_intelligence_exchange
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Electrical_Research
         }
@@ -2192,7 +2232,7 @@ focus_tree = {
     focus = {
         id = PAK_Further_Expand_Industrial_Complexes
         icon = GFX_goal_generic_construct_civ_factory
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Industrial_Research
         }
@@ -2246,7 +2286,7 @@ focus_tree = {
     focus = {
         id = PAK_Further_Expand_Heavy_Industries
         icon = GFX_goal_generic_construct_mil_factory
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Expand_Heavy_Industries
         }
@@ -2302,7 +2342,7 @@ focus_tree = {
     focus = {
         id = PAK_Build_Refineries
         icon = GFX_goal_generic_oil_refinery
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Construction_Research
         }
@@ -2341,7 +2381,7 @@ focus_tree = {
     focus = {
         id = PAK_Build_Radar_Stations
         icon = GFX_goal_generic_radar2
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Radio_Research
         }
@@ -2378,7 +2418,7 @@ focus_tree = {
     focus = {
         id = PAK_Radio_Research
         icon = GFX_goal_generic_radar
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = PAK_Electrical_Research
         }
@@ -2405,7 +2445,7 @@ focus_tree = {
     focus = {
         id = PAK_Nuclear_Research
         icon = GFX_goal_generic_nuclear_energy
-        cost = 8
+        cost = 10
 		ai_will_do = { 
 			factor = 1 
 			modifier = {

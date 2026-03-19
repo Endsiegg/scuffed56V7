@@ -204,7 +204,7 @@ country = {
 		picture = ROM_preserve_greater_romania
 		
 		modifier = {
-			surrender_limit = 0.15
+			surrender_limit = 0.1
 		}
 	}
 	
@@ -347,8 +347,7 @@ country = {
 		picture = HUN_treaty_of_triannon
 
 		modifier = {
-			production_speed_infrastructure_factor = 0.1	
-			production_speed_buildings_factor = 0.1	
+			production_speed_infrastructure_factor = 0.1
 			production_speed_rail_way_factor = 0.1
 			line_change_production_efficiency_factor = 0.1
 		}
@@ -525,7 +524,7 @@ country = {
 		picture = SeKOR
 
 		modifier = {
-			experience_gain_army = 0.1
+			experience_gain_army = 0.03
 			conversion_cost_civ_to_mil_factor= -0.1
 		}
 	}
@@ -1149,7 +1148,7 @@ country = {
 		picture = POL_Colonels_Regime
 			
 		modifier = {
-			max_planning = 0.10
+			max_planning = 0.05
 			high_command_cost_factor = -0.20
 			land_doctrine_cost_factor = -0.1
 		}
@@ -1344,12 +1343,12 @@ country = {
 		picture = generic_foreign_capital
 	
 		modifier = {
-			production_speed_industrial_complex_factor = 0.25
+			production_speed_industrial_complex_factor = 0.15
 			production_speed_dockyard_factor = 0.15
 			production_speed_synthetic_refinery_factor = 0.15
 			production_speed_fuel_silo_factor = 0.15
-			production_speed_arms_factory_factor = -0.15
-			production_factory_max_efficiency_factor = -0.05
+			production_speed_arms_factory_factor = -0.05
+			production_factory_max_efficiency_factor = -0.1
 		}
 	}
 	
@@ -1429,7 +1428,7 @@ country = {
 			
 		removal_cost = -1
 			
-		picture = POL_Workers_Brigades
+		picture = workers_brigades
 
 		modifier = {
 			industry_repair_factor = 0.25
@@ -1471,7 +1470,7 @@ country = {
 			always = yes
 		}
 		
-		picture = POL_The_Great_Depression
+		picture = great_depression
 		
 		removal_cost = -1
 
@@ -1499,7 +1498,7 @@ country = {
 			always = yes
 		}
 		
-		picture = POL_The_Great_Depression
+		picture = great_depression
 		
 		removal_cost = -1
 
@@ -1591,7 +1590,7 @@ country = {
 			always = yes
 		}
 		
-		picture = POL_Rural_Unemployment
+		picture = generic_rural_unemployment
 		
 		removal_cost = -1
 
@@ -1930,7 +1929,6 @@ country = {
 		
 		modifier = {
 			stability_factor = -0.15
-			power_balance_weekly = -0.015
 		}
 	}
 	
@@ -1946,7 +1944,6 @@ country = {
 		
 		modifier = {
 			war_support_factor = -0.15
-			power_balance_weekly = 0.015
 		}
 	}
 	
@@ -2519,7 +2516,7 @@ country = {
 			}
 			
 			available = {
-				has_completed_focus = POL_Promote_The_Chemical_Industry #this one got ported with NSB
+				has_completed_focus = POL_promote_chemical_industry #this one got ported with NSB
 				NOT = {
 					has_idea = POL_Debica_SA
 				}

@@ -3,6 +3,7 @@
 #« Colonies Agricoles pour Relégués Dangereux » (C.A.R.D.). suppress democrats/communists
 #Joseph Diangienda Kuntima fils de Simon kimbangu
 #add seek new export markets increase trade relations with major in the same faction.
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = congo_focus_r56
 	
@@ -27,7 +28,7 @@ focus_tree = {
 		icon = GFX_goal_COG_force_publique
 		x = 40
 		y = 0
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 3 
 		}
@@ -58,7 +59,7 @@ focus_tree = {
 		prerequisite = { focus = COG_reform_the_force_publique }
 		x = 35
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = {
 			factor = 3
 		}
@@ -74,7 +75,7 @@ focus_tree = {
 			if = { 
 				limit = {
 					COG = {  
-						is_puppet_of = BEL  
+						is_subject_of = BEL  
 					} 
 				}
 				BEL = {country_event = belgium.136}
@@ -82,7 +83,7 @@ focus_tree = {
 			if = { 
 				limit = {
 					COG = {  
-						is_puppet_of = FLA  
+						is_subject_of = FLA  
 					} 
 				}
 				FLA = {country_event = belgium.136}
@@ -98,7 +99,7 @@ focus_tree = {
 		bypass = { has_tech = motorised_infantry }
 		x = 33
 		y = 3
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
 			factor = 2 
 		}
@@ -120,7 +121,7 @@ focus_tree = {
 		prerequisite = { focus = COG_reform_the_force_publique }
 		x = 37
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 3 
 		}
@@ -144,7 +145,7 @@ focus_tree = {
 		prerequisite = { focus = COG_modernize_police_formation }
 		x = 38
 		y = 2
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 2 
 		}
@@ -171,7 +172,7 @@ focus_tree = {
         available = {
 			controls_state = 295
         }
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 2 
 		}
@@ -215,7 +216,7 @@ focus_tree = {
 			controls_state = 718
 			controls_state = 295
         }
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -256,7 +257,7 @@ focus_tree = {
 		prerequisite = { focus = COG_get_rid_of_obsolete_rifles }
 		x = 36
 		y = 2
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 2 
 		}
@@ -287,7 +288,7 @@ focus_tree = {
 		prerequisite = { focus = COG_continue_the_armament_modernization_program}
 		x = 37
 		y = 4
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 2 
 		}
@@ -312,6 +313,7 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
+					name = special_forces_bonus
 					cost_reduction = 0.5
 					uses = 2
 					category = special_forces_doctrine
@@ -337,7 +339,7 @@ focus_tree = {
 	focus = {
 		id = COG_jungle_training
 		icon = GFX_goal_generic_jungle_warfare
-		cost = 8 
+		cost = 10 
 		x = 36
 		y = 5
 		prerequisite = { focus = COG_special_forces }
@@ -366,7 +368,7 @@ focus_tree = {
 		prerequisite = { focus = COG_engineers_corps }
 		x = 35
 		y = 3
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 2
 		}
@@ -391,7 +393,7 @@ focus_tree = {
         prerequisite = { focus = COG_motorization_effort }
         x = 33
         y = 4
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -418,7 +420,7 @@ focus_tree = {
 		prerequisite = { focus = COG_get_rid_of_obsolete_rifles }
         x = 34
         y = 2
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 2
 		}
@@ -439,7 +441,7 @@ focus_tree = {
 		prerequisite = { focus = COG_special_forces }
 		x = 38
 		y = 5
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -464,7 +466,7 @@ focus_tree = {
 		prerequisite = { focus = COG_continue_the_armament_modernization_program }
 		x = 35
 		y = 4
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -490,7 +492,7 @@ focus_tree = {
 		prerequisite = { focus = COG_finalize_the_equipment_modernization_program }
 		x = 34
 		y = 5
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -516,7 +518,7 @@ focus_tree = {
 		prerequisite = { focus = COG_reform_the_force_publique }
 		x = 42
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -605,7 +607,7 @@ focus_tree = {
 		mutually_exclusive = { focus = COG_bomber_focus }
 		x = 41
 		y = 2
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -649,7 +651,7 @@ focus_tree = {
 		mutually_exclusive = { focus = COG_fighter_focus }
 		x = 43
 		y = 2
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 0.5 
 		}
@@ -694,7 +696,7 @@ focus_tree = {
             }		
         x = 42
         y = 4
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 2
 		}
@@ -722,7 +724,7 @@ focus_tree = {
 		prerequisite = { focus = COG_bomber_focus focus = COG_fighter_focus }
 		x = 42
 		y = 3
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -766,7 +768,7 @@ focus_tree = {
 		prerequisite = { focus = COG_CAS_effort focus = COG_NAV_effort }
 		x = 42
 		y = 6
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -857,7 +859,7 @@ focus_tree = {
 		prerequisite = { focus = COG_radar_system }
 		x = 41
 		y = 5
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -900,7 +902,7 @@ focus_tree = {
 		prerequisite = { focus = COG_aviation_effort_2 }
 		x = 42
 		y = 7
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 0.25
@@ -935,7 +937,7 @@ focus_tree = {
 		prerequisite = { focus = COG_radar_system }
 		x = 43
 		y = 5
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -973,7 +975,7 @@ focus_tree = {
 		prerequisite = { focus = COG_reform_the_force_publique }
 		x = 46
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -1024,7 +1026,7 @@ focus_tree = {
 		prerequisite = { focus = COG_naval_effort }		
         x = 45
         y = 2
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -1062,7 +1064,7 @@ focus_tree = {
         icon = GFX_goal_generic_build_navy
         x = 45
         y = 3
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -1085,7 +1087,7 @@ focus_tree = {
 		prerequisite = { focus = COG_cruiser_effort }
 		x = 47
 		y = 3
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1119,7 +1121,7 @@ focus_tree = {
 		prerequisite = { focus = COG_naval_effort}
 		x = 47
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1171,7 +1173,7 @@ focus_tree = {
 		prerequisite = { focus = COG_cruiser_effort }
 		x = 48
 		y = 4
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1204,7 +1206,7 @@ focus_tree = {
 		prerequisite = { focus = COG_cruiser_effort }
 		x = 46
 		y = 4
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1241,7 +1243,7 @@ focus_tree = {
 		prerequisite = { focus = COG_large_navy }
 		x = 47
 		y = 5
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1378,7 +1380,7 @@ focus_tree = {
     focus = {
         id = COG_congo_rubber
         icon = GFX_goal_COG_Rubber_Farming
-        cost = 8 
+        cost = 10 
         x = -6
         y = 1
 		relative_position_id = COG_Support_the_congo_railways
@@ -1440,7 +1442,7 @@ focus_tree = {
     focus = {
         id = COG_congo_rubber2
         icon = GFX_goal_COG_Rubber_Farming
-        cost = 8 
+        cost = 10 
         x = 0
         y = 1
 		relative_position_id = COG_congo_rubber
@@ -1504,7 +1506,7 @@ focus_tree = {
     focus = {
         id = COG_congo_rubber3
         icon = GFX_goal_COG_Rubber_Farming
-        cost = 8 
+        cost = 10 
         x = 0
         y = 1
 		relative_position_id = COG_congo_rubber2
@@ -1554,7 +1556,7 @@ focus_tree = {
     focus = {
         id = COG_congo_rubber4
         icon = GFX_focus_generic_rubber
-        cost = 8
+        cost = 10
         x = 0
         y = 1
 		relative_position_id = COG_congo_rubber3
@@ -1606,7 +1608,7 @@ focus_tree = {
     focus = {
         id = COG_support_tungsten_mining #Tungsten minig truly took off in 1940's, presence in Katanga and in the region around Kalima, province of Maliema. Also presence later in Rwanda-Urundi and souterhn Uganda
         icon = GFX_goal_tungsten
-        cost = 8
+        cost = 10
         x = -4
         y = 1
 		relative_position_id = COG_Support_the_congo_railways
@@ -1664,7 +1666,7 @@ focus_tree = {
     focus = {
         id = COG_support_tungsten_mining2
         icon = GFX_goal_tungsten
-        cost = 8 
+        cost = 10 
         x = 0
         y = 1
 		relative_position_id = COG_support_tungsten_mining
@@ -1722,7 +1724,7 @@ focus_tree = {
     focus = {
         id = COG_support_tungsten_mining3
         icon = GFX_goal_tungsten
-        cost = 8
+        cost = 10
         x = 0				
         y = 1
 		relative_position_id = COG_support_tungsten_mining2
@@ -1780,7 +1782,7 @@ focus_tree = {
     focus = {
         id = COG_support_tungsten_mining4
         icon = GFX_focus_generic_tungsten
-        cost = 8
+        cost = 10
         x = 0
         y = 1
 		relative_position_id = COG_support_tungsten_mining3
@@ -1838,7 +1840,7 @@ focus_tree = {
         icon = GFX_goal_generic_construct_naval_dockyard
         x = 11
         y = 1
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 3
 		}
@@ -1887,7 +1889,7 @@ focus_tree = {
 		relative_position_id = COG_transform_the_congo
         x = 4
         y = 1
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 3 
 		}
@@ -1947,7 +1949,7 @@ focus_tree = {
 		relative_position_id = COG_establish_radio_stations
 		x = -1
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 10
 		}
@@ -1980,7 +1982,7 @@ focus_tree = {
 		continue_if_invalid = yes
 		x = 0
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 10
 		}
@@ -1995,12 +1997,12 @@ focus_tree = {
 
     focus = {
         id = COG_further_nuclear_research
-        icon = GFX_focus_wonderweapons
+        icon = GFX_focus_generic_uranium_extraction
 		prerequisite = { focus = COG_extra_tech_slot }
 		relative_position_id = COG_extra_tech_slot
         x = 2
         y = 1
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 3 
 		}
@@ -2033,7 +2035,7 @@ focus_tree = {
 			if = { 
 				limit = {
 					COG = {  
-						is_puppet_of = BEL  
+						is_subject_of = BEL  
 						} 
 				}
 				BEL ={
@@ -2069,7 +2071,7 @@ focus_tree = {
 			if = { 
 				limit = {
 					COG = {  
-						is_puppet_of = FLA  
+						is_subject_of = FLA  
 						} 
 				}
 				FLA ={
@@ -2142,7 +2144,7 @@ focus_tree = {
     focus = {
         id = COG_support_copper_mining
         icon = GFX_goal_BEL_copper
-        cost = 8
+        cost = 10
         x = -2
         y = 1
 		relative_position_id = COG_Support_the_congo_railways
@@ -2196,7 +2198,7 @@ focus_tree = {
 		relative_position_id = COG_support_copper_mining
         x = 0
         y = 1
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 4 
 		}
@@ -2246,7 +2248,7 @@ focus_tree = {
 		relative_position_id = COG_support_copper_mining2
         x = 0
         y = 1
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 3
 		}
@@ -2283,7 +2285,7 @@ focus_tree = {
 		relative_position_id = COG_support_copper_mining3
         x = 0
         y = 1
-        cost = 8
+        cost = 10
         prerequisite = { focus = COG_support_copper_mining3 }
         available = {
             has_tech = excavation5
@@ -2346,7 +2348,7 @@ focus_tree = {
 		relative_position_id = COG_transform_the_congo
 		x = 0
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 5
 		}
@@ -2418,7 +2420,7 @@ focus_tree = {
 		relative_position_id = COG_export_to_new_markets
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
         prerequisite = {focus = COG_export_to_new_markets }
 		available = {
 			has_war = yes
@@ -2446,7 +2448,7 @@ focus_tree = {
 		relative_position_id = COG_war_mining_production_directorate
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
         prerequisite = {focus = COG_war_mining_production_directorate }
 
 		ai_will_do = {
@@ -2487,7 +2489,7 @@ focus_tree = {
 		prerequisite = {focus = COG_war_mining_production_directorate }
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
      
 
 		ai_will_do = {
@@ -2524,7 +2526,7 @@ focus_tree = {
 		relative_position_id = COG_industrial_effort
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -2596,7 +2598,7 @@ focus_tree = {
 		relative_position_id = COG_production_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -2666,7 +2668,7 @@ focus_tree = {
 		relative_position_id = COG_industrial_effort
         x = -1
         y = 1
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 2 
 		}
@@ -2727,7 +2729,7 @@ focus_tree = {
 		relative_position_id = COG_transform_the_congo2
         x = 0
         y = 1
-        cost = 8 
+        cost = 10 
         prerequisite = {focus = COG_transform_the_congo2 }
         available = {
 			NOT = {
@@ -2805,7 +2807,7 @@ focus_tree = {
 		icon = GFX_goal_BEL_belgium_first
 		x = 20
 		y = 0
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
 			factor = 10.5
 			modifier = {
@@ -2829,7 +2831,7 @@ focus_tree = {
 		icon = GFX_focus_COG_alliance_BEL
 		x = 19
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 3
 		}
@@ -2853,7 +2855,7 @@ focus_tree = {
 		prerequisite = { focus = COG_reinforce_colonial_government }
 		x = 17
 		y = 2
-		cost = 8 
+		cost = 10 
 
 		ai_will_do = {
 			factor = 10
@@ -2864,7 +2866,7 @@ focus_tree = {
 		completion_reward = {
 			if = { 
 				limit = {
-					is_puppet_of = BEL
+					is_subject_of = BEL
 					}
 				COG = {
 					modify_tech_sharing_bonus = {
@@ -2887,7 +2889,7 @@ focus_tree = {
 		relative_position_id = COG_increased_research_collaboration
 		x = 0
 		y = 3
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -2963,7 +2965,7 @@ focus_tree = {
 					}
 				}
 				COG = {
-					is_puppet = no
+					is_subject = no
 					NOT = {
 						has_completed_focus = COG_empower_congolese
 					}
@@ -3015,7 +3017,7 @@ focus_tree = {
 		relative_position_id = COG_colonial_defense_associations
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
  		ai_will_do = { 
  			factor = 4
 		}
@@ -3037,7 +3039,7 @@ focus_tree = {
 		relative_position_id = COG_commit_to_the_war
 		x = -1
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 2
 		}
@@ -3072,7 +3074,7 @@ focus_tree = {
 		relative_position_id = COG_colonial_defense_associations
 		x = 1
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3105,7 +3107,7 @@ focus_tree = {
 		relative_position_id = COG_commit_to_the_war
 		x = 1
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3133,7 +3135,7 @@ focus_tree = {
 		relative_position_id = COG_commit_to_the_war
 		x = 3
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3162,7 +3164,7 @@ focus_tree = {
 		icon = GFX_goal_tfv_sever_ties_with_uk
 		x = 27
 		y = 0
-		cost = 8 
+		cost = 10 
  		
 		available = {
 			is_subject = yes
@@ -3207,7 +3209,7 @@ focus_tree = {
 	focus = {
 		id = COG_empower_congolese
 		icon = GFX_focus_propaganda_soviet
-		cost = 8 
+		cost = 10 
 		x = -1
 		y = 1
 		relative_position_id = COG_colonial_autonomy
@@ -3274,7 +3276,7 @@ focus_tree = {
 	focus = {
 		id = COG_burn_royal_portraits
 		icon = GFX_goal_tfv_burn_the_royal_portraits
-		cost = 8
+		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = COG_empower_congolese
@@ -3312,7 +3314,7 @@ focus_tree = {
 	focus = {
 		id = COG_affinity_fascism
 		icon = GFX_goal_support_fascism
-		cost = 8 
+		cost = 10 
 		x = 1
 		y = 1
 		relative_position_id = COG_colonial_autonomy
@@ -3352,7 +3354,7 @@ focus_tree = {
 		icon = GFX_goal_tfv_saf_support_german_coup
 		x = 28
 		y = 2
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 9.9
 		}
@@ -3380,7 +3382,7 @@ focus_tree = {
 	focus = {
 		id = COG_independence
 		icon = GFX_focus_COG_overthrow_pierre_ryckmans_government
-		cost = 8 
+		cost = 10 
 		x = -1
 		y = 1
 		relative_position_id = COG_affinity_new_order
@@ -3443,7 +3445,7 @@ focus_tree = {
 			#	if = {
 			#		limit = {
 			#			ROOT = {
-			#				is_puppet = yes
+			#				is_subject = yes
 			#			}
 			#		}
 			#		end_puppet = BEL
@@ -3511,7 +3513,7 @@ focus_tree = {
 		icon = GFX_goal_generic_karl_marx
 		x = 25
 		y = 5
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3554,7 +3556,7 @@ focus_tree = {
 	 	}
 		x = 22
 		y = 6
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3571,7 +3573,7 @@ focus_tree = {
 		icon = GFX_goal_african_diplomacy
 		mutually_exclusive = { focus = COG_join_comintern }
 	 	available = {
-	 		is_puppet = no
+	 		is_subject = no
 			has_government = communism
 			NOT = {
 				has_country_leader = { ruling_only = yes character = COG_albert_decoster }
@@ -3580,7 +3582,7 @@ focus_tree = {
 	 	prerequisite = { focus = COG_doctrinal_marxism }
 		x = 20
 		y = 6
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1
 				modifier = {
@@ -3613,7 +3615,7 @@ focus_tree = {
 		prerequisite = { focus = COG_african_diplomacy }
 		x = 20
 		y = 8
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3639,7 +3641,7 @@ focus_tree = {
 		prerequisite = { focus = COG_african_diplomacy }
 		x = 19
 		y = 7
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3664,7 +3666,7 @@ focus_tree = {
 		icon = GFX_focus_generic_socialist_science
 		x = 24
 		y = 6
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3683,7 +3685,7 @@ focus_tree = {
 	focus = {
 		id = COG_build_revolution
 		icon = GFX_goal_generic_soviet_construction
-		cost = 8 
+		cost = 10 
 		x = 0
 		y = 1
 		relative_position_id = COG_masses_education
@@ -3721,7 +3723,7 @@ focus_tree = {
 		relative_position_id = COG_masses_education
 		x = -3
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3778,7 +3780,7 @@ focus_tree = {
 		icon = GFX_goal_COG_communist_army
 		x = 26
 		y = 6
-		cost = 8 
+		cost = 10 
 		prerequisite = {focus = COG_doctrinal_marxism }
 		available = {
 			has_government = communism
@@ -3807,7 +3809,7 @@ focus_tree = {
 	focus = {
 		id = COG_political_commissars
 		icon = GFX_goal_generic_war_with_comintern
-		cost = 8 
+		cost = 10 
 		x = 0
 		y = 1
 		relative_position_id = COG_communist_army
@@ -3833,7 +3835,7 @@ focus_tree = {
 		icon = GFX_goal_COG_congolese_national_army
 		x = 29
 		y = 5
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 6 
 		}
@@ -3866,7 +3868,7 @@ focus_tree = {
 		icon = GFX_goal_generic_more_territorial_claims
 		x = 32
 		y = 6
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3887,7 +3889,7 @@ focus_tree = {
 		relative_position_id = COG_mobilize_colonial_manpower
         x = 0
         y = 1
-        cost = 8 
+        cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}
@@ -3926,7 +3928,7 @@ focus_tree = {
 		icon = GFX_goal_generic_the_axis
 		mutually_exclusive = { focus = COG_join_italy }
 	 	available = {
-	 		is_puppet = no
+	 		is_subject = no
 	 		is_in_faction = no
 	 		has_government = fascism
 	 		has_war = no
@@ -3953,7 +3955,7 @@ focus_tree = {
 	 	}
 		x = 30
 		y = 6
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
 			factor = 1 
 			 modifier = {
@@ -4001,7 +4003,7 @@ focus_tree = {
 		icon = GFX_goal_generic_befriend_italy
 		mutually_exclusive = { focus = COG_join_axis }
 	 	available = {
-	 		is_puppet = no
+	 		is_subject = no
 	 		is_in_faction = no
 	 		has_government = fascism
 	 		has_war = no
@@ -4024,7 +4026,7 @@ focus_tree = {
 	 	}
 		x = 28
 		y = 6
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 0.1
 		}
@@ -4046,7 +4048,7 @@ focus_tree = {
 		x = 30
 		y = 7
 
-		cost = 8 
+		cost = 10 
 
 
 		ai_will_do = {
@@ -4071,7 +4073,7 @@ focus_tree = {
 		relative_position_id = COG_join_italy
 		x = 0
 		y = 1
-		cost = 8 
+		cost = 10 
 
 		ai_will_do = {
 			factor = 4
@@ -4094,7 +4096,7 @@ focus_tree = {
 		relative_position_id = COG_italian_scientists
 		x = 1
 		y = 1
-		cost = 8 
+		cost = 10 
  		ai_will_do = { 
  			factor = 1 
 		}

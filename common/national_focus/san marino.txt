@@ -6,6 +6,7 @@
 ### search_filters = {FOCUS_FILTER_MANPOWER}
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = san_marino_focus
 	
@@ -69,7 +70,11 @@ focus_tree = {
 		x = -2
 		y = 0
 		relative_position_id = SAN_militarize_the_police_force
-		cost = 8
+		cost = 10
+
+		available = {
+			has_full_control_of_state = 1015
+		}
 
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_EQUIPMENT}
 
@@ -95,7 +100,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SAN_build_san_marino_city_airport
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH}
 
@@ -129,7 +134,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SAN_the_adjective_air_fleet
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -163,7 +168,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SAN_militarize_the_police_force
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -183,7 +188,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SAN_weaponary_modernization
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -221,7 +226,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SAN_weaponary_modernization
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -246,7 +251,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SAN_adapt_to_the_alpine_mountains
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -267,7 +272,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SAN_adapt_to_the_alpine_mountains
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH}
 
@@ -289,7 +294,11 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SAN_the_san_marino_industrial_fund
-		cost = 8
+		cost = 10
+
+		available = {
+			threat > 0.15
+		}
 
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY}
 
@@ -306,7 +315,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SAN_san_marino_military_insituite
-		cost = 8
+		cost = 10
+
+		available = {
+			has_full_control_of_state = 1015
+		}
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -322,7 +335,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SAN_san_marino_military_insituite
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -353,7 +366,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SAN_encourage_local_arms_production
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY}
 
@@ -381,7 +394,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SAN_the_grand_university_of_san_marino_city
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -401,7 +414,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SAN_the_grand_university_of_san_marino_city
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -421,7 +434,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SAN_introduce_motorization_technologies
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -443,7 +456,7 @@ focus_tree = {
 		x = -3
 		y = 0
 		relative_position_id = SAN_build_san_marino_city_airport
-		cost = 8
+		cost = 10
 		available = {
 			any_owned_state = {
 				is_coastal = yes
@@ -485,7 +498,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SAN_develop_our_dockyards
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_NAVY_XP}
 
@@ -502,7 +515,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SAN_develop_our_dockyards
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -529,7 +542,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SAN_develop_indigenous_models
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 

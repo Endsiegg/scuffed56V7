@@ -6,6 +6,7 @@
 ### search_filters = {FOCUS_FILTER_MANPOWER}
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = horn_of_africa_tree
 	
@@ -46,7 +47,7 @@ focus_tree = {
 		x = 3
 		y = 0
 		#relative_position_id = 
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			
@@ -69,7 +70,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = HOA_develop_capitalstate
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = HOA_state_bank_idea
@@ -83,7 +84,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_develop_capitalstate
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -110,7 +111,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_pave_the_roads
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			IF = {
@@ -138,7 +139,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_the_state_bank_of_name
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			unlock_decision_tooltip = ETH_promote_construction_development_in_from
@@ -154,7 +155,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_the_steam_locomotive
-		cost = 8
+		cost = 10
 		available = {
 			IF = {
 				limit = {
@@ -306,7 +307,7 @@ focus_tree = {
 #		x = -1
 #		y = 1
 #		relative_position_id = HOA_the_adjective_regional_development_fund
-#		cost = 8
+#		cost = 10
 #		available = {
 #		}
 #
@@ -328,7 +329,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_the_adjective_regional_development_fund
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -353,7 +354,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = HOA_promote_local_crafts
-		cost = 8
+		cost = 10
 
 		completion_reward = { 
 			random_owned_controlled_state = {
@@ -382,7 +383,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_promote_local_crafts
-		cost = 8
+		cost = 10
 		available = {
 			any_owned_state = {
 				is_coastal = yes
@@ -411,7 +412,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_promote_local_crafts  
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			capital_scope = {
@@ -436,7 +437,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_use_the_natural_harbors
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -456,7 +457,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_use_the_natural_harbors
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			every_owned_state = {
@@ -474,7 +475,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_the_capital_city_airport
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -506,7 +507,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = HOA_a_steamboat_fleet
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = HOA_state_funded_projects_idea
@@ -520,7 +521,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_state-funded_projects
-		cost = 8
+		cost = 10
 		available = {  
 		} 
 
@@ -557,7 +558,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_the_adjective_armed_forces
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			division_template = {
@@ -589,7 +590,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_warrior_tradition
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_units_to_division_template = {
@@ -610,10 +611,19 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_warrior_tradition
-		cost = 8
+		cost = 10
 
 		completion_reward = {
+
 			add_ideas = HOA_every_man_a_warrior_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_technology = {
+				r56_militia_tech = 1	#56
+				popup = no
+			}	
+			
 		}
 	}
 	focus = {
@@ -624,7 +634,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_strengthen_the_irregulars
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = HOA_our_finest_idea
@@ -638,7 +648,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_strengthen_the_irregulars
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			IF = {
@@ -680,7 +690,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_every_man_a_warrior
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_war_support = 0.1
@@ -704,7 +714,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_utilize_our_strengths
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_doctrine_cost_reduction = {
@@ -735,7 +745,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_utilize_our_strengths
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -764,7 +774,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_eyes_on_the_imperialists
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -783,7 +793,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_eyes_on_the_imperialists
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -803,7 +813,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_encourage_local_arms_production
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -822,7 +832,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_metal_beasts
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			IF = {
@@ -873,7 +883,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_the_roars_of_thunder
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_units_to_division_template = {
@@ -895,7 +905,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_develop_indigenous_models
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			division_template = {
@@ -937,7 +947,7 @@ focus_tree = {
 		x = 17
 		y = 0
 		#relative_position_id =
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_political_power = 100
@@ -952,7 +962,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = HOA_the_first_album 
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 		}
@@ -973,7 +983,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = HOA_the_first_album
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -991,7 +1001,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_a_loyal_subject
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 			IF = {
@@ -1042,7 +1052,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_a_loyal_subject
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 		}
@@ -1062,7 +1072,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = HOA_political_stability
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1111,7 +1121,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = HOA_political_stability
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1146,7 +1156,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_the_capital_railroad
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 		}
@@ -1211,7 +1221,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_countryleader
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1232,7 +1242,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_securing_the_adjective_future
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1252,7 +1262,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_securing_the_adjective_future
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1270,7 +1280,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = HOA_countryleader
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1291,7 +1301,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_the_adjective_volunteer_force
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1316,7 +1326,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_the_adjective_volunteer_force
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1333,7 +1343,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_military_cooperation
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1357,7 +1367,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = HOA_improving_the_educational_system
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 		}
@@ -1395,7 +1405,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_improving_the_educational_system
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 		}
@@ -1433,7 +1443,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOA_research_exchange_programmes
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 		}
@@ -1450,7 +1460,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOA_research_exchange_programmes
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 		}
@@ -1470,7 +1480,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = HOA_that_which_is_rightfully_ours
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1516,7 +1526,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_that_which_is_rightfully_ours
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1560,7 +1570,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = HOA_that_which_is_rightfully_ours
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1607,7 +1617,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_a_jagged_alliance
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}
@@ -1624,7 +1634,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_foreign_trained_officials
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 		}
@@ -1641,7 +1651,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_countryadjective_loyalist_advisors
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = yes 
 		}
@@ -1663,7 +1673,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOA_push_for_the_highlands
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 			custom_trigger_tooltip = {
@@ -1700,7 +1710,7 @@ focus_tree = {
 		allow_branch = {
 			has_dlc = "By Blood Alone"
 		}
-		cost = 8
+		cost = 10
 		available = {
 			is_subject = no
 		}

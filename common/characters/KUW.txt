@@ -1,0 +1,35 @@
+
+characters={
+	KUW_ahmad_sabah={
+		name="KUW_ahmad_sabah"
+		portraits={
+			army={
+				large = "gfx/leaders/MISC/portrait_KUW_ahmad_al_sabah.dds"
+				small = GFX_idea_KUW_ahmad_sabah_advisor
+			}
+		}
+		country_leader={
+			ideology=absolute_monarchism
+			expire="1965.1.1"
+			id=-1
+			traits={
+				KUW_the_military_sheikh
+			}			
+		}			
+		field_marshal={
+			traits = { politically_connected cavalry_officer organizer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id=-1
+			visible = {
+				has_country_leader = {
+					ruling_only = yes
+					character = KUW_ahmad_al_sabah
+				}	
+			}
+		}
+	}
+}

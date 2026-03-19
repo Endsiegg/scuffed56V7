@@ -1,27 +1,22 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
-    id = ukraine_focus
-    country = {
-        factor = 0
-        modifier = {
-            add = 30
-            tag = UKR
-			NOT = {
-				has_cosmetic_tag = UKR_reichskommissariat
-			}
-        }
-    }
+	id = ukraine_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 30
+			tag = UKR
+		}
+	}
 	#Pivdenmash operated initially as "plant 586" -> jets and rockets
-    default = no
-#    shared_focus = ABC_establish_a_general_staff	
- #   shared_focus = GEN_Aviation_Effort
-    shared_focus = GEN_Naval_Effort
-#    shared_focus = GEN_begin_industrial_buildup
-    shared_focus = GEN_industrial_boom
-   # shared_focus = GEN_State_Matter
+	default = no
+
+	shared_focus = GEN_Naval_Effort
+	shared_focus = GEN_industrial_boom
+
 	continuous_focus_position = { x = 650 y = 1350 }
 
-
-    focus = {
+	focus = {
 		id = UKR_reborn_through_war
 		icon = GFX_focus_POL_ukrainian_army
 		mutually_exclusive = {
@@ -126,7 +121,7 @@ focus_tree = {
 
 		x = 22
 		y = 1		
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 100
@@ -139,7 +134,7 @@ focus_tree = {
 		available = {
 			if = {
 				limit = {
-					is_puppet = yes
+					is_subject = yes
 				}
 				OR = {
 					has_government = democratic
@@ -152,6 +147,16 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = UKR_stepan_vytvytskyj
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = UKR_antin_hobachevsky
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = UKR_antin_horbaczewski
+			custom_effect_tooltip = CHL_skip_one_line_tt
 			UKR_vlodoymyr_vynnychenko = {
 				add_country_leader_trait = savvy_politician
 			}
@@ -181,7 +186,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_elect_the_verkhovna_rada
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -200,7 +205,7 @@ focus_tree = {
 		relative_position_id = UKR_economic_reforms
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		
 
@@ -219,10 +224,10 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = UKR_deterrence
-		cost = 8
+		cost = 10
 
 		available = {
-			is_puppet = no
+			is_subject = no
 			is_in_faction = no
 			OR = {
 				ENG = {
@@ -313,7 +318,7 @@ focus_tree = {
 			#is_faction_leader = yes
 			CRI = {
 				NOT = {
-					is_puppet = yes
+					is_subject = yes
 					is_in_faction = yes					
 				}
 				exists = yes 
@@ -390,7 +395,7 @@ focus_tree = {
 		relative_position_id = UKR_deterrence
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		
 
@@ -418,7 +423,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_economic_reforms
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 70
@@ -700,7 +705,7 @@ focus_tree = {
 		}
 		
 		x = 1
-		y = 3
+		y = 1
 		cost = 5
 
 		available_if_capitulated = yes
@@ -738,7 +743,7 @@ focus_tree = {
 						is_in_faction_with = POL
 						is_faction_leader = yes
 						NOT = {
-							is_puppet = yes
+							is_subject = yes
 						}
 					}
 					country_event = { id = generic.2 }
@@ -757,7 +762,21 @@ focus_tree = {
 						}						
 					}
 				}
-				create_faction = "Treaty of Kyiv"
+				IF = {
+					limit = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					set_rule = { can_create_factions = yes }
+					create_faction_from_template = { 
+						template = faction_template_miedzymorze_faction
+						name = treaty_of_kyiv
+					}
+					add_faction_initiative = 1
+				}
+				ELSE = {
+					set_rule = { can_create_factions = yes }
+					create_faction = treaty_of_kyiv
+				}
 				POL = {
 					country_event = { id = generic.5 }
 				}			
@@ -783,7 +802,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_free_and_at_peace
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -794,7 +813,7 @@ focus_tree = {
 				factor = 30
 				OR = {
 					AND = {
-						is_puppet = yes
+						is_subject = yes
 						OVERLORD = {
 							has_government = communism
 						}
@@ -863,7 +882,7 @@ focus_tree = {
         y = 1
         relative_position_id = UKR_continue_communist_rule
     
-        cost = 8
+        cost = 10
     
         ai_will_do = {
             factor = 15
@@ -931,7 +950,7 @@ focus_tree = {
 		relative_position_id = UKR_political_batallions
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			add_ideas = political_commissars_focus
@@ -961,7 +980,7 @@ focus_tree = {
         y = 1
 		relative_position_id = UKR_political_commissars
     
-        cost = 8
+        cost = 10
     
         ai_will_do = {
             factor = 12
@@ -979,7 +998,7 @@ focus_tree = {
 	focus = {
 		id = UKR_revolutionary_guards
 		icon = GFX_goal_HON_nkvd_assistance
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = UKR_political_commissars
 		}
@@ -1093,11 +1112,11 @@ focus_tree = {
 		id = UKR_encourage_the_proletariat
 		icon = GFX_goal_communist_factory
 		prerequisite = { focus = UKR_continue_communist_rule }
-		x = -3
+		x = -2
 		y = 1
 		relative_position_id = UKR_continue_communist_rule
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1120,7 +1139,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_encourage_the_proletariat
 
-		cost = 8
+		cost = 10
 
 		available = {
 			has_tech = construction2
@@ -1164,7 +1183,7 @@ focus_tree = {
 		available = {
 			if = {
 				limit = {
-					is_puppet = yes
+					is_subject = yes
 				}
 				OR = {
 					has_government = neutrality
@@ -1219,7 +1238,7 @@ focus_tree = {
 		available = {
 			if = {
 				limit = {
-					is_puppet = yes
+					is_subject = yes
 				}
 				OR = {
 					has_government = neutrality
@@ -1237,15 +1256,9 @@ focus_tree = {
 			    ideology = neutrality
 			    popularity = 0.05
 			}
-			if = {
-				limit = {
-					NOT = {
-						has_government = neutrality 
-					}
-				}
-				country_event = ukraine.10 #choose between Cossack and Habsburg
-								
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			country_event = ukraine.10 #choose between Cossack and Habsburg
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_timed_idea = { idea = GEN_Strenghten_Monarchy_I days = 1395 }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -1258,7 +1271,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_restore_the_hetmanate
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1275,7 +1288,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = UKR_restore_the_hetmanate
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1363,7 +1376,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_cossack_heritage
 
-		cost = 8
+		cost = 10
 
 		bypass = {
 			all_state = {
@@ -1427,7 +1440,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_demand_ukrainian_bessarabia
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1491,7 +1504,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_cossack_heritage
 
-		cost = 8
+		cost = 10
 
 		available = {
 			POL = {
@@ -1529,7 +1542,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_cossack_heritage
 
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no 
@@ -1594,7 +1607,7 @@ focus_tree = {
 						is_in_faction_with = POL
 						is_faction_leader = yes
 						NOT = {
-							is_puppet = yes
+							is_subject = yes
 						}
 					}
 					country_event = { id = generic.2 }
@@ -1653,7 +1666,7 @@ focus_tree = {
 
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2.5
@@ -1697,7 +1710,7 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2.5
@@ -1735,18 +1748,19 @@ focus_tree = {
 		id = UKR_alliance_with_the_kaiserreich
 		available = {
 			has_government = neutrality
-			is_puppet = no
+			is_subject = no
 			is_in_faction = no
-			GER = { 
+			GER = {
 				has_government = neutrality
 				OR = {
 					has_completed_focus = GER_the_central_powers
+					has_completed_focus = GER_the_kaiser_rises
 					has_completed_focus = GER_restore_the_empire
 				}
 				is_faction_leader = yes
 				
 				NOT = {
-					is_puppet = yes
+					is_subject = yes
 				}
 			}			
 		}
@@ -1756,7 +1770,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = UKR_our_place_in_the_world
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1764,15 +1778,16 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					GER = { 
+					GER = {
 						has_government = neutrality
 						OR = {
 							has_completed_focus = GER_the_central_powers
+							has_completed_focus = GER_the_kaiser_rises
 							has_completed_focus = GER_restore_the_empire
 						}
 						
 						NOT = {
-							is_puppet = yes
+							is_subject = yes
 						}
 					}
 				}
@@ -1888,7 +1903,7 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2.5
@@ -2003,7 +2018,7 @@ focus_tree = {
 			neutrality > 0.43
 			if = {
 				limit = {
-					is_puppet = yes
+					is_subject = yes
 				}
 				OR = {
 					has_government = neutrality
@@ -2059,7 +2074,7 @@ focus_tree = {
 		available = {
 			if = {
 				limit = {
-					is_puppet = yes
+					is_subject = yes
 				}
 				OR = {
 					has_government = fascism
@@ -2102,6 +2117,16 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = UKR_nikolai_belichkovsky
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = UKR_andriy_melnyk
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = UKR_samiylo_pidgirsky
+			custom_effect_tooltip = CHL_skip_one_line_tt			
 			add_ideas = RUT_military_government
 			if = {
 				limit = {
@@ -2129,7 +2154,7 @@ focus_tree = {
 		
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 
 		ai_will_do = {
@@ -2152,7 +2177,7 @@ focus_tree = {
 		
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 
 		ai_will_do = {
@@ -2373,11 +2398,11 @@ focus_tree = {
 		relative_position_id = UKR_cult_of_action
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			has_war = yes
-			is_puppet = no
+			is_subject = no
 		}
 		continue_if_invalid = yes #the idea is generic, so lets not be too annoying
 		completion_reward = {
@@ -2393,7 +2418,7 @@ focus_tree = {
 			focus = UKR_reborn_through_war
 			focus = UKR_free_and_at_peace
 		}
-		cost = 8
+		cost = 10
 		relative_position_id = UKR_reborn_through_war
 		x = 4
 		y = 1
@@ -2426,7 +2451,7 @@ focus_tree = {
 		relative_position_id = UKR_organize_the_army
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2457,7 +2482,7 @@ focus_tree = {
 		prerequisite = {
 			focus = UKR_organize_the_army
 		}
-		cost = 8
+		cost = 10
 		relative_position_id = UKR_organize_the_army
 		x = 7
 		y = 1
@@ -2505,7 +2530,7 @@ focus_tree = {
 		relative_position_id = UKR_small_arms_equipment
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
  		ai_will_do = {
@@ -2529,7 +2554,7 @@ focus_tree = {
 		relative_position_id = UKR_infantry_anti_tank_tactics
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		prerequisite = { focus = UKR_infantry_anti_tank_tactics }
@@ -2551,6 +2576,7 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
+					name = special_forces_bonus
 					cost_reduction = 0.5
 					uses = 1
 					category = special_forces_doctrine
@@ -2573,7 +2599,7 @@ focus_tree = {
 		relative_position_id = UKR_infantry_anti_tank_tactics
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		prerequisite = { focus = UKR_infantry_anti_tank_tactics }
@@ -2601,7 +2627,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_organize_the_army
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2644,7 +2670,7 @@ focus_tree = {
 		prerequisite = {
 			focus = UKR_organize_the_army
 		}
-		cost = 8
+		cost = 10
 		relative_position_id = UKR_organize_the_army
 		x = -1
 		y = 1
@@ -2701,7 +2727,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_use_the_morozov_design_bureau
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2756,7 +2782,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_diversify_factory_183
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 60
@@ -2786,7 +2812,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = UKR_use_the_morozov_design_bureau
-		cost = 8 
+		cost = 10 
 
 		ai_will_do = {
 			factor = 10
@@ -2831,7 +2857,7 @@ focus_tree = {
 			focus = UKR_reborn_through_war
 			focus = UKR_free_and_at_peace
 		}
-		cost = 8
+		cost = 10
 		relative_position_id = UKR_reborn_through_war
 		x = -1
 		y = 1
@@ -2861,7 +2887,7 @@ focus_tree = {
 		prerequisite = {
 			focus = UKR_industrial_technologies
 		}
-		cost = 8
+		cost = 10
 		relative_position_id = UKR_industrial_technologies
 		x = -2
 		y = 1
@@ -2917,7 +2943,7 @@ focus_tree = {
 		relative_position_id = UKR_industrial_development
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2938,7 +2964,7 @@ focus_tree = {
 		relative_position_id = UKR_construction_technologies
 		x = -1
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -2959,7 +2985,7 @@ focus_tree = {
 		relative_position_id = UKR_construction_technologies
 		x = 1
 		y = 2
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		bypass = {
@@ -3052,7 +3078,7 @@ focus_tree = {
 		relative_position_id = UKR_construction_technologies
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3101,7 +3127,7 @@ focus_tree = {
 		relative_position_id = UKR_construction_technologies
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 		available = {
@@ -3204,7 +3230,7 @@ focus_tree = {
 		prerequisite = {
 			focus = UKR_industrial_technologies
 		}
-		cost = 8
+		cost = 10
 		relative_position_id = UKR_industrial_technologies
 		x = 2
 		y = 1
@@ -3267,7 +3293,7 @@ focus_tree = {
 		x = 0
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -3293,7 +3319,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = UKR_coal_mining
 
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3367,7 +3393,7 @@ focus_tree = {
 		prerequisite = {
 			focus = UKR_azovstal
 		}		
-		cost = 8
+		cost = 10
 		relative_position_id = UKR_use_the_morozov_design_bureau
 		x = -1
 		y = 1
@@ -3414,7 +3440,7 @@ focus_tree = {
 		prerequisite = {
 			focus = UKR_heavy_steel_production
 		}		
-		cost = 8
+		cost = 10
 		relative_position_id = UKR_heavy_steel_production
 		x = 0
 		y = 2
@@ -3440,7 +3466,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = UKR_arsenal_factory
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -3472,7 +3498,7 @@ focus_tree = {
 		x = -2
 		y = 2
 		relative_position_id = UKR_infantry_anti_tank_tactics
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3496,7 +3522,7 @@ focus_tree = {
 		y = 1
 
 		relative_position_id = UKR_modern_combat_doctrine
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3517,7 +3543,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = UKR_diversify_artillery_types
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 0
 			modifier = {
@@ -3578,7 +3604,7 @@ focus_tree = {
     focus = {
 		id = UKR_unite_ukraine
 		icon = GFX_goal_flag_ukraine2
-		cost = 8
+		cost = 10
 		x = 55
 		y = 0
 
@@ -3594,7 +3620,7 @@ focus_tree = {
 			has_army_manpower = {
 				size > 320000
 			}		
-			is_puppet = no
+			is_subject = no
 		}
 
 		completion_reward = {
@@ -3700,7 +3726,7 @@ focus_tree = {
 		relative_position_id = UKR_look_to_the_skies		
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3744,7 +3770,7 @@ focus_tree = {
 		relative_position_id = UKR_look_to_the_skies		
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3818,7 +3844,7 @@ focus_tree = {
 		relative_position_id = UKR_look_to_the_skies		
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3866,7 +3892,7 @@ focus_tree = {
 		relative_position_id = UKR_build_trainer_aircrafts		
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3885,7 +3911,7 @@ focus_tree = {
 		relative_position_id = UKR_build_trainer_aircrafts		
 		x = 4
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3904,7 +3930,7 @@ focus_tree = {
 		relative_position_id = UKR_build_trainer_aircrafts		
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3923,7 +3949,7 @@ focus_tree = {
 		relative_position_id = UKR_support_designers_innovations		
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -3976,7 +4002,7 @@ focus_tree = {
 		relative_position_id = UKR_support_designers_innovations		
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -4002,7 +4028,7 @@ focus_tree = {
 		relative_position_id = UKR_refine_air_doctrine		
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 

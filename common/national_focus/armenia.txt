@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = armenian_focus
 
@@ -30,7 +31,13 @@ focus_tree = {
  		ai_will_do = {
  			factor = 10
 		}
+
+		available = {
+			controls_state = 230
+		}
+
 		completion_reward = {
+			add_stability = 0.05
 			random_owned_controlled_state = {
 				prioritize = { 230 }
 				limit = {
@@ -47,7 +54,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_stability = 0.05
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -94,7 +100,7 @@ focus_tree = {
 		relative_position_id = ARM_start_the_rare_minerals_program
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 4
@@ -137,7 +143,7 @@ focus_tree = {
 		relative_position_id = ARM_start_the_rare_minerals_program
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 10
@@ -185,7 +191,7 @@ focus_tree = {
 		relative_position_id = ARM_start_the_rare_minerals_program
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 10
@@ -236,7 +242,7 @@ focus_tree = {
 		relative_position_id = ARM_improve_construction_methods
 		x = -3
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 10
@@ -300,7 +306,7 @@ focus_tree = {
 		relative_position_id = ARM_small_arms_workshops
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 8
@@ -339,7 +345,7 @@ focus_tree = {
 		relative_position_id = ARM_small_arms_workshops
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 8
@@ -396,7 +402,7 @@ focus_tree = {
 		relative_position_id = ARM_improve_construction_methods
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 10
@@ -451,7 +457,7 @@ focus_tree = {
 		relative_position_id = ARM_improve_construction_methods
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 10
@@ -492,7 +498,7 @@ focus_tree = {
 		relative_position_id = ARM_expand_the_railway_network
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 10
@@ -553,7 +559,7 @@ focus_tree = {
 		relative_position_id = ARM_expand_ararat_cement
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			controls_state = 230
@@ -612,7 +618,7 @@ focus_tree = {
 		relative_position_id = ARM_plan_the_kajaran_mine
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
  		ai_will_do = {
  			factor = 50
 		}
@@ -633,12 +639,13 @@ focus_tree = {
 		relative_position_id = ARM_industrial_advancements
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
  		ai_will_do = {
  			factor = 50
 		}
 
 		available = {
+			controls_state = 230
 			amount_research_slots < 5
 		}
 
@@ -654,7 +661,7 @@ focus_tree = {
 		relative_position_id = ARM_support_chemical_factories
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		
  		ai_will_do = {
  			factor = 4
@@ -786,7 +793,7 @@ focus_tree = {
 		relative_position_id = ARM_return_from_exile
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 4
@@ -825,7 +832,7 @@ focus_tree = {
 		relative_position_id = ARM_reunify_the_armenian_people
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 4
@@ -882,7 +889,7 @@ focus_tree = {
 		relative_position_id = ARM_reunify_the_armenian_people
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 4
@@ -939,7 +946,7 @@ focus_tree = {
 		relative_position_id = ARM_ensure_church_support
 		x = -7
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 8
@@ -990,7 +997,7 @@ focus_tree = {
 		relative_position_id = ARM_reestablish_the_republic
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = democratic
@@ -1014,7 +1021,7 @@ focus_tree = {
 		relative_position_id = ARM_reestablish_the_republic
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = democratic
@@ -1037,7 +1044,7 @@ focus_tree = {
 		relative_position_id = ARM_armenian_youth_federation
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = democratic
@@ -1060,7 +1067,7 @@ focus_tree = {
 		}
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no
@@ -1119,7 +1126,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = democratic
@@ -1141,7 +1148,11 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.05
-			create_faction = "Transcaucasian Accords"
+			create_faction_from_template = {
+				template = faction_template_regional
+				name = ARM_transcaucasian_accords_faction
+				icon = GFX_faction_logo_generic_13
+			}
 			every_other_country = {
 				limit = {
 					OR = {
@@ -1171,7 +1182,7 @@ focus_tree = {
 		relative_position_id = ARM_ensure_church_support
 		x = 5
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 8
@@ -1219,7 +1230,7 @@ focus_tree = {
 		}
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 8
@@ -1266,7 +1277,7 @@ focus_tree = {
 		relative_position_id = ARM_the_last_claimant
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 6
@@ -1338,7 +1349,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -1384,7 +1395,7 @@ focus_tree = {
 		relative_position_id = ARM_empower_the_nationalists
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -1413,7 +1424,7 @@ focus_tree = {
 		relative_position_id = ARM_the_last_claimant
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -1447,7 +1458,7 @@ focus_tree = {
 		relative_position_id = ARM_royal_guards
 		x = 3
 		y = 2
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 8
@@ -1475,7 +1486,7 @@ focus_tree = {
 		relative_position_id = ARM_faith_resilience_heritage
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 8
@@ -1559,7 +1570,7 @@ focus_tree = {
 		relative_position_id = ARM_the_wilsonian_promise
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no
@@ -1626,7 +1637,7 @@ focus_tree = {
 		}
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no
@@ -1646,7 +1657,7 @@ focus_tree = {
 				popularity = 0.10
 			}
 			add_war_support = 0.05
-			add_ideas = QBC_expansionist_ideology
+			add_ideas = QUE_expansionist_ideology
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -1837,7 +1848,7 @@ focus_tree = {
 		}
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no
@@ -2023,7 +2034,7 @@ focus_tree = {
 		relative_position_id = ARM_reclaim_antiochia
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no
@@ -2057,7 +2068,7 @@ focus_tree = {
 		relative_position_id = ARM_reestablish_the_republic
 		x = 8
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -2082,7 +2093,7 @@ focus_tree = {
 		relative_position_id = ARM_war_propaganda
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -2134,7 +2145,7 @@ focus_tree = {
 		relative_position_id = ARM_war_propaganda
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -2186,7 +2197,7 @@ focus_tree = {
 		relative_position_id = ARM_war_propaganda
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -2242,7 +2253,7 @@ focus_tree = {
 		relative_position_id = ARM_reestablish_the_republic
 		x = 4
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -2267,7 +2278,7 @@ focus_tree = {
 		relative_position_id = ARM_organize_the_institutions
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 100
@@ -2295,7 +2306,7 @@ focus_tree = {
 		relative_position_id = ARM_organize_the_institutions
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 40
@@ -2376,7 +2387,7 @@ focus_tree = {
 		relative_position_id = ARM_organize_the_institutions
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		available = {
 			NOT = {
@@ -2401,7 +2412,7 @@ focus_tree = {
 		relative_position_id = ARM_planned_defense_policy
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			NOT = {
@@ -2444,7 +2455,7 @@ focus_tree = {
 		relative_position_id = ARM_build_the_bek_line
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 3
@@ -2501,7 +2512,7 @@ focus_tree = {
 		relative_position_id = ARM_build_the_bek_line
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 3
@@ -2551,7 +2562,7 @@ focus_tree = {
 		relative_position_id = ARM_planned_defense_policy
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
  		ai_will_do = {
  			factor = 2
 		}
@@ -2575,7 +2586,7 @@ focus_tree = {
 		relative_position_id = ARM_cherish_what_we_have
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 2
@@ -2652,7 +2663,7 @@ focus_tree = {
 		}
 		x = 12
 		y = 0
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -2704,7 +2715,7 @@ focus_tree = {
 		relative_position_id = ARM_socialist_governmental_autonomy
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = communism
@@ -2724,12 +2735,28 @@ focus_tree = {
 	}
 	focus = {
 		id = ARM_purge_the_trotskyist_dashnaks
-		icon = GFX_focus_SOV_purge_trotskyists
 		prerequisite = { focus = ARM_socialist_governmental_autonomy}
 		relative_position_id = ARM_socialist_governmental_autonomy
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
+
+		dynamic = yes
+
+		icon = {
+			trigger = {
+				is_subject = yes
+				overlord = {
+					NOT = {
+						has_country_leader_ideology = stalinism
+					}
+				}
+			}
+			value = GFX_goal_SOV_trot_destalinization
+		}
+		icon = {
+			value = GFX_focus_SOV_purge_trotskyists
+		}
 
 		available = {
 			has_government = communism
@@ -2756,7 +2783,7 @@ focus_tree = {
 		relative_position_id = ARM_purge_the_trotskyist_dashnaks
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 3
@@ -2795,7 +2822,7 @@ focus_tree = {
 		relative_position_id = ARM_party_involvement
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 3
@@ -2824,7 +2851,7 @@ focus_tree = {
 		relative_position_id = ARM_party_involvement
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 6
@@ -2862,7 +2889,7 @@ focus_tree = {
 		relative_position_id = ARM_enforce_state_atheism
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 3
@@ -2900,7 +2927,7 @@ focus_tree = {
 		relative_position_id = ARM_party_involvement
 		x = -2
 		y = 2
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 4
@@ -2927,7 +2954,7 @@ focus_tree = {
 		relative_position_id = ARM_purge_the_trotskyist_dashnaks
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 6
@@ -3036,7 +3063,7 @@ focus_tree = {
 		}
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -3108,7 +3135,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -3134,7 +3161,11 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.05
-			create_faction = "Transcaucasian Confederation"
+			create_faction_from_template = {
+				template = faction_template_regional
+				name = ARM_transcaucasian_confederation_faction
+				icon = GFX_faction_logo_comintern
+			}
 			every_other_country = {
 				limit = {
 					OR = {
@@ -3160,7 +3191,7 @@ focus_tree = {
 		relative_position_id = ARM_join_the_comintern
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5
@@ -3192,7 +3223,7 @@ focus_tree = {
 		relative_position_id = ARM_join_the_comintern
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
  		ai_will_do = {
  			factor = 5

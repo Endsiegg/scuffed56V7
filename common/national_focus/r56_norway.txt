@@ -10,6 +10,7 @@
 ### search_filters = {FOCUS_FILTER_AIR_XP}
 ### search_filters = {FOCUS_FILTER_NAW_UNIQUE_TACTICS} ### Unique NaW search filter, now also included in R56.
 
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = r56_norwegian_focus
 	
@@ -166,7 +167,7 @@ focus_tree = {
 		x = 2
 		y = 3
 		relative_position_id = NOR_encourage_fishing
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -207,7 +208,7 @@ focus_tree = {
 		x = 2
 		y = 4
 		relative_position_id = NOR_encourage_fishing
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 20
 		}
@@ -245,7 +246,7 @@ focus_tree = {
 		x = 2
 		y = 5
 		relative_position_id = NOR_encourage_fishing
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 40
 		}
@@ -321,7 +322,7 @@ focus_tree = {
 		icon = GFX_goal_continuous_naval_production
 		x = 4
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 			modifier = {
@@ -471,10 +472,7 @@ focus_tree = {
 					name = NOR_torpedo_equipment_bonus
 					bonus = 1
 					uses = 1
-					technology = basic_torpedo				### For R56, use this instead: category = torpedo_equipment
-					technology = magnetic_detonator
-					technology = homing_torpedo
-					technology = electric_torpedo
+					category = torpedo_equipment			### For R56, use this instead: category = torpedo_equipment
 					technology = improved_ship_torpedo_launcher
 					technology = advanced_ship_torpedo_launcher
 					technology = modern_ship_torpedo_launcher
@@ -492,7 +490,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_navy
-		cost = 8
+		cost = 10
 		
 		available_if_capitulated = yes
 		
@@ -528,7 +526,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = NOR_navy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 3
 		}
@@ -607,7 +605,7 @@ focus_tree = {
 		x = 1
 		y = 4
 		relative_position_id = NOR_navy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 20
 		}
@@ -637,10 +635,7 @@ focus_tree = {
 				name = NOR_torpedo_equipment_bonus
 				bonus = 1
 				uses = 1
-				technology = basic_torpedo
-				technology = magnetic_detonator
-				technology = homing_torpedo
-				technology = electric_torpedo
+				category = torpedo_equipment
 				technology = improved_ship_torpedo_launcher
 				technology = advanced_ship_torpedo_launcher
 				technology = modern_ship_torpedo_launcher
@@ -681,7 +676,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = NOR_navy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -707,7 +702,7 @@ focus_tree = {
 		x = 2
 		y = 3
 		relative_position_id = NOR_navy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -741,7 +736,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_airforce
 		x = 9
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -806,7 +801,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = NOR_air_bases
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -832,7 +827,7 @@ focus_tree = {
 		x = -1
 		y = 3
 		relative_position_id = NOR_air_bases
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -859,7 +854,7 @@ focus_tree = {
 		x = 0
 		y = 4
 		relative_position_id = NOR_air_bases
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 1
 		}
@@ -1030,7 +1025,7 @@ focus_tree = {
 		x = 1
 		y = 3
 		relative_position_id = NOR_air_bases
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 1
 		}
@@ -1062,9 +1057,9 @@ focus_tree = {
 		prerequisite = { focus = NOR_medium_aircraft }
 		icon = GFX_goal_generic_air_production
 		x = 1
-		y = 6
+		y = 5
 		relative_position_id = NOR_air_bases
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 1
 		}
@@ -1149,7 +1144,7 @@ focus_tree = {
 		icon = GFX_goal_NOR_coa_army
 		x = 15
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -1182,7 +1177,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = NOR_army
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -1279,7 +1274,7 @@ focus_tree = {
 		x = -4
 		y = 2
 		relative_position_id = NOR_army
-		cost = 8
+		cost = 10
 		
 		available_if_capitulated = yes
 
@@ -1516,7 +1511,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = NOR_army
-		cost = 8
+		cost = 10
 		
 		cancel_if_invalid = no
 		continue_if_invalid = yes
@@ -1894,7 +1889,7 @@ focus_tree = {
 				factor = 20
 			}
 		}
-		cost = 8
+		cost = 10
 		
 		available = {
 			110 = {
@@ -1937,7 +1932,7 @@ focus_tree = {
 				factor = 10
 			}
 		}
-		cost = 8
+		cost = 10
 		
 		available = {
 			142 = {
@@ -1984,7 +1979,7 @@ focus_tree = {
 				factor = 5
 			}
 		}
-		cost = 8
+		cost = 10
 		
 		available = {
 			AND = {
@@ -2036,7 +2031,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = NOR_armament_investments
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 75
 		}
@@ -2112,7 +2107,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_de_norske_statsbaner
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 5
 			modifier = {
@@ -2194,7 +2189,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = NOR_de_norske_statsbaner
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -2235,7 +2230,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 20
 		}
-		cost = 8
+		cost = 10
 		
 		cancel_if_invalid = no
 		continue_if_invalid = yes
@@ -2279,7 +2274,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_civil_war = no
@@ -2329,7 +2324,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 50
 		}
-		cost = 8
+		cost = 10
 		
 		available = {
 			142 = {
@@ -2365,7 +2360,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 20
 		}
-		cost = 8
+		cost = 10
 		
 		available = {
 			AND = {
@@ -2436,7 +2431,7 @@ focus_tree = {
 		x = 0
 		y = 5
 		relative_position_id = NOR_lumber_industries
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			
@@ -2492,7 +2487,7 @@ focus_tree = {
 		x = 0
 		y = 6
 		relative_position_id = NOR_lumber_industries
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 20
 			
@@ -2546,7 +2541,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_1
 		x = 28
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 50
 		}
@@ -2577,7 +2572,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 25
 		}
-		cost = 8
+		cost = 10
 		
 		available = {
 			AND = {
@@ -2660,7 +2655,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 10
 		}
-		cost = 8
+		cost = 10
 		
 		cancel_if_invalid = no
 		continue_if_invalid = yes
@@ -2765,7 +2760,7 @@ focus_tree = {
 		icon = GFX_focus_generic_home_defense
 		x = 44
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 			
@@ -2802,7 +2797,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = NOR_til_dovre_faller
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 30
@@ -2873,7 +2868,7 @@ focus_tree = {
 		x = -13
 		y = 2
 		relative_position_id = NOR_til_dovre_faller
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 25
@@ -2935,7 +2930,7 @@ focus_tree = {
 		x = -11
 		y = 2
 		relative_position_id = NOR_til_dovre_faller
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 10
@@ -2979,7 +2974,7 @@ focus_tree = {
 		x = -9
 		y = 2
 		relative_position_id = NOR_til_dovre_faller
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 10
@@ -3138,7 +3133,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = NOR_allied_technology_sharing
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 25
@@ -3399,7 +3394,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = NOR_north_atlantic_defense_focus
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 20
@@ -3439,7 +3434,7 @@ focus_tree = {
 		x = -1
 		y = 3
 		relative_position_id = NOR_north_atlantic_defense_focus
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 5
@@ -3515,7 +3510,7 @@ focus_tree = {
 		x = 1
 		y = 3
 		relative_position_id = NOR_north_atlantic_defense_focus
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 5
@@ -3670,7 +3665,7 @@ focus_tree = {
 		x = -9
 		y = 3
 		relative_position_id = NOR_til_dovre_faller
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -3701,7 +3696,11 @@ focus_tree = {
 
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
-			create_faction = NOR_three_brothers_faction
+			create_faction_from_template = {
+				template = faction_template_defensive_democratic
+				name = NOR_three_brothers_faction
+				icon = GFX_faction_logo_generic_2
+			}
 			if = {
 				limit = {
 					DEN = { 
@@ -3779,7 +3778,7 @@ focus_tree = {
 		x = -2
 		y = 2
 		relative_position_id = NOR_three_brothers
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 25
@@ -3905,7 +3904,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_three_brothers
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 25
@@ -4045,7 +4044,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = NOR_three_brothers
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
@@ -5396,7 +5395,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_til_dovre_faller
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 1
@@ -5521,7 +5520,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = NOR_traditions_and_monarchy
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 1
@@ -5604,7 +5603,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_traditions_worth_fighting_for
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 50
@@ -5877,7 +5876,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_the_nordic_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -6077,7 +6076,7 @@ focus_tree = {
 		x = -5
 		y = 3
 		relative_position_id = NOR_the_nordic_policy
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -6221,7 +6220,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = NOR_the_nordic_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -6292,7 +6291,7 @@ focus_tree = {
 		x = -1
 		y = 3
 		relative_position_id = NOR_the_nordic_policy
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 10
@@ -6356,7 +6355,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_nordic_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -6385,7 +6384,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = NOR_the_nordic_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -6419,7 +6418,7 @@ focus_tree = {
 		x = 1
 		y = 3
 		relative_position_id = NOR_the_nordic_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -6508,7 +6507,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_the_european_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -6546,7 +6545,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_european_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -6587,7 +6586,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = NOR_the_european_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -6735,7 +6734,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = NOR_the_european_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -6751,12 +6750,18 @@ focus_tree = {
 				### R56 code:
 				if = {
 					limit = {
-						has_global_flag = ger_vanilla_focus_tree
+						OR = {
+							NOT = { has_dlc = "Gotterdammerung" }
+							has_game_rule = {
+								rule = GER_focus_tree_selection
+								option = R56_TREE
+							}
+						}
 					}
-					GER = { has_completed_focus = GER_oppose_hitler } ### Base game/DLC tree. Civil war check is above, so checking for the first focus here is enough.
+					GER = { OR = { has_completed_focus = GER_restore_the_empire has_completed_focus = GER_the_kaiser_rises} } ### R56 tree. Sufficient focus progress needed for Germany.
 				}
 				else = {
-					GER = { has_completed_focus = GER_restore_the_empire } ### R56 tree. Sufficient focus progress needed for Germany.
+					GER = { has_completed_focus = GER_oppose_hitler } ### Base game/DLC tree. Civil war check is above, so checking for the first focus here is enough.
 				}
 				### NaW code:
 				#GER = { has_completed_focus = GER_oppose_hitler }
@@ -6833,7 +6838,7 @@ focus_tree = {
 		x = 3
 		y = 2
 		relative_position_id = NOR_the_european_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -7032,7 +7037,7 @@ focus_tree = {
 		x = 4
 		y = 4
 		relative_position_id = NOR_the_european_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 0
@@ -7088,7 +7093,7 @@ focus_tree = {
 		x = 6
 		y = 4
 		relative_position_id = NOR_the_european_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 5
@@ -7160,7 +7165,7 @@ focus_tree = {
 		x = 8
 		y = 4
 		relative_position_id = NOR_the_european_policy
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 0
@@ -7222,7 +7227,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_til_dovre_faller
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 2
 			modifier = {
@@ -7261,7 +7266,7 @@ focus_tree = {
 		x = 11
 		y = 2
 		relative_position_id = NOR_til_dovre_faller
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -7302,7 +7307,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 25
@@ -7325,7 +7330,7 @@ focus_tree = {
 		x = -6
 		y = 2
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 25
@@ -7352,7 +7357,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -7375,7 +7380,7 @@ focus_tree = {
 		x = -4
 		y = 2
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -7524,7 +7529,7 @@ focus_tree = {
 		x = -4
 		y = 3
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -7594,7 +7599,7 @@ focus_tree = {
 		x = -2
 		y = 2
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 25
@@ -7634,7 +7639,7 @@ focus_tree = {
 		x = -2
 		y = 3
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 25
@@ -7661,7 +7666,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 120
 		}
@@ -7844,7 +7849,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 25
@@ -7969,7 +7974,7 @@ focus_tree = {
 		x = -3
 		y = 4
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 25
@@ -7999,7 +8004,7 @@ focus_tree = {
 		x = -3
 		y = 5
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -8021,7 +8026,7 @@ focus_tree = {
 		x = -4
 		y = 6
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -8056,7 +8061,7 @@ focus_tree = {
 		x = -2
 		y = 6
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -8091,7 +8096,7 @@ focus_tree = {
 		x = 0
 		y = 6
 		relative_position_id = NOR_support_radical_nationalism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 10
@@ -8135,7 +8140,7 @@ focus_tree = {
 		x = 13
 		y = 2
 		relative_position_id = NOR_til_dovre_faller
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -8177,7 +8182,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_support_radical_socialism
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -8269,7 +8274,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = NOR_support_radical_socialism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 25
@@ -8432,7 +8437,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = NOR_support_radical_socialism
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 25
@@ -8479,7 +8484,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_collectivism
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 25
@@ -8502,7 +8507,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_collectivism
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 25
@@ -8525,7 +8530,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_folkearmeen
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			base = 25
@@ -8581,7 +8586,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_unite_the_scandinavian_workers
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 25
@@ -8629,7 +8634,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_unite_the_scandinavian_workers
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 25
@@ -8666,7 +8671,7 @@ focus_tree = {
 		relative_position_id = NOR_establish_a_secret_police
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			
@@ -8781,7 +8786,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_establish_a_secret_police
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 25

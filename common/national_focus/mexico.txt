@@ -11,6 +11,7 @@
 ### search_filters = { FOCUS_FILTER_MEX_CHURCH_AUTHORITY }
 ### search_filters = { FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
 
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = mexico_focus_tree
 	country = {
@@ -161,7 +162,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = MEX_focus_agricultural_credit_bank
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -179,7 +180,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_confederation_of_mexican_workers
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -196,7 +197,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_rent_freeze
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			OR = {
@@ -220,7 +221,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_ejido_worker_militias
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			communism > 0.4
@@ -394,7 +395,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_peripheral_infrastructure
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -438,7 +439,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_liberalize_the_banking_sector
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -514,7 +515,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_urban_development
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -549,7 +550,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_end_land_reform
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
@@ -581,7 +582,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_privatization
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
@@ -600,7 +601,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_caudillo_private_armies
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_MEX_CAUDILLO_REBELLION FOCUS_FILTER_STABILITY }
 		ai_will_do = { base = 100 }
 		available = {
@@ -694,7 +695,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = MEX_focus_oil_field_expansion
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -752,7 +753,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = MEX_focus_oil_field_expansion
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -871,7 +872,11 @@ focus_tree = {
 				}
 			}
 			else = {
-				create_faction = MEX_focus_community_of_nations
+				create_faction_from_template = {
+					template = faction_template_allies
+					name = MEX_focus_community_of_nations
+					icon = GFX_faction_logo_generic_2
+				}
 				ENG = { country_event = generic.5 }
 			}
 			custom_effect_tooltip = CHL_skip_one_line_tt
@@ -895,7 +900,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_community_of_nations
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			is_subject = no
@@ -934,7 +939,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -1054,7 +1059,7 @@ focus_tree = {
 		x = 7
 		y = 1
 		relative_position_id = MEX_focus_oil_field_expansion
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
@@ -1756,7 +1761,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_liberty_and_justice_for_all
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 		ai_will_do = { base = 100 }
 		available = {
@@ -1802,7 +1807,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = MEX_focus_aztec_eagles
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH }
 		ai_will_do = { base = 100 }
 		available = { has_offensive_war = no }
@@ -1814,6 +1819,7 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
+					name = special_forces_bonus
 					cost_reduction = 0.5
 					uses = 1
 					category = special_forces_doctrine
@@ -1839,7 +1845,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = MEX_focus_exile_calles
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY }
@@ -1881,7 +1887,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_purge_the_bureaucracy
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			democratic > 0.4
@@ -1969,7 +1975,7 @@ focus_tree = {
 		x = -1
 		y = 3
 		relative_position_id = MEX_focus_purge_the_bureaucracy
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
 		ai_will_do = { base = 100 }
 		available = {
@@ -2031,7 +2037,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_repeal_the_calles_law
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -2084,7 +2090,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_enforce_the_calles_law
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			OR = {
@@ -2138,7 +2144,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_abolish_capital_punishment
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MEX_CHURCH_AUTHORITY }
@@ -2157,7 +2163,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_state_education
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -2178,7 +2184,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_xefo
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2207,7 +2213,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_law_on_industrial_promotion
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2258,7 +2264,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_northern_steel_plants
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -2359,7 +2365,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_rewrite_the_constitution
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MEX_CHURCH_AUTHORITY }
@@ -2379,7 +2385,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_knights_of_columbus
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -2396,7 +2402,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = MEX_focus_knights_of_columbus
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			has_idea = MEX_church_power_5
@@ -2473,7 +2479,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_catholic_politics
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY}
@@ -2494,7 +2500,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_rewrite_the_constitution
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MEX_CHURCH_AUTHORITY FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
@@ -2611,7 +2617,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = MEX_focus_legion_of_christ
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			OR = {
@@ -2738,7 +2744,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_crusade_against_atheism
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		allow_branch = {
@@ -2766,7 +2772,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_crusade_against_atheism
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 1 }
 		available_if_capitulated = yes
 		allow_branch = { has_country_flag = MEX_restored_the_monarchy_flag }
@@ -2793,7 +2799,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_social_catholicism
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -2822,7 +2828,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_synarchist_communes
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -2933,7 +2939,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_synarchist_communes
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MANPOWER }
@@ -2953,7 +2959,7 @@ focus_tree = {
 			y = 0
 			trigger = { has_country_flag = MEX_restored_the_monarchy_flag }
 		}
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
@@ -2977,7 +2983,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_ban_political_militias
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -3007,7 +3013,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_revolutionary_women
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = { has_elections = yes }
 		available_if_capitulated = yes
@@ -3026,7 +3032,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = MEX_focus_revolutionary_women
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_INDUSTRY }
 		ai_will_do = {
 			base = 100
@@ -3070,7 +3076,7 @@ focus_tree = {
 			y = 0
 			trigger = { has_country_flag = MEX_restored_the_monarchy_flag }
 		}
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
@@ -3095,7 +3101,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_depoliticised_army
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
@@ -3120,7 +3126,7 @@ focus_tree = {
 		x = 5
 		y = 0
 		relative_position_id = MEX_focus_ban_political_militias
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -3157,7 +3163,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = MEX_focus_legacy_of_revolution
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_IMPROVEMENT }
@@ -3187,7 +3193,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_the_gold_shirts
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			fascism > 0.4
@@ -3286,7 +3292,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = MEX_focus_legacy_of_revolution
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MEX_CHURCH_AUTHORITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_IMPROVEMENT }
@@ -3306,7 +3312,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_the_red_shirts
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			communism > 0.4
@@ -3774,7 +3780,7 @@ focus_tree = {
 			y = 0
 			trigger = { has_country_flag = MEX_restored_the_monarchy_flag }
 		}
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -3795,10 +3801,20 @@ focus_tree = {
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
 			if = {
-				limit = { has_completed_focus = MEX_focus_crusade_against_atheism }
-				create_faction = faction_mexico_synarchist_pact
+				limit = {
+					has_completed_focus = MEX_focus_crusade_against_atheism
+				}
+				create_faction_from_template = {
+					template = faction_template_hipanic_alliance_faction
+					name = faction_mexico_synarchist_pact
+				}
 			}
-			else = { create_faction = faction_mexico_hispanic_alliance }
+			else = {
+				create_faction_from_template = {
+					template = faction_template_hipanic_alliance_faction
+					name = faction_mexico_hispanic_alliance
+				}
+			}
 			hidden_effect = {
 				news_event = { id = mexico.46 }
 			}
@@ -3860,7 +3876,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_hispanic_alliance
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			has_government = fascism
@@ -3972,7 +3988,7 @@ focus_tree = {
 			y = 0
 			trigger = { has_country_flag = MEX_restored_the_monarchy_flag }
 		}
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
@@ -4000,7 +4016,7 @@ focus_tree = {
 			y = 0
 			trigger = { has_country_flag = MEX_restored_the_monarchy_flag }
 		}
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -4035,7 +4051,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ALLIANCE }
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
-			create_faction = faction_mexico_bolivarian_alliance
+			create_faction_from_template = {
+				template = faction_template_pan_american
+				name = faction_mexico_bolivarian_alliance
+				icon = GFX_faction_logo_generic_14
+			}
 			hidden_effect = {
 				news_event = { id = mexico.47 }
 			}
@@ -4091,7 +4111,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_bolivarian_alliance
-		cost = 8
+		cost = 10
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -4158,7 +4178,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = MEX_focus_bolivarian_alliance
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 0	#r56 - anti AI run-into-wall
 			modifier = {
@@ -4282,7 +4302,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_smash_the_bureaucrats
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			is_faction_leader = yes
@@ -4424,7 +4444,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8 	#As a general thing, focuses that give war goals should really be 70 days
+		cost = 10 	#As a general thing, focuses that give war goals should really be 70 days
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		ai_will_do = {
 			base = 0	#r56 - anti AI run-into-wall
@@ -4613,7 +4633,7 @@ focus_tree = {
 			y = 0
 			trigger = { has_country_flag = MEX_restored_the_monarchy_flag }
 		}
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		ai_will_do = {
 			base = 0	#r56 - anti AI run-into-wall
@@ -4818,7 +4838,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_liberate_the_caribbean
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 100 }
 		available = {
 			is_subject = no
@@ -4907,7 +4927,7 @@ focus_tree = {
 		x = 3
 		y = 0
 		relative_position_id = MEX_focus_integrate_the_south
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		ai_will_do = { base = 100 }
 		available = {
@@ -4984,7 +5004,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_push_past_the_darien_gap
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		ai_will_do = { 
 			base = 0	#r56 Anti AI Run-Into-Wall. Manpower requirements + the USA being busy should hopefully let Mexico use these wargoals.
@@ -5152,7 +5172,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_seize_the_panama_canal
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 0	#R56 - Anti AI Run-Into-Wall. Hopefully this will give the MEX AI the opportunity to jump in on America if someone gets their surrender progress up :)
 			modifier = {
@@ -5381,7 +5401,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MEX_focus_unify_centroamerica
 		prerequisite = { focus = MEX_focus_unify_centroamerica }
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
 		ai_will_do = { base = 1 }
 		available = {
@@ -5392,6 +5412,7 @@ focus_tree = {
 		allow_branch = { has_country_flag = MEX_restored_the_monarchy_flag }
 		completion_reward = {
 			add_tech_bonus = {
+				name = ships_bonus
 				bonus = 1.5
 				uses = 3
 				category = naval_equipment
@@ -5435,7 +5456,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MEX_focus_the_empresss_grand_armada
 		prerequisite = { focus = MEX_focus_the_empresss_grand_armada }
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 1 }
 		available = {
 			is_subject = no
@@ -5532,7 +5553,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MEX_focus_return_to_the_peninsula
 		prerequisite = { focus = MEX_focus_return_to_the_peninsula }
-		cost = 8
+		cost = 10
 		ai_will_do = { base = 1 }
 		available = { is_subject = no }
 		available_if_capitulated = yes
@@ -5648,7 +5669,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = MEX_focus_national_bank
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -5679,7 +5700,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = MEX_focus_military_budget_review
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		ai_will_do = {
 			base = 100
@@ -5738,7 +5759,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_military_budget_review
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		ai_will_do = {
 			base = 100
@@ -5800,7 +5821,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = MEX_focus_pacific_coast_naval_yards
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
 		ai_will_do = {
 			base = 100
@@ -5858,7 +5879,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_brown_water_navy
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT } 
 		ai_will_do = {
 			base = 100
@@ -5929,7 +5950,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_brown_water_navy
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
 		ai_will_do = {
 			base = 100
@@ -5980,7 +6001,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = MEX_focus_military_budget_review
-		cost = 8
+		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
 		ai_will_do = {
 			base = 100
@@ -6011,7 +6032,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_heroic_military_college
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -6040,7 +6061,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_weapons_modernisation
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -6079,7 +6100,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_heroic_military_college
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -6118,7 +6139,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_aviation_workshops
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -6152,7 +6173,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_tank_workshops
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -6199,7 +6220,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_army_expansion_programme
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -6223,7 +6244,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_army_expansion_programme
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {

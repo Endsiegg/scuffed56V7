@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
     id = andorra_focus # Andorra focus tree created by The Brit - Note that this only exsits to stop the AI getting too strong
     country = {
@@ -15,7 +16,7 @@ focus_tree = {
         icon = GFX_goal_generic_neutrality_focus
         x = 9
         y = 0
-        cost = 8
+        cost = 10
         mutually_exclusive = {
             focus = ADR_abandon_the_policy_of_neutrality
         }
@@ -35,7 +36,7 @@ focus_tree = {
         relative_position_id = ADR_continue_the_policy_of_neutrality
         x = 0
         y = 1
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = ADR_continue_the_policy_of_neutrality
         }
@@ -56,7 +57,7 @@ focus_tree = {
         relative_position_id = ADR_accept_spanish_refugees
         x = -1
         y = 1
-        cost = 8
+        cost = 10
         available = {
             has_global_flag = scw_over
             any_other_country = {
@@ -103,7 +104,7 @@ focus_tree = {
         relative_position_id = ADR_accept_spanish_refugees
         x = 1
         y = 1
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = ADR_accept_spanish_refugees
         }
@@ -132,7 +133,7 @@ focus_tree = {
         relative_position_id = ADR_expand_the_tourist_industry
         x = 0
         y = 1
-        cost = 8
+        cost = 10
         prerequisite = {
             focus = ADR_expand_the_tourist_industry
         }
@@ -157,7 +158,7 @@ focus_tree = {
         relative_position_id = ADR_continue_the_policy_of_neutrality
         x = 3
         y = 0
-        cost = 8
+        cost = 10
         mutually_exclusive = {
             focus = ADR_continue_the_policy_of_neutrality
         }
@@ -167,14 +168,14 @@ focus_tree = {
         }
         completion_reward = {
             add_stability = -0.1
-			if = {
-                limit = {
-                    ROOT = {
-                        is_ai = no
-                    }
-                }
+			#if = { # Removed for effect consistency
+            #    limit = {
+            #        ROOT = {
+            #            is_ai = no
+            #        }
+            #    }
                 add_war_support = 0.05
-            }
+            #}
             remove_ideas = neutrality_idea
         }
     }
@@ -182,22 +183,22 @@ focus_tree = {
         id = ADR_accept_french_potectorate
         icon = GFX_focus_chi_reach_out_to_france
         relative_position_id = ADR_abandon_the_policy_of_neutrality
-        x = 0
+        x = -1
         y = 1
         offset = {
             x = -1
             y = 0
             trigger = {
-                OR = {
+                #OR = {
                     has_game_rule = {
                         rule = ADR_ai_behavior
                         option = FLEXIBLE_FOREIGN_POLICY
                     }
-                    is_ai = no
-                }
+                    #is_ai = no
+                #}
 			}
         }
-        cost = 8
+        cost = 10
         available = {
             is_subject = no
             has_war = no
@@ -247,16 +248,16 @@ focus_tree = {
         relative_position_id = ADR_abandon_the_policy_of_neutrality
         x = 1
         y = 1
-        cost = 8
-        allow_branch = {
-            OR = {
-                has_game_rule = {
-                    rule = ADR_ai_behavior
-                    option = FLEXIBLE_FOREIGN_POLICY
-                }
-                is_ai = no
-            }
-        }
+        cost = 10
+        #allow_branch = { # Replaced with ai_will_do for consistency
+            #OR = {
+                #has_game_rule = {
+                #    rule = ADR_ai_behavior
+                #    option = FLEXIBLE_FOREIGN_POLICY
+                #}
+                #is_ai = no
+            #}
+        #}
         available = {
             is_subject = no
         }
@@ -268,7 +269,14 @@ focus_tree = {
         }
         search_filters = {FOCUS_FILTER_ALLIANCE}
         ai_will_do = {
-            factor = 10
+            factor = 0
+			modifier = {
+				has_game_rule = {
+                    rule = ADR_ai_behavior
+                    option = FLEXIBLE_FOREIGN_POLICY
+                }
+				factor = 10
+			}
         }
         completion_reward = {
             add_political_power = 75 #refund
@@ -320,8 +328,12 @@ focus_tree = {
 		x = -2
 		y = 0
 		relative_position_id = ADR_militarize_the_police_force
-		cost = 8
+		cost = 10
         prerequisite = { focus = ADR_continue_the_policy_of_neutrality }
+		
+		available = {
+			has_full_control_of_state = 973
+		}
 
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_EQUIPMENT}
 
@@ -347,7 +359,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ADR_build_andorra_city_airport
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH}
 
@@ -381,7 +393,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ADR_the_monegasque_air_fleet
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -415,7 +427,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ADR_militarize_the_police_force
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -435,7 +447,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ADR_weaponary_modernization
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -462,7 +474,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ADR_weaponary_modernization
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -487,7 +499,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ADR_develop_special_forces
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -508,7 +520,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ADR_develop_special_forces
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH}
 
@@ -530,7 +542,11 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ADR_the_andorra_industrial_fund
-		cost = 8
+		cost = 10
+
+		available = {
+			threat > 0.15
+		}
 
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY}
 
@@ -547,7 +563,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ADR_andorra_military_insituite
-		cost = 8
+		cost = 10
+
+		available = {
+			has_full_control_of_state = 973
+		}
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -563,7 +583,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ADR_andorra_military_insituite
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -594,7 +614,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ADR_encourage_local_arms_production
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY}
 
@@ -622,7 +642,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ADR_the_grand_university_of_andorra_city
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -642,7 +662,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ADR_the_grand_university_of_andorra_city
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -664,7 +684,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ADR_introduce_motorization_technologies
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -688,7 +708,7 @@ focus_tree = {
 		x = -3
 		y = 0
 		relative_position_id = ADR_build_andorra_city_airport
-		cost = 8
+		cost = 10
 		available = {
 			any_owned_state = {
 				is_coastal = yes
@@ -730,7 +750,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ADR_develop_our_dockyards
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_NAVY_XP}
 
@@ -747,7 +767,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ADR_develop_our_dockyards
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
@@ -774,7 +794,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ADR_develop_indigenous_models
-		cost = 8
+		cost = 10
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 

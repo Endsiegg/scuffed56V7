@@ -1,4 +1,5 @@
-﻿focus_tree = {
+﻿#!gfx:interface\r56_goals.gfx
+focus_tree = {
 	id = saudi_focus
 	country = {
 		factor = 0
@@ -398,7 +399,7 @@
 	focus = {
 		id = SAU_improve_our_infrastructure
 		icon = GFX_focus_generic_road_investment
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = SAU_deal_with_bp
 		}
@@ -481,7 +482,7 @@
 	focus = {
 		id = SAU_invite_foreign_investors
 		icon = GFX_focus_generic_industrialists
-		cost = 8.00
+		cost = 10.00
 		prerequisite = {
 			focus = SAU_invite_brabag
 		}
@@ -851,7 +852,7 @@
 	focus = {
 		id = SAU_expand_the_riyadh_university
 		icon = GFX_focus_generic_university_2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = SAU_seek_german_arms
 			focus = SAU_introduce_the_constitution
@@ -874,7 +875,7 @@
 	focus = {
 		id = SAU_influence_the_king
 		icon = GFX_goal_communist_revolt
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = SAU_enforce_the_zakat
 		}
@@ -1634,6 +1635,7 @@
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
+					name = special_forces_bonus
 					cost_reduction = 0.5
 					uses = 1
 					category = special_forces_doctrine
@@ -1735,7 +1737,7 @@
 	focus = {
 		id = SAU_tank_focus 
 		icon = GFX_goal_generic_army_tanks
-		cost = 8.00
+		cost = 10.00
 		prerequisite = { focus = SAU_support_companies }
 		ai_will_do = {
 			factor = 2
@@ -1757,7 +1759,7 @@
 	focus = {
 		id = SAU_romanticize_army
 		icon = GFX_focus_generic_military_mission
-		cost = 8.00
+		cost = 10.00
 		prerequisite = { focus = SAU_encourage_general_creativity focus = SAU_camelry_expertise }
 		ai_will_do = {
 			factor = 5
@@ -1773,7 +1775,7 @@
 	focus = {
 		id = SAU_general_army_buff
 		icon = GFX_goal_generic_army_elite
-		cost = 8.00
+		cost = 10.00
 		prerequisite = { focus = SAU_romanticize_army }
 		prerequisite = { focus = SAU_special_forces_focus }
 		ai_will_do = {
@@ -1848,7 +1850,7 @@
 		relative_position_id = SAU_join_the_comintern
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			SOV = {
@@ -1894,7 +1896,7 @@
 		relative_position_id = SAU_move_toward_german_alignment		
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2022,7 +2024,7 @@
 		}
 		x = -6
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			is_puppet = no
@@ -2075,7 +2077,7 @@
 	focus = {
 		id = SAU_destabilize_the_east
 		icon = GFX_focus_AFG_savior_of_the_holy_lands
-		cost = 8.00
+		cost = 10.00
 		prerequisite = { 
 			focus = SAU_spread_islam_force 
 			focus = SAU_political_correctness
@@ -2096,7 +2098,11 @@
 			unlock_decision_category_tooltip = SAU_east_destabilized
 			custom_effect_tooltip = SAU_east_destabilized_tt
 			custom_effect_tooltip = r56_newline
-			create_faction = "Jabhat al-Tahrir al-Arabia"
+			#create_faction = "Jabhat al-Tahrir al-Arabia"
+			create_faction_from_template = {
+				template = faction_template_PER_islamic_faction
+				name = jabhat_al_tahrir_al_arabia
+			}
 			every_other_country = {
 				limit = {
 					has_government = ROOT

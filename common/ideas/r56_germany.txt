@@ -252,12 +252,12 @@ ideas = {
 			removal_cost = -1
 			picture = SOV_third_five_year_plan_civilian
 			modifier = {
-				production_speed_steel_mill_factor = 0.10
-				production_speed_aluminum_mill_factor = 0.10
-				industrial_concern_cost_factor = -0.10
+				production_speed_steel_mill_factor = 0.05
+				production_speed_aluminum_mill_factor = 0.05
+				industrial_concern_cost_factor = -0.05
 			}
 			research_bonus = {
-				excavation_tech = 0.10
+				excavation_tech = 0.05
 			}
 		}
 		r56_GER_four_year_plan_upgrade = {
@@ -271,12 +271,12 @@ ideas = {
 			removal_cost = -1
 			picture = SOV_third_five_year_plan_civilian
 			modifier = {
-				production_speed_steel_mill_factor = 0.20
-				production_speed_aluminum_mill_factor = 0.20
-				industrial_concern_cost_factor = -0.20
+				production_speed_steel_mill_factor = 0.10
+				production_speed_aluminum_mill_factor = 0.10
+				industrial_concern_cost_factor = -0.10
 			}
 			research_bonus = {
-				excavation_tech = 0.20
+				excavation_tech = 0.10
 			}
 		}
 		r56_GER_coerce_the_technocrats_idea = {
@@ -310,11 +310,11 @@ ideas = {
 			removal_cost = -1
 			picture = generic_research_bonus
 			modifier = {
-				production_speed_industrial_complex_factor = 0.10
-				production_speed_arms_factory_factor = -0.10
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = -0.05
 				war_support_factor = 0.05
-				sp_tag_nuclear_power_speed_factor = 0.10
-				sp_tag_rocket_speed_factor = -0.10
+				sp_tag_nuclear_power_speed_factor = 0.05
+				sp_tag_rocket_speed_factor = -0.05
 			}
 		}
 
@@ -330,8 +330,8 @@ ideas = {
 			removal_cost = -1
 			picture = chi_war_of_resistance
 			modifier = {
-				surrender_limit = 0.10	#lowered from 25% since this brought it to 0, at around 8% which is still greatly unrealistic, but at least better
-				resistance_growth_on_our_occupied_states = 0.50
+				surrender_limit = 0.05	#lowered from 25% since this brought it to 0, at around 8% which is still greatly unrealistic, but at least better
+				resistance_growth_on_our_occupied_states = 0.25
 				mobilization_speed = 0.25
 			}
 		}
@@ -1137,7 +1137,7 @@ ideas = {
 			allowed = {
 				always = no
 			}
-			picture = POL_The_Great_Depression
+			picture = great_depression
 			modifier = {
 				consumer_goods_factor = -0.15
 			}
@@ -1589,6 +1589,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				drift_defence_factor = 0.5
+				stability_factor = -0.05
 			}
 			rule = {
 				can_create_factions = yes
@@ -1651,7 +1652,7 @@ ideas = {
 			}
 			picture = generic_air_bonus
 			modifier = {
-				cat_battlefield_support_cost_factor = -0.1
+				new_battlefield_support_mastery_gain_factor = 0.1
 			}
 			research_bonus = {
 				jet_technology = 0.1
@@ -1704,7 +1705,7 @@ ideas = {
 				}
 			}
 			modifier = {
-				communism_drift = 0.1
+				communism_drift = 0.05
 			}
 		}		
 		GER_the_great_red_menace = {
@@ -2409,12 +2410,8 @@ ideas = {
 				always = yes
 			}
 
-			available = {
-				has_war = no
-			}
-
 			allowed_civil_war = {
-				always = no
+				always = yes
 			}
 
 			picture = generic_disjointed_gov

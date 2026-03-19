@@ -7,6 +7,7 @@
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 ### search_filters = {FOCUS_FILTER_INTERNAL_AFFAIRS}
 
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = norwegian_focus
 
@@ -469,7 +470,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = NOR_compromise_with_the_nkp
-		cost = 8
+		cost = 10
 		available = {
 			communism > 0.1
 		}
@@ -714,7 +715,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_consolidate_power
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 
@@ -785,7 +786,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = NOR_compromise_with_the_nkp
-		cost = 8
+		cost = 10
 		available = {
 			has_government = communism 
 		}
@@ -808,7 +809,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_organize_partisan_militias
-		cost = 8
+		cost = 10
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = NOR_required_prep_communist_TT
@@ -864,7 +865,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = NOR_workers_and_farmers_rise
-		cost = 8
+		cost = 10
 		available = {
 			if = {
 				limit = {
@@ -1132,7 +1133,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_send_the_king_back_to_denmark
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1178,7 +1179,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = NOR_send_the_king_back_to_denmark
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_political_power = 75
@@ -1210,7 +1211,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_send_the_king_back_to_denmark
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 
@@ -1263,7 +1264,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_worker_armies
-		cost = 8
+		cost = 10
 		available = {
 			communism > 0.75
 		}
@@ -1298,7 +1299,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_squash_dissent
-		cost = 8
+		cost = 10
 		available = {
 			communism > 0.5
 		}
@@ -1332,7 +1333,10 @@ focus_tree = {
 				}
 			}
 			else = {
-				create_faction = NOR_northern_international
+				create_faction_from_template = {
+					template = faction_template_world_revolution
+					name = NORDIC_alliance_communist
+				}
 				every_other_country = {
 					limit = {
 						has_government = communism 
@@ -1415,7 +1419,10 @@ focus_tree = {
 					is_in_faction = no 
 					NORDIC_alliance_created_already = no 
 				}
-				create_faction = NORDIC_alliance_communist
+				create_faction_from_template = {
+					template = faction_template_world_revolution
+					name = NORDIC_alliance_communist
+				}
 				complete_national_focus = NORDIC_form_joint_alliance
 			}
 		}
@@ -1429,7 +1436,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_reawaken_the_permanent_revolution
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1458,7 +1465,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_defend_finland
-		cost = 8
+		cost = 10
 		available = {
 			has_war_support > 0.75
 			if = {
@@ -1634,7 +1641,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_squash_dissent
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 
@@ -1754,7 +1761,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_prepare_for_war
-		cost = 8
+		cost = 10
 		available = {
 			has_war_support > 0.75
 		}
@@ -1777,7 +1784,20 @@ focus_tree = {
 					is_in_faction = no 
 					NORDIC_alliance_created_already = no 
 				}
-				create_faction = NORDIC_alliance_democratic
+				IF = {
+					limit = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					set_rule = { can_create_factions = yes }
+					create_faction_from_template = faction_template_NORDIC_alliance_democratic
+					add_faction_initiative = 1
+					add_to_faction = FROM
+				}
+				ELSE = {
+					set_rule = { can_create_factions = yes }
+					create_faction = NORDIC_alliance_democratic
+					add_to_faction = FROM
+				}
 				complete_national_focus = NORDIC_form_joint_alliance
 			}
 		}
@@ -1793,7 +1813,7 @@ focus_tree = {
 
 		relative_position_id = NOR_proactive_defense
 
-		cost = 8
+		cost = 10
 		
 		available = {
 			SWE = {
@@ -1841,7 +1861,7 @@ focus_tree = {
 
 		relative_position_id = NOR_proactive_defense
 
-		cost = 8
+		cost = 10
 
 		available = {
 			DEN = {
@@ -1885,7 +1905,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_secure_the_swedish_iron_ore
-		cost = 8
+		cost = 10
 		available = {
 			if = {
 				limit = {
@@ -1978,7 +1998,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_moscows_education_centers
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 
@@ -2024,7 +2044,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_moscows_education_centers
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				SOV = { has_war_with = ROOT }
@@ -2077,7 +2097,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_invite_secret_army
-		cost = 8
+		cost = 10
 		available = {
 			any_other_country = {
 				has_government = communism 
@@ -2122,7 +2142,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_revive_pomor_trade
-		cost = 8
+		cost = 10
 		available = {
 			any_other_country = {
 				has_government = communism 
@@ -2195,7 +2215,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_field_hospitals
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
@@ -2216,7 +2236,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_join_the_comintern
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2275,7 +2295,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_liberal_conservative_alliance
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2295,7 +2315,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_liberal_conservative_alliance
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2325,7 +2345,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_invite_foreign_investment
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2380,7 +2400,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_contain_the_labor_movement
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -2407,7 +2427,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_contain_the_labor_movement
-		cost = 8
+		cost = 10
 		available = {
 			FIN = {
 				NOT = { 
@@ -2510,7 +2530,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_uproot_secret_army
-		cost = 8
+		cost = 10
 		available = {
 			owns_state = 1035
 		}
@@ -2541,7 +2561,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_arrest_quisling
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 
@@ -2572,7 +2592,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_reform_the_army
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_timed_idea = {
@@ -2611,7 +2631,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_improved_training
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
 
@@ -2662,7 +2682,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_continue_nygaardsvold_government 
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2692,7 +2712,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_continue_nygaardsvold_government 
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2728,7 +2748,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_leaving_the_hard_thirties_behind 
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2798,7 +2818,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_broken_gun_policies 
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2840,7 +2860,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_weathering_the_storm_to_come 
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2916,7 +2936,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_the_neutrality_guard
 		
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 
@@ -2981,7 +3001,7 @@ focus_tree = {
 				has_completed_focus = NOR_continue_nygaardsvold_government
 			}
 		}
-		cost = 8
+		cost = 10
 		
 		allow_branch = {
 			NOR_kings_no_allow_trigger = yes 
@@ -3014,7 +3034,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_rearm_for_defense
 		
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
 
@@ -3081,7 +3101,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_cut_military_budget
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 
@@ -3109,7 +3129,7 @@ focus_tree = {
 		
 		relative_position_id = NOR_leaving_the_hard_thirties_behind
 		
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -3380,7 +3400,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_the_kings_no
-		cost = 8
+		cost = 10
 		
 		available_if_capitulated = yes 
 		
@@ -3407,7 +3427,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_kings_no
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes 
 		
@@ -3434,7 +3454,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_establish_milorg
-		cost = 8
+		cost = 10
 		
 		available_if_capitulated = yes 
 		
@@ -3461,7 +3481,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_establish_milorg
-		cost = 8
+		cost = 10
 		
 		available_if_capitulated = yes 
 		
@@ -3491,7 +3511,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_approach_the_coordinating_committee
-		cost = 8
+		cost = 10
 		
 		available_if_capitulated = yes 
 		
@@ -3531,7 +3551,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_use_xu
-		cost = 8
+		cost = 10
 		
 		available_if_capitulated = yes 
 		
@@ -3755,7 +3775,7 @@ focus_tree = {
 		x = 6
 		y = 4
 		relative_position_id = NOR_continue_nygaardsvold_government
-		cost = 8
+		cost = 10
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = NOR_invasion_focus_TT
@@ -3898,7 +3918,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = NOR_lurk_in_the_shadows
-		cost = 8
+		cost = 10
 		available = {
 			has_war = no
 		}
@@ -3948,7 +3968,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_approach_the_fatherland_league
-		cost = 8
+		cost = 10
 		available = {
 			fascism > 0.35
 		}
@@ -3978,7 +3998,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_nasjonal_samling
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_HISTORICAL }
 
@@ -3995,7 +4015,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_nasjonal_samling
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP FOCUS_FILTER_HISTORICAL }
 
@@ -4186,7 +4206,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = NOR_quislings_regime
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 
@@ -4241,7 +4261,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_elevate_hirden
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
@@ -4263,7 +4283,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_elevate_hirden
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 
@@ -4285,7 +4305,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_extensive_recruitment
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
@@ -4335,7 +4355,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_military_police
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -4375,7 +4395,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_extensive_recruitment
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
@@ -4398,7 +4418,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_get_rid_of_quisling
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
@@ -4435,7 +4455,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = NOR_get_rid_of_quisling
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_HISTORICAL }
 
@@ -4452,7 +4472,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_crackdown_on_civilian_life
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
@@ -4554,7 +4574,10 @@ focus_tree = {
 				}
 			}
 			else = {
-				create_faction = NOR_pan_germanic_entent
+				create_faction_from_template = {
+					template = faction_template_european_dominance
+					name = NOR_pan_germanic_entent
+				}
 				every_other_country = {
 					limit = {
 						is_germanic = yes 
@@ -4578,7 +4601,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_abandoning_nynorsk
-		cost = 8
+		cost = 10
 		available = {
 			has_intelligence_agency = no 
 		}
@@ -4650,7 +4673,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_fascist_military_collaboration
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_HISTORICAL }
 
@@ -4711,7 +4734,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_administrative_council
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
@@ -4765,7 +4788,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = NOR_the_administrative_council
-		cost = 8
+		cost = 10
 		available = {
 			has_government = fascism 
 			is_in_faction = yes 
@@ -4843,7 +4866,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_norwegian_reichsprotectorate
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP }
 
@@ -4863,7 +4886,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_norwegian_reichsprotectorate
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 
@@ -4893,7 +4916,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_jonas_lie_coup
-		cost = 8
+		cost = 10
 		available = {
 			has_government = fascism 
 			is_subject = yes 
@@ -4968,7 +4991,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = NOR_a_valuable_partner_to_germany
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -5025,7 +5048,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_chamberlains_overture
-		cost = 8
+		cost = 10
 		available = {
 			set_temp_variable = {
 				var = temp_preparedness
@@ -5144,7 +5167,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_crowns_executive_powers
-		cost = 8
+		cost = 10
 		available = {
 			neutrality > 0.65
 		}
@@ -5181,7 +5204,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_the_kingdom_of_norway
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_ARMY_XP }
 
@@ -5209,7 +5232,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_kingdom_of_norway
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_NAVY_XP }
 
@@ -5237,7 +5260,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_appoint_prince_olav_to_army_staff
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -5259,7 +5282,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_promote_civilian_donations
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
@@ -5287,7 +5310,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_promote_civilian_donations
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -5304,7 +5327,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = NOR_prince_olav_to_navy_staff
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			custom_effect_tooltip = NOR_modify_kingdom_of_norway_TT
@@ -5339,7 +5362,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_enhance_coastal_defense
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -5404,7 +5427,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_enhance_coastal_defense
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -5446,7 +5469,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_rule_the_northern_sea
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 
@@ -5489,7 +5512,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = NOR_appoint_prince_olav_to_army_staff
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			custom_effect_tooltip = NOR_modify_kingdom_of_norway_TT		
@@ -5532,7 +5555,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_power_to_the_royal_guard
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
@@ -5555,7 +5578,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_power_to_the_royal_guard
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			custom_effect_tooltip = NOR_modify_kingdom_of_norway_TT		
@@ -5585,7 +5608,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = NOR_for_the_king_and_prince
-		cost = 8
+		cost = 10
 		available = {
 			has_war_support > 0.5
 		}
@@ -5636,7 +5659,10 @@ focus_tree = {
 					is_in_faction = no 
 					NORDIC_alliance_created_already = no 
 				}
-				create_faction = NORDIC_alliance_monarchist
+				create_faction_from_template = {
+					template = faction_template_DEN_nordic_cooperation_alliance
+					name = NORDIC_alliance_monarchist
+				}
 				complete_national_focus = NORDIC_form_joint_alliance
 			}
 		}
@@ -5651,7 +5677,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_encourage_recruitment
-		cost = 8
+		cost = 10
 		available = {
 			any_state = {
 				is_owned_and_controlled_by = ROOT
@@ -5758,7 +5784,7 @@ focus_tree = {
 			}	
 		}
 
-		cost = 8
+		cost = 10
 
 		available = {
 			NOT = {
@@ -5929,7 +5955,7 @@ focus_tree = {
 		x = 2
 		y = 0
 		relative_position_id = NOR_claims_on_faroe_islands
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				101 = {
@@ -5984,7 +6010,7 @@ focus_tree = {
 		x = 2
 		y = 0
 		relative_position_id = NOR_eirik_raudes_land
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				100 = {
@@ -6049,7 +6075,7 @@ focus_tree = {
 			}
 		}
 
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				37 = {
@@ -6179,7 +6205,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_claims_on_denmark
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				AND = {
@@ -6282,7 +6308,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_reviving_the_norgesveldet
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				owns_state = 113
@@ -6344,7 +6370,7 @@ focus_tree = {
 		x = 2
 		y = 0
 		relative_position_id = NOR_claims_on_ireland
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				AND = {
@@ -6460,7 +6486,7 @@ focus_tree = {
 		x = -4
 		y = 0
 		relative_position_id = NOR_claims_on_scotland
-		cost = 8
+		cost = 10
 		available = {
 			NOT = {
 				AND = {
@@ -6581,7 +6607,7 @@ focus_tree = {
 		x = -4
 		y = 3
 		relative_position_id = NOR_our_royal_claims
-		cost = 8
+		cost = 10
 
 
 		offset = {
@@ -6772,7 +6798,7 @@ focus_tree = {
 
 
 
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -6826,7 +6852,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = NOR_start_rearmament
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -6862,7 +6888,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_kickstart_military_industry
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 			has_dynamic_modifier = { modifier = NOR_independent_norway_dmod }
@@ -6944,7 +6970,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_drobak_coastal_fort
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -6961,7 +6987,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_drobak_coastal_fort
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -6986,7 +7012,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_modernize_fortifications
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7085,7 +7111,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_rikstanken
 		mutually_exclusive = { focus = NOR_tank_procurement }
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7126,7 +7152,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_tank_procurement
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7147,7 +7173,7 @@ focus_tree = {
 		y = 1
 
 		relative_position_id = NOR_start_rearmament
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7168,7 +7194,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_expand_Haeren
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7192,7 +7218,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_improved_weapons
 
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 			NOT = {
@@ -7216,7 +7242,7 @@ focus_tree = {
 		x = 10
 		y = 0
 		relative_position_id = NOR_start_rearmament
-		cost = 8
+		cost = 10
 		available = {
 			if = {
 				limit = { has_idea = NOR_the_hard_thirties_ns_2 }
@@ -7290,7 +7316,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = NOR_building_an_independent_norway
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
@@ -7317,7 +7343,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_building_an_independent_norway
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
@@ -7361,7 +7387,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_building_an_independent_norway
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 
@@ -7384,7 +7410,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_norwegian_school_of_economics
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
  
@@ -7437,7 +7463,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_empower_large_industrial_groups
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -7481,7 +7507,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_norwegian_school_of_economics
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -7522,7 +7548,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_empower_large_industrial_groups
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
@@ -7568,7 +7594,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_aluminum_production
-		cost = 8
+		cost = 10
 		available = {
 			has_full_control_of_state = 143 # Trondelag
 			has_full_control_of_state = 1033 # Helgeland
@@ -7596,7 +7622,7 @@ focus_tree = {
 		x = 0
 		y = 4
 		relative_position_id = NOR_hurtigruten
-		cost = 8
+		cost = 10
 		available = {
 			143 = {
 				is_owned_and_controlled_by = ROOT
@@ -7688,7 +7714,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_increase_research_funding
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7707,7 +7733,7 @@ focus_tree = {
 		x = 8
 		y = 0
 		relative_position_id = NOR_building_an_independent_norway
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7730,7 +7756,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = NOR_haerens_flyvevaaben
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7773,7 +7799,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_haerens_flyvevaaben
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7822,7 +7848,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_norwegian_planes
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7849,7 +7875,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_anti_air_artillery_research
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7903,7 +7929,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_foreign_plane_designs
-		cost = 8
+		cost = 10
 		available = {
 			any_owned_state = {
 				is_controlled_by = ROOT 
@@ -7944,7 +7970,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_norwegian_planes
-		cost = 8
+		cost = 10
 		available = {
 			any_owned_state = {
 				is_controlled_by = ROOT 
@@ -8012,7 +8038,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_anti_air_artillery_research
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8034,7 +8060,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_invest_in_airfields
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8059,7 +8085,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_increase_air_production
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8111,7 +8137,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_haerens_flyvevaaben
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8145,7 +8171,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_radar_research
-		cost = 8
+		cost = 10
 		available = {
 			is_special_project_completed = sp:sp_air_radar
 			NOR_broken_gun_trigger = yes 
@@ -8214,7 +8240,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		cost = 8
+		cost = 10
 
 		available = {
 			NOR_broken_gun_trigger = yes 
@@ -8249,7 +8275,7 @@ focus_tree = {
 		x = 13
 		y = 0
 		relative_position_id = NOR_haerens_flyvevaaben
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_HISTORICAL }
 
@@ -8270,7 +8296,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = NOR_the_royal_norwegian_navy
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -8305,7 +8331,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_the_royal_norwegian_navy
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8380,7 +8406,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_royal_norwegian_navy
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8448,14 +8474,14 @@ focus_tree = {
 		
 		available_if_capitulated = yes
 		
-		cost = 8
+		cost = 10
 		
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
-
 		completion_reward = {
-			
+			custom_effect_tooltip = NOR_emergency_conversions_tt
+			set_country_flag = refit_convoy_ships_flag_nor		
 		}
 	}
 
@@ -8470,7 +8496,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_expand_the_dockyards
 		
-		cost = 8
+		cost = 10
 		
 		bypass = {
 			has_capitulated = yes
@@ -8514,7 +8540,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = NOR_battleship_focus
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8547,7 +8573,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_battleship_focus
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8597,7 +8623,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_kystvakten
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8636,7 +8662,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_kystvakten
-		cost = 8
+		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes  
 		}
@@ -8691,7 +8717,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		cost = 8
+		cost = 10
 
 		available = {
 			NOR_broken_gun_trigger = yes 
@@ -8726,7 +8752,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		cost = 8
+		cost = 10
 
 		available = {
 			NOR_broken_gun_trigger = yes 
@@ -8791,7 +8817,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_pilot_training
 		
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 

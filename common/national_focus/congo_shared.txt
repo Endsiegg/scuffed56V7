@@ -7,7 +7,7 @@
 #		y = 0
 #		relative_position_id = 
 #
-#		cost = 8
+#		cost = 10
 
 #
 #		ai_will_do = {
@@ -164,8 +164,6 @@
 			}
 		}
 
-		available_if_capitulated = no
-
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
@@ -262,7 +260,7 @@
 		x = -3
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -358,7 +356,7 @@
 		x = -1
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -561,7 +559,7 @@
 		x = 3
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -764,7 +762,7 @@
 		x = 0
 		y = 3
 
-		cost = 5
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 
@@ -882,9 +880,8 @@
 		x = 2
 		y = 2
 
-		cost = 8
+		cost = 10
 
-		cancel_if_invalid = no
 		continue_if_invalid = yes
 
 		text_icon = CONGO_COG_focus_style
@@ -1067,7 +1064,7 @@
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -1155,7 +1152,7 @@
 		x = -6
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 
@@ -1349,7 +1346,7 @@
 		x = -4
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -1503,7 +1500,7 @@
 		x = -2
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2005,7 +2002,7 @@
 		x = 2
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -2510,11 +2507,9 @@
 					limit = {
 						772 = {
 							NOT = {
-								OR = {
-									is_owned_by = COG
-									is_claimed_by = COG
-									is_core_of = COG
-								}
+								is_owned_by = COG
+								is_claimed_by = COG
+								is_core_of = COG
 							}
 						}
 					}
@@ -2579,11 +2574,9 @@
 					limit = {
 						772 = {
 							NOT = {
-								OR = {
-									is_owned_by = COG
-									is_claimed_by = COG
-									is_core_of = COG
-								}
+								is_owned_by = COG
+								is_claimed_by = COG
+								is_core_of = COG
 							}
 						}
 					}
@@ -2649,7 +2642,7 @@
 		x = 9
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		allow_branch = {
 			OR = {
@@ -2773,7 +2766,7 @@
 		x = -1
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -2930,7 +2923,7 @@
 		x = -0
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -3062,7 +3055,7 @@
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -3208,7 +3201,7 @@
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -3430,7 +3423,7 @@
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -3785,7 +3778,7 @@
 		x = 0
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -3834,13 +3827,11 @@
 							state = 705
 						}
 						NOT = {
-							OR = {
-								is_claimed_by = BEL
-								is_owned_by = BEL
-								is_core_of = BEL
-								is_owned_by = COG
-								is_core_of = COG
-							}
+							is_claimed_by = BEL
+							is_owned_by = BEL
+							is_core_of = BEL
+							is_owned_by = COG
+							is_core_of = COG
 						}
 					}
 					add_claim_by = BEL
@@ -3850,36 +3841,32 @@
 
 				every_other_country = {
 					limit = {
-						AND = { 
-							OR = {
-								owns_state = 891
-								owns_state = 892
-								owns_state = 540
-								owns_state = 796
-								owns_state = 295
-								owns_state = 888
-								owns_state = 889
-								owns_state = 890
-								owns_state = 538
-								owns_state = 718
-								owns_state = 769
-								owns_state = 768
-								owns_state = 772
-								owns_state = 539
-								owns_state = 297
-								owns_state = 705
-								owns_state = 773
-								owns_state = 660
-								owns_state = 774
-							}
-							NOT = {
-								OR = {
-									has_war_with = BEL
-									original_tag = BEL
-									is_subject_of = BEL
-									original_tag = COG
-								}
-							}
+						OR = {
+							owns_state = 891
+							owns_state = 892
+							owns_state = 540
+							owns_state = 796
+							owns_state = 295
+							owns_state = 888
+							owns_state = 889
+							owns_state = 890
+							owns_state = 538
+							owns_state = 718
+							owns_state = 769
+							owns_state = 768
+							owns_state = 772
+							owns_state = 539
+							owns_state = 297
+							owns_state = 705
+							owns_state = 773
+							owns_state = 660
+							owns_state = 774
+						}
+						NOT = {
+							has_war_with = BEL
+							original_tag = BEL
+							is_subject_of = BEL
+							original_tag = COG
 						}
 					}
 					BEL = {
@@ -3908,11 +3895,9 @@
 							state = 705
 						}
 						NOT = {
-							OR = {
-								is_claimed_by = COG
-								is_owned_by = COG
-								is_core_of = COG
-							}
+							is_claimed_by = COG
+							is_owned_by = COG
+							is_core_of = COG
 						}
 					}
 					add_claim_by = COG
@@ -3944,13 +3929,11 @@
 							state = 705
 						}
 						NOT = {
-							OR = {
-								is_claimed_by = BEL
-								is_owned_by = BEL
-								is_core_of = BEL
-								is_owned_by = COG
-								is_core_of = COG
-							}
+							is_claimed_by = BEL
+							is_owned_by = BEL
+							is_core_of = BEL
+							is_owned_by = COG
+							is_core_of = COG
 						}
 					}
 					add_claim_by = BEL
@@ -3960,35 +3943,31 @@
 
 				every_other_country = {
 					limit = {
-						AND = { 
-							OR = {
-								owns_state = 891
-								owns_state = 892
-								owns_state = 540
-								owns_state = 796
-								owns_state = 295
-								owns_state = 888
-								owns_state = 889
-								owns_state = 890
-								owns_state = 538
-								owns_state = 718
-								owns_state = 769
-								owns_state = 768
-								owns_state = 772
-								owns_state = 539
-								owns_state = 297
-								owns_state = 705
-								owns_state = 773
-								owns_state = 660
-								owns_state = 774
-							}
-							NOT = {
-								OR = {
-									has_war_with = BEL
-									original_tag = BEL
-									is_subject_of = BEL
-								}
-							}
+						OR = {
+							owns_state = 891
+							owns_state = 892
+							owns_state = 540
+							owns_state = 796
+							owns_state = 295
+							owns_state = 888
+							owns_state = 889
+							owns_state = 890
+							owns_state = 538
+							owns_state = 718
+							owns_state = 769
+							owns_state = 768
+							owns_state = 772
+							owns_state = 539
+							owns_state = 297
+							owns_state = 705
+							owns_state = 773
+							owns_state = 660
+							owns_state = 774
+						}
+						NOT = {
+							has_war_with = BEL
+							original_tag = BEL
+							is_subject_of = BEL
 						}
 					}
 					BEL = {
@@ -4017,11 +3996,9 @@
 							state = 705
 						}
 						NOT = {
-							OR = {
-								is_claimed_by = COG
-								is_owned_by = COG
-								is_core_of = COG
-							}
+							is_claimed_by = COG
+							is_owned_by = COG
+							is_core_of = COG
 						}
 					}
 					add_claim_by = COG
@@ -4045,7 +4022,7 @@
 		x = 0
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -4136,7 +4113,7 @@
 		x = 2
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -4231,7 +4208,7 @@
 		x = 4
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -4336,7 +4313,7 @@
 		x = 4
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -4370,11 +4347,9 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = COG
-						NOT = {
-							is_in_faction_with = USA
-						}
+					original_tag = COG
+					NOT = {
+						is_in_faction_with = USA
 					}
 				}
 				
@@ -4427,10 +4402,8 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = COG
-						is_in_faction_with = USA
-					}
+					original_tag = COG
+					is_in_faction_with = USA
 				}
 				
 				custom_effect_tooltip = modify_COG_force_publique_tt
@@ -4440,11 +4413,9 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = BEL
-						NOT = {
-							is_in_faction_with = USA
-						}
+					original_tag = BEL
+					NOT = {
+						is_in_faction_with = USA
 					}
 				}
 				
@@ -4457,10 +4428,8 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = BEL
-						is_in_faction_with = USA
-					}
+					original_tag = BEL
+					is_in_faction_with = USA
 				}
 				custom_effect_tooltip = modify_BEL_belgian_congo_colonial_returns_dynamic_modifier_tt
 				add_to_variable = { BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_production_speed_air_base_factor = 0.25 tooltip = production_speed_air_base_factor_tt }
@@ -4476,11 +4445,9 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = COG
-						NOT = {
-							is_in_faction_with = USA
-						}
+					original_tag = COG
+					NOT = {
+						is_in_faction_with = USA
 					}
 				}
 				
@@ -4533,10 +4500,8 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = COG
-						is_in_faction_with = USA
-					}
+					original_tag = COG
+					is_in_faction_with = USA
 				}
 				
 				custom_effect_tooltip = modify_COG_force_publique_tt
@@ -4546,11 +4511,9 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = BEL
-						NOT = {
-							is_in_faction_with = USA
-						}
+					original_tag = BEL
+					NOT = {
+						is_in_faction_with = USA
 					}
 				}
 				
@@ -4563,10 +4526,8 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = BEL
-						is_in_faction_with = USA
-					}
+					original_tag = BEL
+					is_in_faction_with = USA
 				}
 				custom_effect_tooltip = modify_BEL_belgian_congo_colonial_returns_dynamic_modifier_tt
 				add_to_variable = { BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_production_speed_air_base_factor = 0.25 tooltip = production_speed_air_base_factor_tt }
@@ -4589,7 +4550,7 @@
 		x = 0
 		y = 2
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -4649,7 +4610,7 @@
 		x = 1
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -4757,7 +4718,7 @@
 		x = 1
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -5016,7 +4977,7 @@
 		x = 0
 		y = 2
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -5515,7 +5476,7 @@
 		x = -1
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -5614,7 +5575,7 @@
 		x = 1
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -5713,7 +5674,7 @@
 		x = -1
 		y = 3
 
-		cost = 8
+		cost = 10
 
 		allow_branch = {
 			OR = {
@@ -5803,7 +5764,7 @@
 		x = 0
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -5898,7 +5859,7 @@
 		x = -2
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -6028,7 +5989,7 @@
 		x = 2
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -6242,7 +6203,7 @@
 		x = 6
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -6402,7 +6363,7 @@
 		x = 0
 		y = 3
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -6507,7 +6468,7 @@
 		x = 2
 		y = 3
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -6666,7 +6627,7 @@
 		x = 1
 		y = 3
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -6758,7 +6719,7 @@
 		x = 0
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -6848,7 +6809,7 @@
 		x = -1
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -6933,7 +6894,7 @@
 		x = 1
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -7012,7 +6973,7 @@
 		x = 1
 		y = 1
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -7172,7 +7133,7 @@
 		x = 3
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -7334,7 +7295,7 @@
 		x = -1
 		y = 4
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -7440,7 +7401,7 @@
 		x = 0
 		y = 5
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -7531,7 +7492,7 @@
 		x = 0
 		y = 5
 
-		cost = 5
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -7676,7 +7637,7 @@
 		x = 0
 		y = 5
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -7874,7 +7835,7 @@
 		x = 0
 		y = 2
 
-		cost = 5
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_TFV_AUTONOMY }
 
@@ -7967,7 +7928,7 @@
 		x = 2
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_TFV_AUTONOMY }
 
@@ -8058,7 +8019,7 @@
 		x = 4
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -8158,7 +8119,7 @@
 		x = -2
 		y = 6
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -8270,7 +8231,7 @@
 		x = 0
 		y = 6
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -8358,7 +8319,7 @@
 		x = 0
 		y = 6
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -8519,7 +8480,7 @@
 		x = 5
 		y = 3
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -8577,7 +8538,7 @@
 		x = 3
 		y = 3
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -8616,9 +8577,7 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = COG
-					}
+					original_tag = COG
 					owns_state = 295
 				}
 				
@@ -8635,9 +8594,7 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = BEL
-					}
+					original_tag = BEL
 					owns_state = 295
 				}
 
@@ -8662,9 +8619,7 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = COG
-					}
+					original_tag = BEL
 					owns_state = 295
 				}
 				
@@ -8681,9 +8636,7 @@
 
 			IF = {
 				limit = {
-					AND = {
-						original_tag = BEL
-					}
+					original_tag = BEL
 					owns_state = 295
 				}
 
@@ -8715,7 +8668,7 @@
 		x = -2
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -8830,7 +8783,7 @@
 		x = 3
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -8938,7 +8891,7 @@
 		x = -3
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -9048,7 +9001,7 @@
 		x = -1
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -9198,7 +9151,7 @@
 		x = 1
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_COG_focus_style
 
@@ -9279,7 +9232,7 @@
 		x = 3
 		y = 2
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -9495,7 +9448,7 @@
 		x = 0
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_BEL_focus_style
 
@@ -9609,7 +9562,7 @@
 		x = 2
 		y = 3
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style
 
@@ -9634,10 +9587,18 @@
 				}
 				IF = {
 					limit = { NOT = { is_faction_leader = yes } }
-					set_rule = { 
-						can_create_factions	= yes
+					IF = {
+						limit = {
+							has_dlc = "No Compromise, No Surrender"
+						}
+						set_rule = { can_create_factions = yes }
+						create_faction_from_template = faction_template_COG_african_union_faction
+						add_faction_initiative = 1
 					}
-					create_faction = COG_african_union_faction
+					ELSE = {
+						set_rule = { can_create_factions = yes }
+						create_faction_from_template = faction_template_COG_african_union_faction
+					}
 					every_other_country = {
 						limit = { is_subject_of = ROOT }
 						ROOT = {
@@ -9669,7 +9630,11 @@
 									is_faction_leader = yes 
 								} 
 							}
-							create_faction = ETH_african_union_faction
+							create_faction_from_template = {
+								template = faction_template_african_unity
+								name = ETH_african_union_faction
+								icon = GFX_faction_logo_generic_18
+							}
 							every_country = {
 								limit = { is_subject_of = COG }
 								COG = {
@@ -9713,7 +9678,7 @@
 		x = 4
 		y = 3
 
-		cost = 8
+		cost = 10
 
 		text_icon = CONGO_COG_focus_style 
 
@@ -9746,11 +9711,9 @@
 							state = 705
 						}
 						NOT = {
-							OR = {
-								is_claimed_by = ROOT
-								is_owned_by = ROOT
-								is_core_of = ROOT
-							}
+							is_claimed_by = ROOT
+							is_owned_by = ROOT
+							is_core_of = ROOT
 						}
 					}
 					add_claim_by = ROOT
@@ -9760,35 +9723,31 @@
 
 				every_other_country = {
 					limit = {
-						AND = { 
-							OR = {
-								owns_state = 891
-								owns_state = 892
-								owns_state = 540
-								owns_state = 796
-								owns_state = 295
-								owns_state = 888
-								owns_state = 889
-								owns_state = 890
-								owns_state = 538
-								owns_state = 718
-								owns_state = 769
-								owns_state = 768
-								owns_state = 772
-								owns_state = 539
-								owns_state = 297
-								owns_state = 705
-								owns_state = 773
-								owns_state = 660
-								owns_state = 774
-							}
-							NOT = {
-								OR = {
-									has_war_with = ROOT
-									original_tag = ROOT
-									is_subject_of = ROOT
-								}
-							}
+						OR = {
+							owns_state = 891
+							owns_state = 892
+							owns_state = 540
+							owns_state = 796
+							owns_state = 295
+							owns_state = 888
+							owns_state = 889
+							owns_state = 890
+							owns_state = 538
+							owns_state = 718
+							owns_state = 769
+							owns_state = 768
+							owns_state = 772
+							owns_state = 539
+							owns_state = 297
+							owns_state = 705
+							owns_state = 773
+							owns_state = 660
+							owns_state = 774
+						}
+						NOT = {
+							has_war_with = ROOT
+							original_tag = ROOT
+							is_subject_of = ROOT
 						}
 					}
 					ROOT = {
@@ -9817,12 +9776,10 @@
 								state = 705
 							}
 							NOT = {
-								OR = {
-									is_claimed_by = COG
-									is_owned_by = COG
-									is_core_of = COG
-								}
-							}
+								is_claimed_by = COG
+								is_owned_by = COG
+								is_core_of = COG
+						}
 						}
 						add_claim_by = COG
 					}
@@ -9831,35 +9788,31 @@
 
 					every_other_country = {
 						limit = {
-							AND = { 
-								OR = {
-									owns_state = 891
-									owns_state = 892
-									owns_state = 540
-									owns_state = 796
-									owns_state = 295
-									owns_state = 888
-									owns_state = 889
-									owns_state = 890
-									owns_state = 538
-									owns_state = 718
-									owns_state = 769
-									owns_state = 768
-									owns_state = 772
-									owns_state = 539
-									owns_state = 297
-									owns_state = 705
-									owns_state = 773
-									owns_state = 660
-									owns_state = 774
-								}
-								NOT = {
-									OR = {
-										has_war_with = COG
-										original_tag = COG
-										is_subject_of = COG
-									}
-								}
+							OR = {
+								owns_state = 891
+								owns_state = 892
+								owns_state = 540
+								owns_state = 796
+								owns_state = 295
+								owns_state = 888
+								owns_state = 889
+								owns_state = 890
+								owns_state = 538
+								owns_state = 718
+								owns_state = 769
+								owns_state = 768
+								owns_state = 772
+								owns_state = 539
+								owns_state = 297
+								owns_state = 705
+								owns_state = 773
+								owns_state = 660
+								owns_state = 774
+							}
+							NOT = {
+								has_war_with = COG
+								original_tag = COG
+								is_subject_of = COG
 							}
 						}
 						COG = {

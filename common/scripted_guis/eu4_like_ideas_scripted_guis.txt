@@ -11,7 +11,6 @@ scripted_gui = {
 			ROOT = {
 				is_ai = no
 			}
-			
 		}
 	}
 
@@ -22,10 +21,7 @@ scripted_gui = {
 		parent_window_token = politics_tab
 
 		visible = {
-			has_game_rule = {
-				rule = eu4_disable_enable_ideas 
-				option = YES
-			}
+			always = yes
 		}
 
 		effects = {
@@ -1361,6 +1357,7 @@ scripted_gui = {
 
 							modifier = {
 								add = 2
+								NOT = { has_global_flag = eu4_like_ideas_rule_AI_ability_to_remove_idea_groups_disabled }
 								OR = {
 									AND = {
 										check_variable = { v = 4 }
@@ -1823,11 +1820,6 @@ scripted_gui = {
 								tag = GER
 							}
 							modifier = {
-								add = 200
-								check_variable = { v = 2 }
-								tag = POL
-							}
-							modifier = {
 								add = 2
 								check_variable = { v = 3 }
 								OR = {
@@ -2241,9 +2233,9 @@ scripted_gui = {
 										size > 70
 										type = submarine
 									}
-									has_tech = convoy_interdiction_ti
-									has_tech = raider_patrols
-									has_tech = carrier_operations
+									has_completed_subdoctrine = wolfpacks
+									has_completed_subdoctrine = submarine_fleet_operations
+									has_completed_subdoctrine = capital_hunters
 								}
 							}
 							modifier = {
@@ -2355,8 +2347,8 @@ scripted_gui = {
 								add = 2
 								check_variable = { v = 14 }
 								OR = {
-									has_tech = delay
-									has_tech = sup_delay
+									has_doctrine = new_mobile_warfare
+									has_doctrine = superior_firepower
 								}
 								OR = {
 									threat > 0.5
@@ -2368,7 +2360,7 @@ scripted_gui = {
 								add = 2
 								check_variable = { v = 15 }
 								OR = {
-									has_tech = mass_assault
+									has_doctrine = mass_assault
 									AND = {
 										has_idea = scraping_the_barrel
 										has_manpower < 50000
@@ -2385,7 +2377,7 @@ scripted_gui = {
 								NOT = { has_selected_idea_group = yes }
 								OR = {
 									has_offensive_war = yes
-									has_tech = elastic_defence
+									has_completed_subdoctrine = mobile_defense
 									any_other_country = {
 										ROOT = {
 											OR = {
@@ -2403,7 +2395,7 @@ scripted_gui = {
 								NOT = { has_selected_idea_group = yes }
 								OR = {
 									has_defensive_war = yes
-									has_tech = grand_battle_plan
+									has_doctrine = grand_battleplan
 									bunker > 49
 									any_other_country = {
 										meta_trigger = {
@@ -2431,23 +2423,10 @@ scripted_gui = {
 								has_government = democratic
 							}
 							modifier = {
-								add = 1000
-								check_variable = { v = 17 }
-								set_temp_variable = { idea_group_out_of_context = 16 }
-								NOT = { has_selected_idea_group = yes }
-								tag = POL
-							}
-							modifier = {
 								add = 2
 								check_variable = { v = 18 }
-								OR = {
-									has_deployed_air_force_size = {
-										size > 1999
-									}
-									AND = {
-										tag = JAP
-										has_completed_focus = JAP_the_zero
-									}
+								has_deployed_air_force_size = {
+									size > 1999
 								}
 							}
 							modifier = {
@@ -2462,7 +2441,6 @@ scripted_gui = {
 								add = 2
 								check_variable = { v = 24 }
 								OR = {
-									has_tech = naval_strike_tactics
 									has_deployed_air_force_size = {
 										size > 499
 										type = cas
@@ -2701,10 +2679,6 @@ scripted_gui = {
 		visible = {
 			is_ai = no
 			has_dlc = "La Resistance"
-			has_game_rule = {
-				rule = eu4_disable_enable_ideas 
-				option = YES
-			}
 			OR = {
 				NOT = { check_variable = { eu4_like_ideas_alerts^0 = 0 } }
 				can_remove_flags_for_available_dismissed_alerts = yes
@@ -2875,10 +2849,6 @@ scripted_gui = {
 		visible = {
 			is_ai = no
 			NOT = { has_dlc = "La Resistance" }
-			has_game_rule = {
-				rule = eu4_disable_enable_ideas 
-				option = YES
-			}
 			OR = {
 				NOT = { check_variable = { eu4_like_ideas_alerts^0 = 0 } }
 				can_remove_flags_for_available_dismissed_alerts = yes

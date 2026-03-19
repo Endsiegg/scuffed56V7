@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = china_communist_focus
 
@@ -9,17 +10,17 @@ focus_tree = {
 			tag = PRC
 		}
 	}
-
+	shared_focus = KMT_the_national_catastrophe
 	default = no
 
-	continuous_focus_position = { x = 0 y = 0 }
+	continuous_focus_position = { x = 1150 y = 1050 }
 
 	focus = {
 		id = PRC_recover_from_the_long_march
 		icon = GFX_goal_infantry_flames		
 		x = 5
 		y = 0
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 100
 		}
@@ -75,7 +76,7 @@ focus_tree = {
 
 		available = {
 			NOT = {
-				is_puppet_of = JAP
+				is_subject_of = JAP
 				has_war_with = CHI
 			}
 		}
@@ -89,7 +90,7 @@ focus_tree = {
 			if = {
 				limit = {
 					CHI = {
-						has_completed_focus = KMT_support_pro_japanese_faction
+						has_completed_focus = KMT_wang_jingweis_rise
 					}
 					CHI = {
 						PRC = {
@@ -115,7 +116,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_anti_japanese_aim
-		cost = 8
+		cost = 10
 		
 		ai_will_do = {
 			factor = 10
@@ -123,7 +124,13 @@ focus_tree = {
 				factor = 0
 				AND = {
 					is_ai = yes
-					is_historical_focus_on = no
+					OR = {
+						is_historical_focus_on = no
+						has_game_rule = {
+							rule = PRC_ai_behavior
+							option = RANDOM
+						}
+					}
 				}
 			}
 			modifier = {						#no need to go around attacking everyone
@@ -156,6 +163,7 @@ focus_tree = {
 			}
 		}
 		
+		will_lead_to_war_with = SHX
 		completion_reward = {
 			custom_effect_tooltip = prc_east_expedition_tt
 			create_wargoal = {
@@ -171,13 +179,43 @@ focus_tree = {
 	}
 
 	focus = {
+		id = PRC_crush_xueliangs_army_r56
+		icon = GFX_focus_generic_attack_kuomintang
+		prerequisite = { focus = PRC_anti_japanese_aim }
+		x = 1
+		y = 1
+		relative_position_id = PRC_anti_japanese_aim
+		cost = 5
+		ai_will_do = { base = 0 }
+		available = {
+			r56_script_i_am_sane = yes
+			XIC = { r56_script_target_is_sane = yes }
+			NOT = {
+				OR = {
+					has_war_with = JAP
+					has_war_with = CHI
+				}
+			}
+		}
+		will_lead_to_war_with = XIC
+		completion_reward = {
+			create_wargoal = {
+				target = XIC
+				expire = 0
+				type = annex_everything
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
 		id = PRC_front_line_preparation
 		icon = GFX_focus_generic_public_works_A
 		prerequisite = { focus = PRC_approach_the_front }
 		x = -1
 		y = 1
 		relative_position_id = PRC_approach_the_front
-		cost = 8
+		cost = 10
 
 		available = {
 			has_war = no
@@ -186,11 +224,11 @@ focus_tree = {
 					OR = {
 						is_owned_by = JAP
 						owner = {
-							is_puppet_of = JAP
+							is_subject_of = JAP
 						}
 						is_controlled_by = JAP
 						controller = {
-							is_puppet_of = JAP
+							is_subject_of = JAP
 						}
 					}
 				}
@@ -210,7 +248,7 @@ focus_tree = {
 							owner = {
 								OR = {
 									tag = JAP
-									is_puppet_of = JAP
+									is_subject_of = JAP
 								}
 							}
 						}
@@ -233,7 +271,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_approach_the_front
-		cost = 8
+		cost = 10
 		
 		available = {
 			controls_state = 615
@@ -280,7 +318,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = PRC_approach_the_front
-		cost = 8
+		cost = 10
 		
 		available = {
 			NOT = {
@@ -335,7 +373,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = PRC_anti_japanese_aim
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -362,6 +400,7 @@ focus_tree = {
 			}
 		}
 		
+		will_lead_to_war_with = XSM
 		completion_reward = {
 			custom_effect_tooltip = prc_west_expedition_tt
 			create_wargoal = {
@@ -474,10 +513,10 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_idea = PRC_guerilla_warfare
+					has_idea = r56_PRC_guerilla_warfare
 				}
 				swap_ideas = {
-					remove_idea = PRC_guerilla_warfare
+					remove_idea = r56_PRC_guerilla_warfare
 					add_idea = war_economy
 				}
 			}
@@ -584,7 +623,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_form_the_grand_northwest_united
-		cost = 8
+		cost = 10
 
 		available = {
 			has_country_leader = {
@@ -646,7 +685,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_purge_dissident_element
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no
@@ -662,7 +701,7 @@ focus_tree = {
 				}
 				any_owned_state = {
 					any_neighbor_state = {
-						owner = { tag = TNG }
+						owner = { tag = KHM }
 					}
 				}
 			}
@@ -673,6 +712,9 @@ focus_tree = {
 			owns_state = 760
 		}
 
+		will_lead_to_war_with = SIK
+		will_lead_to_war_with = KHM
+		will_lead_to_war_with = KUM
 		completion_reward = {
 			if = {
 				limit = {
@@ -716,7 +758,7 @@ focus_tree = {
 				if = {
 					limit = {
 						SOV = {
-							is_puppet = no
+							is_subject = no
 							has_government = communism
 						}
 						SIK = {
@@ -739,7 +781,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_purge_dissident_element
-		cost = 8
+		cost = 10
 
 		available = {
 			is_subject = no
@@ -753,6 +795,7 @@ focus_tree = {
 			controls_state = 757
 		}
 
+		will_lead_to_war_with = TIB
 		completion_reward = {
 			if = {
 				limit = {
@@ -784,7 +827,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = PRC_purge_dissident_element
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			army_experience = 10
@@ -804,13 +847,13 @@ focus_tree = {
 
 	focus = {
 		id = PRC_boost_the_morale
-		icon = GFX_goal_generic_cavalry
+		icon = GFX_focus_PRC_long_march_to_recovery
 		prerequisite = { focus = PRC_army_reform focus = PRC_supply_line_from_sov }
 		mutually_exclusive = { focus = PRC_government_reshuffle }
 		x = 3
 		y = 2
 		relative_position_id = PRC_army_reform
-		cost = 8
+		cost = 10
 		
 		bypass = {
 			NOT = {
@@ -843,7 +886,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = PRC_boost_the_morale
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_idea = PRC_defeatism_2
@@ -860,109 +903,109 @@ focus_tree = {
 				tooltip = prc_root_out_defeatism_tt
 				NOT = {
 					609 = { is_controlled_by = JAP }
-					609 = { controller = { is_puppet_of = JAP } }
+					609 = { controller = { is_subject_of = JAP } }
 					610 = { is_controlled_by = JAP }
-					610 = { controller = { is_puppet_of = JAP } }
+					610 = { controller = { is_subject_of = JAP } }
 					715 = { is_controlled_by = JAP }
-					715 = { controller = { is_puppet_of = JAP } }
+					715 = { controller = { is_subject_of = JAP } }
 					716 = { is_controlled_by = JAP }
-					716 = { controller = { is_puppet_of = JAP } }
+					716 = { controller = { is_subject_of = JAP } }
 					527 = { is_controlled_by = JAP }
-					527 = { controller = { is_puppet_of = JAP } }
+					527 = { controller = { is_subject_of = JAP } }
 					917 = { is_controlled_by = JAP }
-					917 = { controller = { is_puppet_of = JAP } }
+					917 = { controller = { is_subject_of = JAP } }
 					918 = { is_controlled_by = JAP }
-					918 = { controller = { is_puppet_of = JAP } }
+					918 = { controller = { is_subject_of = JAP } }
 					919 = { is_controlled_by = JAP }
-					919 = { controller = { is_puppet_of = JAP } }
+					919 = { controller = { is_subject_of = JAP } }
 					920 = { is_controlled_by = JAP }
-					920 = { controller = { is_puppet_of = JAP } }
+					920 = { controller = { is_subject_of = JAP } }
 					328 = { is_controlled_by = JAP }
-					328 = { controller = { is_puppet_of = JAP } }
+					328 = { controller = { is_subject_of = JAP } }
 					714 = { is_controlled_by = JAP }
-					714 = { controller = { is_puppet_of = JAP } }
+					714 = { controller = { is_subject_of = JAP } }
 					717 = { is_controlled_by = JAP }
-					717 = { controller = { is_puppet_of = JAP } }
+					717 = { controller = { is_subject_of = JAP } }
 					525 = { is_controlled_by = JAP }
-					525 = { controller = { is_puppet_of = JAP } }
+					525 = { controller = { is_subject_of = JAP } }
 					611 = { is_controlled_by = JAP }
-					611 = { controller = { is_puppet_of = JAP } }
+					611 = { controller = { is_subject_of = JAP } }
 					612 = { is_controlled_by = JAP }
-					612 = { controller = { is_puppet_of = JAP } }
+					612 = { controller = { is_subject_of = JAP } }
 					330 = { is_controlled_by = JAP }
-					330 = { controller = { is_puppet_of = JAP } }
+					330 = { controller = { is_subject_of = JAP } }
 					921 = { is_controlled_by = JAP }
-					921 = { controller = { is_puppet_of = JAP } }
+					921 = { controller = { is_subject_of = JAP } }
 					922 = { is_controlled_by = JAP }
-					922 = { controller = { is_puppet_of = JAP } }
+					922 = { controller = { is_subject_of = JAP } }
 					923 = { is_controlled_by = JAP }
-					923 = { controller = { is_puppet_of = JAP } }
+					923 = { controller = { is_subject_of = JAP } }
 					563 = { is_controlled_by = JAP }
-					563 = { controller = { is_puppet_of = JAP } }
+					563 = { controller = { is_subject_of = JAP } }
 					561 = { is_controlled_by = JAP }
-					561 = { controller = { is_puppet_of = JAP } }
+					561 = { controller = { is_subject_of = JAP } }
 					657 = { is_controlled_by = JAP }
-					657 = { controller = { is_puppet_of = JAP } }
+					657 = { controller = { is_subject_of = JAP } }
 					409 = { is_controlled_by = JAP }
-					409 = { controller = { is_puppet_of = JAP } }
+					409 = { controller = { is_subject_of = JAP } }
 					408 = { is_controlled_by = JAP }
-					408 = { controller = { is_puppet_of = JAP } }
+					408 = { controller = { is_subject_of = JAP } }
 					560 = { is_controlled_by = JAP }
-					560 = { controller = { is_puppet_of = JAP } }
+					560 = { controller = { is_subject_of = JAP } }
 					621 = { is_controlled_by = JAP }
-					621 = { controller = { is_puppet_of = JAP } }
+					621 = { controller = { is_subject_of = JAP } }
 					615 = { is_controlled_by = JAP }
-					615 = { controller = { is_puppet_of = JAP } }
+					615 = { controller = { is_subject_of = JAP } }
 					608 = { is_controlled_by = JAP }
-					608 = { controller = { is_puppet_of = JAP } }
+					608 = { controller = { is_subject_of = JAP } }
 					614 = { is_controlled_by = JAP }
-					614 = { controller = { is_puppet_of = JAP } }
+					614 = { controller = { is_subject_of = JAP } }
 					622 = { is_controlled_by = JAP }
-					622 = { controller = { is_puppet_of = JAP } }
+					622 = { controller = { is_subject_of = JAP } }
 					597 = { is_controlled_by = JAP }
-					597 = { controller = { is_puppet_of = JAP } }
+					597 = { controller = { is_subject_of = JAP } }
 					598 = { is_controlled_by = JAP }
-					598 = { controller = { is_puppet_of = JAP } }
+					598 = { controller = { is_subject_of = JAP } }
 					607 = { is_controlled_by = JAP }
-					607 = { controller = { is_puppet_of = JAP } }
+					607 = { controller = { is_subject_of = JAP } }
 					613 = { is_controlled_by = JAP }
-					613 = { controller = { is_puppet_of = JAP } }
+					613 = { controller = { is_subject_of = JAP } }
 					606 = { is_controlled_by = JAP }
-					606 = { controller = { is_puppet_of = JAP } }
+					606 = { controller = { is_subject_of = JAP } }
 					620 = { is_controlled_by = JAP }
-					620 = { controller = { is_puppet_of = JAP } }
+					620 = { controller = { is_subject_of = JAP } }
 					596 = { is_controlled_by = JAP }
-					596 = { controller = { is_puppet_of = JAP } }
+					596 = { controller = { is_subject_of = JAP } }
 					600 = { is_controlled_by = JAP }
-					600 = { controller = { is_puppet_of = JAP } }
+					600 = { controller = { is_subject_of = JAP } }
 					602 = { is_controlled_by = JAP }
-					602 = { controller = { is_puppet_of = JAP } }
+					602 = { controller = { is_subject_of = JAP } }
 					595 = { is_controlled_by = JAP }
-					595 = { controller = { is_puppet_of = JAP } }
+					595 = { controller = { is_subject_of = JAP } }
 					593 = { is_controlled_by = JAP }
-					593 = { controller = { is_puppet_of = JAP } }
+					593 = { controller = { is_subject_of = JAP } }
 					592 = { is_controlled_by = JAP }
-					592 = { controller = { is_puppet_of = JAP } }
+					592 = { controller = { is_subject_of = JAP } }
 					594 = { is_controlled_by = JAP }
-					594 = { controller = { is_puppet_of = JAP } }
+					594 = { controller = { is_subject_of = JAP } }
 					326 = { is_controlled_by = JAP }
-					326 = { controller = { is_puppet_of = JAP } }
+					326 = { controller = { is_subject_of = JAP } }
 					729 = { is_controlled_by = JAP }
-					729 = { controller = { is_puppet_of = JAP } }
+					729 = { controller = { is_subject_of = JAP } }
 					941 = { is_controlled_by = JAP }
-					941 = { controller = { is_puppet_of = JAP } }
+					941 = { controller = { is_subject_of = JAP } }
 					942 = { is_controlled_by = JAP }
-					942 = { controller = { is_puppet_of = JAP } }
+					942 = { controller = { is_subject_of = JAP } }
 					943 = { is_controlled_by = JAP }
-					943 = { controller = { is_puppet_of = JAP } }
+					943 = { controller = { is_subject_of = JAP } }
 					944 = { is_controlled_by = JAP }
-					944 = { controller = { is_puppet_of = JAP } }
+					944 = { controller = { is_subject_of = JAP } }
 					945 = { is_controlled_by = JAP }
-					945 = { controller = { is_puppet_of = JAP } }
+					945 = { controller = { is_subject_of = JAP } }
 					946 = { is_controlled_by = JAP }
-					946 = { controller = { is_puppet_of = JAP } }
+					946 = { controller = { is_subject_of = JAP } }
 					947 = { is_controlled_by = JAP }
-					947 = { controller = { is_puppet_of = JAP } }
+					947 = { controller = { is_subject_of = JAP } }
 				}
 			}
 		}
@@ -1053,7 +1096,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = PRC_boost_the_morale
-		cost = 8
+		cost = 10
 		
 		available = {
 			OR = {
@@ -1111,7 +1154,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_political_mobilisation
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			add_political_power = 25
@@ -1128,7 +1171,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_the_goal_of_our_war
-		cost = 8
+		cost = 10
 
 		available = { 
 			has_war = yes
@@ -1154,7 +1197,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_boost_the_morale
-		cost = 8
+		cost = 10
 		
 		bypass = {
 			has_war_with = JAP
@@ -1179,7 +1222,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = PRC_prepare_for_war
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 4
@@ -1210,7 +1253,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_prepare_for_war
-		cost = 8
+		cost = 10
 
 		available = {
 			is_in_faction_with = CHI
@@ -1243,7 +1286,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_prepare_for_war
-		cost = 8
+		cost = 10
 
 		available = {
 			has_war = yes
@@ -1270,7 +1313,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_the_united_front
-		cost = 8
+		cost = 10
 
 		available = {
 			has_war = yes
@@ -1292,7 +1335,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = PRC_protracted_war
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = communism
@@ -1338,7 +1381,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_protracted_war
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -1385,7 +1428,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_neccessary_flexibility
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -1417,7 +1460,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_lure_them_in_strategy
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -1489,7 +1532,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = PRC_protracted_war
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -1514,7 +1557,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_self_perservation
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = communism
@@ -1538,7 +1581,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_initiative_in_war_time
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -1561,7 +1604,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_swift_victory
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -1606,7 +1649,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = PRC_swift_victory
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -1652,7 +1695,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_war_of_annihilation
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = communism
@@ -1683,7 +1726,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_increase_credibility_of_theory
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -1703,7 +1746,7 @@ focus_tree = {
 					}
 					OR = {
 						tag = JAP
-						is_puppet_of = JAP
+						is_subject_of = JAP
 					}
 				}
 				country_event = { id = lti.11 }
@@ -1758,7 +1801,7 @@ focus_tree = {
 		x = -3
 		y = 0
 		relative_position_id = PRC_rectification
-		cost = 8
+		cost = 10
 
 		available = {
 			r56_script_i_am_sane = yes
@@ -1891,16 +1934,6 @@ focus_tree = {
 			else = {
 				add_ideas = export_focus
 			}
-			#probably not necessary
-			#	create_country_leader = {
-			#		name = "Mao Zedong"
-			#		desc = "POLITICS_MAO_ZEDONG_DESC"
-			#		picture = "gfx/leaders/CHI/Portrait_China_Mao_Zedong.dds"
-			#		expire = "1965.1.1"
-			#		ideology = marxism
-			#		traits = {
-			#		}
-			#	}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 	}
@@ -1914,7 +1947,7 @@ focus_tree = {
 		x = 9
 		y = 1
 		relative_position_id = PRC_found_our_nation
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -1968,7 +2001,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = PRC_the_first_five_year_plan
-		cost = 8
+		cost = 10
 		
 		available = {
 			OR = {
@@ -2050,7 +2083,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_the_first_five_year_plan
-		cost = 8
+		cost = 10
 		available = {
 			OR = {
 				num_of_factories > 100
@@ -2213,7 +2246,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_industrialization_S
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -2357,7 +2390,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = PRC_resources_prospection
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -2882,7 +2915,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_resources_prospection
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -2946,7 +2979,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = PRC_resources_prospection
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -3423,7 +3456,7 @@ focus_tree = {
 		x = -11
 		y = 1
 		relative_position_id = PRC_found_our_nation
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = communism
@@ -3455,7 +3488,7 @@ focus_tree = {
 		x = -9
 		y = 1
 		relative_position_id = PRC_found_our_nation
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -3497,7 +3530,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_suppress_counterrevolutionaries
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			add_political_power = -50
@@ -3547,7 +3580,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_cult_of_personality
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_war = no
@@ -3574,7 +3607,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = KMT_great_leap_forawrd
-		cost = 8
+		cost = 10
 
 		available = {
 			has_war = no
@@ -3587,7 +3620,7 @@ focus_tree = {
 							ruling_only = yes
 						}
 					}
-					is_puppet = yes
+					is_subject = yes
 				}
 			}
 			has_country_leader = {
@@ -3648,7 +3681,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_begin_cultural_revolution
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_global_flag = CR_ended
@@ -3667,7 +3700,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_generalissimo_lin
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -3738,7 +3771,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = PRC_found_our_nation
-		cost = 8
+		cost = 10
 		
 
 		available = {
@@ -3769,7 +3802,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = PRC_the_new_communism_beacon
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_doctrine_cost_reduction = {
@@ -3794,7 +3827,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_anti_soviet_revisionist_aim
-		cost = 8
+		cost = 10
 
 		available = {
 			r56_script_i_am_sane = yes
@@ -3809,6 +3842,7 @@ focus_tree = {
 			}
 		}
 
+		will_lead_to_war_with = SOV
 		completion_reward = {
 			create_wargoal = {
 				target = SOV
@@ -3826,7 +3860,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_the_new_communism_beacon
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -3866,7 +3900,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_exert_influence_in_sea
-		cost = 8
+		cost = 10
 
 		available = {
 			OR = {
@@ -3908,7 +3942,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = PRC_exert_influence_in_sea
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -3947,7 +3981,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = PRC_exert_influence_in_sea
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -3986,7 +4020,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_exert_influence_in_central_asia
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_country_flag = cdx_returned
@@ -4037,7 +4071,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_exert_influence_in_india_and_mongolia
-		cost = 8
+		cost = 10
 		
 		available = {
 			r56_script_i_am_sane = yes
@@ -4048,7 +4082,7 @@ focus_tree = {
 			every_other_country = {
 				limit = {
 					has_idea = PRC_influence
-					is_puppet_of = PRC
+					is_subject_of = PRC
 				}
 				country_event = { id = prc.92 }
 			}
@@ -4056,7 +4090,7 @@ focus_tree = {
 				limit = {
 					has_idea = PRC_influence
 					NOT = {
-						is_puppet_of = PRC
+						is_subject_of = PRC
 					}
 				}
 				PRC = {
@@ -4078,7 +4112,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_the_new_communism_beacon
-		cost = 8
+		cost = 10
 		
 		available = { 
 			has_government = communism
@@ -4120,7 +4154,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_mongolia_issue
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -4148,6 +4182,8 @@ focus_tree = {
 		# 	}
 		# }
 
+		will_lead_to_war_with = KOR
+		will_lead_to_war_with = NKR
 		completion_reward = {
 			KOR = {
 				if = {
@@ -4233,7 +4269,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = PRC_the_new_communism_beacon
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_research_slot = 1
@@ -4248,7 +4284,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_institution_reorganization
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			#add_research_slot = 1 # Bit too OP
@@ -4288,7 +4324,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = PRC_institution_reorganization
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = PRC_good_good_study_idea
@@ -4304,7 +4340,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = PRC_institution_reorganization
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = PRC_soviet_style_education
@@ -4382,7 +4418,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_sov_cooperation
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -4444,7 +4480,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_assistance_in_naval_industry
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -4469,7 +4505,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_study_soviet_ships
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = communism
@@ -4496,7 +4532,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_sov_cooperation
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -4529,7 +4565,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_study_sov_equipments
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -4557,7 +4593,7 @@ focus_tree = {
 		x = -4
 		y = 3
 		relative_position_id = PRC_the_first_five_year_plan
-		cost = 8
+		cost = 10
 
 		available = {
 			SOV = {
@@ -4618,7 +4654,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = PRC_156_project
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = communism
@@ -4658,7 +4694,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_156_project
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -4698,7 +4734,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = PRC_156_project
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = communism
@@ -4810,7 +4846,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = PRC_found_our_nation
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			army_experience = 50
@@ -4831,7 +4867,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = PRC_eliminate_iliteracy
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			army_experience = 25
@@ -4871,7 +4907,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = PRC_ndcprc
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			air_experience = 10
@@ -4935,7 +4971,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_establish_air_force
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4957,7 +4993,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_establish_air_force
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4978,7 +5014,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_fighter_focus
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4999,7 +5035,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_bomber_focus
-		cost = 8
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -5022,7 +5058,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_ndcprc
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			IF = {	
@@ -5059,7 +5095,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_ndcprc
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -5080,7 +5116,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = PRC_ndcprc
-		cost = 8
+		cost = 10
 		
 		available = {
 			any_state = {
@@ -5157,7 +5193,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_establish_navy
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -5180,7 +5216,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_establish_navy
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -5202,14 +5238,14 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_the_red_pacific
-		cost = 8
+		cost = 10
 
 		available = {
-			is_puppet = no
+			is_subject = no
 			378 = {
 				OWNER = {
 					exists = yes
-					is_puppet = no
+					is_subject = no
 					NOT = {
 						has_government = communism
 					}
@@ -5217,6 +5253,7 @@ focus_tree = {
 			}
 		}
 
+		will_lead_to_war_with = USA
 		completion_reward = {
 			if = {
 				limit = {
@@ -5319,7 +5356,7 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = PRC_government_reshuffle
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_country_leader = {
@@ -5391,7 +5428,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_recall_feng_clique_generals
-		cost = 8
+		cost = 10
 
 		available = {
 			r56_script_i_am_sane = yes
@@ -5439,6 +5476,8 @@ focus_tree = {
 			}
 		}
 
+		will_lead_to_war_with = MAN
+		will_lead_to_war_with = MEN
 		completion_reward = {
 			add_stability = 0.1
 			add_political_power = 50
@@ -5665,7 +5704,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_invite_shx
-		cost = 8
+		cost = 10
 
 		available = {
 			any_owned_state = {
@@ -5709,7 +5748,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_government_reshuffle
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -5722,7 +5761,7 @@ focus_tree = {
 		available = {
 			has_global_flag = PRC_no_wargoal_to_chi_with_gnwu
 			CHI = {
-				is_puppet = no
+				is_subject = no
 				exists = yes
 			}
 		}
@@ -5743,7 +5782,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_unite_against_the_jap
-		cost = 8
+		cost = 10
 
 		available = {
 			custom_trigger_tooltip = {
@@ -5814,7 +5853,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = PRC_unite_against_the_jap
-		cost = 8
+		cost = 10
 
 		available = {
 			has_global_flag = PRC_defy_sov_order
@@ -5896,7 +5935,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_reform_high_command
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = PRC_dbj_army_focus
@@ -5910,7 +5949,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = PRC_focus_on_dong_beijun
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			army_experience = 25
@@ -5942,7 +5981,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = PRC_stir_anti_japanese_sentiment
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 4
@@ -6017,7 +6056,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = PRC_focus_on_dong_beijun
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			army_experience = 25
@@ -6084,12 +6123,14 @@ focus_tree = {
 		x = -1
 		y = 3
 		relative_position_id = PRC_focus_on_dong_beijun
-		cost = 8
+		cost = 10
 
 		available = {
 			r56_script_i_am_sane = yes
 		}
 
+		will_lead_to_war_with = CHI
+		will_lead_to_war_with = JAP
 		completion_reward = {
 			if = {
 				limit = {
@@ -6129,7 +6170,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_study_kmt_equipment
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = communism
@@ -6148,7 +6189,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_focus_on_red_army
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			army_experience = 15
@@ -6166,7 +6207,7 @@ focus_tree = {
 		x = 17
 		y = 0
 		relative_position_id = PRC_rectification
-		cost = 8
+		cost = 10
 
 		allow_branch = {
 			always = no # we did it boys
@@ -6228,7 +6269,7 @@ focus_tree = {
 		x = 2
 		y = 0
 		relative_position_id = PRC_rectification
-		cost = 8
+		cost = 10
 
 		allow_branch = {	#fascist path is disabled, can't obtain Zhang
 			always = no
@@ -6283,7 +6324,7 @@ focus_tree = {
 		x = -5
 		y = 2
 		relative_position_id = PRC_the_second_northeast_flag_replacement
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = fascism
@@ -6343,7 +6384,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = PRC_industrial_developement
-		cost = 8
+		cost = 10
 		
 		available = {
 			has_government = fascism
@@ -6364,7 +6405,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = PRC_the_second_northeast_flag_replacement
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = fascism
@@ -6402,7 +6443,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_king_of_dongbei
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = fascism
@@ -6433,7 +6474,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = PRC_king_of_dongbei
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			if = {
@@ -6483,7 +6524,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_establish_general_staff
-		cost = 8
+		cost = 10
 
 		available = {
 			any_state = {
@@ -6581,7 +6622,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_establish_general_staff
-		cost = 8
+		cost = 10
 
 		available = {
 			any_state = {
@@ -6648,7 +6689,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_claim_the_central_plain
-		cost = 8
+		cost = 10
 
 		available = {
 			has_idea = PRC_our_general_staff
@@ -6684,7 +6725,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_secure_the_far_east
-		cost = 8
+		cost = 10
 
 		available = {
 			has_idea = PRC_our_general_staff
@@ -6694,13 +6735,13 @@ focus_tree = {
 				KOR = {
 					exists = yes
 					NOT = {
-						is_puppet_of = PRC
+						is_subject_of = PRC
 					}
 				}
 				NKR = {
 					exists = yes
 					NOT = {
-						is_puppet_of = PRC
+						is_subject_of = PRC
 					}
 				}
 			}
@@ -6708,10 +6749,10 @@ focus_tree = {
 		bypass = {
 			AND = {
 				KOR = {
-					is_puppet_of = PRC
+					is_subject_of = PRC
 				}
 				NKR = {
-					is_puppet_of = PRC
+					is_subject_of = PRC
 				}
 			}
 		}
@@ -6723,7 +6764,7 @@ focus_tree = {
 					KOR = {
 						exists = yes
 						NOT = {
-							is_puppet_of = PRC
+							is_subject_of = PRC
 						}
 					}
 				}
@@ -6736,7 +6777,7 @@ focus_tree = {
 					NKR = {
 						exists = yes
 						NOT = {
-							is_puppet_of = PRC
+							is_subject_of = PRC
 						}
 					}
 				}
@@ -6754,7 +6795,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = PRC_king_of_dongbei
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = fascism
@@ -6835,7 +6876,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = PRC_king_of_dongbei
-		cost = 8
+		cost = 10
 
 		available = {
 			has_government = fascism
@@ -6918,7 +6959,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_revive_arsenals
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			if = {
@@ -7001,7 +7042,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = PRC_the_second_northeast_flag_replacement
-		cost = 8
+		cost = 10
 
 		available = {
 			JAP = {
@@ -7024,7 +7065,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = PRC_pact_with_jap
-		cost = 8
+		cost = 10
 
 		available = {
 			custom_trigger_tooltip = {
@@ -7095,7 +7136,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = PRC_pact_with_jap
-		cost = 8
+		cost = 10
 
 		available = {
 			custom_trigger_tooltip = {
@@ -7118,7 +7159,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_jap_military_advisor
-		cost = 8
+		cost = 10
 
 		available = {
 			r56_script_i_am_sane = yes
@@ -7183,7 +7224,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_jap_military_advisor
-		cost = 8
+		cost = 10
 
 		available = {
 			custom_trigger_tooltip = {
@@ -7252,7 +7293,7 @@ focus_tree = {
 					}
 					NOT = {
 						has_government = fascism
-						is_puppet_of = PRC
+						is_subject_of = PRC
 						is_in_faction_with = PRC
 					}
 				}
@@ -7271,7 +7312,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = PRC_special_research_department
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			army_experience = 50
@@ -7296,7 +7337,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = PRC_establish_top_command
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			navy_experience = 25
@@ -7334,7 +7375,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_expand_navy_command_structure
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			air_experience = 10
@@ -7357,7 +7398,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_expand_navy_command_structure
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			air_experience = 10
@@ -7380,7 +7421,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_pacific_fleet
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -7402,7 +7443,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_pacific_fleet
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -7426,7 +7467,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = PRC_establish_top_command
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			air_experience = 25
@@ -7464,7 +7505,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PRC_expand_air_command_structure
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			if = {
@@ -7499,7 +7540,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_expand_air_command_structure
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			if = {
@@ -7534,7 +7575,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = PRC_fight_effort
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_tech_bonus = {

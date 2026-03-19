@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = tibet_focus
 	
@@ -426,7 +427,7 @@ focus_tree = {
 		completion_reward = {
 			create_operative_leader = {
 				name = "Ilya Tolstoy"
-				GFX = "gfx/leaders/r56_generic/r56_portrait_generic_operative_europe_3.dds"
+				portrait_path = "gfx/leaders/r56_generic/r56_portrait_generic_operative_europe_3.dds"
 				traits = { operative_infiltrator operative_commando }
 				bypass_recruitment = no
 				available_to_spy_master = yes
@@ -444,7 +445,7 @@ focus_tree = {
 		relative_position_id = TIB_complete_diplomatic_isolation	
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -534,7 +535,7 @@ focus_tree = {
 		relative_position_id = TIB_denounce_regents_corruption
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			num_of_factories > 15
@@ -648,7 +649,7 @@ focus_tree = {
 		icon = GFX_goal_monastries_in_uproar
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 20
@@ -1035,7 +1036,7 @@ focus_tree = {
 		relative_position_id = TIB_expand_the_tdyl
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1052,7 +1053,7 @@ focus_tree = {
 		relative_position_id = TIB_follow_maos_lead
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1074,17 +1075,18 @@ focus_tree = {
 		relative_position_id = TIB_follow_maos_lead
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
 		completion_reward = {
-			add_political_power = 25
+			add_political_power = -50
 			add_popularity = {
 				ideology = communism
-				popularity = 0.05
+				popularity = 0.02
 			}
 			add_ideas = r56i_laws_social_revolutionary
+			add_country_leader_trait = JUNO_cult_of_personality
 		}
 	}
 	focus = {
@@ -1182,7 +1184,20 @@ focus_tree = {
 				set_rule = {
 					can_create_factions = yes
 				}
-				create_faction = "Maoist Workers Front"
+				IF = {
+					limit = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					create_faction_from_template = {
+						template = faction_template_world_revolution
+						name = maoist_workers_front
+					}
+					add_faction_initiative = 1
+				}
+				ELSE = {
+					create_faction = maoist_workers_front
+				}
+
 				PRC = {
 					country_event = { id = generic.5 hours = 12 }
 				}
@@ -1219,7 +1234,7 @@ focus_tree = {
 		relative_position_id = TIB_join_the_chinese
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1582,7 +1597,7 @@ focus_tree = {
 		relative_position_id = TIB_utilize_political_commisars
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1662,7 +1677,7 @@ focus_tree = {
 		relative_position_id = TIB_land_redistribution
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1828,7 +1843,7 @@ focus_tree = {
 				popularity = 0.05
 			}
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = TIB_thubten_kunphela
+			show_ideas_tooltip = TIB_thubten_kunpela
 		}
 	}
 	focus = {
@@ -2109,14 +2124,14 @@ focus_tree = {
 		
 		}
 		completion_reward = {
-			retire_character = TIB_thubten_kunphela
+			retire_character = TIB_thubten_kunpela
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.05
 			}
 			add_stability = 0.05
 			custom_effect_tooltip = remove_political_advisor
-			show_ideas_tooltip = TIB_thubten_kunphela
+			show_ideas_tooltip = TIB_thubten_kunpela
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL POLITICAL_FILTER_STABILITY }
@@ -2229,7 +2244,7 @@ focus_tree = {
 		relative_position_id = TIB_open_the_sikkim_trade_office
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -2247,7 +2262,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industrialists
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = { focus = TIB_open_the_sikkim_trade_office }
 		relative_position_id = TIB_open_the_sikkim_trade_office
 		ai_will_do = {
@@ -2343,7 +2358,7 @@ focus_tree = {
 		relative_position_id = TIB_topple_the_feudal_regime
 		x = -1
 		y = 1
-		cost = 8 
+		cost = 10 
 		ai_will_do = {
 			factor = 5
 		}
@@ -2393,7 +2408,7 @@ focus_tree = {
 		relative_position_id = TIB_topple_the_feudal_regime 
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -2456,7 +2471,7 @@ focus_tree = {
 		}
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -2543,7 +2558,7 @@ focus_tree = {
 				}
 				OR = {
 					original_tag = BHU
-					original_tag = SKM
+					original_tag = SKK
 					original_tag = NEP
 				}
 			}
@@ -2553,7 +2568,20 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = "Himalayan Cooperation Accord"
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				create_faction_from_template = {
+					template = faction_template_regional_anti_communist # unique template needed?
+					name = himalayan_cooperation_accord
+				}
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				create_faction = himalayan_cooperation_accord
+			}
+				
 			every_country = {
 				limit = {
 					exists = yes
@@ -2564,7 +2592,7 @@ focus_tree = {
 					}
 					OR = {
 						original_tag = BHU
-						original_tag = SKM
+						original_tag = SKK
 						original_tag = NEP
 					}
 				}
@@ -2635,7 +2663,7 @@ focus_tree = {
 		relative_position_id = TIB_revenge_for_the_sage
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -2655,7 +2683,7 @@ focus_tree = {
 		relative_position_id = TIB_revenge_for_the_sage
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -2921,7 +2949,7 @@ focus_tree = {
 		relative_position_id = TIB_unite_the_himalayas
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -2937,22 +2965,32 @@ focus_tree = {
 					has_war_with = ROOT
 				}
 				OR = {
-					original_tag = TNG
+					original_tag = KHM
 					original_tag = SIK
 					original_tag = XSM
 					original_tag = GXC
 					original_tag = SHX
+					original_tag = SIC
+					original_tag = XIC
+					original_tag = GDC
+					original_tag = HBC
+					original_tag = SND
 					original_tag = YUN
 					original_tag = PRC
 				}
 			}
 		}
-		will_lead_to_war_with = TNG
+		will_lead_to_war_with = KHM
 		will_lead_to_war_with = SIK
 		will_lead_to_war_with = XSM
 		will_lead_to_war_with = PRC
 		will_lead_to_war_with = GXC
 		will_lead_to_war_with = SHX
+		will_lead_to_war_with = SIC
+		will_lead_to_war_with = XIC
+		will_lead_to_war_with = GDC
+		will_lead_to_war_with = HBC
+		will_lead_to_war_with = SND
 		will_lead_to_war_with = YUN
 		completion_reward = {
 			add_war_support = 0.05
@@ -2960,12 +2998,17 @@ focus_tree = {
 			every_country = {
 				limit = {
 					OR = {
-						original_tag = TNG
+						original_tag = KHM
 						original_tag = SIK
 						original_tag = XSM
 						original_tag = PRC
 						original_tag = GXC
 						original_tag = SHX
+						original_tag = SIC
+						original_tag = XIC
+						original_tag = GDC
+						original_tag = HBC
+						original_tag = SND
 						original_tag = YUN
 					}
 					exists = yes
@@ -3200,7 +3243,7 @@ focus_tree = {
 		relative_position_id = TIB_improve_military_tactics
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -3230,7 +3273,7 @@ focus_tree = {
 		relative_position_id = TIB_modern_army_structure
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -3267,7 +3310,7 @@ focus_tree = {
 		relative_position_id = TIB_modern_army_structure
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -3387,7 +3430,7 @@ focus_tree = {
 		relative_position_id = TIB_build_air_strip
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -3436,7 +3479,7 @@ focus_tree = {
 		relative_position_id = TIB_build_air_strip
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -3484,7 +3527,7 @@ focus_tree = {
 		relative_position_id = TIB_small_airframes
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -3564,7 +3607,7 @@ focus_tree = {
 		relative_position_id = TIB_aquire_modern_machinery
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		available = {
 			controls_state = 757
 		}
@@ -4099,7 +4142,7 @@ focus_tree = {
 		relative_position_id = TIB_naval_effort
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -4116,12 +4159,13 @@ focus_tree = {
 
 		completion_reward = {
 			navy_experience = 25
-			add_doctrine_cost_reduction = {
-                name = trade_interdiction
-                uses = 2
-                cost_reduction = 0.75
-                category = trade_interdiction_tree
-            }
+			add_mastery_bonus = {
+				name = flexible_navy
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_convoy_raiding
+				track = submarines
+			}
 			add_tech_bonus = {
 				name = naval_effort
 				bonus = 0.5
@@ -4157,7 +4201,7 @@ focus_tree = {
 		relative_position_id = TIB_naval_effort
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -4230,12 +4274,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-                name = naval_effort
-                uses = 1
-                cost_reduction = 0.75
-                category = trade_interdiction_tree
-            }
+			add_mastery_bonus = {
+				name = flexible_navy
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_convoy_raiding
+				track = submarines
+			}
 			add_tech_bonus = {
 				name = naval_effort
 				bonus = 0.5
@@ -4327,7 +4372,7 @@ focus_tree = {
 		relative_position_id = TIB_submarine_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -4344,12 +4389,12 @@ focus_tree = {
 
 		completion_reward = {
 			navy_experience = 25
-			add_doctrine_cost_reduction = {
-                name = naval_effort
-                uses = 1
-                cost_reduction = 0.75
-                category = trade_interdiction_tree
-            }
+			add_mastery_bonus = {
+				name = flexible_navy
+				bonus = 0.1
+				days = 180
+				grand_doctrine = new_convoy_raiding
+			}
 			add_tech_bonus = {
 				name = naval_effort
 				bonus = 0.75
@@ -4390,7 +4435,7 @@ focus_tree = {
 		relative_position_id = TIB_cruiser_effort
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1

@@ -1,4 +1,4 @@
-
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = r56_south_africa_focus					 #set Road to 56 as a default tree for it having all the content vanilla offers while adding on top - Fantom / Illya
 
@@ -20,7 +20,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 1
 		y = 0
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 			}
@@ -62,7 +62,7 @@ focus_tree = {
 			
 			add_tech_bonus = {
 				name = industrial_bonus
-				bonus = 1
+				bonus = 0.5
 				uses = 1
 				category = train_tech
 			}
@@ -85,7 +85,7 @@ focus_tree = {
 		relative_position_id = SAF_railway_development
 		x = 0
 		y = 1
-		cost = 7
+		cost = 10
 		ai_will_do = {
 			factor = 40
 			}
@@ -94,7 +94,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = SAF_mining_development
 				bonus = 1
-				uses = 2
+				uses = 1
 				category = excavation_tech
 			}
 			add_tech_bonus = {
@@ -113,7 +113,7 @@ focus_tree = {
 		relative_position_id = SAF_mining_development
 		x = 2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 			}
@@ -130,7 +130,7 @@ focus_tree = {
 		relative_position_id = SAF_develop_gold_extraction
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -138,19 +138,19 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 681 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
 			random_owned_controlled_state = {
 				prioritize = { 719 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -165,7 +165,7 @@ focus_tree = {
 		relative_position_id = SAF_develop_gold_extraction
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -184,7 +184,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -199,23 +199,23 @@ focus_tree = {
 		relative_position_id = SAF_transvaal_urbanization
 		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 20
 			}
 		available_if_capitulated = yes
 		#early steel boost
 		available = {
-			 controls_state = 681
+			 controls_state = 275
 			 has_tech = steel_production_1
 		}
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 681 }
-				add_extra_state_shared_building_slots = 3
+				prioritize = { 275 }
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = steel_mill
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -235,7 +235,7 @@ focus_tree = {
 		relative_position_id = SAF_mining_development
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -246,13 +246,13 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = SAF_amcor_thabazimbi_iron_mine
-				bonus = 1
+				bonus = 0.5
 				uses = 1
 				category = excavation_tech
 			}
 			add_resource = {
 				type = steel
-				amount = 16
+				amount = 4
 				state = 275
 			}
 		}
@@ -265,15 +265,15 @@ focus_tree = {
 		relative_position_id = SAF_amcor_thabazimbi_iron_mine
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
 		available = {
-			#OR = {
-		#		has_war = yes
-		#		date > 1941.01.01
-		#	}
+			OR = {
+				has_war = yes
+				date > 1941.01.01
+			}
 			has_tech = steel_production_1
 			controls_state = 275
 
@@ -287,10 +287,10 @@ focus_tree = {
 				category = steel_tech
 			}
 			275 ={
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = steel_mill
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -304,7 +304,7 @@ focus_tree = {
 		relative_position_id = SAF_economic_expansion
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 60
 			}
@@ -312,10 +312,10 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 275 }
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					 level = 3
+					 level = 2
 					 instant_build = yes
 				}
 			}
@@ -329,7 +329,7 @@ focus_tree = {
 		relative_position_id = SAF_magazine_hill_ammunition_plant
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 40
 			}
@@ -352,7 +352,7 @@ focus_tree = {
 		relative_position_id = SAF_industrial_innovations
 		x = -2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -374,7 +374,7 @@ focus_tree = {
 		relative_position_id = SAF_industrial_innovations
 		x = -1
 		y = 2
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 30
 			}
@@ -382,16 +382,16 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 681 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
 			add_tech_bonus = {
 				name = industrial_bonus
-				bonus = 01
+				bonus = 0.5
 				uses = 1
 				category = industry
 			}
@@ -405,7 +405,7 @@ focus_tree = {
 		relative_position_id = SAF_industrial_innovations
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 30
 			}
@@ -413,10 +413,10 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 275 }
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					 level = 4
+					 level = 2
 					 instant_build = yes
 				}
 			}
@@ -430,7 +430,7 @@ focus_tree = {
 		relative_position_id = SAF_expand_around_magazine_hill
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 30
 			}
@@ -459,7 +459,7 @@ focus_tree = {
 		relative_position_id = SAF_local_manufacturing_industry
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -524,7 +524,7 @@ focus_tree = {
 		relative_position_id = SAF_local_manufacturing_industry
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 500
 		}
@@ -545,7 +545,7 @@ focus_tree = {
 		relative_position_id = SAF_war_technologies
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		available = {
 			has_tech = excavation4
@@ -571,7 +571,7 @@ focus_tree = {
 		relative_position_id = SAF_railway_development
 		x = 15
 		y = 0
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -581,7 +581,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 2
+				uses = 1
 				category = land_doctrine
 			}			
 		}
@@ -593,7 +593,7 @@ focus_tree = {
 		relative_position_id = SAF_organize_district_commands
 		x = -3
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -602,7 +602,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 2
+				uses = 1
 				category = land_doctrine
 			}
 			random_army_leader = {
@@ -620,7 +620,7 @@ focus_tree = {
 		relative_position_id = SAF_mission_to_europe
 		x = -3
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -649,7 +649,7 @@ focus_tree = {
 		relative_position_id = SAF_prepare_for_bush_warfare
 		x = 2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -712,7 +712,7 @@ focus_tree = {
 		relative_position_id = SAF_prepare_for_bush_warfare
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -775,7 +775,7 @@ focus_tree = {
 		relative_position_id = SAF_prepare_for_bush_warfare
 		x = -2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -793,7 +793,7 @@ focus_tree = {
 		relative_position_id = SAF_jungle_specialization
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -829,7 +829,7 @@ focus_tree = {
 		relative_position_id = SAF_elite_training
 		x = 3
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -847,7 +847,7 @@ focus_tree = {
 		relative_position_id = SAF_reform_staff_officers_training
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -870,7 +870,7 @@ focus_tree = {
 		relative_position_id = SAF_reform_staff_officers_training
 		x = -2
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -894,7 +894,7 @@ focus_tree = {
 		mutually_exclusive = {focus = SAF_prioritize_t_service_corps}
 		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -923,7 +923,7 @@ focus_tree = {
 		mutually_exclusive = {focus = SAF_prioritize_q_service_corps}
 		x = 3
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -951,18 +951,18 @@ focus_tree = {
 		relative_position_id = SAF_prioritize_q_service_corps
 		x = 1
 		y = 2
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
 		available = {
-		#	has_war = yes
-		#	any_state = {
-			#	NOT = {
-			#		is_core_of = SAF
-			#	}
-			#	is_controlled_by = SAF
-		#	}
+			has_war = yes
+			any_state = {
+				NOT = {
+					is_core_of = SAF
+				}
+				is_controlled_by = SAF
+			}
 		}
 		available_if_capitulated = yes
 		completion_reward = {
@@ -983,7 +983,7 @@ focus_tree = {
 		relative_position_id = SAF_prioritize_q_service_corps
 		x = -1
 		y = 2
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -991,7 +991,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = FRA_mechanized_focus
-				bonus = 3.0
+				bonus = 2.0
 				uses = 1
 				category = cat_mechanized_equipment
 			}
@@ -1016,7 +1016,7 @@ focus_tree = {
 		relative_position_id = SAF_prioritize_q_service_corps
 		x = 3
 		y = 2
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -1025,7 +1025,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = armor_bonus
 				bonus = 1.0
-				uses = 2
+				uses = 1
 				category = armor
 			}
 			add_tech_bonus = {
@@ -1043,7 +1043,7 @@ focus_tree = {
 		relative_position_id = SAF_organize_district_commands
 		x = 6
 		y = 0
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -1057,7 +1057,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = fighter_bonus
-				bonus = 1
+				bonus = 0.5
 				uses = 1
 				category = cat_heavy_fighter
 				category = tactical_bomber
@@ -1074,7 +1074,7 @@ focus_tree = {
 		prerequisite = { focus = SAF_organize_district_commands }
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -1096,7 +1096,7 @@ focus_tree = {
 		relative_position_id = SAF_appoint_new_commander
 		x = 0
 		y = 1
-		cost = 1
+		cost = 5
 		ai_will_do = {
 			factor = 10
 			}
@@ -1179,7 +1179,7 @@ focus_tree = {
 			factor = 20
 		}
 		available = {
-			#has_war = yes
+			has_war = yes
 		}
 		available_if_capitulated = yes
 		completion_reward = {
@@ -1212,7 +1212,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = SAF_appoint_new_commander
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1234,7 +1234,13 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = air_doc_bonus
 				cost_reduction = 0.5
-				uses = 2
+				uses = 1
+				category = air_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.35
+				uses = 1
 				category = air_doctrine
 			}
 		}
@@ -1248,7 +1254,7 @@ focus_tree = {
 		relative_position_id = SAF_formalize_air_doctrine
 		x = 2
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -1289,7 +1295,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SAF_formalize_air_doctrine
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1319,7 +1325,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SAF_formalize_air_doctrine
-		cost = 1
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1352,7 +1358,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SAF_national_air_training
-		cost = 1
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1389,7 +1395,7 @@ focus_tree = {
 		relative_position_id = SAF_appoint_new_commander
 		x = 2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -1402,7 +1408,7 @@ focus_tree = {
 				add_tech_bonus = {
 					name = SAF_patrol_the_sea
 					technology = range_improvements
-					bonus = 1
+					bonus = 0.75
 					uses = 1
 				}
 				add_tech_bonus = {
@@ -1439,7 +1445,7 @@ focus_tree = {
 		relative_position_id = SAF_patrol_the_sea
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -1467,7 +1473,7 @@ focus_tree = {
 		relative_position_id = SAF_air_expansion_plan
 		x = 5
 		y = 0
-		cost = 2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1483,7 +1489,7 @@ focus_tree = {
 		relative_position_id = SAF_cadets_of_the_general_botha
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1499,10 +1505,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 				set_state_flag = SAF_seaward_defence_force_DY
@@ -1510,7 +1516,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = SAF_establish_seaward_defense_force
 				cost_reduction = 0.5
-				uses = 2
+				uses = 1
 				category = naval_doctrine
 			}
 		}
@@ -1524,7 +1530,7 @@ focus_tree = {
 		relative_position_id = SAF_establish_seaward_defense_force
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1545,10 +1551,7 @@ focus_tree = {
 					name = ss_bonus
 					bonus = 1
 					uses = 1
-					technology = basic_torpedo
-					technology = magnetic_detonator
-					technology = electric_torpedo
-					technology = homing_torpedo
+					category = torpedo_equipment
 				}
 			}
 			else = {
@@ -1566,7 +1569,7 @@ focus_tree = {
 		relative_position_id = SAF_establish_seaward_defense_force
 		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1607,7 +1610,7 @@ focus_tree = {
 		relative_position_id = SAF_torpedo_development
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -1632,7 +1635,7 @@ focus_tree = {
 		relative_position_id = SAF_torpedo_development
 		x = 2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -1659,7 +1662,7 @@ focus_tree = {
 		relative_position_id = SAF_expand_cape_town_yards
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1707,7 +1710,7 @@ focus_tree = {
 		relative_position_id = SAF_expand_cape_town_yards
 		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -1729,7 +1732,7 @@ focus_tree = {
 		relative_position_id = SAF_a_true_navy
 		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 			}
@@ -1739,10 +1742,10 @@ focus_tree = {
 				prioritize = { 719 }
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 			}
 			if = {
 				limit = {
@@ -1753,7 +1756,7 @@ focus_tree = {
 				719 = {
 					add_building_construction = {
 						type = naval_base
-						level = 2
+						level = 1
 						province = 1468
 						instant_build = yes
 					}
@@ -1769,7 +1772,7 @@ focus_tree = {
 		relative_position_id = SAF_a_true_navy
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1810,7 +1813,7 @@ focus_tree = {
 		relative_position_id = SAF_cadets_of_the_general_botha
 		x = 10
 		y = 0
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 50
 		}
@@ -1858,7 +1861,7 @@ focus_tree = {
 		relative_position_id = SAF_sensibilize_the_africans
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 15
 		}
@@ -1881,7 +1884,7 @@ focus_tree = {
 		  relative_position_id = SAF_organize_the_party
 		  x = 2
 		  y = 1
-		  cost = 5
+		  cost = 7.15
 		  ai_will_do = {
 			  factor = 20
 		  }
@@ -1889,7 +1892,7 @@ focus_tree = {
 		  available_if_capitulated = yes
 
 		  completion_reward = {
-			  add_manpower = 21548
+			  add_manpower = 25000
 			  add_stability = 0.05
 			   add_popularity = {
 				  ideology = communism
@@ -1906,7 +1909,7 @@ focus_tree = {
 		relative_position_id = SAF_organize_the_party
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 		factor = 10
 		}
@@ -2043,7 +2046,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SAF_black_republic }
 		x = -1
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 		  factor = 8
 		}
@@ -2067,7 +2070,7 @@ focus_tree = {
 		relative_position_id = SAF_liberation_revolution
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 		factor = 10
@@ -2098,7 +2101,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SAF_liberation_revolution }
 		x = 1
 		y = 2
-		cost = 8
+		cost = 10
 		ai_will_do = {
 		  factor = 10
 			}
@@ -2130,7 +2133,7 @@ focus_tree = {
 		relative_position_id = SAF_liberation_revolution
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 		  factor = 10
 		}
@@ -2158,7 +2161,7 @@ focus_tree = {
 		relative_position_id = SAF_black_republic
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 		factor = 10
@@ -2200,7 +2203,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SAF_radicalize_the_afrikaner_broederbond focus = SAF_push_the_unp_towards_independence }
 		x = 3
 		y = 1
-		cost = 4
+		cost = 5
 		ai_will_do = {
 		  factor = 20
 		}
@@ -2238,7 +2241,7 @@ focus_tree = {
 		relative_position_id = SAF_policy_of_cooperation
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 		factor = 10
@@ -2309,7 +2312,7 @@ focus_tree = {
 		relative_position_id = SAF_research_cooperation
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 		factor = 10
 		}
@@ -2327,7 +2330,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = { type = industrial_complex level = 1 }
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 1
@@ -2336,7 +2339,7 @@ focus_tree = {
 				category = electronics
 			}
 			ENG = {
-				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = industrial_complex level = 1 }
 				add_tech_bonus = {
 					name = industrial_bonus
 					bonus = 1
@@ -2356,7 +2359,7 @@ focus_tree = {
 		relative_position_id = SAF_policy_of_cooperation
 		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -2366,7 +2369,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 	   				type = industrial_complex
-	   				level = 2
+	   				level = 1
 	   				instant_build = yes
 	   			}
 				add_building_construction = {
@@ -2376,7 +2379,7 @@ focus_tree = {
 				}
 			}
    			719  = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = naval_base
 					level = 1
@@ -2400,7 +2403,7 @@ focus_tree = {
 		relative_position_id = SAF_finance_legislation
 		x = 1
 		y = 1
-		cost = 5
+		cost = 7.15
 		ai_will_do = {
 			factor = 10
 		}
@@ -2419,7 +2422,7 @@ focus_tree = {
 		relative_position_id = SAF_policy_of_cooperation
 		x = 0
 		y = 2
-		cost = 2
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2462,7 +2465,7 @@ focus_tree = {
 			relative_position_id = SAF_guard_the_cape
 			x = 1
 			y = 1
-			cost = 5
+			cost = 10
 
 			ai_will_do = {
 			factor = 10
@@ -2471,7 +2474,7 @@ focus_tree = {
 			available_if_capitulated = yes
 
 			available = {
-			 # has_war = yes
+			  has_war = yes
 			}
 
 			completion_reward = {
@@ -2488,7 +2491,7 @@ focus_tree = {
 			  relative_position_id = SAF_guard_the_cape
 			  x = -1
 			  y = 1
-			  cost = 5
+			  cost = 7.15
 
 			  ai_will_do = {
 			  factor = 10
@@ -2508,19 +2511,25 @@ focus_tree = {
 			focus = {
 		  		id = SAF_expand_the_union
 		  		icon = GFX_goal_tfv_saf_secure_interests_in_africa
-		  		prerequisite = { focus = SAF_remobilize_the_cape_corps focus = SAF_crush_ossewabrandwag  }
-		  		#prerequisite = { focus = SAF_crush_ossewabrandwag }
+		  		prerequisite = { focus = SAF_remobilize_the_cape_corps }
+		  		prerequisite = { focus = SAF_crush_ossewabrandwag }
 		  		x = -1
 		  		y = 1
 		  		relative_position_id = SAF_remobilize_the_cape_corps
 
-		  		cost = 3
+		  		cost = 10
 
 		  		ai_will_do = {
-					factor = 10
+					base = 0 #Don't do this please
 					modifier = {
-						factor = 0
-						is_historical_focus_on = yes
+						add = 10
+						is_historical_focus_on = no
+					}
+					modifier = { #Well since you can't defend it, we will do it for you!
+						add = 10
+						ENG = {
+							has_capitulated = yes
+						}
 					}
 		  		}
 
@@ -2540,10 +2549,6 @@ focus_tree = {
 		  		bypass = {
 
 		  		}
-
-		  		
-		  		
-		  		
 
 				search_filters = { FOCUS_FILTER_ANNEXATION }
 
@@ -2624,7 +2629,7 @@ focus_tree = {
 		relative_position_id = SAF_radicalize_the_afrikaner_broederbond
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -2642,7 +2647,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SAF_return_to_republicanism }
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -2670,7 +2675,7 @@ focus_tree = {
 		relative_position_id = SAF_form_the_ossewabrandwag
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 100
@@ -2803,7 +2808,7 @@ focus_tree = {
 		relative_position_id = SAF_solidify_german_contacts
 		x = -1
 		y = 2
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 10
@@ -2920,7 +2925,7 @@ focus_tree = {
 		relative_position_id = SAF_get_rid_of_the_british
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 100
@@ -2946,7 +2951,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SAF_form_the_ossewabrandwag }
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -2976,7 +2981,7 @@ focus_tree = {
 		relative_position_id = SAF_return_to_republicanism
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 		factor = 200
@@ -3001,7 +3006,7 @@ focus_tree = {
 		relative_position_id = SAF_build_a_new_state
 		x = -1
 		y = 2
-		cost = 8
+		cost = 10
 
 		mutually_exclusive = { focus = SAF_relax_racial_laws }
 
@@ -3028,7 +3033,7 @@ focus_tree = {
 		relative_position_id = SAF_build_a_new_state
 		x = 1
 		y = 2
-		cost = 8
+		cost = 10
 
 		mutually_exclusive = { focus = SAF_separation_policy }
 
@@ -3060,7 +3065,7 @@ focus_tree = {
 		relative_position_id = SAF_build_a_new_state
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 		factor = 10
 		}

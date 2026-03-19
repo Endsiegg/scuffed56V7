@@ -71,9 +71,13 @@ recruit_character = FRA_henry_freydenberg
 recruit_character = FRA_jeanmarie_charles_abrial
 recruit_character = FRA_jeanpierre_esteva
 recruit_character = FRA_jean_de_laborde
+recruit_character = FRA_jean_romatet
+recruit_character = FRA_emile_laure
+recruit_character = FRA_joseph_doumenc
 recruit_character = FRA_jean_decoux
 recruit_character = FRA_emile_muselier
 recruit_character = FRA_marcel_bucard
+recruit_character = FRA_marcel_deat
 recruit_character = FRA_charles_maurras
 recruit_character = FRA_maurice_pujo
 recruit_character = FRA_paul_reynaud
@@ -88,6 +92,8 @@ recruit_character = FRA_jacques_duclos
 recruit_character = FRA_felix_gouin
 recruit_character = FRA_henri_barbe
 recruit_character = FRA_pierre_pucheu
+recruit_character = FRA_charles_detmar
+recruit_character = FRA_georges_claude
 recruit_character = FRA_jean_zay
 recruit_character = FRA_léon_blum
 recruit_character = FRA_leon_daudet
@@ -167,6 +173,7 @@ recruit_character = FRA_charles_laurent
 recruit_character = FRA_andre_chapelon
 
 
+recruit_character = FRA_jerome_napoleon_bonaparte
 #scientists
 recruit_character = FRA_irene_joliot_curie
 recruit_character = FRA_frederic_joliot_curie
@@ -176,8 +183,7 @@ recruit_character = FRA_emile_rimailho
 recruit_character = FRA_eugene_schneider_ii
 recruit_character = FRA_henri_edmond_fouche
 recruit_character = FRA_joseph_bethenod
-
-set_research_slots = 4
+set_research_slots = 5
 set_stability = 0.5
 set_war_support = 0.1
 
@@ -245,12 +251,12 @@ set_technology = {
 motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-	trench_warfare = 1
-	fleet_in_being = 1
 	fuel_silos = 1
 	fuel_refining = 1
 	basic_train = 1
 }
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
 if = {
 	limit = {
 		has_dlc = "La Resistance"
@@ -387,12 +393,12 @@ add_ideas = {
 	FRA_outdated_airforce
 }
 
-#give_guarantee = ADR
-#give_guarantee = MNC
-#give_guarantee = CZE
-#give_guarantee = YUG
-#give_guarantee = ROM
-#give_guarantee = BEL	#Instead of a an event which is meant to always fire - Fantom
+give_guarantee = ADR
+give_guarantee = MNC
+give_guarantee = CZE
+give_guarantee = YUG
+give_guarantee = ROM
+give_guarantee = BEL	#Instead of a an event which is meant to always fire - Fantom
 
 diplomatic_relation = {
     country = MNC
@@ -644,6 +650,96 @@ if = {
 			fixed_auxiliary_weapon_slot_1 = bomb_locks
 			engine_type_slot = engine_2_2x
 			special_type_slot_1 = lmg_defense_turret
+		}
+		icon = "GFX_FRA_tactical_bomber1_medium"
+	}
+}
+
+if = {
+	limit = { NOT = { has_dlc = "By Blood Alone" } }
+	create_equipment_variant = {
+		name = "D.500"
+		type = fighter_equipment_0
+		upgrades = {
+			plane_gun_upgrade = 2
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 3
+			plane_reliability_upgrade = 2
+		}
+		obsolete = yes
+		icon = "GFX_FRA_cv_fighter1_medium"
+	}
+
+	create_equipment_variant = {
+		name = "D.510"
+		type = fighter_equipment_0
+		upgrades = {
+			plane_gun_upgrade = 4
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 4
+			plane_reliability_upgrade = 3
+		}
+		icon = "GFX_FRA_cv_fighter1_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Br. 19"
+		type = cas_equipment_0
+		upgrades = {
+			plane_cas_upgrade = 0
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 0
+		}
+		obsolete = yes
+		icon = "GFX_TUR_early_bomber_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Potez 25"
+		type = cas_equipment_0
+		upgrades = {
+			plane_cas_upgrade = 2
+			plane_range_upgrade = 1
+			plane_engine_upgrade = 1
+			plane_reliability_upgrade = 1
+		}
+		obsolete = yes
+		icon = "GFX_GEN_bomber_P25_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Latécoère 290"
+		type = nav_bomber_equipment_0
+		upgrades = {
+			plane_naval_upgrade = 1
+			plane_range_upgrade = 0
+			plane_engine_upgrade = 2
+			plane_reliability_upgrade = 3
+		}
+		icon = "GFX_FRA_flying_boat_medium"
+	}
+
+	create_equipment_variant = {
+		name = "PL.7"
+		type = cv_nav_bomber_equipment_0
+		upgrades = {
+			cv_plane_naval_upgrade = 0
+			cv_plane_range_upgrade = 0
+			plane_engine_upgrade = 0
+			plane_reliability_upgrade = 0
+		}
+		icon = "GFX_SWE_early_bomber_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Amiot 143"
+		type = tac_bomber_equipment_0
+		upgrades = {
+			plane_tac_bomb_upgrade = 1
+			plane_range_upgrade = 2
+			plane_engine_upgrade = 2
+			plane_reliability_upgrade = 3
 		}
 		icon = "GFX_FRA_tactical_bomber1_medium"
 	}

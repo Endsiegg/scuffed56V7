@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = czechoslovakian_focus
 	
@@ -530,7 +531,7 @@ focus_tree = {
 
 		x = 3
 		y = 5
-		cost = 8
+		cost = 10
 
 		ai_will_do = { factor = 0.6 }
 		completion_reward = {
@@ -577,14 +578,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = CZKE_explosives_production
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 2
 		}
-
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}		
 
 		available_if_capitulated = yes
 
@@ -619,7 +616,7 @@ focus_tree = {
 	
 		x = 2
 		y = 6
-		cost = 8
+		cost = 10
 	
 		ai_will_do = { factor = 1  }
 
@@ -644,7 +641,7 @@ focus_tree = {
 
 		x = 1
 		y = 7
-		cost = 8
+		cost = 10
 
 		ai_will_do = { factor = 0.3 }
 
@@ -810,14 +807,14 @@ focus_tree = {
 
 	focus = {
 		id = CZKE_engineer_corps
-		icon = GFX_goal_generic_construction2
+		icon = GFX_r56_goal_generic_military_engineers
 
 		prerequisite = { focus = CZKE_rop }
 		prerequisite = { focus = CZKE_armament_program }
 
 		x = 9
 		y = 2
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			#custom_effect_tooltip = new_research
@@ -1259,7 +1256,7 @@ focus_tree = {
 
 		x = 8
 		y = 6
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			#custom_effect_tooltip = new_research
@@ -1290,7 +1287,7 @@ focus_tree = {
 				has_country_flag = yalta_unlock_focuses
 			}
 		}
-		cost = 8	#reduced from 14.3 (100 days)
+		cost = 10	#reduced from 14.3 (100 days)
 
 		completion_reward = {
 			#custom_effect_tooltip = new_research
@@ -1440,7 +1437,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = CZKE_armament_2b
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			#custom_effect_tooltip = new_research
@@ -1474,7 +1471,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = CZKE_armoured_cars
-		cost = 8	#shortened from 14.3 (100 days)
+		cost = 10	#shortened from 14.3 (100 days)
 
 		completion_reward = {
 			#custom_effect_tooltip = new_research
@@ -1599,6 +1596,55 @@ focus_tree = {
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZKE_air_modernization_tooltip_reward
 			effect_tooltip = {
+				if = {
+					limit = {
+						has_tech = fighter1
+						NOT = {
+							has_dlc = "By Blood Alone"
+						}
+					}
+					create_equipment_variant = {
+						name = "B.634"
+						type = fighter_equipment_1
+						parent_version = 0
+						upgrades = {
+							plane_gun_upgrade = 1
+							plane_range_upgrade = 1
+							plane_engine_upgrade = 2
+							plane_reliability_upgrade = 2
+						}
+					}	
+					hidden_effect = {
+						CZE = {
+							set_technology = { heavy_fighter1 = 1 }
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { 
+							has_tech = fighter1 
+							has_dlc = "By Blood Alone"
+						}
+					}
+					hidden_effect = {
+						CZE = {
+							set_technology = { fighter1 = 1 }
+						}
+					}
+					create_equipment_variant = {
+						name = "Š.328/IV"
+						type = CAS_equipment_1
+						parent_version = 0
+						upgrades = {
+							plane_cas_upgrade = 2
+							plane_range_upgrade = 1
+							plane_engine_upgrade = 0
+							plane_reliability_upgrade = 4
+						}
+					}
+				}
+				else = {
 					if = {
 						limit = {
 							has_tech = basic_small_airframe
@@ -1626,6 +1672,7 @@ focus_tree = {
 							icon = "GFX_CZE_CAS3_medium"
 						}
 					}
+				}
 			}
 		}
 	}
@@ -1636,7 +1683,6 @@ focus_tree = {
 
 		allow_branch = {
 			has_global_flag = end_of_czechoslovakia
-			has_country_flag = hide_interwar_diplomacy
 		}
 
 		prerequisite = {
@@ -1770,7 +1816,7 @@ focus_tree = {
 		mutually_exclusive = { focus = CZKE_new_airplane_prototypes_2 }
 		x = 14
 		y = 5
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 0.6
 		}
@@ -1840,7 +1886,7 @@ focus_tree = {
 		mutually_exclusive = { focus = CZKE_new_airplane_prototypes }
 		x = 16
 		y = 5
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 0.4
 		}
@@ -1933,7 +1979,7 @@ focus_tree = {
 		prerequisite = { focus = CZKE_new_airplane_prototypes focus = CZKE_new_airplane_prototypes_2 }
 		x = 15
 		y = 6
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 			add_tech_bonus = {
@@ -2060,11 +2106,11 @@ focus_tree = {
 				if = {
 					limit = { 
 						OR = { 
-							has_tech = mobile_warfare 
-							has_tech = trench_warfare 
-							has_tech = mass_assault 
-							has_tech = superior_firepower 
-							has_tech = r56_guerilla_warfare 
+							has_doctrine = new_mobile_warfare 
+							has_doctrine = grand_battleplan 
+							has_doctrine = mass_assault 
+							has_doctrine = superior_firepower 
+							has_doctrine = r56_guerilla_warfare 
 						} 
 						NOT = { 
 							has_idea = CZKE_ludvik_krejci_army_chief 
@@ -2082,28 +2128,28 @@ focus_tree = {
 				if = {
 					limit = { 
 						NOT = {
-							has_tech = mobile_warfare 
-							has_tech = trench_warfare 
-							has_tech = mass_assault 
-							has_tech = superior_firepower 
-							has_tech = r56_guerilla_warfare
+							has_doctrine = new_mobile_warfare 
+							has_doctrine = grand_battleplan 
+							has_doctrine = mass_assault 
+							has_doctrine = superior_firepower 
+							has_doctrine = r56_guerilla_warfare
 						}
 						NOT = {
 							has_idea = CZKE_ludvik_krejci_army_chief 
 						}
 					}
 					add_ideas = CZKE_ludvik_krejci_army_chief
-					set_technology = { trench_warfare = 1 }
+					set_grand_doctrine = grand_battleplan
 				}
 		
 				if = {
 					limit = { 
 						OR = { 
-							has_tech = mobile_warfare 
-							has_tech = trench_warfare 
-							has_tech = mass_assault 
-							has_tech = superior_firepower 
-							has_tech = r56_guerilla_warfare
+							has_doctrine = new_mobile_warfare 
+							has_doctrine = grand_battleplan 
+							has_doctrine = mass_assault 
+							has_doctrine = superior_firepower 
+							has_doctrine = r56_guerilla_warfare
 						} 
 						has_idea = CZKE_ludvik_krejci_army_chief
 					}
@@ -2119,14 +2165,14 @@ focus_tree = {
 					limit = {
 						has_idea = CZKE_ludvik_krejci_army_chief 
 						NOT = { 
-							has_tech = mobile_warfare 
-							has_tech = trench_warfare 
-							has_tech = mass_assault 
-							has_tech = superior_firepower 
-							has_tech = r56_guerilla_warfare
+							has_doctrine = new_mobile_warfare 
+							has_doctrine = grand_battleplan 
+							has_doctrine = mass_assault 
+							has_doctrine = superior_firepower 
+							has_doctrine = r56_guerilla_warfare
 						}
 					}
-					set_technology = { trench_warfare = 1 }
+					set_grand_doctrine = grand_battleplan
 					add_doctrine_cost_reduction = {
 						name = land_doc_bonus
 						cost_reduction = 0.5
@@ -2140,11 +2186,11 @@ focus_tree = {
 				if = {
 					limit = { 
 						OR = { 
-							has_tech = mobile_warfare 
-							has_tech = trench_warfare 
-							has_tech = mass_assault 
-							has_tech = superior_firepower 
-							has_tech = r56_guerilla_warfare
+							has_doctrine = new_mobile_warfare 
+							has_doctrine = grand_battleplan 
+							has_doctrine = mass_assault 
+							has_doctrine = superior_firepower 
+							has_doctrine = r56_guerilla_warfare
 						}
 					}
 					set_country_flag = chief_prchala_appointed
@@ -2160,17 +2206,17 @@ focus_tree = {
 				if = {
 					limit = {
 						NOT = { 
-							has_tech = mobile_warfare 
-							has_tech = trench_warfare 
-							has_tech = mass_assault 
-							has_tech = superior_firepower
-							has_tech = r56_guerilla_warfare
+							has_doctrine = new_mobile_warfare 
+							has_doctrine = grand_battleplan 
+							has_doctrine = mass_assault 
+							has_doctrine = superior_firepower
+							has_doctrine = r56_guerilla_warfare
 						}
 					}
 		
 					set_country_flag = chief_prchala_appointed
 					add_ideas = CZKE_lev_prchala_army_chief
-					set_technology = { superior_firepower = 1 }
+					set_grand_doctrine = superior_firepower
 				}		
 			}
 			custom_effect_tooltip = alternative_diplomatic_reward
@@ -2178,11 +2224,11 @@ focus_tree = {
 				if = {
 					limit = { 
 						OR = { 
-							has_tech = mobile_warfare 
-							has_tech = trench_warfare 
-							has_tech = mass_assault 
-							has_tech = superior_firepower
-							has_tech = r56_guerilla_warfare		
+							has_doctrine = new_mobile_warfare 
+							has_doctrine = grand_battleplan 
+							has_doctrine = mass_assault 
+							has_doctrine = superior_firepower
+							has_doctrine = r56_guerilla_warfare		
 						}
 					}
 					
@@ -2199,17 +2245,17 @@ focus_tree = {
 				if = {
 					limit = { 
 						NOT = { 
-							has_tech = mobile_warfare 
-							has_tech = trench_warfare 
-							has_tech = mass_assault 
-							has_tech = superior_firepower
-							has_tech = r56_guerilla_warfare
+							has_doctrine = new_mobile_warfare 
+							has_doctrine = grand_battleplan 
+							has_doctrine = mass_assault 
+							has_doctrine = superior_firepower
+							has_doctrine = r56_guerilla_warfare
 						}
 					}
 		
 					set_country_flag = chief_luza_appointed
 					add_ideas = CZKE_vojtech_boris_luza_army_chief
-					set_technology = { mobile_warfare = 1 }
+					set_grand_doctrine= new_mobile_warfare
 				}	
 			}
 		}
@@ -2452,7 +2498,7 @@ focus_tree = {
 		
 		x = 24
 		y = 4
-		cost = 8
+		cost = 10
 
 		ai_will_do = { factor = 0 }
 
@@ -2480,10 +2526,18 @@ focus_tree = {
 
 		prerequisite = { focus = CZKE_infiltrate_abwehr }
 
-		available = { 
-			AUS = { 
-				exists = yes
+		available = {
+			AUS = {
+				if = {
+					limit = {
+						AUS = {
+							is_ai = no
+						}
+					}
+					is_ai = yes
+				}
 				has_government = fascism
+				exists = yes
 				has_country_leader = { ruling_only = yes character = AUS_kurt_schuschnigg }
 			}
 			CZE = { 
@@ -2503,7 +2557,7 @@ focus_tree = {
  
 		x = 24
 		y = 5
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 		    add_political_power = -100
@@ -2520,7 +2574,15 @@ focus_tree = {
 
 		prerequisite = { focus = CZKE_sabotage_anchluss }
  		available = {
- 			GER = {
+			GER = {
+				if = {
+					limit = {
+						GER = {
+							is_ai = no
+						}
+					}
+					is_ai = yes
+				}
 				exists = yes
 				has_government = fascism
 				has_completed_focus = GER_anschluss
@@ -2565,7 +2627,7 @@ focus_tree = {
 
 		x = 26
 		y = 5
-		cost = 8
+		cost = 10
 
 		ai_will_do = { factor = 0.2	}
 
@@ -2591,7 +2653,7 @@ focus_tree = {
 
  		x = 26
  		y = 7
- 		cost = 8
+ 		cost = 10
 
 		ai_will_do = { factor = 0.2	}
 
@@ -2707,7 +2769,7 @@ focus_tree = {
 
 		x = 19
 		y = 2
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_research_slot = 1
@@ -2803,7 +2865,7 @@ focus_tree = {
 	
 		x = 18
 		y = 6
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
@@ -2838,7 +2900,7 @@ focus_tree = {
 		
 		x = 20
 		y = 3
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 0.3
 			modifier = {
@@ -2865,7 +2927,7 @@ focus_tree = {
 		prerequisite = { focus = CZKE_revive_little_entente }
 		x = 19
 		y = 4
-		cost = 8
+		cost = 10
 		available = {
 			is_faction_leader = yes
 			has_war = no
@@ -2899,7 +2961,7 @@ focus_tree = {
 		prerequisite = { focus = CZKE_revive_little_entente }
 		x = 21
 		y = 4
-		cost = 8
+		cost = 10
 
 		available = {
 			is_faction_leader = yes
@@ -3013,7 +3075,7 @@ focus_tree = {
 		}
 		x = 20
 		y = 8
-		cost = 8
+		cost = 10
 		ai_will_do = { 
 			factor = 1 
 			modifier = {
@@ -3163,7 +3225,7 @@ focus_tree = {
 
 		x = 27
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
@@ -3406,7 +3468,7 @@ focus_tree = {
 
 		x = 32
 		y = 2
-		cost = 8
+		cost = 10
 
 		ai_will_do = { factor = 0.2	}
 
@@ -3595,7 +3657,7 @@ focus_tree = {
 
 		x = 33
 		y = 3
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
@@ -3652,7 +3714,7 @@ focus_tree = {
 		relative_position_id = CZKE_sudetenland_autonomy
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			add_ideas = CZE_liechtenstein_properties
@@ -3785,7 +3847,7 @@ focus_tree = {
 
 		x = 28
 		y = 5
-		cost = 8
+		cost = 10
 
 		ai_will_do = { factor = 0.2 }		
 
@@ -3863,7 +3925,7 @@ focus_tree = {
 
 		x = 27
 		y = 6
-		cost = 8
+		cost = 10
 
 		ai_will_do = { factor = 0.2 }
 
@@ -3890,7 +3952,7 @@ focus_tree = {
 		}
 		x = 28
 		y = 7
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			base = 0.05
 			modifier = {
@@ -3945,7 +4007,7 @@ focus_tree = {
 
 		x = 30
 		y = 4
-		cost = 8
+		cost = 10
 		
 		completion_reward = {
 		if = {
@@ -4005,7 +4067,7 @@ focus_tree = {
 
 		x = 30
 		y = 5
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			custom_effect_tooltip = removes_communism_ideas	
@@ -4058,7 +4120,7 @@ focus_tree = {
 
 		x = 29
 		y = 6
-		cost = 8
+		cost = 10
 
 		allow_branch = {
 			NOT = {
@@ -4098,7 +4160,7 @@ focus_tree = {
 
 		x = 31
 		y = 6
-     	cost = 8
+     	cost = 10
 
 		allow_branch = {
 			NOT = {
@@ -4139,9 +4201,9 @@ focus_tree = {
 
  		prerequisite = { focus = CZKE_sudetenland_autonomy }
  		
- 		available = { 
- 			country_exists = ENG 
- 			country_exists = FRA	
+ 		available = {
+ 			country_exists = ENG
+ 			country_exists = FRA
  			has_government = democratic 
  			has_war = no 
  			GER = { 
@@ -4155,19 +4217,39 @@ focus_tree = {
 			NOT = { has_country_flag = hide_interwar_diplomacy }	#I think this was supposed to be here? -- focus was colliding with post-yalta content
 		}
 		bypass = {
-			GER = { has_country_flag = sudetenland_acquired }
-			custom_trigger_tooltip = {
-				tooltip = CZKE_join_allies_tt
-					OR = {
-					ENG = { is_in_faction_with = CZE }
-					FRA = { is_in_faction_with = CZE }
+			OR = {
+				AND = {
+					GER = { has_country_flag = sudetenland_acquired }
+					custom_trigger_tooltip = {
+						tooltip = CZKE_join_allies_tt
+						OR = {
+							ENG = { is_in_faction_with = CZE }
+							FRA = { is_in_faction_with = CZE }
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							ENG = {
+								is_ai = no
+							}
+							FRA = {
+								is_ai = no
+							}
+						}
+					}
+					AND = {
+						ENG = { is_ai = no }
+						FRA = { is_ai = no }
 					}
 				}
 			}
+		}
 
  		x = 33
  		y = 5
- 		cost = 8
+ 		cost = 10
 
  		ai_will_do = { factor = 1 }
 
@@ -4233,7 +4315,7 @@ focus_tree = {
 
  		x = 33
  		y = 8
- 		cost = 8
+ 		cost = 10
 
 		completion_reward = {
 			if = {
@@ -4302,7 +4384,7 @@ focus_tree = {
 
 		x = 34
 		y = 4
-		cost = 8
+		cost = 10
 
 		available = {
 			if = {
@@ -4346,7 +4428,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = CZKE_strengthen_communism
-		cost = 8
+		cost = 10
 
 		prerequisite = {
 			focus = CZKE_strengthen_communism
@@ -4371,7 +4453,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = CZKE_collectivize_farms
-		cost = 8
+		cost = 10
 
 		prerequisite = {
 			focus = CZKE_collectivize_farms
@@ -4406,11 +4488,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = CZKE_strengthen_communism
-		cost = 8
-
-		allow_branch = {
-			has_country_flag = yalta_unlock_focuses
-		}
+		cost = 10
 
 		prerequisite = {
 			focus = CZKE_strengthen_communism
@@ -4498,7 +4576,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = CZKE_boycott_press_law
-		cost = 8
+		cost = 10
 
 		allow_branch = {
 			has_country_flag = yalta_unlock_focuses
@@ -4542,7 +4620,7 @@ focus_tree = {
 
 		x = 34
 		y = 7
-		cost = 8
+		cost = 10
 
 		completion_reward = {
 			effect_tooltip = {
@@ -4610,7 +4688,7 @@ focus_tree = {
 
 		x = 28
 		y = 8
-		cost = 8
+		cost = 10
 
 		available = { country_exists = SOV is_in_faction = no has_government = communism }
 

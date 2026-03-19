@@ -1,3 +1,4 @@
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = mandate_palestine_focus
 	
@@ -114,7 +115,7 @@ focus_tree = {
 		bypass = {
 			is_subject = no
 		}
-		cost = 8
+		cost = 10
 		select_effect = {
 			hidden_effect = {
 				country_event = {
@@ -201,7 +202,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			custom_effect_tooltip = MPL_selection_britain_event		
 			set_variable = {
@@ -539,15 +540,17 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			add_political_power = 50
-			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = MPL_david_ben_gurion
 			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_theorist
 			show_ideas_tooltip = MPL_yigael_yadin_theorist
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_chief_of_army
 			show_ideas_tooltip = MPL_yigael_yadin_high_command
 			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = MPL_yigal_allon
-			custom_effect_tooltip = generic_skip_one_line_tt
 			show_ideas_tooltip = MPL_yitshak_sadeh
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_power_balance_value = {
@@ -733,8 +736,10 @@ focus_tree = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = MPL_ahmed_hilmi_pasha
 			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_chief_of_army
 			show_ideas_tooltip = MPL_fawzi_al_qawuqji
 			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = MPL_muhammad_nimr_al_hawari
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_power_balance_value = {
@@ -1370,7 +1375,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			if = {
 				limit = {
@@ -1711,7 +1716,7 @@ focus_tree = {
 				is_subject = no
 			}
 		}
-		cost = 8
+		cost = 10
 		allow_branch = {
 			has_completed_focus = MPL_two_states
 			
@@ -1744,7 +1749,7 @@ focus_tree = {
 				has_completed_focus = MPL_two_states
 			}
 		}
-		cost = 8 
+		cost = 10 
 		completion_reward = {
 			if = {
 				limit = {
@@ -1796,7 +1801,7 @@ focus_tree = {
 		x = 5
 		y = 1
 
-		cost = 8
+		cost = 10
 
 		allow_branch = {
 			has_dlc = "La Resistance"
@@ -1963,7 +1968,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_centralize_militia_armies
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_tech_bonus = {
 				name = MPL_modernize_army
@@ -1998,7 +2003,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_modernize_army
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			if = {
 				limit = {
@@ -2026,7 +2031,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_modernize_army
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				category = land_doctrine
@@ -2048,7 +2053,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_modernize_army
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			air_experience = 20
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -2108,7 +2113,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = MPL_heavy_air_focus 
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = MPL_light_air_focus
@@ -2141,7 +2146,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = MPL_light_air_focus 
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = MPL_heavy_air_focus
@@ -2180,7 +2185,7 @@ focus_tree = {
 			focus = MPL_start_military_industry
 
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -2197,7 +2202,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_open_tel_aviv_university
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = MPL_albert_einstein
@@ -2308,7 +2313,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_develop_ports
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			if = {
 				limit = {
@@ -2550,7 +2555,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_days_mission_timeout = {
 				mission = MPL_stabilize_union_mission
@@ -2607,7 +2612,7 @@ focus_tree = {
 		relative_position_id = MPL_form_unions
 		x = 1
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = MPL_form_unions
 		}
@@ -2690,7 +2695,7 @@ focus_tree = {
 		relative_position_id = MPL_communism_victory
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = MPL_communism_victory
 		}
@@ -3009,7 +3014,7 @@ focus_tree = {
 		relative_position_id = MPL_realize_levant
 		x = -2
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = MPL_realize_levant
 		}
@@ -3062,7 +3067,7 @@ focus_tree = {
 		relative_position_id = MPL_realize_levant
 		x = 0
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = MPL_realize_levant
 		}
@@ -3127,7 +3132,7 @@ focus_tree = {
 		relative_position_id = MPL_realize_levant
 		x = 2
 		y = 1
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = MPL_realize_levant
 		}
@@ -3286,7 +3291,7 @@ focus_tree = {
 		relative_position_id = MPL_seize_lebanon
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = MPL_fund_secret_police
 		}
@@ -3468,7 +3473,7 @@ focus_tree = {
 		relative_position_id = MPL_elections
 		x = 0
 		y = 2
-		cost = 8
+		cost = 10
 		prerequisite = {
 			focus = MPL_democratic_victory
 			focus = MPL_communism_victory
@@ -3548,7 +3553,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_days_mission_timeout = {
 				mission = MPL_stabilize_union_mission
@@ -3643,7 +3648,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 100
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_days_mission_timeout = {
 				mission = MPL_stabilize_union_mission
@@ -3737,7 +3742,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 100
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			if = {
 				limit = {
@@ -3804,7 +3809,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_democratic_victory
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = PER_de_militarize_politics
 		}
@@ -3870,7 +3875,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_religious_freedom
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_stability = 0.15
 			add_political_power = 200
@@ -3912,7 +3917,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_university_funding_campaign
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_stability = 0.1
 			add_ideas = MPL_universities
@@ -3935,7 +3940,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_constitution
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = MPL_beacon_idea
 		}
@@ -3973,7 +3978,7 @@ focus_tree = {
 			focus = MPL_british_officers
 		}
 
-		cost = 8
+		cost = 10
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
@@ -4044,7 +4049,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MPL_middle_eastern_focus
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_state_core = 455
 			add_state_core = 1022
@@ -4080,7 +4085,7 @@ focus_tree = {
 			focus = MPL_middle_eastern_focus
 		}
 
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 100
@@ -4311,7 +4316,7 @@ focus_tree = {
 				has_government = fascism
 			}
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_ideas = MPL_against_germany_idea
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4360,7 +4365,7 @@ focus_tree = {
 				has_global_flag = MPL_no_border_war
 			}
 		}
-		cost = 8
+		cost = 10
 		continue_if_invalid = yes
 		cancel_if_invalid = no
 		select_effect = {
@@ -4398,7 +4403,7 @@ focus_tree = {
 #		prerequisite = {
 #			focus = MPL_western_military_doctrine
 #		}
-#		cost = 8
+#		cost = 10
 #		available = {
 #			is_subject = no
 #		}
@@ -4467,7 +4472,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			set_variable = {
 				MPL_no_raid_chance = 30
@@ -4503,7 +4508,7 @@ focus_tree = {
 			focus = MPL_british_occupation
 		}
 
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_stability = 0.05
 			#gives decision to arrest leaders and people for more order
@@ -4596,7 +4601,7 @@ focus_tree = {
 			focus = MPL_police
 		}
 
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_manpower = 25000
 			add_popularity = {
@@ -4763,7 +4768,7 @@ focus_tree = {
 		}
 		cancel_if_invalid = no
 		continue_if_invalid = yes
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_political_power = 100
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4807,7 +4812,7 @@ focus_tree = {
 		available = {
 			is_subject = yes
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
@@ -4832,7 +4837,7 @@ focus_tree = {
 	focus = {
 		id = MPL_british_military_industry
 		icon = GFX_goal_generic_barrack_industry
-		cost = 8
+		cost = 10
 		relative_position_id = MPL_wauchope_resigns
 		x = 0
 		y = 1
@@ -4864,7 +4869,7 @@ focus_tree = {
 		available = {
 			is_subject = yes
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			add_offsite_building = {
 				type = industrial_complex
@@ -4894,7 +4899,7 @@ focus_tree = {
 		available = {
 			is_subject = yes
 		}
-		cost = 8
+		cost = 10
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = MPL_mandate
@@ -4971,7 +4976,7 @@ focus_tree = {
 		}
 		cancel_if_invalid = no
 		continue_if_invalid = yes
-		cost = 8
+		cost = 10
 		completion_reward = {
 			remove_power_balance = { id = MPL_power_balance }
 			swap_ideas = {
