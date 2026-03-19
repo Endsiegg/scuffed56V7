@@ -1,35 +1,140 @@
 ###---> AI Behavior <><> <><> <><>
 
 #-> Generic <><>
-rt56_ai_behavior = {
-	name = "RT56_AI_BEHAVIOR"
-	group = "Game Rules"
+allow_auto_annex = {
+	name = "RULE_ALLOW_AUTO_ANNEX"
+	group = "RULE_GROUP_GAMEPLAY"
 	icon = "GFX_release_nations"
 	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT_RT56_AI"
-		desc = "RULE_OPTION_DEFAULT_RT56_AI_DESC"
+		name = yes
+		text = "RULE_OPTION_ALLOWED"
+		desc = "RULE_ALLOW_ANNEX_DESC"
 	}
 	option = {
-		name = OLD_SCHOOL
-		text = "RULE_OPTION_OLD_SCHOOL"
-		desc = "RULE_OPTION_OLD_SCHOOL_AI_DESC"
+		name = no
+		text = "RULE_OPTION_BLOCKED"
+		desc = "RULE_BLOCKED_ANNEX_DESC"
 	}
 }
 
 #-> Peace Control <><>
-player_peace_setting = {
-	name = "PLAYER_PEACE"
-	group = "Game Rules"
-	icon = "GFX_production_licenses"
+select_host_country = {
+	name = "Select Host for Host Tool"
+	group = "HOST_OPTIONS"
+	icon = "GFX_volunteers"
 	default = {
-		name = ON
-		text = "RULE_OPTION_ON"
-		desc = "RULE_OPTION_ON_DESC"
+		name = NONE
+		text = "Disabled"
+		desc = "Host tool is disabled and no host country is selected"
 	}
 	option = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_OFF_DESC"
+		name = GER
+		text = "Germany"
+		desc = ""
+	}
+	option = {
+		name = ITA
+		text = "Italy"
+		desc = ""
+	}
+	option = {
+		name = ROM
+		text = "Romania"
+		desc = ""
+	}
+	option = {
+		name = HUN
+		text = "Hungary"
+		desc = ""
+	}
+	option = {
+		name = BUL
+		text = "Bulgaria"
+		desc = ""
+	}
+	option = {
+		name = FIN
+		text = "Finland"
+		desc = ""
+	}
+	option = {
+		name = ENG
+		text = "Great Britain"
+		desc = ""
+	}
+	option = {
+		name = USA
+		text = "USA"
+		desc = ""
+	}
+	option = {
+		name = CAN
+		text = "Canada"
+		desc = ""
+	}
+	option = {
+		name = SAF
+		text = "South Africa"
+		desc = ""
+	}
+	option = {
+		name = RAJ
+		text = "British Raj"
+		desc = ""
+	}
+	option = {
+		name = AST
+		text = "Australia"
+		desc = ""
+	}
+	option = {
+		name = JAP
+		text = "Japan"
+		desc = ""
+	}
+	option = {
+		name = SOV
+		text = "Soviet Union"
+		desc = ""
+	}
+	option = {
+		name = FRA
+		text = "France"
+		desc = ""
+	}
+	option = {
+		name = SPR
+		text = "Spain"
+		desc = ""
+	}
+	option = {
+		name = BRA
+		text = "Brazil"
+		desc = ""
+	}
+	option = {
+		name = SWE
+		text = "Sweden"
+		desc = ""
+	}
+	option = {
+		name = AUS
+		text = "Austria"
+		desc = ""
+	}
+	option = {
+		name = SWI
+		text = "Switzerland"
+		desc = ""
+	}
+	option = {
+		name = HOL
+		text = "Netherlands"
+		desc = ""
+	}
+	option = {
+		name = TUR
+		text = "Turkey"
+		desc = ""
 	}
 }
