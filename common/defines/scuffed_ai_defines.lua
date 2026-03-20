@@ -114,11 +114,11 @@ NDefines.NAI.DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 0.9         -- Required percentag
 NDefines.NAI.DEPLOY_MIN_EQUIPMENT_CAP_DEPLOY_FACTOR = 0.85  -- If training is capped by equipment deficit and we have reached that cap deploy unit anyway if percentage is above this (reinforce in field instead).
     
 NDefines.NAI.ENTRENCHMENT_WEIGHT = 50.0
---NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.50
+NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.50
 NDefines.NAI.MAIN_ENEMY_FRONT_IMPORTANCE = 50.0
 NDefines.NAI.RESERVE_TO_COMMITTED_BALANCE = 0.2
 NDefines.NAI.FRONT_REASSIGN_DISTANCE = 250.0
-NDefines.NAI.HOUR_BAD_COMBAT_REEVALUATE = 90                  -- reduced from 168 ; if we are in combat for this amount and it goes shitty then try skipping it 
+NDefines.NAI.HOUR_BAD_COMBAT_REEVALUATE = 24                  -- reduced from 168 ; if we are in combat for this amount and it goes shitty then try skipping it 
 NDefines.NAI.UNIT_ASSIGNMENT_TERRAIN_IMPORTANCE = 20.0 -- Instead of 10 should improve terrain optimization
 --------------------------------------------------------------------------------------------------------------
 -- EQUIPMENT PRODUCTION
@@ -137,7 +137,7 @@ NDefines.NAI.NAVAL_DOCKYARDS_SHIP_FACTOR = 1000			-- The extent to which number 
 NDefines.NAI.NAVAL_BASES_SHIP_FACTOR = 1000				-- The extent to which number of naval bases play into amount of sips a nation wants
 NDefines.NAI.NAVAL_STATES_SHIP_FACTOR = 1000			-- The extent to which number of states play into amount of sips a nation wants
 
-NDefines.NAI.PRODUCTION_LINE_SWITCH_SURPLUS_NEEDED_MODIFIER = 0 -- 0.2 --delays the AI from upgrading air lines too long, this is handled by strategies instead
+NDefines.NAI.PRODUCTION_LINE_SWITCH_SURPLUS_NEEDED_MODIFIER = 0.1 -- 0.2 --delays the AI from upgrading air lines too long, this is handled by strategies instead
 
 --NDefines.NAI.PRODUCTION_UNAVAILABLE_RESORCE_FACTORY_FACTOR = 0.5
 
@@ -295,12 +295,12 @@ NDefines.NAI.ORG_UNIT_STRONG = 0.75                     -- Organization % for un
 NDefines.NAI.STR_UNIT_STRONG = 0.75						-- Strength (equipment) % for unit to be considered strong
 
 NDefines.NAI.PLAN_AVG_PREPARATION_TO_EXECUTE = 0.5				            -- % or more average plan preparation before executing
-NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.5			                -- If less than this fraction of units on a front is moving  AI sees it as ready for action
-NDefines.NAI.HOUR_BAD_COMBAT_REEVALUATE = 24                  -- if we are in combat for this amount and it goes shitty then try skipping it #was 100
-NDefines.NAI.PRODUCTION_LINE_SWITCH_SURPLUS_NEEDED_MODIFIER = 0	-- Is modified by efficency modifiers.
-NDefines.NAI.PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 1.0			-- AI countries will hold on activating plans if stronger countries have plans in the same location. Majors count extra (value of 1 will negate this)
-NDefines.NAI.PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 1.0		-- AI countries will hold on activating plans if player controlled countries have plans in the same location. Majors count extra (value of 1 will negate this)
-NDefines.NAI.XP_RATIO_REQUIRED_TO_RESEARCH_WITH_XP = 3.0		-- AI will at least need this amount of xp compared to cost of a tech to reserch it with XP #BASE WAS 2.0	
+--NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.5			                -- If less than this fraction of units on a front is moving  AI sees it as ready for action
+--NDefines.NAI.HOUR_BAD_COMBAT_REEVALUATE = 24                  -- if we are in combat for this amount and it goes shitty then try skipping it #was 100
+--NDefines.NAI.PRODUCTION_LINE_SWITCH_SURPLUS_NEEDED_MODIFIER = 0.1	-- Is modified by efficency modifiers.
+--NDefines.NAI.PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 1.0			-- AI countries will hold on activating plans if stronger countries have plans in the same location. Majors count extra (value of 1 will negate this)
+--NDefines.NAI.PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 1.0		-- AI countries will hold on activating plans if player controlled countries have plans in the same location. Majors count extra (value of 1 will negate this)
+--NDefines.NAI.XP_RATIO_REQUIRED_TO_RESEARCH_WITH_XP = 3.0		-- AI will at least need this amount of xp compared to cost of a tech to reserch it with XP #BASE WAS 2.0	
 NDefines.NAI.FRONT_EVAL_UNIT_ACCURACY = 1.0                      -- scale how stupid ai will act on fronts. 0 is potato #BASE WAS 0.7
 --------------------------------------------------------------------------------------------------------------
 -- NAVY
@@ -330,10 +330,10 @@ NDefines.NAI.MIN_NAVAL_MISSION_PRIO_TO_ASSIGN = {  -- priorities for regions to 
 
 NDefines.NAI.HIGH_PRIO_NAVAL_MISSION_SCORES = {  -- priorities for regions to get assigned to a mission
     0, -- HOLD (consumes fuel HOLD_MISSION_MOVEMENT_COST fuel while moving)
-    100000, -- PATROL - 100000	
+    3800, -- PATROL - 100000	
     1000, -- STRIKE FORCE 
     1500, -- CONVOY RAIDING
-    1000, -- CONVOY ESCORT - 1000
+    300, -- CONVOY ESCORT - 1000
     -1, -- MINES PLANTING	
     300, -- MINES SWEEPING	
     0, -- TRAIN
@@ -344,9 +344,9 @@ NDefines.NAI.HIGH_PRIO_NAVAL_MISSION_SCORES = {  -- priorities for regions to ge
 NDefines.NAI.MAX_MISSION_PER_TASKFORCE = {  -- max mission region/taskforce ratio
     0, -- HOLD (consumes fuel HOLD_MISSION_MOVEMENT_COST fuel while moving)
     1.5, -- PATROL		
-    4, -- STRIKE FORCE 
+    6, -- STRIKE FORCE 
     1.5, -- CONVOY RAIDING
-    4, -- CONVOY ESCORT
+    2, -- CONVOY ESCORT
     2, -- MINES PLANTING
     2, -- MINES SWEEPING
     0, -- TRAIN
@@ -358,6 +358,17 @@ NDefines.NAI.MAX_MISSION_PER_TASKFORCE = {  -- max mission region/taskforce rati
 -- NAVAL INVASIONS
 -------------------------
 NDefines.NAI.MAX_INVASION_SIZE = 18 --24									-- max invasion group size
+NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 5		
+NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0 --0.08			-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend.
+NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE_DEFENSIVE = 0 --0.4	-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend but while being a defensive country.
+NDefines.NAI.INVASION_COASTAL_PROVS_PER_ORDER = 12				-- AI will consider one extra invasion per number of provinces stated here (num orders = total coast / this)
+NDefines.NAI.MAX_DISTANCE_NAVAL_INVASION = 400.0				-- AI is extremely unwilling to plan naval invasions above this naval distance limit.
+
+
+
+
+
+
 -------------------------
 -- convoy escorts
 -------------------------
@@ -371,8 +382,8 @@ NDefines.NAI.MAX_SCREEN_TASKFORCES_FOR_CONVOY_DEFENSE_MAX_CONVOY_THREAT = 500 --
 -------------------------
 -- AIR AI
 -------------------------
---NDefines.NAI.PRODUCTION_CARRIER_PLANE_BUFFER_RATIO = 0.75 --1.5				-- in additiona to total deck size of carriers we want at list this ratio to buffer it
---NDefines.NAI.MAX_FUEL_CONSUMPTION_RATIO_FOR_AIR_TRAINING = 1
+NDefines.NAI.PRODUCTION_CARRIER_PLANE_BUFFER_RATIO = 0.75 --1.5				-- in additiona to total deck size of carriers we want at list this ratio to buffer it
+NDefines.NAI.MAX_FUEL_CONSUMPTION_RATIO_FOR_AIR_TRAINING = 1
 NDefines.NAI.LAND_COMBAT_OUR_COMBATS_AIR_IMPORTANCE = 1000		-- Strategic importance of our armies in the combats
 NDefines.NAI.LAND_DEFENSE_INTERSEPTORS_PER_BOMBERS = 1		-- Amount of air interceptor planes requested per enemy bomber
 NDefines.NAI.LAND_DEFENSE_CIVIL_FACTORY_IMPORTANCE = 800 -- 50			-- Strategic importance of civil factories
@@ -384,10 +395,10 @@ NDefines.NAI.LAND_DEFENSE_NAVAL_FACTORY_IMPORTANCE = 420 -- 30			-- Strategic im
 -------------------------
 
 NDefines.NAI.STR_BOMB_PLANES_PER_CIV_FACTORY = 200				-- Amount of planes requested per enemy civ factory
-NDefines.NAI.STR_BOMB_PLANES_PER_MIL_FACTORY = 205				-- Amount of planes requested per enemy military factory
-NDefines.NAI.STR_BOMB_PLANES_PER_NAV_FACTORY = 105				-- Amount of planes requested per enemy naval factory
+NDefines.NAI.STR_BOMB_PLANES_PER_MIL_FACTORY = 200				-- Amount of planes requested per enemy military factory
+NDefines.NAI.STR_BOMB_PLANES_PER_NAV_FACTORY = 100				-- Amount of planes requested per enemy naval factory
 NDefines.NAI.STR_BOMB_PLANES_PER_SUPPLY_HUB = 30                 -- Amount of planes requested per enemy supply node
-NDefines.NAI.STR_BOMB_MIN_EXCORT_PLANES = 200					-- Min amount of planes requested to excort operations
+--NDefines.NAI.STR_BOMB_MIN_EXCORT_PLANES = 200					-- Min amount of planes requested to excort operations
 
 -------------------------
 -- Naval air

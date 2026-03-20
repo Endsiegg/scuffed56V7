@@ -12,7 +12,7 @@ NDefines.NDiplomacy.OPINION_PER_VOLUNTEER = 15
 NDefines.NDiplomacy.MAX_OPINION_FROM_VOLUNTEERS = 100
 ----------------------------------
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 30						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
-NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.2
+NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.1
 NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 40
 ----------------------------------
 NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0					-- XP cost for adding a new equipment module in an empty slot when creating an equipment variant.
@@ -141,7 +141,7 @@ NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 35
 ----------------------------------
 NDefines.NBuildings.MAX_SHARED_SLOTS = 35
 ----------------------------------
-NDefines.NIndustrialOrganisation.DESIGN_TEAM_CHANGE_XP_COST = 1
+--NDefines.NIndustrialOrganisation.DESIGN_TEAM_CHANGE_XP_COST = 1
 NDefines.NIndustrialOrganisation.DESIGN_TEAM_RESEARCH_BONUS = 0.1
 ------------------------------------
 NDefines.NSupply.INFRA_TO_SUPPLY = 0.5  -- 0.3
