@@ -14,5 +14,6 @@ tags={
 name="SCUFFEDV7"
 replace_path="history/states"
 replace_path="map/strategicregions"
+repalce_path="common/national_focus"
 supported_version="1.17.5"
 remote_file_id="3510253748"
