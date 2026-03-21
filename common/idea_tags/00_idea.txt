@@ -26,9 +26,11 @@ idea_categories = {
 	}
 	
 	government = {
-		slot = mobilization_laws
+		#slot = press_laws
+		#slot = mobilization_laws
 		slot = trade_laws
 		slot = economy
+		character_slot = political_advisor
 		character_slot = political_advisor
 		character_slot = political_advisor
 		character_slot = political_advisor
@@ -38,7 +40,18 @@ idea_categories = {
 		cost = 150
 		removal_cost = 0
 	}
-	
+
+	military_recruitment = {
+		slot = mobilization_laws
+		slot = recruitment_standard_laws
+		slot = service_limit_laws
+		slot = minimum_age_laws
+		slot = maximum_age_laws
+		slot = role_of_women_laws
+		
+		cost = 150
+		removal_cost = 0
+	}
 	research_production = {
 		slot = tank_manufacturer
 		slot = naval_manufacturer
@@ -69,6 +82,7 @@ idea_categories = {
 	###------> *Expanded Ideas <><> <><> <><> <><> <><>
 
 	etgi_ideas = {
+		slot = press_laws
 		slot = r56i_laws_category_security
 		slot = r56i_laws_leadership
 		slot = r56i_laws_category_gender
@@ -188,6 +202,18 @@ idea_categories = {
 		
 		ledger = hidden
 		slot = air_force_command_spirit
+	}
+		government_policies = {
+		slot = mass_media
+		slot = population
+		slot = equality
+		slot = war_bonds
+		slot = nationalization
+		slot = finances
+		
+		cost = 150
+		removal_cost = 0
+	
 	}
 }
 
