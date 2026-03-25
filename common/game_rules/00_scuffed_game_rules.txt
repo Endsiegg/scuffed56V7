@@ -3,7 +3,7 @@
 #-> Generic <><>
 allow_auto_annex = {
 	name = "RULE_ALLOW_AUTO_ANNEX"
-	group = "RULE_GROUP_GAMEPLAY"
+	group = "HOST_OPTIONS"
 	icon = "GFX_release_nations"
 	default = {
 		name = yes
@@ -136,5 +136,21 @@ select_host_country = {
 		name = TUR
 		text = "Turkey"
 		desc = ""
+	}
+}
+
+dockyard_button_selection ={
+	name = "DOCKYARD_BUTTON_SELECTION"
+	group = "HOST_OPTIONS"
+	icon = "GFX_volunteers"
+	default = {
+		name = yes
+		text = "ENABLED"
+		desc = "DOCKYARD_BUTTON_ENABLED_DESC"
+	}
+	option = {
+		name = no
+		text = "DISABLED"
+		desc = "DOCKYARD_BUTTON_DISABLED_DESC"
 	}
 }
