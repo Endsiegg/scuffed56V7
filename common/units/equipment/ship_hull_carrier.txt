@@ -131,7 +131,7 @@ equipments = {
 			chromium = 1
 		}
 
-		manpower = 4500
+		manpower = 2500
 
 		naval_dominance_factor = 300
 	}
@@ -211,7 +211,7 @@ equipments = {
 			steel = 4
 			chromium = 1
 		}
-		manpower = 5000
+		manpower = 3000
 		naval_dominance_factor = 300
 	}
 
@@ -283,7 +283,7 @@ equipments = {
 			steel = 4
 			chromium = 2
 		}
-		manpower = 5500
+		manpower = 3500
 	}
 
 	ship_hull_carrier_4 = {
@@ -357,7 +357,7 @@ equipments = {
 			steel = 4
 			chromium = 2
 		}
-		manpower = 5600
+		manpower = 4000
 	}
 
 	#MODERN CARRIER - DLC only
@@ -539,6 +539,14 @@ equipments = {
 			}
 			fixed_ship_secondaries_slot = inherit
 			fixed_ship_armor_slot = inherit
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_deck_space
+					ship_carrier_armor
+				}
+			}
 			mid_1_custom_slot = {
 				required = no
 				allowed_module_categories = {
@@ -548,24 +556,34 @@ equipments = {
 					ship_carrier_armor
 				}
 			}
+			mid_2_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_secondaries
+					ship_deck_space
+					ship_carrier_armor
+				}
+			}
 		}
 
 		default_modules = {
 			fixed_ship_engine_slot = heavy_ship_engine_1
 			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
 		}
 		naval_range = 4000
 		reliability = 0.65
 		max_strength = 325
 		naval_speed = 25
 		naval_dominance_factor = 250
+		armor_value = 25
 
 		build_cost_ic = 2700
 		resources = {
 			steel = 4
 			chromium = 1
 		}
-		manpower = 5000
+		manpower = 2700
 	}
 
 	ship_hull_carrier_conversion_ca = {
@@ -597,12 +615,12 @@ equipments = {
 		}
 		naval_range = 4000
 
-		max_strength = 125
+		max_strength = 150
 		naval_dominance_factor = 200
 
 		reliability = 0.65
 		naval_speed = 22.5
-		build_cost_ic = 2700
+		build_cost_ic = 2500
 		resources = {
 			steel = 3
 		}
