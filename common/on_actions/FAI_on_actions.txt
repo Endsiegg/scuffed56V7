@@ -1,0 +1,76 @@
+on_actions = {
+
+	#Not run on a specific country.
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = bm_ai_production_fix
+							option = BM_PRODUCTION_FIX_ENABLE
+						}
+						has_game_rule = {
+							rule = bm_ai_production_fix
+							option = BM_AI_TRAINING_AND_PRODUCTION_FIX_ENABLE
+						}
+					}
+				}
+				every_country = {
+					add_dynamic_modifier = { modifier = BM_AI_production_efficiency_fix }
+					set_variable = { BM_AI_production_efficiency_fix_var = global.difficulty }
+					divide_variable = { BM_AI_production_efficiency_fix_var = 5 }
+					if = {
+						limit = {
+							difficulty > 2
+						}
+						set_variable = { BM_AI_production_max_efficiency_fix_var = 0.2 }
+					}
+					if = {
+						limit = {
+							difficulty > 3
+						}
+						add_to_variable = { 
+							var = BM_AI_production_max_efficiency_fix_var
+							value = 0.2
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = bm_ai_production_fix
+							option = BM_AI_TRAINING_FIX_ENABLE
+						}
+						has_game_rule = {
+							rule = bm_ai_production_fix
+							option = BM_AI_TRAINING_AND_PRODUCTION_FIX_ENABLE
+						}
+					}
+				}
+				every_country = {
+					add_dynamic_modifier = { modifier = BM_AI_minimum_training_fix }
+					set_variable = { BM_AI_minimum_training_level_fix_var = 0.7 }
+					set_variable = { BM_AI_training_time_army_factor_fix_var = -0.33 }
+				}
+			}
+			
+		}
+	}
+	
+	on_naval_invasion = {
+	 	effect = {
+		 	if = {
+				limit = {
+					NOT = { has_state_flag = recent_naval_invasion_flag }
+				}
+				set_state_flag = {
+					flag = recent_naval_invasion_flag
+					days = 180
+				} 
+			}
+	 	}
+	}
+}
