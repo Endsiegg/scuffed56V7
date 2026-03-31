@@ -130,6 +130,8 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 0.0, -- NAVAL_MINES_SWEEPING
 0.0, -- MISSION_RECON
 0.0, -- NAVAL_PATROL
+0.0, -- SAM
+0.0, -- BARRAGE
 }
 ---------------------------------
 NDefines.NNavy.SUPPLY_NEED_FACTOR = 0	
@@ -185,5 +187,6 @@ NDefines.NSupply.SUPPLY_DISRUPTION_DAILY_RECOVERY = 3.0
 -- NDefines.NAI.INDUSTRIAL_ORG_TRAIT_RANK_FACTOR 0.80 -- When precomputing weights, traits will affect the final score less the further down the tree they are, by this factor
 -- NDefines.NAI.INDUSTRIAL_ORG_RESEARCH_BONUS_FACTOR 1.0 -- Research bonus will be multiplied by this factor when evaluating design teams
 
-
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 5
 
