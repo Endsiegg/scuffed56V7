@@ -81,7 +81,7 @@ focus_tree = {
 	focus = {
 		id = FRA_rearmament
 		icon = GFX_goal_generic_build_tank
-		cost = 10
+		cost = 5
 		x = 11
 		y = 0
 		available = {
@@ -398,7 +398,7 @@ focus_tree = {
 	focus = {
 		id = FRA_sncf
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_tools_modernisation
 			focus = FRA_colonial_investments
@@ -490,10 +490,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -507,10 +507,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -524,10 +524,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -547,13 +547,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 3
 		}
-		available = {
-			amount_research_slots < 6
-		}
+		# available = {
+		# 	amount_research_slots < 6
+		# }
 		
-		bypass = {
-			amount_research_slots > 5
-		}		
+		# bypass = {
+		# 	amount_research_slots > 5
+		# }		
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -618,13 +618,13 @@ focus_tree = {
 			factor = 3
 		}
 		available = {
-			amount_research_slots < 6
+		#	amount_research_slots < 6
 			num_of_factories > 200	
 		}
 		
-		bypass = {
-			amount_research_slots > 5
-		}		
+		# bypass = {
+		# 	amount_research_slots > 5
+		# }		
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -633,7 +633,7 @@ focus_tree = {
 	focus = {
 		id = FRA_continue_mandat
 		icon = GFX_focus_eng_move_to_secure_the_dominions
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_colonial_investments
 		}
@@ -718,7 +718,7 @@ focus_tree = {
 							instant_build = yes
 						}
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -778,7 +778,7 @@ focus_tree = {
 							instant_build = yes
 						}
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -806,7 +806,7 @@ focus_tree = {
 	focus = {
 		id = FRA_develop_algeria
 		icon = GFX_goal_FRA_french_algeria
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_continue_mandat
 			focus = FRA_sncf
@@ -889,7 +889,7 @@ focus_tree = {
 					}
 				}
 				459 = {
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = arms_factory
 						level = 2
@@ -968,7 +968,7 @@ focus_tree = {
 	focus = {
 		id = FRA_develop_morocco
 		icon = GFX_goal_generic_construction
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_continue_mandat
 		}
@@ -998,7 +998,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -1033,7 +1033,7 @@ focus_tree = {
 	focus = {
 		id = FRA_develop_tunisia
 		icon = GFX_goal_generic_construct_civilian
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_develop_morocco
 		}
@@ -1066,7 +1066,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -1106,7 +1106,7 @@ focus_tree = {
 	focus = {
 		id = FRA_technology_sharing
 		icon = GFX_goal_tfv_generic_tech_sharing
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_cnrs
 		}
@@ -1155,7 +1155,7 @@ focus_tree = {
 	focus = {
 		id = FRA_sahara_oil
 		icon = GFX_goal_generic_oil_refinery
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_technology_sharing
 		}
@@ -1183,21 +1183,21 @@ focus_tree = {
 		completion_reward = {
 			add_resource = {
 				type = oil
-				amount = 4
+				amount = 16
 				state = 459
 			}
 			add_resource = {
 				type = oil
-				amount = 4
+				amount = 16
 				state = 460
 			}
 			add_resource = {
 				type = oil
-				amount = 8
+				amount = 16
 				state = 513
 			}
 			459 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = synthetic_refinery
 					level = 2
@@ -1226,7 +1226,7 @@ focus_tree = {
 	focus = {
 		id = FRA_develop_indochine
 		icon = GFX_goal_generic_construct_naval_dockyard
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_develop_morocco
 		}
@@ -1278,7 +1278,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1305,7 +1305,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1390,7 +1390,7 @@ focus_tree = {
 	focus = {
 		id = FRA_tungsten_mines
 		icon = GFX_focus_generic_tungsten
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_technology_sharing
 		}
@@ -1427,7 +1427,7 @@ focus_tree = {
 				state = 671
 			}
 			671 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -2631,7 +2631,7 @@ focus_tree = {
 	focus = {
 		id = FRA_war_material_licence
 		icon = GFX_goal_ammunitions
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_rearmament
 		}
@@ -2700,7 +2700,7 @@ focus_tree = {
 	focus = {
 		id = FRA_commit_automobile_manufacturer
 		icon = GFX_goal_generic_automobile
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_rearmament
 		}
@@ -2804,7 +2804,7 @@ focus_tree = {
 	focus = {
 		id = FRA_partial_mobilization
 		icon = GFX_mobilisation
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_defense_national_funds
 		}
@@ -2839,7 +2839,7 @@ focus_tree = {
 	focus = {
 		id = FRA_military_complex_nationalisation
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_partial_mobilization
 		}
@@ -2857,7 +2857,7 @@ focus_tree = {
 	focus = {
 		id = FRA_aircraft_manufacturer_nationalisation
 		icon = GFX_goal_generic_air_production
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FRA_partial_mobilization
 		}
