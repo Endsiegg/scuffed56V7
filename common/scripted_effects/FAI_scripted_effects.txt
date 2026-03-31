@@ -1,0 +1,14 @@
+ai_production_fix_buff_base_production_effect = {	#when player or ai researching tech or increasing max production anywhere on 10%
+	if = {
+		limit = { 
+			has_game_rule = {
+				rule = bm_ai_production_fix
+				option = BM_PRODUCTION_FIX_ENABLE
+			}
+		}
+		add_to_variable = { 
+			var = BM_AI_production_efficiency_fix_var
+			value = 0.1
+		}
+	}
+}
