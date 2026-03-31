@@ -54,7 +54,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "div_template_3d_model_entry"
 		position = { x=0 y=0 }
-		size = { width=250 height=42 }
+		size = { width=510 height=44 }
 
 		buttonType = {
 			name = "button"
@@ -77,14 +77,14 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "name"
-			position = { x = 173 y = 23 }
+			position = { x = 19 y = 11 }
 			font = "hoi_16mbs"
-			maxWidth = 150
-			maxHeight = 42
+			maxWidth = 365
+			maxHeight = 20
 			format = left
 			alwaystransparent = yes
 			fixedsize = yes
-		}		
+		}				
 	}
 	
 	containerWindowType =
@@ -230,15 +230,23 @@ guiTypes = {
 			quadTextureSprite = "GFX_3d_view_placeholder"
 		}		
 		
-		buttonType = {
+	        buttonType = {
 			name = "toggle_model_selector_button"
 			position = { x=29 y=101 }
 			size = { x = 96 y = 90 }
 			quadTextureSprite ="GFX_division_3d_bg"	
 			pdx_tooltip = "TOGGLE_MODEL_SELECTOR"
 			clicksound = click_default
+                        
+                        background = {
+				name ="bg_tech_button"
+				spriteType = "GFX_division_3d_bg"	
+				position = { x=0 y=0 }
+				size = { x=100%% y=100%%}
+			}
+
 		}
-			
+		
 		iconType = {
 			name = "can_paradrop_icon"
 			spriteType = "GFX_can_paradrop_icon_small"
@@ -286,17 +294,17 @@ guiTypes = {
 			
 			gridboxtype = {
 				name = "support_grid"
-				position = { x = 23 y = 57 }
-				size = { width = 85 height = 100%% }
-				slotsize = { width = 82 height = 51 }
+				position = { x = 15 y = 57 }
+				size = { width = 160 height = 100%% }
+				slotsize = { width = 64 height = 51 }
 				format = "UPPER_LEFT"
 			}
 			
 			gridboxtype = {
 				name = "regiments_grid"
-				position = { x = 115 y = 57 }
-				size = { width = 445 height = 100%% }
-				slotsize = { width = 82 height = 51 }
+				position = { x = 144 y = 57 }
+				size = { width = 410 height = 100%% }
+				slotsize = { width = 76 height = 51 }
 				format = "UPPER_LEFT"
 			}
 		}
@@ -833,7 +841,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "support_header_label"
-			position = { x = 0 y = 196 }
+			position = { x = 40 y = 196 }
 			font = "hoi_18mbs"
 			text = "SUPPORT_HEADER"
 			maxWidth = 110
@@ -1312,7 +1320,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "designer_division_support_slot_entry"
 		position = { x=0 y=0}	
-		size = { width=64 height=53 }
+		size = { width=76 height=53 }
 		clipping = no
 		
 		background = {
