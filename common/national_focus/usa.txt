@@ -136,7 +136,7 @@ focus_tree = {
 		y = 3
 		prerequisite = { focus = USA_double_victory }
 		relative_position_id = USA_continue_the_new_deal
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 0.2
@@ -2858,7 +2858,7 @@ focus_tree = {
 			add_political_power = 50
 			add_timed_idea = {
 				idea = rt56_USA_cash_and_carry_home 
-				days = 180
+				days = 365
 			}
 			every_other_country = {
 				limit = {
@@ -2954,7 +2954,7 @@ focus_tree = {
 				}
 				add_timed_idea = {
 					idea = rt56_USA_cash_and_carry_away
-					days = 180
+					days = 365
 				}
 			}
 			if = {
@@ -3339,7 +3339,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_war = yes
-				has_war_support > 0.5
+				has_war_support > 0.4
 			}
 			democratic > 0.95
 		}
@@ -3389,7 +3389,7 @@ focus_tree = {
 				}
 				add_timed_idea = {
 					idea = rt56_the_gaint_wakes_idea
-					days = 30
+					days = 365
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
@@ -3403,7 +3403,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				set_state_flag = USA_gaint_wakes_state_flag
 			}
 			random_owned_controlled_state = {
@@ -3416,7 +3416,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				set_state_flag = USA_gaint_wakes_state_flag
 			}
 			random_owned_controlled_state = {
@@ -3429,7 +3429,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				set_state_flag = USA_gaint_wakes_state_flag
 			}
 			random_owned_controlled_state = {
@@ -3442,7 +3442,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				set_state_flag = USA_gaint_wakes_state_flag
 			}
 			random_owned_controlled_state = {
@@ -3455,7 +3455,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				set_state_flag = USA_gaint_wakes_state_flag
 			}
 			if = {
@@ -3506,7 +3506,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				set_state_flag = USA_wartime_industry_state_flag
 			}
 			random_owned_controlled_state = {
@@ -3519,7 +3519,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				set_state_flag = USA_wartime_industry_state_flag
 			}
 			random_owned_controlled_state = {
@@ -3532,7 +3532,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				set_state_flag = USA_wartime_industry_state_flag
 			}
 			if = {
@@ -3584,7 +3584,7 @@ focus_tree = {
 					arms_factory > 0
 					free_building_slots = {
 						building = arms_factory
-						size > 4
+						#size > 4
 						include_locked = yes
 					}
 					OR = {
@@ -3613,12 +3613,12 @@ focus_tree = {
 					is_owned_and_controlled_by = ROOT
 					free_building_slots = {
 						building = infrastructure
-						size > 2
+					#	size > 2
 					}
 				}
 				add_building_construction = {
 					type = infrastructure
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -3673,7 +3673,7 @@ focus_tree = {
 					arms_factory > 0
 					free_building_slots = {
 						building = arms_factory
-						size > 2
+					#	size > 2
 						include_locked = yes
 					}
 					OR = {
@@ -3695,7 +3695,7 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = infrastructure
-						size > 2
+						#size > 2
 					}
 					OR = {
 						region = 117
@@ -3703,11 +3703,11 @@ focus_tree = {
 						region = 119
 						region = 120
 					}
-					state_population > 3000000
+				#	state_population > 3000000
 				}
 				add_building_construction = {
 					type = infrastructure
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = USA_USACE_projects_3Inf
@@ -3716,7 +3716,7 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = infrastructure
-						size > 2
+						#size > 2
 					}
 					OR = {
 						region = 117
@@ -3724,11 +3724,11 @@ focus_tree = {
 						region = 119
 						region = 120
 					}
-					state_population > 3000000
+					#state_population > 3000000
 				}
 				add_building_construction = {
 					type = infrastructure
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = USA_USACE_projects_3Inf
@@ -3775,7 +3775,7 @@ focus_tree = {
 		completion_reward = {
 			#navy_experience = 10
 			463 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				if = {
 					limit = {
 						free_building_slots = {
@@ -3785,7 +3785,7 @@ focus_tree = {
 					}
 					add_building_construction = {
 						type = infrastructure
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -3803,67 +3803,67 @@ focus_tree = {
 				}
 				add_building_construction = { #the bait
 					type = naval_base
-					level = 1
+					level = 2
 					province = 1135
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 1
+					level = 2
 					province = 13091
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 1
+					level = 2
 					province = 13090
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 1
+					level = 2
 					province = 10694
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = coastal_bunker
-					level = 1
+					level = 2
 					province = 13090
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = coastal_bunker
-					level = 1
+					level = 2
 					province = 1135
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = coastal_bunker
-					level = 1
+					level = 2
 					province = 10694
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = coastal_bunker
-					level = 1
+					level = 2
 					province = 12661
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = coastal_bunker
-					level = 1
+					level = 2
 					province = 1830
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = coastal_bunker
-					level = 1
+					level = 2
 					province = 7855
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = coastal_bunker
-					level = 1
+					level = 2
 					province = 13091
 					instant_build = yes
 				}
@@ -3890,17 +3890,6 @@ focus_tree = {
 			}
 			367 = {
 				air_base > 0
-			}
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				has_tech = improved_small_airframe
-				has_tech = improved_medium_airframe
-			}
-			else = {
-				has_tech = fighter2
-				has_tech = tactical_bomber2
 			}
 
 		}
@@ -4092,7 +4081,7 @@ focus_tree = {
 		allow_branch = {
 			has_dlc = "Gotterdammerung"
 		}
-		cost = 5
+		cost = 10
 
 		#ai_will_do = {
 		#	factor = 1
@@ -9291,7 +9280,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_intervention_in_the_americas }
 		relative_position_id = USA_intervention_in_the_americas
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 2
 			modifier = {
@@ -9351,7 +9340,7 @@ focus_tree = {
 		y = 3
 		prerequisite = { focus = USA_reinforce_monroe_doctrine }
 		relative_position_id = USA_intervention_in_the_americas
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -9402,7 +9391,7 @@ focus_tree = {
 		y = 4
 		prerequisite = { focus = USA_war_plan_gray }
 		relative_position_id = USA_intervention_in_the_americas
-		cost = 10
+		cost = 5
 
 		available = {
 			controls_state = 1050
@@ -10601,7 +10590,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_mobilize_the_railways }
 		relative_position_id = USA_mobilize_the_railways
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -10667,7 +10656,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_mobilize_the_railways }
 		relative_position_id = USA_mobilize_the_railways
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -10857,7 +10846,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_selective_training_act }
 		relative_position_id = USA_selective_training_act
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 
@@ -10932,7 +10921,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_louisiana_maneuvers }
 		relative_position_id = USA_selective_training_act
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -10978,7 +10967,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_louisiana_maneuvers }
 		relative_position_id = USA_louisiana_maneuvers
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -11239,7 +11228,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_support_rock_island }
 		relative_position_id = USA_support_rock_island
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -11250,9 +11239,10 @@ focus_tree = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
+				OR = {
 				has_tech = basic_medium_tank_chassis
-				has_tech = improved_medium_tank_chassis
-				has_tech = basic_heavy_tank_chassis
+				has_tech = basic_heavy_tank_chassis					
+				}
 				has_tech = armor_tech_1
 				has_tech = engine_tech_1
 				OR = {
@@ -11673,7 +11663,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		prerequisite = { focus = USA_tank_experiments }
-		mutually_exclusive = { focus = USA_main_battle_tanks }
+	#	mutually_exclusive = { focus = USA_main_battle_tanks }
 		relative_position_id = USA_tank_experiments
 		cost = 5
 
@@ -12139,7 +12129,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		prerequisite = { focus = USA_tank_experiments }
-		mutually_exclusive = { focus = USA_tank_destroyer_doctrine }
+	#	mutually_exclusive = { focus = USA_tank_destroyer_doctrine }
 		relative_position_id = USA_tank_experiments
 		cost = 5
 
@@ -12148,13 +12138,7 @@ focus_tree = {
 		}
 
 		available = {
-			if = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
-				has_tech = advanced_medium_tank_chassis
-				has_tech = artillery4
-			}
+
 		}
 
 		completion_reward = {
@@ -12284,7 +12268,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_main_battle_tanks focus = USA_tank_destroyer_doctrine }
 		relative_position_id = USA_tank_destroyer_doctrine
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -12546,7 +12530,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_90_division_gamble focus = USA_victory_program }
 		relative_position_id = USA_90_division_gamble
-		cost = 10
+		cost = 5
 		
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_NAVY_XP }
 
@@ -12593,7 +12577,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_airforce
 		x = 3
 		y = 1
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -12786,7 +12770,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = USA_air_war_plans_division
-		cost = 10
+		cost = 5
 		
 		search_filters = { FOCUS_FILTER_AIR_XP }
 		
@@ -13121,7 +13105,7 @@ focus_tree = {
 		y = 0
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_two_ocean_navy_act
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -13287,10 +13271,10 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -13298,10 +13282,10 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -13309,10 +13293,10 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -13326,7 +13310,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = USA_battleship_primacy
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -13355,7 +13339,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_expand_shipyard_facilities focus = USA_advanced_mahanian_doctrine }
 		relative_position_id = USA_battleship_primacy
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -13486,7 +13470,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = USA_carrier_primacy
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -13505,7 +13489,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = USA_carrier_primacy
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -13536,7 +13520,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_naval_air_coordination focus = USA_bureau_of_aeronautics }
 		relative_position_id = USA_carrier_primacy
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -13585,7 +13569,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = USA_escort_effort
-		cost = 10
+		cost = 5
 		
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
 		
@@ -13717,7 +13701,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = USA_fund_the_navy
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}

@@ -2860,6 +2860,15 @@ focus_tree = {
 			if = { limit = { 51 = { is_fully_controlled_by = ROOT } } # R56
 				51 = { add_dynamic_modifier = {  modifier = r56_concentrated_armament_program scope = GER } }
 			}
+			if = { limit = { 989 = { is_fully_controlled_by = ROOT } } # R56
+				989 = { add_dynamic_modifier = {  modifier = r56_concentrated_armament_program scope = GER } }
+			}
+			if = { limit = { 42 = { is_fully_controlled_by = ROOT } } # R56
+				42 = { add_dynamic_modifier = {  modifier = r56_concentrated_armament_program scope = GER } }
+			}
+			if = { limit = { 1053 = { is_fully_controlled_by = ROOT } } # R56
+				1053 = { add_dynamic_modifier = {  modifier = r56_concentrated_armament_program scope = GER } }
+			}
 		}
 	}
 	
@@ -4381,7 +4390,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_instill_auftragstaktik
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -5351,7 +5360,7 @@ focus_tree = {
 		relative_position_id = GER_panzer_troops_school
 		cost = 5
 		available = {
-			has_war_with_major = yes
+		#	has_war_with_major = yes
 		}
 
 		continue_if_invalid = yes
@@ -7006,7 +7015,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_form_the_jagdwaffe
-		cost = 10
+		cost = 5
 		available = {
 			GER_hermann_goring = {
 				is_air_chief = no
@@ -7053,7 +7062,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = GER_reorganize_the_luftwaffe
-		cost = 10
+		cost = 5
 		available = {
 			GER_hermann_goring = {
 				is_air_chief = no
@@ -7876,7 +7885,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_plan_z
-		cost = 10
+		cost = 5
 		available = {
 			#NOT = { has_completed_focus = GER_high_seas_fleet }
 		}
@@ -7923,7 +7932,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_expand_kriegsmarinewerft
-				bonus = 0.5
+				bonus = 2
 				uses = 1
 				category = bc_tech
 			}
@@ -7944,7 +7953,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_2
+					type = ship_hull_heavy_3
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_3
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -7962,25 +7971,25 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Bismarck"
 					requested_factories = 1
-					progress = 0.3
+					progress = 0.85
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Tirpitz"
 					requested_factories = 1
-					progress = 0.15
+					progress = 0.75
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -7997,7 +8006,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_2
+					type = ship_hull_heavy_3
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_2
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -8015,25 +8024,25 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Bismarck"
 					requested_factories = 1
-					progress = 0.3
+					progress = 0.85
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Tirpitz"
 					requested_factories = 1
-					progress = 0.15
+					progress = 0.75
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -8050,7 +8059,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_2
+					type = ship_hull_heavy_3
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_3
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -8068,25 +8077,25 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Bismarck"
 					requested_factories = 1
-					progress = 0.3
+					progress = 0.85
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Tirpitz"
 					requested_factories = 1
-					progress = 0.15
+					progress = 0.75
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -8103,7 +8112,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_2
+					type = ship_hull_heavy_3
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_2
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -8121,25 +8130,25 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Bismarck"
 					requested_factories = 1
-					progress = 0.3
+					progress = 0.85
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_2
+						type = ship_hull_heavy_3
 						creator = "GER"
 						version_name = "Bismarck"
 					}
 					name = "Tirpitz"
 					requested_factories = 1
-					progress = 0.15
+					progress = 0.75
 					amount = 1
 					industrial_manufacturer = mio:GER_germaniawerft_organization
 				}
@@ -8219,10 +8228,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 807 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -8289,7 +8298,7 @@ focus_tree = {
 						}
 						name = "Graf Zeppelin"
 						requested_factories = 1
-						progress = 0.3
+						progress = 0.5
 						amount = 1
 						industrial_manufacturer = mio:GER_deutsche_werke_organization
 					}
@@ -8323,7 +8332,7 @@ focus_tree = {
 						}
 						name = "Graf Zeppelin"
 						requested_factories = 1
-						progress = 0.3
+						progress = 0.5
 						amount = 1
 						industrial_manufacturer = mio:GER_deutsche_werke_organization
 					}
@@ -8355,7 +8364,7 @@ focus_tree = {
 						}
 						name = "Graf Zeppelin"
 						requested_factories = 1
-						progress = 0.3
+						progress = 0.5
 						amount = 1
 						industrial_manufacturer = mio:GER_deutsche_werke_organization
 					}
@@ -8407,9 +8416,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_expand_kriegsmarinewerft
-		cost = 10
+		cost = 5
 		available = {
-			NOT = { has_completed_focus = GER_high_seas_fleet }
+		#	NOT = { has_completed_focus = GER_high_seas_fleet }
 			if = {
 				limit = {
 					has_dlc = "Man the Guns"
@@ -8439,10 +8448,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -8581,7 +8590,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_construct_aircraft_carriers
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -8835,7 +8844,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_marinestosstrupp
-		cost = 10
+		cost = 5
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GER_controls_an_atantic_island_tt
@@ -9056,7 +9065,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_cruiser_warfare
-				bonus = 0.5
+				bonus = 3
 				uses = 1
 				category = cl_tech
 			}
@@ -9149,7 +9158,7 @@ focus_tree = {
 		id = GER_panzerschiff_raiders
 		icon = GFX_focus_GER_panzerschiff
 		prerequisite = { focus = GER_cruiser_warfare }
-		mutually_exclusive = { focus = GER_u_boat_efforts }
+	#	mutually_exclusive = { focus = GER_u_boat_efforts }
 
 		x = 0
 		y = 1
@@ -9162,12 +9171,12 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = GER_cruiser_warfare
-				bonus = 0.5
-				uses = 1
-				category = ca_tech
-			}
+			# add_tech_bonus = {
+			# 	name = GER_cruiser_warfare
+			# 	bonus = 1
+			# 	uses = 1
+			# 	category = ca_tech
+			# }
 
 			IF = {
 				limit = {
@@ -9297,7 +9306,7 @@ focus_tree = {
 		id = GER_u_boat_efforts
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = GER_wolfpack_tactics }
-		mutually_exclusive = { focus = GER_panzerschiff_raiders }
+		#mutually_exclusive = { focus = GER_panzerschiff_raiders }
 		x = 0
 		y = 1
 		relative_position_id = GER_wolfpack_tactics
@@ -9331,7 +9340,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_u_boat_efforts
-				bonus = 1.0
+				bonus = 2.0
 				uses = 1
 				category = ss_tech
 			}
@@ -9408,7 +9417,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_panzerschiff_raiders
-		cost = 10
+		cost = 5
 		available = {
 		}
 
