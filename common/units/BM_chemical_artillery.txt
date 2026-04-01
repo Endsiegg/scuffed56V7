@@ -1,0 +1,98 @@
+sub_units = {
+		bm_chemical_artillery = {
+		abbreviation = "CART"
+		sprite = artillery
+		map_icon_category = infantry
+		group = support
+
+		active = yes
+		affects_speed = no
+		can_be_parachuted = yes
+
+		priority = 600
+		ai_priority = 250
+
+		# TYPE
+		type = {
+			infantry
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+			category_support_artillery
+		}
+
+		# MODIFERS
+		combat_width = 0
+		manpower = 150
+		training_time = 120
+		max_organisation = 10
+		default_morale = 0.5
+		max_strength = 0.3
+		weight = 0.1
+		supply_consumption = 0.25
+		
+		# Support nerfs to combat abilities
+		defense = -0.52
+		breakthrough = -0.30
+		soft_attack = -0.25
+		hard_attack = -0.60
+
+		# EQUIPMENT NEEDED
+		need = {
+			support_equipment = 5
+			artillery_equipment = 18
+		}
+
+		# REQUIRED EQUIPMENT
+		essential = {
+			artillery_equipment
+			support_equipment
+		}
+
+		# TERRAIN
+		forest = {
+			attack = 0.1
+			movement = -0.05
+		}
+
+		hills = {
+			movement = -0.05
+			attack = -0.05
+		}
+
+		mountain = {
+			movement = -0.15
+			attack = -0.05
+		}
+
+		jungle = {
+			attack = -0.05
+			movement = -0.1
+		}
+
+		marsh = {
+			attack = -0.1
+			movement = -0.15
+		}
+
+		fort = {
+			attack = 0.25 # Effective against fortified positions
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.1
+		}
+
+		amphibious = {
+			attack = -0.2
+		}
+	}
+}
+
+

@@ -1,0 +1,589 @@
+#############################################
+# STOCKPILE CONTROL – GLOBAL
+# Purpose: Force AI to deinvest HARD from
+# equipment with ample reserves
+#############################################
+
+# =====================================================
+# INFANTRY EQUIPMENT
+# =====================================================
+
+Infantry_Eq_Limit_Minor = {
+    enable = {
+        has_equipment = { infantry_equipment > 5000 }
+        NOT = { has_equipment = { infantry_equipment > 10000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = infantry_equipment
+        value = -40
+    }
+}
+
+Infantry_Eq_Limit_Light = {
+    enable = {
+        has_equipment = { infantry_equipment > 10000 }
+        NOT = { has_equipment = { infantry_equipment > 25000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = infantry_equipment
+        value = -80
+    }
+}
+
+Infantry_Eq_Limit_Med = {
+    enable = {
+        has_equipment = { infantry_equipment > 25000 }
+        NOT = { has_equipment = { infantry_equipment > 50000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = infantry_equipment
+        value = -130
+    }
+}
+
+Infantry_Eq_Limit_Full = {
+    enable = {
+        has_equipment = { infantry_equipment > 50000 }
+        NOT = { has_equipment = { infantry_equipment > 100000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = infantry_equipment
+        value = -180
+    }
+}
+
+Infantry_Eq_Limit_Ult = {
+    enable = {
+        has_equipment = { infantry_equipment > 100000 }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = infantry_equipment
+        value = -240
+    }
+}
+
+# =====================================================
+# SUPPORT EQUIPMENT
+# =====================================================
+
+Support_Eq_Limit_Minor = {
+    enable = {
+        has_equipment = { support_equipment > 750 }
+        NOT = { has_equipment = { support_equipment > 1500 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = support_equipment
+        value = -50
+    }
+}
+
+Support_Eq_Limit_Light = {
+    enable = {
+        has_equipment = { support_equipment > 1500 }
+        NOT = { has_equipment = { support_equipment > 3000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = support_equipment
+        value = -100
+    }
+}
+
+Support_Eq_Limit_Med = {
+    enable = {
+        has_equipment = { support_equipment > 3000 }
+        NOT = { has_equipment = { support_equipment > 7500 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = support_equipment
+        value = -200
+    }
+}
+
+Support_Eq_Limit_Full = {
+    enable = {
+        has_equipment = { support_equipment > 7500 }
+        NOT = { has_equipment = { support_equipment > 20000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = support_equipment
+        value = -300
+    }
+}
+
+Support_Eq_Limit_Ult = {
+    enable = {
+        has_equipment = { support_equipment > 20000 }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = support_equipment
+        value = -500
+    }
+}
+
+# =====================================================
+# MOTORIZED
+# =====================================================
+
+Motor_Eq_Limit_Minor = {
+    enable = {
+        has_equipment = { motorized_equipment > 400 }
+        NOT = { has_equipment = { motorized_equipment > 800 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_production_factor
+        id    = motorized
+        value = -50
+    }
+}
+
+Motor_Eq_Limit_Light = {
+    enable = {
+        has_equipment = { motorized_equipment > 800 }
+        NOT = { has_equipment = { motorized_equipment > 1500 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_production_factor
+        id    = motorized
+        value = -100
+    }
+}
+
+Motor_Eq_Limit_Med = {
+    enable = {
+        has_equipment = { motorized_equipment > 1500 }
+        NOT = { has_equipment = { motorized_equipment > 3000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_production_factor
+        id    = motorized
+        value = -200
+    }
+}
+
+Motor_Eq_Limit_Full = {
+    enable = {
+        has_equipment = { motorized_equipment > 3000 }
+        NOT = { has_equipment = { motorized_equipment > 6000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_production_factor
+        id    = motorized
+        value = -300
+    }
+}
+
+Motor_Eq_Limit_Ult = {
+    enable = {
+        has_equipment = { motorized_equipment > 6000 }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_production_factor
+        id    = motorized
+        value = -500
+    }
+}
+
+# =====================================================
+# MECHANIZED
+# =====================================================
+
+Mech_Eq_Limit_Minor = {
+    enable = {
+        has_equipment = { mechanized_equipment > 400 }
+        NOT = { has_equipment = { mechanized_equipment > 800 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = mechanized_equipment
+        value = -40
+    }
+}
+
+Mech_Eq_Limit_Light = {
+    enable = {
+        has_equipment = { mechanized_equipment > 800 }
+        NOT = { has_equipment = { mechanized_equipment > 1500 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = mechanized_equipment
+        value = -80
+    }
+}
+
+Mech_Eq_Limit_Med = {
+    enable = {
+        has_equipment = { mechanized_equipment > 1500 }
+        NOT = { has_equipment = { mechanized_equipment > 3000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = mechanized_equipment
+        value = -130
+    }
+}
+
+Mech_Eq_Limit_Full = {
+    enable = {
+        has_equipment = { mechanized_equipment > 3000 }
+        NOT = { has_equipment = { mechanized_equipment > 5000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = mechanized_equipment
+        value = -180
+    }
+}
+
+Mech_Eq_Limit_Ult = {
+    enable = {
+        has_equipment = { mechanized_equipment > 5000 }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = mechanized_equipment
+        value = -240
+    }
+}
+
+# =====================================================
+# TRAINS
+# =====================================================
+
+Train_Eq_Limit_Minor = {
+    enable = {
+        has_equipment = { train_equipment > 400 }
+        NOT = { has_equipment = { train_equipment > 800 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = train_equipment
+        value = -40
+    }
+}
+
+Train_Eq_Limit_Light = {
+    enable = {
+        has_equipment = { train_equipment > 800 }
+        NOT = { has_equipment = { train_equipment > 1500 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = train_equipment
+        value = -80
+    }
+}
+
+Train_Eq_Limit_Med = {
+    enable = {
+        has_equipment = { train_equipment > 1500 }
+        NOT = { has_equipment = { train_equipment > 3000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = train_equipment
+        value = -130
+    }
+}
+
+Train_Eq_Limit_Full = {
+    enable = {
+        has_equipment = { train_equipment > 3000 }
+        NOT = { has_equipment = { train_equipment > 6000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = train_equipment
+        value = -180
+    }
+}
+
+Train_Eq_Limit_Ult = {
+    enable = {
+        has_equipment = { train_equipment > 6000 }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = train_equipment
+        value = -240
+    }
+}
+
+# =====================================================
+# ARTILLERY
+# =====================================================
+
+Arti_Eq_Limit_Minor = {
+    enable = {
+        has_equipment = { artillery_equipment > 250 }
+        NOT = { has_equipment = { artillery_equipment > 1000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = artillery_equipment
+        value = -40
+    }
+}
+
+Arti_Eq_Limit_Light = {
+    enable = {
+        has_equipment = { artillery_equipment > 1000 }
+        NOT = { has_equipment = { artillery_equipment > 2500 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = artillery_equipment
+        value = -80
+    }
+}
+
+Arti_Eq_Limit_Med = {
+    enable = {
+        has_equipment = { artillery_equipment > 2500 }
+        NOT = { has_equipment = { artillery_equipment > 5000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = artillery_equipment
+        value = -130
+    }
+}
+
+Arti_Eq_Limit_Full = {
+    enable = {
+        has_equipment = { artillery_equipment > 5000 }
+        NOT = { has_equipment = { artillery_equipment > 10000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = artillery_equipment
+        value = -180
+    }
+}
+
+Arti_Eq_Limit_Ult = {
+    enable = {
+        has_equipment = { artillery_equipment > 10000 }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = artillery_equipment
+        value = -240
+    }
+}
+
+# =====================================================
+# ANTI-TANK
+# =====================================================
+
+AntiT_Eq_Limit_Minor = {
+    enable = {
+        has_equipment = { anti_tank_equipment > 250 }
+        NOT = { has_equipment = { anti_tank_equipment > 1000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_tank_equipment
+        value = -40
+    }
+}
+
+AntiT_Eq_Limit_Light = {
+    enable = {
+        has_equipment = { anti_tank_equipment > 1000 }
+        NOT = { has_equipment = { anti_tank_equipment > 2500 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_tank_equipment
+        value = -80
+    }
+}
+
+AntiT_Eq_Limit_Med = {
+    enable = {
+        has_equipment = { anti_tank_equipment > 2500 }
+        NOT = { has_equipment = { anti_tank_equipment > 5000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_tank_equipment
+        value = -130
+    }
+}
+
+AntiT_Eq_Limit_Full = {
+    enable = {
+        has_equipment = { anti_tank_equipment > 5000 }
+        NOT = { has_equipment = { anti_tank_equipment > 10000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_tank_equipment
+        value = -180
+    }
+}
+
+AntiT_Eq_Limit_Ult = {
+    enable = {
+        has_equipment = { anti_tank_equipment > 10000 }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_tank_equipment
+        value = -240
+    }
+}
+
+# =====================================================
+# ANTI-AIR
+# =====================================================
+
+AntiA_Eq_Limit_Minor = {
+    enable = {
+        has_equipment = { anti_air_equipment > 250 }
+        NOT = { has_equipment = { anti_air_equipment > 1000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_air_equipment
+        value = -40
+    }
+}
+
+AntiA_Eq_Limit_Light = {
+    enable = {
+        has_equipment = { anti_air_equipment > 1000 }
+        NOT = { has_equipment = { anti_air_equipment > 2500 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_air_equipment
+        value = -80
+    }
+}
+
+AntiA_Eq_Limit_Med = {
+    enable = {
+        has_equipment = { anti_air_equipment > 2500 }
+        NOT = { has_equipment = { anti_air_equipment > 5000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_air_equipment
+        value = -130
+    }
+}
+
+AntiA_Eq_Limit_Full = {
+    enable = {
+        has_equipment = { anti_air_equipment > 5000 }
+        NOT = { has_equipment = { anti_air_equipment > 10000 } }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_air_equipment
+        value = -180
+    }
+}
+
+AntiA_Eq_Limit_Ult = {
+    enable = {
+        has_equipment = { anti_air_equipment > 10000 }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type  = equipment_variant_production_factor
+        id    = anti_air_equipment
+        value = -240
+    }
+}
