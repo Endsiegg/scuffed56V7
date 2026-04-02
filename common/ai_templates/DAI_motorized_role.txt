@@ -13,7 +13,7 @@ generic_motorized_role = {
 	
 	GENERIC_MOTORIZED_TEMPLATE_20 = {
 		enable = { 
-			num_of_military_factories > 29
+			num_of_military_factories > 20
 			
 			NOT = {
 				OR = {
@@ -27,7 +27,7 @@ generic_motorized_role = {
 			NOT = {
 				AND = {
 					has_tech = mechanised_infantry
-					num_of_military_factories > 109
+					num_of_military_factories > 50
 				}
 			}
 			
@@ -67,14 +67,14 @@ generic_motorized_role = {
 	
 	GENERIC_MOTORIZED_TEMPLATE_30_MW = {
 		enable = { 
-			num_of_military_factories > 29
+			num_of_military_factories > 20
 			
 			has_doctrine = new_mobile_warfare
 			
 			NOT = {
 				AND = {
 					has_tech = mechanised_infantry
-					num_of_military_factories > 109
+					num_of_military_factories > 50
 				}
 			}
 		}
@@ -90,8 +90,8 @@ generic_motorized_role = {
 		target_template = {
 			
 			regiments = {
-				motorized = 6
-				mot_artillery_brigade = 2
+				motorized = 7
+				mot_artillery_brigade = 1
 				mot_anti_tank_brigade = 1
 				mot_anti_air_brigade =  2
 			}
@@ -114,14 +114,14 @@ generic_motorized_role = {
 	
 	GENERIC_MOTORIZED_TEMPLATE_20_SFP = {
 		enable = { 
-			num_of_military_factories > 29
+			num_of_military_factories > 20
 			
 			has_doctrine = superior_firepower
 			
 			NOT = {
 				AND = {
 					has_tech = mechanised_infantry
-					num_of_military_factories > 109
+					num_of_military_factories > 50
 				}
 			}
 		}
@@ -138,8 +138,8 @@ generic_motorized_role = {
 		target_template = {
 			
 			regiments = {
-				motorized = 6
-				mot_artillery_brigade = 2
+				motorized = 7
+				mot_artillery_brigade = 1
 				mot_anti_tank_brigade = 1
 				mot_anti_air_brigade =  2
 			}
@@ -162,14 +162,14 @@ generic_motorized_role = {
 	
 	GENERIC_MOTORIZED_TEMPLATE_20_GBP = {
 		enable = { 
-			num_of_military_factories > 29
+			num_of_military_factories > 20
 			
 			has_doctrine = grand_battleplan
 			
 			NOT = {
 				AND = {
 					has_tech = mechanised_infantry
-					num_of_military_factories > 109
+					num_of_military_factories > 50
 				}
 			}
 			
@@ -186,8 +186,8 @@ generic_motorized_role = {
 		target_template = {
 			
 			regiments = {
-				motorized = 6
-				mot_artillery_brigade = 2
+				motorized = 7
+				mot_artillery_brigade = 1
 				mot_anti_tank_brigade = 1
 				mot_anti_air_brigade =  2
 			}
@@ -210,14 +210,14 @@ generic_motorized_role = {
 	
 	GENERIC_MOTORIZED_TEMPLATE_20_MA = {
 		enable = { 
-			num_of_military_factories > 29
+			num_of_military_factories > 20
 			
 			has_doctrine = mass_assault
 			
 			NOT = {
 				AND = {
 					has_tech = mechanised_infantry
-					num_of_military_factories > 109
+					num_of_military_factories > 50
 				}
 			}
 			
@@ -234,8 +234,8 @@ generic_motorized_role = {
 		target_template = {
 			
 			regiments = {
-				motorized = 6
-				mot_artillery_brigade = 2
+				motorized = 7
+				mot_artillery_brigade = 1
 				mot_anti_tank_brigade = 1
 				mot_anti_air_brigade =  2
 			}
@@ -262,7 +262,7 @@ generic_motorized_role = {
 	
 	GENERIC_MECHANIZED_TEMPLATE_40 = {
 		enable = { 
-			num_of_military_factories > 109
+			num_of_military_factories > 50
 			has_tech = mechanised_infantry
 			
 			NOT = {
@@ -274,7 +274,7 @@ generic_motorized_role = {
 				}
 			}
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 		
 
 	# TEMPLATE
@@ -291,7 +291,7 @@ generic_motorized_role = {
 				mechanized = 15
 				bm_mechanized_artillery = 2
 				bm_mechanized_anti_air = 2
-				bm_mechanized_anti_tank = 2
+				bm_mechanized_anti_tank = 2 
 			}
 
 			support = {
@@ -312,12 +312,12 @@ generic_motorized_role = {
 	
 	GENERIC_MECHANIZED_TEMPLATE_40_MW = {
 		enable = { 
-			num_of_military_factories > 109
+			num_of_military_factories > 50
 			has_tech = mechanised_infantry
 			
 			has_doctrine = new_mobile_warfare
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 		
 
 	# TEMPLATE
@@ -355,12 +355,12 @@ generic_motorized_role = {
 	
 	GENERIC_MECHANIZED_TEMPLATE_40_SFP = {
 		enable = { 
-			num_of_military_factories > 109
+			num_of_military_factories > 50
 			has_tech = mechanised_infantry
 			
 			has_doctrine = superior_firepower
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 		
 
 	# TEMPLATE
@@ -398,12 +398,12 @@ generic_motorized_role = {
 	
 	GENERIC_MECHANIZED_TEMPLATE_40_GBP = {
 		enable = { 
-			num_of_military_factories > 109
+			num_of_military_factories > 50
 			has_tech = mechanised_infantry
 			
 			has_doctrine = grand_battleplan
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 		
 
 	# TEMPLATE
@@ -441,16 +441,15 @@ generic_motorized_role = {
 	
 	GENERIC_MECHANIZED_TEMPLATE_40_MA = {
 		enable = { 
-			num_of_military_factories > 109
+			num_of_military_factories > 50
 			has_tech = mechanised_infantry
 			
 			has_doctrine = mass_assault
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 		
 
 	# TEMPLATE
-		
 		
 		reinforce_prio = 2
 		
