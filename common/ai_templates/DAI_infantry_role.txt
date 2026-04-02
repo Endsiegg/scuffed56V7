@@ -12,7 +12,7 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_20_SCREEN = {
 		enable = { 
-			num_of_military_factories < 15
+			num_of_military_factories < 25
 			NOT = {
 				OR = {
 					has_doctrine = mass_assault
@@ -22,7 +22,7 @@ generic_infantry_role = {
 				}
 			}
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 100 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -46,10 +46,10 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_20_SCREEN_MW = {
 		enable = { 
-			num_of_military_factories < 15
+			num_of_military_factories < 25
 			has_doctrine = new_mobile_warfare			
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 100 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -74,10 +74,10 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_20_SCREEN_SFP = {
 		enable = { 
-			num_of_military_factories < 15
+			num_of_military_factories < 25
 			has_doctrine = superior_firepower
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 100 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -102,10 +102,10 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_20_SCREEN_GBP = {
 		enable = { 
-			num_of_military_factories < 15
+			num_of_military_factories < 25
 			has_doctrine = grand_battleplan
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 100 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -130,10 +130,10 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_20_SCREEN_MA = {
 		enable = { 
-			num_of_military_factories < 15
+			num_of_military_factories < 25
 			has_doctrine = mass_assault
 		}
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 100 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -164,8 +164,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_LIGHT = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 14
-				num_of_military_factories < 40
+				num_of_military_factories > 25
+				num_of_military_factories < 50
 			}
 			NOT = {
 				OR = {
@@ -184,8 +184,9 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 7
+				infantry = 6
 				artillery_brigade = 2
+				anti_tank_brigade = 2
 			}
 
 			support = {
@@ -196,6 +197,9 @@ generic_infantry_role = {
 				anti_air = 1
 				recon = 1
 				bm_machine_gunner = 1
+				logistics_company = 1
+				field_hospital = 1
+				bm_flamethower_support = 1
 			}
 		}
 	}
@@ -203,8 +207,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_LIGHT_MW = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 14
-				num_of_military_factories < 40
+				num_of_military_factories > 25
+				num_of_military_factories < 50
 			}
 			has_doctrine = new_mobile_warfare
 		}
@@ -216,8 +220,9 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 7
+				infantry = 6
 				artillery_brigade = 2
+				anti_tank_brigade = 2
 			}
 
 			support = {
@@ -228,6 +233,9 @@ generic_infantry_role = {
 				anti_air = 1
 				recon = 1
 				bm_machine_gunner = 1
+				logistics_company = 1
+				field_hospital = 1
+				bm_flamethower_support = 1
 			}
 		}
 	}
@@ -235,8 +243,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_18_LIGHT_SFP = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 14
-				num_of_military_factories < 40
+				num_of_military_factories > 25
+				num_of_military_factories < 50
 			}
 			has_doctrine = superior_firepower
 		}
@@ -248,8 +256,9 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 7
+				infantry = 6
 				artillery_brigade = 2
+				anti_tank_brigade = 2
 			}
 
 			support = {
@@ -259,7 +268,10 @@ generic_infantry_role = {
 				anti_tank = 1
 				anti_air = 1
 				recon = 1
-				bm_machine_gunner = 1			
+				bm_machine_gunner = 1
+				logistics_company = 1
+				field_hospital = 1
+				bm_flamethower_support = 1		
 			}
 		}
 	}
@@ -267,8 +279,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_LIGHT_GBP = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 14
-				num_of_military_factories < 40
+				num_of_military_factories > 25
+				num_of_military_factories < 50
 			}
 			has_doctrine = grand_battleplan
 		}
@@ -281,8 +293,9 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 7
+				infantry = 6
 				artillery_brigade = 2
+				anti_tank_brigade = 2
 			}
 
 			support = {
@@ -292,7 +305,10 @@ generic_infantry_role = {
 				anti_tank = 1
 				anti_air = 1
 				recon = 1
-				bm_machine_gunner = 1		
+				bm_machine_gunner = 1
+				logistics_company = 1
+				field_hospital = 1
+				bm_flamethower_support = 1		
 			}
 		}
 	}
@@ -300,8 +316,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_LIGHT_MA = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 14
-				num_of_military_factories < 40
+				num_of_military_factories > 25
+				num_of_military_factories < 50
 			}
 			has_doctrine = mass_assault
 		}
@@ -315,160 +331,6 @@ generic_infantry_role = {
 			regiments = {
 				infantry = 10
 				artillery_brigade = 1
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				artillery = 1
-				anti_tank = 1
-				anti_air = 1
-				recon = 1
-				bm_machine_gunner = 1		
-			}
-		}
-	}
-
-	#####################################################
-	#	21W BARRIER+
-	#####################################################
-
-	### defense
-	
-	GENERIC_INFANTRY_TEMPLATE_21_BARRIER = {
-		enable = {
-			AND = {
-				num_of_military_factories > 39
-				num_of_military_factories < 70
-			}
-			NOT = {
-				OR = {
-					has_doctrine = mass_assault
-					has_doctrine = grand_battleplan
-					has_doctrine = superior_firepower
-					has_doctrine = new_mobile_warfare
-				}
-			}
-		}
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 6
-				artillery_brigade = 2
-				anti_air_brigade = 1
-				anti_tank_brigade = 1
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				artillery = 1
-				anti_tank = 1
-				anti_air = 1
-				recon = 1
-				bm_machine_gunner = 1
-				logistics_company = 1
-				field_hospital = 1
-			}
-		}
-	}
-	
-	GENERIC_INFANTRY_TEMPLATE_20_BARRIER_MW = {
-		enable = {
-			AND = {
-				num_of_military_factories > 39
-				num_of_military_factories < 70
-			}
-			has_doctrine = new_mobile_warfare
-		}
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 6
-				artillery_brigade = 2
-				anti_air_brigade = 1
-				anti_tank_brigade = 1
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				artillery = 1
-				anti_tank = 1
-				anti_air = 1
-				recon = 1
-				bm_machine_gunner = 1
-				logistics_company = 1
-				field_hospital = 1
-			}
-		}
-	}
-	
-	GENERIC_INFANTRY_TEMPLATE_20_BARRIER_SFP = {
-		enable = {
-			AND = {
-				num_of_military_factories > 39
-				num_of_military_factories < 70
-			}
-			has_doctrine = superior_firepower
-		}
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 6
-				artillery_brigade = 2
-				anti_air_brigade = 1
-				anti_tank_brigade = 1
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				artillery = 1
-				anti_tank = 1
-				anti_air = 1
-				recon = 1
-				bm_machine_gunner = 1
-				logistics_company = 1
-				field_hospital = 1
-			}
-		}
-	}
-	
-	GENERIC_INFANTRY_TEMPLATE_20_BARRIER_GBP = {
-		enable = {
-			AND = {
-				num_of_military_factories > 39
-				num_of_military_factories < 70
-			}
-			has_doctrine = grand_battleplan
-		}
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 6
-				artillery_brigade = 2
-				anti_tank_brigade = 1
 				anti_air_brigade = 1
 			}
 
@@ -482,45 +344,10 @@ generic_infantry_role = {
 				bm_machine_gunner = 1
 				logistics_company = 1
 				field_hospital = 1
+				bm_flamethower_support = 1		
 			}
 		}
-	}
-	
-	GENERIC_INFANTRY_TEMPLATE_20_BARRIER_MA = {
-		enable = {
-			AND = {
-				num_of_military_factories > 39
-				num_of_military_factories < 70
-			}
-			has_doctrine = mass_assault
-		}
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 8
-				artillery_brigade = 2
-				anti_tank_brigade = 1
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				artillery = 1
-				anti_tank = 1
-				anti_air = 1
-				recon = 1
-				bm_machine_gunner = 1
-				logistics_company = 1
-				field_hospital = 1
-			}
-		}
-	}
-	
+	}	
 
 	#####################################################
 	#	20W AI RAM
@@ -529,8 +356,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_RAM = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 69
-				num_of_military_factories < 110
+				num_of_military_factories > 40
+				num_of_military_factories < 199
 			}
 			NOT = {
 				OR = {
@@ -542,7 +369,7 @@ generic_infantry_role = {
 			}
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -575,12 +402,12 @@ generic_infantry_role = {
 		enable = { 
 			AND = {
 				num_of_military_factories > 69
-				num_of_military_factories < 110
+				num_of_military_factories < 199
 			}
 			has_doctrine = new_mobile_warfare
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -613,12 +440,12 @@ generic_infantry_role = {
 		enable = { 
 			AND = {
 				num_of_military_factories > 69
-				num_of_military_factories < 110
+				num_of_military_factories < 199
 			}
 			has_doctrine = superior_firepower
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -626,8 +453,8 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 6
-				artillery_brigade = 2
+				infantry = 7
+				artillery_brigade = 1
 				anti_air_brigade = 1
 				anti_tank_brigade = 1
 			}
@@ -651,12 +478,12 @@ generic_infantry_role = {
 		enable = { 
 			AND = {
 				num_of_military_factories > 69
-				num_of_military_factories < 110
+				num_of_military_factories < 199
 			}
 			has_doctrine = grand_battleplan
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -664,8 +491,8 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 6
-				artillery_brigade = 2
+				infantry = 7
+				artillery_brigade = 1
 				anti_air_brigade = 1
 				anti_tank_brigade = 1
 			}
@@ -689,12 +516,12 @@ generic_infantry_role = {
 		enable = { 
 			AND = {
 				num_of_military_factories > 69
-				num_of_military_factories < 110
+				num_of_military_factories < 199
 			}
 			has_doctrine = mass_assault
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 250 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -702,9 +529,10 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 8
+				infantry = 7
 				artillery_brigade = 2
 				anti_tank_brigade = 1
+				anti_air_brigade = 1
 			}
 
 			support = {
@@ -723,217 +551,14 @@ generic_infantry_role = {
 	}
 	
 	#####################################################
-	#	40W ASSAULT
-	#####################################################
-	
-	### offensive/late-game
-
-	GENERIC_INFANTRY_TEMPLATE_40_ASSAULT = {
-		enable = { 
-			AND = {
-				num_of_military_factories > 109
-				num_of_military_factories < 150
-			}
-			NOT = {
-				OR = {
-					has_doctrine = mass_assault
-					has_doctrine = grand_battleplan
-					has_doctrine = superior_firepower
-					has_doctrine = new_mobile_warfare
-				}
-			}
-		}
-
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 12
-				artillery_brigade = 4
-				anti_tank_brigade = 2
-				anti_air_brigade = 2
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				signal_company = 1
-				bm_sniper_company = 1
-				bm_mortar_company = 1
-				recon = 1
-				bm_machine_gunner = 1
-				bm_flamethower_support = 1
-				logistics_company = 1
-				field_hospital = 1
-			}
-		}
-	}
-	
-	GENERIC_INFANTRY_TEMPLATE_40_ASSAULT_MW = {
-		enable = { 
-			AND = {
-				num_of_military_factories > 109
-				num_of_military_factories < 150
-			}
-			has_doctrine = new_mobile_warfare
-		}
-
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 12
-				artillery_brigade = 4
-				anti_tank_brigade = 2
-				anti_air_brigade = 2
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				signal_company = 1
-				bm_sniper_company = 1
-				bm_mortar_company = 1
-				recon = 1
-				bm_machine_gunner = 1
-				bm_flamethower_support = 1
-				logistics_company = 1
-				field_hospital = 1
-			}
-		}
-	}
-	
-	GENERIC_INFANTRY_TEMPLATE_40_ASSAULT_SFP = {
-		enable = { 
-			AND = {
-				num_of_military_factories > 109
-				num_of_military_factories < 150
-			}
-			has_doctrine = superior_firepower
-		}
-
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 12
-				artillery_brigade = 4
-				anti_tank_brigade = 2
-				anti_air_brigade = 2
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				signal_company = 1
-				bm_sniper_company = 1
-				bm_mortar_company = 1
-				recon = 1
-				bm_machine_gunner = 1
-				bm_flamethower_support = 1
-				logistics_company = 1
-				field_hospital = 1
-			}
-		}
-	}
-	
-	GENERIC_INFANTRY_TEMPLATE_40_ASSAULT_GBP = {
-		enable = { 
-			AND = {
-				num_of_military_factories > 109
-				num_of_military_factories < 150
-			}
-			has_doctrine = grand_battleplan
-		}
-
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 12
-				artillery_brigade = 4
-				anti_tank_brigade = 2
-				anti_air_brigade = 2
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				signal_company = 1
-				bm_sniper_company = 1
-				bm_mortar_company = 1
-				recon = 1
-				bm_machine_gunner = 1
-				bm_flamethower_support = 1
-				logistics_company = 1
-				field_hospital = 1
-			}
-		}
-	}
-	
-	GENERIC_INFANTRY_TEMPLATE_40_ASSAULT_MA = {
-		enable = { 
-			AND = {
-				num_of_military_factories > 109
-				num_of_military_factories < 150
-			}
-			has_doctrine = mass_assault
-		}
-
-		upgrade_prio = { factor = 200 }
-
-		can_upgrade_in_field = { always = yes }
-
-		reinforce_prio = 1
-
-		target_template = {
-			regiments = {
-				infantry = 15
-				artillery_brigade = 4
-				anti_tank_brigade = 2
-				anti_air_brigade = 2
-			}
-
-			support = {
-				BM_command_regiment = 1
-				engineer = 1
-				signal_company = 1
-				bm_sniper_company = 1
-				bm_mortar_company = 1
-				recon = 1
-				bm_machine_gunner = 1
-				bm_flamethower_support = 1
-				logistics_company = 1
-				field_hospital = 1
-			}
-		}
-	}
-	
-	#####################################################
-	#	36W HEAVY BREAKTHROUGH
+	#	40W HEAVY BREAKTHROUGH
 	#####################################################
 	
 	### offensive/late-game
 
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH = {
 		enable = { 
-			num_of_military_factories > 149
+			num_of_military_factories > 199
 			NOT = {
 				OR = {
 					has_doctrine = mass_assault
@@ -944,7 +569,7 @@ generic_infantry_role = {
 			}
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 300 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -975,11 +600,11 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH_MW = {
 		enable = { 
-			num_of_military_factories > 149
+			num_of_military_factories > 199
 			has_doctrine = new_mobile_warfare
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 300 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -1010,11 +635,11 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH_SFP = {
 		enable = { 
-			num_of_military_factories > 149
+			num_of_military_factories > 199
 			has_doctrine = superior_firepower
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 300 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -1045,11 +670,11 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH_GBP = {
 		enable = { 
-			num_of_military_factories > 149
+			num_of_military_factories > 199
 			has_doctrine = grand_battleplan
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 300 }
 
 		can_upgrade_in_field = { always = yes }
 
@@ -1080,11 +705,11 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH_MA = {
 		enable = { 
-			num_of_military_factories > 149
+			num_of_military_factories > 199
 			has_doctrine = mass_assault
 		}
 
-		upgrade_prio = { factor = 200 }
+		upgrade_prio = { factor = 300 }
 
 		can_upgrade_in_field = { always = yes }
 
