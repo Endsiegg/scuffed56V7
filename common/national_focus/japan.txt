@@ -7316,7 +7316,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_purge_the_kodoha_faction }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -7358,7 +7358,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_purge_the_kodoha_faction }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -8054,7 +8054,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_cabinet_intelligence_bureau }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8100,7 +8100,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_found_the_great_japan_press_association }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8298,7 +8298,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_the_central_economic_council }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8561,7 +8561,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_enact_religious_organizations_law }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8741,7 +8741,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_tripartite_pact }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8944,7 +8944,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_imperial_rule_assistance_association }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -9036,17 +9036,17 @@ focus_tree = {
 		}
 
 		available = {
-			has_war_with_major = yes
+			#has_war_with_major = yes
 			OR = {
 				has_war_support > 0.79
 				surrender_progress > 0
 			}
-			any_enemy_country = {
-				ic_ratio = {
-					tag = ROOT
-					ratio > 0.3
-				}
-			}
+		#	any_enemy_country = {
+		#		ic_ratio = {
+		#			tag = ROOT
+		#			ratio > 0.3
+		#		}
+		#	}
 		}
 
 		bypass = {
@@ -9293,7 +9293,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_imperial_rule_assistance_association }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -9471,7 +9471,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_expand_japan_manchukuo_economic_bloc }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -9540,7 +9540,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_greater_east_asian_co_properity_sphere }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -9592,7 +9592,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_the_flying_geese }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -10674,7 +10674,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_tojos_premiership focus = JAP_yamamotos_premiership focus = JAP_the_crysanthemum_throne focus = JAP_solidify_tohokai_rule }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = { 
 			factor = 1
@@ -11456,7 +11456,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_revisit_the_thirteen_demands }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -12129,7 +12129,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_reinforce_the_beijing_garrison }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -12208,7 +12208,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_reinforce_the_beijing_garrison }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -12318,7 +12318,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_reinforce_the_beijing_garrison }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -26130,14 +26130,14 @@ focus_tree = {
 		x = 2
 		y = 1 
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
 		}
 
 		available = {
-			has_war = yes
+			#has_war = yes
 		}
 
 		bypass = {
@@ -26241,7 +26241,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_war_with_major = yes
+		#	has_war_with_major = yes
 		}
 
 		bypass = {
@@ -27122,7 +27122,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -27162,15 +27162,15 @@ focus_tree = {
 			328 = {
 				add_resource = {
 					type = aluminium
-					amount = 4
+					amount = 16
 				}
 				add_resource = {
 					type = steel
-					amount = 6
+					amount = 16
 				}
 				add_resource = {
 					type = Coal
-					amount = 6
+					amount = 16
 				}
 			}
 
@@ -27314,9 +27314,9 @@ focus_tree = {
 
 		completion_reward = {
 
-			715 = { add_extra_state_shared_building_slots = 1 }
-			610 = { add_extra_state_shared_building_slots = 1 }
-			328 = { add_extra_state_shared_building_slots = 1 }
+			715 = { add_extra_state_shared_building_slots = 3 }
+			610 = { add_extra_state_shared_building_slots = 3 }
+			328 = { add_extra_state_shared_building_slots = 3 }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -27532,7 +27532,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -27656,7 +27656,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 				}
 				random_select_amount = 4
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -27683,7 +27683,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -27846,7 +27846,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -27884,7 +27884,7 @@ focus_tree = {
 							is_fully_controlled_by = KOR
 						}
 						random_select_amount = 2
-						add_extra_state_shared_building_slots = 1
+						add_extra_state_shared_building_slots = 2
 					}
 				}
 			}
@@ -27895,7 +27895,7 @@ focus_tree = {
 						is_fully_controlled_by = ROOT
 					}
 					random_select_amount = 2
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 				}
 			}
 
@@ -27987,7 +27987,7 @@ focus_tree = {
 		x = 0
 		y = 2
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 2

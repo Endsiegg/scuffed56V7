@@ -63,7 +63,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 		level_cap = {
 			shares_slots = yes
-			state_max = 20
+			state_max = 35
 		}
 	}
 
@@ -100,7 +100,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 		level_cap = {
 			shares_slots = yes
-			state_max = 20
+			state_max = 35
 		}
 	}
 
@@ -307,16 +307,15 @@ buildings = {
 		value = 5
 		infrastructure_construction_effect = yes
 		fuel_silo = yes
-		#per_level_extra_cost = -500		#r56
+		per_level_extra_cost = -500		#r56
 		show_modifier = yes
 		country_modifiers = {
 			modifiers = {
 				max_fuel_building = 100.0 #k
 			}
 		}
-		
 		level_cap = {
-			shares_slots = yes
+			state_max = 3
 		}
 	}
 
@@ -682,7 +681,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 		level_cap = {
 			state_max = 1
-			shares_slots = yes
+			#shares_slots = yes
 			group_by = infrastructure_keystone
 		}
 		state_modifiers = {
@@ -701,7 +700,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 		level_cap = {
 			state_max = 1
-			shares_slots = yes
+		#	shares_slots = yes
 			group_by = infrastructure_keystone
 		}
 		state_modifiers = {
