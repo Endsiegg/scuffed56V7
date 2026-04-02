@@ -29,7 +29,7 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = cavity_magnatron
+			leads_to_tech = radio_detection
 			research_cost_coeff = 1
 		}
 
@@ -695,42 +695,60 @@ modern_radio = {
 ##Vanilla Radar
 	#Now just a reward tech - still tech parent 
 	radio_detection = {
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_air_radar
-			}
-		}
+		#allow = {
+	 	#	ROOT = {
+		#		is_special_project_completed = sp:sp_air_radar
+		#	}
+		#}
 
 		is_special_project_tech = yes
-
+		
 		enable_building = {
 			building = radar_station
 			level = 1
 		}
 		coordination_bonus = 0.01
-		#path = {
-		#	leads_to_tech = cavity_magnatron 
-		#	research_cost_coeff = 1
-		#}
-		#enable_equipment_modules = {
-		#	ship_radar_1
-		#	radio_navigation_1
-		#}
-		research_cost = 1.75
+		path = {
+			leads_to_tech = cavity_magnatron 
+			research_cost_coeff = 1
+		}
+		enable_equipment_modules = {
+			ship_radar_1
+			radio_navigation_1
+		}
+		research_cost = 1
+		start_year = 1937
 		
-		#folder = {
-		#	name = electronics_folder
-		#	position = { x = @radar y = 2 }
-		#}
-		
-		ai_will_do = {
-			factor = 0
+		folder = {
+			name = electronics_folder
+			position = { x = @radar y = 2 }
 		}
 		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				tag = USA
+				factor = 4
+			}
+		}
+		complete_special_project = {
+			project = sp:sp_air_radar
+		}
+		 on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_TECH
+				TECH = cavity_magnatron
+			}
+		 	custom_effect_tooltip ={
+				localization_key = SP_COMPLETE_PROJECT
+		 		project = sp:sp_air_radar
+		 	}
+		 }
 		categories = {
 			electronics
 			radar_tech
 		}
+		special_project_specialization = { specialization_air specialization_nuclear }
 
 	}
 	
@@ -738,11 +756,11 @@ modern_radio = {
 
 		# can build radars/radar boost in air/sea combat depends on radar level
 
-		allow = {
-			ROOT = {
-				is_special_project_completed = sp:sp_air_radar
-			}
-		}
+		#allow = {
+		#	ROOT = {
+		#		is_special_project_completed = sp:sp_air_radar
+		#	}
+		#}
 
 		is_special_project_tech = yes
 		
@@ -789,7 +807,9 @@ modern_radio = {
 		}
 
 		special_project_specialization = { specialization_air specialization_nuclear }
-
+		complete_special_project = {
+			project = sp:sp_air_radar
+		}
 		on_research_complete = {
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
@@ -845,11 +865,11 @@ modern_radio = {
 	#}
 	
 	centimetric_radar = {
-		allow = {
-			ROOT = {
-				is_special_project_completed = sp:sp_air_radar
-			}
-		}
+		#allow = {
+		#	ROOT = {
+		#		is_special_project_completed = sp:sp_air_radar
+		#	}
+		#}
 
 		# radar boost in air/sea combat depends on radar level
 		enable_building = {
@@ -886,11 +906,11 @@ modern_radio = {
 	}
 	
 	phased_array = {
-		allow = {
-			ROOT = {
-				is_special_project_completed = sp:sp_air_radar
-			}
-		}
+		#allow = {
+		#	ROOT = {
+		#		is_special_project_completed = sp:sp_air_radar
+		#	}
+		#}
 		is_special_project_tech = yes
 		# radar boost in air/sea combat depends on radar level
 		enable_building = {
@@ -942,11 +962,11 @@ modern_radio = {
 	}
 	
 	monopulse_radar = {
-		allow = {
-			ROOT = {
-				is_special_project_completed = sp:sp_air_radar
-			}
-		}
+		#allow = {
+		#	ROOT = {
+		#		is_special_project_completed = sp:sp_air_radar
+		#	}
+		#}
 		is_special_project_tech = yes
 		# radar boost in air/sea combat depends on radar level
 		enable_building = {
