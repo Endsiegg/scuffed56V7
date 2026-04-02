@@ -1,0 +1,81 @@
+sub_units = {
+	bm_mot_command_regiment = {
+		abbreviation = "MCM"
+		sprite = infantry
+		map_icon_category = infantry
+		group = support
+
+		active = yes
+		affects_speed = yes
+		can_be_parachuted = yes
+
+		transport = motorized_equipment
+
+		priority = 600
+		ai_priority = 250
+
+		# TYPE
+		type = {
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+		# MODIFERS
+        max_organisation = 20
+        max_strength = 2
+		training_time = 120
+        combat_width = 0
+        default_morale = 0.30
+        manpower = 140
+        weight = 0.2
+        supply_consumption = 0.03
+		fuel_consumption = -0.352
+
+		soft_attack = -0.9
+		hard_attack = -0.9
+        defense = -0.9
+        breakthrough = -0.9
+        
+        # EQUIPMENT NEEDED
+        need = {
+            infantry_equipment = 10
+            support_equipment = 20
+			motorized_equipment = 20
+        }
+        
+        # REQUIRED EQUIPMENT
+        essential = {
+            infantry_equipment
+            support_equipment
+			motorized_equipment
+        }
+        
+        # MODIFIER FOR CATEGORIES
+        battalion_mult = {
+            category = category_army
+			max_organisation = 0.10 # Because he is a commander
+            defense = 0.05
+        }
+        
+        # TERRAIN
+		jungle = {
+			movement = -0.05
+		}
+		forest = {
+			movement = -0.05
+		}
+		marsh = {
+			movement = -0.05
+		}
+		river = {
+			movement = -0.05
+		}
+
+        same_support_type = bm_command_regiment
+	}
+}

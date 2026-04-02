@@ -1,0 +1,314 @@
+########################################################
+# POSTURE EFFECTS (AI Strategy Modifiers)
+########################################################
+
+# Original postures remain the same
+INFANTRYFOCUS = {
+	enable = {
+		has_idea = FocusOnInf
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 150
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 90
+	}
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = 90
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = -40
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor_role
+		value = -30
+	}
+	ai_strategy = {
+		type = build_army
+		id = armor_role
+		value = -30
+	}
+	ai_strategy = {
+		type = air_factory_balance
+		value = -15
+	}
+}
+
+TANKFOCUS = {
+	enable = {
+		has_idea = FocusOnTank
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 150
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor_role
+		value = 75
+	}
+	ai_strategy = {
+		type = build_army
+		id = armor_role
+		value = 75
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = mechanized
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_artillery_chassis
+		value = 100
+    }
+	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_aa_chassis
+		value = 1000
+    }
+	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_destroyer_chassis
+		value = 1000
+    }
+}
+
+AIRPRODUCTIONFOCUS = {
+	enable = {
+		has_idea = FocusOnAir
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = 40  # Was 30, increased
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 50
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = 30
+	}
+}
+
+ENDSIEG = {
+	enable = {
+		has_idea = Endsieg
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = -30
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 100
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 70
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 50
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = anti_tank
+		value = 60
+	}
+}
+
+TheGreatCrusade = {
+	enable = {
+		has_idea = TheGreatCrusade
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = -15  # Was -20
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 150
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor_role
+		value = 75
+	}
+	ai_strategy = {
+		type = build_army
+		id = armor_role
+		value = 75
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 60
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = 40
+	}
+}
+
+# NEW POSTURE EFFECTS
+
+FORTIFICATIONMODE = {
+	enable = {
+		has_idea = FortificationMode
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 80
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 50
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 60
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = anti_tank
+		value = 50
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = anti_air
+		value = 40
+	}
+	# Build bunkers and forts
+	ai_strategy = {
+		type = building_target
+		id = bunker
+		value = 50
+	}
+	ai_strategy = {
+		type = building_target
+		id = coastal_bunker
+		value = 30
+	}
+}
+
+ATTRITIONWARFARE = {
+	enable = {
+		has_idea = AttritionWarfare
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 120
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 80
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 80
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = -30
+	}
+	ai_strategy = {
+		type = air_factory_balance
+		value = -20
+	}
+	# Focus on staying power
+	ai_strategy = {
+		type = equipment_production_factor
+		id = support
+		value = 40
+	}
+}
+
+BREAKTHROUGHOFFENSIVE = {
+	enable = {
+		has_idea = BreakthroughOffensive
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 120
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor_role
+		value = 50
+	}
+	ai_strategy = {
+		type = build_army
+		id = armor_role
+		value = 50
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = 60
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 50
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = 30
+	}
+	ai_strategy = {
+		type = air_factory_balance
+		value = 15
+	}
+}

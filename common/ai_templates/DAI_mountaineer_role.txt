@@ -1,0 +1,56 @@
+generic_mountaineer_role = {
+	role = mountaineers
+	front_role_override = offence
+	
+	upgrade_prio = {
+		factor = 100
+		modifier = { 
+			factor = -150
+			num_of_military_factories > 25
+		}
+	}
+	
+	GENERIC_MOUNTAINEERS_TEMPLATE_25w = {            
+		upgrade_prio = { 
+		factor = 100
+		
+		modifier = { 
+		factor = -150
+			num_of_military_factories > 25
+			}
+		
+		modifier = {
+			factor = -100
+			NOT = {
+				has_tech = tech_mountaineers
+			}
+		}
+		}
+
+		# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+			regiments = {
+				mountaineers = 20
+			}
+
+			support = {
+				artillery = 1
+				bm_mortar_company = 1
+				bm_flamethrower_support = 1
+				anti_tank = 1
+				engineer = 1
+				bm_pack_howitzer = 1
+				recon = 1
+				bm_sniper_company = 1
+				bm_command_regiment = 1
+				signal_company = 1
+			}
+		}
+	}
+}

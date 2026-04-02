@@ -1,0 +1,439 @@
+########################################################
+# REACTIVE AI POSTURES - Complete System
+# 8 Dynamic Postures that adapt to war conditions
+########################################################
+
+DAI_Reactive_AI = {
+
+	#######################################
+	# POSTURE 1: AIR SUPERIORITY FOCUS
+	# Works in peace OR war
+	#######################################
+	FocusOnAirProduction = {
+		icon = genertic_industry
+		available = {
+			is_major = yes
+			num_of_military_factories > 40
+
+			# We have the tech to actually build useful planes
+			OR = {
+				has_tech = fighter1
+				has_tech = basic_small_airframe
+			}
+
+			# Fighter force is underdeveloped for a major
+			has_deployed_air_force_size = {
+				size < 1200
+				type = fighter
+			}
+
+			# Either in war with good position, OR peacetime buildup
+			OR = {
+				AND = {
+					has_war = yes
+					surrender_progress < 0.5
+					alliance_strength_ratio > 0.8
+					longest_war_length > 4
+				}
+				AND = {
+					has_war = no
+					# Peacetime: just need the factories and tech
+					num_of_military_factories > 50
+				}
+			}
+
+			# Not already in a posture
+			NOT = {
+				has_idea = FocusOnTank
+				has_idea = FocusOnAir
+				has_idea = FocusOnInf
+				has_idea = Endsieg
+				has_idea = TheGreatCrusade
+				has_idea = FortificationMode
+				has_idea = AttritionWarfare
+				has_idea = BreakthroughOffensive
+			}
+		}
+		visible = { is_ai = yes }
+		cost = 0
+		days_re_enable = 240
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = FocusOnAir
+				days = 240
+			}
+		}
+		ai_will_do = { base = 1 }
+	}
+
+	#######################################
+	# POSTURE 2: ARMORED WARFARE FOCUS
+	# Works in peace OR war
+	#######################################
+	FocusOnTankProduction = {
+		icon = genertic_industry
+		available = {
+			is_major = yes
+			num_of_military_factories > 35
+
+			# We have manpower to support mechanized warfare
+			has_manpower > 300000
+			has_manpower < 750000
+
+			# Enough rifles that diverting to tanks won't cripple us
+			stockpile_ratio = {
+				archetype = infantry_equipment
+				ratio > 0.1
+			}
+
+			# Have medium tank tech
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+
+			# Either wartime with good conditions, OR peacetime buildup
+			OR = {
+				AND = {
+					has_war = yes
+					surrender_progress < 0.25
+					enemies_strength_ratio < 1.4
+				}
+				AND = {
+					has_war = no
+					# Peacetime: just need more factories for tank focus
+					num_of_military_factories > 40
+				}
+			}
+
+			# Not already in a posture
+			NOT = {
+				has_idea = FocusOnTank
+				has_idea = FocusOnAir
+				has_idea = FocusOnInf
+				has_idea = Endsieg
+				has_idea = TheGreatCrusade
+				has_idea = FortificationMode
+				has_idea = AttritionWarfare
+				has_idea = BreakthroughOffensive
+			}
+		}
+		
+		visible = { is_ai = yes }
+		cost = 0
+		days_re_enable = 240
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = FocusOnTank
+				days = 240
+			}
+		}
+		ai_will_do = { base = 2 }
+	}
+	
+	#######################################
+	# POSTURE 3: INFANTRY MASS MOBILIZATION
+	# Works in peace OR war
+	#######################################
+	FocusOnInfantry = {
+        icon = genertic_industry
+        available = {
+			has_manpower > 2000000
+			
+			# Actually check for rifle shortage properly
+			has_equipment = { infantry_equipment < 1000 }
+
+			# Not currently focused on something else
+			NOT = {
+				has_idea = FocusOnTank
+				has_idea = FocusOnAir
+				has_idea = FocusOnInf
+				has_idea = Endsieg
+				has_idea = TheGreatCrusade
+				has_idea = FortificationMode
+				has_idea = AttritionWarfare
+				has_idea = BreakthroughOffensive
+			}	
+		}
+    
+        visible = { is_ai = yes }
+        cost = 0
+		days_re_enable = 200
+        
+        complete_effect = {
+            add_timed_idea = {
+				idea = FocusOnInf
+				days = 180
+			}
+        }
+        ai_will_do = { base = 1 }
+	}
+
+	#######################################
+	# POSTURE 4: DESPERATE DEFENSE
+	# War only - keeps all conditions
+	#######################################
+	Enemy_At_The_Gates = {
+		icon = genertic_industry
+		available = {
+			has_war = yes
+			num_of_military_factories > 15
+			has_manpower > 250000
+
+			# We're losing ground
+			enemies_strength_ratio > 1.2
+			surrender_progress > 0.10
+			surrender_progress < 0.50
+
+			# Running low on rifles
+			has_equipment = { infantry_equipment < 1000 }
+
+			# War has developed enough to assess
+			longest_war_length > 3
+
+			# Override other focuses if we're desperate
+			NOT = {
+				has_idea = Endsieg
+				has_idea = FortificationMode
+			}
+		}
+		visible = { is_ai = yes }
+		cost = 0
+		days_re_enable = 300
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = FocusOnInf
+				days = 300
+			}
+			remove_ideas = {
+				FocusOnTank
+				FocusOnAir
+				TheGreatCrusade
+				BreakthroughOffensive
+			}
+		}
+		ai_will_do = { base = 2 }
+	}
+
+	#######################################
+	# POSTURE 5: ENDSIEG (Last Stand)
+	# War only - keeps all conditions
+	#######################################
+	AI_Posture_Endsieg = {
+		icon = genertic_industry
+		available = {
+			is_major = yes
+			has_war = yes
+			num_of_military_factories > 30
+			has_manpower > 400000
+
+			# We're in serious trouble
+			enemies_strength_ratio > 1.4
+			surrender_progress > 0.35
+			surrender_progress < 0.80
+
+			# War is now long and grinding
+			longest_war_length > 8
+
+			# Air power is gone or weak
+			has_deployed_air_force_size = {
+				size < 1000
+				type = fighter
+			}
+
+			NOT = {
+				has_idea = TheGreatCrusade
+				has_idea = BreakthroughOffensive
+			}
+		}
+		visible = { is_ai = yes }
+		cost = 0
+		days_re_enable = 300
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = Endsieg
+				days = 300
+			}
+			remove_ideas = {
+				FocusOnTank
+				FocusOnAir
+				FocusOnInf
+				FortificationMode
+				AttritionWarfare
+			}
+		}
+		ai_will_do = { base = 3 }
+	}
+
+	#######################################
+	# POSTURE 6: THE GREAT CRUSADE (Offensive Dominance)
+	# War only - keeps all conditions
+	#######################################
+	AI_Posture_TheGreatCrusade = {
+		icon = genertic_industry
+		available = {
+			is_major = yes
+			has_war = yes
+			num_of_military_factories > 70
+			has_manpower > 500000
+
+			# We have clear advantage
+			alliance_strength_ratio > 1.3
+			surrender_progress < 0.05
+
+			# Strong air force to support offensive
+			has_deployed_air_force_size = {
+				size > 1200
+				type = fighter
+			}
+
+			# War has gone long enough for decisive push
+			longest_war_length > 6
+
+			# Good equipment stockpiles
+			stockpile_ratio = {
+				archetype = infantry_equipment
+				ratio > 0.0
+			}
+
+			NOT = {
+				has_idea = Endsieg
+				has_idea = FortificationMode
+			}
+		}
+		visible = { is_ai = yes }
+		cost = 0
+		days_re_enable = 250
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = TheGreatCrusade
+				days = 250
+			}
+			remove_ideas = {
+				FocusOnTank
+				FocusOnAir
+				FocusOnInf
+				AttritionWarfare
+			}
+		}
+		ai_will_do = { base = 2 }
+	}
+	
+	#######################################
+	# POSTURE 8: ATTRITION WARFARE
+	# War only - keeps all conditions
+	#######################################
+	AI_Posture_Attrition = {
+		icon = genertic_industry
+		available = {
+			has_war = yes
+			num_of_military_factories > 30
+
+			# Long stalemate
+			longest_war_length > 12
+			enemies_strength_ratio > 0.9
+			enemies_strength_ratio < 1.3
+			surrender_progress < 0.15
+
+			# War is grinding, not moving much
+			has_manpower > 1000000
+
+			# Mass assault doctrine benefits from this
+			OR = {
+				has_doctrine = mass_assault
+				has_doctrine = grand_battleplan
+			}
+
+			# Not in other extreme postures
+			NOT = {
+				has_idea = Endsieg
+				has_idea = TheGreatCrusade
+				has_idea = BreakthroughOffensive
+				has_idea = AttritionWarfare
+			}
+		}
+		visible = { is_ai = yes }
+		cost = 0
+		days_re_enable = 300
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = AttritionWarfare
+				days = 300
+			}
+			remove_ideas = {
+				FocusOnTank
+				FocusOnAir
+				FortificationMode
+			}
+		}
+		ai_will_do = { base = 1 }
+	}
+
+	#######################################
+	# POSTURE 9: BREAKTHROUGH OFFENSIVE
+	# War only - keeps all conditions
+	#######################################
+	AI_Posture_Breakthrough = {
+		icon = genertic_industry
+		available = {
+			is_major = yes
+			has_war = yes
+			num_of_military_factories > 50
+
+			# We have moderate advantage, time to push
+			alliance_strength_ratio > 1.1
+			alliance_strength_ratio < 1.4
+			surrender_progress < 0.10
+
+			# War is developed but not endgame yet
+			longest_war_length > 5
+			longest_war_length < 15
+
+			# Have armor capability
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+
+			# Decent combined arms
+			has_deployed_air_force_size = {
+				size > 600
+				type = fighter
+			}
+
+			stockpile_ratio = {
+				archetype = infantry_equipment
+				ratio > 0.0
+			}
+
+			# Not in extremes
+			NOT = {
+				has_idea = Endsieg
+				has_idea = TheGreatCrusade
+				has_idea = BreakthroughOffensive
+				has_idea = FortificationMode
+			}
+		}
+		visible = { is_ai = yes }
+		cost = 0
+		days_re_enable = 240
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = BreakthroughOffensive
+				days = 240
+			}
+			remove_ideas = {
+				FocusOnInf
+				AttritionWarfare
+			}
+		}
+		ai_will_do = { base = 2 }
+	}
+}

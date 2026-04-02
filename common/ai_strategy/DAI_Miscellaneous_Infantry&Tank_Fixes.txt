@@ -1,0 +1,357 @@
+##################
+# INFANTRY & SUPPORT SECTION  #
+##################
+
+More_Infantry_focus = {
+    enable = {
+        arms_factory > 40
+        arms_factory < 69
+        has_equipment = { infantry_equipment < 1000 }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = equipment_production_factor
+        id = infantry
+        value = 50
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_tank
+        value = 50
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_air
+        value = 50
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = artillery
+        value = 50
+    }
+}
+
+More_Infantry_focus_2 = {
+    enable = {
+        arms_factory > 70
+        arms_factory < 99
+        has_equipment = { infantry_equipment < 1000 }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = equipment_production_factor
+        id = infantry
+        value = 75
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_tank
+        value = 75
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_air
+        value = 75
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = artillery
+        value = 75
+    }
+	
+}
+
+More_Infantry_focus_3 = {
+    enable = {
+        arms_factory > 100
+        has_equipment = { infantry_equipment < 1000 }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = equipment_production_factor
+        id = infantry
+        value = 125
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_tank
+        value = 125
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_air
+        value = 125
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = artillery
+        value = 125
+    }
+}
+
+PushForMoreInf = {
+    enable = { has_manpower > 1500000 }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = role_ratio
+        id = infantry
+        value = 20
+    }
+
+    ai_strategy = {
+        type = equipment_production_factor
+        id = infantry
+        value = 35
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_tank
+        value = 35
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_air
+        value = 35
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = artillery
+        value = 35
+    }
+}
+
+PushForMoreInfLGERAT = {
+    enable = { has_manpower > 3000000 }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = role_ratio
+        id = infantry
+        value = 10
+    }
+
+    ai_strategy = {
+        type = equipment_production_factor
+        id = infantry
+        value = 15
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_tank
+        value = 15
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = anti_air
+        value = 15
+    }
+	
+	ai_strategy = {
+        type = equipment_production_factor
+        id = artillery
+        value = 15
+    }
+}
+
+PushForMoreInf22222 = {
+    enable = {
+        stockpile_ratio = {
+            archetype = infantry_equipment
+            ratio > 0.2
+        }
+    }
+
+    abort_when_not_enabled = yes
+
+    # ai_strategy = {
+    #     type = role_ratio
+    #     id = infantry
+    #     value = 20
+    # }
+}
+
+##################
+# TANKS SECTION  #
+##################
+
+BuildLightTankIDIOT = {
+
+    enable = {
+        has_equipment = { light_tank_chassis < -200 }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = equipment_variant_production_factor
+        id = light_tank_chassis
+        value = 40
+    }
+}
+
+Ifyouhavethemusethem = {
+
+    enable = {
+        has_equipment = { light_tank_chassis > 200 }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = role_ratio
+        id = light_armor_role
+        value = 20
+    }
+	
+	ai_strategy = {
+        type = build_army
+        id = light_armor_role
+        value = 20
+    }
+}
+
+Ifyouhavethemusethem4 = {
+
+    enable = {
+        has_equipment = { light_tank_chassis > 1000 }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = role_ratio
+        id = light_armor_role
+        value = 20
+    }
+	
+	ai_strategy = {
+        type = build_army
+        id = light_armor_role
+        value = 20
+    }
+}
+
+Ifyouhavethemusethem2 = {
+
+    enable = {
+        has_equipment = { medium_tank_chassis > 1 }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = build_army
+        id = armor_role
+        value = 30
+    }
+	
+	ai_strategy = {
+        type = role_ratio
+        id = armor_role
+        value = 30
+    }
+}
+
+PushForMoreTONK = {
+
+    enable = {
+        #has_manpower < 1500000
+        arms_factory > 45
+        has_equipment = { infantry_equipment > 25000 }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = role_ratio
+        id = armor_role
+        value = 30
+    }
+	
+	ai_strategy = {
+        type = build_army
+        id = armor_role
+        value = 30
+    }
+
+    ai_strategy = {
+        type = equipment_production_factor
+        id = armor
+        value = 20
+    }
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = mechanized
+		value = 20
+	}
+}
+
+MajorsBuildTanksWithManpower = {
+
+    enable = {
+        is_major = yes
+        has_equipment = { infantry_equipment > 1 }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = role_ratio
+        id = armor_role
+        value = 50
+    }
+	
+	ai_strategy = {
+        type = build_army
+        id = armor_role
+        value = 50
+    }
+
+    ai_strategy = {
+        type = equipment_production_factor
+        id = armor
+        value = 50
+    }
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = mechanized
+		value = 50
+	}
+}

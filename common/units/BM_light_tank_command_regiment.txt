@@ -1,0 +1,95 @@
+sub_units = {
+	bm_light_tank_command_regiment = {
+		abbreviation = "LTCM"
+		sprite = light_armor
+		map_icon_category = armored
+		group = support
+
+		active = yes
+		affects_speed = no
+		can_be_parachuted = yes
+
+		priority = 600
+		ai_priority = 250
+
+		# TYPE
+		type = {
+			armor
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_tanks
+			category_support_battalions
+			category_all_armor
+			category_army
+		}
+
+		# MODIFERS
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 100
+		training_time = 120
+		weight = 0.3
+		supply_consumption = 0.04
+		fuel_consumption = -0.352
+		
+		defense = -0.7
+		breakthrough = -0.7
+		soft_attack = -0.7
+		hard_attack = -0.7
+		armor_value = -0.7
+        
+        # EQUIPMENT NEEDED
+        need = {
+			light_tank_chassis = 12
+			support_equipment = 12
+        }
+        
+        # REQUIRED EQUIPMENT
+        essential = {
+			light_tank_chassis
+			support_equipment
+        }
+        
+        # MODIFIER FOR CATEGORIES
+        battalion_mult = {
+            category = category_army
+			max_organisation = 0.10 # Because he is a commander
+            breakthrough = 0.05
+        }
+        
+        # TERRAIN
+		forest = {
+		    attack = -0.02
+			movement = -0.04
+		}
+		mountain = 	{
+		    attack = -0.01
+		}
+		jungle = {
+		    attack = -0.03
+			movement = -0.04
+		}
+		marsh = {
+		    attack = -0.01 
+			movement = -0.01
+		}
+		urban = {
+			attack = -0.04
+			defence = -0.01
+		}
+		river = { 
+			attack = -0.02 
+			movement = -0.02
+		}
+		amphibious = { 
+			attack = -0.04
+		}	
+
+        same_support_type = bm_command_regiment
+	}
+}
