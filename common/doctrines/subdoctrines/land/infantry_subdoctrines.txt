@@ -37,7 +37,10 @@ mobile_infantry = {
 
     rewards = {
         cavalry_charge = {
-            category_cavalry = {
+            mechanized = {
+                breakthrough = 0.20
+            }
+            motorized = {
                 breakthrough = 0.20
             }
         }
@@ -103,11 +106,9 @@ defensive_postures = {
     }
 
     #OTHER BASE REWARDS
-    category_cavalry = {
-        supply_consumption = -0.01
-    }
     category_all_infantry = {
         entrenchment = 0.2
+        supply_consumption = -0.01
     }
 
     rewards = {
@@ -704,6 +705,10 @@ peoples_war = {
                 defense = 0.1
                 supply_consumption = -0.02
             }
+            penal_battalion = {
+                defense = 0.1
+                supply_consumption = -0.02              
+            }
             category_light_infantry = {
                 max_organisation = 5
             }
@@ -713,20 +718,27 @@ peoples_war = {
         #2
             mastery = 50
             category_light_infantry = {
-                default_morale = 0.1
+                default_morale = 0.2
             }
             militia = {
-                equipment_capture_factor = 0.01
+                equipment_capture_factor = 0.02
+            }
+            penal_battalion = {
+               equipment_capture_factor = 0.02  
             }
         }
         quick_decision_offensive_warfare = {
         #3
             militia = {
                initiative = 0.01
-               max_organisation = 10
+               max_organisation = 20
                breakthrough = 0.2
             }
-            
+            penal_battalion = {
+                initiative = 0.01
+               max_organisation = 20
+               breakthrough = 0.2               
+            }
 
 
         }
@@ -734,10 +746,19 @@ peoples_war = {
         #4
             mastery = 50
             category_light_infantry = {
-                soft_attack = 0.1
+                soft_attack = 0.25
                 max_strength = 0.15
             }
         }
+       no_step_back = {
+        #5
+            mastery = 50
+            category_light_infantry = {
+                defense = 0.2
+                entrenchment = 0.25
+            }
+        }
+        
     }
 }
 
