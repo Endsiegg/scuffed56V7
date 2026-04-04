@@ -69,7 +69,7 @@ ai_front_management_rush_failing = {
 		surrender_progress > 0.2
 		surrender_progress < 0.4
 		has_manpower > 499
-		enemies_strength_ratio < 1.0
+		enemies_strength_ratio < 0.5
 	}
 	
 	abort_when_not_enabled = yes
@@ -291,40 +291,40 @@ ai_front_management_default_balanced = {
 # UTILITY: Defend home when losing
 # Priority: N/A (different strategy type)
 ############################################
-defend_your_home_please = {
-	enable = {
-		surrender_progress > 0.1
-	}
+#defend_your_home_please = {
+	#enable = {
+	#	surrender_progress > 0.1
+	#}
 	
-	abort_when_not_enabled = yes
+	#abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = spare_unit_factor
-		value = -100
-	}
+	#ai_strategy = {
+	#	type = spare_unit_factor
+	#	value = -100
+	#}
 	
-	ai_strategy = {
-		type = garrison
-		value = -100
-	}
-}
+	#ai_strategy = {
+	#	type = garrison
+	#	value = -100
+	#}
+#}
 
 ############################################
 # UTILITY: Don't waste troops on garrison if large empire
 # Priority: N/A (different strategy type)
 ############################################
-dont_waste_troops_please = {
-	enable = {
-		num_of_controlled_states > 70
-	}
+#dont_waste_troops_please = {
+	#enable = {
+	#	num_of_controlled_states > 70
+	#}
 	
-	abort_when_not_enabled = yes
+	#abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = garrison
-		value = -100
-	}
-}
+	#ai_strategy = {
+	#	type = garrison
+	#	value = -100
+	#}
+#}
 
 ############################################
 # UTILITY: Close pockets aggressively
