@@ -783,7 +783,7 @@ NDefines.NAI.LAND_COMBAT_CAS_PLANES_PER_ENEMY_ARMY_LIMIT = 300
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- Vanilla: WEAK 0.25 / NORMAL 0.35 / STRONG 0.75
  -- Raising STRONG means AI demands more readiness before committing to attacks. More patient fewer meatgrinder charges.
-NDefines.NAI.ORG_UNIT_WEAK = 0.28           -- vanilla 0.25 | slight raise = AI pulls back weaker units sooner
+NDefines.NAI.ORG_UNIT_WEAK = 0.29           -- vanilla 0.25 | slight raise = AI pulls back weaker units sooner
 NDefines.NAI.ORG_UNIT_NORMAL = 0.40         -- vanilla 0.35 | AI considers units "normal" only with more org
 NDefines.NAI.ORG_UNIT_STRONG = 0.80         -- vanilla 0.75 | AI waits for genuinely strong org before attacking
 

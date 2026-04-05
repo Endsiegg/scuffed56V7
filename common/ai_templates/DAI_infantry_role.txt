@@ -39,7 +39,7 @@ generic_infantry_role = {
 				anti_tank = 1
 				engineer = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 			}
 		}
 	}
@@ -67,7 +67,7 @@ generic_infantry_role = {
 				anti_air = 1
 				anti_tank = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 			}
 		}
 	}
@@ -95,7 +95,7 @@ generic_infantry_role = {
 				anti_air = 1
 				anti_tank = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 			}
 		}
 	}
@@ -123,7 +123,7 @@ generic_infantry_role = {
 				anti_air = 1
 				anti_tank = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 			}
 		}
 	}
@@ -150,7 +150,7 @@ generic_infantry_role = {
 				anti_air = 1
 				anti_tank = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 			}
 		}
 	}
@@ -184,9 +184,8 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 6
+				infantry = 7
 				artillery_brigade = 2
-				anti_tank_brigade = 2
 			}
 
 			support = {
@@ -196,7 +195,7 @@ generic_infantry_role = {
 				anti_tank = 1
 				anti_air = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				logistics_company = 1
 				field_hospital = 1
 				bm_flamethower_support = 1
@@ -220,9 +219,8 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 6
+				infantry = 7
 				artillery_brigade = 2
-				anti_tank_brigade = 2
 			}
 
 			support = {
@@ -232,7 +230,7 @@ generic_infantry_role = {
 				anti_tank = 1
 				anti_air = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				logistics_company = 1
 				field_hospital = 1
 				bm_flamethower_support = 1
@@ -240,7 +238,7 @@ generic_infantry_role = {
 		}
 	}
 	
-	GENERIC_INFANTRY_TEMPLATE_18_LIGHT_SFP = {
+	GENERIC_INFANTRY_TEMPLATE_20_LIGHT_SFP = {
 		enable = { 
 			AND = {
 				num_of_military_factories > 25
@@ -256,9 +254,8 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 6
+				infantry = 7
 				artillery_brigade = 2
-				anti_tank_brigade = 2
 			}
 
 			support = {
@@ -268,10 +265,10 @@ generic_infantry_role = {
 				anti_tank = 1
 				anti_air = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				logistics_company = 1
 				field_hospital = 1
-				bm_flamethower_support = 1		
+				bm_flamethower_support = 1	
 			}
 		}
 	}
@@ -293,9 +290,8 @@ generic_infantry_role = {
 
 		target_template = {
 			regiments = {
-				infantry = 6
+				infantry = 7
 				artillery_brigade = 2
-				anti_tank_brigade = 2
 			}
 
 			support = {
@@ -305,7 +301,7 @@ generic_infantry_role = {
 				anti_tank = 1
 				anti_air = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				logistics_company = 1
 				field_hospital = 1
 				bm_flamethower_support = 1		
@@ -341,7 +337,7 @@ generic_infantry_role = {
 				anti_tank = 1
 				anti_air = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				logistics_company = 1
 				field_hospital = 1
 				bm_flamethower_support = 1		
@@ -356,8 +352,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_RAM = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 40
-				num_of_military_factories < 199
+				num_of_military_factories > 50
+				num_of_military_factories < 120
 			}
 			NOT = {
 				OR = {
@@ -390,7 +386,7 @@ generic_infantry_role = {
 				bm_sniper_company = 1
 				bm_mortar_company = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				bm_flamethower_support = 1
 				logistics_company = 1
 				field_hospital = 1
@@ -401,8 +397,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_RAM_MW = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 69
-				num_of_military_factories < 199
+				num_of_military_factories > 50
+				num_of_military_factories < 120
 			}
 			has_doctrine = new_mobile_warfare
 		}
@@ -428,7 +424,7 @@ generic_infantry_role = {
 				bm_sniper_company = 1
 				bm_mortar_company = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				bm_flamethower_support = 1
 				logistics_company = 1
 				field_hospital = 1
@@ -439,8 +435,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_RAM_SFP = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 69
-				num_of_military_factories < 199
+				num_of_military_factories > 50
+				num_of_military_factories < 120
 			}
 			has_doctrine = superior_firepower
 		}
@@ -466,7 +462,7 @@ generic_infantry_role = {
 				bm_sniper_company = 1
 				bm_mortar_company = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				bm_flamethower_support = 1
 				logistics_company = 1
 				field_hospital = 1
@@ -477,8 +473,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_RAM_GBP = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 69
-				num_of_military_factories < 199
+				num_of_military_factories > 50
+				num_of_military_factories < 120
 			}
 			has_doctrine = grand_battleplan
 		}
@@ -504,7 +500,7 @@ generic_infantry_role = {
 				bm_sniper_company = 1
 				bm_mortar_company = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				bm_flamethower_support = 1
 				logistics_company = 1
 				field_hospital = 1
@@ -515,8 +511,8 @@ generic_infantry_role = {
 	GENERIC_INFANTRY_TEMPLATE_20_RAM_MA = {
 		enable = { 
 			AND = {
-				num_of_military_factories > 69
-				num_of_military_factories < 199
+				num_of_military_factories > 50
+				num_of_military_factories < 120
 			}
 			has_doctrine = mass_assault
 		}
@@ -540,9 +536,9 @@ generic_infantry_role = {
 				engineer = 1
 				signal_company = 1
 				bm_sniper_company = 1
-				anti_air = 1
+				bm_mortar_company = 1
 				recon = 1
-				bm_machine_gunner = 1
+				bm_mortar_company = 1
 				bm_flamethower_support = 1
 				logistics_company = 1
 				field_hospital = 1
@@ -558,7 +554,7 @@ generic_infantry_role = {
 
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH = {
 		enable = { 
-			num_of_military_factories > 199
+			num_of_military_factories > 120
 			NOT = {
 				OR = {
 					has_doctrine = mass_assault
@@ -600,7 +596,7 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH_MW = {
 		enable = { 
-			num_of_military_factories > 199
+			num_of_military_factories > 120
 			has_doctrine = new_mobile_warfare
 		}
 
@@ -635,7 +631,7 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH_SFP = {
 		enable = { 
-			num_of_military_factories > 199
+			num_of_military_factories > 120
 			has_doctrine = superior_firepower
 		}
 
@@ -670,7 +666,7 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH_GBP = {
 		enable = { 
-			num_of_military_factories > 199
+			num_of_military_factories > 120
 			has_doctrine = grand_battleplan
 		}
 
@@ -705,7 +701,7 @@ generic_infantry_role = {
 	
 	GENERIC_INFANTRY_TEMPLATE_40_BREAKTHROUGH_MA = {
 		enable = { 
-			num_of_military_factories > 199
+			num_of_military_factories > 120
 			has_doctrine = mass_assault
 		}
 
