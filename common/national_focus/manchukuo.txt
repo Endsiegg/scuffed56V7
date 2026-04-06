@@ -21,7 +21,7 @@ focus_tree = {
 		x = 1
 		y = 0
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -44,7 +44,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_pacify_the_countryside_2
 
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -67,7 +67,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_army_modernization_2
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -82,7 +82,7 @@ focus_tree = {
 	focus = {
 		id = MAN_winter_training_2
 		icon = GFX_goal_generic_cold_war
-		cost = 10
+		cost = 2
 		prerequisite = {
 			focus = MAN_mukden_military_academy_2
 		}
@@ -118,7 +118,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_pacify_the_countryside_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -190,7 +190,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_invite_japanese_settlers_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -202,7 +202,7 @@ focus_tree = {
 				limit = {
 					is_fully_controlled_by = ROOT
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 			}
 		}
 	}
@@ -244,20 +244,20 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				num_of_factories > 50
-				all_state = {
-					OR = {
-						NOT = { is_core_of = CHI }
-						NOT = { is_core_of = PRC }
-						OR = {
-							is_controlled_by = ROOT
-							CONTROLLER = { is_in_faction_with = ROOT }
-							CONTROLLER = { is_subject_of = ROOT }
-						}
-					}
-				}
-			}
+			# OR = {
+			# 	num_of_factories > 50
+			# 	all_state = {
+			# 		OR = {
+			# 			NOT = { is_core_of = CHI }
+			# 			NOT = { is_core_of = PRC }
+			# 			OR = {
+			# 				is_controlled_by = ROOT
+			# 				CONTROLLER = { is_in_faction_with = ROOT }
+			# 				CONTROLLER = { is_subject_of = ROOT }
+			# 			}
+			# 		}
+			# 	}
+			# }
 		}
 		
 		available_if_capitulated = yes
@@ -289,7 +289,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = MAN_trade_delegation
 				bonus = 1.0
-				uses = 1
+				uses = 2
 				category = industry
 			}
 		}
@@ -303,7 +303,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_trade_delegation_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
@@ -352,7 +352,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_expand_the_textile_industry_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -360,9 +360,9 @@ focus_tree = {
 
 		available = {
 			has_full_control_of_state = 716
-			716 = {
-				oil > 3
-			}			
+			# 716 = {
+			# 	oil > 3
+			# }			
 		}
 
 		completion_reward = {
@@ -398,7 +398,7 @@ focus_tree = {
 		x = 11
 		y = 0
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 6
@@ -519,7 +519,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_first_five_year_plan_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			base = 1
@@ -538,7 +538,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = MAN_first_five_year_plan_2
-		cost = 10
+		cost = 5
 
 		available = {
 			if = {
@@ -615,7 +615,7 @@ focus_tree = {
 
 		mutually_exclusive = { focus = MAN_support_hoshino_2 }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -665,7 +665,7 @@ focus_tree = {
 
 		mutually_exclusive = { focus = MAN_support_aikawa_2 }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -715,7 +715,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_support_aikawa_2
 
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -771,7 +771,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_support_hoshino_2
 
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -830,7 +830,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_total_economic_coherence_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
@@ -899,7 +899,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_invite_japanese_investors_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
@@ -982,7 +982,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_invite_japanese_investors_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -1008,7 +1008,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_develop_aluminum_sources_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
@@ -1142,7 +1142,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_total_economic_coherence_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1189,7 +1189,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_mukden_arsenal_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1300,7 +1300,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MAN_officer_academies_2
-		cost = 10
+		cost = 5
 		available = {
 			is_subject_of = JAP
 		}
@@ -1344,7 +1344,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = MAN_officer_academies_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1371,7 +1371,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_officer_academies_2
 
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1406,7 +1406,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_special_river_detachments_2
 
-		cost = 10
+		cost = 5
 		bypass = {
 			NOT = {
 				MEN = {
@@ -1457,7 +1457,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_military_supplies_requisition_law_2
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1485,7 +1485,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MAN_self_sufficient_military_2
-		cost = 10
+		cost = 5
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			army_experience = 10
@@ -1529,19 +1529,19 @@ focus_tree = {
 		y = 1
 		relative_position_id = MAN_self_sufficient_military_2
 
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-			IF = {
-				limit = { is_subject_of = JAP }
-				JAP = {
-					has_completed_focus = JAP_sea_purge_the_kodoha_faction
-				}
-			}
+			# IF = {
+			# 	limit = { is_subject_of = JAP }
+			# 	JAP = {
+			# 		has_completed_focus = JAP_sea_purge_the_kodoha_faction
+			# 	}
+			# }
 		}
 			
 		
@@ -1602,22 +1602,22 @@ focus_tree = {
 		y = 6
 		relative_position_id = MAN_first_five_year_plan_2
 
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-			IF = {
-				limit = { is_subject_of = JAP}
-				JAP = {
-					OR = {
-						has_completed_focus = JAP_support_the_kodoha_faction
-						has_completed_focus = JAP_revere_the_emperor_destroy_the_traitors
-					}
-				}
-			}
+			# IF = {
+			# 	limit = { is_subject_of = JAP}
+			# 	JAP = {
+			# 		OR = {
+			# 			has_completed_focus = JAP_support_the_kodoha_faction
+			# 			has_completed_focus = JAP_revere_the_emperor_destroy_the_traitors
+			# 		}
+			# 	}
+			# }
 		}
 			
 		
