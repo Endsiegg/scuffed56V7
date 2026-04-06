@@ -85,6 +85,7 @@ NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.15
 NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.1
 NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.05
 NDefines.NMilitary.PLANNING_DECAY = 0.04
+NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 5 -- how many CAS/TAC can enter a combat depending on enemy width there
 ----------------------------------
 NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
 NDefines.NAir.AIR_DEPLOYMENT_DAYS = 2
@@ -111,7 +112,7 @@ NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_DISRUPTION_MIN_DAMAGE_FACTOR = 0.05 -- 0
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_MAX_DISRUPTION_DAMAGE_TO_CONSIDER = 7.5 -- 15 Base
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_DIRECT_DISRUPTION_DAMAGE_FACTOR = 0.05 -- 0.01
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRUCK_MAX_FACTOR = 0.3 -- was 0.03 Base 0.3
-NDefines.NAir.NAVAL_STRIKE_AIR_VS_AIR_PASS_CHANCE = 25.0
+--NDefines.NAir.NAVAL_STRIKE_AIR_VS_AIR_PASS_CHANCE = 25.0
 NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = -0.10				-- 5x levels = 50% defense from bombing. Reduced since Technology would otherwise give you above 100% damage reduction.
 NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to create a mission
 0.0, -- AIR_SUPERIORITY
@@ -186,7 +187,8 @@ NDefines.NSupply.SUPPLY_DISRUPTION_DAILY_RECOVERY = 3.0
 -- NDefines.NAI.INDUSTRIAL_ORG_POLICY_CHANGE_SCALE 1.0 -- Policy change weight will be scaled by this value
 -- NDefines.NAI.INDUSTRIAL_ORG_TRAIT_RANK_FACTOR 0.80 -- When precomputing weights, traits will affect the final score less the further down the tree they are, by this factor
 -- NDefines.NAI.INDUSTRIAL_ORG_RESEARCH_BONUS_FACTOR 1.0 -- Research bonus will be multiplied by this factor when evaluating design teams
-
+--------------------------------------------------
+----10 SUPP COMPANIES DEFINES
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 5
 
