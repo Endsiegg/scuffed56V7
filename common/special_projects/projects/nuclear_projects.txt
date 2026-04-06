@@ -1,13 +1,18 @@
 sp_nuclear_reactor = {
 	specialization = specialization_nuclear	
 	icon = GFX_sp_nuclear_reactor
-	complexity = sp_complexity.large 
+	complexity = sp_complexity.insane 
 
 	project_tags = sp_tag_nuclear_power
 
 	allowed = {
 		
 	}
+
+	breakthrough_cost = {
+		specialization_nuclear = 2
+	}
+
 	available = { 
 		FROM = { has_tech = atomic_research }
 	}
@@ -17,7 +22,6 @@ sp_nuclear_reactor = {
 	}
 
 	prototype_time = sp_time.prototype.long	
-	
 	project_output = {
 		country_effects = {
 			custom_override_tooltip = {
@@ -273,6 +277,10 @@ sp_commercial_nuclear_reactor = {
 	resource_cost = {
 		resources = { steel=6 tungsten=4 chromium=7 }
 	}
+
+	breakthrough_cost = {
+		specialization_nuclear = 1
+	}
 	allowed = {
 		has_dlc = "Gotterdammerung"
 	}
@@ -409,7 +417,7 @@ sp_nuclear_engines = {
 	project_tags = sp_tag_nuclear_power
 	
 	prototype_time = sp_time.prototype.long	 
-	complexity = sp_complexity.medium
+	complexity = sp_complexity.insane
 
 	resource_cost = {
 		resources = { steel=4 tungsten=2 chromium=5 }
@@ -417,6 +425,9 @@ sp_nuclear_engines = {
 
 	special_project_parent = {
 		sp_nuclear_reactor	#changed from commercial reactor since there was just 8 months between these technologies IRL, and commercial reactor requires Gotterdamerung
+	}
+	breakthrough_cost = {
+		specialization_nuclear = 2
 	}
 	allowed = {
 		#has_dlc = "Gotterdammerung"	#DLC in vanilla, but we had these modules before them
@@ -473,18 +484,21 @@ sp_nuclear_bomb = {
 	project_tags = sp_tag_nuclear_warfare
 	
 	prototype_time = sp_time.prototype.long	
-	complexity = sp_complexity.large
+	complexity = sp_complexity.insane
 	resource_cost = {
 		resources = { steel=2 tungsten=8 chromium=2 }
 	}
 	special_project_parent = {
 		sp_nuclear_reactor
 	}
+	breakthrough_cost = {
+		specialization_nuclear = 3
+	}
 	allowed = {
-		year = 1945
+		#year = 1945
 	}
 	available = { 
-		year = 1945
+		#year = 1945
 	}
 	
 	project_output = {
@@ -709,12 +723,15 @@ sp_thermo_nuclear_bomb = {
 	special_project_parent = {
 		sp_nuclear_bomb
 	}
+	breakthrough_cost = {
+		specialization_nuclear = 4
+	}
 	allowed = {
 		has_dlc = "Gotterdammerung"
-		year = 1946
+		#year = 1946
 	}
 	available = { 
-		year = 1946
+		#year = 1946
 	}
 	
 	project_output = {
@@ -813,12 +830,15 @@ sp_nuclear_warheads = {
 		# Country must have Medium range ballistic missiles to be able to start this project
 		sp_rockets_medium_range_ballistic_missile
 	}
+	breakthrough_cost = {
+		specialization_nuclear = 6
+	}
 	allowed = {
 		has_dlc = "Gotterdammerung"
-		year = 1946
+		#year = 1946
 	}
 	available = {
-		year = 1946
+		#year = 1946
 	}
 	
 	project_output = {
