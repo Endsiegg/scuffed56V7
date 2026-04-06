@@ -86,6 +86,7 @@ NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.15
 NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.1
 NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.05
 NDefines.NMilitary.PLANNING_DECAY = 0.04
+NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 5 -- how many CAS/TAC can enter a combat depending on enemy width there
 ----------------------------------
 NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
 NDefines.NAir.AIR_DEPLOYMENT_DAYS = 2
@@ -112,7 +113,7 @@ NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_DISRUPTION_MIN_DAMAGE_FACTOR = 0.05 -- 0
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_MAX_DISRUPTION_DAMAGE_TO_CONSIDER = 7.5 -- 15 Base
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_DIRECT_DISRUPTION_DAMAGE_FACTOR = 0.05 -- 0.01
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRUCK_MAX_FACTOR = 0.3 -- was 0.03 Base 0.3
-NDefines.NAir.NAVAL_STRIKE_AIR_VS_AIR_PASS_CHANCE = 25.0
+--NDefines.NAir.NAVAL_STRIKE_AIR_VS_AIR_PASS_CHANCE = 25.0
 NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = -0.10				-- 5x levels = 50% defense from bombing. Reduced since Technology would otherwise give you above 100% damage reduction.
 NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to create a mission
 0.0, -- AIR_SUPERIORITY
@@ -139,6 +140,10 @@ NDefines.NNavy.SUPPLY_NEED_FACTOR = 0
 NDefines.NNavy.PRIDE_OF_THE_FLEET_UNASSIGN_COST = 0							-- cost to unassign/replace pride of the fleet
 NDefines.NNavy.PRIDE_OF_THE_FLEET_LOST_TEMP_MODIFIER_DURATION = 180	
 NDefines.NNavy.TRAINING_DAILY_COUNTRY_EXP_FACTOR = 0.002
+NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 1.0
+NDefines.NNavy.NAVAL_MINES_DECAY_AT_PEACE_TIME = 0.75
+NDefines.NNavy.DOMINANCE_DAILY_GAIN_FACTOR = 0.05
+NDefines.NNavy.DOMINANCE_DAILY_LOSS_FACTOR = 0.004
 ----------------------------------
 NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 35
 ----------------------------------
@@ -174,8 +179,8 @@ NDefines.NSupply.RAILWAY_BASE_FLOW = 10.0 -- 10.0
 NDefines.NSupply.RAILWAY_FLOW_PER_LEVEL = 10 --5.0
 NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 10 -- 5.0
 NDefines.NSupply.NODE_FLOW_BONUS_PER_RAIL_LEVEL = 0.8 -- 0.34
-NDefines.NSupply.NAVAL_BASE_FLOW = 15.0 -- 15.0 --used to also be NAVAL_FLOW_PER_LEVEL, presumed intended to be this
-NDefines.NSupply.NAVAL_FLOW_PER_LEVEL = 5.0 --5.0
+NDefines.NSupply.NAVAL_BASE_FLOW = 15.0 -- 5.0 --used to also be NAVAL_FLOW_PER_LEVEL, presumed intended to be this
+NDefines.NSupply.NAVAL_FLOW_PER_LEVEL = 5.0 --3.0
 NDefines.NSupply.SUPPLY_PATH_MAX_DISTANCE = 15 --15
 NDefines.NSupply.RAILWAY_DISTANCE_FACTOR_FOR_REINFORCEMENT_SPEED = 0.1 --0.3
 NDefines.NSupply.SUPPLY_DISRUPTION_DAILY_RECOVERY = 3.0
@@ -187,7 +192,10 @@ NDefines.NSupply.SUPPLY_DISRUPTION_DAILY_RECOVERY = 3.0
 -- NDefines.NAI.INDUSTRIAL_ORG_POLICY_CHANGE_SCALE 1.0 -- Policy change weight will be scaled by this value
 -- NDefines.NAI.INDUSTRIAL_ORG_TRAIT_RANK_FACTOR 0.80 -- When precomputing weights, traits will affect the final score less the further down the tree they are, by this factor
 -- NDefines.NAI.INDUSTRIAL_ORG_RESEARCH_BONUS_FACTOR 1.0 -- Research bonus will be multiplied by this factor when evaluating design teams
-
+--------------------------------------------------
+----10 SUPP COMPANIES DEFINES
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 5
-
+NDefines.NDoctrines.TRAINING_MASTERY_GAIN_FACTOR = 0.25
+NDefines.NDoctrines.MILITARY_ATTACHE_MASTERY_TRANSFER_FACTOR = 0.25
+NDefines.NDoctrines.MASTERY_BANK_MAX = 400

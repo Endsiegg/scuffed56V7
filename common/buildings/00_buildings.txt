@@ -69,8 +69,8 @@ buildings = {
 
 	land_facility = {
 		show_on_map = 1
-		base_cost = 12000
-		per_controlled_building_extra_cost = 5000
+		base_cost = 3000
+		per_controlled_building_extra_cost = 14000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 19
 		value = 1
@@ -245,8 +245,8 @@ buildings = {
 
 	naval_facility = {
 		show_on_map = 1
-		base_cost = 12000
-		per_controlled_building_extra_cost = 5000
+		base_cost = 3000
+		per_controlled_building_extra_cost = 14000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 18
 		value = 1
@@ -345,7 +345,7 @@ buildings = {
 		dlc_allowed = { has_dlc = Gotterdammerung }
 		hide_if_missing_tech = yes
 		show_on_map = 1
-		base_cost = 20000
+		base_cost = 10000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 24
 		value = 1
@@ -406,7 +406,7 @@ buildings = {
 
 		level_cap = {
 			state_max = 1
-			shares_slots = yes
+		#	shares_slots = yes
 			group_by = reactors
 		}
 	}
@@ -436,14 +436,14 @@ buildings = {
 
 		level_cap = {
 			state_max = 1
-			shares_slots = yes
+		#	shares_slots = yes
 			group_by = reactors
 		}
 	}
 
 	naval_supply_hub = {
 		show_on_map = 1
-		base_cost = 12500
+		base_cost = 6000
 		icon_frame = 28
 		disabled_in_dmz = yes
 		naval_supply_hub = yes
@@ -518,15 +518,15 @@ buildings = {
 
 		level_cap = {
 			state_max = 1
-			shares_slots = yes
+			#shares_slots = yes
 			group_by = reactors
 		}
 	}
 
 	nuclear_facility = {
 		show_on_map = 1
-		base_cost = 15000
-		per_controlled_building_extra_cost = 5000
+		base_cost = 20000
+		per_controlled_building_extra_cost = 10000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 20
 		value = 1
@@ -558,8 +558,8 @@ buildings = {
 
 	air_facility = {
 		show_on_map = 1
-		base_cost = 12000
-		per_controlled_building_extra_cost = 5000
+		base_cost = 3000
+		per_controlled_building_extra_cost = 14000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 17
 		value = 1
@@ -678,7 +678,7 @@ buildings = {
 	#### Energy
 	
 	energy_infrastructure = {
-		base_cost = 12000
+		base_cost = 6000
 		icon_frame = 30
 		value = 1
 
@@ -692,7 +692,7 @@ buildings = {
 			group_by = infrastructure_keystone
 		}
 		state_modifiers = {
-			local_factory_energy_consumption_per_infrastructure = -0.075
+			local_factory_energy_consumption_per_infrastructure = -0.1
 		}
 	}
 	
