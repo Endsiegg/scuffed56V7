@@ -7844,10 +7844,10 @@ focus_tree = {
 		relative_position_id = GER_strengthen_the_kriegsmarine
 		cost = 5
 		available = {
-			OR = {
-				NOT = { has_completed_focus = GER_trade_interdiction }
-				has_completed_focus = GER_unrestricted_convoy_raiding
-			}
+			# OR = {
+			# 	NOT = { has_completed_focus = GER_trade_interdiction }
+			# 	has_completed_focus = GER_unrestricted_convoy_raiding
+			# }
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
@@ -7953,7 +7953,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_3
+					type = ship_hull_heavy_2
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_3
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -7971,7 +7971,7 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_3
+						type = ship_hull_heavy_2
 						creator = "GER"
 						version_name = "Bismarck"
 					}
@@ -7983,7 +7983,7 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_3
+						type = ship_hull_heavy_2
 						creator = "GER"
 						version_name = "Bismarck"
 					}
@@ -8006,7 +8006,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_3
+					type = ship_hull_heavy_2
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_2
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -8024,7 +8024,7 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_3
+						type = ship_hull_heavy_2
 						creator = "GER"
 						version_name = "Bismarck"
 					}
@@ -8036,7 +8036,7 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_3
+						type = ship_hull_heavy_2
 						creator = "GER"
 						version_name = "Bismarck"
 					}
@@ -8059,7 +8059,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_3
+					type = ship_hull_heavy_2
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_3
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -8077,7 +8077,7 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_3
+						type = ship_hull_heavy_2
 						creator = "GER"
 						version_name = "Bismarck"
 					}
@@ -8089,7 +8089,7 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_3
+						type = ship_hull_heavy_2
 						creator = "GER"
 						version_name = "Bismarck"
 					}
@@ -8112,7 +8112,7 @@ focus_tree = {
 				create_equipment_variant = {
 					name = "Bismarck"				
 					name_group = GER_BB_HISTORICAL
-					type = ship_hull_heavy_3
+					type = ship_hull_heavy_2
 					modules = {
 						fixed_ship_battery_slot = ship_heavy_battery_2
 						fixed_ship_anti_air_slot = ship_anti_air_1
@@ -8130,7 +8130,7 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_3
+						type = ship_hull_heavy_2
 						creator = "GER"
 						version_name = "Bismarck"
 					}
@@ -8142,7 +8142,7 @@ focus_tree = {
 				}
 				add_equipment_production = {
 					equipment = {
-						type = ship_hull_heavy_3
+						type = ship_hull_heavy_2
 						creator = "GER"
 						version_name = "Bismarck"
 					}
@@ -8202,7 +8202,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			NOT = { has_completed_focus = GER_high_seas_fleet }
+		#	NOT = { has_completed_focus = GER_high_seas_fleet }
 			if = {
 				limit = {
 					has_dlc = "Man the Guns"
@@ -8985,10 +8985,10 @@ focus_tree = {
 		cost = 5
 	
 		available = {
-			OR = {
-				NOT = { has_completed_focus = GER_plan_z }
-				has_completed_focus = GER_high_seas_fleet
-			}
+			# OR = {
+			# 	NOT = { has_completed_focus = GER_plan_z }
+			# 	has_completed_focus = GER_high_seas_fleet
+			# }
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_MILITARY_CHARACTER }
@@ -9037,7 +9037,7 @@ focus_tree = {
 		relative_position_id = GER_trade_interdiction
 		cost = 5
 		available = {
-			NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
+		#	NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 		}
 
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
@@ -9165,7 +9165,7 @@ focus_tree = {
 		relative_position_id = GER_cruiser_warfare
 		cost = 5
 		available = {
-			NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
+			#NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 		}
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -9242,7 +9242,7 @@ focus_tree = {
 		relative_position_id = GER_trade_interdiction
 		cost = 5
 		available = {
-			NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
+			#NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 			has_war = yes
 		}
 
@@ -9312,7 +9312,7 @@ focus_tree = {
 		relative_position_id = GER_wolfpack_tactics
 		cost = 5
 		available = {
-			NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
+			#NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 		}
 
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
