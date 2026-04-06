@@ -139,6 +139,10 @@ NDefines.NNavy.SUPPLY_NEED_FACTOR = 0
 NDefines.NNavy.PRIDE_OF_THE_FLEET_UNASSIGN_COST = 0							-- cost to unassign/replace pride of the fleet
 NDefines.NNavy.PRIDE_OF_THE_FLEET_LOST_TEMP_MODIFIER_DURATION = 180	
 NDefines.NNavy.TRAINING_DAILY_COUNTRY_EXP_FACTOR = 0.002
+NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 1.0
+NDefines.NNavy.NAVAL_MINES_DECAY_AT_PEACE_TIME = 0.75
+NDefines.NNavy.DOMINANCE_DAILY_GAIN_FACTOR = 0.05
+NDefines.NNavy.DOMINANCE_DAILY_LOSS_FACTOR = 0.004
 ----------------------------------
 NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 35
 ----------------------------------
@@ -174,8 +178,8 @@ NDefines.NSupply.RAILWAY_BASE_FLOW = 10.0 -- 10.0
 NDefines.NSupply.RAILWAY_FLOW_PER_LEVEL = 10 --5.0
 NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 10 -- 5.0
 NDefines.NSupply.NODE_FLOW_BONUS_PER_RAIL_LEVEL = 0.8 -- 0.34
-NDefines.NSupply.NAVAL_BASE_FLOW = 15.0 -- 15.0 --used to also be NAVAL_FLOW_PER_LEVEL, presumed intended to be this
-NDefines.NSupply.NAVAL_FLOW_PER_LEVEL = 5.0 --5.0
+NDefines.NSupply.NAVAL_BASE_FLOW = 15.0 -- 5.0 --used to also be NAVAL_FLOW_PER_LEVEL, presumed intended to be this
+NDefines.NSupply.NAVAL_FLOW_PER_LEVEL = 5.0 --3.0
 NDefines.NSupply.SUPPLY_PATH_MAX_DISTANCE = 15 --15
 NDefines.NSupply.RAILWAY_DISTANCE_FACTOR_FOR_REINFORCEMENT_SPEED = 0.1 --0.3
 NDefines.NSupply.SUPPLY_DISRUPTION_DAILY_RECOVERY = 3.0
@@ -191,4 +195,6 @@ NDefines.NSupply.SUPPLY_DISRUPTION_DAILY_RECOVERY = 3.0
 ----10 SUPP COMPANIES DEFINES
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 5
-
+NDefines.NDoctrines.TRAINING_MASTERY_GAIN_FACTOR = 0.25
+NDefines.NDoctrines.MILITARY_ATTACHE_MASTERY_TRANSFER_FACTOR = 0.25
+NDefines.NDoctrines.MASTERY_BANK_MAX = 400
