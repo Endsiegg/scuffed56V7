@@ -12627,7 +12627,7 @@ focus_tree = {
 		id = USA_air_support
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = USA_air_war_plans_division }
-		mutually_exclusive = { focus = USA_strategic_bombing }
+		#mutually_exclusive = { focus = USA_strategic_bombing }
 		x = -1
 		y = 1
 		relative_position_id = USA_air_war_plans_division
@@ -12744,6 +12744,7 @@ focus_tree = {
 		y = 3
 		prerequisite = { focus = USA_CAS focus = USA_TAC }
 		relative_position_id = USA_air_support
+		mutually_exclusive = { focus = USA_us_air_force }
 		cost = 10
 
 		ai_will_do = {
@@ -12766,7 +12767,7 @@ focus_tree = {
 		id = USA_strategic_bombing
 		icon = GFX_goal_generic_occupy_start_war
 		prerequisite = { focus = USA_air_war_plans_division }
-		mutually_exclusive = { focus = USA_air_support }
+		#mutually_exclusive = { focus = USA_air_support }
 		x = 1
 		y = 1
 		relative_position_id = USA_air_war_plans_division
@@ -12871,6 +12872,7 @@ focus_tree = {
 		x = 1
 		y = 3
 		prerequisite = { focus = USA_combined_bomber_offensive focus = USA_flying_fortress }
+		mutually_exclusive = { focus = USA_us_army_airforce }
 		relative_position_id = USA_strategic_bombing
 		cost = 10
 

@@ -969,7 +969,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SOV_reorganize_the_pc_of_heavy_industry
-		cost = 5
+		cost = 10
 
 		available = {
 			any_owned_state = {
@@ -1969,7 +1969,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = oil
-					amount = 2
+					amount = 8
 					state = 582
 				}
 			}
@@ -2001,7 +2001,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = chromium
-					amount = 3
+					amount = 8
 					state = 573
 				}
 				add_to_temp_variable = { SOV_states_targeted_eastern_development = 1 }
@@ -2035,7 +2035,7 @@ focus_tree = {
 			}
 			add_resource = {
 				type = aluminium
-				amount = 1
+				amount = 8
 				state = 581
 			}
 		}
@@ -2109,15 +2109,15 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_the_ussr_academy_of_sciences
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 11
 		}
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SOV_fyp_controlled_factories_tier_3_tt
-				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_2 }
+				tooltip = SOV_fyp_controlled_factories_tier_5_tt
+				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_5 }
 			}
 			surrender_progress < 0.25 
 		}
@@ -2142,15 +2142,15 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_the_ussr_academy_of_sciences
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 10
 		}
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SOV_fyp_controlled_factories_tier_3_tt
-				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_2 }
+				tooltip = SOV_fyp_controlled_factories_tier_5_tt
+				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_5 }
 			}
 			surrender_progress < 0.25 
 		}
@@ -5513,7 +5513,7 @@ focus_tree = {
 		prerequisite = { focus = SOV_development_of_tankograd }
 		x = 0
 		y = 2
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 20			
 		}
@@ -7514,12 +7514,12 @@ focus_tree = {
 		available = {
 			217 = {
 				is_controlled_by = ROOT
-				OR = {
-					SOV = { surrender_progress > 0.15 }
-					any_neighbor_state = {
-						NOT = { is_controlled_by = ROOT }
-					}
-				}
+				# OR = {
+				# 	SOV = { surrender_progress > 0.15 }
+				# 	any_neighbor_state = {
+				# 		NOT = { is_controlled_by = ROOT }
+				# 	}
+				# }
 			}
 		}
 		bypass = {
@@ -7634,6 +7634,266 @@ focus_tree = {
 					}
 				}
 			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SOV_defense_of_the_monkey_front
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = SOV_defense_of_stalingrad }
+		available = {
+		}
+		bypass = {
+
+		}
+		x = -1
+		y = 1
+		relative_position_id = SOV_defense_of_stalingrad
+		cost = 1
+		ai_will_do = {
+			factor = 10 #high importance
+		}
+
+		completion_reward = {
+				#####------BAKU OIL REGION
+				233 = { #SOCHI
+					add_building_construction = {
+						type = anti_air_building
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 9663
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 9674
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 6692
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 11664
+						instant_build = yes
+					}
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}
+				231 = { #Georgia
+					add_building_construction = {
+						type = anti_air_building
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 3653
+						instant_build = yes
+					}
+						add_building_construction = {
+						type = bunker
+						level = 10
+						province = 3656
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 6669
+						instant_build = yes
+					}
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}
+				230 = { #Armenia
+					add_building_construction = {
+						type = anti_air_building
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 12441
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 3564
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 12320
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 4660
+						instant_build = yes
+					}
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}		
+				1044 = { #Nakhchivan
+					add_building_construction = {
+						type = anti_air_building
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 6997
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 13327
+						instant_build = yes
+					}
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}		
+				229 = { #Azerbaijan
+					add_building_construction = {
+						type = anti_air_building
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 9715
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 11704
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 12434
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 4473
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 1536
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 4614
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 4477
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 11645
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 4545
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 7495
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 7661
+						instant_build = yes
+					}
+
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}
+				232 = { #Dagestan
+					add_building_construction = {
+						type = anti_air_building
+						level = 5
+						instant_build = yes
+					}
+
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}			
+				#####-------THE STEEPS REGION
+				985 = { #ASHGABAT
+					add_building_construction = {
+						type = anti_air_building
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 12359
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 10510
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 12333
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 7491
+						instant_build = yes
+					}
+
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}
+				584 = { #Turkmenia
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}		
+				830 = { #BUKHARA
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}	
+				742 = { #TAJIKISTAN
+					add_dynamic_modifier = { modifier = SOV_armored_battery_69 scope = SOV }
+				}	
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -16145,7 +16405,7 @@ focus_tree = {
 		x = 3
 		y = -1
 		relative_position_id = SOV_anti_capitalist_policies
-		cost = 3
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -16290,7 +16550,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_baltic_security
-		cost = 3
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -16511,7 +16771,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_claims_in_baltic
-		cost = 5
+		cost = 10
 		
 		ai_will_do = {
 			factor = 10
@@ -16535,53 +16795,53 @@ focus_tree = {
 		}
 
 		bypass = {
-			OR = {
-				has_idea = SOV_molotov_ribbentrop_pact
+			# OR = {
+			# 	has_idea = SOV_molotov_ribbentrop_pact
 
-				NOT = { country_exists = POL }
+			# 	NOT = { country_exists = POL }
 
-				has_non_aggression_pact_with = POL
-				has_guaranteed = POL
+			# 	has_non_aggression_pact_with = POL
+			# 	has_guaranteed = POL
 
-				AND = {
-					OR = { 
-						owns_state = 89
-						89 = { is_claimed_by = ROOT }
-					}
-					OR = { 
-						owns_state = 91
-						91 = { is_claimed_by = ROOT }
-					}
-					OR = { 
-						owns_state = 93
-						93 = { is_claimed_by = ROOT }
-					}
-					OR = { 
-						owns_state = 94
-						94 = { is_claimed_by = ROOT }
-					}
-					OR = { 
-						owns_state = 95
-						95 = { is_claimed_by = ROOT }
-					}
-					OR = { 
-						owns_state = 935
-						935 = { is_claimed_by = ROOT }
-					}
-					OR = { 
-						owns_state = 936
-						936 = { is_claimed_by = ROOT }
-					}
-					OR = { 
-						owns_state = 784
-						784 = { is_claimed_by = ROOT }
-					}
-					OR = { 
-						owns_state = 96
-						96 = { is_claimed_by = ROOT }
-					}
-				}
-			}			
+			# 	AND = {
+			# 		OR = { 
+			# 			owns_state = 89
+			# 			89 = { is_claimed_by = ROOT }
+			# 		}
+			# 		OR = { 
+			# 			owns_state = 91
+			# 			91 = { is_claimed_by = ROOT }
+			# 		}
+			# 		OR = { 
+			# 			owns_state = 93
+			# 			93 = { is_claimed_by = ROOT }
+			# 		}
+			# 		OR = { 
+			# 			owns_state = 94
+			# 			94 = { is_claimed_by = ROOT }
+			# 		}
+			# 		OR = { 
+			# 			owns_state = 95
+			# 			95 = { is_claimed_by = ROOT }
+			# 		}
+			# 		OR = { 
+			# 			owns_state = 935
+			# 			935 = { is_claimed_by = ROOT }
+			# 		}
+			# 		OR = { 
+			# 			owns_state = 936
+			# 			936 = { is_claimed_by = ROOT }
+			# 		}
+			# 		OR = { 
+			# 			owns_state = 784
+			# 			784 = { is_claimed_by = ROOT }
+			# 		}
+			# 		OR = { 
+			# 			owns_state = 96
+			# 			96 = { is_claimed_by = ROOT }
+			# 		}
+			# 	}
+			# }			
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
