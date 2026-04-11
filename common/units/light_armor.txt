@@ -19,6 +19,7 @@ sub_units = {
 			category_front_line
 			category_all_armor
 			category_army
+			category_light_armor
 		}
 
 
@@ -42,10 +43,15 @@ sub_units = {
 		breakthrough = 0.15
 
 		suppression = 2.5
-
 		forest = {
-		    attack = -0.175
-			movement = -0.4
+			attack = 0.15
+			movement = 0.1
+			defense = 0.1
+		}
+		urban = {
+			attack = 0.15
+			movement = 0.1
+			defense = 0.1
 		}
 		mountain = 	{
 		    attack = -0.075
@@ -62,13 +68,9 @@ sub_units = {
 			attack = 0.15
 			movement = 0.10
 		}
-		urban = {
-			attack = -0.35
-			defence = -0.1
-		}
 		jungle = {
-			attack = -0.25
-			movement = -0.4
+			attack = -0.05
+			movement = -0.1
 		}
 		river = { 
 			attack = -0.15 

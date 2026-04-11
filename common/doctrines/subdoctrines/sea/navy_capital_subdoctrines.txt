@@ -176,16 +176,27 @@ armored_raiders = {
     }
 
     # EFFECTS
-	naval_supply_consumption_factor = -0.10
-	screening_without_screens = 0.10
+	screening_without_screens = 0.20
+    
+    equipment_bonus = {
+        capital_ship = {
+            naval_range = 0.1
+        }
+    }
 
     rewards = {
         expert_reconnaissance={
             battle_cruiser= {
-                surface_detection = 0.1
+                surface_visibility = -0.1
             }
 			battleship = {
-				surface_detection = 0.1
+				surface_visibility = -0.1
+            }
+        }
+        hit_and_run_tactics = {
+            battle_cruiser = {
+                hg_attack = 0.10
+                lg_attack = 0.05
 			}
         }
         speed_trials = {
@@ -219,12 +230,6 @@ armored_raiders = {
 				max_organisation = 5
 			}
         }
-        crisis_management={
-            modifier = {
-				navy_casualty_on_hit = -0.40
-				navy_casualty_on_sink = -0.20
-			}
-        }
     }
 }
 
@@ -256,26 +261,30 @@ coastal_defence_fleet = {
 			}
 		}
 	}
-	naval_supply_consumption_factor = -0.15
-	navy_max_range_factor = -0.10
+	naval_supply_consumption_factor = -0.20
+	navy_max_range_factor = -0.25
 
 
     rewards = {
         aging_navy={
-            modifier = { refit_speed = 0.15 }
+            modifier = { 
+                refit_speed = 0.20
+                refit_ic_cost = -0.20
+            }
         }
         casemate_upgrades = {
             equipment_bonus = {
                 ship_hull_cruiser_coastal_defense_ship = {
                     anti_air_attack = 0.15
-                    lg_attack = 0.05
+                    lg_attack = 0.1
+                    hg_attack = 0.1
                     instant = yes
                 }
             }
         }
         escort_duties= {
             heavy_cruiser= {
-                sub_detection = 0.15
+                sub_detection = 0.10
             }
 			light_cruiser= {
                 sub_detection = 0.10
@@ -283,13 +292,17 @@ coastal_defence_fleet = {
         }
         hail_of_fire = {
             modifier = {
-				naval_light_gun_hit_chance_factor = 0.05
+				naval_light_gun_hit_chance_factor = 0.10
+                naval_heavy_gun_hit_chance_factor = 0.10
 			}
         }
         spare_part_logistics={
-            modifier = {
-				refit_ic_cost = -0.15
-			}
+            equipment_bonus = {
+                ship_hull_cruiser_coastal_defense_ship = {
+				max_strength = 0.15
+                armor_value = 0.15
+			    }
+            }
         }
     }
 }
@@ -355,13 +368,13 @@ naval_gunfire_support = {
 
         green_water_operations={
     		battleship = {
-    			surface_visibility = -0.10
+    			hg_attack = 0.10
 			}
 			battle_cruiser = {
-    			surface_visibility = -0.10
+    			hg_attack = 0.10
 			}
 			heavy_cruiser = {
-    			surface_visibility = -0.10
+    			hg_attack = 0.10
 			}
 			naval_coordination = 0.1
 			refit_speed = 0.2
@@ -404,7 +417,10 @@ battleship_antiair_screen = {
     		battleship = {
     			fuel_consumption = -0.1
     		}
-    	}
+            battle_cruiser = {
+    			fuel_consumption = -0.1
+    		}
+        }
 
     	broad_air_cover = {
     		battleship = {
@@ -431,7 +447,7 @@ battleship_antiair_screen = {
     		equipment_bonus = {
     			ship_hull_heavy = {
     				armor_value = 0.15
-    				max_strength = 0.05
+    				max_strength = 0.15
     				lg_attack = 0.05
     				instant = yes
     			}
@@ -439,6 +455,3 @@ battleship_antiair_screen = {
     	}
     }
 }
-
-
-
