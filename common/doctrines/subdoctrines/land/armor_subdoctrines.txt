@@ -206,8 +206,8 @@ armored_infantry_support = {
             }
             assault_engineer = {
                 battalion_mult = {
-                category = category_heavy_armor
-                soft_attack = 1000
+                category = category_all_armor
+                soft_attack = 0.05
                 hard_attack = 0.05
                 reliability = 0.02                    
                 }
@@ -692,15 +692,14 @@ tank_destroyer_force = {
             assault_engineer = {
                 battalion_mult = {
                     category = category_tank_destroyers
-                    reliability = 0.02
-                    soft_attack = 0.05
+                    reliability = 0.05
                     hard_attack = 0.1
                 }
             }
         }
         redeployment_priority = {
             category_tank_destroyers = {
-                supply_consumption = -0.02
+                supply_consumption = -0.05
                 default_morale = 0.1
             }
         }
@@ -728,5 +727,290 @@ tank_destroyer_force = {
     }
 }
 
+heavy_armor_lance = {
+    track = armor
+    name = SUBDOCTRINE_HEAVY_ARMOR_LANCE
+    description = SUBDOCTRINE_HEAVY_ARMOR_LANCE_DESC
+    icon = GFX_doctrine_armored_spearhead_medium
 
 
+    xp_cost = 100
+    xp_type = army
+
+    visible = {
+        has_dlc = "No Compromise, No Surrender"
+    }
+
+    ai_will_do = {
+
+        base = 0
+    #    modifier = { # experimental but I am making a mistake drop for now
+    #        add = 2
+    #        ROOT = {
+    #            has_template_containing_unit = tank_destroyers
+    #        }
+    #    }
+    } 
+
+    category_heavy_armor = {
+        armor_value = 0.20
+        hard_attack = 0.1
+        soft_attack = 0.1
+        max_strength = 0.1
+    }
+
+    rewards = {
+
+        heavy_armored_command = {
+            bm_heavy_tank_command_regiment = {
+                battalion_mult = {
+                    category = category_heavy_armor
+                    max_organisation = 0.1
+                    breakthrough = 0.1
+                    defense = 0.1
+                    
+                }
+            }
+        }
+
+        
+        committed_operational_units = {
+            assault_engineer = {
+                battalion_mult = {
+                    category = category_heavy_armor
+                    soft_attack = 0.1
+                    hard_attack = 0.1
+                    ap_attack = 0.1
+                }
+            }
+        }
+        priority_maintenance = {
+            armored_maintenance = {
+                battalion_mult = {
+                    category = category_heavy_armor
+                    reliability = 0.15
+                    default_morale = 0.1
+                }
+            }
+        }
+
+        independent_maneuvers = {
+            category_heavy_armor = {
+                max_organisation = 6
+                initiative = 0.01
+            }
+        }
+
+        precision_strikes = {
+            armored_signal = {
+                battalion_mult = {
+                    category = category_heavy_armor
+                    hard_attack = 0.15
+                    soft_attack = 0.15
+
+                }
+            }
+        }
+    }
+
+}
+
+mass_standardization = {
+    track = armor
+    name = SUBDOCTRINE_MASS_STANDARDIZATION
+    description = SUBDOCTRINE_MASS_STANDARDIZATION_DESC
+    icon = GFX_doctrine_streamlined_deployment_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    visible = {
+        has_dlc = "No Compromise, No Surrender"
+    }
+
+    ai_will_do = {
+
+        base = 0
+    #    modifier = { # experimental but I am making a mistake drop for now
+    #        add = 2
+    #        ROOT = {
+    #            has_template_containing_unit = tank_destroyers
+    #        }
+    #    }
+    }  
+
+ 	equipment_bonus = {
+		medium_tank_chassis = {
+			armor_value = 0.1
+			build_cost_ic = -0.1
+			instant = yes
+				}
+			}
+
+    category_medium_armor = {
+        soft_attack = 0.1
+        hard_attack = 0.1
+    }
+
+    rewards = {
+        
+        committed_operational_command = {
+            bm_medium_tank_command_regiment = {
+                battalion_mult = {
+                    category = category_medium_armor
+                    soft_attack = 0.1
+                    hard_attack = 0.1
+                }
+            }
+        }
+
+        firepower_standardization = {
+            category_medium_armor = {
+                soft_attack = 0.1
+                hard_attack = 0.1
+            }
+        }
+
+        standardized_parts = {
+            armored_maintenance = {
+                battalion_mult = {
+                    category = category_medium_armor
+                    supply_consumption = -0.15
+                    max_organisation = 0.20
+                    default_morale = 0.2
+                }
+            }
+        }
+
+        reactive_crews = {
+            category_medium_armor = {
+                max_organisation = 10
+                initiative = 0.01
+            }
+        }
+
+        concentrated_fire = {
+            armored_signal = {
+                battalion_mult = {
+                    category = category_medium_armor
+                    soft_attack = 0.1
+                    hard_attack = 0.1
+                }
+            }
+        }
+    }
+}
+
+light_armor_maneuver = {
+    track = armor
+    name = SUBDOCTRINE_LIGHT_ARMOR_MANEUVER
+    description = SUBDOCTRINE_LIGHT_ARMOR_MANEUVER_DESC
+    icon = GFX_doctrine_armored_cavalry_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    visible = {
+        has_dlc = "No Compromise, No Surrender"
+    }
+
+    ai_will_do = {
+
+        base = 0
+    #    modifier = { # experimental but I am making a mistake drop for now
+    #        add = 2
+    #        ROOT = {
+    #            has_template_containing_unit = tank_destroyers
+    #        }
+    #    }
+    }  
+
+ 	equipment_bonus = {
+		light_tank_chassis = {
+			build_cost_ic = -0.10
+			instant = yes
+				}
+			}
+
+    category_light_armor = {
+        soft_attack = 0.15
+        breakthrough = 0.1
+        defense = 0.1
+    }
+
+    rewards = {
+        
+        rapid_operational_command = {
+            bm_light_tank_command_regiment = {
+                battalion_mult = {
+                    category = category_light_armor
+                    soft_attack = 0.15
+                    breakthrough = 0.05
+                    defense = 0.1
+                }
+            }
+        }
+
+        rapid_breakthrough = {
+            category_light_armor = {
+                soft_attack = 0.15
+                breakthrough = 0.05
+                defense = 0.1
+            }
+        }
+
+        simplified_logistics = {
+            logistics_company = {
+                battalion_mult = {
+                    category = category_light_armor
+                    supply_consumption = -0.05
+                    max_organisation = 0.1
+                    default_morale = 0.2
+                }
+            }
+        }
+
+        unified_crew = {
+            category_light_armor = {
+                max_organisation = 10
+                initiative = 0.01
+            }
+        }
+
+        ambush_tactics = {
+            armored_signal = {
+                battalion_mult = {
+                    category = category_light_armor
+                    soft_attack = 0.15
+                    breakthrough = 0.05
+                    defense = 0.1
+                }
+            }
+        }
+    }
+}
+
+modern_armor_assault = {
+    track = armor
+    name = SUBDOCTRINE_MODERN_ARMOR_ASSAULT
+    description = SUBDOCTRINE_MODERN_ARMOR_ASSAULT_DESC
+    icon = GFX_doctrine_armored_cavalry_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    visible = {
+        has_dlc = "No Compromise, No Surrender"
+    }
+
+    ai_will_do = {
+
+        base = 0
+    #    modifier = { # experimental but I am making a mistake drop for now
+    #        add = 2
+    #        ROOT = {
+    #            has_template_containing_unit = tank_destroyers
+    #        }
+    #    }
+    }
+}  

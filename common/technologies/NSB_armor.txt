@@ -459,6 +459,13 @@ technologies = {
 			position = { x = -4 y = 8 }
 		}
 
+		enable_equipment_modules = {
+			r56_tank_light_oscillating_turret
+		}
+		on_research_complete = {
+			custom_effect_tooltip = oscillating_turret_unlock_tt
+		}
+
 		path = {
 			leads_to_tech = modern_light_tank_chassis
 			research_cost_coeff = 1
@@ -512,10 +519,10 @@ technologies = {
 			position = { x = -4 y = @1944 }
 		}
 
-		path = {
-			leads_to_tech = oscillating_turret_tech
-			research_cost_coeff = 1
-		}
+		#path = {
+			#leads_to_tech = oscillating_turret_tech
+			#research_cost_coeff = 1
+		#}
 
 
 		ai_will_do = {
@@ -1800,60 +1807,60 @@ technologies = {
 		special_project_specialization = { specialization_land }
 	}
 
-	oscillating_turret_tech = {
+	#oscillating_turret_tech = {
 
-		research_cost = 1
-		start_year = 1950
-		folder = {
-			name = nsb_armour_folder
-			position = { x = -4 y = @1950 }
-		}
-		enable_equipment_modules = {
-			r56_tank_light_oscillating_turret
-		}
-		on_research_complete = {
-			custom_effect_tooltip = oscillating_turret_unlock_tt
-		}
-		show_effect_as_desc = yes
-		ai_will_do = {
-			factor = 1
+		#research_cost = 1
+		#start_year = 1950
+		#folder = {
+		#	name = nsb_armour_folder
+		#	position = { x = -4 y = @1950 }
+		#}
+		#enable_equipment_modules = {
+			#r56_tank_light_oscillating_turret
+		#}
+		#on_research_complete = {
+			#custom_effect_tooltip = oscillating_turret_unlock_tt
+		#}
+		#show_effect_as_desc = yes
+		#ai_will_do = {
+			#factor = 1
 
-			modifier = {
-				factor = 2
-				is_major = yes
-			}
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
+			#modifier = {
+			#	factor = 2
+			#	is_major = yes
+			#}
+			#modifier = {
+				#has_war = yes
+				#factor = 2
+			#}
 
-			modifier = {
-				factor = 1.1
-				date > "1937.1.1"
-			}
+			#modifier = {
+				#factor = 1.1
+				#date > "1937.1.1"
+			#}
 
-			modifier = {
-				factor = 1.1
-				date > "1938.1.1"
-			}
+			#modifier = {
+				#factor = 1.1
+				#date > "1938.1.1"
+			#}
 
-			modifier = {
-				factor = 1.1
-				date > "1939.1.1"
-			}
-		}
+			#modifier = {
+				#factor = 1.1
+				#date > "1939.1.1"
+			#}
+		#}
 
-		categories = {
-			armor
-			armor_variant_tech
-			cat_light_armor
-			mio_cat_tech_all_armor_and_modules
-			mio_cat_tech_light_armor_and_modules
-			mio_cat_tech_medium_armor_and_modules
-			mio_cat_tech_heavy_armor_and_modules
-		}
-		special_project_specialization = { specialization_land }
-	}
+		#categories = {
+			#armor
+			#armor_variant_tech
+			#cat_light_armor
+			#mio_cat_tech_all_armor_and_modules
+			#mio_cat_tech_light_armor_and_modules
+			#mio_cat_tech_medium_armor_and_modules
+			#mio_cat_tech_heavy_armor_and_modules
+		#}
+		#special_project_specialization = { specialization_land }
+	#}
 
 	NOR_rikstanken_tech = {	#AAT
 
