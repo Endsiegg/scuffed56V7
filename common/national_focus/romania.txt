@@ -6881,7 +6881,7 @@ focus_tree = {
 			factor = 1
 		}
 
-		completion_reward = {
+		completion_reward = {			
 			84 = {
 				add_building_construction = {
 					type = dam
@@ -6889,6 +6889,10 @@ focus_tree = {
 					province = 3665
 				}
 			}
+			custom_effect_tooltip = {
+                localization_key = building_state_modifier|dam
+                INDENT = "    "
+            }			
 			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				prioritize = { 84 }
@@ -6899,6 +6903,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -7570,7 +7575,7 @@ focus_tree = {
         completion_reward = {
 			add_tech_bonus = {
 				name = infantry_weapons_bonus
-				bonus = 0.5
+				bonus = 1
 				uses = 2
 				category = infantry_weapons
 			}
@@ -7592,7 +7597,7 @@ focus_tree = {
         completion_reward = {
 			add_tech_bonus = {
 				name = ROM_support_equipment_redesign
-				bonus = 0.5
+				bonus = 1
 				uses = 2
 				category = support_tech
 			}
@@ -7642,7 +7647,7 @@ focus_tree = {
 			custom_effect_tooltip = ROM_defend_our_skies_tt
 			add_tech_bonus = {
 				name = ROM_defend_our_skies
-				bonus = 0.75
+				bonus = 1
 				uses = 2
 				category = anti_air_tech
 			}
@@ -7714,7 +7719,7 @@ focus_tree = {
 		mutually_exclusive = { focus = ROM_heavy_firepower }
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -7847,7 +7852,7 @@ focus_tree = {
 		mutually_exclusive = { focus = ROM_mobility_and_armor }
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -7938,7 +7943,7 @@ focus_tree = {
 		prerequisite = { focus = ROM_heavy_firepower }
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8005,7 +8010,7 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8086,7 +8091,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_war = yes
+			#has_war = yes
 		}
 
 		completion_reward = {
@@ -8212,7 +8217,7 @@ focus_tree = {
 
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8524,7 +8529,7 @@ focus_tree = {
 
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8545,7 +8550,7 @@ focus_tree = {
 
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -8578,7 +8583,7 @@ focus_tree = {
 		}
 
 		available = {
-			num_of_factories > 50
+			num_of_factories > 30
 		}
 
 		completion_reward = {
@@ -8746,7 +8751,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -8780,7 +8785,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -8809,8 +8814,8 @@ focus_tree = {
 			navy_experience = 15 
 			add_tech_bonus = {
 				name = sub_op_bonus
-				bonus = 0.5
-				uses = 2
+				bonus = 1
+				uses = 1
 				#ahead_reduction = 2
                 category = ss_tech
 			}     
@@ -8843,7 +8848,7 @@ focus_tree = {
 		relative_position_id = ROM_romanian_submarines
 		x = 0
 		y = 2
-		cost = 10 
+		cost = 5
 		ai_will_do = {
 			factor = 1 
 		} 
@@ -8872,8 +8877,8 @@ focus_tree = {
 			navy_experience = 15 
 			add_tech_bonus = {
 				name = sub_op_bonus
-				bonus = 0.5
-				uses = 2
+				bonus = 1
+				uses = 1
 				#ahead_reduction = 1
                 category = dd_tech
 			}
@@ -8908,7 +8913,7 @@ focus_tree = {
 		relative_position_id = ROM_romanian_destroyers
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}
@@ -8916,7 +8921,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = ROM_light_cruisers
 				bonus = 1
-				uses = 2
+				uses = 1
 				#ahead_reduction = 1
                 category = cl_tech
 			}
@@ -8959,7 +8964,7 @@ focus_tree = {
 		mutually_exclusive = { focus = ROM_carrier_experiments }
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 30
 		}
@@ -8993,7 +8998,7 @@ focus_tree = {
 		mutually_exclusive = { focus = ROM_the_battlecruiser_experiment }
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
