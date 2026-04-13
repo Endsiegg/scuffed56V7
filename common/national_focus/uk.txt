@@ -1516,6 +1516,12 @@ focus_tree = {
 					bonus = 0.75
 					uses = 1
 				}
+				add_tech_bonus = {
+					name = air_rearmament_focus
+					bonus = 0.5	#56
+					uses = 3
+					category = air_equipment
+				}
 			}
 			else_if = {
 				limit = {
@@ -1751,39 +1757,27 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					NOT = { has_dlc = "By Blood Alone" }
-				}
-				air_experience = 25
-				add_tech_bonus = {
-					name = fighter_command_focus
-					bonus = 1.0
-					uses = 2
-					category = light_fighter
-					category = cat_heavy_fighter
-				}
-			}
-			else_if = {
-				limit = {
 					has_dlc = "By Blood Alone"
 				}
-				air_experience = 25
 				add_tech_bonus = {
-					name = fighter_command_focus
-					bonus = 1.0
+					name = air_bonus
+					bonus = 1
+					ahead_reduction = 1
 					uses = 1
-					category = light_air
+					technology = improved_small_airframe
+					technology = advanced_small_airframe
 				}
+
+			}
+			else = {
 				add_tech_bonus = {
-					name = fighter_command_focus
-					bonus = 0.75
+					name = air_bonus
+					bonus = 1
+					ahead_reduction = 1
 					uses = 1
-					technology = range_improvements
-				}
-				add_doctrine_cost_reduction = {
-					name = fighter_command_focus #land_doc_bonus
-					cost_reduction = 0.5
-					uses = 1
-					category = air_doctrine
+					technology = fighter1
+					technology = fighter2
+					technology = fighter3
 				}
 			}
 		}
@@ -1804,37 +1798,28 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_ideas = strategic_bombing_focus
+			add_ideas = ENG_bombing_focus
 			if = {
-				limit = {
-					NOT = { has_dlc = "By Blood Alone" }
-				}
-				air_experience = 25
-				add_tech_bonus = {
-					name = bomber_command_focus
-					bonus = 1.0
-					uses = 2
-					category = cat_strategic_bomber
-					category = tactical_bomber
-				}
-			}
-			else_if = {
 				limit = {
 					has_dlc = "By Blood Alone"
 				}
-				air_experience = 25
-				add_tech_bonus = {
-					name = bomber_command_focus
-					bonus = 1.0
+				add_tech_bonus = {	#56
+					name = air_bonus
+					bonus = 1
+					ahead_reduction = 1
 					uses = 1
-					category = heavy_air
-					category = medium_air
+					technology = improved_medium_airframe
+					technology = advanced_medium_airframe
 				}
-				add_doctrine_cost_reduction = {
-					name = bomber_command_focus #land_doc_bonus
-					cost_reduction = 0.5
+			}
+			else = {	#56
+				add_tech_bonus = {
+					name = air_bonus
+					bonus = 1
 					uses = 1
-					category = air_doctrine
+					technology = tactical_bomber1
+					technology = tactical_bomber2
+					technology = tactical_bomber3
 				}
 			}
 		}
