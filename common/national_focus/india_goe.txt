@@ -10784,7 +10784,7 @@ focus_tree = {
                     value = THIS
                 }
                 NOT = {
-                    state = 992 #Aden
+                    state = 659 #56 - Aden
                 }
             }
             has_capitulated = no
@@ -11153,7 +11153,7 @@ focus_tree = {
                     array = RAJ.owned_states_at_game_start 
                     limit = { 
                         is_controlled_by = ROOT 
-                        NOT = { state = 992 }
+                        NOT = { state = 659 } #56 - Aden
                     } 
                     
 
@@ -15810,7 +15810,7 @@ focus = {
 	x = -1
 	y = 1
 	relative_position_id = RAJ_confer_with_the_congress 
-	cost = 10
+	cost = 5
 
 	mutually_exclusive = { focus = RAJ_court_the_princes }
 
@@ -16076,7 +16076,7 @@ focus = {
 	x = -1
 	y = 1
 	relative_position_id = RAJ_the_indian_parliament 
-	cost = 10
+	cost = 5
 
 	available = {
 		ENG = {
@@ -16143,7 +16143,7 @@ focus = {
 	x = 1
 	y = 1
 	relative_position_id = RAJ_the_indian_parliament 
-	cost = 10
+	cost = 5
 
 	search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_MANPOWER }
 
@@ -16184,7 +16184,7 @@ focus = {
 	x = 0
 	y = 1
 	relative_position_id = RAJ_the_punjab_accord 
-	cost = 10
+	cost = 5
 
 	available = {
 		is_subject_of = ENG
@@ -16363,7 +16363,7 @@ focus = {
 	x = 1
 	y = 1
 	relative_position_id = RAJ_imperial_industry_initiative 
-	cost = 10
+	cost = 5
 
 	available = {
 		industrial_complex > 39
@@ -16497,7 +16497,7 @@ focus = {
 	x = -1
 	y = 1
 	relative_position_id = RAJ_expand_the_zamindari_system 
-	cost = 10
+	cost = 5
 
 	search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 
@@ -16624,7 +16624,7 @@ focus = {
 	x = 1
 	y = 1
 	relative_position_id = RAJ_expand_the_zamindari_system 
-	cost = 10
+	cost = 5
 
 	search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -16868,7 +16868,7 @@ focus = {
 	x = 1
 	y = 1
 	relative_position_id = RAJ_the_riches_of_the_raj 
-	cost = 10
+	cost = 5
 
 	search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -17096,7 +17096,7 @@ focus = {
 	x = -1
 	y = 1
 	relative_position_id = RAJ_strengthen_ties_with_british_investors_GOE 
-	cost = 10
+	cost = 5
 
 	search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
@@ -17360,16 +17360,16 @@ focus = {
 	x = -2
 	y = 2
 	relative_position_id = RAJ_indian_gentleman_officers 
-	cost = 10
+	cost = 5
 
 	available = {
-		992 = { is_fully_controlled_by = ROOT }
+		659 = { is_fully_controlled_by = ROOT } #56 - Aden
 	}
 
 	search_filters = { FOCUS_FILTER_INDUSTRY }
 
 	completion_reward = {
-		992 = {
+		659 = { #56 - Aden
 			add_dynamic_modifier = {
 				modifier = idea_RAJ_aden_treaty_port
 			}
@@ -17791,7 +17791,7 @@ focus = {
 	x = 1
 	y = 1
 	relative_position_id = RAJ_linlithgows_declaration_of_war 
-	cost = 10
+	cost = 5
 
 	search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
 
@@ -17829,7 +17829,7 @@ focus = {
 	x = -1
 	y = 1
 	relative_position_id = RAJ_mobilization_of_the_indian_army 
-	cost = 10
+	cost = 5
 
 	available = {
 		NOT = { has_idea = RAJ_mobilization_of_the_indian_army }
@@ -17970,11 +17970,11 @@ focus = {
 	x = 1
 	y = 1
 	relative_position_id = RAJ_mobilization_of_the_indian_army 
-	cost = 10
+	cost = 5
 
 	available = {
 		NOT = { has_idea = RAJ_mobilization_of_the_indian_army }
-		has_war = yes
+		#has_war = yes
 		has_tech = interwar_antiair
 		if = {
 			limit = {
@@ -18330,7 +18330,7 @@ focus = {
 	x = 0
 	y = 1
 	relative_position_id = RAJ_desert_training 
-	cost = 10
+	cost = 5
 
 	available = {
 		447 = {
@@ -18469,7 +18469,7 @@ focus = {
 	x = -1
 	y = 1
 	relative_position_id = RAJ_jungle_training_GOE 
-	cost = 10
+	cost = 5
 
 	available = {
 		336 = {
@@ -18662,10 +18662,10 @@ focus = {
 	x = 1
 	y = 1
 	relative_position_id = RAJ_jungle_training_GOE 
-	cost = 10
+	cost = 5
 
 	available = {
-		995 = {
+		640 = {
 			controller = {
 				OR = {
 					original_tag = ROOT
@@ -18675,7 +18675,7 @@ focus = {
 			}
 		}
 
-		998 = {
+		1019 = {
 			controller = {
 				OR = {
 					original_tag = ROOT
@@ -18689,7 +18689,7 @@ focus = {
 			tooltip = {
 				localization_key = generic_requires_divs_in_state_tt
 				NUM_DIVISIONS = 0 #Needs to match "count" in num_divisions_in_states
-				STATE = [995.GetName] #Needs to match "states" in num_divisions_in_states
+				STATE = [640.GetName] #Needs to match "states" in num_divisions_in_states
 			}
 			num_divisions_in_states = {
 				count > 0
@@ -18702,7 +18702,7 @@ focus = {
 			tooltip = {
 				localization_key = generic_requires_divs_in_state_tt
 				NUM_DIVISIONS = 0 #Needs to match "count" in num_divisions_in_states
-				STATE = [998.GetName] #Needs to match "states" in num_divisions_in_states
+				STATE = [1019.GetName] #Needs to match "states" in num_divisions_in_states
 			}
 			num_divisions_in_states = {
 				count > 0
@@ -18713,7 +18713,7 @@ focus = {
 	}
 
 	bypass = {
-		995 = {
+		1019 = {
 			controller = {
 				NOT = {
 					original_tag = ROOT
@@ -18722,7 +18722,7 @@ focus = {
 			}
 		}
 
-		998 = {
+		640 = {
 			controller = {
 				NOT = {
 					original_tag = ROOT
@@ -18744,7 +18744,7 @@ focus = {
 			####
 		### PEGU (Rangoon) ###
 			####
-		995 = { #PEGU
+		1020 = { #PEGU
 			#Air base
 			add_building_construction = {
 				type = air_base
@@ -18793,7 +18793,7 @@ focus = {
 			####
 		if = {
 			limit = {
-				994 = {
+				1020 = {
 					controller = {
 						is_ally_with = ROOT
 						OR = {
@@ -18804,7 +18804,7 @@ focus = {
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			994 = {
+			1020 = {
 				if = {
 					limit = {
 						controller = {
@@ -18841,7 +18841,7 @@ focus = {
 			####
 		### SAGAING (Myitkyina) ###
 			####
-		998 = { #SAGAING
+		1019 = { #SAGAING
 			#Air base
 			add_building_construction = {
 				type = air_base
@@ -18889,7 +18889,7 @@ focus = {
 			####
 		if = {
 			limit = {
-				999 = {
+				640 = {
 					controller = {
 						is_ally_with = ROOT
 						OR = {
@@ -18901,7 +18901,7 @@ focus = {
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			999 = {
+			640 = {
 				if = {
 					limit = {
 						controller = {
@@ -18952,7 +18952,7 @@ focus = {
 			####
 		if = {
 			limit = {
-				993 = {
+				1018 = {
 					controller = {
 						is_ally_with = ROOT
 						OR = {
@@ -18964,7 +18964,7 @@ focus = {
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			993 = {
+			1018 = {
 				if = {
 					limit = {
 						controller = {
@@ -19014,22 +19014,22 @@ focus = {
 		every_state = {
 			limit = {
 				OR = {
-					state = 995
-					state = 998
+					state = 1018
+					state = 640
 					AND = {
-						state = 994
+						state = 1019
 						controller = {
 							is_ally_with = ROOT
 						}
 					}
 					AND = {
-						state = 999
+						state = 640
 						controller = {
 							is_ally_with = ROOT
 						}
 					}
 					AND = {
-						state = 993
+						state = 1018
 						controller = {
 							is_ally_with = ROOT
 						}
@@ -19047,8 +19047,8 @@ focus = {
 			limit = {
 				BRM = {
 					exists = yes 
-					controls_state = 995 # PEGU (Rangoon)
-					controls_state = 998 # SAGAING (Myitkyina)
+					controls_state = 1019 # PEGU (Rangoon)
+					controls_state = 640 # SAGAING (Myitkyina)
 					OR = { #To avoid transferring states controlled by enemy, messing up the controller.
 						has_war = no
 						all_enemy_country = {
@@ -19074,8 +19074,8 @@ focus = {
 				BRM = {
 					is_ai = yes #Do not annex a player without they having a say
 					exists = yes 
-					controls_state = 995 # PEGU (Rangoon)
-					controls_state = 998 # SAGAING (Myitkyina)
+					controls_state = 1019 # PEGU (Rangoon)
+					controls_state = 640 # SAGAING (Myitkyina)
 					OR = { #To avoid transferring states controlled by enemy, messing up the controller.
 						has_war = no
 						all_enemy_country = {
@@ -19099,10 +19099,10 @@ focus = {
 	x = 0
 	y = 1
 	relative_position_id = RAJ_defense_of_burma 
-	cost = 10
+	cost = 5
 
 	available = {
-		1105 = { #MANIPUR (Imphal) #r56 was 990
+		430 = { #MANIPUR (Imphal) #r56 was 990
 			state_is_fully_controlled_by_ROOT_or_subject = yes
 		}
 	}
@@ -19110,7 +19110,7 @@ focus = {
 	search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
 
 	completion_reward = {
-		1105 = { #MANIPUR (Imphal) #r56 was 990
+		431 = { #MANIPUR (Imphal) #r56 was 990
 			#Air base
 			add_building_construction = {
 				type = air_base
@@ -19151,7 +19151,7 @@ focus = {
 			####
 		if = {
 			limit = {
-				434 = { #ARUNACHAL PRADESH
+				288 = { #ARUNACHAL PRADESH
 					controller = {
 						is_ally_with = ROOT
 						controls_province = 1996
@@ -19159,12 +19159,12 @@ focus = {
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			434 = {
+			288 = {
 				add_building_construction = {
 					type = bunker
 					level = 4
 					instant_build = yes
-					province = 1996
+					province = { all_provinces = yes }
 				}
 
 				add_dynamic_modifier = {
@@ -19301,7 +19301,7 @@ focus = {
 
 	available = {
 		has_tech = marines
-		992 = { #ADEN
+		659 = { #56 - ADEN
 			controller = {
 				is_ally_with = ROOT
 			}
@@ -19367,7 +19367,7 @@ focus = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		992 = {
+		659 = { #56 - Aden
 			create_unit = {
 				division = "division_template = \"Royal Marines\" start_experience_factor = 0.7 start_equipment_factor = 1.0"
 				owner = ROOT
@@ -19429,7 +19429,7 @@ focus = {
 	x = 0
 	y = 1
 	relative_position_id = RAJ_urban_training 
-	cost = 10
+	cost = 5
 
 	available = {
 		326 = {
@@ -19580,7 +19580,7 @@ focus = {
         y = 1
         relative_position_id = RAJ_indianize_the_army
        
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
@@ -20033,7 +20033,7 @@ focus = {
     #############
     focus = {
         id = RAJ_east_india_railways_dlc
-        icon = GFX_goal_generic_construct_infrastructure
+        icon = GFX_goal_generic_railroad #R56 - More variety for icons
         #prerequisite = { focus =  }
         x = 7
         y = 0
@@ -20102,7 +20102,7 @@ focus = {
         relative_position_id = RAJ_east_india_railways_dlc
         
         prerequisite = { focus =  RAJ_east_india_railways_dlc }
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
@@ -20268,7 +20268,7 @@ focus = {
 
     focus = {
         id = RAJ_bombay_baroda_and_central_india_railway
-        icon = GFX_goal_generic_construct_infrastructure
+        icon = GFX_goal_generic_train_2 #R56 - more variety in icons
         #prerequisite = { focus =  }
         x = 4
         y = 0
@@ -20465,7 +20465,7 @@ focus = {
 
     focus = {
         id = RAJ_north_western_state_railway
-        icon = GFX_goal_generic_construct_infrastructure
+        icon = GFX_goal_PAL_jizya #R56 - more variety in icons
         prerequisite = { focus = RAJ_great_indian_peninsula_railway_dlc }
         x = 2
         y = 1
@@ -20857,7 +20857,7 @@ focus = {
         y = 1
         relative_position_id = RAJ_local_recruitment_offices
         icon = GFX_focus_generic_commonwealth_build_infantry
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
@@ -20892,7 +20892,7 @@ focus = {
         y = 1
         relative_position_id = RAJ_military_pensions
         
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
@@ -21683,7 +21683,7 @@ focus = {
         y = 1
         relative_position_id = RAJ_abolish_agrarian_society_criteria
         
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
@@ -21750,13 +21750,17 @@ focus = {
                 category = synth_resources # optional 
                 # technology  = technology_id # optional
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt #R56 - to show the player that they actually gain the industrial concern
+            custom_effect_tooltip = available_industrial_concern
+            show_ideas_tooltip = RAJ_assam_oil_company_r56
         }
     }
     
 
     focus = {
         id = RAJ_tata_steel_dlc
-        icon = GFX_goal_generic_construct_civilian
+        icon = GFX_focus_generic_mining_industry #R56 - more variety in icons
         prerequisite = { focus = RAJ_bombay_baroda_and_central_india_railway }
         x = 0
         y = 1
@@ -21785,6 +21789,10 @@ focus = {
                     amount = 24
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt #R56 - to show the player that they actually gain the industrial concern
+            custom_effect_tooltip = available_industrial_concern
+            show_ideas_tooltip = RAJ_tata_steel
         }
     }
 
@@ -22012,7 +22020,7 @@ focus = {
 
     focus = {
         id = RAJ_gun_and_shell_factory_cossipore
-        icon = GFX_goal_generic_construct_mil_factory
+        icon = GFX_goal_generic_military_factories #R56 - more variety in icons
         prerequisite = { focus = RAJ_ammunition_factory_khadki }
         x = 2
         y = 1
@@ -22094,7 +22102,7 @@ focus = {
 
     focus = {
         id = RAJ_ordnance_factory_kanpur_uttar_pradesh
-        icon = GFX_goal_generic_construct_mil_factory
+        icon = GFX_focus_generic_reorient_production #R56 - more variety in icons
         prerequisite = { focus = RAJ_rifle_factory_ishapore_west_bengal }
         x = 0
         y = 1
@@ -22351,11 +22359,22 @@ focus = {
         }
 
         available = {
-            BRM = {
-                is_in_faction_with = ROOT
-                controls_state = 995
-                controls_state = 640
-                controls_state = 998
+            if = { #R56 - Adjusted availability checks to account for Burma not existing
+                limit = { country_exists = BRM }
+                BRM = {
+                    OR = {
+                        is_in_faction_with = ROOT
+                        is_subject_of = ROOT
+                    }
+                    controls_state = 325
+                    controls_state = 601
+                    controls_state = 640
+                }
+                else = {
+                    controls_state = 325
+                    controls_state = 601
+                    controls_state = 640
+                }
             }
 
             CHI = {
@@ -22427,7 +22446,7 @@ focus = {
         y = 1
         relative_position_id = RAJ_indian_air_force
         
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
@@ -22466,7 +22485,7 @@ focus = {
         y = 1
         relative_position_id = RAJ_trainer_planes
         
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
@@ -22597,7 +22616,7 @@ focus = {
         y = 1
         relative_position_id = RAJ_ground_pounder
         
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
@@ -22696,7 +22715,7 @@ focus = {
         available = {
             OR = {
                 controls_state = 434
-                controls_state = 1105   #r56 was 990
+                #controls_state = 1105   #r56 was 990 #is manipur in base game. we dont have that state.
                 controls_state = 432
             }
             CHI = {
@@ -22935,7 +22954,7 @@ focus = {
         y = 1
         relative_position_id = RAJ_cordite_factory_aruvankadu_tamil_nadu
         
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
