@@ -834,12 +834,12 @@ on_actions = {
 							if = { 
 								limit = {
 									OR = {
-										check_variable = { resource@steel > 16 }
-										check_variable = { resource@aluminium > 16 }
-										check_variable = { resource@oil > 16 }
+										check_variable = { resource@steel > 3 }
+										check_variable = { resource@aluminium > 3 }
+										check_variable = { resource@oil > 3 }
 										#check_variable = {resource@rubber > 7 } Not u
-										check_variable = { resource@chromium > 16 }
-										check_variable = { resource@tungsten > 16 }
+										check_variable = { resource@chromium > 3 }
+										check_variable = { resource@tungsten > 3 }
 									}
 								}
 								add_dynamic_modifier = { modifier = SWE_hygenic_housing_resource_bonus }
