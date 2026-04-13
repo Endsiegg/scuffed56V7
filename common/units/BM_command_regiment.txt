@@ -19,6 +19,7 @@ sub_units = {
 
 		# CATEGORIES
 		categories = {
+			category_all_infantry
 			category_support_battalions
 			category_army
 		}
@@ -52,8 +53,9 @@ sub_units = {
         
         # MODIFIER FOR CATEGORIES
 		battalion_mult = {
-            category = category_army
+            category = category_all_infantry
             max_organisation = 0.15 # Because he is a commander
+			defense = 0.1
         }
 
         same_support_type = bm_command_regiment
