@@ -164,7 +164,7 @@ superior_firepower = {
         soft_attack = 0.1
     }
     category_support_artillery = {
-        soft_attack = 0.05
+        soft_attack = 0.1
     }
 
 
@@ -405,6 +405,8 @@ mass_assault = {
             #Infantry
             enable_tactic = tactic_human_wave_tactics
             additional_brigade_column_size = 1
+            max_organisation = 0.1
+            default_morale = 0.2
 
             effect = {
                 if = {
@@ -425,6 +427,7 @@ mass_assault = {
             enable_tactic = tactic_elastic_defense
             out_of_supply_factor = -0.05
             minimum_training_level = -0.05
+            land_reinforce_rate = 0.05
 
             effect = {
                 if = {
@@ -442,7 +445,7 @@ mass_assault = {
         }
         {
             #Armor
-            land_reinforce_rate = 0.02
+            land_reinforce_rate = 0.05
             enable_tactic = tactic_overwhelming_fire
 
             effect = {
@@ -462,9 +465,9 @@ mass_assault = {
         {
             #Operations
             enable_tactic = tactic_backhand_blow
-            weekly_casualties_war_support = 0.001
-            minimum_training_level = -0.05
-            dig_in_speed_factor = 0.05
+            weekly_casualties_war_support = 0.003
+            minimum_training_level = -0.1
+            dig_in_speed_factor = 0.1
 
             effect = {
                 if = {
