@@ -68,3 +68,40 @@ NDefines.NGraphics.DECISION_MAP_ICON_DISTANCE_CUTOFF = 750
 NDefines.NGraphics.RAILWAY_ICON_CUTOFF = 700
 NDefines.NGraphics.SUPPLY_ICON_CUTOFF = 700
 NDefines.NGraphics.CRYPTOLOGY_MAP_ICON_DISTANCE_CUTOFF = 750
+
+
+NDefines_Graphics.NGraphics.COUNTRY_FLAG_TEX_MAX_SIZE = 2048
+NDefines_Graphics.NGraphics.COUNTRY_FLAG_SMALL_TEX_MAX_SIZE = 512
+NDefines_Graphics.NGraphics.COUNTRY_FLAG_STRIPE_TEX_MAX_WIDTH = 10
+NDefines_Graphics.NGraphics.COUNTRY_FLAG_STRIPE_TEX_MAX_HEIGHT = 8196
+NDefines_Graphics.NGraphics.COUNTRY_FLAG_LARGE_STRIPE_MAX_WIDTH = 41
+NDefines_Graphics.NGraphics.COUNTRY_FLAG_LARGE_STRIPE_MAX_HEIGHT = 24000
+NDefines_Graphics.NGraphics.RAILWAY_MAP_ARROW_COLOR_DEFAULT = { 0, 128, 0, 1.0 } -- green default railway maparrow color
+NDefines_Graphics.NGraphics.RAILWAY_MAP_ARROW_THIN_LEVEL_THRESHOLD = 1 -- Railway level 1 uses thin map arrow in supply map mode
+NDefines_Graphics.NGraphics.RAILWAY_MAP_ARROW_MEDIUM_LEVEL_THRESHOLD = 5 -- Railway level 2-3 uses medium map arrow in supply map mode
+NDefines_Graphics.NGraphics.RAILWAY_MAP_ARROW_THICK_LEVEL_THRESHOLD = 9 -- Railway level 4-5 uses thick map arrow in supply map mode
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_CAPITAL_CUTOFF_MAX = 1500.0 -- Capitals are special snowflakes, they need their own number
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {150, 250, 500} -- At what camera distance the VP name text disappears. 
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF_MAX = 800.0-- Max range for victory point text 
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF_MIN = 100.0 -- Min range for victory point text
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_DOT_CUTOFF_MIN = 100.0 -- Min range for victory point dot
+NDefines_Graphics.NGraphics.VICTORY_POINT_MAP_ICON_DOT_CUTOFF_MAX = 1000.0 -- Max range for victory point dot
+
+NDefines.NAirGfx.AIRPLANES_ANIMATION_GLOBAL_SPEED_PER_GAMESPEED = { 0, 0.3 , 0.5 , 0.7, 0.9, 1.1 }
+NDefines.NAirGfx.ROCKET_SPEED = 40
+NDefines.NAirGfx.AIRPLANES_CURVE_MAX_EXTRAPOLATION = 60
+
+NDefines.NAirGfx.BOMBERS_DIVISION_FACTOR = 30
+NDefines.NAirGfx.MISSILES_DIVISION_FACTOR = 1
+NDefines.NAirGfx.FIGHTERS_DIVISION_FACTOR = 30
+NDefines.NAirGfx.SCOUT_PLANE_DIVISION_FACTOR = 30
+NDefines.NAirGfx.TRANSPORT_DIVISION_FACTOR = 30
+NDefines.NAirGfx.AIRPLANES_SCALE_MIN = 0.01
+
+NDefines.NAirGfx.MAX_MISSILE_BOMBING_SCENARIOS = 500
+NDefines.NAirGfx.MAX_PATROL_SCENARIOS = 10
+NDefines.NAirGfx.MAX_BOMBING_SCENARIOS = 15
+NDefines.NAirGfx.MAX_DOGFIGHTS_SCENARIOS = 6
+NDefines.NAirGfx.MAX_TRANSPORT_SCENARIOS = 20
+NDefines.NAirGfx.MAX_TRAINING_SCENARIOS = 10
+NDefines.NAirGfx.MAX_SCOUT_SCENARIOS = 10

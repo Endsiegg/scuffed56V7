@@ -18,10 +18,10 @@ ideas = {
 			level = 5
 
 			modifier = {
-				weekly_manpower = 400
-				conscription = 0.015
-				non_core_manpower = 0.2
-				training_time_factor = 0.25
+				weekly_manpower = 1000
+				conscription = 0.20
+				non_core_manpower = 0.60
+				#training_time_factor = 0.25
 			}
 		}
 	}
@@ -43,24 +43,24 @@ ideas = {
 			removal_cost = -1
 
 			on_add = {
-				add_offsite_building = { type = industrial_complex level = 2 }
-				add_offsite_building = { type = arms_factory level = 3 }
-				add_offsite_building = { type = dockyard level = 1 }
+				add_offsite_building = { type = industrial_complex level = 15 }
+				add_offsite_building = { type = arms_factory level = 15 }
+				add_offsite_building = { type = dockyard level = 15 }
 			}
 
 			on_remove = {
-				add_offsite_building = { type = industrial_complex level = -2 }
-				add_offsite_building = { type = arms_factory level = -3 }
-				add_offsite_building = { type = dockyard level = -1 }
+				add_offsite_building = { type = industrial_complex level = -15 }
+				add_offsite_building = { type = arms_factory level = -15 }
+				add_offsite_building = { type = dockyard level = -15 }
 			}
 		
 			modifier = {
 				consumer_goods_expected_value = 0.05
-				production_speed_industrial_complex_factor = -0.2
-				production_speed_arms_factory_factor = 0.15
-				conversion_cost_civ_to_mil_factor = 0.25
-				conversion_cost_mil_to_civ_factor = 0.25
-				factory_energy_consumption = -0.25
+				production_speed_industrial_complex_factor = 0.225
+				production_speed_arms_factory_factor = 0.25
+				conversion_cost_civ_to_mil_factor = -0.5
+				conversion_cost_mil_to_civ_factor = -0.5
+				#factory_energy_consumption = -0.25
 			}
 		}
 	}
@@ -83,10 +83,10 @@ ideas = {
 			
 			modifier = {
 				min_export = 0.0
-				research_speed_factor = -0.05
-				consumer_goods_factor = 0.1
+				#research_speed_factor = --0.05
+				#consumer_goods_factor = 0.1
 				civilian_intel_to_others = -15.0
-				navy_intel_to_others = -10.0
+				#navy_intel_to_others = -10.0
 				agency_upgrade_time = -0.3
 			}
 		}

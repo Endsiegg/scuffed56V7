@@ -393,7 +393,7 @@ country_event = { #war continues: france gets talented new officers, 1st de latt
 		OR = {
 			has_global_flag = germany_refused_second_armistice
 			AND = {
-				date > 1942.1.1
+				date > 1936.1.1
 				OR = {
 					controls_state = 14
 					controls_state = 15
@@ -421,7 +421,7 @@ country_event = { #war continues: france gets talented new officers, 1st de latt
 	}
 	
 	mean_time_to_happen = {
-		days = 212
+		days = 1
 	}
 	fire_only_once = yes
 	option = { #
@@ -452,7 +452,7 @@ country_event = { #war continues: france gets talented new officers, 2nd, Lecler
 		OR = {
 			has_global_flag = germany_refused_second_armistice
 			AND = {
-				date > 1941.1.1
+				date > 1936.1.1
 				OR = {
 					controls_state = 14
 					controls_state = 15
@@ -480,7 +480,7 @@ country_event = { #war continues: france gets talented new officers, 2nd, Lecler
 	}	
 	
 	mean_time_to_happen = {
-		days = 120
+		days = 1
 	}
 	fire_only_once = yes
 	option = { #
@@ -489,7 +489,7 @@ country_event = { #war continues: france gets talented new officers, 2nd, Lecler
 			character = FRA_philippe_leclerc
 			traits = { armor_officer trait_reckless career_officer }
 			skill = 5
-			attack_skill = 5
+			attack_skill = 6
 			defense_skill = 3
 			planning_skill = 3
 			logistics_skill = 5				
@@ -513,7 +513,7 @@ country_event = { #war continues: france gets talented new officers, 3rd, Juin
 		OR = {
 			has_global_flag = germany_refused_second_armistice
 			AND = {
-				date > 1941.1.1
+				date > 1936.1.1
 				OR = {
 					controls_state = 14
 					controls_state = 15
@@ -541,7 +541,7 @@ country_event = { #war continues: france gets talented new officers, 3rd, Juin
 	}
 	
 	mean_time_to_happen = {
-		days = 200
+		days = 1
 	}
 	fire_only_once = yes
 	option = { #
@@ -569,10 +569,10 @@ country_event = { #war continues: france gets talented new officers, 4th Koenig
 		OR = {
 			has_global_flag = germany_refused_second_armistice
 			AND = {
-				date > 1940.11.21
+				date > 1936.1.1
 				has_war = yes
 			}
-			date > 1941.6.12
+			date > 1936.1.1
 		}
 		tag = FRA
 		NOT = {
@@ -581,7 +581,7 @@ country_event = { #war continues: france gets talented new officers, 4th Koenig
 	}
 	
 	mean_time_to_happen = {
-		days = 220
+		days = 1
 	}
 	fire_only_once = yes
 	option = { #
@@ -598,7 +598,7 @@ country_event = { #war continues: france gets talented new officers, 5th De Gaul
 	picture = GFX_report_event_french_liberation
 	
 	mean_time_to_happen = {
-		days = 52
+		days = 1
 	}
 	trigger = {
 		tag = FRA
@@ -611,7 +611,7 @@ country_event = { #war continues: france gets talented new officers, 5th De Gaul
 				date > 1940.9.1
 				has_war = yes
 			}
-			date > 1941.2.12
+			date > 1936.1.1
 		}
 	}
 	fire_only_once = yes
@@ -623,10 +623,10 @@ country_event = { #war continues: france gets talented new officers, 5th De Gaul
 			character = FRA_charles_de_gaulle
 			traits = {  panzer_leader armor_officer harsh_leader media_personality }
 			skill = 4
-			attack_skill = 4
+			attack_skill = 6
 			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
 		}
 	}	
 }

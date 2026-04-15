@@ -1,3 +1,8 @@
+NDefines.NGame.END_DATE = "1956.1.1.1" -- we are called r56 for a reason!
+NDefines.NGame.HANDS_OFF_START_TAG = "YEM" --more central than vanilla's Haiti
+	
+
+
 NDefines.NDiplomacy.DIPLOMACY_REQUEST_EXPIRY_DAYS = 30
 NDefines.NDiplomacy.NUM_DAYS_TO_ENABLE_KICKING_NEW_MEMBERS_OF_FACTION = 1			-- Number of days before being able to kick a new member of faction
 NDefines.NDiplomacy.NUM_DAYS_TO_ENABLE_REINVITE_KICKED_NATIONS = 1			-- Number of days before being able to re invite a kicked nation to your faction
@@ -13,11 +18,17 @@ NDefines.NDiplomacy.MAX_OPINION_FROM_VOLUNTEERS = 100
 ----------------------------------
 NDefines.NFactions.PASSIVE_INITIATIVE_GENERATION = 0.03
 ----------------------------------
+NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 80						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
 NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.1
 NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 40
 NDefines.NCountry.INTERPOLATED_FRONT_STEPS_SHORT = 1					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 NDefines.NCountry.MIN_MAJOR_COUNTRIES = 15
+--NDefines.NCountry.SUPPLY_CONVOY_FACTOR = 0.1
+NDefines.NCountry.CONVOY_CONTROLLED_ROUTE_COST_REDUCTION_FACTOR = 0.5
+NDefines.NCountry.NAVY_USE_HOME_BASE_FOR_RANGE = false
+NDefines.NCountry.CONVOY_RANGE_FACTOR = 0.5
+NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.2
 ----------------------------------
 NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0					-- XP cost for adding a new equipment module in an empty slot when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0				-- XP cost for replacing one equipment module with an unrelated module when creating an equipment variant.
@@ -71,7 +82,7 @@ NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 2		-- Base year ahead pena
 NDefines.NTechnology.BASE_TECH_COST = 100					-- Base cost for a tech. multiplied with tech cost and ahead of time penalties
 NDefines.NTechnology.USE_BONUS_REGRET_TIMER = 10
 ----------------------------------
-NDefines.NMilitary.UNIT_LEADER_USE_NONLINEAR_XP_GAIN = false
+--NDefines.NMilitary.UNIT_LEADER_USE_NONLINEAR_XP_GAIN = false
 NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 50
 NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 50
 NDefines.NMilitary.BASE_DIVISION_BRIGADE_GROUP_COST = 0
@@ -95,9 +106,9 @@ NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.05
 NDefines.NMilitary.PLANNING_DECAY = 0.04
 NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 5 -- how many CAS/TAC can enter a combat depending on enemy width there
 ----------------------------------
-NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
-NDefines.NAir.AIR_DEPLOYMENT_DAYS = 2
-NDefines.NAir.AIR_WING_FLIGHT_SPEED_MULT = 0.02
+--NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
+--NDefines.NAir.AIR_DEPLOYMENT_DAYS = 2
+--NDefines.NAir.AIR_WING_FLIGHT_SPEED_MULT = 0.02
 NDefines.NAir.AIR_WING_XP_LEVELS = { 20, 40, 60, 80, 100, 140, 180, 220, 260, 300, 390, 480, 570, 660, 750, 780, 810, 840, 870, 900 }
 NDefines.NAir.AIR_WING_XP_TRAINING_MAX = 300.0
 NDefines.NAir.AIR_WING_XP_TRAINING_MISSION_GAIN_DAILY = 4.5
@@ -143,12 +154,12 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 0.0, -- BARRAGE
 }
 ---------------------------------
-NDefines.NNavy.SUPPLY_NEED_FACTOR = 0	
+--NDefines.NNavy.SUPPLY_NEED_FACTOR = 0	
 NDefines.NNavy.PRIDE_OF_THE_FLEET_UNASSIGN_COST = 0							-- cost to unassign/replace pride of the fleet
 NDefines.NNavy.PRIDE_OF_THE_FLEET_LOST_TEMP_MODIFIER_DURATION = 180	
 NDefines.NNavy.TRAINING_DAILY_COUNTRY_EXP_FACTOR = 0.002
 NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 0.3
-NDefines.NNavy.NAVAL_MINES_DECAY_AT_PEACE_TIME = 0.75
+NDefines.NNavy.NAVAL_MINES_DECAY_AT_PEACE_TIME = 0.85
 NDefines.NNavy.DOMINANCE_DAILY_GAIN_FACTOR = 0.05
 NDefines.NNavy.DOMINANCE_DAILY_LOSS_FACTOR = 0.004
 ----------------------------------
@@ -159,38 +170,38 @@ NDefines.NBuildings.MAX_SHARED_SLOTS = 35
 --NDefines.NIndustrialOrganisation.DESIGN_TEAM_CHANGE_XP_COST = 1
 NDefines.NIndustrialOrganisation.DESIGN_TEAM_RESEARCH_BONUS = 0.1
 ------------------------------------
-NDefines.NSupply.INFRA_TO_SUPPLY = 0.5  -- 0.3
-NDefines.NSupply.VP_TO_SUPPLY_BASE = 0.1 --0.2
-NDefines.NSupply.VP_TO_SUPPLY_BONUS_CONVERSION = 0.06 --0.05
-NDefines.NSupply.CAPITAL_SUPPLY_BASE = 5.0 -- 5.0
-NDefines.NSupply.CAPITAL_SUPPLY_CIVILIAN_FACTORIES = 0.5 -- 0.3
-NDefines.NSupply.CAPITAL_SUPPLY_MILITARY_FACTORIES = 0.7 -- 0.6
-NDefines.NSupply.CAPITAL_SUPPLY_DOCKYARDS = 0.6 -- 0.4
-NDefines.NSupply.CAPITAL_INITIAL_SUPPLY_FLOW = 8.0 -- 5.0
-NDefines.NSupply.CAPITAL_STARTING_PENALTY_PER_PROVINCE = 0.5 -- 0.5
-NDefines.NSupply.CAPITAL_ADDED_PENALTY_PER_PROVINCE = 1.2 -- 1.2
-NDefines.NSupply.NODE_INITIAL_SUPPLY_FLOW = 3.6 -- 2.8
-NDefines.NSupply.NODE_STARTING_PENALTY_PER_PROVINCE = 0.50 -- 0.50
-NDefines.NSupply.NODE_ADDED_PENALTY_PER_PROVINCE = 1.0 -- 0.70
-NDefines.NSupply.NAVAL_BASE_INITIAL_SUPPLY_FLOW = 4.0 -- 3.5
-NDefines.NSupply.NAVAL_BASE_STARTING_PENALTY_PER_PROVINCE = 0.8 -- 0.8
-NDefines.NSupply.NAVAL_BASE_ADDED_PENALTY_PER_PROVINCE = 1.5 --1.0
-NDefines.NSupply.FLOATING_HARBOR_BASE_SUPPLY = 20 -- 15
-NDefines.NSupply.FLOATING_HARBOR_BASE_DURATION = 30 -- 21
-NDefines.NSupply.FLOATING_HARBOR_INITIAL_SUPPLY_FLOW = 3.9 -- 2.6
-NDefines.NSupply.FLOATING_HARBOR_STARTING_PENALTY_PER_PROVINCE = 0.8 -- 0.8
-NDefines.NSupply.FLOATING_HARBOR_ADDED_PENALTY_PER_PROVINCE = 0.8 -- 0.8
-NDefines.NSupply.SUPPLY_FLOW_DROP_REDUCTION_AT_MAX_INFRA = 0.60 -- 0.30
-NDefines.NSupply.SUPPLY_HUB_FULL_MOTORIZATION_BONUS = 4.0 -- 2.2
-NDefines.NSupply.RAILWAY_BASE_FLOW = 10.0 -- 10.0
-NDefines.NSupply.RAILWAY_FLOW_PER_LEVEL = 10 --5.0
-NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 10 -- 5.0
-NDefines.NSupply.NODE_FLOW_BONUS_PER_RAIL_LEVEL = 0.8 -- 0.34
-NDefines.NSupply.NAVAL_BASE_FLOW = 15.0 -- 5.0 --used to also be NAVAL_FLOW_PER_LEVEL, presumed intended to be this
-NDefines.NSupply.NAVAL_FLOW_PER_LEVEL = 5.0 --3.0
-NDefines.NSupply.SUPPLY_PATH_MAX_DISTANCE = 15 --15
-NDefines.NSupply.RAILWAY_DISTANCE_FACTOR_FOR_REINFORCEMENT_SPEED = 0.1 --0.3
-NDefines.NSupply.SUPPLY_DISRUPTION_DAILY_RECOVERY = 3.0
+--NDefines.NSupply.INFRA_TO_SUPPLY = 0.5  -- 0.3
+--NDefines.NSupply.VP_TO_SUPPLY_BASE = 0.1 --0.2
+--NDefines.NSupply.VP_TO_SUPPLY_BONUS_CONVERSION = 0.06 --0.05
+--NDefines.NSupply.CAPITAL_SUPPLY_BASE = 5.0 -- 5.0
+--NDefines.NSupply.CAPITAL_SUPPLY_CIVILIAN_FACTORIES = 0.5 -- 0.3
+--NDefines.NSupply.CAPITAL_SUPPLY_MILITARY_FACTORIES = 0.7 -- 0.6
+--NDefines.NSupply.CAPITAL_SUPPLY_DOCKYARDS = 0.6 -- 0.4
+--NDefines.NSupply.CAPITAL_INITIAL_SUPPLY_FLOW = 8.0 -- 5.0
+--NDefines.NSupply.CAPITAL_STARTING_PENALTY_PER_PROVINCE = 0.5 -- 0.5
+--NDefines.NSupply.CAPITAL_ADDED_PENALTY_PER_PROVINCE = 1.2 -- 1.2
+--NDefines.NSupply.NODE_INITIAL_SUPPLY_FLOW = 3.6 -- 2.8
+--NDefines.NSupply.NODE_STARTING_PENALTY_PER_PROVINCE = 0.50 -- 0.50
+--NDefines.NSupply.NODE_ADDED_PENALTY_PER_PROVINCE = 1.0 -- 0.70
+--NDefines.NSupply.NAVAL_BASE_INITIAL_SUPPLY_FLOW = 4.0 -- 3.5
+--Defines.NSupply.NAVAL_BASE_STARTING_PENALTY_PER_PROVINCE = 0.8 -- 0.8
+--NDefines.NSupply.NAVAL_BASE_ADDED_PENALTY_PER_PROVINCE = 1.5 --1.0
+--NDefines.NSupply.FLOATING_HARBOR_BASE_SUPPLY = 20 -- 15
+--NDefines.NSupply.FLOATING_HARBOR_BASE_DURATION = 30 -- 21
+--NDefines.NSupply.FLOATING_HARBOR_INITIAL_SUPPLY_FLOW = 3.9 -- 2.6
+--NDefines.NSupply.FLOATING_HARBOR_STARTING_PENALTY_PER_PROVINCE = 0.8 -- 0.8
+--NDefines.NSupply.FLOATING_HARBOR_ADDED_PENALTY_PER_PROVINCE = 0.8 -- 0.8
+--NDefines.NSupply.SUPPLY_FLOW_DROP_REDUCTION_AT_MAX_INFRA = 0.60 -- 0.30
+--NDefines.NSupply.SUPPLY_HUB_FULL_MOTORIZATION_BONUS = 4.0 -- 2.2
+--NDefines.NSupply.RAILWAY_BASE_FLOW = 10.0 -- 10.0
+--NDefines.NSupply.RAILWAY_FLOW_PER_LEVEL = 10 --5.0
+--NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 10 -- 5.0
+--NDefines.NSupply.NODE_FLOW_BONUS_PER_RAIL_LEVEL = 0.8 -- 0.34
+--NDefines.NSupply.NAVAL_BASE_FLOW = 15.0 -- 5.0 --used to also be NAVAL_FLOW_PER_LEVEL, presumed intended to be this
+--NDefines.NSupply.NAVAL_FLOW_PER_LEVEL = 5.0 --3.0
+--NDefines.NSupply.SUPPLY_PATH_MAX_DISTANCE = 15 --15
+--NDefines.NSupply.RAILWAY_DISTANCE_FACTOR_FOR_REINFORCEMENT_SPEED = 0.1 --0.3
+--NDefines.NSupply.SUPPLY_DISRUPTION_DAILY_RECOVERY = 3.0
 -------------------------------------------------------------------
 -- NDefines.NAI.INDUSTRIAL_ORG_TRAIT_UNLOCK_RANDOMNESS = 3 -- AI will pick a random from N top traits when choosing a trait to unlock
 -- NDefines.NAI.INDUSTRIAL_ORG_POLICY_CHANGE_RANDOMNESS = 3 -- AI will pick a random from N top policies when choosing a policy to attach to an MIO
