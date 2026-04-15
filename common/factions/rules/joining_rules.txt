@@ -243,7 +243,7 @@ joining_rule_has_no_war = {
 		has_war = no
 	}
 	modifier = {
-		improve_relations_maintain_cost_factor = -0.1
+		defensive_war_stability_factor = 0.15
 	}
 }
 
@@ -265,7 +265,7 @@ joining_rule_has_no_offensive_war = {
 		has_war = yes
 	}
 	modifier = {
-		defensive_war_stability_factor = 0.15
+		war_stability_factor = 0.05
 	}
 }
 ########################################################
@@ -280,6 +280,11 @@ joining_rule_has_no_offensive_war = {
 
 joining_rule_all_the_world = {
 	type = joining_rules
+	# visible = {
+	# 	capital_scope = {
+	# 		is_on_continent = africa
+	# 	}
+	# }	
 	ai_will_do = {
 		base = 0
 		modifier = {
@@ -292,8 +297,18 @@ joining_rule_all_the_world = {
 	}
 	trigger = {
 		OR = {
-		has_war = no
-		has_war = yes
+		ROOT = { is_on_same_continent_as = FROM }
+		capital_scope = {
+			OR = {
+				is_on_continent = north_america
+				is_on_continent = south_america
+				is_on_continent = africa
+				is_on_continent = europe	
+				is_on_continent = asia
+				is_on_continent = middle_east						
+			}			
+
+		}
 		}
 
 	}
