@@ -262,13 +262,12 @@ joining_rule_has_no_offensive_war = {
 		}
 	}
 	trigger = {
-		has_offensive_war = no
+		has_war = yes
 	}
 	modifier = {
 		defensive_war_stability_factor = 0.15
 	}
 }
-
 ########################################################
 
  ##  ###  ##   ##  ###   ##  ###  #  # ###  ##   ##  #   
@@ -278,6 +277,30 @@ joining_rule_has_no_offensive_war = {
  ##  ###  ##   ##  #  # #  # #    #  # ###  ##  #  # ###
 
 ######################################################## 
+
+joining_rule_all_the_world = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 1
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+			}
+		}
+	}
+	trigger = {
+		OR = {
+		has_war = no
+		has_war = yes
+		}
+
+	}
+	modifier = {
+		defensive_war_stability_factor = 0.15
+	}
+}
 
 joining_rule_neighbors_only = {
 	type = joining_rules
