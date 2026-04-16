@@ -20,9 +20,10 @@ wolfpacks = {
     }
 
     # EFFECTS
-	naval_retreat_speed_after_initial_combat = 0.15
+	#naval_retreat_speed_after_initial_combat = 0.15
+    convoy_raiding_efficiency_factor = 0.25
 	submarine = {
-		max_organisation = 10
+		max_organisation = 15
 	}
 
     rewards = {
@@ -33,27 +34,27 @@ wolfpacks = {
 		}
 		pack_search_patterns = {
 			submarine = {
-				surface_detection = 0.15
-				convoy_raiding_coordination = 0.20
+				surface_detection = 0.30
+				convoy_raiding_coordination = 0.25
 			}
 		}
 		improvisation = {
 			submarine = {
-				max_strength = 0.2
-				max_organisation = 10
+				max_strength = 0.25
+				max_organisation = 15
 			}
 		}
         rough_weather_procedure = {
 			equipment_bonus = {
                 ship_hull_submarine = {
-				    naval_weather_penalty_factor = -0.15
+				    naval_weather_penalty_factor = -0.30
 		        }
             }
 		}
 		wolfpack_coordination = {
 			submarine = {
-				surface_detection = 0.15
-				convoy_raiding_coordination = 0.10
+				surface_detection = 0.30
+				convoy_raiding_coordination = 0.25
 			}
 		}
     }
@@ -99,7 +100,7 @@ submarine_fleet_operations = {
 		long_range_patrol_schedule = {
 			submarine = {
 				surface_detection = 0.30
-				naval_range = 0.1 #TODO: does this work?
+				naval_range = 0.1 #TODO: does this work? Funny Dev moment
 			}
 		}
 		sustained_operations = {
@@ -111,7 +112,7 @@ submarine_fleet_operations = {
 			navy_submarine_attack_factor = 0.10
 		}
 		diverse_operations = {
-			submarine = { mines_planting = 0.20 }
+	        naval_torpedo_screen_penetration_factor = 0.05
 		}
 		predictive_search_patterns = {
 			submarine = {
@@ -263,7 +264,7 @@ coastal_minelaying = {
     	covert_buildup = {
     		submarine = {
     			naval_speed = 0.1
-    			mines_planting = 0.25
+    			mines_planting = 0.05
     		}
 
     	}
@@ -275,7 +276,7 @@ coastal_minelaying = {
 
     	minefield_patrols = {
     		destroyer = {
-    			mines_planting = 0.25
+    			mines_planting = 0.05
     			lg_attack = 0.1
     		}
 
@@ -288,10 +289,10 @@ coastal_minelaying = {
     	}
     	clearing_procedures = {
     		submarine = {
-    			mines_sweeping = 0.2
+    			mines_sweeping = 0.4
     		}
     		destroyer = {
-    			mines_sweeping = 0.2
+    			mines_sweeping = 0.4
     		}
     	}
     }
@@ -390,6 +391,7 @@ long_range_submarines = {
 
         deep_water_supremacy = {
             submarine = {
+                naval_range = 0.2
                 sub_detection = 0.2
                 torpedo_attack = 0.1
             }
