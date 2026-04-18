@@ -10,13 +10,20 @@ ideas = {
 			
 			picture = generic_infantry_bonus
 
+			rule = {
+				can_create_factions = yes
+				can_send_volunteers = yes
+				can_join_factions = yes
+			}
+
 			modifier = {
+				join_faction_tension = -1
                 training_time_army_factor = -0.2
                 air_accidents_factor = -2
                # naval_accidents_chance = -2
-				air_fuel_consumption_factor = -0.95
-				navy_fuel_consumption_factor = -0.95
-				army_fuel_consumption_factor = -0.95
+				air_fuel_consumption_factor = -0.99
+				navy_fuel_consumption_factor = -0.99
+				army_fuel_consumption_factor = -0.99
 				experience_gain_army = 0.1
 				experience_gain_navy = 0.1
 				experience_gain_air = 0.1
