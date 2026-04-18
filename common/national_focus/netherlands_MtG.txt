@@ -57,7 +57,7 @@ focus_tree = {
 		icon = GFX_goal_generic_consumer_goods
 		x = 3
 		y = 0
-		cost = 5	#56
+		cost = 3	#56
 
 		available_if_capitulated = yes
 
@@ -86,7 +86,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = HOL_obtain_foreign_colonial_investments
-		cost = 10
+		cost = 2
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -112,10 +112,10 @@ focus_tree = {
 		id = HOL_expand_curacao_oil_refineries
 		available = {
 			has_full_control_of_state = 695
-			OR = {
-				threat > 0.2
-				has_war = yes
-			}
+			# OR = {
+			# 	threat > 0.2
+			# 	has_war = yes
+			# }
 			OR = {
 				GER = {
 					is_in_faction_with = ROOT
@@ -139,7 +139,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_the_western_possessions
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_OIL} 
@@ -186,22 +186,22 @@ focus_tree = {
 		id = HOL_open_second_paranam_bauxite_mine
 		available = {
 			has_full_control_of_state = 309
-			OR = {
-				has_war = yes
-				GER = {
-					is_in_faction_with = ROOT
-				}
-				AND = {
-					USA = {
-						has_war = yes
-						NOT = { has_war_with = ROOT }
-					}
-					ENG = {
-						has_war = yes
-						NOT = { has_war_with = ROOT }
-					}
-				}
-			}
+			# OR = {
+			# #	has_war = yes
+			# 	GER = {
+			# 		is_in_faction_with = ROOT
+			# 	}
+			# 	AND = {
+			# 		USA = {
+			# 			has_war = yes
+			# 			NOT = { has_war_with = ROOT }
+			# 		}
+			# 		ENG = {
+			# 			has_war = yes
+			# 			NOT = { has_war_with = ROOT }
+			# 		}
+			# 	}
+			# }
 			OR = {
 				has_idea = free_trade
 				has_idea = export_focus
@@ -212,7 +212,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_expand_curacao_oil_refineries
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -232,10 +232,10 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -253,7 +253,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = HOL_expand_curacao_oil_refineries
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 
@@ -352,7 +352,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = HOL_obtain_foreign_colonial_investments
-		cost = 10
+		cost = 3
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }	#56
@@ -413,7 +413,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_the_crown_jewel_colony
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }	#56
@@ -475,7 +475,7 @@ focus_tree = {
 		x = -2
 		y = 2
 		relative_position_id = HOL_java
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 
@@ -560,7 +560,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_reinforce_java
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -607,7 +607,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_java
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }	#56
@@ -628,10 +628,10 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -708,7 +708,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_java
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }	#56
@@ -764,10 +764,10 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -812,12 +812,12 @@ focus_tree = {
 			owns_state = 976
 		}
 		prerequisite = { focus = HOL_the_crown_jewel_colony }
-		mutually_exclusive = { focus = HOL_the_zuiderzee_works }
+		#mutually_exclusive = { focus = HOL_the_zuiderzee_works }
 		icon = GFX_focus_generic_treaty
 		x = 2
 		y = 3
 		relative_position_id = HOL_the_crown_jewel_colony
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		
@@ -904,7 +904,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_reclaim_the_crown_jewel
-		cost = 5
+		cost = 3
 
 		available_if_capitulated = no
 		
@@ -944,7 +944,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_sunda_islands_staging_area
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		
@@ -977,7 +977,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_sunda_islands_staging_area
-		cost = 10
+		cost = 3
 
 		available_if_capitulated = yes
 		
@@ -999,7 +999,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = HOL_sunda_islands_staging_area
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		
@@ -1049,10 +1049,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1124,7 +1124,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_continue_the_war_in_batavia
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}	#56
@@ -1163,7 +1163,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_continue_the_war_in_batavia
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_MANPOWER}
@@ -1218,7 +1218,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_a_western_capital
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1234,7 +1234,7 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 							type = dockyard
 							level = 1
@@ -1253,7 +1253,7 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 							type = dockyard
 							level = 1
@@ -1272,7 +1272,7 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 							type = dockyard
 							level = 1
@@ -1291,7 +1291,7 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 							type = dockyard
 							level = 1
@@ -1310,7 +1310,7 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 							type = dockyard
 							level = 1
@@ -1329,7 +1329,7 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 							type = dockyard
 							level = 1
@@ -1352,7 +1352,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_a_western_capital
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -1394,7 +1394,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_colonial_shipbuilding
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }	#56
@@ -1410,7 +1410,7 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 							type = dockyard
 							level = 1
@@ -1429,7 +1429,7 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 							type = dockyard
 							level = 1
@@ -1448,7 +1448,7 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 							type = dockyard
 							level = 1
@@ -1486,7 +1486,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_prepare_for_our_return
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MILITARY_EQUIPMENT }	#56
@@ -1554,7 +1554,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = HOL_abandon_the_gold_standard
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY}
@@ -1605,7 +1605,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_continue_the_public_works
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -1638,7 +1638,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_continue_the_public_works
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -1677,7 +1677,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_finish_the_noordoostpolder
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -1781,12 +1781,12 @@ focus_tree = {
 			has_full_control_of_state = 36
 		}
 		prerequisite = { focus = HOL_expand_the_artillerieinrichtingen }
-		mutually_exclusive = { focus = HOL_curtail_colonial_autonomy }
+		#mutually_exclusive = { focus = HOL_curtail_colonial_autonomy }
 		icon = GFX_focus_hol_the_zuiderzee_works
 		x = -1
 		y = 1
 		relative_position_id = HOL_expand_the_artillerieinrichtingen
-		cost = 30
+		cost = 10
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY}
@@ -1887,12 +1887,13 @@ focus_tree = {
 		available = {
 			has_full_control_of_state = 7
 		}
-		prerequisite = { focus = HOL_develop_the_randstad }
+		prerequisite = { focus = HOL_develop_the_randstad focus = HOL_develop_the_zandstad }
+		mutually_exclusive = {focus = HOL_friesland_agricultural_impetus }
 		icon = GFX_focus_generic_steel
 		x = 0
 		y = 1
 		relative_position_id = HOL_develop_the_randstad
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STEEL}	#56
@@ -1900,7 +1901,7 @@ focus_tree = {
 			7 = {
 				add_resource = {
 					type = steel
-					amount = 16
+					amount = 24
 				}
 				if = {
 					limit = {
@@ -1928,7 +1929,8 @@ focus_tree = {
 		available = {
 			has_full_control_of_state = 7
 		}
-		prerequisite = { focus = HOL_expand_the_ijmuiden_steel_mill }
+		prerequisite = { focus = HOL_expand_the_ijmuiden_steel_mill focus = HOL_friesland_agricultural_impetus }
+		mutually_exclusive = {focus =  HOL_daf }
 		icon = GFX_focus_hol_fokker
 		x = 0
 		y = 1
@@ -2072,12 +2074,13 @@ focus_tree = {
 		available = {
 			has_full_control_of_state = 36
 		}
-		prerequisite = { focus = HOL_develop_the_zandstad }
+		prerequisite = { focus = HOL_develop_the_zandstad focus = HOL_develop_the_randstad }
+		mutually_exclusive = { focus = HOL_expand_the_ijmuiden_steel_mill }
 		icon = GFX_goal_generic_agriculture2
 		x = 0
 		y = 1
 		relative_position_id = HOL_develop_the_zandstad
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2111,7 +2114,8 @@ focus_tree = {
 		available = {
 			has_full_control_of_state = 35
 		}
-		prerequisite = { focus = HOL_friesland_agricultural_impetus }
+		prerequisite = { focus = HOL_friesland_agricultural_impetus focus = HOL_expand_the_ijmuiden_steel_mill  }
+		mutually_exclusive = { focus = HOL_fokker }
 		icon = GFX_focus_hol_daf
 		x = 0
 		y = 1
@@ -2162,7 +2166,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_daf
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2190,7 +2194,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = HOL_fokker
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2285,7 +2289,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_domestic_innovation
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2380,7 +2384,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = HOL_overturn_military_budget_cuts
-		cost = 10
+		cost = 3
 
 		available_if_capitulated = yes
 
@@ -2399,22 +2403,22 @@ focus_tree = {
 			has_full_control_of_state = 7
 			has_full_control_of_state = 36
 		}
-		bypass = {
-			has_defensive_war_with = ENG
-			NOT = {
-				focus_progress = {
-					focus = HOL_germany_is_the_greater_threat
-					progress > 0
-				}
-			}
-		}
+		# bypass = {
+		# 	has_defensive_war_with = ENG
+		# 	NOT = {
+		# 		focus_progress = {
+		# 			focus = HOL_germany_is_the_greater_threat
+		# 			progress > 0
+		# 		}
+		# 	}
+		# }
 		prerequisite = { focus = HOL_prepare_the_inundation_lines }
-		mutually_exclusive = { focus = HOL_germany_is_the_greater_threat }
+		#mutually_exclusive = { focus = HOL_germany_is_the_greater_threat }
 		icon = GFX_focus_attack_britain
 		x = -1
 		y = 1
 		relative_position_id = HOL_prepare_the_inundation_lines
-		cost = 5
+		cost = 1
 
 		available_if_capitulated = yes
 
@@ -2478,7 +2482,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_protect_against_britain
-		cost = 5
+		cost = 1
 
 		available_if_capitulated = yes
 
@@ -2540,7 +2544,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_further_reinforce_the_ports
-		cost = 5
+		cost = 1
 
 		available_if_capitulated = yes
 
@@ -2599,21 +2603,21 @@ focus_tree = {
 			has_full_control_of_state = 36
 		}
 		bypass = {
-			has_defensive_war_with = GER
-			NOT = {
-				focus_progress = {
-					focus = HOL_protect_against_britain
-					progress > 0
-				}
-			}
+			# has_defensive_war_with = GER
+			# NOT = {
+			# 	focus_progress = {
+			# 		focus = HOL_protect_against_britain
+			# 		progress > 0
+			# 	}
+			# }
 		}
 		prerequisite = { focus = HOL_prepare_the_inundation_lines }
-		mutually_exclusive = { focus = HOL_protect_against_britain }
+		#mutually_exclusive = { focus = HOL_protect_against_britain }
 		icon = GFX_focus_attack_germany
 		x = 1
 		y = 1
 		relative_position_id = HOL_prepare_the_inundation_lines
-		cost = 5
+		cost = 1
 
 		available_if_capitulated = yes
 
@@ -2667,7 +2671,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_germany_is_the_greater_threat
-		cost = 5
+		cost = 1
 
 		available_if_capitulated = yes
 
@@ -2725,7 +2729,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_fortress_holland
-		cost = 5
+		cost = 1
 
 		available_if_capitulated = yes
 
@@ -2757,7 +2761,7 @@ focus_tree = {
 		x = 1
 		y = 3
 		relative_position_id = HOL_protect_against_britain
-		cost = 10
+		cost = 5
 
 		cancel_if_invalid = no
 
@@ -2782,7 +2786,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_overturn_military_budget_cuts
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2825,7 +2829,7 @@ focus_tree = {
 	focus = {
 		id = HOL_modernize_our_infantry_equipment
 		prerequisite = { focus = HOL_appoint_new_supreme_commander }
-		mutually_exclusive = { focus = HOL_production_under_license }
+		#mutually_exclusive = { focus = HOL_production_under_license }
 		icon = GFX_goal_machine_gun
 		x = -1
 		y = 1
@@ -2855,12 +2859,12 @@ focus_tree = {
 	focus = {
 		id = HOL_production_under_license
 		prerequisite = { focus = HOL_appoint_new_supreme_commander }
-		mutually_exclusive = { focus = HOL_modernize_our_infantry_equipment }
+		#mutually_exclusive = { focus = HOL_modernize_our_infantry_equipment }
 		icon = GFX_goal_generic_production
 		x = 1
 		y = 1
 		relative_position_id = HOL_appoint_new_supreme_commander
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2881,7 +2885,7 @@ focus_tree = {
 		x = 1	#56
 		y = 1
 		relative_position_id = HOL_modernize_our_infantry_equipment
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2979,7 +2983,7 @@ focus_tree = {
 		x = -1	#56
 		y = 1
 		relative_position_id = HOL_modernize_our_infantry_equipment
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -3065,7 +3069,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_secret_staff_talks
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -3095,7 +3099,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_light_tanks_for_the_colonies
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -3151,7 +3155,7 @@ focus_tree = {
 		x = 4
 		y = 2
 		relative_position_id = HOL_overturn_military_budget_cuts
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIR_XP }	
@@ -3181,15 +3185,15 @@ focus_tree = {
 				NOT = { controls_state = 35 }
 				NOT = { controls_state = 36 }
 			}
-			NOT = {
-				focus_progress = {
-					focus = HOL_protect_the_colonies
-					progress > 0
-				}
-			}
+			# NOT = {
+			# 	focus_progress = {
+			# 		focus = HOL_protect_the_colonies
+			# 		progress > 0
+			# 	}
+			# }
 		}
 		prerequisite = { focus = HOL_expand_the_mld }
-		mutually_exclusive = { focus = HOL_protect_the_colonies }
+		#mutually_exclusive = { focus = HOL_protect_the_colonies }
 		icon = GFX_goal_HOL_standardize_plane_designs
 		x = -1
 		y = 1
@@ -3310,7 +3314,7 @@ focus_tree = {
 			}
 		}
 		prerequisite = { focus = HOL_expand_the_mld }
-		mutually_exclusive = { focus = HOL_protect_the_mainland }
+		#mutually_exclusive = { focus = HOL_protect_the_mainland }
 		icon = GFX_goal_generic_naval_bombers #r56
 		x = 1
 		y = 1
@@ -3327,7 +3331,7 @@ focus_tree = {
 				add_tech_bonus = {
 					name = HOL_protect_the_colonies
 					technology = improved_medium_airframe
-					bonus = 0.75
+					bonus = 1
 					uses = 1
 				}
 			}
@@ -3373,7 +3377,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_timed_idea = { idea = HOL_modernize_the_air_fleet days = 365 }
+			add_timed_idea = { idea = HOL_modernize_the_air_fleet days = 480 }
 		}
 	}
 
@@ -3387,7 +3391,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_modernize_the_air_fleet
-		cost = 10
+		cost = 3
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIR_XP }	#56
@@ -3491,12 +3495,12 @@ focus_tree = {
 			}
 		}
 		prerequisite = { focus = HOL_strategic_bombing_defense }
-		mutually_exclusive = { focus = HOL_air_cover_for_the_new_fleet }
+		#mutually_exclusive = { focus = HOL_air_cover_for_the_new_fleet }
 		icon = GFX_goal_generic_construct_military
 		x = 1
 		y = 1
 		relative_position_id = HOL_strategic_bombing_defense
-		cost = 10
+		cost = 2
 
 		available_if_capitulated = yes
 
@@ -3632,7 +3636,7 @@ focus_tree = {
 		x = 8
 		y = 2
 		relative_position_id = HOL_overturn_military_budget_cuts
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -3790,16 +3794,16 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = HOL_prepare_naval_expansion
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			7 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = fuel_silo
-					level = 1
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -3814,7 +3818,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_prepare_naval_expansion
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -3836,7 +3840,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_cornerstone_of_colonial_defense
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -3892,7 +3896,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_rely_on_submarines
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -3938,7 +3942,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_rely_on_submarines
-		cost = 8
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -4019,7 +4023,7 @@ focus_tree = {
 	focus = {
 		id = HOL_air_cover_for_the_new_fleet
 		prerequisite = { focus = HOL_the_battlecruiser_plan }
-		mutually_exclusive = { focus = HOL_unsinkable_aircraft_carriers }
+		#mutually_exclusive = { focus = HOL_unsinkable_aircraft_carriers }
 		icon = GFX_goal_generic_navy_carrier
 		x = -1
 		y = 1
@@ -4069,7 +4073,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_air_cover_for_the_new_fleet
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }	#56
@@ -4137,7 +4141,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -4168,7 +4172,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_form_new_government
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
@@ -4505,7 +4509,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = HOL_cave_to_the_germans
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL}
@@ -4539,7 +4543,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL }	#56
@@ -4566,7 +4570,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = HOL_strength_over_blood	#566
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }	#566
@@ -4611,7 +4615,7 @@ focus_tree = {
 		x = -2	#56
 		y = 1
 		relative_position_id = HOL_strength_over_blood
-		cost = 10	#56
+		cost = 5	#56
 
 		available_if_capitulated = yes
 
@@ -4628,7 +4632,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_join_germany
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -4842,7 +4846,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOL_strength_over_blood
 
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -4862,7 +4866,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = HOL_the_netherlands_first
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }	#56
@@ -5018,7 +5022,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOL_join_germany
 
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -5402,7 +5406,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = HOL_maintain_trade_neutrality
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -5585,7 +5589,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_legacy_of_the_de_zeven_provincien_mutiny
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -5749,7 +5753,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_legacy_of_the_de_zeven_provincien_mutiny
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY}
@@ -5824,7 +5828,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_affirm_loyalty_to_moscow
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -5906,7 +5910,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_the_netherlands_first
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -5927,7 +5931,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = HOL_placate_the_japanese
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -6087,7 +6091,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = HOL_join_the_french
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }	#56
@@ -6127,7 +6131,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_socialist_industrial_support
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -6175,7 +6179,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = HOL_socialist_industrial_support
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_MANPOWER}
@@ -6203,7 +6207,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = HOL_decolonization
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
@@ -6278,7 +6282,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_bastion_of_true_communism
-		cost = 10
+		cost = 5
 		available = {
 			is_subject = no
 			any_state = {
@@ -6354,7 +6358,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_bring_socialism_south
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_MANPOWER}
@@ -6404,7 +6408,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_french_military_mission
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -6565,7 +6569,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = HOL_maintain_trade_neutrality
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
@@ -6585,7 +6589,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_oranje_boven
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
@@ -6622,7 +6626,7 @@ focus_tree = {
 			}
 		}
 		
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT}
@@ -6657,7 +6661,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_symbol_of_resistance
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT}
@@ -6679,7 +6683,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_the_only_man_in_the_dutch_government
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
@@ -6733,7 +6737,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_the_only_man_in_the_dutch_government
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER}
@@ -6752,7 +6756,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_de_vernieuwing
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY}
@@ -6854,7 +6858,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_a_new_dutch_unity
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -6878,7 +6882,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 3 }
+			add_offsite_building = { type = arms_factory level = 4 }
 		}
 	}
 
@@ -6896,7 +6900,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_revive_the_buffer_state_proposal
-		cost = 10
+		cost = 5
 
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -7168,7 +7172,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = HOL_cave_to_the_british
-		cost = 10
+		cost = 5
 
 		allow_branch = {	#56
 			if = {
@@ -7318,7 +7322,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_replace_the_defeatist_government
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_MANPOWER}
@@ -7342,7 +7346,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = HOL_de_vaarplicht
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
@@ -7387,7 +7391,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_go_with_britain
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -7467,7 +7471,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_ship_a_day_sinking_quotas
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
@@ -7610,7 +7614,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_request_allied_favors
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -7635,7 +7639,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_combined_chiefs_of_staff_representation
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -7717,7 +7721,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_allied_technological_developments
-		cost = 10
+		cost = 2
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -7763,7 +7767,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = HOL_unity_through_democracy
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
@@ -7818,7 +7822,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_lead_the_minor_democracies
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -7867,7 +7871,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_lead_the_minor_democracies
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
@@ -7885,7 +7889,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = HOL_form_the_benelux
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -7905,7 +7909,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = HOL_lessons_from_the_low_countries
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -7960,7 +7964,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = HOL_foundations_for_a_european_union
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
