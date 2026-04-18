@@ -5048,7 +5048,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_chamberlains_overture
-		cost = 10
+		cost = 5
 		available = {
 			set_temp_variable = {
 				var = temp_preparedness
@@ -5167,7 +5167,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_crowns_executive_powers
-		cost = 10
+		cost = 5
 		available = {
 			neutrality > 0.65
 		}
@@ -5204,7 +5204,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_the_kingdom_of_norway
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_ARMY_XP }
 
@@ -5232,7 +5232,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_the_kingdom_of_norway
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_NAVY_XP }
 
@@ -5260,7 +5260,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_appoint_prince_olav_to_army_staff
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -5282,7 +5282,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_promote_civilian_donations
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
@@ -5310,12 +5310,15 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_promote_civilian_donations
-		cost = 10
+		cost = 1
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
 			unlock_military_industrial_organization_tooltip = mio:NOR_cadillac_organization
+			mio:NOR_cadillac_organization = {
+				add_mio_size = 2
+			}		
 		}
 	}
 
@@ -5327,7 +5330,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = NOR_prince_olav_to_navy_staff
-		cost = 10
+		cost = 5
 
 		completion_reward = {
 			custom_effect_tooltip = NOR_modify_kingdom_of_norway_TT
@@ -5362,7 +5365,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_enhance_coastal_defense
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -5469,7 +5472,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_rule_the_northern_sea
-		cost = 10
+		cost = 1
 
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 
@@ -5555,7 +5558,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_power_to_the_royal_guard
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
@@ -5578,7 +5581,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_power_to_the_royal_guard
-		cost = 10
+		cost = 5
 
 		completion_reward = {
 			custom_effect_tooltip = NOR_modify_kingdom_of_norway_TT		
@@ -5608,7 +5611,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = NOR_for_the_king_and_prince
-		cost = 10
+		cost = 5
 		available = {
 			has_war_support > 0.5
 		}
@@ -5677,7 +5680,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_encourage_recruitment
-		cost = 10
+		cost = 1
 		available = {
 			any_state = {
 				is_owned_and_controlled_by = ROOT
@@ -5784,7 +5787,7 @@ focus_tree = {
 			}	
 		}
 
-		cost = 10
+		cost = 5
 
 		available = {
 			NOT = {
@@ -5899,7 +5902,7 @@ focus_tree = {
 			}	
 		}
 
-		cost = 5
+		cost = 1
 		available = {
 			337 = {
 				NOT = {
@@ -5955,7 +5958,7 @@ focus_tree = {
 		x = 2
 		y = 0
 		relative_position_id = NOR_claims_on_faroe_islands
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				101 = {
@@ -6010,7 +6013,7 @@ focus_tree = {
 		x = 2
 		y = 0
 		relative_position_id = NOR_eirik_raudes_land
-		cost = 10
+		cost = 1
 		available = {
 			NOT = {
 				100 = {
@@ -6075,7 +6078,7 @@ focus_tree = {
 			}
 		}
 
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				37 = {
@@ -6205,7 +6208,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_claims_on_denmark
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				AND = {
@@ -6238,7 +6241,7 @@ focus_tree = {
 
 		completion_reward = {
 			set_country_flag = NOR_claiming_bjarmeland
-			213 = { # USing Murmansk because it's the closest one to Norway  
+			722 = { # USing Murmansk because it's the closest one to Norway  
 				controller = {
 					country_event = {
 						id = AAT_norway.17
@@ -6246,53 +6249,53 @@ focus_tree = {
 					}
 					effect_tooltip = {
 						custom_effect_tooltip = if_they_accept
-						213 = { # Murmansk 
+						722 = { # Murmansk 
 							transfer_state_to = NOR
 						}
 						if = {  # Arkhangelsk  
 							limit = {
-								owns_state = 214
+								owns_state = 722
 							}
-							214 = { transfer_State_to = NOR }
+							722 = { transfer_State_to = NOR }
 						}
 						if = { # Onega  
 							limit = {
-								owns_state = 215 
+								owns_state = 148
 							}
-							215 = { transfer_state_to = NOR }
+							148 = { transfer_state_to = NOR }
 						}
 						custom_effect_tooltip = if_they_reject
 						ROOT = {
 							create_wargoal = {
 								type = take_state_focus
 								target = PREV
-								generator = { 213 } 
+								generator = { 148 } 
 							}
 						}
-						if = {  #  Arkhangelsk 
-							limit = {
-								owns_state = 214
-							}
-							ROOT = {
-								create_wargoal = {
-									type = take_state_focus
-									target = PREV
-									generator = { 214 } 
-								}
-							}
-						}
-						if = { # Onega  
-							limit = {
-								owns_state = 215 
-							}
-							ROOT = {
-								create_wargoal = {
-									type = take_state_focus
-									target = PREV
-									generator = { 215 } 
-								}
-							}
-						}
+						# if = {  #  Arkhangelsk 
+						# 	limit = {
+						# 		owns_state = 148
+						# 	}
+						# 	ROOT = {
+						# 		create_wargoal = {
+						# 			type = take_state_focus
+						# 			target = PREV
+						# 			generator = { 214 } 
+						# 		}
+						# 	}
+						# }
+						# if = { # Onega  
+						# 	limit = {
+						# 		owns_state = 215 
+						# 	}
+						# 	ROOT = {
+						# 		create_wargoal = {
+						# 			type = take_state_focus
+						# 			target = PREV
+						# 			generator = { 215 } 
+						# 		}
+						# 	}
+						# }
 						
 					}
 				}
@@ -6798,7 +6801,7 @@ focus_tree = {
 
 
 
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -6852,7 +6855,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = NOR_start_rearmament
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -6913,7 +6916,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = NOR_start_rearmament
-		cost = 5
+		cost = 1
 		available = {
 			NOR_broken_gun_trigger = yes 
 			110 = {
@@ -6970,7 +6973,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_drobak_coastal_fort
-		cost = 10
+		cost = 1
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7076,7 +7079,7 @@ focus_tree = {
 		id = NOR_tank_procurement
 		icon = GFX_focus_generic_license_production
 		prerequisite = { focus = NOR_rikstanken }
-		mutually_exclusive = { focus = NOR_norges_rikstanksfabrikk }
+		#mutually_exclusive = { focus = NOR_norges_rikstanksfabrikk }
 
 		x = 1
 		y = 1
@@ -7110,7 +7113,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_rikstanken
-		mutually_exclusive = { focus = NOR_tank_procurement }
+		#mutually_exclusive = { focus = NOR_tank_procurement }
 		cost = 10
 		available = {
 			NOR_broken_gun_trigger = yes 
@@ -7173,7 +7176,7 @@ focus_tree = {
 		y = 1
 
 		relative_position_id = NOR_start_rearmament
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7218,7 +7221,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_improved_weapons
 
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 			NOT = {
@@ -7242,7 +7245,7 @@ focus_tree = {
 		x = 10
 		y = 0
 		relative_position_id = NOR_start_rearmament
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = { has_idea = NOR_the_hard_thirties_ns_2 }
@@ -7316,7 +7319,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = NOR_building_an_independent_norway
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
@@ -7343,7 +7346,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_building_an_independent_norway
-		cost = 10
+		cost = 3
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
@@ -7387,7 +7390,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_building_an_independent_norway
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 
@@ -7405,7 +7408,7 @@ focus_tree = {
 		id = NOR_empower_large_industrial_groups
 		icon = GFX_focus_generic_industry_3
 		prerequisite = { focus = NOR_norwegian_school_of_economics }
-		mutually_exclusive = { focus = NOR_fund_local_construction }
+		#mutually_exclusive = { focus = NOR_fund_local_construction }
 
 		x = -1
 		y = 1
@@ -7438,20 +7441,20 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = NOR_empower_large_industrial_groups
-				bonus = 0.75
+				bonus = 1
 				uses = 1
 				category = electronics 
 			}
 			add_tech_bonus = {
 				name = NOR_empower_large_industrial_groups
-				bonus = 0.75
+				bonus = 1
 				uses = 1
 				category = industry 
 			}
-			add_popularity = { # This is to represent Large industry's collaboration with the Nazis in occupied Norway 
-			 	ideology = fascism
-			 	popularity = 0.05
-			 } 
+			# add_popularity = { # This is to represent Large industry's collaboration with the Nazis in occupied Norway 
+			#  	ideology = fascism
+			#  	popularity = 0.05
+			#  } 
 		}
 	}
 
@@ -7463,7 +7466,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_empower_large_industrial_groups
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -7484,7 +7487,7 @@ focus_tree = {
 				random_select_amount = 3 
 				add_resource = {
 					type = aluminium 
-					amount = 10
+					amount = 24
 				}
 				add_extra_state_shared_building_slots = 1 
 				add_building_construction = {
@@ -7507,7 +7510,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_norwegian_school_of_economics
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -7548,7 +7551,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_empower_large_industrial_groups
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
@@ -7572,12 +7575,12 @@ focus_tree = {
 				}	
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 24
 				}
 			}
 			add_tech_bonus = {
 				name = NOR_aluminum_production
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = excavation_tech 
 			}
@@ -7594,7 +7597,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_aluminum_production
-		cost = 10
+		cost = 1
 		available = {
 			has_full_control_of_state = 143 # Trondelag
 			has_full_control_of_state = 1033 # Helgeland
@@ -7622,7 +7625,7 @@ focus_tree = {
 		x = 0
 		y = 4
 		relative_position_id = NOR_hurtigruten
-		cost = 10
+		cost = 1
 		available = {
 			143 = {
 				is_owned_and_controlled_by = ROOT
@@ -7733,7 +7736,7 @@ focus_tree = {
 		x = 8
 		y = 0
 		relative_position_id = NOR_building_an_independent_norway
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7752,11 +7755,11 @@ focus_tree = {
 		icon = GFX_focus_generic_cas_aircraft
 		
 		prerequisite = { focus = NOR_haerens_flyvevaaben }		
-		mutually_exclusive = { focus = NOR_foreign_plane_designs}
+		#mutually_exclusive = { focus = NOR_foreign_plane_designs}
 		x = -3
 		y = 1
 		relative_position_id = NOR_haerens_flyvevaaben
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7795,11 +7798,11 @@ focus_tree = {
 		icon = GFX_goal_generic_air_fighter2
 		
 		prerequisite = { focus = NOR_haerens_flyvevaaben }
-		mutually_exclusive = { focus = NOR_norwegian_planes}
+		#mutually_exclusive = { focus = NOR_norwegian_planes}
 		x = -1
 		y = 1
 		relative_position_id = NOR_haerens_flyvevaaben
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7848,7 +7851,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = NOR_norwegian_planes
-		cost = 10
+		cost = 8
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7875,7 +7878,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_anti_air_artillery_research
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -7929,7 +7932,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_foreign_plane_designs
-		cost = 10
+		cost = 3
 		available = {
 			any_owned_state = {
 				is_controlled_by = ROOT 
@@ -7970,7 +7973,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = NOR_norwegian_planes
-		cost = 10
+		cost = 1
 		available = {
 			any_owned_state = {
 				is_controlled_by = ROOT 
@@ -8038,7 +8041,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_anti_air_artillery_research
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8046,7 +8049,21 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			custom_effect_tooltip = "MIO Stuff"
+			mio:NOR_marinens_flyvebaatfabrikk_organization = {
+				unlock_mio_trait_tooltip = DEN_mio_trait_standardized_production_flyvertroppernes
+			}		
+			mio:ENG_de_havilland_organization = {
+				add_mio_funds = 500 
+			}
+			mio:NOR_marinens_flyvebaatfabrikk_organization ={
+				add_mio_funds = 1000
+			}
+			mio:GER_messerschmitt_organization = {
+				add_mio_funds = 500
+			}
+			mio:GER_heinkel_organization = {
+				add_mio_funds = 500
+			}
 		}
 	}
 
@@ -8068,12 +8085,27 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			custom_effect_tooltip = "International Market/MIO stuff" 
+			if = { 
+				limit = { has_country_flag = NOR_luftforsvaret_flag }
+				custom_effect_tooltip = NOR_modify_royal_air_force_dmod_TT
+			}
+			else = { 
+				custom_effect_tooltip = NOR_modify_air_force_dmod_TT
+			}				
+			mio:NOR_raufoss_ammunisjonsfabrikker_organization = {
+				unlock_mio_trait_tooltip = SWE_bofors_fly_swatter
+			}	
+			#custom_effect_tooltip = "International Market/MIO stuff" 
 			add_to_variable = {
 				var = NOR.NOR_army_air_force_dmod_production_speed_anti_air_building_factor
 				value = 0.25
 				tooltip = production_speed_anti_air_building_factor_tt
 			}
+			add_equipment_subsidy = {
+				cic = 250
+				equipment_type = anti_air_equipment
+				seller_tags = { SWE } 
+			}				
 		}
 	}
 
@@ -8137,7 +8169,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = NOR_haerens_flyvevaaben
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8171,7 +8203,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = NOR_radar_research
-		cost = 10
+		cost = 5
 		available = {
 			is_special_project_completed = sp:sp_air_radar
 			NOR_broken_gun_trigger = yes 
@@ -8275,7 +8307,7 @@ focus_tree = {
 		x = 13
 		y = 0
 		relative_position_id = NOR_haerens_flyvevaaben
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_HISTORICAL }
 
@@ -8296,7 +8328,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = NOR_the_royal_norwegian_navy
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -8312,10 +8344,10 @@ focus_tree = {
 					}
 				}
 				random_select_amount = 3
-				add_extra_state_shared_building_slots = 1 
+				add_extra_state_shared_building_slots = 2 
 				add_building_construction = {
 					type = dockyard
-					level = 1 
+					level = 2 
 					instant_build = yes 
 				}
 			}
@@ -8386,10 +8418,10 @@ focus_tree = {
 						include_locked = yes 
 					}
 				}
-				add_extra_state_shared_building_slots = 2 
+				add_extra_state_shared_building_slots = 4 
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 4
 					instant_build = yes 
 				}
 			}
@@ -8474,7 +8506,7 @@ focus_tree = {
 		
 		available_if_capitulated = yes
 		
-		cost = 10
+		cost = 5
 		
 		available = {
 			NOR_broken_gun_trigger = yes 
@@ -8496,7 +8528,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_expand_the_dockyards
 		
-		cost = 10
+		cost = 5
 		
 		bypass = {
 			has_capitulated = yes
@@ -8540,7 +8572,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = NOR_battleship_focus
-		cost = 10
+		cost = 5
 		available = {
 			NOR_broken_gun_trigger = yes 
 		}
@@ -8607,7 +8639,7 @@ focus_tree = {
 			add_to_variable = {
 				var = NOR.NOR_royal_navy_dmod_sortie_efficiency
 				value = 0.2
-				tooltip = CARRIER_SORTIE_EFFICIENCY_FACTOR_TT
+				tooltip = sortie_efficiency_tt
 			}
 
 		}
@@ -8752,7 +8784,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		cost = 10
+		cost = 5
 
 		available = {
 			NOR_broken_gun_trigger = yes 
@@ -8780,7 +8812,7 @@ focus_tree = {
 		relative_position_id = NOR_expand_merchant_marine
 		cost = 5
 		available = {
-			is_government_in_exile = yes 
+			#is_government_in_exile = yes 
 			NOR_broken_gun_trigger = yes 
 		}
 
