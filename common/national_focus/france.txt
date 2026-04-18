@@ -1469,7 +1469,7 @@ focus_tree = {
 	focus = {
 		id = FRA_vienot_agreement
 		icon = GFX_focus_generic_treaty
-		cost = 10
+		cost = 8
 		prerequisite = {
 			focus = FRA_colonial_investments
 		}
@@ -1493,89 +1493,89 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 110
-			if = {
-				limit = {
-					SYR = {
-						exists = no
-					}
-					ROOT = {
-						OR = {
-							controls_state = 677
-							controls_state = 680
-							controls_state = 554
-						}
-					}
-				}
-				release = SYR
-				set_autonomy = {
-					target = SYR
-					autonomy_state = autonomy_free
-				}
-				give_guarantee = SYR
-				SYR = {
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = ENG_guiding_the_colonies
-					}
-				}
-				hidden_effect = {
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						SYR = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					LEB = {
-						exists = no
-					}
-					ROOT = {
-						controls_state = 553
-					}
-				}
-				release = LEB
-				set_autonomy = {
-					target = LEB
-					autonomy_state = autonomy_free
-				}
-				give_guarantee = LEB
-				LEB = {
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = ENG_guiding_the_colonies
-					}
-				}
-				hidden_effect = {
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						LEB = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		SYR = {
+			# 			exists = no
+			# 		}
+			# 		ROOT = {
+			# 			OR = {
+			# 				controls_state = 677
+			# 				controls_state = 680
+			# 				controls_state = 554
+			# 			}
+			# 		}
+			# 	}
+			# 	release = SYR
+			# 	set_autonomy = {
+			# 		target = SYR
+			# 		autonomy_state = autonomy_free
+			# 	}
+			# 	give_guarantee = SYR
+			# 	SYR = {
+			# 		add_opinion_modifier = {
+			# 			target = ROOT
+			# 			modifier = ENG_guiding_the_colonies
+			# 		}
+			# 	}
+			# 	hidden_effect = {
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			SYR = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		LEB = {
+			# 			exists = no
+			# 		}
+			# 		ROOT = {
+			# 			controls_state = 553
+			# 		}
+			# 	}
+			# 	release = LEB
+			# 	set_autonomy = {
+			# 		target = LEB
+			# 		autonomy_state = autonomy_free
+			# 	}
+			# 	give_guarantee = LEB
+			# 	LEB = {
+			# 		add_opinion_modifier = {
+			# 			target = ROOT
+			# 			modifier = ENG_guiding_the_colonies
+			# 		}
+			# 	}
+			# 	hidden_effect = {
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			LEB = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
 		id = FRA_rewrite_protectorate_treaties
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		cost = 5
+		cost = 8
 		prerequisite = {
 			focus = FRA_vienot_agreement
 		}
@@ -1592,154 +1592,154 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 110
-			if = {
-				limit = {
-					OR ={
-						ROOT = {
-							controls_state = 728
-						}
-						FRI = {
-							is_subject_of = ROOT
-							controls_state = 728
-						}
-						VIN = {
-							is_subject_of = ROOT
-							controls_state = 728
-						}
-					}
-					CHI = {
-						exists = yes
-						NOT = { has_war_with = ROOT }
-					}
-				}
-				CHI = {
-					transfer_state = 728
-				}
-			}
-			if = {
-				limit = {
-					OR ={
-						ROOT = {
-							controls_state = 728
-						}
-						FRI = {
-							is_subject_of = ROOT
-							controls_state = 728
-						}
-						VIN = {
-							is_subject_of = ROOT
-							controls_state = 728
-						}
-					}
-					CHI = { exists = no }
-					PRC = {	
-						exists = yes
-						NOT = { has_war_with = ROOT }
-					}
-				}
-				PRC = {
-					transfer_state = 728
-				}
-			}
-			if = {
-				limit = {
-					461 = {
-						is_fully_controlled_by = ROOT
-					}
-					462 = {
-						is_fully_controlled_by = ROOT
-					}
-				}
-				release_puppet = MOR
-				hidden_effect = {
-					MOR = {
-						set_politics = {
-							ruling_party = neutrality
-							last_election = "1936.1.1"
-							election_frequency = 48
-							elections_allowed = no
-						}
-						set_popularities = {
-							neutrality = 90
-							democratic = 5
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					458 = {
-						is_fully_controlled_by = ROOT
-					}
-					665 = {
-						is_fully_controlled_by = ROOT
-					}
-				}
-				release_puppet = TUN
-				hidden_effect = {
-					TUN = {
-						set_politics = {
-							ruling_party = neutrality
-							last_election = "1936.1.1"
-							election_frequency = 48
-							elections_allowed = no
-						}
-						set_popularities = {
-							neutrality = 90
-							democratic = 5
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					MOR = {
-						is_subject_of = ROOT
-					}
-				}
-				hidden_effect = {
-					MOR = {
-						set_politics = {
-							ruling_party = neutrality
-							last_election = "1936.1.1"
-							election_frequency = 48
-							elections_allowed = no
-						}
-						set_popularities = {
-							neutrality = 90
-							democratic = 5
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					TUN = {
-						is_subject_of = ROOT
-					}
-				}
-				hidden_effect = {
-					TUN = {
-						set_politics = {
-							ruling_party = neutrality
-							last_election = "1936.1.1"
-							election_frequency = 48
-							elections_allowed = no
-						}
-						set_popularities = {
-							neutrality = 70
-							democratic = 30
-						}
-					}
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		OR ={
+			# 			ROOT = {
+			# 				controls_state = 728
+			# 			}
+			# 			FRI = {
+			# 				is_subject_of = ROOT
+			# 				controls_state = 728
+			# 			}
+			# 			VIN = {
+			# 				is_subject_of = ROOT
+			# 				controls_state = 728
+			# 			}
+			# 		}
+			# 		CHI = {
+			# 			exists = yes
+			# 			NOT = { has_war_with = ROOT }
+			# 		}
+			# 	}
+			# 	CHI = {
+			# 		transfer_state = 728
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		OR ={
+			# 			ROOT = {
+			# 				controls_state = 728
+			# 			}
+			# 			FRI = {
+			# 				is_subject_of = ROOT
+			# 				controls_state = 728
+			# 			}
+			# 			VIN = {
+			# 				is_subject_of = ROOT
+			# 				controls_state = 728
+			# 			}
+			# 		}
+			# 		CHI = { exists = no }
+			# 		PRC = {	
+			# 			exists = yes
+			# 			NOT = { has_war_with = ROOT }
+			# 		}
+			# 	}
+			# 	PRC = {
+			# 		transfer_state = 728
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		461 = {
+			# 			is_fully_controlled_by = ROOT
+			# 		}
+			# 		462 = {
+			# 			is_fully_controlled_by = ROOT
+			# 		}
+			# 	}
+			# 	release_puppet = MOR
+			# 	hidden_effect = {
+			# 		MOR = {
+			# 			set_politics = {
+			# 				ruling_party = neutrality
+			# 				last_election = "1936.1.1"
+			# 				election_frequency = 48
+			# 				elections_allowed = no
+			# 			}
+			# 			set_popularities = {
+			# 				neutrality = 90
+			# 				democratic = 5
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		458 = {
+			# 			is_fully_controlled_by = ROOT
+			# 		}
+			# 		665 = {
+			# 			is_fully_controlled_by = ROOT
+			# 		}
+			# 	}
+			# 	release_puppet = TUN
+			# 	hidden_effect = {
+			# 		TUN = {
+			# 			set_politics = {
+			# 				ruling_party = neutrality
+			# 				last_election = "1936.1.1"
+			# 				election_frequency = 48
+			# 				elections_allowed = no
+			# 			}
+			# 			set_popularities = {
+			# 				neutrality = 90
+			# 				democratic = 5
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		MOR = {
+			# 			is_subject_of = ROOT
+			# 		}
+			# 	}
+			# 	hidden_effect = {
+			# 		MOR = {
+			# 			set_politics = {
+			# 				ruling_party = neutrality
+			# 				last_election = "1936.1.1"
+			# 				election_frequency = 48
+			# 				elections_allowed = no
+			# 			}
+			# 			set_popularities = {
+			# 				neutrality = 90
+			# 				democratic = 5
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		TUN = {
+			# 			is_subject_of = ROOT
+			# 		}
+			# 	}
+			# 	hidden_effect = {
+			# 		TUN = {
+			# 			set_politics = {
+			# 				ruling_party = neutrality
+			# 				last_election = "1936.1.1"
+			# 				election_frequency = 48
+			# 				elections_allowed = no
+			# 			}
+			# 			set_popularities = {
+			# 				neutrality = 70
+			# 				democratic = 30
+			# 			}
+			# 		}
+			# 	}
+			# }
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
 		id = FRA_consolidate_african_federations
 		icon = GFX_focus_generic_self_management
-		cost = 5
+		cost = 8
 		prerequisite = {
 			focus = FRA_vienot_agreement
 		}
@@ -1748,53 +1748,53 @@ focus_tree = {
 		relative_position_id = FRA_vienot_agreement
 		available = {
 			is_subject = no
-			OR = {
-				has_full_control_of_state = 557
-				has_full_control_of_state = 786
-				has_full_control_of_state = 782
-				has_full_control_of_state = 515
-				has_full_control_of_state = 556
-				has_full_control_of_state = 781
-				has_full_control_of_state = 778
-				has_full_control_of_state = 776
-				has_full_control_of_state = 777
-				has_full_control_of_state = 779
-				has_full_control_of_state = 780
-				has_full_control_of_state = 272
-				has_full_control_of_state = 775
-				has_full_control_of_state = 774
-				has_full_control_of_state = 660
-				has_full_control_of_state = 773
-				has_full_control_of_state = 772
-				has_full_control_of_state = 539
-				has_full_control_of_state = 543
-				has_full_control_of_state = 268
-			}
+			# OR = {
+			# 	has_full_control_of_state = 557
+			# 	has_full_control_of_state = 786
+			# 	has_full_control_of_state = 782
+			# 	has_full_control_of_state = 515
+			# 	has_full_control_of_state = 556
+			# 	has_full_control_of_state = 781
+			# 	has_full_control_of_state = 778
+			# 	has_full_control_of_state = 776
+			# 	has_full_control_of_state = 777
+			# 	has_full_control_of_state = 779
+			# 	has_full_control_of_state = 780
+			# 	has_full_control_of_state = 272
+			# 	has_full_control_of_state = 775
+			# 	has_full_control_of_state = 774
+			# 	has_full_control_of_state = 660
+			# 	has_full_control_of_state = 773
+			# 	has_full_control_of_state = 772
+			# 	has_full_control_of_state = 539
+			# 	has_full_control_of_state = 543
+			# 	has_full_control_of_state = 268
+			# }
 		}
-		bypass = {
-			NOT = {
-				AND = {
-					owns_state = 557
-					owns_state = 786
-					owns_state = 782
-					owns_state = 515
-					owns_state = 556
-					owns_state = 781
-					owns_state = 778
-					owns_state = 776
-					owns_state = 777
-					owns_state = 779
-					owns_state = 780
-					owns_state = 272
-					owns_state = 775
-					owns_state = 774
-					owns_state = 660
-					owns_state = 773
-					owns_state = 772
-					owns_state = 539
-				}
-			}
-		}
+		# bypass = {
+		# 	NOT = {
+		# 		AND = {
+		# 			owns_state = 557
+		# 			owns_state = 786
+		# 			owns_state = 782
+		# 			owns_state = 515
+		# 			owns_state = 556
+		# 			owns_state = 781
+		# 			owns_state = 778
+		# 			owns_state = 776
+		# 			owns_state = 777
+		# 			owns_state = 779
+		# 			owns_state = 780
+		# 			owns_state = 272
+		# 			owns_state = 775
+		# 			owns_state = 774
+		# 			owns_state = 660
+		# 			owns_state = 773
+		# 			owns_state = 772
+		# 			owns_state = 539
+		# 		}
+		# 	}
+		# }
 		
 		ai_will_do = {
 			factor = 1.5
@@ -1802,401 +1802,401 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 110
-			if = {
-				limit = {
-					has_full_control_of_state = 786
-					has_full_control_of_state = 557
-				}
-				release_puppet = MRT
-				hidden_effect = {
-					MRT = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						MRT = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 782
-					has_full_control_of_state = 556
-				}
-				release_puppet = MLI
-				hidden_effect = {
-					MLI = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						MLI = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 272
-				}
-				release_puppet = SEN
-				hidden_effect = {
-					SEN = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						SEN = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 780
-				}
-				release_puppet = GNA
-				hidden_effect = {
-					GNA = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						GNA = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 779
-				}
-				release_puppet = IVO
-				hidden_effect = {
-					IVO = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						IVO = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 778
-				}
-				release_puppet = VOL
-				hidden_effect = {
-					VOL = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						VOL = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 777
-				}
-				release_puppet = TOG
-				hidden_effect = {
-					TOG = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						TOG = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 776
-				}
-				release_puppet = DAH
-				hidden_effect = {
-					DAH = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						DAH = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 781
-					has_full_control_of_state = 515
-				}
-				release_puppet = NGR
-				hidden_effect = {
-					NGR = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						NGR = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 775
-					has_full_control_of_state = 774
-				}
-				release_puppet = CHA
-				hidden_effect = {
-					CHA = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						CHA = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 773
-				}
-				release_puppet = CMR
-				hidden_effect = {
-					CMR = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						CMR = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 660
-				}
-				release_puppet = CAR
-				hidden_effect = {
-					CAR = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						CAR = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 539
-				}
-				release_puppet = GAB
-				hidden_effect = {
-					GAB = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						GAB = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 772
-				}
-				release_puppet = RCG
-				hidden_effect = {
-					RCG = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						RCG = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 268
-				}
-				release_puppet = DJI
-				hidden_effect = {
-					DJI = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						DJI = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 543
-				}
-				release_puppet = MAD
-				hidden_effect = {
-					MAD = {
-						add_ideas = FRA_colonial_focus
-						add_to_tech_sharing_group = french_research
-					}
-					every_other_country = {
-						limit = {
-							has_war_with = ROOT
-						}
-						MAD = {
-							add_to_war = {
-								targeted_alliance = ROOT
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 786
+			# 		has_full_control_of_state = 557
+			# 	}
+			# 	release_puppet = MRT
+			# 	hidden_effect = {
+			# 		MRT = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			MRT = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 782
+			# 		has_full_control_of_state = 556
+			# 	}
+			# 	release_puppet = MLI
+			# 	hidden_effect = {
+			# 		MLI = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			MLI = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 272
+			# 	}
+			# 	release_puppet = SEN
+			# 	hidden_effect = {
+			# 		SEN = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			SEN = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 780
+			# 	}
+			# 	release_puppet = GNA
+			# 	hidden_effect = {
+			# 		GNA = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			GNA = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 779
+			# 	}
+			# 	release_puppet = IVO
+			# 	hidden_effect = {
+			# 		IVO = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			IVO = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 778
+			# 	}
+			# 	release_puppet = VOL
+			# 	hidden_effect = {
+			# 		VOL = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			VOL = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 777
+			# 	}
+			# 	release_puppet = TOG
+			# 	hidden_effect = {
+			# 		TOG = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			TOG = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 776
+			# 	}
+			# 	release_puppet = DAH
+			# 	hidden_effect = {
+			# 		DAH = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			DAH = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 781
+			# 		has_full_control_of_state = 515
+			# 	}
+			# 	release_puppet = NGR
+			# 	hidden_effect = {
+			# 		NGR = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			NGR = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 775
+			# 		has_full_control_of_state = 774
+			# 	}
+			# 	release_puppet = CHA
+			# 	hidden_effect = {
+			# 		CHA = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			CHA = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 773
+			# 	}
+			# 	release_puppet = CMR
+			# 	hidden_effect = {
+			# 		CMR = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			CMR = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 660
+			# 	}
+			# 	release_puppet = CAR
+			# 	hidden_effect = {
+			# 		CAR = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			CAR = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 539
+			# 	}
+			# 	release_puppet = GAB
+			# 	hidden_effect = {
+			# 		GAB = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			GAB = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 772
+			# 	}
+			# 	release_puppet = RCG
+			# 	hidden_effect = {
+			# 		RCG = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			RCG = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 268
+			# 	}
+			# 	release_puppet = DJI
+			# 	hidden_effect = {
+			# 		DJI = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			DJI = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		has_full_control_of_state = 543
+			# 	}
+			# 	release_puppet = MAD
+			# 	hidden_effect = {
+			# 		MAD = {
+			# 			add_ideas = FRA_colonial_focus
+			# 			add_to_tech_sharing_group = french_research
+			# 		}
+			# 		every_other_country = {
+			# 			limit = {
+			# 				has_war_with = ROOT
+			# 			}
+			# 			MAD = {
+			# 				add_to_war = {
+			# 					targeted_alliance = ROOT
+			# 					enemy = PREV
+			# 					hostility_reason = asked_to_join
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
 		id = FRA_autonomy_indochina
 		icon = GFX_goal_indochina_a_true_federation
-		cost = 5
+		cost = 8
 		prerequisite = {
 			focus = FRA_rewrite_protectorate_treaties
 		}
@@ -2212,24 +2212,24 @@ focus_tree = {
 				is_subject_of = ROOT
 			}
 		}
-		bypass = {
-			OR = {
-				FRI = {
-					is_subject = no
-				}
-				FRI = {
-					is_subject_of = ROOT
-					NOT = {
-						OR = {
-							has_full_control_of_state = 286
-							has_full_control_of_state = 671
-							has_full_control_of_state = 670
-							has_full_control_of_state = 741
-						}
-					}
-				}
-			}
-		}
+		# bypass = {
+		# 	OR = {
+		# 		FRI = {
+		# 			is_subject = no
+		# 		}
+		# 		FRI = {
+		# 			is_subject_of = ROOT
+		# 			NOT = {
+		# 				OR = {
+		# 					has_full_control_of_state = 286
+		# 					has_full_control_of_state = 671
+		# 					has_full_control_of_state = 670
+		# 					has_full_control_of_state = 741
+		# 				}
+		# 			}
+		# 		}
+		# 	}
+		# }
 		
 		ai_will_do = {
 			factor = 1.5
@@ -2237,97 +2237,97 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 110
-			if = {
-				limit = {
-					FRI = {
-						has_full_control_of_state = 286
-						has_full_control_of_state = 671
-					}
-				}
-				FRI = {
-					release = VIN
-				}
-				FRA = {
-					set_autonomy = {
-						target = VIN
-						autonomy_state = autonomy_dominion
-					}
-				}
-				hidden_effect = {
-					VIN = {
-						set_politics = {
-							ruling_party = neutrality
-							last_election = "1936.1.1"
-							election_frequency = 48
-							elections_allowed = no
-						}
-						set_popularities = {
-							neutrality = 60
-							democratic = 40
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					FRI = {
-						has_full_control_of_state = 670
-					}
-				}
-				FRI = {
-					release = LAO
-				}
-				FRA = {
-					set_autonomy = {
-						target = LAO
-						autonomy_state = autonomy_dominion
-					}
-				}
-				hidden_effect = {
-					LAO = {
-						set_politics = {
-							ruling_party = neutrality
-							last_election = "1936.1.1"
-							election_frequency = 48
-							elections_allowed = no
-						}
-						set_popularities = {
-							neutrality = 60
-							democratic = 40
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					FRI = {
-						has_full_control_of_state = 741
-					}
-				}
-				FRI = {
-					release = CAM
-				}
-				FRA = {
-					set_autonomy = {
-						target = CAM
-						autonomy_state = autonomy_dominion
-					}
-				}
-				hidden_effect = {
-					CAM = {
-						set_politics = {
-							ruling_party = neutrality
-							last_election = "1936.1.1"
-							election_frequency = 48
-							elections_allowed = no
-						}
-						set_popularities = {
-							neutrality = 60
-							democratic = 40
-						}
-					}
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		FRI = {
+			# 			has_full_control_of_state = 286
+			# 			has_full_control_of_state = 671
+			# 		}
+			# 	}
+			# 	FRI = {
+			# 		release = VIN
+			# 	}
+			# 	FRA = {
+			# 		set_autonomy = {
+			# 			target = VIN
+			# 			autonomy_state = autonomy_dominion
+			# 		}
+			# 	}
+			# 	hidden_effect = {
+			# 		VIN = {
+			# 			set_politics = {
+			# 				ruling_party = neutrality
+			# 				last_election = "1936.1.1"
+			# 				election_frequency = 48
+			# 				elections_allowed = no
+			# 			}
+			# 			set_popularities = {
+			# 				neutrality = 60
+			# 				democratic = 40
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		FRI = {
+			# 			has_full_control_of_state = 670
+			# 		}
+			# 	}
+			# 	FRI = {
+			# 		release = LAO
+			# 	}
+			# 	FRA = {
+			# 		set_autonomy = {
+			# 			target = LAO
+			# 			autonomy_state = autonomy_dominion
+			# 		}
+			# 	}
+			# 	hidden_effect = {
+			# 		LAO = {
+			# 			set_politics = {
+			# 				ruling_party = neutrality
+			# 				last_election = "1936.1.1"
+			# 				election_frequency = 48
+			# 				elections_allowed = no
+			# 			}
+			# 			set_popularities = {
+			# 				neutrality = 60
+			# 				democratic = 40
+			# 			}
+			# 		}
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		FRI = {
+			# 			has_full_control_of_state = 741
+			# 		}
+			# 	}
+			# 	FRI = {
+			# 		release = CAM
+			# 	}
+			# 	FRA = {
+			# 		set_autonomy = {
+			# 			target = CAM
+			# 			autonomy_state = autonomy_dominion
+			# 		}
+			# 	}
+			# 	hidden_effect = {
+			# 		CAM = {
+			# 			set_politics = {
+			# 				ruling_party = neutrality
+			# 				last_election = "1936.1.1"
+			# 				election_frequency = 48
+			# 				elections_allowed = no
+			# 			}
+			# 			set_popularities = {
+			# 				neutrality = 60
+			# 				democratic = 40
+			# 			}
+			# 		}
+			# 	}
+			# }
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
 	}

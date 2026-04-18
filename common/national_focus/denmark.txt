@@ -96,15 +96,15 @@ focus_tree = {
 			}
 			custom_effect_tooltip = DEN_remove_economic_crisis_in_730_days_tt
 			
-			add_to_variable = {
-				den_lower_equilibrium = 5
-				tooltip = den_lower_equilibrium_tooltip
-			}
-			add_to_variable = {
-				den_middle_equilibrium = 10
-				tooltip = den_middle_equilibrium_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_lower_equilibrium = 5
+			# 	tooltip = den_lower_equilibrium_tooltip
+			# }
+			# add_to_variable = {
+			# 	den_middle_equilibrium = 10
+			# 	tooltip = den_middle_equilibrium_tooltip
+			# }
+			# den_calculate_stratas = yes
 		}
 	}
 	
@@ -118,7 +118,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			NOT = {
@@ -160,7 +160,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			NOT = {
@@ -202,7 +202,7 @@ focus_tree = {
 		x = -3
 		y = 1
 	
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 	
@@ -253,11 +253,11 @@ focus_tree = {
 				}
 			}
 			
-			add_to_variable = {
-				den_middle_equilibrium = 10
-				tooltip = den_middle_equilibrium_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_middle_equilibrium = 10
+			# 	tooltip = den_middle_equilibrium_tooltip
+			# }
+			# den_calculate_stratas = yes
 		}
 	}
 	
@@ -271,7 +271,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 	
@@ -329,7 +329,7 @@ focus_tree = {
 		x = -3
 		y = 3
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			964 = { is_fully_controlled_by = ROOT }
@@ -381,7 +381,7 @@ focus_tree = {
 		x = -1
 		y = 3
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 			NOT = {	has_full_control_of_state = 37 }
@@ -463,7 +463,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 	
@@ -558,7 +558,7 @@ focus_tree = {
 		x = 3
 		y = 1
 	
-		cost = 10
+		cost = 5
 		
 		available_if_capitulated = yes
 	
@@ -631,7 +631,7 @@ focus_tree = {
 		x = 3
 		y = 3
 	
-		cost = 10
+		cost = 5
 		
 		available_if_capitulated = yes
 	
@@ -682,7 +682,7 @@ focus_tree = {
 		x = 1
 		y = 3
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			any_core_state =  {
@@ -770,7 +770,7 @@ focus_tree = {
 		x = 1
 		y = 4
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 			NOT = { has_full_control_of_state = 37 }
@@ -921,7 +921,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 10
+		cost = 5
 			
 		available_if_capitulated = yes
 	
@@ -978,7 +978,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 		
 		available_if_capitulated = yes
 	
@@ -1044,7 +1044,7 @@ focus_tree = {
 		x = -1
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			337 = { is_fully_controlled_by = ROOT }
@@ -1086,7 +1086,7 @@ focus_tree = {
 		x = 1
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			1024 = { is_fully_controlled_by = ROOT }
@@ -1141,7 +1141,7 @@ focus_tree = {
 			if = { 
 				limit = { 101 = { is_fully_controlled_by = ROOT } }
 				101 = {
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 3
 					add_dynamic_modifier = {
 						modifier = DEN_development_projects_state_modifier
 					}
@@ -1160,7 +1160,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			101 = { is_fully_controlled_by = ROOT }
@@ -1180,7 +1180,7 @@ focus_tree = {
 					}
 					add_resource = {
 						type = aluminium
-						amount = 10
+						amount = 20
 					}
 				}
 			}
@@ -1197,7 +1197,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			101 = { is_fully_controlled_by = ROOT }
@@ -1221,15 +1221,15 @@ focus_tree = {
 					}
 					add_resource = {
 						type = steel
-						amount = 12
+						amount = 24
 					}
 					add_resource = {
 						type = chromium
-						amount = 6
+						amount = 12
 					}
 					add_resource = {
 						type = tungsten
-						amount = 6
+						amount = 12
 					}
 				}
 			}
@@ -1246,7 +1246,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			101 = { is_fully_controlled_by = ROOT }
@@ -1298,7 +1298,7 @@ focus_tree = {
 		x = 3
 		y = 1
 	
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 	
@@ -1354,7 +1354,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 10
+		cost = 5
 		
 		available_if_capitulated = yes
 	
@@ -1382,7 +1382,7 @@ focus_tree = {
 					}
 					add_resource = {
 						type = steel
-						amount = 12
+						amount = 24
 					}
 				}
 			}
@@ -1405,7 +1405,7 @@ focus_tree = {
 					}
 					add_resource = {
 						type = steel
-						amount = 4
+						amount = 24
 					}
 				}
 			}
@@ -1422,7 +1422,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 
@@ -1498,7 +1498,7 @@ focus_tree = {
 		x = -1
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			337 = { is_fully_controlled_by = ROOT }
@@ -1551,7 +1551,7 @@ focus_tree = {
 		x = 1
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			1024 = { is_fully_controlled_by = ROOT }
@@ -4001,7 +4001,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		
-		cost = 10
+		cost = 5
 	
 		bypass = {
 			NOT = {	has_full_control_of_state = 99 }
@@ -4045,13 +4045,13 @@ focus_tree = {
 		icon = GFX_focus_SOV_breadbasket_of_the_union
 
 		prerequisite = { focus = DEN_modernize_agricultural_machinery }
-		mutually_exclusive = { focus = DEN_industrial_reinvestments }
+		#mutually_exclusive = { focus = DEN_industrial_reinvestments }
 
 		relative_position_id = DEN_import_machinery_and_material	
 		x = -3
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 			NOT = { has_full_control_of_state = 99 }
@@ -4110,13 +4110,13 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 
 		prerequisite = { focus = DEN_modernize_agricultural_machinery }
-		mutually_exclusive = { focus = DEN_agricultural_reinvestments }
+		#mutually_exclusive = { focus = DEN_agricultural_reinvestments }
 
 		relative_position_id = DEN_import_machinery_and_material	
 		x = -1
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 			NOT = {	has_full_control_of_state = 37 }
@@ -4189,7 +4189,7 @@ focus_tree = {
 		x = -3
 		y = 3
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 
@@ -4223,7 +4223,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 
@@ -4261,13 +4261,13 @@ focus_tree = {
 		icon = GFX_goal_generic_production2
 
 		prerequisite = { focus = DEN_modernize_industrial_machinery }
-		mutually_exclusive = { focus = DEN_research_and_development }
+		#mutually_exclusive = { focus = DEN_research_and_development }
 
 		relative_position_id = DEN_import_machinery_and_material	
 		x = 3
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 			NOT = {	has_full_control_of_state = 37 }
@@ -4323,7 +4323,7 @@ focus_tree = {
 		icon = GFX_focus_research2
 
 		prerequisite = { focus = DEN_modernize_industrial_machinery }
-		mutually_exclusive = { focus = DEN_increase_industrial_production }
+		#mutually_exclusive = { focus = DEN_increase_industrial_production }
 
 		relative_position_id = DEN_import_machinery_and_material	
 		x = 1
@@ -4369,7 +4369,7 @@ focus_tree = {
 		x = 0
 		y = 3
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 
@@ -4377,7 +4377,7 @@ focus_tree = {
 	
 		available = {
 			has_full_control_of_state = 99
-			has_tech = excavation3
+			#has_tech = excavation3
 		}
 			
 		available_if_capitulated = yes
@@ -4430,7 +4430,7 @@ focus_tree = {
 		x = 3
 		y = 3
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			any_controlled_state = { 
@@ -4449,7 +4449,7 @@ focus_tree = {
 			add_to_variable = { DEN_industrial_improvement_tracker_var = 2 }
 			DEN_improve_industrial_capabilities_NS = yes
 			add_to_variable = {
-				DEN_industrial_capabilities_ship_repair = 0.1
+				DEN_industrial_capabilities_ship_repair = 0.25
 				tooltip = repair_speed_factor_tt
 			}
 
@@ -4464,10 +4464,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 1025 99 37 964 } 
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -4485,7 +4485,7 @@ focus_tree = {
 		x = 0
 		y = 4
 	
-		cost = 10
+		cost = 5
 	
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_BALANCE_OF_POWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	
@@ -4567,7 +4567,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		bypass = {
 			OR = {
@@ -4677,7 +4677,7 @@ focus_tree = {
 		x = -2
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	
@@ -4728,7 +4728,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 	
@@ -4797,7 +4797,7 @@ focus_tree = {
 		x = 2
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	
@@ -4968,15 +4968,15 @@ focus_tree = {
 				DEN_industrial_capabilities_consumer_goods = -0.1
 				tooltip = consumer_goods_factor_tt
 			}
-			add_to_variable = {
-				den_lower_equilibrium = 10
-				tooltip = den_lower_equilibrium_tooltip
-			}
-			add_to_variable = {
-				den_upper_equilibrium = -10
-				tooltip = den_upper_equilibrium_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_lower_equilibrium = 10
+			# 	tooltip = den_lower_equilibrium_tooltip
+			# }
+			# add_to_variable = {
+			# 	den_upper_equilibrium = -10
+			# 	tooltip = den_upper_equilibrium_tooltip
+			# }
+			#den_calculate_stratas = yes
 		}
 	}
 
@@ -4991,7 +4991,7 @@ focus_tree = {
 		x = 1
 		y = 4
 	
-		cost = 10
+		cost = 5
 	
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 	
@@ -5009,15 +5009,15 @@ focus_tree = {
 				DEN_industrial_capabilities_global_building_slots = 0.1
 				tooltip = global_building_slots_factor_tt
 			}
-			add_to_variable = {
-				den_lower_equilibrium = -10
-				tooltip = den_lower_equilibrium_tooltip
-			}
-			add_to_variable = {
-				den_upper_equilibrium = 10
-				tooltip = den_upper_equilibrium_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_lower_equilibrium = -10
+			# 	tooltip = den_lower_equilibrium_tooltip
+			# }
+			# add_to_variable = {
+			# 	den_upper_equilibrium = 10
+			# 	tooltip = den_upper_equilibrium_tooltip
+			# }
+			# den_calculate_stratas = yes
 		}
 	}
 
@@ -5033,7 +5033,7 @@ focus_tree = {
 		x = -2
 		y = 5
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			has_government = communism
@@ -5096,15 +5096,15 @@ focus_tree = {
 				DEN_industrial_capabilities_dockyard_output = 0.1
 				tooltip = industrial_capacity_dockyard_tt
 			}
-			add_to_variable = {
-				den_lower_equilibrium = 20
-				tooltip = den_lower_equilibrium_tooltip
-			}
-			add_to_variable = {
-				den_upper_equilibrium = -20
-				tooltip = den_upper_equilibrium_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_lower_equilibrium = 20
+			# 	tooltip = den_lower_equilibrium_tooltip
+			# }
+			# add_to_variable = {
+			# 	den_upper_equilibrium = -20
+			# 	tooltip = den_upper_equilibrium_tooltip
+			# }
+			# den_calculate_stratas = yes
 		}
 	}
 
@@ -5119,7 +5119,7 @@ focus_tree = {
 		x = 2
 		y = 5
 	
-		cost = 10
+		cost = 5
 	
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
 	
@@ -5254,19 +5254,19 @@ focus_tree = {
 				tooltip = defensive_war_stability_factor_tt
 			}
 			
-			add_to_variable = {
-				den_upper_loyalty = 5
-				tooltip = den_upper_loyalty_tooltip
-			}
-			add_to_variable = {
-				den_middle_loyalty = 5
-				tooltip = den_middle_loyalty_tooltip
-			}
-			add_to_variable = {
-				den_lower_loyalty = 5
-				tooltip = den_lower_loyalty_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_upper_loyalty = 5
+			# 	tooltip = den_upper_loyalty_tooltip
+			# }
+			# add_to_variable = {
+			# 	den_middle_loyalty = 5
+			# 	tooltip = den_middle_loyalty_tooltip
+			# }
+			# add_to_variable = {
+			# 	den_lower_loyalty = 5
+			# 	tooltip = den_lower_loyalty_tooltip
+			# }
+			# den_calculate_stratas = yes
 		}
 	}
 
@@ -5280,7 +5280,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			power_balance_value = {
@@ -5444,7 +5444,7 @@ focus_tree = {
 		x = 0
 		y = 3
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			power_balance_value = {
@@ -5591,7 +5591,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			if = {
@@ -5683,7 +5683,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			if = {
@@ -5745,7 +5745,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			var:DEN.DEN_guaranteeing_nation = {
@@ -5835,7 +5835,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			is_in_faction = yes
@@ -5926,7 +5926,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			is_in_faction = yes
@@ -5972,7 +5972,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		available = {
 			OR = {
@@ -6136,11 +6136,11 @@ focus_tree = {
 			    popularity = -0.1
 			}
 
-			add_to_variable = {
-				den_upper_equilibrium = 10
-				tooltip = den_upper_equilibrium_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_upper_equilibrium = 10
+			# 	tooltip = den_upper_equilibrium_tooltip
+			# }
+			# den_calculate_stratas = yes
 		}
 	}
 
@@ -6199,7 +6199,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -6236,15 +6236,15 @@ focus_tree = {
 			add_to_variable = {	DEN_bop_decrease_high_cost = 25 }
 			add_to_variable = {	DEN_bop_decrease_very_high_cost = 25 }
 			
-			add_to_variable = {
-				den_middle_equilibrium = -15
-				tooltip = den_middle_equilibrium_tooltip
-			}
-			add_to_variable = {
-				den_lower_equilibrium = -15
-				tooltip = den_lower_equilibrium_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_middle_equilibrium = -15
+			# 	tooltip = den_middle_equilibrium_tooltip
+			# }
+			# add_to_variable = {
+			# 	den_lower_equilibrium = -15
+			# 	tooltip = den_lower_equilibrium_tooltip
+			# }
+			# den_calculate_stratas = yes
 		}
 	}
 	
@@ -6258,7 +6258,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_BALANCE_OF_POWER FOCUS_FILTER_POLITICAL_CHARACTER }
 
@@ -6421,11 +6421,11 @@ focus_tree = {
 				DEN_war_preparations_civilian_intel_to_others = -10
 				tooltip = civilian_intel_to_others_tt
 			}
-			add_to_variable = {
-				den_upper_equilibrium = 5
-				tooltip = den_upper_equilibrium_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_upper_equilibrium = 5
+			# 	tooltip = den_upper_equilibrium_tooltip
+			# }
+			# den_calculate_stratas = yes
 		}
 	}
 
@@ -7313,11 +7313,11 @@ focus_tree = {
 			unlock_decision_tooltip = DEN_rally_the_norwegians
 
 			
-			add_to_variable = {
-				den_lower_equilibrium = 15
-				tooltip = den_lower_equilibrium_tooltip
-			}
-			den_calculate_stratas = yes
+			# add_to_variable = {
+			# 	den_lower_equilibrium = 15
+			# 	tooltip = den_lower_equilibrium_tooltip
+			# }
+			# den_calculate_stratas = yes
 		}
 	}
 
@@ -8388,7 +8388,7 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		available = {
 			any_core_state = { is_owned_and_controlled_by = ROOT }
@@ -8482,7 +8482,7 @@ focus_tree = {
 		x = 2
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 
@@ -8628,7 +8628,7 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
@@ -8643,7 +8643,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = DEN_expand_haerens_tekniske_korps
-				bonus = 0.25
+				bonus = 1
 				uses = 2
 				category = artillery
 			}
@@ -8706,7 +8706,7 @@ focus_tree = {
 		x = 2
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
@@ -8718,6 +8718,10 @@ focus_tree = {
 
 				unlock_mio_trait_tooltip = DEN_mio_trait_weibel_development
 				unlock_mio_trait_tooltip = DEN_mio_trait_madsen_heavy_machine_gun
+				#unlock_mio_trait_tooltip = DEN_mio_trait_madsen_20_mm
+			}
+
+			mio:DEN_haerens_tekniske_korps_organization = {
 				unlock_mio_trait_tooltip = DEN_mio_trait_madsen_20_mm
 			}
 
@@ -8757,7 +8761,7 @@ focus_tree = {
 		x = -1
 		y = 2
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
@@ -8769,8 +8773,8 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = DEN_new_artillery_tactics
-				bonus = 0.25
-				uses = 2
+				bonus = 1
+				uses = 1
 				category = artillery
 			}
 
@@ -8791,7 +8795,7 @@ focus_tree = {
 		x = 1
 		y = 2
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
@@ -8904,7 +8908,7 @@ focus_tree = {
 		x = 0
 		y = 3
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_CHARACTER }
 
@@ -8960,7 +8964,7 @@ focus_tree = {
 		x = 2
 		y = 3
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
@@ -8973,10 +8977,10 @@ focus_tree = {
 
 
 			DEN_improve_haeren_NS = yes
-			#add_to_variable = { 
-			#	DEN_haeren_army_armor_attack = 0.05 
-			#	tooltip = army_armor_attack_factor_tt
-			#}
+			add_to_variable = { 
+				DEN_haeren_army_armor_attack = 0.05 
+				tooltip = army_armor_attack_factor_tt
+			}
 			add_to_variable = { 
 				DEN_haeren_army_armor_defence = 0.1 
 				tooltip = army_armor_defence_factor_tt
@@ -9136,7 +9140,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		available = {
 			any_core_state = { 
@@ -9262,7 +9266,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		available = {
 			any_core_state = { 
@@ -9517,7 +9521,7 @@ focus_tree = {
 		x = -2
 		y = 2
 
-		cost = 10
+		cost = 5
 
 		available = {
 			#any_core_state = { is_owned_and_controlled_by = ROOT }
@@ -9579,7 +9583,7 @@ focus_tree = {
 		x = 2
 		y = 2
 
-		cost = 10
+		cost = 5
 
 		available = { 
 		}
@@ -9742,7 +9746,7 @@ focus_tree = {
 		x = -1
 		y = 3
 
-		cost = 10
+		cost = 5
 
 		available = {
 			any_core_state = { 
@@ -9824,7 +9828,7 @@ focus_tree = {
 		x = 1
 		y = 3
 
-		cost = 10
+		cost = 5
 
 		available = {
 			any_core_state = { 
@@ -9940,7 +9944,7 @@ focus_tree = {
 		x = 0
 		y = 4
 
-		cost = 10
+		cost = 5
 
 		available = {
 			any_core_state = { 
@@ -10283,7 +10287,7 @@ focus_tree = {
 		x = -1
 		y = 2
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
@@ -10314,13 +10318,13 @@ focus_tree = {
 		id = DEN_domestic_designs
 		icon = GFX_focus_DEN_domestic_designs
 		prerequisite = { focus = DEN_expand_vaernepligten }
-		mutually_exclusive = { focus = DEN_foreign_designs }
+		#mutually_exclusive = { focus = DEN_foreign_designs }
 
 		relative_position_id = DEN_expand_vaernepligten
 		x = 5
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		available = {
 			any_core_state = { is_owned_and_controlled_by = ROOT }
@@ -10415,13 +10419,13 @@ focus_tree = {
 		id = DEN_foreign_designs
 		icon = GFX_focus_generic_copy_plane_designs 
 		prerequisite = { focus = DEN_expand_vaernepligten }
-		mutually_exclusive = { focus = DEN_domestic_designs }
+		#mutually_exclusive = { focus = DEN_domestic_designs }
 
 		relative_position_id = DEN_domestic_designs
 		x = 2
 		y = 0
 
-		cost = 10
+		cost = 5
 
 		available = {
 			any_core_state = { is_owned_and_controlled_by = ROOT }
@@ -10548,7 +10552,7 @@ focus_tree = {
 		x = 1
 		y = 2
 
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -10589,7 +10593,7 @@ focus_tree = {
 		x = 0
 		y = 3
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
@@ -10628,7 +10632,7 @@ focus_tree = {
 		x = 2
 		y = 3
 
-		cost = 10
+		cost = 5
 
 		available = {
 			any_core_state = { is_owned_and_controlled_by = ROOT }
@@ -10727,7 +10731,7 @@ focus_tree = {
 		x = -2
 		y = 4
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
@@ -10911,7 +10915,7 @@ focus_tree = {
 		x = 1
 		y = 5
 
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 

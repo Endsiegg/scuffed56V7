@@ -1822,7 +1822,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GRE_the_kings_government
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1865,7 +1865,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_the_kings_government
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -3762,7 +3762,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_lignite_liquefaction
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -3781,37 +3781,37 @@ focus_tree = {
 			47 = { 
 				add_resource = { 
 					type = aluminium
-					amount = 8
+					amount = 16
 				}
 				add_resource = { 
 					type = tungsten
-					amount = 2
+					amount = 8
 				}
 				add_resource = { 
 					type = chromium
-					amount = 2
+					amount = 8
 				}
 			}
 			731 = { 
 				add_resource = { 
 					type = steel
-					amount = 2
+					amount = 8
 				}
 				add_resource = { 
 					type = chromium
-					amount = 6
+					amount = 8
 				}
 			}
 			184 = { 
 				add_resource = { 
 					type = chromium
-					amount = 2
+					amount = 8
 				}
 			}
 			187 = { 
 				add_resource = { 
 					type = chromium
-					amount = 2
+					amount = 8
 				}
 			}
 		}
@@ -3824,7 +3824,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_extracting_more_from_our_soil
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -3851,7 +3851,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_reevaluating_the_drachma
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -3888,7 +3888,7 @@ focus_tree = {
 		x = 6
 		y = 1
 		relative_position_id = GRE_reevaluating_the_drachma
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -3925,7 +3925,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_utilize_our_strengths
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -4014,7 +4014,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_force_the_farmers_into_factories
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -4057,7 +4057,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_open_foreign_subsidized_factories
-		cost = 10
+		cost = 3
 		ai_will_do = {
 			base = 1
 		}
@@ -4067,19 +4067,19 @@ focus_tree = {
 				47 = {
 					free_building_slots = {
 						building = infrastructure
-						size < 3
+						size < 1
 					}
 				}
 				186 = { 
 					free_building_slots = {
 						building = infrastructure
-						size < 2
+						size < 1
 					}
 				}
 				185 = { 
 					free_building_slots = {
 						building = infrastructure
-						size < 2
+						size < 1
 					}
 				}
 			}	
@@ -4094,7 +4094,7 @@ focus_tree = {
 						is_controlled_by = ROOT 
 						free_building_slots = {
 							building = infrastructure
-							size > 3
+							size > 1
 						}
 					}
 					add_building_construction = {
@@ -4110,7 +4110,7 @@ focus_tree = {
 						is_controlled_by = ROOT 
 						free_building_slots = {
 							building = infrastructure
-							size > 2
+							size > 1
 						}
 					}
 					add_building_construction = {
@@ -4126,7 +4126,7 @@ focus_tree = {
 						is_controlled_by = ROOT 
 						free_building_slots = {
 							building = infrastructure
-							size > 2
+							size > 1
 						}
 					}
 					add_building_construction = {
@@ -4159,7 +4159,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_paying_back_our_debts_in_bulk
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -4233,7 +4233,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_fiscal_responsibility
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -4518,11 +4518,11 @@ focus_tree = {
 		id = GRE_rejuvenating_athens
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = GRE_encourage_tourism focus = GRE_mobilise_our_economy }
-		mutually_exclusive = { focus = GRE_making_use_of_our_islands focus = GRE_clear_the_slums }
+		#mutually_exclusive = { focus = GRE_making_use_of_our_islands focus = GRE_clear_the_slums }
 		x = 1
 		y = 2
 		relative_position_id = GRE_sophistry_and_science
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -4567,11 +4567,11 @@ focus_tree = {
 		id = GRE_making_use_of_our_islands
 		icon = GFX_goal_generic_construct_naval_dockyard
 		prerequisite = { focus = GRE_encourage_tourism focus = GRE_mobilise_our_economy }
-		mutually_exclusive = { focus = GRE_rejuvenating_athens focus = GRE_clear_the_slums }
+		#mutually_exclusive = { focus = GRE_rejuvenating_athens focus = GRE_clear_the_slums }
 		x = 1
 		y = 1
 		relative_position_id = GRE_encourage_tourism
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -4698,11 +4698,11 @@ focus_tree = {
 		id = GRE_clear_the_slums
 		icon = GFX_goal_reichsautobahn
 		prerequisite = { focus = GRE_encourage_tourism focus = GRE_mobilise_our_economy }
-		mutually_exclusive = { focus = GRE_rejuvenating_athens focus = GRE_making_use_of_our_islands }
+		#mutually_exclusive = { focus = GRE_rejuvenating_athens focus = GRE_making_use_of_our_islands }
 		x = 1
 		y = 1
 		relative_position_id = GRE_mobilise_our_economy
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -4715,15 +4715,15 @@ focus_tree = {
 			}		
 			random_owned_controlled_state = {
 				prioritize = { 731 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 			}		
 			random_owned_controlled_state = {
 				prioritize = { 186 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 			}		
 			random_owned_controlled_state = {
 				prioritize = { 185 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 			}			
 			add_manpower = 66750
 		}
@@ -4850,12 +4850,12 @@ focus_tree = {
 		icon = GFX_focus_generic_license_production
 		prerequisite = { focus = GRE_metaxism_focus }
 		available = { 
-			date < 1938.01.01
+			#date < 1938.01.01
 		}
 		x = 3	#56
 		y = 1
 		relative_position_id = GRE_metaxism_focus
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -4891,7 +4891,7 @@ focus_tree = {
 		x = -4	#56
 		y = 1
 		relative_position_id = GRE_extracting_more_from_our_soil	#56 - For easier offsetting
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -4905,7 +4905,7 @@ focus_tree = {
 		id = GRE_bolster_the_schachtplan
 		icon = GFX_focus_chi_mission_to_germany
 		prerequisite = { focus = GRE_open_up_the_country }
-		mutually_exclusive = { focus = GRE_renegotiate_debt_with_france focus = GRE_british_docking_rights }
+		#mutually_exclusive = { focus = GRE_renegotiate_debt_with_france focus = GRE_british_docking_rights }
 		available = {
 			has_idea = GRE_schachtplan
 			NOT = {
@@ -4918,7 +4918,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_open_up_the_country
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -4996,7 +4996,7 @@ focus_tree = {
 		id = GRE_british_docking_rights
 		icon = GFX_focus_chi_british_cooperation
 		prerequisite = { focus = GRE_open_up_the_country }
-		mutually_exclusive = { focus = GRE_bolster_the_schachtplan focus = GRE_renegotiate_debt_with_france }
+		#mutually_exclusive = { focus = GRE_bolster_the_schachtplan focus = GRE_renegotiate_debt_with_france }
 		available = { 
 			NOT = {
 				has_country_flag = GRE_britain_rebuffed
@@ -5027,7 +5027,7 @@ focus_tree = {
 		id = GRE_renegotiate_debt_with_france
 		icon = GFX_focus_chi_reach_out_to_france
 		prerequisite = { focus = GRE_open_up_the_country }
-		mutually_exclusive = { focus = GRE_bolster_the_schachtplan focus = GRE_british_docking_rights }
+		#mutually_exclusive = { focus = GRE_bolster_the_schachtplan focus = GRE_british_docking_rights }
 		available = { 
 			NOT = {
 				has_country_flag = GRE_france_rebuffed
@@ -5078,7 +5078,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_british_docking_rights
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -5120,7 +5120,7 @@ focus_tree = {
 		x = 14	#56
 		y = 0
 		relative_position_id = GRE_reevaluating_the_drachma	#56 - For offsetting
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
