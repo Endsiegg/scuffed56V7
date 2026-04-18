@@ -72,11 +72,11 @@ ideologies = {
 		can_host_government_in_exile = yes
 
 		war_impact_on_world_tension = 0.25		# no major danger, remember this is the 40s!
-		faction_impact_on_world_tension = 0.1
+	#	faction_impact_on_world_tension = 0.1
 
 		modifiers = {
-			generate_wargoal_tension = 1.00
-		#	join_faction_tension = 0.80
+			generate_wargoal_tension = -1.00
+			join_faction_tension = -1.0
 			lend_lease_tension = 0.50
 			send_volunteers_tension = 0.50
 			guarantee_tension = 0.25
@@ -173,19 +173,21 @@ ideologies = {
 			can_force_government = no
 			can_send_volunteers = yes
 			can_puppet = yes
+			can_join_factions = yes
+			can_create_factions = yes			
 		}
 
 		can_collaborate = yes
 		modifiers = {
-			can_join_factions = yes
-			can_create_factions = yes
+			generate_wargoal_tension = -1.00
+			join_faction_tension = -1.0			
 			puppet_cost_factor = -0.3
 			#resistance_growth_on_our_occupied_states = 0.01
 			civilian_intel_to_others = 10.0
 			army_intel_to_others = 7.5
 			navy_intel_to_others = 12.5
 			airforce_intel_to_others = 7.5
-			hidden_modifier = { join_faction_tension = -0.1 }
+			#hidden_modifier = { join_faction_tension = -0.1 }
 		}
 
 		ai_communist = yes #Uses the Commie AI behaviour.
@@ -257,19 +259,21 @@ ideologies = {
 			can_force_government = no
 			can_send_volunteers = yes
 			can_puppet = yes
+			can_join_factions = yes
+			can_create_factions = yes				
 		}
 
 		can_collaborate = yes
 		modifiers = {
-			can_join_factions = yes
-			can_create_factions = yes			
+			generate_wargoal_tension = -1.00
+			join_faction_tension = -1.0		
 			justify_war_goal_when_in_major_war_time = -0.80
 			civilian_intel_to_others = 15.0
 			army_intel_to_others = 10.0
 			navy_intel_to_others = 10.0
 			airforce_intel_to_others = 10.0
 			resistance_damage_to_garrison = 0.01 #I have the uncanny power of uniting partisans across the politcal specturm
-			hidden_modifier = { join_faction_tension = -0.1 }
+			#hidden_modifier = { join_faction_tension = -0.1 }
 		}
 
 		ai_fascist = yes #Uses the Fascist AI behaviour.
@@ -377,22 +381,22 @@ ideologies = {
 		color = { 124 124 124 }
 
 		war_impact_on_world_tension = 0.25 #No major danger.
-		faction_impact_on_world_tension = 0.1
+		#faction_impact_on_world_tension = 0.1
 
 		rules = {
 			can_force_government = no
 			can_puppet = yes
 			can_send_volunteers = no
+			can_join_factions = yes
+			can_create_factions = yes						
 		}
 
 		can_host_government_in_exile = yes
 
 		modifiers = {
-			can_join_factions = yes
-			can_create_factions = yes			
 			#increased_influence_factor = 0.3 #40% easier to influence.
-			generate_wargoal_tension = 0.40 #Was 50
-			#join_faction_tension = 0.4
+			generate_wargoal_tension = -1.0 #Was 50
+			join_faction_tension = -1.0
 			lend_lease_tension = 0.2 #Was 25
 			guarantee_tension = 0.35 #Was 40
 			drift_defence_factor = -0.45 #Was 40
