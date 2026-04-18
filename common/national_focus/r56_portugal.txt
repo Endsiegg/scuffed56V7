@@ -122,7 +122,7 @@ focus_tree = {
 		id = POR_expand_naval_production
 		prerequisite = { focus = POR_continue_the_naval_expansion }
 		icon = GFX_focus_generic_shipbuilding
-		cost = 8
+		cost = 5
 		x = -5
 		y = 1
 		relative_position_id = POR_continue_the_naval_expansion
@@ -141,10 +141,10 @@ focus_tree = {
 				}
 			}
 			180 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -156,7 +156,7 @@ focus_tree = {
 		id = POR_expand_the_alfeite_shipyard
 		prerequisite = { focus = POR_expand_naval_production }
 		icon = GFX_goal_generic_blue_navy
-		cost = 8
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_expand_naval_production
@@ -187,10 +187,10 @@ focus_tree = {
 		y = 2
 		relative_position_id = POR_expand_naval_production
 		available = {
-			has_subdoctrine_in_track = submarines
-			has_subdoctrine_in_track = screens
-			has_subdoctrine_in_track = carriers
-			has_subdoctrine_in_track = capital_ships
+			# has_subdoctrine_in_track = submarines
+			# has_subdoctrine_in_track = screens
+			# has_subdoctrine_in_track = carriers
+			# has_subdoctrine_in_track = capital_ships
 		}
 		continue_if_invalid = yes
 		available_if_capitulated = yes
@@ -221,7 +221,7 @@ focus_tree = {
 		id = POR_expand_northern_repair_facilities
 		prerequisite = { focus = POR_expand_naval_production }
 		icon = GFX_goal_generic_expand_the_naval_industry
-		cost = 6
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_expand_naval_production
@@ -381,7 +381,7 @@ focus_tree = {
 			focus = POR_expand_the_merchant_fleet
 		}
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		cost = 10
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_study_italian_submarines
@@ -415,7 +415,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POR_advancing_our_tactics
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 1 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -456,7 +456,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POR_advancing_our_tactics
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 1 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -515,7 +515,7 @@ focus_tree = {
 		prerequisite = { focus = POR_advancing_our_tactics }
 		mutually_exclusive = { focus = POR_focus_on_submarine_production }
 		icon = GFX_focus_generic_trade_interdiction
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 1 }
 		x = 2
 		y = 2
@@ -580,7 +580,7 @@ focus_tree = {
 		prerequisite = { focus = POR_advancing_our_tactics }
 		mutually_exclusive = { focus = POR_restore_our_high_seas_presence }
 		icon = GFX_goal_generic_navy_anti_submarine
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 2 }
 		x = -2
 		y = 2
@@ -631,7 +631,7 @@ focus_tree = {
 			focus = POR_restore_our_high_seas_presence
 		}
 		icon = GFX_goal_POR_coa_navy
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 3 }
 		x = 2
 		y = 1
@@ -1027,7 +1027,7 @@ focus_tree = {
 		id = POR_contenders_on_the_world_stage
 		prerequisite = { focus = POR_modernize_our_infantry }
 		icon = GFX_goal_POR_coa_army
-		cost = 15
+		cost = 10
 		ai_will_do = { base = 32 }
 		x = 0
 		y = 2
@@ -1385,7 +1385,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = POR_towards_a_mobile_army
-		cost = 15	
+		cost = 10	
 		ai_will_do = { base = 20 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -1749,7 +1749,7 @@ focus_tree = {
 			focus = POR_study_british_fighters
 		}
 		icon = GFX_focus_usa_escort_fighters
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 3 }
 		x = 1
 		y = 1
@@ -1953,7 +1953,7 @@ focus_tree = {
 			focus = POR_modernize_the_fighter_arsenal
 		}
 		icon = GFX_goal_POR_coa_air_force
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 15 }
 		x = 1
 		y = 1
@@ -1989,7 +1989,7 @@ focus_tree = {
 	focus = {
 		id = POR_continue_the_public_works_r56
 		icon = GFX_goal_generic_construction3
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 5 }
 		x = 32
 		y = 0
@@ -2017,10 +2017,10 @@ focus_tree = {
 		relative_position_id = POR_continue_the_public_works_r56
 		ai_will_do = { base = 999 }
 		available = { 
-			OR = {
-				has_stability > 0.9
-				num_of_factories > 35
-			}
+			#OR = {
+			#	has_stability > 0.9
+			#	num_of_factories > 35
+			#}
 		}
 		completion_reward = { 
 			add_research_slot = 1 
@@ -2047,7 +2047,7 @@ focus_tree = {
 		id = POR_strengthen_the_colonial_administration
 		prerequisite = { focus = POR_continue_the_public_works_r56 }
 		icon = GFX_focus_generic_military_dictatorship
-		cost = 8
+		cost = 5
 		x = 4
 		y = 3 
 		relative_position_id = POR_continue_the_public_works_r56
@@ -2124,7 +2124,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = POR_strengthen_the_colonial_administration
-		cost = 10
+		cost = 5
 		available = {
 			544 = { is_controlled_by_ROOT_or_ally = yes }
 			897 = { is_controlled_by_ROOT_or_ally = yes }
@@ -2159,7 +2159,7 @@ focus_tree = {
 		id = POR_develop_the_angolan_interior
 		prerequisite = { focus = POR_strengthen_the_colonial_administration }
 		icon = GFX_focus_generic_africa_infrastructure
-		cost = 10
+		cost = 5
 		x = -2
 		y = 2
 		relative_position_id = POR_strengthen_the_colonial_administration
@@ -2187,7 +2187,7 @@ focus_tree = {
 				796 = {
 					add_resource = {
 						type = oil
-						amount = 4
+						amount = 8
 					}
 				}
 			}
@@ -2199,7 +2199,7 @@ focus_tree = {
 				892 = {
 					add_resource = {
 						type = steel
-						amount = 8
+						amount = 16
 					}
 				}
 			}
@@ -2207,11 +2207,11 @@ focus_tree = {
 			540 = {
 				add_resource = {
 					type = oil
-					amount = 2
+					amount = 8
 				}
 				add_resource = {
 					type = steel
-					amount = 11
+					amount = 22
 				}
 				add_building_construction = {
 					type = naval_base
@@ -2235,7 +2235,7 @@ focus_tree = {
 		relative_position_id = POR_continue_the_public_works_r56
 		available = {
 			has_civil_war = no
-			has_war = yes 
+			#has_war = yes 
 		}
 		continue_if_invalid = yes
 		available_if_capitulated = yes
@@ -2288,11 +2288,11 @@ focus_tree = {
 		id = POR_prepare_wartime_heavy_industry
 		prerequisite = { focus = POR_never_another_la_lys }
 		icon = GFX_goal_generic_production
-		cost = 8
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_never_another_la_lys
-		available = { has_tech = assembly_line_production }
+	#	available = { has_tech = assembly_line_production }
 		ai_will_do = { base = 99 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -2322,17 +2322,17 @@ focus_tree = {
 		id = POR_the_resource_war
 		prerequisite = { focus = POR_never_another_la_lys }
 		icon = GFX_goal_timber_industry
-		cost = 8
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_never_another_la_lys
 		available = { 
 			112 = { is_controlled_by_ROOT_or_ally = yes }
 			179 = { is_controlled_by_ROOT_or_ally = yes }  
-			has_tech = excavation1
-			has_tech = excavation2 
-			has_tech = excavation3
-			has_tech = excavation4
+			#has_tech = excavation1
+			#has_tech = excavation2 
+			#has_tech = excavation3
+			#has_tech = excavation4
 		}
 		ai_will_do = { base = 50 }
 		available_if_capitulated = yes
@@ -2374,10 +2374,10 @@ focus_tree = {
 		cost = 10
 		ai_will_do = { base = 99 }
 		available = {
-			OR = {
-				has_tech = improved_infantry_weapons
-				has_tech = artillery1
-			}
+			#OR = {
+			#	has_tech = improved_infantry_weapons
+			#	has_tech = artillery1
+			#}
 		}
 		available_if_capitulated = yes
 		completion_reward = {
@@ -2392,10 +2392,10 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 180 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2421,11 +2421,11 @@ focus_tree = {
 		available = {
 			if = {
 				limit = { has_dlc = "By Blood Alone" }
-				OR = {
-					has_tech = basic_small_airframe
-					has_tech = basic_medium_airframe
-					has_tech = basic_large_airframe
-				}
+				#OR = {
+				#	has_tech = basic_small_airframe
+				#	has_tech = basic_medium_airframe
+				#	has_tech = basic_large_airframe
+				#}
 			}
 			else = {
 				OR = {
@@ -2439,19 +2439,19 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 112 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
 			random_owned_controlled_state = {
 				prioritize = { 180 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2469,35 +2469,35 @@ focus_tree = {
 			focus = POR_support_an_aerial_expansion
 		}
 		icon = GFX_goal_generic_occupy_states_coastal
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 0 }
 		x = -2
 		y = 2
 		relative_position_id = POR_never_another_la_lys
 		available = {
-			OR = {
-				has_tech = improved_ship_hull_cruiser
-				has_tech = improved_ship_hull_heavy	
-				has_tech = improved_ship_hull_carrier
-			}
+			# OR = {
+			# 	has_tech = improved_ship_hull_cruiser
+			# 	has_tech = improved_ship_hull_heavy	
+			# 	has_tech = improved_ship_hull_carrier
+			# }
 		}
 		available_if_capitulated = yes
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 112 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 			}
 			random_owned_controlled_state = {
 				prioritize = { 180 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 			}
@@ -2511,7 +2511,7 @@ focus_tree = {
 		id = POR_import_foreign_machinery
 		prerequisite = { focus = POR_continue_the_public_works_r56 }
 		icon = GFX_goal_generic_construction_tools
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 9 }
 		x = -2
 		y = 1
@@ -2519,17 +2519,17 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = POR_import_foreign_machinery
-				bonus = 0.75
+				bonus = 1
 				uses = 1
 				category = industry
 			}
 			random_controlled_state = {
 				limit = { is_core_of = ROOT }
 				prioritize = { 112 } 
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2541,12 +2541,12 @@ focus_tree = {
 		id = POR_develop_portuguese_textiles
 		prerequisite = { focus = POR_import_foreign_machinery }
 		icon = GFX_focus_CHL_enlarge_the_textile_industries
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 18 }
 		x = -1
 		y = 1
 		relative_position_id = POR_import_foreign_machinery
-		available = { has_tech = advanced_machine_tools }
+		#available = { has_tech = advanced_machine_tools }
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 180 }
@@ -2566,13 +2566,13 @@ focus_tree = {
 		icon = GFX_focus_POL_warsaw_main_station
 		prerequisite = { focus = POR_subsidize_rolling_stock_production }
 		prerequisite = { focus = POR_import_foreign_machinery }
-		cost = 10
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_import_foreign_machinery
 		ai_will_do = { base = 20 }
 		available = { 
-			has_tech = construction3 
+			#has_tech = construction3 
 			112 = { is_controlled_by_ROOT_or_ally = yes } 
 			180 = { is_controlled_by_ROOT_or_ally = yes }  
 		}
@@ -2610,13 +2610,13 @@ focus_tree = {
 		id = POR_finish_the_santa_luzia_dam
 		prerequisite = { focus = POR_modernize_the_national_rail_network }
 		icon = GFX_focus_generic_hydroelectric_energy
-		cost = 15
+		cost = 5
 		ai_will_do = { base = 15 }
 		x = 0
 		y = 1
 		relative_position_id = POR_modernize_the_national_rail_network
 		available = {
-			has_tech = construction4
+		#	has_tech = construction4
 			181 = { is_controlled_by_ROOT_or_ally = yes }
 		}
 		completion_reward = {
@@ -2654,7 +2654,7 @@ focus_tree = {
 		id = POR_subsidize_rolling_stock_production
 		prerequisite = { focus = POR_continue_the_public_works_r56 }
 		icon = GFX_focus_SOV_organize_wreckers
-		cost = 8
+		cost = 5
 		x = 2
 		y = 1
 		relative_position_id = POR_continue_the_public_works_r56
@@ -2682,15 +2682,15 @@ focus_tree = {
 		id = POR_expand_the_mining_industry
 		prerequisite = { focus = POR_subsidize_rolling_stock_production }
 		icon = GFX_focus_generic_road_investment
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 15 }
 		x = 1
 		y = 1
 		relative_position_id = POR_subsidize_rolling_stock_production
 		available = { 
-			has_tech = excavation1
-			has_tech = excavation2 
-			has_tech = excavation3
+			#has_tech = excavation1
+			#has_tech = excavation2 
+			#has_tech = excavation3
 		}
 		completion_reward = {
 			add_offsite_building = {
@@ -2704,7 +2704,7 @@ focus_tree = {
 				112 = { 
 					add_resource = {
 						type = tungsten
-						amount = 7
+						amount = 14
 					}
 				}
 			}
@@ -2715,7 +2715,7 @@ focus_tree = {
 				181 = { 
 					add_resource = {
 						type = tungsten
-						amount = 10
+						amount = 20
 					}
 				}
 			}
@@ -2726,7 +2726,7 @@ focus_tree = {
 				795 = { 
 					add_resource = {
 						type = chromium
-						amount = 5
+						amount = 10
 					}
 				}
 			}
@@ -2739,16 +2739,16 @@ focus_tree = {
 		prerequisite = { focus = POR_import_foreign_machinery }
 		prerequisite = { focus = POR_subsidize_rolling_stock_production }
 		icon = GFX_focus_generic_energy
-		cost = 10
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_subsidize_rolling_stock_production
 		ai_will_do = { base = 20 }
 		available = { 
-			OR = {
-				has_tech = concentrated_industry3
-				has_tech = dispersed_industry3
-			}
+			# OR = {
+			# 	has_tech = concentrated_industry3
+			# 	has_tech = dispersed_industry3
+			# }
 			112 = { is_controlled_by_ROOT_or_ally = yes }
 			180 = { is_controlled_by_ROOT_or_ally = yes }
 		}
@@ -2769,14 +2769,14 @@ focus_tree = {
 		id = POR_modernize_the_rural_regions
 		prerequisite = { focus = POR_continue_the_national_electrification }
 		icon = GFX_goal_generic_farm_tractor
-		cost = 15
+		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = POR_continue_the_national_electrification
 		available = { 
 			OR = {
-				has_tech = concentrated_industry4
-				has_tech = dispersed_industry4
+				has_tech = concentrated_industry3
+				has_tech = dispersed_industry3
 			}
 		}
 		ai_will_do = { base = 20 }
@@ -2810,7 +2810,7 @@ focus_tree = {
 			focus = POR_restore_valiance_to_the_nation 
 		}
 		icon = GFX_focus_por_salazar
-		cost = 8
+		cost = 5
 		ai_will_do = { 
 			base = 1
 			modifier = {
@@ -3007,7 +3007,7 @@ focus_tree = {
 		id = POR_extend_PVDE_security_duties
 		prerequisite = { focus = POR_continue_salazars_policies }
 		icon = GFX_goal_generic_seperation
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 30 }
 		x = -3
 		y = 1
@@ -3129,7 +3129,7 @@ focus_tree = {
 		prerequisite = { focus = POR_extend_PVDE_security_duties }
 		prerequisite = { focus = POR_cooperation_with_the_armed_forces }
 		icon = GFX_focus_BRA_cohen_plan
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 99  }
 		x = 1
 		y = 1
@@ -3172,7 +3172,7 @@ focus_tree = {
 		id = POR_utilize_the_budget_surplus
 		prerequisite = { focus = POR_continue_salazars_policies }
 		icon = GFX_goal_generic_banking
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 20 }
 		x = 3
 		y = 1
@@ -3216,7 +3216,7 @@ focus_tree = {
 		id = POR_push_forward_modest_social_benefits
 		prerequisite = { focus = POR_utilize_the_budget_surplus }
 		icon = GFX_goal_generic_banking_legislation
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 25 }
 		x = 1
 		y = 1
@@ -3277,7 +3277,7 @@ focus_tree = {
 		id = POR_expand_ministerial_control
 		prerequisite = { focus = POR_continue_salazars_policies }
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 10
+		cost = 5
 		x = 0
 		y = 3
 		relative_position_id = POR_continue_salazars_policies
@@ -3306,7 +3306,7 @@ focus_tree = {
 		id = POR_tighten_the_regime
 		prerequisite = { focus = POR_expand_ministerial_control }
 		icon = GFX_goal_centralize_power
-		cost = 6
+		cost = 5
 		ai_will_do = { base = 18 }
 		x = -3
 		y = 1
@@ -3355,7 +3355,7 @@ focus_tree = {
 		id = POR_strengthen_the_portuguese_youth
 		prerequisite = { focus = POR_tighten_the_regime }
 		icon = GFX_goal_generic_army_professionalism
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 28 }
 		x = 1
 		y = 1
@@ -3376,7 +3376,7 @@ focus_tree = {
 		id = POR_modernize_our_security_apparatus
 		prerequisite = { focus = POR_tighten_the_regime }
 		icon = GFX_goal_decryption
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 13 }
 		x = -1
 		y = 1
@@ -3595,7 +3595,7 @@ focus_tree = {
 		id = POR_integrate_with_the_western_economies
 		prerequisite = { focus = POR_reenter_international_affairs }
 		icon = GFX_allies
-		cost = 8
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_reenter_international_affairs
@@ -3685,7 +3685,7 @@ focus_tree = {
 		id = POR_expand_the_resource_trade
 		prerequisite = { focus = POR_portugal_first }
 		icon = GFX_goal_generic_gold_money
-		cost = 8
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_portugal_first
@@ -3723,7 +3723,7 @@ focus_tree = {
 			focus = POR_embrace_the_capital_of_espionage
 		}
 		icon = GFX_focus_generic_secret_service_agency
-		cost = 10
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_embrace_the_capital_of_espionage
@@ -3737,7 +3737,7 @@ focus_tree = {
 		id = POR_solidify_popular_support
 		prerequisite = { focus = POR_expand_ministerial_control }
 		icon = GFX_focus_por_concordat
-		cost = 6
+		cost = 3
 		ai_will_do = { base = 13 }
 		x = 3
 		y = 1
@@ -3785,7 +3785,7 @@ focus_tree = {
 		id = POR_long_term_economic_planning
 		prerequisite = { focus = POR_solidify_popular_support }
 		icon = GFX_focus_spa_the_spanish_miracle
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 26 }
 		x = 1
 		y = 1
@@ -3854,7 +3854,7 @@ focus_tree = {
 		id = POR_protectors_of_the_countryside
 		prerequisite = { focus = POR_long_term_economic_planning }
 		icon = GFX_focus_generic_population_growth
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 10 }
 		x = -1
 		y = 1
@@ -3913,7 +3913,7 @@ focus_tree = {
 			focus = POR_restore_valiance_to_the_nation 
 		}
 		icon = GFX_focus_generic_workers
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 15 }
 		allow_branch = {
 			if = {
@@ -3971,7 +3971,7 @@ focus_tree = {
 		id = POR_seek_international_support
 		prerequisite = { focus = POR_unite_against_salazar }
 		icon = GFX_goal_mexico_united_mexican_unions
-		cost = 6
+		cost = 5
 		x = 2
 		y = 1
 		relative_position_id = POR_unite_against_salazar
@@ -4054,7 +4054,7 @@ focus_tree = {
 		id = POR_storm_the_national_assembly
 		prerequisite = { focus = POR_unite_against_salazar }
 		icon = GFX_focus_GER_proletarian_solidarity
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -4122,7 +4122,7 @@ focus_tree = {
 		id = POR_the_question_of_our_colonies
 		prerequisite = { focus = POR_storm_the_national_assembly }
 		icon = GFX_focus_ITA_corpo_volontari_della_liberta
-		cost = 6
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_storm_the_national_assembly
@@ -4152,7 +4152,7 @@ focus_tree = {
 		id = POR_address_the_new_spain
 		prerequisite = { focus = POR_storm_the_national_assembly }
 		icon = GFX_goal_FRA_help_the_spanish_republicans
-		cost = 6
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_storm_the_national_assembly
@@ -4187,7 +4187,7 @@ focus_tree = {
 		id = POR_consolidate_the_revolution
 		prerequisite = { focus = POR_storm_the_national_assembly }
 		icon = GFX_Goal_USA_Desegregated_military
-		cost = 6
+		cost = 5
 		x = -3
 		y = 2
 		relative_position_id = POR_storm_the_national_assembly
@@ -4209,7 +4209,7 @@ focus_tree = {
 		id = POR_reopen_the_national_propaganda_secretariat
 		prerequisite = { focus = POR_consolidate_the_revolution }
 		icon = GFX_goal_crush_resistance
-		cost = 6
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_consolidate_the_revolution
@@ -4255,7 +4255,7 @@ focus_tree = {
 			focus = POR_reopen_the_national_propaganda_secretariat 
 		}
 		icon = GFX_focus_GER_support_the_proletarian_uprising
-		cost = 8
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_reopen_the_national_propaganda_secretariat
@@ -4558,7 +4558,7 @@ focus_tree = {
 		id = POR_restore_the_social_state
 		prerequisite = { focus = POR_forge_portugals_own_five_year_plan }
 		icon = GFX_goal_medicine
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 99 }
 		x = 1
 		y = 1
@@ -4632,7 +4632,7 @@ focus_tree = {
 		id = POR_pave_the_path_to_progress
 		prerequisite = { focus = POR_storm_the_national_assembly }
 		icon = GFX_focus_ICE_embrace_the_workers_revolution
-		cost = 6
+		cost = 5
 		x = 3
 		y = 2
 		relative_position_id = POR_storm_the_national_assembly
@@ -4660,7 +4660,7 @@ focus_tree = {
 		id = POR_advance_the_cause_for_equality
 		prerequisite = { focus = POR_pave_the_path_to_progress }
 		icon = GFX_focus_ARG_women_in_industry
-		cost = 6
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_pave_the_path_to_progress
@@ -4678,7 +4678,7 @@ focus_tree = {
 		id = POR_crush_reactionary_impedance
 		prerequisite = { focus = POR_consolidate_the_revolution }
 		icon = GFX_focus_SOV_the_last_purge
-		cost = 8
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_consolidate_the_revolution
@@ -4731,7 +4731,7 @@ focus_tree = {
 		id = POR_towards_institutional_atheism
 		prerequisite = { focus = POR_crush_reactionary_impedance }
 		icon = GFX_focus_BRA_state_atheism
-		cost = 8 
+		cost = 5 
 		x = -1
 		y = 1
 		relative_position_id = POR_crush_reactionary_impedance
@@ -4782,7 +4782,7 @@ focus_tree = {
 		id = POR_portugals_path_to_marxism_leninism
 		prerequisite = { focus = POR_crush_reactionary_impedance }
 		icon = GFX_postive_heroism
-		cost = 10
+		cost = 5
 		x = 0
 		y = 2
 		relative_position_id = POR_crush_reactionary_impedance
@@ -4807,7 +4807,7 @@ focus_tree = {
 		id = POR_solidify_the_economic_reforms
 		prerequisite = { focus = POR_portugals_path_to_marxism_leninism }
 		icon = GFX_generic_goal_communist_reforms
-		cost = 15
+		cost = 5
 		x = -2
 		y = 1
 		relative_position_id = POR_portugals_path_to_marxism_leninism
@@ -4869,7 +4869,7 @@ focus_tree = {
 		id = POR_the_iberian_social_revolution
 		prerequisite = { focus = POR_portugals_path_to_marxism_leninism }
 		icon = GFX_focus_GER_the_peoples_victory
-		cost = 10
+		cost = 5
 		x = 0
 		y = 1
 		relative_position_id = POR_portugals_path_to_marxism_leninism
@@ -4929,7 +4929,7 @@ focus_tree = {
 		id = POR_the_red_army_of_the_west
 		prerequisite = { focus = POR_portugals_path_to_marxism_leninism }
 		icon = GFX_focus_SOV_builder_of_the_red_army
-		cost = 8
+		cost = 5
 		x = 2
 		y = 1
 		relative_position_id = POR_portugals_path_to_marxism_leninism
@@ -4999,7 +4999,7 @@ focus_tree = {
 			focus = POR_diplomatic_pragmatism
 		}
 		icon = GFX_focus_generic_anti_fascist_diplomacy
-		cost = 8
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_covert_return_to_the_world_stage
@@ -5117,7 +5117,7 @@ focus_tree = {
 		id = POR_restore_civil_liberties
 		prerequisite = { focus = POR_pave_the_path_to_progress }
 		icon = GFX_goal_generic_trial
-		cost = 8
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_pave_the_path_to_progress
@@ -5152,7 +5152,7 @@ focus_tree = {
 		id = POR_curb_political_militias
 		prerequisite = { focus = POR_restore_civil_liberties }
 		icon = GFX_focus_generic_court
-		cost = 8
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_restore_civil_liberties
@@ -5196,7 +5196,7 @@ focus_tree = {
 		id = POR_unity_and_reconciliation
 		prerequisite = { focus = POR_restore_civil_liberties }
 		icon = GFX_focus_BRA_reach_out_to_military_dem
-		cost = 8
+		cost = 5
 		x =  1
 		y = 1
 		relative_position_id = POR_restore_civil_liberties
@@ -5247,7 +5247,7 @@ focus_tree = {
 		id = POR_hold_fair_elections
 		prerequisite = { focus = POR_restore_civil_liberties }
 		icon = GFX_goal_generic_election
-		cost = 10
+		cost = 5
 		x = 0
 		y = 2
 		relative_position_id = POR_restore_civil_liberties
@@ -5289,7 +5289,7 @@ focus_tree = {
 		id = POR_accommodate_europes_balance_of_power
 		prerequisite = { focus = POR_hold_fair_elections }
 		icon = GFX_goal_generic_ban_extremism
-		cost = 6
+		cost = 5
 		x = -2
 		y = 1
 		relative_position_id = POR_hold_fair_elections
@@ -5329,7 +5329,7 @@ focus_tree = {
 		id = POR_continue_popular_reform
 		prerequisite = { focus = POR_hold_fair_elections }
 		icon = GFX_goal_cuba_support_the_confederation_of_cuban_workers
-		cost = 8
+		cost = 5
 		x = 2
 		y = 1
 		relative_position_id = POR_hold_fair_elections
@@ -5353,7 +5353,7 @@ focus_tree = {
 		id = POR_modernize_the_junta_institutions
 		prerequisite = { focus = POR_hold_fair_elections }
 		icon = GFX_focus_generic_improve_the_administration
-		cost = 8
+		cost = 5
 		x = 0
 		y = 1
 		relative_position_id = POR_hold_fair_elections
@@ -5419,7 +5419,7 @@ focus_tree = {
 		prerequisite = { focus = POR_modernize_the_junta_institutions }
 		mutually_exclusive = { focus = POR_rehabilitate_the_armed_forces }
 		icon = GFX_focus_GER_customs_union
-		cost = 6
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_modernize_the_junta_institutions
@@ -5477,7 +5477,7 @@ focus_tree = {
 		prerequisite = { focus = POR_modernize_the_junta_institutions }
 		mutually_exclusive = { focus = POR_merit_above_ideology }
 		icon = GFX_goal_italy_restructure_the_divisions
-		cost = 6
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_modernize_the_junta_institutions
@@ -5562,7 +5562,7 @@ focus_tree = {
 		id = POR_restore_economic_stability
 		prerequisite = { focus = POR_modernize_the_junta_institutions }
 		icon = GFX_goal_generic_financial_markets
-		cost = 8	
+		cost = 5	
 		x = -2
 		y = 2
 		relative_position_id = POR_modernize_the_junta_institutions
@@ -5621,7 +5621,7 @@ focus_tree = {
 		id = POR_fortify_portuguese_democracy
 		prerequisite = { focus = POR_modernize_the_junta_institutions }
 		icon = GFX_goal_generic_democracy
-		cost = 10
+		cost = 5
 		x = 2
 		y = 2
 		relative_position_id = POR_modernize_the_junta_institutions
@@ -5651,7 +5651,7 @@ focus_tree = {
 			focus = POR_continue_salazars_policies
 		}
 		icon = GFX_goal_our_fate_is_our_own
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 15 }
 		allow_branch = {
 			if = {
@@ -5726,7 +5726,7 @@ focus_tree = {
 		id = POR_integrate_the_monarchist_opposition
 		prerequisite = { focus = POR_radicalize_salazars_allies }
 		icon = GFX_focus_generic_monarchy_1
-		cost = 8
+		cost = 5
 		x = -2
 		y = 1
 		relative_position_id = POR_radicalize_salazars_allies
@@ -5778,7 +5778,7 @@ focus_tree = {
 			focus = POR_one_revolution_to_end_them_all
 		}
 		icon = GFX_focus_generic_fascist_propaganda
-		cost = 6
+		cost = 5
 		x = 0
 		y = 1
 		relative_position_id = POR_radicalize_salazars_allies
@@ -5801,7 +5801,7 @@ focus_tree = {
 		id = POR_utilize_fascist_labor_organizations
 		prerequisite = { focus = POR_one_revolution_to_end_them_all }
 		icon = GFX_focus_ITA_generic_fascist_workers
-		cost = 6
+		cost = 5
 		x = 2
 		y = 1
 		relative_position_id = POR_one_revolution_to_end_them_all
@@ -5863,7 +5863,7 @@ focus_tree = {
 			focus = POR_one_revolution_to_end_them_all
 		}
 		icon = GFX_focus_POL_riot_of_37
-		cost = 8
+		cost = 5
 		ai_will_do = { base = 99 }
 		x = 1
 		y = 2
@@ -5945,7 +5945,7 @@ focus_tree = {
 		id = POR_reorientate_the_economy
 		prerequisite = { focus = POR_march_on_lisbon }
 		icon = GFX_goal_italy_autarky
-		cost = 6
+		cost = 5
 		x = -3
 		y = 1
 		relative_position_id = POR_march_on_lisbon
@@ -6034,7 +6034,7 @@ focus_tree = {
 		id = POR_draft_portugals_own_labor_charter
 		prerequisite = { focus = POR_reorientate_the_economy }
 		icon = GFX_goal_QUE_clerical_fascism
-		cost = 8
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_reorientate_the_economy
@@ -6060,7 +6060,7 @@ focus_tree = {
 		mutually_exclusive = { focus = POR_syndicalize_the_vital_sectors }
 		prerequisite = { focus = POR_draft_portugals_own_labor_charter }
 		icon = GFX_goal_generic_neutrality_focus
-		cost = 10
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_draft_portugals_own_labor_charter
@@ -6081,7 +6081,7 @@ focus_tree = {
 		mutually_exclusive = { focus = POR_prioritize_economic_stability }
 		prerequisite = { focus = POR_draft_portugals_own_labor_charter }
 		icon = GFX_focus_SOV_organize_wreckers
-		cost = 10
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_draft_portugals_own_labor_charter
@@ -6197,7 +6197,7 @@ focus_tree = {
 			focus = POR_prioritize_economic_stability
 		}
 		icon = GFX_focus_generic_full_employment
-		cost = 8
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_syndicalize_the_vital_sectors
@@ -6302,7 +6302,7 @@ focus_tree = {
 		id = POR_restore_the_empire
 		prerequisite = { focus = POR_march_on_lisbon }
 		icon = GFX_focus_generic_monarchy_2
-		cost = 10
+		cost = 5
 		x = 0
 		y = 1
 		relative_position_id = POR_march_on_lisbon
@@ -6458,7 +6458,7 @@ focus_tree = {
 		id = POR_destabilize_brazil
 		prerequisite = { focus = POR_avenge_our_overseas_losses }
 		icon = GFX_focus_BRA_department_of_propaganda
-		cost = 8
+		cost = 5
 		x = 0
 		y = 1
 		relative_position_id = POR_avenge_our_overseas_losses
@@ -6536,7 +6536,7 @@ focus_tree = {
 		id = POR_avenge_the_1821_disaster
 		prerequisite = { focus = POR_destabilize_brazil }
 		icon = GFX_focus_por_recover_brazil
-		cost = 15
+		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = POR_destabilize_brazil
@@ -6643,7 +6643,7 @@ focus_tree = {
 		id = POR_all_against_the_bolshevik_threat
 		prerequisite = { focus = POR_march_on_lisbon }
 		icon = GFX_focus_ger_bulwark_against_bolshevism
-		cost = 6
+		cost = 5
 		x = 3
 		y = 1
 		relative_position_id = POR_march_on_lisbon
@@ -6682,7 +6682,7 @@ focus_tree = {
 		prerequisite = { focus = POR_restore_the_empire }
 		prerequisite = { focus = POR_all_against_the_bolshevik_threat }
 		icon = GFX_goal_generic_uprising
-		cost = 8
+		cost = 5
 		x = -1
 		y = 1
 		relative_position_id = POR_all_against_the_bolshevik_threat
@@ -6723,7 +6723,7 @@ focus_tree = {
 		mutually_exclusive = { focus = POR_crush_moderate_defiance }
 		prerequisite = { focus = POR_all_against_the_bolshevik_threat }
 		icon = GFX_focus_POL_beck_ribbentrop
-		cost = 8
+		cost = 5
 		x = 1
 		y = 1
 		relative_position_id = POR_all_against_the_bolshevik_threat
@@ -6750,7 +6750,7 @@ focus_tree = {
 		id = POR_forcefully_nationalize_the_blueshirts
 		prerequisite = { focus = POR_peace_with_the_salazaristas }
 		icon = GFX_focus_SWE_revoke_militia_law
-		cost = 8
+		cost = 5
 		x = 0
 		y = 1
 		relative_position_id = POR_peace_with_the_salazaristas
@@ -6813,7 +6813,7 @@ focus_tree = {
 		mutually_exclusive = { focus = POR_peace_with_the_salazaristas }
 		prerequisite = { focus = POR_all_against_the_bolshevik_threat }
 		icon = GFX_focus_generic_total_war
-		cost = 8
+		cost = 5
 		x = 3
 		y = 1
 		relative_position_id = POR_all_against_the_bolshevik_threat
@@ -6834,7 +6834,7 @@ focus_tree = {
 		id = POR_sponsor_blueshirt_activity
 		prerequisite = { focus = POR_crush_moderate_defiance }
 		icon = GFX_goal_military_government
-		cost = 8
+		cost = 5
 		x = 0
 		y = 1
 		relative_position_id = POR_crush_moderate_defiance
@@ -6895,7 +6895,7 @@ focus_tree = {
 			focus = POR_crush_moderate_defiance
 		}
 		icon = GFX_focus_SWI_embrace_panoramaheim
-		cost = 10
+		cost = 5
 		x = 1
 		y = 2
 		relative_position_id = POR_peace_with_the_salazaristas
@@ -6957,7 +6957,7 @@ focus_tree = {
 		id = POR_forge_a_cult_of_personality
 		prerequisite = { focus = POR_cement_the_dictatorship }
 		icon = GFX_focus_generic_full_social_mobilization
-		cost = 15
+		cost = 5
 		x = 0
 		y = 1
 		relative_position_id = POR_cement_the_dictatorship
