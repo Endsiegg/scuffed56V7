@@ -2263,7 +2263,7 @@ leader_traits = {
 	railroad_enthusiast = { #Valentin Campa
 		random = no
 		sprite = 10 #r56 used on Indian advisor
-		production_speed_rail_way_factor = 0.25
+		production_speed_rail_way_factor = 0.50
 
 		ai_will_do = {
 			factor = 1
@@ -3358,9 +3358,9 @@ leader_traits = {
 		sprite = 10
 
 		production_speed_industrial_complex_factor = 0.1
-		production_speed_infrastructure_factor = 0.1
-		production_speed_rail_way_factor = 0.1
-		production_speed_supply_node_factor = 0.1
+		production_speed_infrastructure_factor = 0.25
+		production_speed_rail_way_factor = 0.25
+		production_speed_supply_node_factor = 0.25
 		production_speed_synthetic_refinery_factor = 0.1
 		trade_opinion_factor = 0.15
 		democratic_drift = 0.05
@@ -5774,10 +5774,10 @@ leader_traits = {
 	SWE_admiral_of_industry = {
 		sprite = 10
 		random = no
-		production_speed_industrial_complex_factor = 0.17
-		production_speed_infrastructure_factor = 0.17
-		production_speed_rail_way_factor = 0.17
-		production_speed_synthetic_refinery_factor = 0.17
+		production_speed_industrial_complex_factor = 0.25
+		production_speed_infrastructure_factor = 0.25
+		production_speed_rail_way_factor = 0.25
+		production_speed_synthetic_refinery_factor = 0.25
 	}
 
 	SWE_close_ties_to_the_military = {
@@ -8172,7 +8172,7 @@ leader_traits = {
 		random = no
 		# Boosts Communism
 		sprite = 13
-		communism_drift = 0.1
+		communism_drift = 0.5
 
 		ai_will_do = {
 			factor = 1
@@ -8187,7 +8187,7 @@ leader_traits = {
 		random = no
 		# Boosts Democracy
 		sprite = 13
-		democratic_drift = 0.1
+		democratic_drift = 0.5
 
 		ai_will_do = {
 			factor = 0
@@ -8204,7 +8204,7 @@ leader_traits = {
 		random = no
 		# Boosts Fascism
 		sprite = 13
-		fascism_drift = 0.1
+		fascism_drift = 0.5
 
 		ai_will_do = {
 			factor = 1
@@ -8219,7 +8219,7 @@ leader_traits = {
 		random = no
 		# Boosts Unaligned
 		sprite = 13
-		neutrality_drift = 0.1
+		neutrality_drift = 0.5
 
 		ai_will_do = {
 			factor = 1
@@ -8381,9 +8381,9 @@ leader_traits = {
 	compassionate_gentleman = {
 		random = yes
 		sprite = 13
-		opinion_gain_monthly_factor = 0.15 #r56 was 0.2
-		#compliance_growth = 0.02 #r56
-		#resistance_target = -0.05 #r56
+		opinion_gain_monthly_factor = 0.2 
+		compliance_growth = 0.05
+		resistance_target = -0.05 
 		request_lease_tension = -0.15 #r56
 		faction_trade_opinion_factor = 0.15 #r56
 		guarantee_cost = -0.15 #r56
@@ -8413,8 +8413,8 @@ leader_traits = {
 		random = yes
 		sprite = 13
 		improve_relations_maintain_cost_factor = -0.5
-		trade_opinion_factor = 0.10
-		political_power_factor = 0.05
+		trade_opinion_factor = 0.25
+		political_power_factor = 0.10
 
 		ai_will_do = {
 			factor = 1
@@ -8436,9 +8436,9 @@ leader_traits = {
 	fortification_engineer = {
 		sprite = 10
 		random = yes
-		production_speed_bunker_factor = 0.2
-		production_speed_coastal_bunker_factor = 0.2
-		production_speed_anti_air_building_factor = 0.2
+		production_speed_bunker_factor = 0.25
+		production_speed_coastal_bunker_factor = 0.25
+		production_speed_anti_air_building_factor = 0.25
 		max_dig_in = 2 #r56
 
 		ai_will_do = {
@@ -8464,9 +8464,9 @@ leader_traits = {
 		
 		production_speed_dockyard_factor = 0.15
 		production_speed_fuel_silo_factor = 0.1
-		production_speed_naval_base_factor = 0.1
-		production_speed_naval_headquarters_factor = 0.1
-		production_speed_naval_supply_hub_factor = 0.1
+		production_speed_naval_base_factor = 0.25
+		production_speed_naval_headquarters_factor = 0.25
+		production_speed_naval_supply_hub_factor = 0.25
 
 		ai_will_do = {
 			factor = 2
@@ -8525,10 +8525,11 @@ leader_traits = {
 		sprite = 10
 		random = yes
 		conversion_cost_civ_to_mil_factor = -0.2
-		production_speed_supply_node_factor = 0.1
-		production_speed_steel_mill_factor = 0.1 #r56
-		production_speed_aluminum_mill_factor = 0.1 #r56
-		production_speed_rubber_refinery_factor = 0.1 #r56	
+		production_speed_supply_node_factor = 0.25
+		#production_speed_rail_way_factor = 0.25
+		production_speed_steel_mill_factor = 0.25 #r56
+		production_speed_aluminum_mill_factor = 0.25 #r56
+		production_speed_rubber_refinery_factor = 0.25 #r56	
 		# civ_to_mil_industry_conversion_rate = -1
 
 		ai_will_do = {
@@ -8548,11 +8549,12 @@ leader_traits = {
 	quartermaster_general = {
 		sprite = 10
 		random = yes
-		production_speed_air_base_factor = 0.15
-		production_speed_naval_base_factor = 0.15
-		production_speed_rocket_site_factor = 0.15
-		production_speed_radar_station_factor = 0.15
+		production_speed_air_base_factor = 0.25
+		production_speed_naval_base_factor = 0.25
+		production_speed_rocket_site_factor = 0.25
+		production_speed_radar_station_factor = 0.25
 		production_speed_nuclear_reactor_factor = 0.15
+		production_speed_anti_air_building_factor = 0.25
 
 		ai_will_do = {
 			factor = 0.2
@@ -11375,8 +11377,8 @@ leader_traits = {
 
 	railway_company = {
 		random = no
-		production_speed_rail_way_factor = 0.15
-		production_speed_supply_node_factor = 0.15
+		production_speed_rail_way_factor = 0.25
+		production_speed_supply_node_factor = 0.25
 		equipment_bonus = {
 			train_equipment = {
 				instant = yes
@@ -11391,13 +11393,13 @@ leader_traits = {
 
 	transport_company = {
 		random = no
-		production_speed_rail_way_factor = 0.15
-		production_speed_supply_node_factor = 0.15
-		production_speed_naval_base_factor = 0.15
+		production_speed_rail_way_factor = 0.25
+		production_speed_supply_node_factor = 0.25
+		production_speed_naval_base_factor = 0.25
 		equipment_bonus = {
 			train_equipment = {
 				instant = yes
-				build_cost_ic = -0.15
+				build_cost_ic = -0.25
 			}
 		}
 		ai_will_do = {
