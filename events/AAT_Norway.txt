@@ -762,7 +762,7 @@ country_event = { # Claiming Land
 	option = { # Here, have it 
 		name = AAT_norway.17.a
 		ai_chance = {
-			base = 10
+			base = 100
 			modifier = {
 				add = 5 
 				FROM = {
@@ -771,18 +771,18 @@ country_event = { # Claiming Land
 				}	
 			}
 			modifier = {
-				add = 5
+				add = 1000
 				has_opinion = {
 					target = FROM 
-					value > 75
+					value > 50
 				}
 			}
 			modifier = {
-				add = 10 
+				add = 100
 				FROM_is_stronger = yes 
 			}
 			modifier = {
-				add = 20 
+				add = 100 
 				FROM_is_twice_as_strong = yes 
 			}
 			modifier = {
@@ -816,7 +816,7 @@ country_event = { # Claiming Land
 	option = { # haha, no
 		name = AAT_norway.17.b
 		ai_chance = {
-			base = 10
+			base = 1
 		}
 		trigger = {
 		}
@@ -857,7 +857,7 @@ country_event = { # They accepted our demands
 	option = { # Free Real Estate 
 		name = AAT_norway.18.a
 		ai_chance = {
-			base = 10
+			base = 100
 		}
 		trigger = {
 		}
@@ -897,6 +897,19 @@ country_event = { # They accepted our demands
 			clr_country_flag = NOR_claiming_faroes
 		}
 		else_if = {
+			if = {
+				limit = {
+					FROM = {
+						#NOR_is_only_core_denmark = yes 
+					}
+				}
+				NOR = {
+					annex_country = {
+						target = SWE 
+						transfer_troops = yes
+					}
+				}
+			}				
 			limit = {
 				has_country_flag = NOR_claiming_sweden 
 			}
@@ -916,7 +929,7 @@ country_event = { # They accepted our demands
 					transfer_State_to = NOR
 				}			
 			}
-			917 = {
+			1030 = {
 				if = {
 					limit = {
 						is_owned_and_controlled_by = FROM 
@@ -924,6 +937,86 @@ country_event = { # They accepted our demands
 					transfer_State_to = NOR
 				}			
 			}
+			140 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}
+			138 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}
+			139 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}
+			1026 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}
+			124 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}
+			141 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}
+			38 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}
+			968 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}	
+			1029 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}	
+			666 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = FROM 
+					}
+					transfer_State_to = NOR
+				}			
+			}																
 			clr_country_flag = NOR_claiming_sweden 
 		}
 		else_if = {
@@ -933,7 +1026,7 @@ country_event = { # They accepted our demands
 			if = {
 				limit = {
 					FROM = {
-						NOR_is_only_core_denmark = yes 
+						#NOR_is_only_core_denmark = yes 
 					}
 				}
 				NOR = {
@@ -960,7 +1053,7 @@ country_event = { # They accepted our demands
 						transfer_state_to = NOR
 					}
 				}
-				911 = {
+				1025 = {
 					if = {
 						limit = {
 							is_owned_and_controlled_by = FROM 
@@ -968,7 +1061,7 @@ country_event = { # They accepted our demands
 						transfer_state_to = NOR
 					}
 				}
-				37 = {
+				964 = {
 					if = {
 						limit = {
 							is_owned_and_controlled_by = FROM 
@@ -976,7 +1069,7 @@ country_event = { # They accepted our demands
 						transfer_state_to = NOR
 					}
 				}
-				910 = {
+				1024 = {
 					if = {
 						limit = {
 							is_owned_and_controlled_by = FROM 
@@ -991,6 +1084,19 @@ country_event = { # They accepted our demands
 			limit = {
 				has_country_flag = NOR_claiming_bjarmeland
 			}
+			if = {
+				limit = {
+					FROM = {
+						#NOR_is_only_core_denmark = yes 
+					}
+				}
+				NOR = {
+					annex_country = {
+						target = FIN 
+						transfer_troops = yes
+					}
+				}
+			}			
 			213 = {
 				if = {
 					limit = {
@@ -1096,7 +1202,7 @@ country_event = { # THEY REJECTED US
 	option = { # Inte Chicken 
 		name = AAT_norway.19.a
 		ai_chance = {
-			base = 10
+			base = 1
 		}
 		trigger = {
 		}
