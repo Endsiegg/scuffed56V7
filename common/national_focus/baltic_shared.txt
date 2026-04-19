@@ -54,10 +54,10 @@ shared_focus = {
 		}
 	}
 
-	cost = 5
+	cost = 1
 
 	ai_will_do = {
-		factor = 1
+		factor = 10
 	}
 
 	available = {
@@ -96,12 +96,12 @@ shared_focus = {
 	icon = GFX_focus_chi_mission_to_germany
 	dynamic = yes
 	prerequisite = { focus = BALTIC_rejoin_the_railways }
-	mutually_exclusive = { focus = BALTIC_renew_allied_trade }
+	#mutually_exclusive = { focus = BALTIC_renew_allied_trade }
 	x = -7
 	y = 1
 	relative_position_id = BALTIC_rejoin_the_railways
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -265,7 +265,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_axis_investments
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -336,7 +336,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_german_war_economics
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -417,7 +417,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_german_war_economics
 
-	cost = 10
+	cost = 1
 
 	ai_will_do = {
 		factor = 1
@@ -555,7 +555,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_eastwall
 
-	cost = 10
+	cost = 1
 
 	ai_will_do = {
 		factor = 1
@@ -647,7 +647,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_axis_investments
 
-	cost = 10
+	cost = 3
 
 	ai_will_do = {
 		factor = 1
@@ -728,7 +728,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_german_tank_licences
 
-	cost = 10
+	cost = 3
 
 	ai_will_do = {
 		factor = 1
@@ -764,7 +764,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_german_baltic_industry
 
-	cost = 10
+	cost = 3
 
 	ai_will_do = {
 		factor = 1
@@ -853,12 +853,12 @@ shared_focus = {
 	icon = GFX_focus_chi_british_cooperation
 	dynamic = yes
 	prerequisite = { focus = BALTIC_rejoin_the_railways }
-	mutually_exclusive = { focus = BALTIC_axis_investments }
+	#mutually_exclusive = { focus = BALTIC_axis_investments }
 	x = -3
 	y = 1
 	relative_position_id = BALTIC_rejoin_the_railways
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1075,7 +1075,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_ford_motors
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1095,8 +1095,8 @@ shared_focus = {
 
 	search_filters = { FOCUS_FILTER_INDUSTRY }
 	completion_reward = {
-		add_offsite_building = { type = industrial_complex level = 2 }
-		add_offsite_building = { type = arms_factory level = 3 }
+		add_offsite_building = { type = industrial_complex level = 5 }
+		add_offsite_building = { type = arms_factory level = 5 }
 	}
 }
 
@@ -1108,7 +1108,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_crossley_motors
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1144,7 +1144,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_renew_allied_trade
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1238,7 +1238,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_british_aircraft
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1330,7 +1330,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_allied_shipments
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1436,7 +1436,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_rejoin_the_railways
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1465,7 +1465,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_attract_workers_to_capital
 
-	cost = 10
+	cost = 1
 
 	ai_will_do = {
 		factor = 1
@@ -1533,7 +1533,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_rebuild_forts
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1621,7 +1621,7 @@ shared_focus = {
 	}
 
 	available = {
-		industrial_complex > 15
+		#industrial_complex > 15
 	}
 
 	cancel_if_invalid = yes
@@ -1648,7 +1648,7 @@ shared_focus = {
 
 	available = {
 		is_in_faction = yes
-		is_subject = no
+		#is_subject = no
 	}
 
 	bypass = {
@@ -1681,7 +1681,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_arm_the_nation
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1704,7 +1704,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_rejoin_the_railways
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1792,7 +1792,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_modernize_industry
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1843,7 +1843,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_modernize_industry
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1923,7 +1923,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_domestic_motors
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -1963,7 +1963,7 @@ shared_focus = {
 	y = 2
 	relative_position_id = BALTIC_original_designs
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -2040,7 +2040,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = BALTIC_modernize_industry
 
-	cost = 10
+	cost = 1
 
 	ai_will_do = {
 		factor = 1
@@ -2060,6 +2060,12 @@ shared_focus = {
 	completion_reward = {
 		if = {
 			limit = { original_tag = LIT }
+			189 = {
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+			}
 			swap_ideas = {
 				remove_idea = LIT_invested_in_farms
 				add_idea = LIT_invested_in_farms_1
@@ -2070,7 +2076,7 @@ shared_focus = {
 			190 = {
 				add_resource = {
 					type = steel
-					amount = 16
+					amount = 24
 				}
 			}
 		}
@@ -2079,7 +2085,7 @@ shared_focus = {
 			13 = {
 				add_resource = {
 					type = oil
-					amount = 8
+					amount = 16
 				}
 			}
 		}
@@ -2090,12 +2096,12 @@ shared_focus = {
 	id = BALTIC_trade_with_neighbors
 	icon = GFX_goal_generic_positive_trade_relations
 	prerequisite = { focus = BALTIC_natural_resources }
-	mutually_exclusive = { focus = BALTIC_invest_in_baltic_trade }
+	#mutually_exclusive = { focus = BALTIC_invest_in_baltic_trade }
 	x = -1
 	y = 1
 	relative_position_id = BALTIC_natural_resources
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -2157,7 +2163,7 @@ shared_focus = {
 			190 = {
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 16
 				}
 			}
 		}
@@ -2166,7 +2172,7 @@ shared_focus = {
 			13 = {
 				add_resource = {
 					type = oil
-					amount = 4
+					amount = 16
 				}
 			}
 		}
@@ -2177,12 +2183,12 @@ shared_focus = {
 	id = BALTIC_invest_in_baltic_trade
 	icon = GFX_goal_generic_trade
 	prerequisite = { focus = BALTIC_natural_resources }
-	mutually_exclusive = { focus = BALTIC_trade_with_neighbors }
+	#mutually_exclusive = { focus = BALTIC_trade_with_neighbors }
 	x = 1
 	y = 1
 	relative_position_id = BALTIC_natural_resources
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1

@@ -124,10 +124,10 @@ focus_tree = {
 		}
 
 		available = {
-			if = {
-				limit = { amount_research_slots > 3 }
-				num_of_owned_factories > 50
-			}
+			# if = {
+			# 	limit = { amount_research_slots > 3 }
+			# 	num_of_owned_factories > 50
+			# }
 		}
 
 		available_if_capitulated = yes
@@ -148,7 +148,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = POL_the_four_year_plan
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -371,7 +371,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_expansion_of_new_towns
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -438,7 +438,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_start_central_industrial_region
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -518,7 +518,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = POL_expansion_of_new_towns
-		cost = 10
+		cost = 2
 
 		ai_will_do = {
 			factor = 10
@@ -582,10 +582,10 @@ focus_tree = {
 		prerequisite = { focus = POL_expansion_of_new_towns }
 	
 		available = {
-			if = {
-				limit = { amount_research_slots > 3 }
-				num_of_owned_factories > 50
-			}
+			# if = {
+			# 	limit = { amount_research_slots > 3 }
+			# 	num_of_owned_factories > 50
+			# }
 		}
 		
 		available_if_capitulated = yes
@@ -611,7 +611,7 @@ focus_tree = {
 		id = POL_ideological_fanaticism
 		icon = GFX_focus_POL_nationalist_education
 		prerequisite = { focus = POL_additional_research_slot2 }
-		mutually_exclusive = { focus = POL_abolish_segregated_seating }
+		#mutually_exclusive = { focus = POL_abolish_segregated_seating }
 		available = {
 			NOT = {
 				has_government = democratic
@@ -624,7 +624,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = POL_additional_research_slot2
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -644,7 +644,7 @@ focus_tree = {
 		id = POL_abolish_segregated_seating
 		icon = GFX_goal_support_democracy
 		prerequisite = { focus = POL_additional_research_slot2 }
-		mutually_exclusive = { focus = POL_ideological_fanaticism }
+		#mutually_exclusive = { focus = POL_ideological_fanaticism }
 		available = {
 			NOT = {
 				has_government = fascism
@@ -656,7 +656,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_additional_research_slot2
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -679,7 +679,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = POL_the_four_year_plan
-		cost = 10 #maybe 20?
+		cost = 5 #maybe 20?
 
 		ai_will_do = {
 			factor = 10
@@ -766,7 +766,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_fill_the_railways_gaps
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
@@ -876,7 +876,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = POL_fill_the_railways_gaps
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -890,10 +890,7 @@ focus_tree = {
 				var = POL_investments_var
 				value = 1
 			}
-			add_timed_idea = {
-				idea = POL_central_defence_of_poland_idea
-				days = 720
-			}
+			add_ideas = POL_central_defence_of_poland_idea
 		}
 	}
 
@@ -945,10 +942,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = POL_develop_upper_silesia_1
@@ -963,7 +960,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = POL_fill_the_railways_gaps
-		cost = 10
+		cost = 3
 
 		cancelable = no
 
@@ -1029,7 +1026,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = POL_national_defence_fund
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1196,10 +1193,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = POL_invest_in_the_old_polish_region_1
@@ -1214,7 +1211,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_invest_in_the_old_polish_region
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1350,7 +1347,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_modernize_congressional_factories
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -1449,7 +1446,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_warsaw_main_railway_station
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1514,12 +1511,12 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_Start_The_Fifteen_Year_Plan
-		cost = 10
+		cost = 5
 		
 		available = {
 			is_subject = no
 			surrender_progress < 0.1
-			num_of_factories > 49
+			#num_of_factories > 49
 		}
 
 		ai_will_do = {
@@ -1587,12 +1584,12 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_Phase_I_Military_Rearmament
-		cost = 10
+		cost = 5
 
 		available = {
 			is_subject = no
 			surrender_progress < 0.1
-			num_of_factories > 59
+			#num_of_factories > 59
 		}
 		
 		ai_will_do = {
@@ -1720,12 +1717,12 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_Phase_II_Infrastructure_Development
-		cost = 10
+		cost = 5
 
 		available = {
 			is_subject = no
 			surrender_progress < 0.1
-			num_of_factories > 69
+			#num_of_factories > 69
 		}
 		
 		ai_will_do = {
@@ -1764,12 +1761,12 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_Phase_III_Agriculture_and_Education
-		cost = 10
+		cost = 5
 
 		available = {
 			is_subject = no
 			surrender_progress < 0.1
-			num_of_factories > 89
+			#num_of_factories > 89
 		}
 		
 		ai_will_do = {
@@ -1884,12 +1881,12 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_Phase_IV_Urbanization
-		cost = 10
+		cost = 5
 
 		available = {
 			is_subject = no
 			surrender_progress < 0.1
-			num_of_factories > 99
+			#num_of_factories > 99
 		}
 		
 		ai_will_do = {
@@ -1976,7 +1973,7 @@ focus_tree = {
 		
 		x = 27
 		y = 0
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 5
@@ -2003,7 +2000,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = POL_prepare_for_the_next_war
-		cost = 5
+		cost = 3
 
 		available = {
 			has_completed_focus = POL_national_defence_fund
@@ -2026,7 +2023,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_Plan_W
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
@@ -2058,7 +2055,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_Plan_W
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2103,7 +2100,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_timed_idea = { idea = POL_Wartime_Industry_Effort days = 365 }
+			add_ideas = POL_Wartime_Industry_Effort
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -2115,7 +2112,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = POL_prepare_for_the_next_war
-		cost = 5
+		cost = 3
 		
 		available = {
 			OR = {
@@ -2271,7 +2268,7 @@ focus_tree = {
 		x = 7
 		y = 1
 		relative_position_id = POL_prepare_for_the_next_war
-		cost = 2.9
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -2321,7 +2318,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_prepare_for_the_next_war
-		cost = 10
+		cost = 2
 
 		ai_will_do = {
 			factor = 10
@@ -2342,7 +2339,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = POL_new_military_academy
 		
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 11
@@ -2374,7 +2371,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = POL_standardisation_of_equipment
 				bonus = 1.0
-				uses = 1
+				uses = 2
 				category = infantry_weapons
 			}
 			army_experience = 10
@@ -2388,7 +2385,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_standardisation_of_equipment
-		cost = 10
+		cost = 2
 
 		ai_will_do = {
 			factor = 10
@@ -2418,7 +2415,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = POL_standardisation_of_equipment
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2446,12 +2443,12 @@ focus_tree = {
 		id = POL_modernising_the_cavalry
 		icon = GFX_goal_generic_cavalry
 		prerequisite = { focus = POL_army_modernisation }
-		mutually_exclusive = { focus = POL_attract_foreign_motors }
+		#mutually_exclusive = { focus = POL_attract_foreign_motors }
 		
 		x = -3
 		y = 1
 		relative_position_id = POL_army_modernisation
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2475,12 +2472,12 @@ focus_tree = {
 		id = POL_attract_foreign_motors
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = POL_army_modernisation }
-		mutually_exclusive = { focus = POL_modernising_the_cavalry }
+		#mutually_exclusive = { focus = POL_modernising_the_cavalry }
 		
 		x = -1
 		y = 1
 		relative_position_id = POL_army_modernisation
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2507,7 +2504,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_modernising_the_cavalry
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2623,7 +2620,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_study_foreign_tanks
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -2649,7 +2646,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_study_foreign_tanks
-		cost = 10
+		cost = 5
 
 		bypass = {
 			has_tech = advanced_light_tank
@@ -2729,7 +2726,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = POL_army_modernisation
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2762,7 +2759,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_Artillery_Motorization
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2821,7 +2818,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_Artillery_Motorization
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2875,7 +2872,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_army_modernisation
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2913,7 +2910,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = POL_study_foreign_tanks
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2935,7 +2932,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_attract_foreign_motors
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -3034,7 +3031,7 @@ focus_tree = {
 		
 		x = 4
 		y = 1
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -3198,7 +3195,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_Military_Aviation_Exports
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -3321,7 +3318,7 @@ focus_tree = {
 		x = -2
 		y = 2
 		relative_position_id = POL_air_innovations
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -3365,7 +3362,7 @@ focus_tree = {
 		id = POL_medium_bomber_focus
 		icon = GFX_goal_generic_occupy_start_war
 		prerequisite = { focus = POL_heavy_fighter_concept focus = POL_air_innovations }
-		mutually_exclusive = { focus = POL_light_bomber_focus }
+	#	mutually_exclusive = { focus = POL_light_bomber_focus }
 		
 		x = -1
 		y = 1
@@ -3412,7 +3409,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_medium_bomber_focus
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -3435,7 +3432,7 @@ focus_tree = {
 		id = POL_light_bomber_focus
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = POL_heavy_fighter_concept focus = POL_fighter_modernisation }
-		mutually_exclusive = { focus = POL_medium_bomber_focus }
+		#mutually_exclusive = { focus = POL_medium_bomber_focus }
 		
 		x = 1
 		y = 1
@@ -3485,7 +3482,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_light_bomber_focus
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 12
@@ -3521,7 +3518,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_light_bomber_focus
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -3609,7 +3606,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_air_modernisations_programme
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -3717,7 +3714,7 @@ focus_tree = {
 		x = 11
 		y = 0
 		relative_position_id = POL_radicalize_the_front
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
@@ -3793,7 +3790,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_complete_april_constitution
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
@@ -3816,7 +3813,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_polish_militarism
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
@@ -3923,7 +3920,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = POL_consolidate_sanation_government
-		cost = 5
+		cost = 1
 
 		available = {
 			is_subject = no
@@ -4074,7 +4071,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = POL_the_castle
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -4101,7 +4098,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_the_castle
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
@@ -4171,7 +4168,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_eliminate_socialist_parties
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
@@ -4236,7 +4233,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_Budget_Reform
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			base = 10
@@ -4625,7 +4622,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = POL_the_sanation_left
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -4665,7 +4662,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = POL_the_left_chairman
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 10
 		}
@@ -4688,7 +4685,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_Prepare_For_The_upcoming_conflict
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 10
 		}
@@ -4726,7 +4723,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = POL_the_left_chairman
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -5141,7 +5138,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = POL_the_sanation_right
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -5181,7 +5178,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_second_man_of_the_state
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -5259,7 +5256,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = POL_second_man_of_the_state
-		cost = 10
+		cost = 5
 		
 		available = {
 			power_balance_value = {
@@ -5804,7 +5801,7 @@ focus_tree = {
 		x = 12
 		y = 1
 		relative_position_id = POL_prepare_for_the_next_war
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -5831,7 +5828,7 @@ focus_tree = {
 				}
 				add_dynamic_modifier = {
 					modifier = POL_plan_modifier
-					days = 547
+					#days = 547
 					scope = POL
 				}
 			}
@@ -5845,7 +5842,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = POL_plan_west
-		cost = 7.16
+		cost = 1
 		
 		available = {
 			NOT = { has_completed_focus = POL_complete_plan_west }
@@ -5936,7 +5933,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = POL_plan_west
-		cost = 7.16
+		cost = 5
 		
 		available = {
 			NOT = { has_completed_focus = POL_complete_plan_west }
@@ -5965,7 +5962,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_the_prusya_line
-		cost = 7.16
+		cost = 1
 		
 		available = {
 			NOT = { has_completed_focus = POL_complete_plan_west }
@@ -6021,7 +6018,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_the_prusya_line
-		cost = 7.16
+		cost = 1
 		
 		available = {
 			NOT = { has_completed_focus = POL_complete_plan_west }
@@ -6074,7 +6071,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = POL_the_prusya_line
-		cost = 7.16
+		cost = 1
 		
 		available = {
 			NOT = { has_completed_focus = POL_complete_plan_west }
@@ -6166,7 +6163,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_plan_west
-		cost = 10
+		cost = 1
 		
 		available = {
 			NOT = { has_completed_focus = POL_complete_plan_west }
@@ -6196,7 +6193,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = POL_plan_west
-		cost = 10
+		cost = 1
 		
 		available = {
 			NOT = { has_completed_focus = POL_complete_plan_west }
@@ -6260,7 +6257,7 @@ focus_tree = {
 		x = 6
 		y = 1
 		relative_position_id = POL_plan_west
-		cost = 7.16
+		cost = 1
 
 		available = {
 			NOT = { has_completed_focus = POL_complete_plan_west }
@@ -6390,7 +6387,7 @@ focus_tree = {
 		x = -2
 		y = 0
 		relative_position_id = POL_plan_west
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -6419,7 +6416,7 @@ focus_tree = {
 				}
 				add_dynamic_modifier = {
 					modifier = POL_plan_modifier
-					days = 547
+					#days = 547
 					scope = POL
 				}
 			}
@@ -6433,7 +6430,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = POL_plan_east
-		cost = 7.16
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -6460,7 +6457,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_eastern_conscripts
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -6506,7 +6503,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_eastern_conscripts
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -6552,7 +6549,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = POL_plan_east
-		cost = 7.16
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -6657,7 +6654,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = POL_plan_east
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -6736,7 +6733,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_fortification_of_belarus
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -6757,10 +6754,20 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			build_railway = {
-				#level = 2
-				start_province = 560
-				target_province = 6557
+				level = 5
+				start_province = 3544
+				target_province = 572
 			}
+			build_railway = {
+				level = 5
+				start_province = 3544
+				target_province = 11479
+			}
+			build_railway = {
+				level = 5
+				start_province = 3544
+				target_province = 3320
+			}			
 		}
 	}
 
@@ -6771,7 +6778,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_plan_east
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -6845,7 +6852,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = POL_plan_east
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -13599,7 +13606,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -13662,8 +13669,8 @@ focus_tree = {
 			else = {
 				add_ideas = POL_influx_of_exiles
 			}
-			add_offsite_building = { type = industrial_complex level = 3 }
-			add_offsite_building = { type = arms_factory level = 2 }
+			add_offsite_building = { type = industrial_complex level = 10 }
+			add_offsite_building = { type = arms_factory level = 10 }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 10000
@@ -13698,7 +13705,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = POL_prepare_for_the_inevitable
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -13739,7 +13746,7 @@ focus_tree = {
 					variant_name = "PZL P.23"
 				}
 			}
-			add_offsite_building = { type = arms_factory level = 2 }
+			add_offsite_building = { type = arms_factory level = 5 }
 		}
 	}
 
@@ -13764,7 +13771,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_foreign_air_support
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -13774,7 +13781,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 75
 			add_manpower = 9700
-			add_offsite_building = { type = arms_factory level = 2 }
+			add_offsite_building = { type = arms_factory level = 5 }
 		}
 	}
 
@@ -13799,7 +13806,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = POL_foreign_air_support
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -13889,7 +13896,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_prepare_for_the_inevitable
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 10
@@ -13897,7 +13904,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = dockyard level = 5 }
+			add_offsite_building = { type = dockyard level = 15 }
 		}
 	}
 
@@ -13911,7 +13918,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = POL_prepare_for_the_inevitable
 
-		cost = 7.2
+		cost = 1
 
 		ai_will_do = {
 			factor = 100
@@ -13961,9 +13968,9 @@ focus_tree = {
 					}
 				}
 			}
-			add_offsite_building = { type = arms_factory level = 4 }
-			add_offsite_building = { type = industrial_complex level = 1 }
-			add_offsite_building = { type = dockyard level = 2 }
+			add_offsite_building = { type = arms_factory level = 5 }
+			add_offsite_building = { type = industrial_complex level = 5 }
+			add_offsite_building = { type = dockyard level = 5 }
 			add_equipment_to_stockpile = {
 				type = convoy_1
 				amount = 50
@@ -13995,7 +14002,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_Evacuate_Polands_Gold_Reserves
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -14003,7 +14010,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 5 }
+			add_offsite_building = { type = industrial_complex level = 10 }
 		}
 	}
 
@@ -14034,7 +14041,7 @@ focus_tree = {
 			}
 		}
 		relative_position_id = POL_resistance_industries
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -14042,8 +14049,8 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 3 }
-			add_offsite_building = { type = arms_factory level = 3 }
+			add_offsite_building = { type = industrial_complex level = 5 }
+			add_offsite_building = { type = arms_factory level = 5 }
 		}
 	}
 
@@ -14074,7 +14081,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = POL_prepare_for_the_inevitable
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -14136,7 +14143,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = POL_expand_polish_intelligence
-		cost = 10
+		cost = 5
 		allow_branch = { has_dlc = "La Resistance" }
 		ai_will_do = {
 			factor = 10
@@ -14181,17 +14188,15 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_expand_polish_intelligence
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
 		}
 		available_if_capitulated = yes
 		completion_reward = {
-			add_timed_idea = {
-				idea = POL_push_home_idea
-				days = 365
-			}
+			add_ideas = POL_push_home_idea
+			
 		}
 	}
 
@@ -14228,7 +14233,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -14309,7 +14314,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = POL_the_cyclometer
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -14516,10 +14521,10 @@ focus_tree = {
 	focus = {
 		id = POL_develop_polish_ship_building
 		icon = GFX_focus_POL_develop_polish_shipbuilding
-		mutually_exclusive = { focus = POL_clamp_down_on_danzig }
+		#mutually_exclusive = { focus = POL_clamp_down_on_danzig }
 		x = 16
 		y = 0
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -14576,11 +14581,11 @@ focus_tree = {
 	focus = {
 		id = POL_clamp_down_on_danzig
 		icon = GFX_focus_POL_clamp_down_on_danzig
-		mutually_exclusive = { focus = POL_develop_polish_ship_building }
+		#mutually_exclusive = { focus = POL_develop_polish_ship_building }
 		x = 2
 		y = 0
 		relative_position_id = POL_develop_polish_ship_building
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 2
@@ -14640,7 +14645,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = POL_develop_polish_ship_building
-		cost = 5
+		cost = 3
 
 		available = {
 			OR = {
@@ -14702,7 +14707,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_Seek_Accommodation_With_Germany
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -14833,7 +14838,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_Seek_Accommodation_With_Germany
-		cost = 10
+		cost = 5
 		available = {
 			is_subject = no
 			is_in_faction = no
@@ -14919,7 +14924,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_Ribbentrop_Beck_Pact
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 0
@@ -15016,7 +15021,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_develop_polish_ship_building
-		cost = 7.2
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
@@ -15055,7 +15060,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
 					level = 2
@@ -15076,7 +15081,7 @@ focus_tree = {
 		prerequisite = { focus = POL_develop_polish_ship_building focus = POL_clamp_down_on_danzig }
 		x = 1
 		y = 1
-		cost = 5
+		cost = 3
 		relative_position_id = POL_develop_polish_ship_building
 		ai_will_do = {
 			factor = 10
@@ -15102,23 +15107,23 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_clamp_down_on_danzig
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 10
 		}
 
 		available = {
-			85 = {
-				is_owned_and_controlled_by = ROOT
-				if = {
-					limit = {
-						NOT = { is_core_of = ROOT }
-					}
-					compliance > 70
-					resistance < 30
-				}
-			}
+			# 85 = {
+			# 	is_owned_and_controlled_by = ROOT
+			# 	if = {
+			# 		limit = {
+			# 			NOT = { is_core_of = ROOT }
+			# 		}
+			# 		compliance > 70
+			# 		resistance < 30
+			# 	}
+			# }
 		}
 		
 		bypass = {
@@ -15152,7 +15157,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		
 		relative_position_id = POL_ban_the_nazi_party
 
@@ -15205,7 +15210,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_attract_poles_to_gdynia
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -15313,7 +15318,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_ban_the_nazi_party
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -15358,7 +15363,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_expand_gdynia_seaport
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -15486,7 +15491,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_expand_gdynia_seaport
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -15551,7 +15556,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = POL_Naval_Officers_School
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -15579,7 +15584,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_Naval_Officers_School
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -15627,14 +15632,14 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = POL_a_cruiser_navy
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 2
 		}
 
 		completion_reward = {
-			#add_ideas = POL_Maritime_and_Colonial_League
+			add_ideas = POL_Maritime_and_Colonial_League
 			custom_effect_tooltip = POL_Maritime_and_Colonial_League_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = POL_Janusz_Radziwill
@@ -15676,7 +15681,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = POL_import_submarine_technology
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -15737,7 +15742,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = POL_coastal_defense
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			factor = 12
@@ -15795,7 +15800,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = POL_strike_force
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10

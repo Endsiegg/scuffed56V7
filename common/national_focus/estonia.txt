@@ -6,23 +6,23 @@
 ### search_filters = {FOCUS_FILTER_MANPOWER}
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 
-#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = estonia_tree
-
+	
 	country = {
 		factor = 0
-		
 		modifier = {
-			add = 9
+			add = 10
 			tag = EST
 			has_dlc = "No Step Back"
-			has_global_flag = EST_vanilla_focus_tree
+			has_global_flag = EST_vanilla_focus_tree			
 		}
+
 	}
+	
 
 	default = no
-	
+
 	continuous_focus_position = { x = 20 y = 1000 }
 
 #	focus = {
@@ -60,14 +60,8 @@ focus_tree = {
 #
 #		}
 #	}
-	
-	#shared_focus = BALTIC_rejoin_the_railways
-	shared_focus = EST_the_four_year_plan
-	shared_focus = EST_prepare_for_war
-	shared_focus = EST_air_base_expansion
-	shared_focus = EST_build_paldiski_port
+	shared_focus = BALTIC_rejoin_the_railways
 	shared_focus = BALTIC_restore_workers_republic
-	shared_focus = BAL_UNIFIED_baltic_unification
 	
 	#####################################
 	#### ERA OF SILENCE (HISTORICAL) ####
@@ -79,11 +73,51 @@ focus_tree = {
 		x = 34
 		y = 0
 
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					OR = {
+						has_completed_focus = BALTIC_restore_workers_republic
+						has_completed_focus = EST_rally_the_nation
+					}
+				}
+			}
+		}
+
+		offset = {
+			x = -10
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = EST_era_of_silence
+			}
+		}
+
 		cost = 10
 
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
@@ -91,6 +125,16 @@ focus_tree = {
 			add_stability = 0.1
 			activate_mission_tooltip = EST_vaps_uprising
 			activate_mission_tooltip = EST_vaps_crackdown
+
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				mark_focus_tree_layout_dirty = yes 
+			}
 		}
 	}
 
@@ -107,6 +151,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
@@ -142,6 +197,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
@@ -182,6 +248,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -239,6 +316,17 @@ focus_tree = {
 			factor = 1
 		}
 
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_ideas = EST_exploit_the_banks_idea
@@ -258,6 +346,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -311,10 +410,18 @@ focus_tree = {
 		}
 
 		available = {
-			communism < 0.01
+			communism < 0.05
 			fascism < 0.05
 			democratic > 0.25
 		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -361,6 +468,14 @@ focus_tree = {
 		available = {
 			democratic < 0.1
 		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
@@ -422,6 +537,7 @@ focus_tree = {
 		}
 
 		available = {
+			is_subject = no
 			is_in_faction = no
 			OR = {
 				LIT = { exists = yes }
@@ -443,6 +559,10 @@ focus_tree = {
 			is_in_faction_with = LAT
 			is_in_faction_with = LIT
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -499,6 +619,14 @@ focus_tree = {
 				DEN = { is_in_faction = no }
 			}
 		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -569,6 +697,10 @@ focus_tree = {
 			}
 		}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			if = {
@@ -605,6 +737,7 @@ focus_tree = {
 		}
 
 		available = {
+			is_subject = no
 			any_other_country = {
 				NOT = { has_war_with = ROOT }
 				is_faction_leader = yes
@@ -634,6 +767,10 @@ focus_tree = {
 				}
 			}
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -673,6 +810,17 @@ focus_tree = {
 			factor = 1
 		}
 
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_ideas = EST_national_council_idea
@@ -693,6 +841,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -745,6 +904,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -801,6 +971,14 @@ focus_tree = {
 			NOT = { has_idea = low_economic_mobilisation }
 		}
 
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_ideas = EST_corporate_chambers_idea
@@ -841,6 +1019,10 @@ focus_tree = {
 			}
 		}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 150
@@ -868,6 +1050,17 @@ focus_tree = {
 			factor = 1
 		}
 
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_ideas = EST_republican_defence_league_idea
@@ -887,6 +1080,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
@@ -936,6 +1140,14 @@ focus_tree = {
 			is_in_faction = no #would be annoying to see your ally fold for no reason
 		}
 
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			custom_effect_tooltip = cave_to_enemies_tt
@@ -955,9 +1167,49 @@ focus_tree = {
 
 		cost = 10
 
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					OR = {
+						has_completed_focus = BALTIC_restore_workers_republic
+						has_completed_focus = EST_era_of_silence
+					}
+				}
+			}
+		}
+
+		offset = {
+			x = -20
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = EST_rally_the_nation
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -965,8 +1217,21 @@ focus_tree = {
 				ideology = fascism
 				popularity = 0.1
 			}
-			activate_decision = EST_stomp_the_vaps
+			
+			effect_tooltip = {
+				activate_decision = EST_stomp_the_vaps
+			}
 			unlock_decision_category_tooltip = march_through_estonia
+
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				mark_focus_tree_layout_dirty = yes 
+			}
 		}
 	}
 
@@ -1000,9 +1265,16 @@ focus_tree = {
 			has_civil_war = no
 		}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			remove_decision = EST_stomp_the_vaps
+			hidden_effect = {
+				clr_country_flag = marching_in_state_flag
+			}
 			random_list = {
 				10 = {
 					modifier = {
@@ -1036,6 +1308,7 @@ focus_tree = {
 					}
 				}
 			}
+			set_country_flag = EST_vapsid_takeover 
 		}
 	}
 
@@ -1057,17 +1330,17 @@ focus_tree = {
 			has_government = fascism
 		}
 
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_ideas = EST_veteran_training
-			hidden_effect = {
-			    if = {
-				    limit = {
-					    has_idea = democratic_opposition
-					}
-					remove_ideas = democratic_opposition
-				}
-			}
 		}
 	}
 
@@ -1088,6 +1361,14 @@ focus_tree = {
 		available = {
 			has_government = fascism
 		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
@@ -1116,6 +1397,14 @@ focus_tree = {
 			has_government = fascism
 		}
 
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_ideas = EST_vapsid_youth_idea
@@ -1140,14 +1429,21 @@ focus_tree = {
 			has_government = fascism
 		}
 
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 150
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = EST_johan_pitka
-			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = EST_hjalmar_mae
-			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = EST_viktor_puskar
 		}
 	}
@@ -1171,6 +1467,14 @@ focus_tree = {
 			has_government = fascism
 		}
 
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			division_template = { 
@@ -1192,6 +1496,8 @@ focus_tree = {
 					infantry = { x = 1 y = 2 }
 					infantry = { x = 2 y = 2 }
 					infantry = { x = 3 y = 2 }
+				}
+				support = {
 				}
 			}
 			random_owned_controlled_state = {
@@ -1248,6 +1554,14 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			if = {
@@ -1288,6 +1602,14 @@ focus_tree = {
 			has_government = fascism
 		}
 
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			every_owned_state = {
 				limit = {
@@ -1314,7 +1636,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = EST_reach_out_to_germany
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1328,7 +1650,7 @@ focus_tree = {
 			NOT = {
 				any_other_country = {
 					is_in_faction_with = GER
-					has_war_with = HUN	
+					has_war_with = ROOT	
 				}
 			}
 			GER = {
@@ -1338,6 +1660,14 @@ focus_tree = {
 			}
 			NOT = { has_completed_focus = EST_anti_communist_militia }
 		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -1396,6 +1726,14 @@ focus_tree = {
 			}
 			
 		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -1464,16 +1802,6 @@ focus_tree = {
 		}
 
 		available = {
-			if = {
-				limit = {
-					FIN = {
-						is_ai = yes
-					}
-				}
-				FIN = {
-					is_ai = yes
-				}
-			}
 			has_government = fascism
 		}
 
@@ -1487,9 +1815,14 @@ focus_tree = {
 			}
 		}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			FIN = {
+				country_event = { id = generic.1 hours = 1 }
 				add_timed_idea = {
 					idea = EST_vaps_organizing_in_FIN
 					days = 360
@@ -1526,6 +1859,10 @@ focus_tree = {
 			}
 		}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			unlock_decision_category_tooltip = EST_convert_FIN_cat
@@ -1548,20 +1885,24 @@ focus_tree = {
 		}
 
 		available = {
+			is_subject = no
 			FIN = {
+				exists = yes
 				has_government = fascism
+				OR = {
+					is_subject_of = ROOT
+					is_subject = no
+				}
+				is_in_faction = no
 			}
 		}
 
 		bypass = {
-			FIN = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_country_flag = banned_fascism_flag
-				}
-			}
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -1586,7 +1927,15 @@ focus_tree = {
 				}
 			}
 			effect_tooltip = {
-				FIN = { custom_effect_tooltip = invite_to_faction_tt }
+				if = {
+					limit = {
+						FIN = { has_idea = FIN_the_lone_wolf }
+					}
+					custom_effect_tooltip = FIN_the_lone_wolf_no_faction_tt
+				}
+				else = {
+					FIN = { custom_effect_tooltip = invite_to_faction_tt }
+				}
 			}
 			hidden_effect = {
 				if = {
@@ -1602,7 +1951,12 @@ focus_tree = {
 						country_event = EST_events.6
 					}
 				}
-				else = {
+				else_if = {
+					limit = {
+						NOT = {
+							FIN = { has_idea = FIN_the_lone_wolf }
+						}
+					}
 					FIN = { country_event = generic.5 }
 				}
 			}
@@ -1627,25 +1981,35 @@ focus_tree = {
 		available = {
 			FIN = {
 				has_government = fascism
-			}
-			NOT = {
-				has_completed_focus = BAL_UNIFIED_baltic_unification
-			}
-		}
-
-		bypass = {
-			FIN = {
+				has_civil_war = no
+				exists = yes
 				OR = {
-					exists = no
-					is_subject = yes
-					has_country_flag = banned_fascism_flag
+					is_subject_of = ROOT
+					is_subject = no
+				}
+				OR = {
+					is_in_faction_with = ROOT
+					is_in_faction = no
 				}
 			}
 		}
 
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			FIN = { country_event = EST_events.2}	
+			FIN = { 
+				country_event = {
+					id = EST_events.2
+					days = 1
+					random_days = 3
+				}
+			}	
 			effect_tooltip = {
 				custom_effect_tooltip = if_they_accept_tt
 				annex_country = {
@@ -1689,6 +2053,10 @@ focus_tree = {
 			}
 		}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			create_wargoal = {
@@ -1726,6 +2094,10 @@ focus_tree = {
 				}
 			}
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -1765,6 +2137,10 @@ focus_tree = {
 			}
 		}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			create_wargoal = {
@@ -1792,18 +2168,35 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = control_all_nordic_states_tt
-				all_state = {
-					OR = {
-						controls_or_subject_of = yes
-						controller = {
-							original_tag = FIN
-							is_in_faction_with = ROOT
+				NOR = {
+					all_core_state = {
+						OR = {
+							controls_or_subject_of = yes
+							controller = {
+								original_tag = FIN
+								is_in_faction_with = ROOT
+							}
 						}
-						NOT = {
-							OR = {
-								is_core_of = NOR
-								is_core_of = DEN
-								is_core_of = SWE
+					}
+				}
+				DEN = {
+					all_core_state = {
+						OR = {
+							controls_or_subject_of = yes
+							controller = {
+								original_tag = FIN
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				SWE = {
+					all_core_state = {
+						OR = {
+							controls_or_subject_of = yes
+							controller = {
+								original_tag = FIN
+								is_in_faction_with = ROOT
 							}
 						}
 					}
@@ -1811,13 +2204,24 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			set_cosmetic_tag = NDC_UNIFIED
 			unlock_decision_tooltip = form_nordic_league
 			if = {
 				limit = {
-					NOR = { is_subject_of = ROOT }
+					NOR = { 
+						is_ai = yes 
+						is_subject_of = ROOT 
+					}
 				}
 				annex_country = {
 					target = NOR
@@ -1826,7 +2230,10 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					SWE = { is_subject_of = ROOT }
+					SWE = { 		
+						is_ai = yes 
+						is_subject_of = ROOT 
+					}
 				}
 				annex_country = {
 					target = SWE
@@ -1835,7 +2242,10 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					DEN = { is_subject_of = ROOT }
+					DEN = { 
+						is_ai = yes
+						is_subject_of = ROOT 
+					}
 				}
 				annex_country = {
 					target = DEN
@@ -1880,11 +2290,17 @@ focus_tree = {
 		available = {
 			has_government = fascism
 			is_subject = no
-			any_state = {
-				is_core_of = FIN
-				is_owned_by = ROOT 
+			any_owned_state = {
+				is_core_of = FIN 
 			}
 		}
+
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -1919,16 +2335,53 @@ focus_tree = {
 			is_subject = no
 		}
 
+		bypass = {
+			OR = {
+				AND = {
+					SWE = {
+						is_subject_of = ROOT
+					}
+					NOR = {
+						is_subject_of = ROOT
+					}
+				}
+				all_state = {
+					OR = {
+						state = 148
+						state = 722
+						state = 213
+						state = 925
+						state = 924
+						state = 144
+						state = 923
+						state = 143
+						state = 666
+						state = 918
+						state = 917
+					}
+					is_owned_by = ROOT
+				}
+				SMI = {
+					is_subject_of = ROOT
+				}
+			}
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			create_wargoal = {
 				type = take_state_focus
-				generator = { 143 144 }
+				generator = { 143 144 923 924 925 }
 				target = NOR
 			}
 			create_wargoal = {
 				type = take_state_focus
-				generator = { 666 38 }
+				generator = { 666 917 918 }
 				target = SWE
 			}
 		}
@@ -1954,12 +2407,51 @@ focus_tree = {
 			is_subject = no
 		}
 
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			create_wargoal = {
-				type = take_state_focus
-				generator = { 213 215 216 }
-				target = SOV
+			every_state = {
+				limit = {
+					OR = {
+						state = 147
+						state = 216
+						state = 215
+						state = 146
+					}
+					NOT = {
+						OR = {
+							is_owned_by = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+				}
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						owns_state = 147
+						owns_state = 216
+						owns_state = 215
+						owns_state = 146
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = take_claimed_state
+						#generator = { 213 215 216 }
+						target = PREV
+					}
+				}
 			}
 		}
 	}
@@ -2012,6 +2504,13 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			set_cosmetic_tag = EST_UGRA
@@ -2020,12 +2519,6 @@ focus_tree = {
 					143 = { owner = { is_subject_of = ROOT } }
 				}
 				transfer_state = 143
-			}
-			if = {
-				limit = {
-					968 = { owner = { is_subject_of = ROOT } }
-				}
-				transfer_state = 968
 			}
 			if = {
 				limit = {
@@ -2050,6 +2543,18 @@ focus_tree = {
 					214 = { owner = { is_subject_of = ROOT } }
 				}
 				transfer_state = 214
+			}
+			if = {
+				limit = {
+					879 = { owner = { is_subject_of = ROOT } }
+				}
+				transfer_state = 879
+			}
+			if = {
+				limit = {
+					880 = { owner = { is_subject_of = ROOT } }
+				}
+				transfer_state = 880
 			}
 			if = {
 				limit = {
@@ -2131,6 +2636,36 @@ focus_tree = {
 			}
 			if = {
 				limit = {
+					918 = { owner = { is_subject_of = ROOT } }
+				}
+				transfer_state = 918
+			}
+			if = {
+				limit = {
+					923 = { owner = { is_subject_of = ROOT } }
+				}
+				transfer_state = 923
+			}
+			if = {
+				limit = {
+					924 = { owner = { is_subject_of = ROOT } }
+				}
+				transfer_state = 924
+			}
+			if = {
+				limit = {
+					925 = { owner = { is_subject_of = ROOT } }
+				}
+				transfer_state = 925
+			}
+			if = {
+				limit = {
+					917 = { owner = { is_subject_of = ROOT } }
+				}
+				transfer_state = 917
+			}
+			if = {
+				limit = {
 					879 = { owner = { is_subject_of = ROOT } }
 				}
 				transfer_state = 879
@@ -2149,54 +2684,118 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					1029 = { owner = { is_subject_of = ROOT } }
+					824 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 1029
+				transfer_state = 824
 			}
 			if = {
 				limit = {
-					1033 = { owner = { is_subject_of = ROOT } }
+					577 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 1033
+				transfer_state = 577
 			}
 			if = {
 				limit = {
-					1034 = { owner = { is_subject_of = ROOT } }
+					399 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 1034
+				transfer_state = 399
 			}
 			if = {
 				limit = {
-					1035 = { owner = { is_subject_of = ROOT } }
+					833 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 1035
+				transfer_state = 833
 			}
-			add_state_core = 143
-			add_state_core = 968 
-			add_state_core = 144 
-			add_state_core = 666 
-			add_state_core = 213 
-			add_state_core = 215 
-			add_state_core = 216 
-			add_state_core = 214 
-			add_state_core = 262 
-			add_state_core = 580 
-			add_state_core = 581
-			add_state_core = 579 
-			add_state_core = 653 
-			add_state_core = 573 
-			add_state_core = 397 
-			add_state_core = 398 
-			add_state_core = 400 
-			add_state_core = 351 
-			add_state_core = 208 
-			add_state_core = 879
-			add_state_core = 880
-			add_state_core = 825
-			add_state_core = 1029
-			add_state_core = 1033
-			add_state_core = 1034
-			add_state_core = 1035
+			143 = {
+				add_core_of = ROOT
+			}
+			144 = {
+				add_core_of = ROOT
+			}
+			666 = {
+				add_core_of = ROOT
+			}
+			213 = {
+				add_core_of = ROOT
+			}
+			215 = {
+				add_core_of = ROOT
+			}
+			216 = {
+				add_core_of = ROOT
+			}
+			214 = {
+				add_core_of = ROOT
+			}
+			262 = {
+				add_core_of = ROOT
+			}
+			580 = {
+				add_core_of = ROOT
+			}
+			581 = {
+				add_core_of = ROOT
+			}
+			579 = {
+				add_core_of = ROOT
+			}
+			653 = {
+				add_core_of = ROOT
+			}
+			573 = {
+				add_core_of = ROOT
+			}
+			397 = {
+				add_core_of = ROOT
+			}
+			398 = {
+				add_core_of = ROOT
+			}
+			400 = {
+				add_core_of = ROOT
+			}
+			351 = {
+				add_core_of = ROOT
+			}
+			208 = {
+				add_core_of = ROOT
+			}
+			918 = {
+				add_core_of = ROOT
+			}
+			923 = {
+				add_core_of = ROOT
+			}
+			924 = {
+				add_core_of = ROOT
+			}
+			925 = {
+				add_core_of = ROOT
+			}
+			917 = {
+				add_core_of = ROOT
+			}
+			879 = {
+				add_core_of = ROOT
+			}
+			880 = {
+				add_core_of = ROOT
+			}
+			825 = {
+				add_core_of = ROOT
+			}
+			824 = {
+				add_core_of = ROOT
+			}
+			577 = {
+				add_core_of = ROOT
+			}
+			399 = {
+				add_core_of = ROOT
+			}
+			833 = {
+				add_core_of = ROOT
+			}
 		}
 	}
 
@@ -2215,6 +2814,18 @@ focus_tree = {
 			factor = 1
 		}
 
+		offset = {
+			x = -10
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = EST_era_of_silence
+			}
+		}
+
 		available = {
 			OR = {
 				NOT = {
@@ -2230,6 +2841,10 @@ focus_tree = {
 			is_in_faction_with = SOV
 			is_in_faction_with = GER
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			country_event = { id = LAT_events.1 } #select who is the greatest threat and gain forts on their border
@@ -2258,6 +2873,10 @@ focus_tree = {
 		bypass = {
 			NOT = { owns_state = 13 }
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			13 = {
@@ -2294,6 +2913,10 @@ focus_tree = {
 			NOT = { owns_state = 811 }
 		}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			811 = {
 				add_building_construction = { type = bunker province = 185 level = 4 instant_build = yes }
@@ -2325,9 +2948,16 @@ focus_tree = {
 			factor = 1
 		}
 
+		available = {
+		}
+
 		bypass = {
 			is_subject = yes
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
 		completion_reward = {
 			191 = {
@@ -2358,6 +2988,18 @@ focus_tree = {
 			factor = 1
 		}
 
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
 		completion_reward = {
 			if = {
 				limit = { has_country_flag = germans_true_enemy_flag }
@@ -2371,7 +3013,7 @@ focus_tree = {
 
 	focus = {
 		id = EST_long_push_east
-		icon = GFX_goal_tank_hunt
+		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = EST_fight_against_communism }
 		x = 0
 		y = 1
@@ -2397,8 +3039,13 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+			
+		}
+
 		cancel_if_invalid = no
 		continue_if_invalid = yes
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -2421,6 +3068,30 @@ focus_tree = {
 			factor = 1
 		}
 
+		offset = {
+			x = -1
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = EST_era_of_silence
+			}
+		}
+
+		offset = {
+			x = -19
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = EST_rally_the_nation
+			}
+		}
+
 		available = {
 			if = {
 				limit = {
@@ -2435,6 +3106,13 @@ focus_tree = {
 				surrender_progress > 0.5
 			}
 		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2457,6 +3135,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
@@ -2493,6 +3181,13 @@ focus_tree = {
 				surrender_progress > 0.5
 			}
 		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
@@ -2528,6 +3223,13 @@ focus_tree = {
 				}
 			}
 		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
@@ -2541,7 +3243,7 @@ focus_tree = {
 			}
 			else = {
 				add_tech_bonus = {
-					name = EST_prepare_covert_resistance
+					name = underground_bonus
 					bonus = 1.0
 					uses = 2
 					category = electronics
@@ -2571,6 +3273,11 @@ focus_tree = {
 		available = {
 			is_faction_leader = yes
 		}
+
+		bypass = {
+			
+		}
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -2605,6 +3312,11 @@ focus_tree = {
 			is_faction_leader = yes
 		}
 
+		bypass = {
+			
+		}
+		available_if_capitulated = no
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_offsite_building = { type = arms_factory level = 1 }
@@ -2637,6 +3349,11 @@ focus_tree = {
 		available = {
 			is_faction_leader = yes
 		}
+
+		bypass = {
+			
+		}
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -2676,6 +3393,11 @@ focus_tree = {
 		available = {
 			is_faction_leader = yes
 		}
+
+		bypass = {
+			
+		}
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -2717,6 +3439,11 @@ focus_tree = {
 		available = {
 			is_faction_leader = yes
 		}
+
+		bypass = {
+			
+		}
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -2854,6 +3581,11 @@ focus_tree = {
 		available = {
 			is_faction_leader = yes
 		}
+
+		bypass = {
+			
+		}
+		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
