@@ -1414,7 +1414,31 @@ on_actions = {
                     set_cosmetic_tag = GRE_R56
 				}
 			}
-
+			### MEXICO MTG MEX
+			if = {
+				limit = {
+					has_game_rule = {
+					rule = 	MEX_FOCUS_TREE_SELECTION
+					option = STANDARD_TREE
+					}
+				}
+				set_global_flag = mexico_focus_tree
+				MEX = {
+					load_focus_tree = mexico_focus_tree
+					remove_ideas = MEX_porfiriato_heritage_idea
+					remove_ideas = MEX_constable_army
+					remove_ideas = MEX_maximato_legacy
+					remove_ideas = MEX_jenkins_blockade
+					remove_ideas = MEX_low_literacy_rate
+					add_ideas =  {
+						MEX_callistas
+						MEX_church_power_2
+						MEX_oil_concessions
+						MEX_politicised_army
+						MEX_cedillo_tension_2
+					}
+				}
+			}
 			### Netherlands [HOL] [WTT]
 			if = {
 				limit = {
