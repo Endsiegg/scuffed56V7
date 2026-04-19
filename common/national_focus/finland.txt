@@ -4934,7 +4934,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = FIN_finnish_neutrality
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -5075,7 +5075,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = FIN_political_unity
-		cost = 10
+		cost = 1
 		available = {
 		}
 
@@ -5180,7 +5180,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = FIN_railways_and_infrastructure
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -5217,9 +5217,9 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_repurpose_small_industries
-		cost = 10
+		cost = 5
 		available = {
-			has_tech = construction4
+			#has_tech = construction4
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
@@ -5290,7 +5290,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = FIN_expand_state_military_factories
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				has_country_leader = {
@@ -5347,7 +5347,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_a_new_course_for_kokoomus
-		cost = 10
+		cost = 5
 
 		allow_branch = {
 			has_completed_focus = FIN_a_new_course_for_kokoomus
@@ -5419,7 +5419,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_expand_state_military_factories
-		cost = 10
+		cost = 5
 		available = {
 			has_country_leader = {
 				ruling_only = yes
@@ -5489,7 +5489,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = FIN_expand_state_military_factories
-		cost = 10
+		cost = 5
 		available = {
 			has_country_leader = {
 				ruling_only = yes
@@ -6386,7 +6386,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_northern_defense_front
-		cost = 10
+		cost = 5
 		available = {
 			any_allied_country = {
 				NORDIC_is_nordic = yes
@@ -6458,7 +6458,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = FIN_military_aid
-		cost = 10
+		cost = 5
 		available = {
 			exists = yes
 		}
@@ -6701,7 +6701,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = FIN_cooperation_with_germany
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -6790,7 +6790,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = FIN_wartsila_engine_production
-		cost = 10
+		cost = 5
 		available = {
 			is_subject = no
 			has_dynamic_modifier = { modifier = FIN_finnish_army }
@@ -6876,7 +6876,7 @@ focus_tree = {
 		id = FIN_modernize_the_industry
 		icon = GFX_focus_generic_modernize_industry
 		prerequisite = { focus = FIN_joint_scientific_program }
-		mutually_exclusive = { focus = FIN_modernize_the_army }
+		#mutually_exclusive = { focus = FIN_modernize_the_army }
 		x = -1
 		y = 1
 		relative_position_id = FIN_joint_scientific_program
@@ -6956,7 +6956,7 @@ focus_tree = {
 		id = FIN_modernize_the_army
 		icon = GFX_goal_generic_axis_build_infantry
 		prerequisite = { focus = FIN_joint_scientific_program }
-		mutually_exclusive = { focus = FIN_modernize_the_industry }
+		#mutually_exclusive = { focus = FIN_modernize_the_industry }
 		x = 1
 		y = 1
 		relative_position_id = FIN_joint_scientific_program
@@ -7031,7 +7031,7 @@ focus_tree = {
 			}
 		}
 
-		cost = 5
+		cost = 1
 
 		available = {
 			threat > 0.35
@@ -7052,7 +7052,7 @@ focus_tree = {
 		x = 3
 		y = 0
 		relative_position_id = FIN_weapon_caches
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -7215,7 +7215,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_national_unity
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -7246,7 +7246,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = FIN_arm_the_lotta_svard
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -7267,7 +7267,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = FIN_union_of_finnish_brothers_in_arms
-		cost = 5
+		cost = 1
 		available = {
 		}
 
@@ -7344,7 +7344,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = FIN_union_of_finnish_brothers_in_arms
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				has_idea = all_adults_serve
@@ -7438,7 +7438,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_militarized_society
-		cost = 10
+		cost = 5
 		available = {
 			is_subject = no
 			all_core_state = {
@@ -9831,7 +9831,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = FIN_patriotic_peoples_movement
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -9882,7 +9882,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_mustapaidat
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -9969,7 +9969,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = FIN_patriotic_peoples_movement
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -10116,7 +10116,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = FIN_academic_karelian_society
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -10152,7 +10152,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_take_over_the_suojeluskunta
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -10198,7 +10198,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_maan_turva
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -10355,7 +10355,7 @@ focus_tree = {
 			}
 		}
 
-		cost = 10
+		cost = 5
 		available = {
 			has_full_control_of_state = 111 #UUSIMAA (Helsinki)
 			has_full_control_of_state = 1036 #TURKU
@@ -10496,7 +10496,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_enhance_southern_infrastructure
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -10575,7 +10575,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = FIN_industrial_development
-		cost = 10
+		cost = 5
 		
 		bypass = {
 			has_civil_war = no
@@ -10614,7 +10614,7 @@ focus_tree = {
 		relative_position_id = FIN_bank_of_aland
 		cost = 10
 		available = {
-			has_tech = computing_machine
+		#	has_tech = computing_machine
 		}
 
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_RESEARCH }
@@ -10663,7 +10663,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 4
+					amount = 8
 				}
 			}
 		}
@@ -10677,9 +10677,9 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = FIN_janiskoski_power_plant
-		cost = 10
+		cost = 5
 		available = {
-			has_tech = construction3
+			#has_tech = construction3
 		}
 
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY }
@@ -10735,7 +10735,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 4
+					amount = 9
 				}
 			}
 		}
@@ -10751,7 +10751,7 @@ focus_tree = {
 		relative_position_id = FIN_expand_imatra_hydropower_plant
 		cost = 5
 		available = {
-			has_tech = excavation3
+			#has_tech = excavation3
 			has_full_control_of_state = 1039 #OULU
 		}
 
@@ -10774,11 +10774,11 @@ focus_tree = {
 
 				add_resource = {
 					type = steel
-					amount = 4
+					amount = 8
 				}
 				add_resource = {
 					type = chromium
-					amount = 2
+					amount = 8
 				}
 			}
 
@@ -10807,9 +10807,9 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = FIN_expand_imatra_hydropower_plant
-		cost = 10
+		cost = 5
 		available = {
-			has_tech = construction4
+		#	has_tech = construction4
 			148 = {
 				is_owned_and_controlled_by = ROOT
 			}
@@ -10888,7 +10888,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = FIN_industrial_development
-		cost = 10
+		cost = 5
 		available = {
 			has_full_control_of_state = 1037 #HÄME (Tampere - Nokia)
 		}
@@ -11061,11 +11061,11 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 4
+					amount = 8
 				}
 				add_resource = {
 					type = chromium
-					amount = 4
+					amount = 8
 				}
 			}
 		}
@@ -11080,7 +11080,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = FIN_industrial_upgrade_in_harjavalta
-		cost = 5
+		cost = 2
 		available = {
 		}
 
@@ -11099,7 +11099,7 @@ focus_tree = {
 				add_resource = {
 					show_state_in_tooltip = no
 					type = steel
-					amount = 2 #WARNING No vars supported here so if this changes the custom tooltip above needs to be updated. Tack
+					amount = 8 #WARNING No vars supported here so if this changes the custom tooltip above needs to be updated. Tack
 				}
 			}
 
@@ -11111,7 +11111,7 @@ focus_tree = {
 				722 = {
 					add_resource = {
 						type = chromium
-						amount = 2
+						amount = 8
 					}
 				}
 			}
@@ -11124,7 +11124,7 @@ focus_tree = {
 				1039 = {
 					add_resource = {
 						type = chromium
-						amount = 2
+						amount = 8
 					}
 				}
 			}
@@ -11137,7 +11137,7 @@ focus_tree = {
 				1036 = {
 					add_resource = {
 						type = chromium
-						amount = 2
+						amount = 8
 					}
 				}
 			}
@@ -11154,7 +11154,7 @@ focus_tree = {
 		relative_position_id = FIN_expand_mining_prospection
 		cost = 5
 		available = {
-			has_tech = excavation5
+		#	has_tech = excavation5
 			has_full_control_of_state = 148 #LAPPI (Kemi)
 		}
 
@@ -11170,11 +11170,11 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 4
+					amount = 8
 				}
 				add_resource = {
 					type = chromium
-					amount = 2
+					amount = 8
 				}
 			}
 		}
@@ -11188,7 +11188,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_elijarvi_mine
-		cost = 10
+		cost = 5
 		available = {
 			has_full_control_of_state = 148 #LAPPI (Kemi)
 		}
@@ -11210,11 +11210,11 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 6
+					amount = 8
 				}
 				add_resource = {
 					type = chromium
-					amount = 4
+					amount = 8
 				}
 			}
 		}
@@ -11228,7 +11228,7 @@ focus_tree = {
 		x = 4
 		y = 0
 		relative_position_id = FIN_tire_factory_at_nokia
-		cost = 10
+		cost = 5
 		available = {
 			has_full_control_of_state = 1036 #TURKU (Pori)
 		}
@@ -11250,7 +11250,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 6
+					amount = 8
 				}
 			}
 		}
@@ -11292,7 +11292,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = FIN_outokumpu_for_defence_industry
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = {
@@ -11374,7 +11374,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_integrate_oy_tikkakoski
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = {
@@ -11512,7 +11512,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = FIN_increase_military_budget
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -11677,7 +11677,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_suomen_maavoimat
-		cost = 10
+		cost = 5
 		available = {
 			threat > 0.25
 		}
@@ -11729,7 +11729,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_extra_refresher_exercises
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -11763,7 +11763,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = FIN_extra_refresher_exercises
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -12431,11 +12431,11 @@ focus_tree = {
 		prerequisite = { focus = FIN_long_range_patrols }
 		prerequisite = { focus = FIN_finnish_radio_intelligence }
 		prerequisite = { focus = FIN_utilize_the_sami }
-		mutually_exclusive = { focus = FIN_national_armor_focus }
+	#	mutually_exclusive = { focus = FIN_national_armor_focus }
 		x = 1
 		y = 1
 		relative_position_id = FIN_long_range_patrols
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -12446,7 +12446,7 @@ focus_tree = {
 
 			custom_effect_tooltip = CHL_skip_one_line_tt
 			custom_effect_tooltip = FIN_modify_finnish_army_ns_intro
-			add_to_variable = { FIN_finnish_army_initiative_factor = 0.02 tooltip = initiative_factor_tt }
+			#add_to_variable = { FIN_finnish_army_initiative_factor = 0.02 tooltip = initiative_factor_tt }
 			add_to_variable = { FIN_finnish_army_recon_factor_while_entrenched = 0.1 tooltip = recon_factor_while_entrenched_tt }
 			add_to_variable = { FIN_finnish_army_modifier_army_sub_unit_long_range_patrol_support_attack_factor = 0.1 tooltip = modifier_army_sub_unit_long_range_patrol_support_attack_factor_tt }
 			add_to_variable = { FIN_finnish_army_modifier_army_sub_unit_long_range_patrol_support_defence_factor = 0.1 tooltip = modifier_army_sub_unit_long_range_patrol_support_defence_factor_tt }		
@@ -12467,11 +12467,11 @@ focus_tree = {
 		icon = GFX_focus_generic_tank_production
 		prerequisite = { focus = FIN_salvaged_and_retooled }
 		prerequisite = { focus = FIN_finnish_radio_intelligence }
-		mutually_exclusive = { focus = FIN_sissi }
+		#mutually_exclusive = { focus = FIN_sissi }
 		x = 0
 		y = 3
 		relative_position_id = FIN_salvaged_and_retooled
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -12723,7 +12723,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = FIN_suomen_maavoimat
-		cost = 5
+		cost = 2
 		available = {
 			has_defensive_war = yes
 		}
@@ -12749,7 +12749,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = FIN_suomen_maavoimat
-		cost = 10
+		cost = 1
 		available = {
 			has_full_control_of_state = 146 #KARJALA
 		}
@@ -12821,7 +12821,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_mannerheim_line
-		cost = 10
+		cost = 1
 		available = {
 
 		}
@@ -12906,20 +12906,20 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = FIN_defense_in_depth
-		cost = 5
+		cost = 1
 		available = { #at war with soviets past winter war date or lost the states in the winter war
-			OR = {
-				date > 1940.3.13 # made it past the winter wars end
-				has_war_with = SOV
-				AND = {
-					NOT = {
-						has_full_control_of_state = 146
-					}
-					NOT = {
-						has_full_control_of_state = 147
-					}
-				}
-			}
+			# OR = {
+			# 	#date > 1940.3.13 # made it past the winter wars end
+			# 	has_war_with = SOV
+			# 	AND = {
+			# 		NOT = {
+			# 			has_full_control_of_state = 146
+			# 		}
+			# 		NOT = {
+			# 			has_full_control_of_state = 147
+			# 		}
+			# 	}
+			# }
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -13063,7 +13063,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = FIN_mannerheim_line
-		cost = 5
+		cost = 1
 		available = {
 			is_special_project_completed = sp:sp_air_radar
 			controls_state = 111 #UUSIMAA (Helsinki)
@@ -13107,7 +13107,7 @@ focus_tree = {
 		x = 7
 		y = 0
 		relative_position_id = FIN_suomen_maavoimat
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -13164,7 +13164,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = FIN_suomen_ilmavoimat
-		cost = 10
+		cost = 1
 		available = {
 		}
 
@@ -13746,7 +13746,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_pilot_training
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -13813,7 +13813,7 @@ focus_tree = {
 		x = 2
 		y = 3
 		relative_position_id = FIN_suomen_ilmavoimat
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = {
@@ -13926,7 +13926,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = FIN_expand_air_bases
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -13999,7 +13999,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = FIN_national_aircraft_production
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = {
@@ -14145,7 +14145,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = FIN_national_aircraft_production
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -14307,7 +14307,7 @@ focus_tree = {
 		id = FIN_expand_production_lines
 		icon = GFX_focus_generic_industry_3
 		prerequisite = { focus = FIN_support_for_ground_forces focus = FIN_dominate_the_skies }
-		mutually_exclusive = { focus = FIN_modernize_production_lines }
+		#mutually_exclusive = { focus = FIN_modernize_production_lines }
 		x = -1
 		y = 1
 		relative_position_id = FIN_support_for_ground_forces
@@ -14404,11 +14404,11 @@ focus_tree = {
 		icon = GFX_goal_generic_air_production
 		prerequisite = { focus = FIN_dominate_the_skies focus = FIN_support_for_ground_forces }
 		prerequisite = { focus = FIN_naval_airforce }
-		mutually_exclusive = { focus = FIN_expand_production_lines }
+		#mutually_exclusive = { focus = FIN_expand_production_lines }
 		x = 1
 		y = 1
 		relative_position_id = FIN_dominate_the_skies
-		cost = 10
+		cost = 5
 		available = {
 			has_tech = advanced_machine_tools
 		}
@@ -14486,7 +14486,7 @@ focus_tree = {
 		x = 6
 		y = 0
 		relative_position_id = FIN_suomen_ilmavoimat
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -14543,7 +14543,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = FIN_suomen_merivoimat
-		cost = 10
+		cost = 2
 		available = {
 		}
 
@@ -14575,9 +14575,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = FIN_the_merchant_fleet
-		cost = 10
+		cost = 5
 		available = {
-			has_war = yes
+			#has_war = yes
 			if = {
 				limit = {
 					NOT = { has_dlc = "Man the Guns" }
@@ -14834,7 +14834,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_suomen_merivoimat
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -14952,7 +14952,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_coastal_defense
-		cost = 10
+		cost = 5
 		available = {
 			has_tech = marines
 		}
@@ -15704,7 +15704,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = FIN_suomen_merivoimat
-		cost = 5
+		cost = 1
 		available = {
 		}
 
@@ -15829,7 +15829,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = FIN_suomen_merivoimat
-		cost = 5
+		cost = 3
 		available = {
 			has_full_control_of_state = 1036
 		}
@@ -15885,7 +15885,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FIN_strengthen_the_naval_bases
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				has_full_control_of_state = 111 #UUSIMAA (Helsinki)
@@ -15974,7 +15974,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = FIN_sea_mines_strategy
-		cost = 10
+		cost = 5
 		available = {
 			#state is in the atlantic
 			custom_trigger_tooltip = {
@@ -16079,7 +16079,7 @@ focus_tree = {
 		id = fin_removeclaimfoc
 		text = fin_removeclaimfoc
 		icon = GFX_goal_generic_dangerous_deal
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FIN_finnish_neutrality
 			focus = FIN_suomalainen_sosialismi
@@ -16146,7 +16146,7 @@ focus_tree = {
 		id = fin_karjalafoc
 		text = fin_karjalafoc
 		icon = GFX_focus_fin_karjala_question
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = FIN_finnish_neutrality
 			focus = FIN_suomalainen_sosialismi
