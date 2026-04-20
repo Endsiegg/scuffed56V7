@@ -181,6 +181,7 @@ NDefines.NBuildings.MAX_SHARED_SLOTS = 35
 --NDefines.NIndustrialOrganisation.DESIGN_TEAM_CHANGE_XP_COST = 1
 NDefines.NIndustrialOrganisation.DESIGN_TEAM_RESEARCH_BONUS = 0.1
 ------------------------------------
+NDefines.NSupply.MIN_SURRENDER_LIMIT_TO_MOVE_SUPPLY_CAPITAL = 0 -- move capital supply hub anytime
 --NDefines.NSupply.INFRA_TO_SUPPLY = 0.5  -- 0.3
 --NDefines.NSupply.VP_TO_SUPPLY_BASE = 0.1 --0.2
 --NDefines.NSupply.VP_TO_SUPPLY_BONUS_CONVERSION = 0.06 --0.05
