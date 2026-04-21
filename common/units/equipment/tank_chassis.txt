@@ -206,7 +206,7 @@ equipments = {
 	}
 
 	light_tank_chassis_0 = { #also great war tank
-		is_convertable = yes
+		#is_convertable = yes
 		abbreviation = "lt0"
 		derived_variant_name = light_tank_equipment_0
 		visual_level = 0
@@ -222,10 +222,10 @@ equipments = {
 	}
 
 	light_tank_chassis_1 = {
-		is_convertable = yes
-		can_convert_from = { #R56
-			light_tank_chassis_0
-		}
+		# is_convertable = yes
+		# can_convert_from = { #R56
+		# 	light_tank_chassis_0
+		# }
 		abbreviation = "lt1"
 		derived_variant_name = light_tank_equipment_1
 		visual_level = 0
@@ -303,6 +303,13 @@ equipments = {
 		year = 1922
 		is_archetype = yes
 		is_buildable = no
+		is_convertable = yes
+		can_convert_from = {
+			medium_tank_chassis_0
+			medium_tank_chassis_1
+			medium_tank_chassis_2
+			medium_tank_chassis_3
+		}
 		can_be_produced = {
 			# if = { # R56
 			# 	limit = {
@@ -565,6 +572,13 @@ equipments = {
 		year = 1922
 		is_archetype = yes
 		is_buildable = no
+		is_convertable = yes
+		can_convert_from = {
+			heavy_tank_chassis_0
+			heavy_tank_chassis_1
+			heavy_tank_chassis_2
+			heavy_tank_chassis_3
+		}
 		can_be_produced = {
 			# if = { # R56
 			# 	limit = {
