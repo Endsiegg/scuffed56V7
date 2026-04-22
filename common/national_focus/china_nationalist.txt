@@ -10,7 +10,7 @@ focus_tree = {
 			tag = CHI
 		}
 	}
-	shared_focus = KMT_the_national_catastrophe
+	# shared_focus = KMT_the_national_catastrophe
 	default = no
 	continuous_focus_position = {
 		x = 0
@@ -37,11 +37,11 @@ focus_tree = {
 			has_country_flag = KMT_taiwan
 		}
 	}
-	shortcut = {
-		name = KMT_the_national_catastrophe_shortcut
-		target = KMT_the_national_catastrophe
-		scroll_wheel_factor = 0.7
-	}
+	# shortcut = {
+	# 	name = KMT_the_national_catastrophe_shortcut
+	# 	target = KMT_the_national_catastrophe
+	# 	scroll_wheel_factor = 0.7
+	# }
 	shortcut = {
 		name = KMT_democracy_shortcut
 		target = KMT_democracy
@@ -3457,9 +3457,9 @@ focus_tree = {
 			}
 			IF = { 
 				limit = { 
-					has_completed_focus = KMT_the_national_catastrophe
+					# has_completed_focus = KMT_the_national_catastrophe
 				}
-				NOT = { has_completed_focus = KMT_the_national_catastrophe }
+				# NOT = { has_completed_focus = KMT_the_national_catastrophe }
 			}
 			NOT ={has_completed_focus = KMT_enforce_chaings_compliance}
 			all_state = {
@@ -3538,10 +3538,10 @@ focus_tree = {
 				NOT = { has_country_flag = KMT_fascism }
 				NOT = { has_country_flag = KMT_taiwan }
 			}
-			IF = {
-				limit = { has_completed_focus = KMT_the_national_catastrophe}
-				NOT = { has_completed_focus = KMT_the_national_catastrophe }
-			}
+			# IF = {
+			# 	limit = { has_completed_focus = KMT_the_national_catastrophe}
+			# 	NOT = { has_completed_focus = KMT_the_national_catastrophe }
+			# }
 			NOT = { has_completed_focus = KMT_enforce_chaings_compliance }
 			all_state = {
 				OR = {
@@ -3578,12 +3578,12 @@ focus_tree = {
 					}
 				}
 			}
-			IF = { 
-				limit = { 
-					has_completed_focus = KMT_the_national_catastrophe
-				}
-				NOT = { has_completed_focus = KMT_the_national_catastrophe }
-			}
+			# IF = { 
+			# 	limit = { 
+			# 		has_completed_focus = KMT_the_national_catastrophe
+			# 	}
+			# 	NOT = { has_completed_focus = KMT_the_national_catastrophe }
+			# }
 			has_war = no
 		}
 		x = -3
@@ -15322,7 +15322,7 @@ focus_tree = {
 		icon = GFX_goal_CHI_support_pro_japanese_faction
 		prerequisite = { focus = KMT_consolidate_the_new_regime }
 		available = {
-			NOT = { has_completed_focus = KMT_the_national_catastrophe}
+			# NOT = { has_completed_focus = KMT_the_national_catastrophe}
 			has_completed_focus = KMT_begin_reforming_the_nation
 			has_country_leader = {
 				ruling_only = yes
@@ -16015,7 +16015,7 @@ focus_tree = {
 			NOT = {
 				OR = {
 					has_completed_focus = KMT_wang_jingweis_rise
-					has_completed_focus = KMT_the_national_catastrophe
+					# has_completed_focus = KMT_the_national_catastrophe
 					has_completed_focus = KMT_purge_the_liberal_democrats
 					has_completed_focus = KMT_the_nth_national_congress
 					has_completed_focus = KMT_hold_new_elections
