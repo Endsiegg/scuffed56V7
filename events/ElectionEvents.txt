@@ -274,7 +274,7 @@ country_event = {
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
 		NOT = { has_idea = communism_defeated }
-		communism > 0.15
+		communism > 0.25
 	}
 
 	option = {
@@ -328,10 +328,10 @@ country_event = {
 				}
 			}
 		}
-		add_stability = -0.05
+		#add_stability = -0.05
 		add_popularity = {
 			ideology = democratic
-			popularity = 0.03
+			popularity = 0.05
 		}
 		set_country_flag = government_declined_communists
 	}
