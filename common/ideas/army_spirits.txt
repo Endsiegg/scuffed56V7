@@ -989,10 +989,10 @@ ideas = {
 				} 
 			}
 			available = {	#56 - We currently don't have any subdoctrine checks on our other stuff; I'll follow by example here
-#				OR = {
-#				has_doctrine = new_mobile_warfare 
-#				has_doctrine = armored_cavalry_no_lar 
-#				}
+				#OR = {
+				#has_doctrine = new_mobile_warfare 
+				#has_doctrine = armored_cavalry_no_lar 
+				#}
 				OR = {
 					has_doctrine = new_mobile_warfare
 					has_doctrine = superior_firepower
@@ -1083,6 +1083,32 @@ ideas = {
 					factor = 2
 					has_doctrine = expeditionary_warfare					
 				}
+			}
+		}	
+
+			CZE_legacy_of_the_czechoslovak_legion_army_spirit = { #Pfot
+			ledger = army
+			picture = tur_sub_zero_survival_training
+			allowed = { 
+				original_tag = CZE
+				has_dlc = "Peace For Our Time"
+			}
+			visible = {
+				NOT = {
+					has_completed_focus = CZE_revive_the_czechoslovak_legion_dynamic
+				}
+			}
+			modifier = {
+				trait_winter_specialist_xp_gain_factor = 0.10
+				acclimatization_cold_climate_gain_factor = 0.05
+				army_retreat_speed_factor = 0.05
+				winter_attrition_factor = -0.05
+				army_experience_from_volunteers = 0.05
+				#tactic_delay_preferred_weight_factor = 0.25
+			}
+
+			ai_will_do = {
+				base = 0
 			}
 		}							
 	}	
