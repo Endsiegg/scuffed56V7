@@ -176,44 +176,49 @@ large_unit_tactics = {
    
     #OTHER BASE REWARDS
     
-    category_all_infantry = {
-        supply_consumption = -0.01
+    category_light_infantry = {
+        supply_consumption = -0.02
     }
 
     rewards = {
+        #1
         wide_trench_networks = {
-            dig_in_speed_factor = 0.10
+            category_light_infantry = {
+                max_strength = 0.1
+            }
+            infantry = {
+                combat_width = -0.4
+            }
         }
         flexible_division_structures = {
         #2
-           unit_infantry_design_cost_factor = -1
-           infantry = {
-                combat_width = -0.3
+           category_light_infantry = {
+                soft_attack = 0.05
+                hard_attack = 0.05
             }
         }
         unit_knowledge_sharing = {
         #3
-            category_all_infantry = {
+            category_light_infantry = {
                 experience_loss_factor = -0.01
+                hard_attack = 0.1
             }
         }
         large_front_offensive = {
         #4
-            category_all_infantry = {
-                max_organisation = 10
-                soft_attack = 0.1
+            category_light_infantry = {
+                max_organisation = 20
+                soft_attack = 0.05
             }
-            army_morale = 0.1
+            army_morale = 0.10
             
         }
         motorization_initiative = {
         #5
-           category_all_infantry = {
-                breakthrough = 0.1
+           category_light_infantry = {
                 soft_attack = 0.1
-            }
-            category_vehicle_infantry = {
-                supply_consumption = -0.02
+                hard_attack = 0.05
+                ap_attack = 0.1
                 reliability = 0.1
             }
         }
@@ -289,11 +294,23 @@ assault_infantry = {
         }
         breakthrough_fireteams = {
         #4
+            recon = {
+                max_organisation = 20
+                battalion_mult = {
+                    category = category_all_infantry
+                    breakthrough = 0.1
+                }
+                battalion_mult = {
+                    category = category_all_infantry
+                    max_organisation = 5
+                    add = yes
+                }
+            }
             light_tank_recon = {
                 max_organisation = 20
                 battalion_mult = {
                     category = category_all_infantry
-                    breakthrough = 0.2
+                    breakthrough = 0.1
                 }
                 battalion_mult = {
                     category = category_all_infantry
@@ -320,6 +337,13 @@ assault_infantry = {
         #5
             category_support_artillery = {
                 supply_consumption = -0.02
+            }
+            bm_flamethower_support = {
+                battalion_mult = {
+                    category = category_all_infantry
+                    breakthrough = 0.1
+                    soft_attack = 0.1                    
+                }
             }
             light_flame_tank = {
                 battalion_mult = {
@@ -602,10 +626,6 @@ irregulars = {
         defense = 0.1
         supply_consumption = -0.05
     }
-    militia = {
-        defense = 0.1
-        supply_consumption = -0.01
-    }
 
     # EFFECTS
 
@@ -615,24 +635,17 @@ irregulars = {
         }
         partisan_regiments = {
             irregular_infantry = {
-                combat_width = -0.4
-            }
-            militia = {
-                combat_width = -0.4
-            }
-            category_light_infantry = {
-                defense = 0.1
+                defense = 0.15
             }
         }
 
         
         improvised_officer_groups = {
-            category_light_infantry = {
+            irregular_infantry= {
                 max_organisation = 10
-                soft_attack = 0.1
-                breakthrough = 0.1
+                soft_attack = 0.15
+                breakthrough = 0.15
             }
-            
             
         }
         levee_en_masse = {
@@ -641,15 +654,16 @@ irregulars = {
 
         }
         standardization_efforts = {
-            category_light_infantry = {
+            irregular_infantry = {
                 max_organisation = 10
-                soft_attack = 0.1
+                soft_attack = 0.15
+                initiative = 0.005
             }
 
             effect = {
                 add_tech_bonus = {
                     bonus = 0.5
-                    uses = 2
+                    uses = 4
                     category = support_tech
                     name = SUBDOCTRINE_IRREGULARS
                 }
@@ -691,52 +705,48 @@ peoples_war = {
 
     militia = {
         soft_attack = 0.1
-        defense = 0.2
+        defense = 0.1
+    }
+    penal_battalion = {
+        soft_attack = 0.1
+        defense = 0.1
     }
     
-    
-
     rewards = {
         revolutionary_base_area = {
         #1
             mastery = 50
-            militia = {
+             militia = {
+                combat_width = -0.4
                 defense = 0.1
-                supply_consumption = -0.02
             }
             penal_battalion = {
+                combat_width = -0.4
                 defense = 0.1
-                supply_consumption = -0.02              
-            }
-            category_light_infantry = {
-                max_organisation = 5
             }
 
         }
         destruction_over_land_gains = {
         #2
             mastery = 50
-            category_light_infantry = {
+            militia = {
+                equipment_capture_factor = 0.01
                 default_morale = 0.2
             }
-            militia = {
-                equipment_capture_factor = 0.02
-            }
             penal_battalion = {
-               equipment_capture_factor = 0.02  
+               equipment_capture_factor = 0.01
+               default_morale = 0.2
             }
         }
         quick_decision_offensive_warfare = {
         #3
             militia = {
-               initiative = 0.01
-               max_organisation = 20
-               breakthrough = 0.2
+               max_organisation = 10
+               max_strength = 0.05
             }
             penal_battalion = {
-                initiative = 0.01
-               max_organisation = 20
-               breakthrough = 0.2               
+               max_organisation = 10
+               max_strength = 0.05         
             }
 
 
@@ -744,17 +754,22 @@ peoples_war = {
         people_not_things = {
         #4
             mastery = 50
-            category_light_infantry = {
-                soft_attack = 0.25
-                max_strength = 0.15
+            militia = {
+                soft_attack = 0.1
+            }
+            penal_battalion = {
+                soft_attack = 0.1
             }
         }
        no_step_back = {
         #5
-            mastery = 50
-            category_light_infantry = {
-                defense = 0.2
-                entrenchment = 0.25
+            militia = {
+                defense = 0.05
+                supply_consumption = -0.02
+            }
+            penal_battalion = {
+                defense = 0.05
+                supply_consumption = -0.02              
             }
         }
         
@@ -784,21 +799,19 @@ great_war_infantry = {
     }
      # EFFECTS
     #OTHER BASE REWARDS
-    category_cavalry = {
-        supply_consumption = -0.02
-    }
     category_light_infantry = {
         defense = 0.1
+        supply_consumption = -0.03
     }
-    production_speed_bunker_factor = 0.25
+    production_speed_bunker_factor = 0.30
+    land_bunker_effectiveness_factor = 0.10
 
     rewards = {
         traverse_digging = {
-            dig_in_speed_factor = 0.05
             engineer = {
                 battalion_mult = {
                     category = category_light_infantry
-                    entrenchment = 0.05
+                    entrenchment = 0.20
                 }
             }
             
@@ -817,19 +830,18 @@ great_war_infantry = {
                 battalion_mult = {
                     category = category_light_infantry
                     soft_attack = 0.1
-                    breakthrough = 0.05
                 }
             }
         }
         field_fortification_emphasis = {
             category_light_infantry = {
                 reliability = 0.05
-                defense = 0.05
-                max_organisation = 5
+                defense = 0.1
+                max_organisation = 10
             }
         }
         redoubt_networks = {
-            dig_in_speed_factor = 0.10
+            dig_in_speed_factor = 0.20
         }
 
     }

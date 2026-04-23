@@ -39,7 +39,6 @@ new_mobile_warfare = {
 	        org_loss_when_moving = -0.2
             land_reinforce_rate = 0.05
              mechanized = {
-                combat_width = -0.3
                 max_organisation = 5
                 default_morale = 0.1
             }
@@ -166,7 +165,12 @@ superior_firepower = {
     category_support_artillery = {
         soft_attack = 0.1
     }
-
+    artillery_brigade = {
+        combat_width = -1
+    }
+    rocket_artillery_brigade = {
+        combat_width = -1
+    }
 
     milestones = {
         {
@@ -192,9 +196,14 @@ superior_firepower = {
             #Artillery/Support
             additional_brigade_column_size = 1
             category_support_battalions = {
-                max_organisation = 10
+                max_organisation = 20
             }
-            planning_decay_rate_factor = -0.1
+             BM_command_regiment = {
+                battalion_mult = {
+                    category = category_line_artillery
+                    soft_attack = 0.1
+                }
+            }
             enable_tactic = tactic_barrage
 
             effect = {
@@ -215,10 +224,13 @@ superior_firepower = {
         {
             #Armor
             enable_tactic = tactic_delay
-            category_army = {
-                default_morale = 0.1
+             BM_command_regiment = {
+                battalion_mult = {
+                    category = category_line_artillery
+                    hard_attack = 0.1
+                }
             }
-
+            planning_decay_rate_factor = -0.2
             effect = {
                 if = {
                     limit = {
@@ -236,11 +248,9 @@ superior_firepower = {
         {
             #Operations
             enable_tactic = tactic_tactical_withdrawal
-            category_army = {
+            category_line_artillery = {
                 default_morale = 0.2
             }
-            planning_decay_rate_factor = -0.1
-
             effect = {
                 if = {
                     limit = {
@@ -288,14 +298,12 @@ grand_battleplan = {
     
     max_planning = 0.1
     command_power_gain = 0.25
-
     milestones = {
         {
             #Infantry 
             additional_brigade_column_size = 1
             enable_tactic = tactic_elastic_defense
-            max_dig_in_factor = 0.05
-
+            max_dig_in = 10
             effect = {
                 if = {
                     limit = {
@@ -331,7 +339,7 @@ grand_battleplan = {
         }
         {
             #Armor
-            land_reinforce_rate = 0.02
+            land_reinforce_rate = 0.03
             enable_tactic = tactic_breakthrough
             effect = {
                 if = {
@@ -406,7 +414,10 @@ mass_assault = {
             enable_tactic = tactic_human_wave_tactics
             additional_brigade_column_size = 1
             max_organisation = 0.1
-            default_morale = 0.2
+	        planning_speed = 0.2
+            category_army = {
+                default_morale = 0.2
+            }
 
             effect = {
                 if = {
@@ -425,7 +436,7 @@ mass_assault = {
         {
             #Artillery/Support
             enable_tactic = tactic_elastic_defense
-            out_of_supply_factor = -0.05
+            out_of_supply_factor = -0.1
             minimum_training_level = -0.05
             land_reinforce_rate = 0.05
 
@@ -446,6 +457,7 @@ mass_assault = {
         {
             #Armor
             land_reinforce_rate = 0.05
+            minimum_training_level = -0.1
             enable_tactic = tactic_overwhelming_fire
 
             effect = {
@@ -467,8 +479,10 @@ mass_assault = {
             enable_tactic = tactic_backhand_blow
             weekly_casualties_war_support = 0.003
             minimum_training_level = -0.1
-            dig_in_speed_factor = 0.1
-
+            org_loss_at_low_org_factor = -0.25
+            category_army = {
+                default_morale = 0.2
+            }
             effect = {
                 if = {
                     limit = {
