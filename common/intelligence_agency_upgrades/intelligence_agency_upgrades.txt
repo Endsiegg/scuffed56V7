@@ -15,6 +15,9 @@ branch_intelligence = {
 		
 		modifiers_during_progress = {
 			civilian_factory_use = 5
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 		}
 		
 		level = {
@@ -22,6 +25,7 @@ branch_intelligence = {
 				hidden_effect = {
 					ROOT = {
 						set_country_flag = upgrade_economy_civilian_flag #This was needed because doing the first level doesn't count as a 'unlock' -SpicyAlfredo
+						intelligence_alert_clear_flag_effect = yes
 					}
 				}
 			}
@@ -50,9 +54,15 @@ branch_intelligence = {
 		
 		modifiers_during_progress = {
 			civilian_factory_use = 5
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				army_intel_factor = 0.25
 			}
@@ -77,9 +87,15 @@ branch_intelligence = {
 		
 		modifiers_during_progress = {
 			civilian_factory_use = 5
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				navy_intel_factor = 0.25
 			}
@@ -105,10 +121,16 @@ branch_intelligence = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				airforce_intel_factor = 0.25
 			}
@@ -132,6 +154,9 @@ branch_intelligence = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 20
 		}
 		
@@ -147,6 +172,9 @@ branch_intelligence = {
 		}
 
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				new_operative_slot_bonus = 1
 				operative_slot = 2
@@ -170,11 +198,15 @@ branch_defense = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
 			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
 				hidden_effect = {
 					ROOT = {
 						set_country_flag = r56_upgrade_passive_defense_flag #This was needed because doing the first level doesn't count as a 'unlock' -SpicyAlfredo
@@ -188,18 +220,27 @@ branch_defense = {
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				intelligence_agency_defense = 1.25
 			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				intelligence_agency_defense = 1
 			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				intelligence_agency_defense = 1
 			}
@@ -217,10 +258,16 @@ branch_defense = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				enemy_operative_capture_chance_factor = 1 # +100%
 				enemy_operative_intel_extraction_rate = 0.2 # +20% was +25% #nerfed to make up for the increased capture chance from home guard -SpicyAlfredo
@@ -243,16 +290,25 @@ branch_defense = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				root_out_resistance_effectiveness_factor = 0.25
 			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				root_out_resistance_effectiveness_factor = 0.25
 			}
@@ -272,10 +328,16 @@ branch_defense = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 3
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				intelligence_agency_defense = 0.05
 				enemy_operative_capture_chance_factor = 0.05 
@@ -284,6 +346,9 @@ branch_defense = {
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				intelligence_agency_defense = 0.05
 				enemy_operative_capture_chance_factor = 0.05
@@ -320,10 +385,16 @@ branch_defense = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 3
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				intelligence_agency_defense = 0.05
 				navy_intel_to_others = -5
@@ -332,6 +403,9 @@ branch_defense = {
 		}
 
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				intelligence_agency_defense = 0.05
 				navy_intel_to_others = -5
@@ -372,10 +446,16 @@ branch_operation = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				operation_steal_tech_outcome = 0.25
 				operation_targeted_sabotage_industry_risk = -0.02
@@ -398,10 +478,16 @@ branch_operation = {
 		}
 
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 8
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				operation_coordinated_strike_outcome = 1
 				operation_risk = -0.01
@@ -420,10 +506,16 @@ branch_operation = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				intel_from_operatives_factor = 0.2
 				operation_make_resistance_contacts_risk = -0.02
@@ -443,10 +535,16 @@ branch_operation = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 8
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				target_sabotage_factor = 0.25
 				boost_resistance_factor = 0.25
@@ -465,10 +563,16 @@ branch_operation = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				operation_infiltrate_risk = -0.01
 				operative_death_on_capture_chance = 0.1
@@ -492,10 +596,14 @@ branch_operative = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 10
 		}
 		
 		level = {
+			
 			modifier = {
 				enemy_operative_recruitment_chance = 0.25
 				occupied_operative_recruitment_chance = 0.25
@@ -504,6 +612,7 @@ branch_operative = {
 			
 			complete_effect = {
 				unlock_decision_category_tooltip = lar_local_recruitment
+				intelligence_alert_clear_flag_effect = yes
 			}
 		}
 		
@@ -519,10 +628,16 @@ branch_operative = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				commando_trait_chance_factor = 1 # +100%
 				operation_rescue_operative_risk = -0.1
@@ -541,10 +656,16 @@ branch_operative = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				control_trade_mission_factor = 0.25
 				diplomatic_pressure_mission_factor = 0.25
@@ -563,10 +684,16 @@ branch_operative = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 8
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				propaganda_mission_factor = 0.25
 				#boost_ideology_mission_factor = 0.25
@@ -587,6 +714,9 @@ branch_operative = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 8
 		}
 		
@@ -595,6 +725,7 @@ branch_operative = {
 				custom_modifier_tooltip = linguistic_training_enabled_tt
 			}
 			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
 				hidden_effect = {
 				
 					set_country_flag = upgrade_linguistic_training_flag
@@ -620,10 +751,16 @@ branch_crypto = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 8
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				crypto_department_enabled = 1
 				crypto_strength = 1
@@ -647,16 +784,25 @@ branch_crypto = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				decryption_power = 25
 			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				decryption_power = 10
 			}
@@ -678,6 +824,9 @@ branch_crypto = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 10 
 		}
 		
@@ -688,12 +837,18 @@ branch_crypto = {
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				decryption_power = 15
 			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				decryption_power = 10
 			}
@@ -715,16 +870,25 @@ branch_crypto = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 5
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				crypto_strength = 1
 			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				crypto_strength = 1
 			}
@@ -746,22 +910,34 @@ branch_crypto = {
 		}
 		
 		modifiers_during_progress = {
+			hidden_modifier = {
+				int_agency_upgrade_modifier = 1
+			}
 			civilian_factory_use = 15
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				crypto_strength = 2
 			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				crypto_strength = 2
 			}
 		}
 		
 		level = {
+			complete_effect = {
+				intelligence_alert_clear_flag_effect = yes
+			}
 			modifier = {
 				crypto_strength = 2
 			}
