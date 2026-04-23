@@ -11,7 +11,7 @@ sp_air_radar = {
 		specialization_air = 0
 	}
 
-	project_tags = sp_tag_radar
+	#project_tags = sp_tag_radar
 
 	available = { 
 		FROM = { has_tech = electronic_mechanical_engineering }
@@ -41,15 +41,15 @@ sp_air_radar = {
 		country_effects = {
 			custom_override_tooltip = {	
 				tooltip = tech_effect|radio_detection
-				set_technology = {
-					radio_detection = 1
-					popup = no
-				}
+				# set_technology = {
+				# 	radio_detection = 1
+				# 	popup = no
+				# }
 			}
-			custom_effect_tooltip = {
-				localization_key = SP_UNLOCK_TECH
-				TECH = cavity_magnatron	
-			}
+			# custom_effect_tooltip = {
+			# 	localization_key = SP_UNLOCK_TECH
+			# 	TECH = cavity_magnatron	
+			# }
 		}
 		facility_state_effects = {
 			set_building_level = {

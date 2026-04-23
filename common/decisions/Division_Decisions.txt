@@ -1,7 +1,27 @@
 military_of_peace_category = {
 	
-	
-	40w_inf = {
+	completeradar = {
+		icon = GFX_decision_generic_military
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = -100
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			is_ai = no
+
+		}
+		complete_effect = {
+				complete_special_project = {
+					project = sp:sp_air_radar
+				}				
+
+		}
+	}
+	fourtywidthinf = {
 
 		icon = GFX_decision_generic_military
 		cost = 0
@@ -27,7 +47,7 @@ military_of_peace_category = {
 				division_template = {
 					name = "40w Infantry"
 					priority = 1
-					division_names_group = DEC_MIL_01
+					#division_names_group = DEC_MIL_01
 					regiments = {
 						infantry = { x = 0 y = 0 }
 						infantry = { x = 0 y = 1 }
@@ -61,7 +81,7 @@ military_of_peace_category = {
 		}
 	}
 
-	20w_inf = {
+	twentywidthinf = {
 
 		icon = GFX_decision_generic_reorganize_irregulars
 		cost = 0
@@ -87,7 +107,7 @@ military_of_peace_category = {
 				division_template = {
 					name = "20w Infantry"
 					priority = 1
-					division_names_group = DEC_MIL_01
+					#division_names_group = DEC_MIL_01
 					regiments = {
 						infantry = { x = 0 y = 0 }
 						infantry = { x = 0 y = 1 }
@@ -110,7 +130,7 @@ military_of_peace_category = {
 		}
 	}
 
-	40w_medium_tank = {
+	fourtywidthmediumtank = {
 
 		icon = GFX_decision_generic_tank
 		cost = 0
@@ -136,7 +156,7 @@ military_of_peace_category = {
 				division_template = {
 					name = "40w Medium Tank"
 					priority = 1
-					division_names_group = DEC_MIL_01
+					#division_names_group = DEC_MIL_01
 					regiments = {
 						mechanized = { x = 0 y = 0 }
 						mechanized = { x = 0 y = 1 }
@@ -165,7 +185,7 @@ military_of_peace_category = {
 
 		}
 	}
-	40w_heavy_tank = {
+	fourtywidthheavytank = {
 
 		icon = GFX_decision_generic_tank
 		cost = 0
@@ -191,7 +211,7 @@ military_of_peace_category = {
 				division_template = {
 					name = "40w Heavy Tank"
 					priority = 1
-					division_names_group = DEC_MIL_01
+				#	division_names_group = DEC_MIL_01
 					regiments = {
 						mechanized = { x = 0 y = 0 }
 						mechanized = { x = 0 y = 1 }
@@ -220,7 +240,7 @@ military_of_peace_category = {
 
 		}
 	}
-	40w_light_tank = {
+	fourtywidthlighttank = {
 
 		icon = GFX_decision_generic_tank
 		cost = 0
@@ -246,7 +266,7 @@ military_of_peace_category = {
 				division_template = {
 					name = "40w Light Tank"
 					priority = 1
-					division_names_group = DEC_MIL_01
+				#	division_names_group = DEC_MIL_01
 					regiments = {
 						mechanized = { x = 0 y = 0 }
 						mechanized = { x = 0 y = 1 }
@@ -275,7 +295,7 @@ military_of_peace_category = {
 
 		}
 	}
-	50w_Garrison = {
+	fiftywidthGarrison = {
 
 		icon = GFX_decision_generic_cavalry
 		cost = 0
@@ -301,7 +321,7 @@ military_of_peace_category = {
 				division_template = {
 					name = "50w Garrison"
 					priority = 1
-					division_names_group = DEC_MIL_01
+					#division_names_group = DEC_MIL_01
 					regiments = {
 						cavalry = { x = 0 y = 0 }
 						cavalry = { x = 0 y = 1 }

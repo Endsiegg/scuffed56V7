@@ -2578,7 +2578,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 100
-				CZE = {	has_completed_focus = CZKE_sabotage_anchluss }
+				#CZE = {	has_completed_focus = CZKE_sabotage_anchluss } NEW_DLC_FIX_THIS
 			}
 			modifier = {
 				add = 100
@@ -2789,8 +2789,7 @@ country_event = {
 		 	base = 90
 			modifier = {																									###### Change made for CZKE mod  line added
 				add = 100																									###### Change made for CZKE mod  line added
-				CZE = {	NOT = { has_completed_focus = CZKE_petition_league_of_nations }										###### Change made for CZKE mod  line added
-				}																											###### Change made for CZKE mod  line added
+				CZE = {	NOT = { has_completed_focus = CZE_outreach_to_the_western_powers }	}		#NEW_DLC_FIX_THIS			###### Change made for CZKE mod  line added																												###### Change made for CZKE mod  line added
 			}
 			modifier = {
 				factor = 0.3
@@ -2893,7 +2892,7 @@ country_event = {
 			}
 			modifier = {																								###### Change made for CZKE mod  line added
 				factor = 100																							###### Change made for CZKE mod  line added
-				CZE = {	has_completed_focus = CZKE_petition_league_of_nations } 										###### Change made for CZKE mod  line added
+			#	CZE = {	has_completed_focus = CZKE_petition_league_of_nations } 		NEW_DLC_FIX_THIS								###### Change made for CZKE mod  line added
 			}																											###### Change made for CZKE mod  line added
 			modifier = {											#if Czechs haven't appealed to the League, this will make a factor 0
 				add = -10
@@ -3250,7 +3249,7 @@ country_event = {
 				is_in_faction = no
 				CZE = { 
 					is_faction_leader = yes 
-					has_completed_focus = CZKE_revive_little_entente
+				#	has_completed_focus = CZKE_revive_little_entente NEW_DLC_FIX_THIS
 				}
 			}
 			CZE = { add_to_faction = FRA }
@@ -3732,7 +3731,7 @@ country_event = {
 			news_event = { hours = 6 id = news.56 }
 			CZE = { #benes goes to exile after Germany annexed Sudetenland
 				country_event = { 
-					id = czke.8
+					id = cze.8
 					days = 3
 				}
 			}

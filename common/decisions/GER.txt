@@ -13576,6 +13576,20 @@ special_projects = {
 					add_timed_idea = { idea = GER_dismantle_maginot days = 180 }
 				}
 			}
+
+			if = {
+				limit = {
+					has_dlc = "Peace For Our Time"
+					NOT = {
+						is_special_project_completed = sp:sp_land_large_caliber_kinetic_energy_sabot
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_timed_idea = { idea = CZE_pfot_fortification_destruction_research days = 180 }
+
+			}			
 		}
 	}
 
@@ -13765,6 +13779,19 @@ special_projects = {
 		}
 		complete_effect = {
 			add_timed_idea = { idea = GER_dismantle_czechoslovakian_forts days = 180 }
+			if = {
+				limit = {
+					has_dlc = "Peace For Our Time"
+					NOT = {
+						is_special_project_completed = sp:sp_land_large_caliber_kinetic_energy_sabot
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_timed_idea = { idea = CZE_pfot_fortification_destruction_research days = 180 }
+
+			}			
 		}
 	}
 }
