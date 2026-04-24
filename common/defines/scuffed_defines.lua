@@ -17,6 +17,7 @@ NDefines.NDiplomacy.OPINION_PER_VOLUNTEER = 15
 NDefines.NDiplomacy.MAX_OPINION_FROM_VOLUNTEERS = 100
 ----------------------------------
 NDefines.NFactions.PASSIVE_INITIATIVE_GENERATION = 0.03
+NDefines.NFactions.FACTION_INITIATIVE_CHANGE_RULE_COST = 0
 ----------------------------------
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 80						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
