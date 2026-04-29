@@ -3281,7 +3281,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_steel_industry_in_terni
-		cost = 5
+		cost = 10
 		available = {
 			has_tech = synth_oil_experiments
 		}
@@ -5381,20 +5381,20 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = air_doc_bonus
 				cost_reduction = 0.5
-				uses = 2
+				uses = 1
 				category = air_doctrine
 			}
-			if = {	#56
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				add_tech_bonus = {
-					name = scout_plane
-					bonus = 1.0
-					uses = 1
-					category = cat_scout_plane
-				}				
-			}	
+			# if = {	#56
+			# 	limit = {
+			# 		has_dlc = "La Resistance"
+			# 	}
+			# 	add_tech_bonus = {
+			# 		name = scout_plane
+			# 		bonus = 1.0
+			# 		uses = 1
+			# 		category = cat_scout_plane
+			# 	}				
+			# }	
 		}
 	}
 
@@ -5417,7 +5417,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = ITA_citta_dell_aria
 				bonus = 0.5	#56
-				uses = 3
+				uses = 2
 				category = air_equipment
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -5555,7 +5555,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = ITA_reggianes_exports
 				bonus = 0.75
-				uses = 2
+				uses = 1
 				category = air_equipment #Maybe more specific stuff? (Light/Medium bombers, fighters...)
 			}
 
@@ -5622,7 +5622,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_citta_dell_aria
-		cost = 5
+		cost = 10
 		available = {
 			#any_enemy_country = {
 			#	is_major_not_original_tag_root = yes
@@ -5647,25 +5647,25 @@ focus_tree = {
 	focus = {
 		id = ITA_officers_of_the_service_role
 		icon = GFX_focus_generic_military_mission
-		prerequisite = { focus = ITA_superaereo }
-		prerequisite = { focus = ITA_expand_rome_flying_school }
+		prerequisite = { focus = ITA_superaereo focus = ITA_expand_rome_flying_school }
+	#	prerequisite = {  }
 
 		x = 3
 		y = 1
 		relative_position_id = ITA_superaereo
 		cost = 5
 		available = {
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				has_tech = improved_small_airframe
-				has_tech = improved_medium_airframe
-			}
-			else = {
-				has_tech = fighter2
-				has_tech = tactical_bomber2
-			}
+			# if = {
+			# 	limit = {
+			# 		has_dlc = "By Blood Alone"
+			# 	}
+			# 	has_tech = improved_small_airframe
+			# 	has_tech = improved_medium_airframe
+			# }
+			# else = {
+			# 	has_tech = fighter2
+			# 	has_tech = tactical_bomber2
+			# }
 		}
 
 		search_filters = {FOCUS_FILTER_AIR_XP}
@@ -15515,9 +15515,9 @@ focus_tree = {
 		relative_position_id = ITA_strengthen_the_papacy
 		cost = 5
 
-		allow_branch = {
-			has_country_flag = ITA_pope_took_over_italy_flag
-		}
+		#allow_branch = {
+			#has_country_flag = ITA_pope_took_over_italy_flag
+	#	}
 
 		available = {
 			ITA_is_ruled_by_a_pope = yes
