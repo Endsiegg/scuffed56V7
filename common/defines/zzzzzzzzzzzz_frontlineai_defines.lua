@@ -5,11 +5,11 @@
  -- AGGRESSIVENESS
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 NDefines.NAI.AGGRESSIVENESS_CHECK_BASE = 1.5                -- restore vanilla (1.4 → 1.5)
-NDefines.NAI.AGGRESSIVENESS_CHECK_EASY_TARGET = -0.4        -- tone down significantly (-0.7 → -0.4)
+NDefines.NAI.AGGRESSIVENESS_CHECK_EASY_TARGET = -0.5        -- tone down significantly (-0.7 → -0.5)
 NDefines.NAI.AGGRESSIVENESS_CHECK_CAREFUL = 0.7             -- slight increase from vanilla (0.6 → 0.7)
-NDefines.NAI.AGGRESSIVENESS_CHECK_PARTLY_FORTIFIED = 1.8    -- keep (minor effect)
-NDefines.NAI.AGGRESSIVENESS_CHECK_FULLY_FORTIFIED = 8.0     -- keep (negligible in practice)
-NDefines.NAI.AGGRESSIVENESS_CHECK_FULLY_FORTIFIED_POCKET = 4.0   -- tone down (-0.7 → 4.0)
+NDefines.NAI.AGGRESSIVENESS_CHECK_PARTLY_FORTIFIED = 6.0    -- keep (minor effect)
+NDefines.NAI.AGGRESSIVENESS_CHECK_FULLY_FORTIFIED = 11.0     -- keep (negligible in practice)
+NDefines.NAI.AGGRESSIVENESS_CHECK_FULLY_FORTIFIED_POCKET = 7.0   -- tone down (-0.7 → 4.0)
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- RESEARCH
@@ -33,81 +33,62 @@ NDefines.NAI.RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = 0.12  -- Multiplies value
 NDefines.NAI.RESEARCH_AHEAD_BONUS_FACTOR = 10.0
 NDefines.NAI.RESEARCH_BONUS_FACTOR = 2.0
 
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- DESIGNS
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- XP THRESHOLDS
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- Land (Tank Designer)
-NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_LAND = 35
-NDefines.NAI.VARIANT_CREATION_XP_RESERVE_LAND = 25   -- Must be lower than cutoff
+---------------------------------------------------------------------------------------------
+-- DESIGNS
+---------------------------------------------------------------------------------------------
+NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_LAND = 20 --50	-- Army XP needed before attempting to create a variant of a type that uses the tank designer (the tank designer DLC feature must be active).
+NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_NAVY = 20 --50	-- Same as above but for the ship designer.
+NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_AIR = 20 --25	-- Same as above but for the air designer.
 
- -- Navy (Ship Designer)
-NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_NAVY = 50
-NDefines.NAI.VARIANT_CREATION_XP_RESERVE_NAVY = 35   -- Must be lower than cutoff
+NDefines.NAI.VARIANT_CREATION_XP_RESERVE_LAND = 30 --50					-- If the AI lacks army XP to create a variant it will reserve this much XP for variant creation so that it will eventually be able to create a variant.
+NDefines.NAI.VARIANT_CREATION_XP_RESERVE_NAVY = 30 --50					-- Same as above but for navy XP.
+NDefines.NAI.VARIANT_CREATION_XP_RESERVE_AIR  = 30 --50					-- Same as above but for air XP.
 
- -- Air (Plane Designer)
-NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_AIR = 25
-NDefines.NAI.VARIANT_CREATION_XP_RESERVE_AIR = 20   -- Must be lower than cutoff
+-- The AI uses the below values when selecting which design to make among the types that use the tank designer
+-- (the tank designer DLC feature must be active). For each role, the highest priority AI design that can be
+-- created, if any, is assigned a weight. Any design with a weight of zero or a weight that falls below the
+-- cutoff is dropped. A random design is then picked from the remaining.
+-- Weight is calculated as AlternativeFactor * DemandFactor.
+-- An "alternative" is a producible design of the same archetype (each specialized type is its own archetype).
 
- -- Legacy System
-NDefines.NAI.DEFAULT_LEGACY_VARIANT_CREATION_XP_CUTOFF_LAND = 35
-NDefines.NAI.DEFAULT_LEGACY_VARIANT_CREATION_XP_CUTOFF_NAVY = 25
-NDefines.NAI.DEFAULT_LEGACY_VARIANT_CREATION_XP_CUTOFF_AIR = 25
-
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- LAND DESIGN WEIGHTS (Weight = Alternative × Demand)
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- Alternative Factor
-NDefines.NAI.LAND_DESIGN_ALTERNATIVE_ABSENT = 1000000   -- vanilla
+NDefines.NAI.LAND_DESIGN_ALTERNATIVE_ABSENT = 1000000
 NDefines.NAI.LAND_DESIGN_ALTERNATIVE_OF_LESSER_TECH = 10000
 NDefines.NAI.LAND_DESIGN_ALTERNATIVE_OF_EQUAL_TECH = 100
 NDefines.NAI.LAND_DESIGN_ALTERNATIVE_OF_GREATER_TECH = 1
 
- -- Demand Factor - IMPROVED for smarter prioritization
-NDefines.NAI.LAND_DESIGN_DEMAND_FIELD_DIVISION = 25   -- vanilla 20 increased = prioritize combat units
+-- If a template may be reinforced with the archetype it's considered to be "demanded". If multiple conditions
+-- are met, e.g. it's both in the field and in training, the largest value is used.
+
+NDefines.NAI.LAND_DESIGN_DEMAND_FIELD_DIVISION = 20
 NDefines.NAI.LAND_DESIGN_DEMAND_TRAINING_DIVISION = 15
-NDefines.NAI.LAND_DESIGN_DEMAND_GARRISON_DIVISION = 8   -- vanilla 10 decreased = less garrison focus
+NDefines.NAI.LAND_DESIGN_DEMAND_GARRISON_DIVISION = 10
 NDefines.NAI.LAND_DESIGN_DEMAND_UNUSED_TEMPLATE = 1
-NDefines.NAI.LAND_DESIGN_DEMAND_ABSENT = 0
+NDefines.NAI.LAND_DESIGN_DEMAND_ABSENT = 1
 
- -- Cutoff
-NDefines.NAI.LAND_DESIGN_CUTOFF_AS_PERCENTAGE_OF_MAX = 0.25   -- vanilla 0.25 lower = more variety
+-- If a design with a weight when divided by the largest weight falls below this value it's excluded from the
+-- selection. Valid values are in the range [0, 1] inclusive.
 
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- AIR DESIGN WEIGHTS
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- Alternative Factor
-NDefines.NAI.AIR_DESIGN_ALTERNATIVE_ABSENT = 1000000   -- vanilla
-NDefines.NAI.AIR_DESIGN_ALTERNATIVE_OF_LESSER_TECH = 10000
-NDefines.NAI.AIR_DESIGN_ALTERNATIVE_OF_EQUAL_TECH = 100
-NDefines.NAI.AIR_DESIGN_ALTERNATIVE_OF_GREATER_TECH = 1
+NDefines.NAI.LAND_DESIGN_CUTOFF_AS_PERCENTAGE_OF_MAX = 0.25 --0.25
 
- -- Demand Factor
-NDefines.NAI.AIR_DESIGN_DEMAND_MAX = 33
-NDefines.NAI.AIR_DESIGN_DEMAND_MIN = 1
-NDefines.NAI.AIR_DESIGN_DEMAND_ABSENT = 0
+--------------------------------------------------------------------------------------------------------------
+-- XP SPENDING DESIRES
+--------------------------------------------------------------------------------------------------------------
+-- The AI "desires" to spend XP on doctrines, templates, and equipment.
+-- The desire is built up over time and when XP is available it spends it on the action that has the highest accumulated desire. After spending XP the desire is reset, in effect balancing the desires.
+-- Below is the daily desire gain for each action.
 
- -- Cutoff
-NDefines.NAI.AIR_DESIGN_CUTOFF_AS_PERCENTAGE_OF_MAX = 0.30   -- vanilla 0.25 slightly higher for air
+NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_LAND_DOCTRINE = 1.0    -- How quickly is desire to unlock land doctrines accumulated?
+NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_NAVAL_DOCTRINE = 1.0   -- How quickly is desire to unlock naval doctrines accumulated?
+NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_AIR_DOCTRINE = 1.0     -- How quickly is desire to unlock air doctrines accumulated?
 
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- XP SPENDING DESIRES - IMPROVED for design priority
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
+NDefines.NAI.DESIRE_USE_XP_TO_UPDATE_LAND_TEMPLATE = 100.0    -- How quickly is desire to update/create templates accumulated?
+NDefines.NAI.DESIRE_USE_XP_TO_UPGRADE_LAND_EQUIPMENT = 10.0  -- How quickly is desire to update/create land equipment variants accumulated?
+NDefines.NAI.DESIRE_USE_XP_TO_UPGRADE_NAVAL_EQUIPMENT = 10.0 -- How quickly is desire to update/create naval equipment variants accumulated?
+NDefines.NAI.DESIRE_USE_XP_TO_UPGRADE_AIR_EQUIPMENT = 10.0   -- How quickly is desire to update/create air equipment variants accumulated?
 
-NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_LAND_DOCTRINE = 1.0     -- How quickly is desire to unlock land doctrines accumulated?
-NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_NAVAL_DOCTRINE = 1.0    -- How quickly is desire to unlock naval doctrines accumulated?
-NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_AIR_DOCTRINE = 1.0      -- How quickly is desire to unlock air doctrines accumulated?
-
-NDefines.NAI.DESIRE_USE_XP_TO_UPDATE_LAND_TEMPLATE = 100.0     -- How quickly is desire to update/create templates accumulated?
-NDefines.NAI.DESIRE_USE_XP_TO_UPGRADE_LAND_EQUIPMENT = 10.0   -- How quickly is desire to update/create land equipment variants accumulated?
-NDefines.NAI.DESIRE_USE_XP_TO_UPGRADE_NAVAL_EQUIPMENT = 10.0  -- How quickly is desire to update/create naval equipment variants accumulated?
-NDefines.NAI.DESIRE_USE_XP_TO_UPGRADE_AIR_EQUIPMENT = 10.0    -- How quickly is desire to update/create air equipment variants accumulated?
-
-NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_ARMY_SPIRIT = 0.01       -- How quickly is desire to unlock army spirits accumulated?
-NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_NAVY_SPIRIT = 0.01       -- How quickly is desire to unlock naval spirits accumulated?
-NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_AIR_SPIRIT = 0.01        -- How quickly is desire to unlock air spirits accumulated?
+NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_ARMY_SPIRIT = 0.01      -- How quickly is desire to unlock army spirits accumulated?
+NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_NAVY_SPIRIT = 0.01      -- How quickly is desire to unlock naval spirits accumulated?
+NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_AIR_SPIRIT = 0.01       -- How quickly is desire to unlock air spirits accumulated?
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
  -- RECALCULATION INTERVALS - IMPROVED for faster reaction
@@ -130,44 +111,27 @@ NDefines.NAI.UNLOCK_SPIRIT_TRUNCATION_SELECT_THRESHOLD = 0.8
 NDefines.NAI.MAX_MODULAR_EQUIPMENT_EQUIPMENT_UPGRADE_COUNT_PER_PASS = 5   -- vanilla 4 faster upgrades
 NDefines.NAI.EQUIPMENT_UPGRADE_VARIANT_MATCH_SCORE_FACTOR = 0.25   -- vanilla 0.2 values upgrades more
 
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- -- AI UPDATE FREQUENCIES - IMPROVED for responsiveness
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
- ---NDefines.NAI.AI_UPDATE_ROLES_FREQUENCY_HOURS = 36   -- vanilla 48 faster role updates
+ --------------------------------------------------------------------------------------------------------------
+-- WANTED NUMBER OF DIVISIONS
+--------------------------------------------------------------------------------------------------------------
+	-- Calculating wanted nr of divisions
+NDefines.NAI.WANTED_UNITS_INDUSTRY_FACTOR = 1.60                        -- How many units a country wants is partially based on how much military industry that is available
+NDefines.NAI.WANTED_UNITS_THREAT_BASE = 0.7                             -- If no threat, multiply min wanted units by this
+NDefines.NAI.WANTED_UNITS_THREAT_MAX = 6.0                             -- Normalized threat is clamped to this
+NDefines.NAI.WANTED_UNITS_WAR_THREAT_FACTOR = 1.15                       -- Factor threat with this if country is at war. this value is overriden by the value in ideology database if that value exceedes this.
+NDefines.NAI.WANTED_UNITS_DANGEROUS_NEIGHBOR_FACTOR = 1.15              -- Factor if has dangerous neighbor
+NDefines.NAI.WANTED_UNITS_MANPOWER_DIVISOR = 21000                      -- Normalizing divisor for AI manpower. (for each x max available manpower, they want one division)
+NDefines.NAI.WANTED_UNITS_WEIGHT_FRONTS_WANT = 0.35                      -- Weight of front needs when computing final nr wanted units
+NDefines.NAI.WANTED_UNITS_WEIGHT_FACTORIES = 0.45                        -- Weight of military factories when computing final nr wanted units
+NDefines.NAI.WANTED_UNITS_WEIGHT_MANPOWER = 0.3                         -- Weight of manpower availability when computing final nr wanted units
+NDefines.NAI.WANTED_UNITS_MIN_DEFENCE_FACTOR = 0.4						-- Factor on units required for min defence
+	-- End of calculating wanted nr of divisions
 
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
- -- DIVISION PRODUCTION & UPGRADES
- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
- --NDefines.NAI.WANTED_UNITS_INDUSTRY_FACTORY = 0.1  --1          -- How many units a country wants is partially based on how much military industry that is available
+NDefines.NAI.WANTED_UNITS_MAX_WANTED_CAP = 1000	-- Maximum wanted divisions for a country. This can be exceeded by certain hardcoded multipliers, but not by base calculation logic.
 
-
- --NDefines.NAI.MANPOWER_RATIO_REQUIRED_TO_PRIO_MOBILIZATION_LAW = 0.4 -- percentage of manpower in field is desired to be buffered for AI when it has upcoming wars or already at war. if it has less manpower it will prio manpower laws
-
- --NDefines.NAI.MIN_SUPPLY_USE_SANITY_CAP = 100                                 -- Ignore supply cap if below this value when deciding on how many divisions to produce.
-
- -- Calculating wanted nr of divisions
- -- INDUSTRY FACTOR: vanilla=1.60. Raising this makes factories translate into more desired divisions.
- -- At 2.5 a country with 50 MIC wants ~125 divisions worth of production pressure (up from ~80 vanilla).
- -- This is the primary lever to fix AI leaving gaps on the frontline due to insufficient unit ambition.
-NDefines.NAI.WANTED_UNITS_INDUSTRY_FACTOR = 5                         -- How many units a country wants is partially based on how much military industry that is available
-NDefines.NAI.WANTED_UNITS_THREAT_BASE = 0.7                              -- If no threat multiply min wanted units by this
- --NDefines.NAI.WANTED_UNITS_THREAT_MAX = 25.0                              -- Normalized threat is clamped to this
-NDefines.NAI.WANTED_UNITS_WAR_THREAT_FACTOR = 1.5                        -- Factor threat with this if country is at war. this value is overriden by the value in ideology database if that value exceedes this.
-NDefines.NAI.WANTED_UNITS_DANGEROUS_NEIGHBOR_FACTOR = 1.2                -- Factor if has dangerous neighbor (vanilla=1.15 slightly raised)
-NDefines.NAI.WANTED_UNITS_MANPOWER_DIVISOR = 20000                       -- Normalizing divisor for AI manpower. Lower = wants more divisions per manpower pool (vanilla=21000)
- -- Weight rebalance: raise factory and front weights so production capacity drives unit ambition harder
-NDefines.NAI.WANTED_UNITS_WEIGHT_FRONTS_WANT = 0.5                       -- Weight of front needs when computing final nr wanted units (vanilla=0.35)
-NDefines.NAI.WANTED_UNITS_WEIGHT_FACTORIES = 0.6                         -- Weight of military factories when computing final nr wanted units (vanilla=0.45)
-NDefines.NAI.WANTED_UNITS_WEIGHT_MANPOWER = 0.75                         -- Weight of manpower availability when computing final nr wanted units (vanilla=0.3 unchanged from our value)
-NDefines.NAI.WANTED_UNITS_MIN_DEFENCE_FACTOR = 0.5 -- Factor on units required for min defence (vanilla=0.4 slightly raised)
- -- End of calculating wanted nr of divisions
-
-NDefines.NAI.WANTED_UNITS_MAX_WANTED_CAP = 600
-
- ---NDefines.NAI.UPGRADE_DIVISION_RELUCTANCE = 0.0042  -- aggressively trying to get the AI to upgrade divisions to newer templates may work may not but it doesn't break anything. vanilla is 14 .0042 is just over 1 hour where I believe the vanilla value at 14 = 14 days. So it should be checking to upgrade ONE division every single hour. 
- ---NDefines.NAI.UPGRADE_PERCENTAGE_OF_FORCES = 1
- ---NDefines.NAI.STOP_TRAINING_FULLY_TRAINED_FACTOR = 0.99
- ---NDefines.NAI.UPGRADES_DEFICIT_LIMIT_DAYS = 60
+NDefines.NAI.UPGRADE_DIVISION_RELUCTANCE = 0.0042  -- aggressively trying to get the AI to upgrade divisions to newer templates may work may not but it doesn't break anything. vanilla is 14 .0042 is just over 1 hour where I believe the vanilla value at 14 = 14 days. So it should be checking to upgrade ONE division every single hour. 
+NDefines.NAI.UPGRADE_PERCENTAGE_OF_FORCES = 1
+NDefines.NAI.STOP_TRAINING_FULLY_TRAINED_FACTOR = 0.99
 NDefines.NAI.LOW_PRIO_TEMPLATE_BONUS_FOR_GARRISONS = 300000
 NDefines.NAI.LOW_PRIO_TEMPLATE_PENALTY_FOR_FRONTS = -2000
 
@@ -195,7 +159,7 @@ NDefines.NAI.DEPLOYED_UNIT_MANPOWER_RATIO_TO_BUFFER_PEACETIME = 0.1      -- depl
 NDefines.NAI.UPGRADE_DIVISION_RELUCTANCE = 10
 NDefines.NAI.UPGRADE_PERCENTAGE_OF_FORCES = 0.05
 NDefines.NAI.STOP_TRAINING_FULLY_TRAINED_FACTOR = 0.99
-NDefines.NAI.UPGRADES_DEFICIT_LIMIT_DAYS = 365
+NDefines.NAI.UPGRADES_DEFICIT_LIMIT_DAYS = 240
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- EQUIPMENT PRODUCTION
@@ -263,42 +227,32 @@ NDefines.NAI.THEORIST_SCALING_WEIGHT_FACTOR_PER_NON_POLITICAL_ADVISORS = 0.05 --
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- LAND AI
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-NDefines.NAI.EASY_TARGET_FRONT_IMPORTANCE = 7.5
-NDefines.NAI.MAIN_ENEMY_FRONT_IMPORTANCE = 5.0
+NDefines.NAI.EASY_TARGET_FRONT_IMPORTANCE = 5.0
+NDefines.NAI.MAIN_ENEMY_FRONT_IMPORTANCE = 4.0
 
-NDefines.NAI.ASSIGN_TANKS_TO_WAR_FRONT = 12.0  -- Vanilla 6.0
+NDefines.NAI.ASSIGN_TANKS_TO_WAR_FRONT = 60.0  -- Vanilla 6.0
 NDefines.NAI.ASSIGN_TANKS_TO_NON_WAR_FRONT = 0.1  -- Vanilla 0.4
 
 NDefines.NAI.UPDATE_SUPPLY_MOTORIZATION_FREQUENCY_HOURS = 20  -- Vanilla is 52  Check if activating motorization would improve supply situation this often.
 
-NDefines.NAI.CANCEL_COMBAT_DISADVANTAGE_RATIO = 1.25 -- Vanilla 1.5                      -- If the enemy's advantage ratio over us during (normal) combat is more than <value> allow canceling the attack
-NDefines.NAI.CANCEL_COMBAT_MIN_DURATION_HOURS = 60 -- Vanilla 48  -- Only allow canceling (normal) combat if at least <value> hours have passed
-NDefines.NAI.CANCEL_INVASION_COMBAT_DISADVANTAGE_RATIO = 2.8 -- Vanilla 3.5  -- If the enemy's advantage ratio over us during invasion combat is more than <value> allow canceling the attack
-NDefines.NAI.CANCEL_INVASION_COMBAT_MIN_DURATION_HOURS = 720 -- Vanilla 120 -- Only allow canceling invasion combat if at least <value> hours have passed
+NDefines.NAI.CANCEL_COMBAT_DISADVANTAGE_RATIO = 1.35 -- Vanilla 1.5                      -- If the enemy's advantage ratio over us during (normal) combat is more than <value> allow canceling the attack
+NDefines.NAI.CANCEL_COMBAT_MIN_DURATION_HOURS = 72 -- Vanilla 48  -- Only allow canceling (normal) combat if at least <value> hours have passed
+NDefines.NAI.CANCEL_INVASION_COMBAT_DISADVANTAGE_RATIO = 3.0 -- Vanilla 3.5  -- If the enemy's advantage ratio over us during invasion combat is more than <value> allow canceling the attack
+NDefines.NAI.CANCEL_INVASION_COMBAT_MIN_DURATION_HOURS = 168 -- Vanilla 120 -- Only allow canceling invasion combat if at least <value> hours have passed
 
-NDefines.NAI.REDEPLOY_DISTANCE_VS_ORDER_SIZE = 0.9                  -- Factor applied to the path length of a unit compared to length of an order to determine if it should use strategic redeployment
+NDefines.NAI.REDEPLOY_DISTANCE_VS_ORDER_SIZE = 0.4                  -- Factor applied to the path length of a unit compared to length of an order to determine if it should use strategic redeployment
 NDefines.NAI.UNIT_ASSIGNMENT_TERRAIN_IMPORTANCE = 10.0                  -- Terrain score for units are multiplied by this when the AI is deciding which front they should be assigned to
 
-NDefines.NAI.FRONT_TERRAIN_DEFENSE_FACTOR = 7.0 -- Multiplier applied to unit defense modifier for terrain on front province multiplied by terrain importance
-NDefines.NAI.FRONT_TERRAIN_ATTACK_FACTOR = 7.0 -- Multiplier applied to unit attack modifier for terrain on enemy front province multiplied by terrain importance
+--NDefines.NAI.FRONT_TERRAIN_DEFENSE_FACTOR = 7.0 -- Multiplier applied to unit defense modifier for terrain on front province multiplied by terrain importance
+--NDefines.NAI.FRONT_TERRAIN_ATTACK_FACTOR = 21.0 -- Multiplier applied to unit attack modifier for terrain on enemy front province multiplied by terrain importance
 
-NDefines.NAI.PLAN_ATTACK_MIN_ORG_FACTOR_LOW = 0.60 -- Minimum org % for a unit to actively attack an enemy unit when executing a plan
-NDefines.NAI.PLAN_ATTACK_MIN_STRENGTH_FACTOR_LOW = 0.85 -- Minimum strength  % for a unit to actively attack an enemy unit when executing a plan
+--NDefines.NAI.PLAN_FACTION_STRONG_TO_EXECUTE = 0.67  -- Vanilla 0.5         -- % or more of units in an order to consider ececuting the plan
+--NDefines.NAI.PLAN_FACTION_NORMAL_TO_EXECUTE = 0.75   -- Vanilla 0.65  -- % or more of units in an order to consider ececuting the plan
+--NDefines.NAI.PLAN_FACTION_WEAK_TO_ABORT = 0.3   -- Vanilla 0.65         -- % or more of units in an order to consider ececuting the plan
+--NDefines.NAI.PLAN_AVG_PREPARATION_TO_EXECUTE = 0.33 -- Vanilla 0.5             -- % or more average plan preparation before executing
 
-NDefines.NAI.PLAN_ATTACK_MIN_ORG_FACTOR_MED = 0.40 -- (LOWMEDHIGH) corresponds to the plan execution agressiveness level.
-NDefines.NAI.PLAN_ATTACK_MIN_STRENGTH_FACTOR_MED = 0.60
-
-NDefines.NAI.PLAN_ATTACK_MIN_ORG_FACTOR_HIGH = 0.30
-NDefines.NAI.PLAN_ATTACK_MIN_STRENGTH_FACTOR_HIGH = 0.45
-
-NDefines.NAI.PLAN_FACTION_STRONG_TO_EXECUTE = 0.35  -- Vanilla -0.5         -- % or more of units in an order to consider ececuting the plan
-NDefines.NAI.PLAN_FACTION_NORMAL_TO_EXECUTE = 0.3   -- Vanilla -0.65  -- % or more of units in an order to consider ececuting the plan
-NDefines.NAI.PLAN_FACTION_WEAK_TO_ABORT = 0.30   -- Vanilla -0.65         -- % or more of units in an order to consider ececuting the plan
-NDefines.NAI.PLAN_AVG_PREPARATION_TO_EXECUTE = 0.4 -- Vanilla -0.5             -- % or more average plan preparation before executing
-
-NDefines.NAI.FORTIFIED_RATIO_TO_CONSIDER_A_FRONT_FORTIFIED = 0.35
-NDefines.NAI.HEAVILY_FORTIFIED_RATIO_TO_CONSIDER_A_FRONT_FORTIFIED = 0.5
-
+NDefines.NAI.FORTIFIED_RATIO_TO_CONSIDER_A_FRONT_FORTIFIED = 0.45
+NDefines.NAI.HEAVILY_FORTIFIED_RATIO_TO_CONSIDER_A_FRONT_FORTIFIED = 0.6
 
 NDefines.NAI.DYNAMIC_STRATEGIES_THREAT_FACTOR = 8.0
 NDefines.NAI.BASE_DISTANCE_TO_CARE = 400.0
@@ -308,20 +262,18 @@ NDefines.NAI.ASSIGN_MOUNTAINEERS_TO_MOUNTAINS = 50.0
  -- -- -- AI Superchargers  -- -- -- -- ---
  -- These 4 defines below genuinely make the AI somehow smarter and supercharges it with the right values
 NDefines.NAI.FRONT_EVAL_UNIT_ACCURACY = 2.0 -- Vanilla 1.0 -- scale how stupid ai will act on fronts. 0 is potato
-NDefines.NAI.FRONT_EVAL_UNIT_AIR_SUP_IMPACT = 2.0  -- Vanilla 1.0 -- scale how good the AI thinks air superiority is for units
-NDefines.NAI.FRONT_EVAL_PERCENT_TO_ASSIST_ALLY_FRONT = 0.5   -- Vanilla 0.5  percentage of how many units the AI thinks it should have compared to an ally before considering sending units
-NDefines.NAI.FRONT_EVAL_UNIT_SUPPLY_AND_ORG_LACK_IMPACT = 2.0 -- Vanilla 1.0; scale how painful the AI thinks a combined lack of supply and organization is for units
+--NDefines.NAI.FRONT_EVAL_UNIT_AIR_SUP_IMPACT = 1.5  -- Vanilla 1.0 -- scale how good the AI thinks air superiority is for units
+--NDefines.NAI.FRONT_EVAL_UNIT_SUPPLY_AND_ORG_LACK_IMPACT = 1.75 -- Vanilla 1.0; scale how painful the AI thinks a combined lack of supply and organization is for units
 
- ---NDefines.NAI.PLAN_STEP_COST_LIMIT = 15           --- vanilla 9; When stepping to draw a plan this cost makes it break if it hits hard terrain (multiplied by number of desired steps)
- ---NDefines.NAI.PLAN_STEP_COST_LIMIT_REDUCTION = 0.012    -- vanilla 3Cost limit is reduced per iteration making hard terrain less likely to be crossed the further into enemy territory it is
- ---NDefines.NAI.PLAN_ATTACK_DEPTH_FACTOR = 0.1 --- vanilla 0.5; Factor applied to size or enemy being attacked.
+NDefines.NAI.PLAN_STEP_COST_LIMIT = 200           --- vanilla 9; When stepping to draw a plan this cost makes it break if it hits hard terrain (multiplied by number of desired steps)
+NDefines.NAI.PLAN_STEP_COST_LIMIT_REDUCTION = 2    -- vanilla 3 Cost limit is reduced per iteration making hard terrain less likely to be crossed the further into enemy territory it is
+NDefines.NAI.PLAN_ATTACK_DEPTH_FACTOR = 0.25 --- vanilla 0.5; Factor applied to size or enemy being attacked.
 NDefines.NAI.MIN_AI_UNITS_PER_TILE_FOR_STANDARD_COHESION = 2.5
 
 NDefines.NAI.FRONT_CUTOFF_MIN_EDGE_PROXIMITY = 2 --- vanilla 2; Minimum number of provinces to the front edge to determine for cutoff oportunity.
 NDefines.NAI.FRONT_BULGE_RATIO_LOWER_CUTOFF = 0.85 --- vanilla 0.95; If local bulginess drops below this a point of interest is found
 NDefines.NAI.FRONT_BULGE_RATIO_UPPER_CUTOFF = 1.4 --- vanilla 1.5; If total bulginess is lower than this the front is ignored.
 
-NDefines.NAI.GARRISON_FRACTION = 0.0 -- DONT CHANGE THIS AS THIS FUCKS WITH VOLUNTEERS AND MAKE EM DO NOTHING AND BE PASSIVE How large part of a front should always be holding the line rather than advancing at the enemy
 --NDefines.NAI.PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 1
 --NDefines.NAI.PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 1 
 
@@ -345,14 +297,13 @@ NDefines.NAI.ASSIGN_DEFENSE_TERRAIN_MOVEMENT_FACTOR = 0.5                -- Impo
 NDefines.NAI.ENEMY_FORTIFICATION_FACTOR_FOR_FRONT_REQUESTS = 1.0 -- front unit request factor at max enemy fortification
 NDefines.NAI.ENEMY_FORTIFICATION_FACTOR_FOR_FRONT_REQUESTS_MAX = 0.1  -- max factor that can be added by enemy fortification
 
-NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.50
-NDefines.NAI.FRONT_REASSIGN_DISTANCE = 250.0
+NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.25
 
 NDefines.NAI.ASSIGN_TANKS_TO_MOUNTAINS = -10.0
 NDefines.NAI.ASSIGN_TANKS_TO_JUNGLE = -10.0
 
  --NDefines.NAI.STATE_CONTROL_FOR_AREA_DEFENSE = 0.70
- --NDefines.NAI.DIVISION_SUPPLY_RATIO_TO_MOTORIZE = 1
+ NDefines.NAI.DIVISION_SUPPLY_RATIO_TO_MOTORIZE = 0.90
 NDefines.NAI.ENTRENCHMENT_WEIGHT = 5.0
 NDefines.NAI.MAX_MICRO_ATTACKS_PER_ORDER = 20
 NDefines.NAI.MICRO_POCKET_SIZE = 5
@@ -364,12 +315,11 @@ NDefines.NAI.FRONT_UNITS_CAP_FACTOR = 13.0
 NDefines.NAI.RAIDS_CREATE_FREQUENCY_DAYS = 20
 NDefines.NAI.RAIDS_COMMAND_POWER_CAP_TO_CREATE = 150.0 
 NDefines.NAI.COMMAND_POWER_BEFORE_SPEND_ON_TRAITS = 10.0
- --NDefines.NAI.LOCATION_BALANCE_TO_ADVANCE = 0.15
 
 NDefines.NAI.PLAN_FRONT_SECTION_MAX_LENGTH = 10
 NDefines.NAI.PLAN_FRONT_SECTION_MIN_LENGTH = 5
 
-NDefines.NAI.MANPOWER_RATIO_CAREFULNESS_THRESHOLD = 0.25 -- Vanilla 0.05  -- if manpower ratio (available/used-by-army) is less than this start being more careful with plan execution (i.e. don't throw your men into the meat grinder if you're running out of manpower)
+NDefines.NAI.MANPOWER_RATIO_CAREFULNESS_THRESHOLD = 0.15 -- Vanilla 0.05  -- if manpower ratio (available/used-by-army) is less than this start being more careful with plan execution (i.e. don't throw your men into the meat grinder if you're running out of manpower)
 
 NDefines.NAI.DEFAULT_SUPPLY_TRUCK_BUFFER_RATIO = 2.0 --  -- Vanilla 1.5  -- ai will set to truck buffer ratio to this. can be modified by wanted_supply_trucks min_wanted_supply_trucks ai strats
 
@@ -378,7 +328,7 @@ NDefines.NAI.DEFAULT_SUPPLY_TRUCK_BUFFER_RATIO = 2.0 --  -- Vanilla 1.5  -- ai w
  -- So I don't know a single person who actually uses the careful attack plan. Therefore i'm gonna heavily change it for the AI use.
 
 NDefines.NAI.PLAN_EXECUTE_CAREFUL_LIMIT = 5                 -- When looking for an attack target this score limit is required in the battle plan to consider province for attack
-NDefines.NAI.PLAN_EXECUTE_CAREFUL_MAX_FORT = 7 -- If execution mode is set to careful units will not attack provinces with fort levels greater than or equal to this
+NDefines.NAI.PLAN_EXECUTE_CAREFUL_MAX_FORT = 3 -- If execution mode is set to careful units will not attack provinces with fort levels greater than or equal to this (vanilla 5; lowered to 3 — stops careful-mode attacks on anything with a meaningful fort)
  --                                                      ^^^ changed from 0.7
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- BATTLEPLANNER AI (KILL ME)
@@ -389,13 +339,13 @@ NDefines.NMilitary.PLAN_PORVINCE_AIRFIELD_LEVEL_FACTOR = 0.25 -- Bonus factor fo
 NDefines.NMilitary.PLAN_BLITZ_OPTIMISM = 0.3 -- Vanilla 0.2; Additional combat balance value in favor of blitzing side when considering targets (not a combat bonus just offsets planning)
 NDefines.NMilitary.MIN_BALANCE_SCORE_TO_PROCEED_ATTACK = 0.15 -- Vanilla 0.2; A combat balance score of less than this will prevent auto attacking
 
-NDefines.NMilitary.PLAN_SPREAD_ATTACK_WEIGHT = 300  -- 300.0  -- (was 12.0) -- The higher the value the less it should crowd provinces with multiple attacks.#WICHTIG
+NDefines.NMilitary.PLAN_SPREAD_ATTACK_WEIGHT = 150.0  -- 300.0  -- (was 12.0) -- The higher the value the less it should crowd provinces with multiple attacks.#WICHTIG
 NDefines.NMilitary.PLAN_MIN_AUTOMATED_EMPTY_POCKET_SIZE = 10 -- (was 2)  -- The battle plan system will only automatically attack provinces in pockets that has no resistance and are no bigger than these many provinces
-NDefines.NMilitary.FRONTLINE_EXPANSION_FACTOR = 0.0  -- #MOD was 0.0  -- was 0.6 -- When attacking along a frontline how much should units spread out as they advance. 0.0 means head (more or less) directly to the drawn frontline with no distractions
-NDefines.NMilitary.FRONT_MIN_PATH_TO_REDEPLOY = 4  --#MOD  -- was 8 -- If a units path is at least this long to reach its front location it will strategically redeploy.
+NDefines.NMilitary.FRONTLINE_EXPANSION_FACTOR = 0.15  -- #MOD was 0.0  -- was 0.6 -- When attacking along a frontline how much should units spread out as they advance. 0.0 means head (more or less) directly to the drawn frontline with no distractions
+NDefines.NMilitary.FRONT_MIN_PATH_TO_REDEPLOY = 2  --#MOD  -- was 8 -- If a units path is at least this long to reach its front location it will strategically redeploy.
 
-NDefines.NAI.PLAN_MIN_SIZE_FOR_FALLBACK = 25 -- Vanilla 50  -- A country with less provinces than this will not draw fallback plans but rather station their troops along the front
-NDefines.NAI.FALLBACK_LOSING_FACTOR = 1.5  -- Vanilla 1.0  -- The lower this number the longer the AI will hold the line before sending them to the fallback line
+NDefines.NAI.PLAN_MIN_SIZE_FOR_FALLBACK = 5000 -- Vanilla 50  -- A country with less provinces than this will not draw fallback plans but rather station their troops along the front
+NDefines.NAI.FALLBACK_LOSING_FACTOR = 1.0  -- Vanilla 1.0  -- The lower this number the longer the AI will hold the line before sending them to the fallback line
 
 NDefines.NMilitary.PLAN_PROVINCE_LOW_VP_IMPORTANCE_AREA = 4.0
 NDefines.NMilitary.PLAN_PROVINCE_MEDIUM_VP_IMPORTANCE_AREA = 6.0
@@ -485,7 +435,6 @@ NDefines.NAI.NAVAL_MISSION_MINES_SWEEPING_NEAR_OWNED = 100000
  -- naval invasions
  -- -- -- -- -- -- -- -- -- -- -- ---
 
-NDefines.NAI.MIN_INVASION_AREA_SIZE_FOR_FLOATING_HARBORS = 2  -- vanilla 15    -- AI will consider using floating harbors for naval invasion if invasion area is larger than this many provinces
 
  -- -- -- -- -- -- -- -- -- -- -- ---
  -- convoy escorts
@@ -566,12 +515,12 @@ NDefines.NOperatives.AGENCY_AI_PER_UPGRADE_FACTORIES = 2.0  --6.0
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- AI SUPPLY/LOGISTICS DEFINES 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-NDefines.NSupply.AI_FRONT_DIVISIONS_PER_SUPPLY_POINT = 0.85
+--NDefines.NSupply.AI_FRONT_DIVISIONS_PER_SUPPLY_POINT = 0.85
 NDefines.NAI.MAX_DIST_PORT_RUSH = 40.0 --default 20.0 -- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
 
-NDefines.NAI.AVERAGE_SUPPLY_USE_PESSIMISM = 2.0   -- Increased multiplier to reflect realistic supply usage.
+NDefines.NAI.AVERAGE_SUPPLY_USE_PESSIMISM = 1.5   -- Increased multiplier to reflect realistic supply usage.
 
-NDefines.NAI.MAX_SUPPLY_DIVISOR = 2   -- Vanilla 1.75 -- To make sure the AI does not overdeploy divisions. Higher number means more supply per unit. van 2.0
+NDefines.NAI.MAX_SUPPLY_DIVISOR = 0.01   -- Vanilla 1.75 -- To make sure the AI does not overdeploy divisions. Higher number means more supply per unit. van 2.0
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- UNIT ASSIGNMENT & FRONT MANAGEMENT
@@ -580,13 +529,13 @@ NDefines.NAI.REVISITED_PROV_BOOST_FACTOR = 6    -- Vanilla 4  --When the AI pick
 NDefines.NAI.REASSIGN_TO_ANOTHER_FRONT_IF_IN_COMBAT_FACTOR = 0.15  -- Vanilla 0.2 --Factor for reassigning to another front if in combat. 0.0 < X < 1.0 means reluctant X > 1.0 means want to.
 NDefines.NAI.REASSIGN_TO_ANOTHER_FRONT_FACTOR = 0.45   -- Vanilla 0.5 --Factor for reassigning to another front. 0.0 < X < 1.0 means reluctant X > 1.0 means want to.
 NDefines.NAI.PLAN_VALUE_BONUS_FOR_MOVING_UNITS = 0.45 -- Vanilla 0.35   --AI plans gets a bonus when units are not moving and ready to fight
-NDefines.NAI.PLAN_FRONTUNIT_DISTANCE_FACTOR= 8.0 -- Vanilla 10.0   --Factor for candidate units distance to front positions.
+NDefines.NAI.PLAN_FRONTUNIT_DISTANCE_FACTOR = 8.0 -- Vanilla 10.0   --Factor for candidate units distance to front positions.
 NDefines.NAI.AI_PREFERRED_TACTIC_WEEKLY_CHANGE_CHANCE = 0.10 -- Vanilla 0.05 --Chance for AI to select a new preferred tactic if they don't have one selected
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- LEADER ASSIGNMENT
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-NDefines.NAI.ARMY_LEADER_ASSIGN_EMPTYNESS_MALUS= 0.3 -- Vanilla 0.2  ---Factor for avoiding assigning leaders that can lead large armies to small armies (a value of 0.2 reduces the score by max 20 %)
+NDefines.NAI.ARMY_LEADER_ASSIGN_EMPTYNESS_MALUS = 0.3 -- Vanilla 0.2  ---Factor for avoiding assigning leaders that can lead large armies to small armies (a value of 0.2 reduces the score by max 20 %)
 NDefines.NAI.ARMY_LEADER_ASSIGN_ARMY_ARMOR_SPEED_FACTOR= 30.0 -- Vanilla 20.0  --Importance of general's ARMY_ARMOR_SPEED_FACTOR modifier (proportional to armor ratio in the army)
 NDefines.NAI.ARMY_LEADER_ASSIGN_ARMY_ARMOR_ATTACK_FACTOR = 30.0 -- Vanilla 20.0  ---Importance of general's ARMY_ARMOR_ATTACK_FACTOR modifier (proportional to armor ratio in the army)
 NDefines.NAI.ARMY_LEADER_ASSIGN_BOOST_ARMOR_SKILL = 25.0 -- Vanilla 20.0 ---Importance of general's trait where armor skill is boosted e.g. armor_officer which boosts panzer_leader (proportional to armor ratio in the army)
@@ -605,10 +554,10 @@ NDefines.NAI.AIFC_FRESHNESS_BASE_VALUE = 30.0 -- Vanilla 45.0                   
 NDefines.NAI.AIFC_REFRESH_NEED_PER_DAY = 1.0                          -- Decrease freshness value with this every day.
 NDefines.NAI.AIFC_REFRESH_NEED_SUPPLY_FACTOR_PER_DAY = 4.0 -- Vanilla 0.8              -- Decrease freshness value with this multiplied by average supply ratio every day.
 NDefines.NAI.AIFC_FRESHNESS_ADD_ON_PROGRESS = 22.5   -- Vanilla 25.0                     -- Increase freshness value with this when we advance a province along the target path.
-NDefines.NAI.AIFC_UNIT_RATIO_BASE = 0.12 -- Vanilla 0.15           mod 0.10                      -- After fulfilling minimum front unit needs this ratio of the "extra"/desired units can be allocated to AI force concentration duty
-NDefines.NAI.AIFC_MAX_NR_FRONTS = 4                                      -- The X (this) fronts with highest AIFC score are considered for AI force concentration
+NDefines.NAI.AIFC_UNIT_RATIO_BASE = 0.15 -- Vanilla 0.15  (restored; scripts now add on top contextually)  -- After fulfilling minimum front unit needs this ratio of the "extra"/desired units can be allocated to AI force concentration duty
+NDefines.NAI.AIFC_MAX_NR_FRONTS = 5     -- Vanilla 4  (increased; allows up to 5 simultaneous thrusts = pincer potential)  -- The X (this) fronts with highest AIFC score are considered for AI force concentration
 NDefines.NAI.AIFC_CA_DIVISIONS_PER_PROVINCE = 2 -- Vanilla 3                      -- AI will use this as a baseline of how many divisions to have per province
-NDefines.NAI.AIFC_ACTIVATE_AVG_ORG_RATIO_THRESHOLD = 0.38 -- Vanilla 0.2                 -- Only activate the offensive order if average organisation is above this.
+NDefines.NAI.AIFC_ACTIVATE_AVG_ORG_RATIO_THRESHOLD = 0.3 -- Vanilla 0.2                 -- Only activate the offensive order if average organisation is above this.
 NDefines.NAI.AIFC_ACTIVATE_IN_POSITION_RATIO_THRESHOLD = 0.3 -- Vanilla 0.3             -- Only activate the offensive order if divisions in position is more than this ratio.
 NDefines.NAI.AIFC_OFFENSIVE_DEACTIVATION_DAYS_THRESHOLD = 5              -- Deactivate the offensive order only if the conditions have been unfulfilled for this many days.
 NDefines.NAI.AIFC_UNIT_NUDGE_FREQUENCY_DAYS = 10.0 -- Vanilla 15                       -- On average every X day (randomly) check if another division (within same front) is better for AIFC based on score factors below.
@@ -629,7 +578,7 @@ NDefines.NAI.AIFC_UNIT_OFFENSIVE_SCORE_FACTOR_EXPERIENCE = 500.0
  -- End of unit offensiveness score factors for AIFC
  -- Strategic target scoring for AIFC
 NDefines.NAI.AIFC_TARGET_IGNORE_VP_THRESHOLD = 10                        -- VP target needs at leas this many victory points to be considered a target
-NDefines.NAI.AIFC_TARGET_SUPPLY_HUB_BASE_SCORE = 25 -- Vanilla 200                    -- Base score for supply hubs
+NDefines.NAI.AIFC_TARGET_SUPPLY_HUB_BASE_SCORE = 45 -- Vanilla 200  (raised from 25; supply hubs are now primary pincer targets)  -- Base score for supply hubs
 NDefines.NAI.AIFC_TARGET_NAVAL_BASE_BASE_SCORE = 15.0                    -- Base score for naval bases
 NDefines.NAI.AIFC_TARGET_NAVAL_BASE_SCORE_PER_LEVEL = 2.0                -- Score for naval bases increases by this for each level
 NDefines.NAI.AIFC_TARGET_VP_SCORE_FACTOR = 1.0                           -- Score for VPs increases by this for every victory point
@@ -783,15 +732,29 @@ NDefines.NAI.LAND_COMBAT_CAS_PLANES_PER_ENEMY_ARMY_LIMIT = 300
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- Vanilla: WEAK 0.25 / NORMAL 0.35 / STRONG 0.75
  -- Raising STRONG means AI demands more readiness before committing to attacks. More patient fewer meatgrinder charges.
-NDefines.NAI.ORG_UNIT_WEAK = 0.29           -- vanilla 0.25 | slight raise = AI pulls back weaker units sooner
-NDefines.NAI.ORG_UNIT_NORMAL = 0.40         -- vanilla 0.35 | AI considers units "normal" only with more org
-NDefines.NAI.ORG_UNIT_STRONG = 0.80         -- vanilla 0.75 | AI waits for genuinely strong org before attacking
+NDefines.NAI.ORG_UNIT_WEAK = 0.3          -- vanilla 0.25 | slight raise = AI pulls back weaker units sooner
+NDefines.NAI.ORG_UNIT_NORMAL = 0.50         -- vanilla 0.35 | AI considers units "normal" only with more org
+NDefines.NAI.ORG_UNIT_STRONG = 0.75       -- vanilla 0.75 | AI waits for genuinely strong org before attacking
 
  -- Vanilla: WEAK 0.30 / NORMAL 0.40 / STRONG 0.70
-NDefines.NAI.STR_UNIT_WEAK = 0.33           -- vanilla 0.30 | pull back earlier when taking equipment losses
-NDefines.NAI.STR_UNIT_NORMAL = 0.45         -- vanilla 0.40
+NDefines.NAI.STR_UNIT_WEAK = 0.4           -- vanilla 0.30 | pull back earlier when taking equipment losses
+NDefines.NAI.STR_UNIT_NORMAL = 0.6         -- vanilla 0.40
 NDefines.NAI.STR_UNIT_STRONG = 0.75         -- vanilla 0.70 | must have good equipment before being considered "strong"
 
+
+-- HIGH = AGGRESSIVE, MED = BALANCED, LOW = CAREFUL 
+	-- these are not AI only, but affect the battleplanner mechanic itself
+NDefines.NAI.PLAN_ATTACK_MIN_ORG_FACTOR_HIGH = 0.3
+NDefines.NAI.PLAN_ATTACK_MIN_ORG_FACTOR_MED = 0.40		-- (LOW,MED,HIGH) corresponds to the plan execution agressiveness level.
+NDefines.NAI.PLAN_ATTACK_MIN_ORG_FACTOR_LOW = 0.60		-- Minimum org % for a unit to actively attack an enemy unit when executing a plan
+	
+NDefines.NAI.PLAN_ATTACK_MIN_STRENGTH_FACTOR_HIGH = 0.5
+NDefines.NAI.PLAN_ATTACK_MIN_STRENGTH_FACTOR_MED = 0.6
+NDefines.NAI.PLAN_ATTACK_MIN_STRENGTH_FACTOR_LOW = 0.75	-- Minimum strength for a unit to actively attack an enemy unit when executing a plan
+	
+NDefines.NAI.GARRISON_FRACTION = 0.0					-- # RISKY DEFINE, REMOVE IF VOLUNTEERS DONT MOVE How large part of a front should always be holding the line rather than advancing at the enemy
+NDefines.NAI.LOCATION_BALANCE_TO_ADVANCE = 0.2			-- Limit on location strength balance between country and enemy for unit to dare to move forward.
+	
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- DESPERATE AI BEHAVIOR
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -832,13 +795,13 @@ NDefines.NAI.ARMY_LEADER_ASSIGN_DEFENSE_PLANNING_SKILL_FACTOR = 5    -- vanilla 
  -- ENCIRCLEMENT DISCOVERY
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- Lower value = AI refreshes pocket detection more often = spots and reacts to encirclements faster.
-NDefines.NAI.HOURS_BETWEEN_ENCIRCLEMENT_DISCOVERY = 288   -- vanilla 72 | check for pockets every 7 days instead of 3
+NDefines.NAI.HOURS_BETWEEN_ENCIRCLEMENT_DISCOVERY = 36    -- vanilla 72 (BUG FIX: was 168 = SLOWER than vanilla; now 36 = 2x faster than vanilla = AI spots encirclement risk every 1.5 days)
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- RESERVE/COMMITTED COMBAT BALANCE
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- Higher value = AI holds more units in reserve during combat = less all-in more tactical depth.
-NDefines.NAI.RESERVE_TO_COMMITTED_BALANCE = 0.40    -- vanilla 0.30 | keeps ~40% reserve relative to committed divisions
+--NDefines.NAI.RESERVE_TO_COMMITTED_BALANCE = 0.5    -- vanilla 0.30 | keeps ~50% reserve relative to committed divisions, -- How many units it wants in reserve compared to committed when deciding to do a support attack (1.0 = as many as reserves as committed) 
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- NAVAL DOMINANCE MARGIN
@@ -872,9 +835,11 @@ NDefines.NAI.DIVISION_MATCH_ROLE_BOOST_FACTOR = 1.5    -- vanilla 1.2 | stronger
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- FORT AVOIDANCE
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-NDefines.NAI.ATTACK_HEAVILY_DEFENDED_LIMIT = 1.35
+--NDefines.NAI.ATTACK_HEAVILY_DEFENDED_LIMIT = 1.75
 NDefines.NAI.PLAN_VALUE_FORTIFICATION_LEVEL_MAX_PENALTY = -0.6
-NDefines.NAI.FORT_LEVEL_TO_CONSIDER_HIGHLY_FORTIFIED = 3
+NDefines.NAI.FORT_LEVEL_TO_CONSIDER_HIGHLY_FORTIFIED = 1
+NDefines.NMilitary.PLAN_NEIGHBORING_ENEMY_PROVINCE_FACTOR = 1.2  -- vanilla 0.7 | AI scores provinces with more enemy neighbors higher = naturally targets salient tips and flanks rather than thick frontlines
+NDefines.NMilitary.MICRO_POCKET_SIZE = 6                          -- vanilla 4 | AI auto-attacks pockets up to 6 provinces = faster cleanup of isolated enemy units after breakthrough
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- TRAINING
@@ -893,13 +858,13 @@ NDefines.NAI.MAX_FUEL_CONSUMPTION_RATIO_FOR_AIR_TRAINING = 0.90
  -- AGGRESSION BALANCE
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 NDefines.NAI.PLAN_ACTIVATION_SUPERIORITY_AGGRO = 6.0
-NDefines.NAI.PLAN_VALUE_TO_EXECUTE = -0.45
+NDefines.NAI.PLAN_VALUE_TO_EXECUTE = 0.0
 NDefines.NAI.SCARY_LEVEL_AVERAGE_DEFENSE = -0.6
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  -- WEAK POINT / EXPLOITATION
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-NDefines.NAI.AGGRESSIVENESS_CHECK_PARTLY_FORTIFIED_WEAK_POINTS = 0.50
+NDefines.NAI.AGGRESSIVENESS_CHECK_PARTLY_FORTIFIED_WEAK_POINTS = 1.5
 NDefines.NAI.AGGRESSIVENESS_BONUS_FOR_FRONTS_THAT_ARE_ON_HIGH_AGGRESSIVENESS = -0.55
 
  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---
@@ -1058,30 +1023,21 @@ NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 1.9 -- If the enemy has a navy at
 NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE = 0.09 -- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend.
 NDefines.NAI.RELATIVE_STRENGTH_TO_INVADE_DEFENSIVE = 0.1 -- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend but while being a defensive country.
 
-NDefines.NAI.MAX_INVASION_SIZE = 18 -- max invasion group size
 NDefines.NAI.MAX_UNIT_RATIO_FOR_INVASIONS = 0.3 -- countries won't use armies more than this ratio of total units for invasions
 NDefines.NAI.MIN_UNIT_RATIO_FOR_INVASIONS = 0.1                          -- don't allocate more divisions than this for naval invasions
 NDefines.NAI.MIN_INVASION_PLAN_VALUE_TO_EXECUTE = 0.2 -- AI will only activate invasions if it is above this
 NDefines.NAI.MIN_INVASION_ORG_FACTOR_TO_EXECUTE = 0.75 -- ai will only activate invasions if average org factor is above this
 NDefines.NAI.MIN_INVASION_UNITS_READY_TO_EXECUTE = 0.9               -- ai will only activate invasions if this ratio of assigned units are ready
 
-NDefines.NAI.MAX_DISTANCE_NAVAL_INVASION = 250 -- AI is extremely unwilling to plan naval invasions above this naval distance limit.
 NDefines.NAI.INVASION_COASTAL_PROVS_PER_ORDER = 14 -- AI will consider one extra invasion per number of provinces stated here (num orders = total coast / this)
 
 NDefines.NAI.NAVAL_INVADED_AREA_PRIO_DURATION = 90 -- after successful invasion AI will prio the enemy area for this number of days
 NDefines.NAI.NAVAL_INVADED_AREA_PRIO_MULT = 2.0 -- fronts that belongs to recent invasions gets more prio
 NDefines.NAI.MIN_NUM_CONQUERED_PROVINCES_TO_DEPRIO_NAVAL_INVADED_FRONTS = 30 -- if you conquer this amount of provinces after a naval invasion it will lose its prio status and will act as a regular front
 
-NDefines.NAI.INVASION_TARGET_DISTANCE_DENOMINATOR = 1000             -- When selecting invasion target divide this with (pixel) distance to get distance score factor. (Doesn't really affect the relative scoring but it affects the linearity of the score function.)
-NDefines.NAI.INVASION_TARGET_NO_PORT_FACTOR = 0.2                    -- When selecting invasion target multiply score with this if the target has no port
-NDefines.NAI.INVASION_TARGET_TRUNCATION_SELECT_THRESHOLD = 0.75       -- When selecting invasion target use this threshold for truncation selection. (1.0 means select highest scored target 0.0 means select randomly from all possible target 0.5 means select randomly from all targets with more than 50 % of highest score)
-NDefines.NAI.INVASION_TARGET_PRIO_NOT_ENEMY_FACTOR = 0.17            -- When calculating priority for an invasion factor the score with this if the target is not an actual enemy.
-
 NDefines.NAI.FAILED_INVASION_AVOID_DURATION = 60                    -- after a failed invasion AI will down-prioritize invading the same area again for this number of days
 NDefines.NAI.FAILED_INVASION_AREA_PRIO_FACTOR = 0.5                  -- for every failed invasion on an area factor that area's invasion prio with this value
 NDefines.NAI.FAILED_INVASION_PORT_PRIO_FACTOR = 0.66                 -- for every failed invasion on a target port (province) factor the chance that we try to invade that same port again (relative to other ports)
-
-NDefines.NAI.MIN_INVASION_AREA_SIZE_FOR_FLOATING_HARBORS = 1    -- AI will consider using floating harbors for naval invasion if invasion area is larger than this many provinces
 
  -- ARMY LOGIC
 NDefines.NAI.MAX_UNITS_FACTOR_AREA_ORDER = 1.0 -- Factor for max number of units to assign to area defense orders
@@ -1122,12 +1078,12 @@ NDefines.NAI.AREA_DEFENSE_MINCAP_DESIRED_HOME_AREA = 3                   -- Desi
 NDefines.NAI.AREA_DEFENSE_CAPITAL_PEACE_VP_WEIGHT = { 1.0, 1.0, 1.0 }
 NDefines.NAI.AREA_DEFENSE_CAPITAL_VP_WEIGHT = { 0.5, 1.0, 2.0 }
 NDefines.NAI.AREA_DEFENSE_HOME_VP_WEIGHT = { 0.01, 0.5, 1.0 }
-NDefines.NAI.AREA_DEFENSE_OTHER_VP_WEIGHT = { 0.0, 0.1, 0.5 }
+NDefines.NAI.AREA_DEFENSE_OTHER_VP_WEIGHT = { 0.0, 0.0, 1.0 }
 
 NDefines.NAI.AREA_DEFENSE_CAPITAL_PEACE_COAST_WEIGHT = { 0.0, 0.1, 0.2 }
-NDefines.NAI.AREA_DEFENSE_CAPITAL_COAST_WEIGHT = { 0.0, 0.5, 1.0 }
-NDefines.NAI.AREA_DEFENSE_HOME_COAST_WEIGHT = { 0.0, 0.2, 0.4 }
-NDefines.NAI.AREA_DEFENSE_OTHER_COAST_WEIGHT = { 0.0, 0.1, 0.2 }
+NDefines.NAI.AREA_DEFENSE_CAPITAL_COAST_WEIGHT = { 0.0, 0.25, 0.5 }
+NDefines.NAI.AREA_DEFENSE_HOME_COAST_WEIGHT = { 0.0, 0.1, 0.2 }
+NDefines.NAI.AREA_DEFENSE_OTHER_COAST_WEIGHT = { 0.0, 0.05, 0.1 }
 
 NDefines.NAI.AREA_DEFENSE_CAPITAL_PEACE_BASE_WEIGHT = { 0.2, 1.0, 1.0 }
 NDefines.NAI.AREA_DEFENSE_CAPITAL_BASE_WEIGHT = { 0.2, 1.0, 1.5 }
@@ -1184,3 +1140,19 @@ NDefines.NMilitary.PLAN_PROVINCE_PRIO_DISTRIBUTION_DPP_LOW = 1.5 -- At what divi
 NDefines.NMilitary.PLAN_EXECUTE_SUPPLY_CHECK = { 1.0, 0.0, 0.0, 1.0, 0.0 }  -- for each execution mode how careful should we be with supply (1.0 means full required supply available zero is no limit).
 
 NDefines.NMilitary.PLAN_MAX_PROGRESS_TO_JOIN = 0.35 -- If combat has lower progress than this support attacks are allowed
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-- ENHANCED AI DEFINES
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------
+-- NAVAL INVASIONS
+-------------------------
+NDefines.NAI.MAX_INVASION_SIZE = 64	
+NDefines.NAI.MIN_INVASION_AREA_SIZE_FOR_FLOATING_HARBORS = 1   -- AI will consider using floating harbors for naval invasion if invasion area is larger than this many provinces
+NDefines.NAI.MAX_DISTANCE_NAVAL_INVASION = 100.0				-- AI is extremely unwilling to plan naval invasions above this naval distance limit.
+
+NDefines.NAI.INVASION_TARGET_DISTANCE_DENOMINATOR = 1000	-- Vanilla 1000            -- When selecting invasion target, divide this with (pixel) distance to get distance score factor. (Doesn't really affect the relative scoring, but it affects the linearity of the score function.)
+NDefines.NAI.INVASION_TARGET_NO_PORT_FACTOR = 0.1	-- Vanilla 0.3                   -- When selecting invasion target, multiply score with this if the target has no port
+NDefines.NAI.INVASION_TARGET_TRUNCATION_SELECT_THRESHOLD = 0.9	-- Vanilla 0.6      -- When selecting invasion target, use this threshold for truncation selection. (1.0 means select highest scored target, 0.0 means select randomly from all possible target, 0.5 means select randomly from all targets with more than 50 % of highest score)
+NDefines.NAI.INVASION_TARGET_PRIO_NOT_ENEMY_FACTOR = 0.15	-- Vanilla 0.17           -- When calculating priority for an invasion, factor the score with this if the target is not an actual enemy.

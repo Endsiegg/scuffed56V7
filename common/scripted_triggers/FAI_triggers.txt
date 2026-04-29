@@ -1,0 +1,35 @@
+has_green_air = {
+	NOT = {
+		any_enemy_country = {
+			has_deployed_air_force_size = {
+				size > ROOT.num_deployed_planes_with_type@small_plane_airframe
+				type = fighter
+			}
+		}
+	}
+}
+
+has_red_air = {
+	any_enemy_country = {
+		has_deployed_air_force_size = {
+			size > ROOT.num_deployed_planes_with_type@small_plane_airframe
+			type = fighter
+		}
+	}
+}
+
+has_manpower_and_equipment_surplus = {
+	has_manpower > 200000
+	has_equipment = { infantry_equipment > 10000 }
+	has_equipment = { support_equipment > 500 }
+	has_equipment = { artillery_equipment > 500 }
+}
+
+has_manpower_and_equipment_shortage = {
+	OR = {
+		has_manpower < 100000
+		has_equipment = { infantry_equipment < -20000 }
+		has_equipment = { support_equipment < -1000 }
+		has_equipment = { artillery_equipment < -1000 }
+	}
+}
