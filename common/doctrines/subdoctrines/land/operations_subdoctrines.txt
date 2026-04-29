@@ -92,7 +92,7 @@ last_stand = {
       #  has_defensive_war = yes
     }
     # EFFECTS
-    conscription = 0.05
+    conscription = 0.02
 
     ai_will_do = {
 
@@ -104,18 +104,21 @@ last_stand = {
         werwolf_groups = {
         #1
             resistance_damage_to_garrison_on_our_occupied_states = 0.25
+            category_light_infantry = {
+                defense = 0.1
+                soft_attack = 0.1
+            }
         }
 
         pocket_consolidation = {
         #2
-            category_all_infantry = {
-                defense = 0.1
-            }
+            resistance_damage_to_garrison_on_our_occupied_states = 0.25
         }
         digging_in = {
         #3
+            conscription = 0.01
             out_of_supply_factor = -0.20
-            category_all_infantry = {
+            category_light_infantry = {
                 entrenchment = 0.1
             }
         }
@@ -125,9 +128,7 @@ last_stand = {
         }
         breaking_out = {
         #5
-            category_army = {
-                soft_attack = 0.2
-            }
+            conscription = 0.02
         }
     }
 }
@@ -614,32 +615,19 @@ guerilla_war = {
                 }
             }
         }
-    
     }
 
     # EFFECTS
     enable_tactic = tactic_guerrilla_tactics
-    irregular_infantry = {
+    category_light_infantry = {
         soft_attack = 0.1
-        defense = 0.2
-    }
-    militia = {
-        soft_attack = 0.1
-        defense = 0.2
-    }
-    penal_battalion = {
-         soft_attack = 0.1
-        defense = 0.2       
+        defense = 0.1
     }
     rewards = {
         catch_and_seize = {
         #1
-            category_cavalry = {
-                equipment_capture_factor = 0.01
-                plains = {
-                    movement = 0.1
-                }   
-            }
+           resistance_damage_to_garrison_on_our_occupied_states = 0.2
+           resistance_target_on_our_occupied_states = 0.2
             category_light_infantry = { 
                 equipment_capture_factor = 0.01
                 plains = {
@@ -647,8 +635,6 @@ guerilla_war = {
                 } 
             }
             pocket_penalty = -0.1
-
-
         }
         galvanize_support = {
         #2
@@ -661,47 +647,26 @@ guerilla_war = {
         }
         scorched_earth = {
         #3
-           resistance_damage_to_garrison_on_our_occupied_states = 0.2
-           resistance_target_on_our_occupied_states = 0.2
-           category_army = {
-                defense = 0.1
+           category_light_infantry = {
+                defense = 0.05
             }
         }
-
-        
         urban_assaults = {
         #4
-            militia = {
-                urban = {
-                    attack = 0.10
-                    defence = 0.10
-                }
-            }
-            penal_battalion = {
-                urban = {
-                 attack = 0.10
-                defence = 0.10                   
-                }
-
-            }
             infantry = {
                 urban = {
-                    attack = 0.10
-                    defence = 0.10
+                    attack = 0.05
+                    defence = 0.05
                 }
             }
-
-  
         }
         defense_of_gained_power = {
         #5
             stability_factor = 0.1
             party_popularity_stability_factor = 0.05
-            category_army = {
-                defense = 0.1
-            }
-
-            
+            category_light_infantry = {
+                defense = 0.05
+            }   
         }
     }
 }

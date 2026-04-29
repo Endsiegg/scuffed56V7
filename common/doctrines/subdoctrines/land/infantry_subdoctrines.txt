@@ -34,37 +34,35 @@ mobile_infantry = {
             name = SUBDOCTRINE_MOBILE_INFANTRY
         }
     }
-
+     category_vehicle_infantry = {
+        max_organisation = 10
+        breakthrough = 0.05
+        }
     rewards = {
         cavalry_charge = {
-            mechanized = {
-                breakthrough = 0.20
-            }
-            motorized = {
-                breakthrough = 0.20
+            category_vehicle_infantry = {
+                max_organisation = 10
+                breakthrough = 0.05
             }
         }
         combined_arms_planning = {
-            category_all_infantry = {
-                max_organisation = 10
-                maximum_speed = 0.05
+            category_vehicle_infantry = {
+                breakthrough = 0.05
             }
         }
         decisive_operations = {
             category_vehicle_infantry = {
-                max_organisation = 20
+                maximum_speed = 0.05
             }
         }
         delegated_authority = {
             category_vehicle_infantry = {
-                default_morale = 0.1
-                soft_attack = 0.1
+                breakthrough = 0.05
             }
         }
         maneuver_warfare = {
-            category_all_infantry = {
-                max_organisation = 10
-                maximum_speed = 0.2
+            category_vehicle_infantry = {
+                maximum_speed = 0.05
             }
         }
 
@@ -106,18 +104,21 @@ defensive_postures = {
     }
 
     #OTHER BASE REWARDS
-    category_all_infantry = {
+    category_light_infantry = {
         entrenchment = 0.1
     }
+    dig_in_speed_factor = 0.1
 
     rewards = {
         improvised_fighting_position = {
-            dig_in_speed_factor = 0.1
+            category_light_infantry = {
+                defense = 0.1
+            }
         }
         elastic_operations = {
-            category_all_infantry = {
-                max_organisation = 10
-                defense = 0.10
+            category_light_infantry = {
+                max_organisation = 20
+                defense = 0.1
             }
         }
         developed_trench_networking = {
@@ -126,7 +127,7 @@ defensive_postures = {
             }
         }
         field_emplacements = {
-            category_all_infantry = {
+            category_light_infantry = {
                 soft_attack = 0.1
             }
         }
@@ -601,7 +602,7 @@ irregulars = {
         
     }
     visible = {
-        has_dlc = "No Compromise, No Surrender"
+        is_ai = yes
     }
 
 
@@ -682,7 +683,8 @@ peoples_war = {
     xp_type = army
 
     visible = {
-        has_dlc = "No Compromise, No Surrender"
+        has_dlc = "La Resistance"
+        is_ai = yes
     }
     ai_will_do = {
 
