@@ -1,0 +1,212 @@
+generic_heavy_fighter = {
+	category = air
+
+	roles = {
+		air_heavy_fighter
+	}
+
+	priority = {
+		base = 0
+		modifier = {
+			add = 100
+			is_eligible_for_heavy_aircraft_production = yes
+		}
+	}
+
+	early_heavy_fighter_1933 = {
+		priority = {
+			factor = 1
+			modifier = {
+				has_tech = basic_medium_airframe
+				factor = 0 #let's not waste XP here
+			}
+		}
+
+		target_variant = {
+			match_value = 1000
+			type = medium_plane_fighter_airframe_0
+			modules = {
+				fixed_main_weapon_slot = light_mg_4x
+				fixed_auxiliary_weapon_slot_1 = light_mg_4x
+				fixed_auxiliary_weapon_slot_2 = light_mg_4x
+				fixed_auxiliary_weapon_slot_3 = empty
+				engine_type_slot = engine_1_2x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+			}
+		}
+	}
+
+	basic_heavy_fighter_1936 = {
+		priority = {
+			factor = 100
+			modifier = {
+				has_tech = improved_medium_airframe
+				factor = 0 #let's not waste XP here
+			}
+		}
+
+		target_variant = {
+			match_value = 1000
+			type = medium_plane_fighter_airframe_1
+			modules = {
+				fixed_main_weapon_slot = {
+					any_of = {
+						heavy_mg_4x
+						light_mg_4x
+					}
+				}
+				fixed_auxiliary_weapon_slot_1 = {
+					any_of = {
+						heavy_mg_4x
+						light_mg_4x
+					}
+				}
+				fixed_auxiliary_weapon_slot_2 = light_mg_4x
+				fixed_auxiliary_weapon_slot_3 = light_mg_4x
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = self_sealing_fuel_tanks_medium
+				special_type_slot_2 = lmg_defense_turret_2x	
+			}	
+		}
+	}
+
+	improved_heavy_fighter_1940 = {
+		priority = {
+			factor = 100
+			modifier = {
+				has_tech = advanced_medium_airframe
+				factor = 0 #let's not waste XP here
+			}
+		}
+
+		target_variant = {
+			match_value = 1500
+			type = medium_plane_fighter_airframe_2
+			modules = {
+				fixed_main_weapon_slot = {
+					any_of = {
+						heavy_mg_4x
+						light_mg_4x
+					}
+				}
+				fixed_auxiliary_weapon_slot_1 = {
+					any_of = {
+						heavy_mg_4x
+						light_mg_4x
+					}
+				}
+				fixed_auxiliary_weapon_slot_2 = {
+					any_of = {
+						heavy_mg_4x
+						light_mg_4x
+					}
+				}
+				fixed_auxiliary_weapon_slot_3 = {
+					any_of = {
+						heavy_mg_4x
+						light_mg_4x
+					}
+				}
+				engine_type_slot = engine_3_2x
+				special_type_slot_1 = self_sealing_fuel_tanks_medium
+				special_type_slot_2 = {
+					any_of = {
+						hmg_defense_turret_2x
+						lmg_defense_turret_2x
+					}
+				}
+				special_type_slot_3 = empty
+			}
+		}
+	}
+
+	advanced_heavy_fighter_1944 = {
+		priority = {
+			factor = 100
+			modifier = {
+				has_tech = modern_medium_airframe
+				factor = 0 #let's not waste XP here
+			}
+		}
+
+		target_variant = {
+			match_value = 2000
+			type = medium_plane_fighter_airframe_3
+			modules = {
+				fixed_main_weapon_slot = aircraft_cannon_1_2x
+				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
+				fixed_auxiliary_weapon_slot_2 = aircraft_cannon_1_2x
+				fixed_auxiliary_weapon_slot_3 = aircraft_cannon_1_2x
+				fixed_auxiliary_weapon_slot_4 = empty
+				engine_type_slot = engine_4_2x
+				special_type_slot_1 = self_sealing_fuel_tanks_medium
+				special_type_slot_2 = hmg_defense_turret_2x
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				special_type_slot_5 = empty
+			}
+		}
+	}
+
+	modern_heavy_fighter_1945 = {
+		priority = {
+			factor = 100
+		}
+
+		target_variant = {
+			match_value = 2000
+			type = medium_plane_fighter_airframe_4
+			modules = {
+				fixed_main_weapon_slot = {
+					any_of = {
+						aircraft_cannon_2_2x
+						aircraft_cannon_1_2x
+					}
+				}
+				fixed_auxiliary_weapon_slot_1 = {
+					any_of = {
+						aircraft_cannon_2_2x
+						aircraft_cannon_1_2x
+					}
+				}
+				fixed_auxiliary_weapon_slot_2 = {
+					any_of = {
+						aircraft_cannon_2_2x
+						aircraft_cannon_1_2x
+					}
+				}
+				fixed_auxiliary_weapon_slot_3 = {
+					any_of = {
+						aircraft_cannon_2_2x
+						aircraft_cannon_1_2x
+					}
+				}
+				fixed_auxiliary_weapon_slot_4 = {
+					any_of = {
+						aircraft_cannon_2_2x
+						aircraft_cannon_1_2x
+					}
+				}
+				engine_type_slot = {
+					any_of = {
+						jet_engine_axial_3x
+						jet_engine_3x
+					}
+				}
+				special_type_slot_1 = self_sealing_fuel_tanks_medium
+				special_type_slot_2 = {
+					any_of = {
+						cannon_defense_turret
+						hmg_defense_turret_2x
+					}
+				}
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				special_type_slot_5 = empty
+			}
+		}
+	}
+}

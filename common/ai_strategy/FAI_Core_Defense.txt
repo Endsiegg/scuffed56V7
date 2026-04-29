@@ -28,6 +28,10 @@ protect_homeland_1 = {
 		}
 		value = -10
 	}
+	ai_strategy = {
+		type = dont_defend_ally_borders #bypass value 1 on force defend
+		value = 50
+	}
 }
 
 protect_homeland_2 = {
@@ -59,6 +63,10 @@ protect_homeland_2 = {
 			NOT = { is_core_of = FROM.FROM }
 		}
 		value = -100
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders #bypass value 100 on force defend
+		value = 200
 	}
 }
 
@@ -100,6 +108,10 @@ protect_homeland_3 = {
 		type = garrison
 		value = -100
 	}
+	ai_strategy = {
+		type = dont_defend_ally_borders #bypass value 1000 on force defend
+		value = 2000
+	}
 }
 
 protect_homeland_4 = {
@@ -131,5 +143,9 @@ protect_homeland_4 = {
 			NOT = { is_core_of = FROM.FROM }
 		}
 		value = -500
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders #bypass value 9999 on force defend
+		value = 9999
 	}
 }

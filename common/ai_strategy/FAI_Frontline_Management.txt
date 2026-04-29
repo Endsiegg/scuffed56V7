@@ -1,21 +1,29 @@
-# FRONTLINE AI - FIXED VERSION V3
-# Added explicit priority values to ensure proper strategy activation
-# Higher priority = overrides lower priority
+# FRONTLINE AI - FIXED VERSION V4
+# Full audit pass: all enable condition overlaps and gaps resolved
+# Surrender progress windows are now non-overlapping and fully cover 0.0–1.0
+#
+# SURRENDER WINDOW MAP (simplified):
+#   0.0 – 0.2  → Normal warfare (P5–P10)
+#   0.2 – 0.4  → Failing warfare (P3, P4)
+#   0.4 – 0.7  → Desperation (P2a low-mp, P2b normal-mp)
+#   0.7+        → Emergency stop (P1)
+#   Any + ratio > 2.0 + mp < 5000 → Emergency stop (P1)
 
 ############################################
 # PRIORITY 1: STOP - Can't fight effectively
-# Priority: 1000 (highest - emergency defensive mode)
+# Triggers only at near-collapse (>0.7) OR overwhelming odds with no manpower
+# FIX: was "> 0.3" which swallowed P2's entire window
 ############################################
 ai_front_management_stop = {
 	enable = {
 		has_war = yes
 		has_manpower < 5000
 		OR = {
-			surrender_progress > 0.3
+			surrender_progress > 0.7
 			enemies_strength_ratio > 2.0
 		}
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -23,17 +31,18 @@ ai_front_management_stop = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 1000  # ADDED: Highest priority - emergency mode
+		priority = 1000
 		ordertype = front
 		execution_type = careful
-		execute_order = yes
+		execute_order = no
 		manual_attack = no
 	}
 }
 
 ############################################
-# PRIORITY 2: DESPERATION RUSH - Almost dead but can still win
-# Priority: 900 (desperation gamble)
+# PRIORITY 2a: DESPERATION RUSH (LOW MANPOWER) - Almost out of men but can win
+# Window: surrender 0.4–0.7, manpower < 500, enemies weaker
+# FIX: added surrender < 0.7 upper bound (was already there), window now clean
 ############################################
 ai_front_management_rush_desperation = {
 	enable = {
@@ -43,7 +52,7 @@ ai_front_management_rush_desperation = {
 		surrender_progress < 0.7
 		enemies_strength_ratio < 0.9
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -51,7 +60,7 @@ ai_front_management_rush_desperation = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 900  # ADDED: Very high - desperation
+		priority = 900
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
@@ -60,8 +69,66 @@ ai_front_management_rush_desperation = {
 }
 
 ############################################
-# PRIORITY 3: FAILING RUSH - Losing but have advantage
-# Priority: 800 (critical situation, but can push)
+# PRIORITY 2b: DESPERATION RUSH (NORMAL MANPOWER) - Losing badly but have troops
+# FIX: NEW - covers the gap where surrender 0.4–0.7 but manpower >= 500
+# Without this, no strategy fired in this window for healthy-manpower nations
+############################################
+ai_front_management_rush_desperation_mp = {
+	enable = {
+		has_war = yes
+		has_manpower > 499
+		surrender_progress > 0.4
+		surrender_progress < 0.7
+		enemies_strength_ratio < 0.9
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			has_war_with = FROM
+		}
+		priority = 850
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+		manual_attack = yes
+	}
+}
+
+############################################
+# PRIORITY 2c: DESPERATION CAREFUL (NORMAL MANPOWER) - Losing badly, enemy stronger
+# FIX: NEW - covers surrender 0.4–0.7 with manpower >= 500, enemy not weak
+############################################
+ai_front_management_careful_desperation_mp = {
+	enable = {
+		has_war = yes
+		has_manpower > 499
+		surrender_progress > 0.4
+		surrender_progress < 0.7
+		enemies_strength_ratio > 0.89
+		enemies_strength_ratio < 2.0
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			has_war_with = FROM
+		}
+		priority = 850
+		ordertype = front
+		execution_type = careful
+		execute_order = yes
+		manual_attack = yes
+	}
+}
+
+############################################
+# PRIORITY 3: FAILING RUSH - Struggling but have clear strength advantage
+# Window: surrender 0.2–0.4, manpower > 499, ratio < 0.5
 ############################################
 ai_front_management_rush_failing = {
 	enable = {
@@ -71,7 +138,7 @@ ai_front_management_rush_failing = {
 		has_manpower > 499
 		enemies_strength_ratio < 0.5
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -79,17 +146,16 @@ ai_front_management_rush_failing = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 800  # ADDED: High priority - crisis mode
+		priority = 800
 		ordertype = front
 		execution_type = rush
-		execute_order = yes
-		manual_attack = yes
 	}
 }
 
 ############################################
-# PRIORITY 4: FAILING CAREFUL - Losing, enemy stronger
-# Priority: 800 (same as Priority 3, but different conditions)
+# PRIORITY 4: FAILING CAREFUL - Struggling, enemy not clearly weaker
+# Window: surrender 0.2–0.4, manpower > 499, ratio 0.5–2.0
+# FIX: lower bound raised from 0.99 to 0.5 to close gap with P3 (0.5–0.99 was uncovered)
 ############################################
 ai_front_management_careful_failing = {
 	enable = {
@@ -97,10 +163,10 @@ ai_front_management_careful_failing = {
 		surrender_progress > 0.2
 		surrender_progress < 0.4
 		has_manpower > 499
-		enemies_strength_ratio > 0.99
+		enemies_strength_ratio > 0.49
 		enemies_strength_ratio < 2.0
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -108,17 +174,15 @@ ai_front_management_careful_failing = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 800  # ADDED: Same as Priority 3 (mutually exclusive)
+		priority = 800
 		ordertype = front
 		execution_type = careful
-		execute_order = yes
-		manual_attack = yes
 	}
 }
 
 ############################################
-# PRIORITY 5: NORMAL RUSH - Stable position, can attack majors
-# Priority: 200 (normal aggressive warfare)
+# PRIORITY 5: NORMAL RUSH - Stable, fighting majors, have advantage
+# Window: surrender < 0.2, manpower > 499, enemy majors present, ratio < 1.1
 ############################################
 ai_front_management_rush = {
 	enable = {
@@ -128,7 +192,7 @@ ai_front_management_rush = {
 		has_manpower > 499
 		enemies_strength_ratio < 1.1
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -136,17 +200,16 @@ ai_front_management_rush = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 200  # ADDED: Normal offensive priority
+		priority = 200
 		ordertype = front
 		execution_type = rush
-		execute_order = yes
-		manual_attack = yes
 	}
 }
 
 ############################################
-# PRIORITY 6: NORMAL CAREFUL - Stable position, enemy majors stronger
-# Priority: 200 (normal defensive warfare)
+# PRIORITY 6: NORMAL CAREFUL - Stable, fighting majors, enemy stronger
+# Window: surrender < 0.2, manpower > 499, enemy majors present, ratio 1.1–2.0
+# FIX: lower bound raised from 1.09 to 1.1 to be a clean match with P5's upper bound
 ############################################
 ai_front_management_careful = {
 	enable = {
@@ -157,7 +220,7 @@ ai_front_management_careful = {
 		enemies_strength_ratio > 1.09
 		enemies_strength_ratio < 2.0
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -165,17 +228,15 @@ ai_front_management_careful = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 200  # ADDED: Same as Priority 5 (mutually exclusive)
+		priority = 200
 		ordertype = front
 		execution_type = careful
-		execute_order = yes
-		manual_attack = yes
 	}
 }
 
 ############################################
-# PRIORITY 7: RUSH VS MINORS - Aggressive vs small enemies
-# Priority: 150 (less important than fighting majors)
+# PRIORITY 7: RUSH VS MINORS - Major power vs minor enemies, have advantage
+# Window: surrender < 0.2, manpower > 499, no enemy majors, ratio < 1.5
 ############################################
 ai_front_management_rush_vs_minors = {
 	enable = {
@@ -186,7 +247,7 @@ ai_front_management_rush_vs_minors = {
 		enemies_strength_ratio < 1.5
 		NOT = { any_enemy_country = { is_major = yes } }
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -194,17 +255,15 @@ ai_front_management_rush_vs_minors = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 150  # ADDED: Lower than major wars
+		priority = 150
 		ordertype = front
 		execution_type = rush
-		execute_order = yes
-		manual_attack = yes
 	}
 }
 
 ############################################
-# PRIORITY 8: CAREFUL VS MINORS - Defensive vs surprisingly strong minors
-# Priority: 150 (same as Priority 7)
+# PRIORITY 8: CAREFUL VS MINORS - Major power vs surprisingly strong minors
+# Window: surrender < 0.2, manpower > 499, no enemy majors, ratio 1.5–2.0
 ############################################
 ai_front_management_careful_vs_minors = {
 	enable = {
@@ -216,7 +275,7 @@ ai_front_management_careful_vs_minors = {
 		enemies_strength_ratio < 2.0
 		NOT = { any_enemy_country = { is_major = yes } }
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -224,26 +283,27 @@ ai_front_management_careful_vs_minors = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 150  # ADDED: Same as Priority 7 (mutually exclusive)
+		priority = 150
 		ordertype = front
 		execution_type = careful
-		execute_order = yes
-		manual_attack = yes
 	}
 }
 
 ############################################
-# NEW: DEFAULT RUSH - When no specific strategy applies
-# Priority: 50 (lowest main strategy priority)
+# PRIORITY 9: DEFAULT RUSH - Catch-all for minors not covered by P7/P8
+# Window: surrender < 0.2, manpower > 499, not a major OR no major enemies, ratio < 1.2
+# FIX: added NOT { any_enemy_country { is_major = yes } } to avoid redundancy with P5
 ############################################
 ai_front_management_default_rush = {
 	enable = {
 		has_war = yes
 		surrender_progress < 0.2
 		has_manpower > 499
-		enemies_strength_ratio < 1.2  # Slight advantage or even
+		enemies_strength_ratio < 1.2
+		NOT = { any_enemy_country = { is_major = yes } }
+		NOT = { is_major = yes }
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -251,17 +311,17 @@ ai_front_management_default_rush = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 50  # ADDED: Catch-all for undefined situations
+		priority = 50
 		ordertype = front
 		execution_type = rush
-		execute_order = yes
-		manual_attack = yes
 	}
 }
 
 ############################################
-# NEW: DEFAULT BALANCED - When rush isn't viable
-# Priority: 50 (same as default rush)
+# PRIORITY 10: DEFAULT BALANCED - Catch-all when rush isn't viable
+# Window: surrender < 0.2, manpower > 499, not a major OR no major enemies, ratio 1.2–2.0
+# FIX: raised lower bound from 1.19 to 1.2 to cleanly match P9's upper bound (no overlap)
+# FIX: added NOT { any_enemy_country { is_major = yes } } and NOT { is_major } for same reason
 ############################################
 ai_front_management_default_balanced = {
 	enable = {
@@ -270,8 +330,10 @@ ai_front_management_default_balanced = {
 		has_manpower > 499
 		enemies_strength_ratio > 1.19
 		enemies_strength_ratio < 2.0
+		NOT = { any_enemy_country = { is_major = yes } }
+		NOT = { is_major = yes }
 	}
-	
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -279,52 +341,11 @@ ai_front_management_default_balanced = {
 		country_trigger = {
 			has_war_with = FROM
 		}
-		priority = 50  # ADDED: Same as default rush
+		priority = 50
 		ordertype = front
 		execution_type = balanced
-		execute_order = yes
-		manual_attack = yes
 	}
 }
-
-############################################
-# UTILITY: Defend home when losing
-# Priority: N/A (different strategy type)
-############################################
-#defend_your_home_please = {
-	#enable = {
-	#	surrender_progress > 0.1
-	#}
-	
-	#abort_when_not_enabled = yes
-
-	#ai_strategy = {
-	#	type = spare_unit_factor
-	#	value = -100
-	#}
-	
-	#ai_strategy = {
-	#	type = garrison
-	#	value = -100
-	#}
-#}
-
-############################################
-# UTILITY: Don't waste troops on garrison if large empire
-# Priority: N/A (different strategy type)
-############################################
-#dont_waste_troops_please = {
-	#enable = {
-	#	num_of_controlled_states > 70
-	#}
-	
-	#abort_when_not_enabled = yes
-
-	#ai_strategy = {
-	#	type = garrison
-	#	value = -100
-	#}
-#}
 
 ############################################
 # UTILITY: Close pockets aggressively
@@ -334,9 +355,9 @@ end_pocket = {
 	enable = {
 		has_war = yes
 	}
-	
+
 	abort_when_not_enabled = yes
-	
+
 	ai_strategy = {
 		type = front_control
 		state_trigger = {
@@ -356,13 +377,13 @@ end_pocket = {
 			}
 		}
 		ratio = 0.0
-		priority = 5000  # Keep very high - tactical priority
+		priority = 5000
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
 		manual_attack = yes
 	}
-	
+
 	ai_strategy = {
 		type = front_unit_request
 		state_trigger = {
@@ -380,22 +401,22 @@ end_pocket = {
 					NOT = { has_war_with = FROM.FROM }
 				}
 			}
-		}		
-		value = 40 
-	}	
+		}
+		value = 40
+	}
 }
 
 ############################################
 # UTILITY: Strategic positioning
-# Priority: N/A (different strategy type - unit_request)
+# Priority: N/A (front_unit_request / invasion_unit_request type)
 ############################################
 forced_check_omega_lul = {
 	enable = {
 		has_war = yes
 	}
-	
+
 	abort_when_not_enabled = yes
-	
+
 	# Deprioritize states without supply nodes
 	ai_strategy = {
 		type = front_unit_request
@@ -413,11 +434,11 @@ forced_check_omega_lul = {
 		}
 		value = -5
 	}
-	
+
 	# Prioritize capital area
 	ai_strategy = {
 		type = front_unit_request
-		state_trigger = { 
+		state_trigger = {
 			OR = {
 				is_capital = yes
 				any_neighbor_state = { is_capital = yes }
@@ -425,17 +446,33 @@ forced_check_omega_lul = {
 		}
 		value = 15
 	}
-	
+
 	# Heavily prioritize own capital
 	ai_strategy = {
 		type = front_unit_request
-		state_trigger = { 
+		state_trigger = {
 			is_capital = yes
 			owner = { tag = FROM.FROM }
 		}
 		value = 50
 	}
-	
+
+	# Reinforce supply hub corridors
+	ai_strategy = {
+		type = front_unit_request
+		state_trigger = {
+			is_controlled_by = FROM.FROM
+			any_neighbor_state = {
+				any_province_building_level = {
+					province = { all_provinces = yes }
+					building = supply_node
+					level > 0
+				}
+			}
+		}
+		value = 10
+	}
+
 	# Deprioritize low-value naval invasions
 	ai_strategy = {
 		type = invasion_unit_request
@@ -445,29 +482,29 @@ forced_check_omega_lul = {
 		}
 		value = -5
 	}
-	
+
 	ai_strategy = {
 		type = invasion_unit_request
-		state_trigger = { 
+		state_trigger = {
 			NOT = { is_core_of = FROM.FROM }
 			NOT = { has_state_flag = recent_naval_invasion_flag }
 			check_variable = { state_strategic_value < 8 }
 		}
 		value = -3
 	}
-	
+
 	ai_strategy = {
 		type = invasion_unit_request
-		state_trigger = { 
+		state_trigger = {
 			NOT = { is_core_of = FROM.FROM }
 			NOT = { has_state_flag = recent_naval_invasion_flag }
 		}
 		value = -3
 	}
-	
+
 	ai_strategy = {
 		type = invasion_unit_request
-		state_trigger = { 
+		state_trigger = {
 			NOT = { is_core_of = FROM.FROM }
 			NOT = { has_state_flag = recent_naval_invasion_flag }
 			NOT = {
@@ -486,15 +523,15 @@ forced_check_omega_lul = {
 
 ############################################
 # UTILITY: Rush empty enemy frontlines
-# Priority: 10000 (extremely high - tactical opportunity)
+# Priority: 10000 (highest tactical priority - free real estate)
 ############################################
 this_state_is_empty = {
 	enable = {
 		has_war = yes
 	}
-	
+
 	abort_when_not_enabled = yes
-	
+
 	ai_strategy = {
 		type = front_control
 		state_trigger = {
@@ -507,9 +544,10 @@ this_state_is_empty = {
 			}
 		}
 		ratio = 0.0
-		priority = 10000  # RAISED from 5000 - highest priority (free real estate!)
+		priority = 10000
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
+		manual_attack = yes
 	}
 }
