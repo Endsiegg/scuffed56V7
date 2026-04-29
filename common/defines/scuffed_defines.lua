@@ -17,6 +17,7 @@ NDefines.NDiplomacy.OPINION_PER_VOLUNTEER = 15
 NDefines.NDiplomacy.MAX_OPINION_FROM_VOLUNTEERS = 100
 ----------------------------------
 NDefines.NFactions.PASSIVE_INITIATIVE_GENERATION = 0.03
+NDefines.NFactions.FACTION_INITIATIVE_CHANGE_RULE_COST = 0
 ----------------------------------
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 80						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
@@ -29,6 +30,7 @@ NDefines.NCountry.CONVOY_CONTROLLED_ROUTE_COST_REDUCTION_FACTOR = 0.5
 NDefines.NCountry.NAVY_USE_HOME_BASE_FOR_RANGE = false
 NDefines.NCountry.CONVOY_RANGE_FACTOR = 0.5
 NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.2
+NDefines.NCountry.AIR_SUPPLY_CONVERSION_SCALE = 0.05  --BASE GAME IS 0.01
 ----------------------------------
 NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0					-- XP cost for adding a new equipment module in an empty slot when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0				-- XP cost for replacing one equipment module with an unrelated module when creating an equipment variant.
@@ -66,10 +68,10 @@ NDefines.NOperatives.OPERATIVE_MISSION_DETECTION_CHANCE_FACTOR = {
     0.95, -- QuietIntelNetwork
     1.0, -- CounterIntelligence
     0.0, -- RootOutResistance
-    2.0, -- BoostIdeology
+    3.0, -- BoostIdeology
     0.1, -- ControlTrade
     0.1, -- DiplomaticPressure
-    2.0, -- Propaganda
+    3.0, -- Propaganda
 }
 NDefines.NOperatives.BOOST_IDEOLOGY_NATIONAL_COVERAGE_FACTOR = 1.0				-- used to compute the drift factor as follow: BASE * SUB_NETWORK_NC * BOOST_IDEOLOGY_DEFENSE_FACTOR
 NDefines.NOperatives.BOOST_IDEOLOGY_MAX_DRIFT_BY_OPERATIVE = 0.3				-- the maximum drift an operative can cause a negative value means no maximum
@@ -115,7 +117,7 @@ NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.15
 NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.1
 NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.05
 NDefines.NMilitary.PLANNING_DECAY = 0.04
-NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 5 -- how many CAS/TAC can enter a combat depending on enemy width there
+NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2 -- how many CAS/TAC can enter a combat depending on enemy width there
 ----------------------------------
 --NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
 --NDefines.NAir.AIR_DEPLOYMENT_DAYS = 2
@@ -155,7 +157,7 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 0.0, -- NAVAL_KAMIKAZE
 0.0, -- PORT_STRIKE
 0.0, -- ATTACK_LOGISTICS
-0.025, -- AIR_SUPPLY --Was 0.05
+0.05, -- AIR_SUPPLY --Was 0.05
 0.0, -- TRAINING
 0.0, -- NAVAL_MINES_PLANTING
 0.0, -- NAVAL_MINES_SWEEPING
@@ -169,10 +171,12 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 NDefines.NNavy.PRIDE_OF_THE_FLEET_UNASSIGN_COST = 0							-- cost to unassign/replace pride of the fleet
 NDefines.NNavy.PRIDE_OF_THE_FLEET_LOST_TEMP_MODIFIER_DURATION = 180	
 NDefines.NNavy.TRAINING_DAILY_COUNTRY_EXP_FACTOR = 0.002
-NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 0.3
+NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 0.5
 NDefines.NNavy.NAVAL_MINES_DECAY_AT_PEACE_TIME = 0.85
 NDefines.NNavy.DOMINANCE_DAILY_GAIN_FACTOR = 0.05
 NDefines.NNavy.DOMINANCE_DAILY_LOSS_FACTOR = 0.004
+NDefines.NNavy.COMBAT_BASE_HIT_CHANCE = 0.05 --BASE IS 0.1 = 10% lower base to 5%
+NDefines.NNavy.COMBAT_MIN_HIT_CHANCE = 0.01 -- BASE IS 0.02 meaning MIN CHANCE FOR TOPRS is 2% LOWER TO 1%
 ----------------------------------
 NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 35
 ----------------------------------
