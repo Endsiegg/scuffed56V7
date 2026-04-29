@@ -841,7 +841,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = SOV_third_five_year_plan
-		cost = 10
+		cost = 5
 
 		mutually_exclusive = { focus = SOV_reorganize_the_pc_of_heavy_industry}
 
@@ -886,10 +886,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -910,7 +910,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = SOV_shift_to_armaments_production
-		cost = 10
+		cost = 5
 
 		available = {
 		#	SOV_third_five_year_plan_available = yes
@@ -924,9 +924,9 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_to_variable = { SOV_fyp_production_factory_efficiency_gain_factor = 0.05 } #Add efficiency gain
-			add_to_variable = { SOV_fyp_production_factory_start_efficiency_factor = 0.05 } #Add efficiency start
-			add_to_variable = { SOV_fyp_industrial_capacity_factory = 0.02 } #Add small output bonus
+			add_to_variable = { SOV_fyp_production_factory_efficiency_gain_factor = 0.10 } #Add efficiency gain
+			add_to_variable = { SOV_fyp_production_factory_start_efficiency_factor = 0.10 } #Add efficiency start
+			add_to_variable = { SOV_fyp_industrial_capacity_factory = 0.10 } #Add small output bonus
 			custom_effect_tooltip = SOV_optimize_production_lines_ns_tt
 
 			add_tech_bonus = {
@@ -945,7 +945,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_optimize_production_lines
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1000
 		}
@@ -1604,9 +1604,9 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = SOV_finish_the_five_year_plan
-		cost = 5
+		cost = 2
 
-		mutually_exclusive = { focus = SOV_foreign_experts }
+		#mutually_exclusive = { focus = SOV_foreign_experts }
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
@@ -1630,7 +1630,7 @@ focus_tree = {
 		relative_position_id = SOV_national_specialists
 		cost = 5
 
-		mutually_exclusive = { focus = SOV_national_specialists }
+		#mutually_exclusive = { focus = SOV_national_specialists }
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -1748,7 +1748,7 @@ focus_tree = {
 				}
 				add_to_temp_variable = { SOV_states_targeted_eastern_development = 1 }
 			}
-			else_if = { #Irkutsk replaces Vladivostok if necessary
+			if = { #Irkutsk replaces Vladivostok if necessary
 				limit = {
 					check_variable = { SOV_states_targeted_eastern_development = 2 compare = less_than_or_equals }
 					566 = { #IRKUTSK
@@ -1803,7 +1803,7 @@ focus_tree = {
 				}
 				add_to_temp_variable = { SOV_states_targeted_eastern_development = 1 }
 			}
-			else_if = { #Ulan Ude replaces Khabarovsk if necessary
+			if = { #Ulan Ude replaces Khabarovsk if necessary
 				limit = {
 					check_variable = { SOV_states_targeted_eastern_development = 2 compare = less_than_or_equals }
 					564 = { #ULAN UDE
@@ -1941,7 +1941,7 @@ focus_tree = {
 				}
 				add_to_temp_variable = { SOV_states_targeted_eastern_development = 1 }
 			}
-			else_if = { #Magnitogorsk replaces Chelyabinsk if necessary
+			if = { #Magnitogorsk replaces Chelyabinsk if necessary
 				limit = {
 					check_variable = { SOV_states_targeted_eastern_development = 2 compare = less_than_or_equals }
 					582 = { #MAGNITOGORSK
@@ -2006,7 +2006,7 @@ focus_tree = {
 				}
 				add_to_temp_variable = { SOV_states_targeted_eastern_development = 1 }
 			}
-			else_if = { #Sverdlovsk replaces Zlatoust if necessary
+			if = { #Sverdlovsk replaces Zlatoust if necessary
 				limit = {
 					check_variable = { SOV_states_targeted_eastern_development = 2 compare = less_than_or_equals }
 					653 = { #SVERDLOVSK
@@ -2451,7 +2451,7 @@ focus_tree = {
 		x = 10
 		y = 0
 		relative_position_id = SOV_infrastructure_effort_nsb
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -2625,7 +2625,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = SOV_modernize_aircraft_facilities
-		cost = 5
+		cost = 2
 
 		available = {
 			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
@@ -2691,9 +2691,9 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SOV_expand_the_aircraft_industry
-		cost = 10
+		cost = 5
 
-		mutually_exclusive = { focus = SOV_intensify_pilot_training_program }
+		#mutually_exclusive = { focus = SOV_intensify_pilot_training_program }
 
 		available = {
 			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
@@ -2743,7 +2743,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_transpolar_flights
-		cost = 5
+		cost = 3
 		
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
@@ -2766,7 +2766,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_foster_flying_clubs
-		cost = 5
+		cost = 3
 
 		available = {
 			OR = {
@@ -2799,7 +2799,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_women_in_aviation
-		cost = 5
+		cost = 3
 
 		available = {
 			any_enemy_country = {
@@ -2886,9 +2886,9 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SOV_foster_flying_clubs
-		cost = 5
+		cost = 3
 
-		mutually_exclusive = { focus = SOV_increase_aircraft_production }
+		#mutually_exclusive = { focus = SOV_increase_aircraft_production }
 
 		available = {
 			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
@@ -2917,7 +2917,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_expand_the_aircraft_industry
-		cost = 5
+		cost = 3
 		
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
@@ -3031,7 +3031,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_ground_support
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
@@ -7050,7 +7050,7 @@ focus_tree = {
 				surrender_progress > 0.3
 				has_government = communism
 			}
-			has_defensive_war = yes
+			#has_defensive_war = yes
 			any_other_country = {
 				is_major = yes
 				has_war_with = ROOT
@@ -16432,9 +16432,9 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				NOT = { has_country_flag = SOV_paranoia_system_active_flag }  #TODO_Manu: Change for the inverse, "Political Paranoia has subsided"
-			}
+			# OR = {
+			# 	NOT = { has_country_flag = SOV_paranoia_system_active_flag }  #TODO_Manu: Change for the inverse, "Political Paranoia has subsided"
+			# }
 			is_subject = no
 		}
 
@@ -16573,7 +16573,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SOV_respect_baltic_self_determination }
 
 		available = {
-			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
+	#		NOT = { has_country_flag = SOV_paranoia_system_active_flag }
 			is_subject = no
 		}
 
