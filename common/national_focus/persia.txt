@@ -13123,7 +13123,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = PER_soviet_iranian_oil_collaboration
-		cost = 10
+		cost = 5
 		
 		available = {
 
@@ -14028,7 +14028,6 @@ focus_tree = {
 	focus = { #Fascism
 		id = PER_proclaim_greater_iran
 		icon = GFX_focus_PER_proclaim_greater_iran
-		prerequisite = { focus = PER_intervene_in_central_asia }
 		prerequisite = { focus = PER_crush_saudi_arabia }
 		prerequisite = { focus = PER_fascist_attack_afghanistan }
 		x = 0
@@ -14399,16 +14398,6 @@ focus_tree = {
 		cost = 5
 		
 		available = {
-			has_government = fascism
-			any_controlled_state = {
-				NOT = { 
-					OR = {
-						is_core_of = ROOT 
-						is_owned_by = ROOT
-					}
-				}
-			}
-			has_equipment = { train_equipment > 9 }
 		}
 
 		bypass = {
