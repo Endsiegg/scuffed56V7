@@ -12,6 +12,7 @@ armored_spearhead = {
     }
     visible = {
         has_dlc = "La Resistance"
+        is_ai = yes
     }
 
     ai_will_do = {
@@ -28,7 +29,7 @@ armored_spearhead = {
     }
 
     # EFFECTS
-    enable_tactic = tactic_blitz
+    enable_tactic = tactic_breakthrough
 
     rewards = {
         force_concentration = {
@@ -163,7 +164,9 @@ armored_infantry_support = {
     available = {
         always = yes
     }
-
+    visible = {
+        is_ai = yes
+    }
     ai_will_do = {
 
         base = 1
@@ -263,7 +266,9 @@ streamlined_deployment = {
     available = {
         always = yes
     }
-
+    visible = {
+        is_ai = yes
+    }
         ai_will_do = {
 
         base = 1
@@ -370,6 +375,10 @@ mobile_defense = {
 
     }
 
+    visible = {
+        is_ai = yes
+    }
+
     armored_engineer = {
         battalion_mult = {
             category = category_all_armor
@@ -444,6 +453,7 @@ armored_cavalry = {
         always = yes
     }
     visible = {
+        is_ai = yes
        AND = {
             has_dlc = "No Compromise, No Surrender"
             has_dlc = "La Resistance"
@@ -462,10 +472,9 @@ armored_cavalry = {
         }
 
     }
-
-    armored_car = {
+    motorized = {
         max_organisation = 5
-        defense = 0.1
+        defense = 0.05
     }
     mechanized =  {
         max_organisation = 5
@@ -474,7 +483,7 @@ armored_cavalry = {
     # EFFECTS
     rewards = {
         cruiser_tanks = {
-            light_armor = {
+            category_vehicle_infantry = {
                 maximum_speed = 0.1
                 max_organisation = 5
                 breakthrough = 0.05
@@ -493,43 +502,15 @@ armored_cavalry = {
             }
         }
         speed_as_armour = {
-            light_armor = {
-                maximum_speed = 0.05
-                breakthrough = 0.05
-            }
-            armored_car = {
-                maximum_speed = 0.05
-                breakthrough = 0.1
-                soft_attack = 0.1
-    
-            }
             mechanized = {
                 maximum_speed = 0.05
                 breakthrough = 0.05
             }
         }
         fighting_reconnaissance = {
-            armored_car_recon = {
-                max_organisation = 3
-                 soft_attack = 0.05
-            }
-            light_tank_recon = {
-                max_organisation = 2
-                soft_attack = 0.05
-            }
+
         }
         sustained_deployments = {
-            armored_car = {
-                max_organisation = 5
-                soft_attack = 0.05
-                default_morale = 0.2
-            }
-            light_armor = {
-                max_organisation = 5
-                soft_attack = 0.05
-                hard_attack = 0.1
-                default_morale = 0.15
-            }
             mechanized = {
                 max_organisation = 5
                 soft_attack = 0.05
@@ -722,6 +703,85 @@ tank_destroyer_force = {
     }
 }
 
+armored_infantry = {
+    track = armor
+    name = SUBDOCTRINE_ARMORED_INFANTRY
+    description = SUBDOCTRINE_ARMORED_INFANTRY_DESC
+    icon = GFX_doctrine_armored_cavalry_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    visible = {
+        has_dlc = "No Compromise, No Surrender"
+    }
+
+    ai_will_do = {
+
+        base = 0
+    #    modifier = { # experimental but I am making a mistake drop for now
+    #        add = 2
+    #        ROOT = {
+    #            has_template_containing_unit = tank_destroyers
+    #        }
+    #    }
+    }  
+
+    category_vehicle_infantry = {
+        soft_attack = 0.05
+        breakthrough = 0.05
+        fuel_consumption_factor = -0.1
+    }
+
+    rewards = {
+        
+        rapid_operational_command = {
+            bm_light_tank_command_regiment = {
+                battalion_mult = {
+                    category = category_vehicle_infantry
+                    soft_attack = 0.05
+                    breakthrough = 0.05
+                }
+            }
+        }
+
+        rapid_breakthrough = {
+            category_vehicle_infantry = {
+                soft_attack = 0.05
+                breakthrough = 0.05
+                armor_value = 0.05
+            }
+        }
+
+        simplified_logistics = {
+            logistics_company = {
+                battalion_mult = {
+                    category = category_vehicle_infantry
+                    supply_consumption = -0.1  
+                }
+            }
+        }
+
+        mechanized_support = {
+            category_vehicle_infantry = {
+                soft_attack = 0.05
+                breakthrough = 0.05
+                armor_value = 0.05
+            }
+        }
+
+        mechanized_strikes = {
+            armored_signal = {
+                battalion_mult = {
+                    category = category_vehicle_infantry
+                    soft_attack = 0.05
+                    breakthrough = 0.05
+                }
+            }
+        }
+    }
+}
+
 heavy_armor_lance = {
     track = armor
     name = SUBDOCTRINE_HEAVY_ARMOR_LANCE
@@ -746,7 +806,7 @@ heavy_armor_lance = {
     #        }
     #    }
     } 
-    enable_tactic = tactic_blitz
+
     category_heavy_armor = {
         armor_value = 0.20
         hard_attack = 0.1
@@ -760,9 +820,9 @@ heavy_armor_lance = {
             bm_heavy_tank_command_regiment = {
                 battalion_mult = {
                     category = category_heavy_armor
-                    soft_attack = 0.1
+                    max_organisation = 0.1
                     breakthrough = 0.1
-
+                    defense = 0.1
                     
                 }
             }
@@ -800,8 +860,8 @@ heavy_armor_lance = {
             armored_signal = {
                 battalion_mult = {
                     category = category_heavy_armor
-                    hard_attack = 0.1
-                    soft_attack = 0.1
+                    hard_attack = 0.15
+                    soft_attack = 0.15
 
                 }
             }
@@ -833,7 +893,7 @@ mass_standardization = {
     #        }
     #    }
     }  
-    enable_tactic = tactic_blitz
+
  	equipment_bonus = {
 		medium_tank_chassis = {
 			armor_value = 0.1
@@ -871,7 +931,7 @@ mass_standardization = {
                 battalion_mult = {
                     category = category_medium_armor
                     supply_consumption = -0.15
-                    max_organisation = 0.25
+                    max_organisation = 0.20
                     default_morale = 0.2
                 }
             }
@@ -919,7 +979,7 @@ light_armor_maneuver = {
     #        }
     #    }
     }  
-    enable_tactic = tactic_breakthrough
+
  	equipment_bonus = {
 		light_tank_chassis = {
 			build_cost_ic = -0.10
@@ -955,12 +1015,12 @@ light_armor_maneuver = {
         }
 
         simplified_logistics = {
-            armored_maintenance = {
+            logistics_company = {
                 battalion_mult = {
                     category = category_light_armor
-                    supply_consumption = -0.15
+                    supply_consumption = -0.05
                     max_organisation = 0.1
-                    default_morale = 0.25
+                    default_morale = 0.2
                 }
             }
         }
