@@ -34,7 +34,7 @@ mission_type_tactics = {
     # EFFECTS
     command_power_gain = 0.02
     category_all_infantry = {
-        max_organisation = 15
+        max_organisation = 10
     }
 
     
@@ -62,7 +62,7 @@ mission_type_tactics = {
         #4
 
             category_all_infantry = {
-                breakthrough = 0.1
+                breakthrough = 0.05
                 max_organisation = 10
             }
         }
@@ -70,7 +70,7 @@ mission_type_tactics = {
         #5
         
             category_all_infantry = {
-                default_morale = 0.2
+                default_morale = 0.1
             }
             category_tanks = {
                 default_morale = 0.1
@@ -105,8 +105,8 @@ last_stand = {
         #1
             resistance_damage_to_garrison_on_our_occupied_states = 0.25
             category_light_infantry = {
-                defense = 0.1
-                soft_attack = 0.1
+                defense = 0.05
+                soft_attack = 0.05
             }
         }
 
@@ -168,7 +168,7 @@ infiltration_tactics = {
         infiltration_assault = {
         #1
             category_army = {
-                breakthrough = 0.10
+                breakthrough = 0.05
                 max_organisation = 5
             }
 
@@ -182,7 +182,7 @@ infiltration_tactics = {
             supply_consumption_factor = -0.10
             command_power_gain = 0.015
             category_tanks = {
-                max_organisation = 2
+                max_organisation = 5
             }
             category_all_armor = {
                 default_morale = 0.1
@@ -194,33 +194,33 @@ infiltration_tactics = {
             recon = {
                 battalion_mult = {
                     category = category_light_infantry
-                    soft_attack = 0.1
+                    soft_attack = 0.05
                 }
                 battalion_mult = {
                     category = category_cavalry
-                    soft_attack = 0.1
+                    soft_attack = 0.05
                 }
 
             }
             mot_recon = {
                 battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.1
+                    category = category_vehicle_infantry
+                    soft_attack = 0.05
                 }
                 battalion_mult = {
-                    category = category_cavalry
-                    soft_attack = 0.1
+                    category = category_all_armor
+                    soft_attack = 0.05
                 }
 
             }
             light_tank_recon = {
                 battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.1
+                    category = category_vehicle_infantry
+                    soft_attack = 0.05
                 }
                 battalion_mult = {
-                    category = category_cavalry
-                    soft_attack = 0.1
+                    category = category_all_armor
+                    soft_attack = 0.05
                 }
 
             }
@@ -268,7 +268,7 @@ grand_assault = {
     # EFFECTS
     max_planning = 0.1
     category_army = {
-        breakthrough = 0.1
+        breakthrough = 0.05
         soft_attack = 0.05
     }
 
@@ -282,7 +282,7 @@ grand_assault = {
 
             logistics_company = {
                 battalion_mult = {
-                    category = category_all_infantry
+                    category = category_army
                     defense = 0.05
                 }
             }
@@ -290,7 +290,7 @@ grand_assault = {
         multiple_attack_directions = {
         #2
             category_army = {
-                breakthrough = 0.15
+                breakthrough = 0.05
             }
         }
         combined_arms_integration = {
@@ -298,7 +298,7 @@ grand_assault = {
             army_bonus_air_superiority_factor = 0.05 
             coordination_bonus = 0.1
             category_tanks = {
-                max_organisation = 4
+                max_organisation = 10
             }
 
             anti_air = {
@@ -309,7 +309,7 @@ grand_assault = {
        #4
             logistics_company = {
                 battalion_mult = {
-                    category = category_all_infantry 
+                    category = category_army
                     supply_consumption = -0.05
                 }
             }
@@ -321,8 +321,8 @@ grand_assault = {
        #5
 
             max_planning = 0.1
-            category_all_infantry = {
-                max_organisation = 8
+            category_army ={
+                max_organisation = 10
             }
        }
     }
@@ -362,7 +362,7 @@ deep_battle = {
     # EFFECTS
     enable_tactic = tactic_backhand_blow
     category_tanks = {
-        max_organisation = 4
+        max_organisation = 10
     }
 
 
@@ -380,30 +380,27 @@ deep_battle = {
             }
             mot_recon = {
                 battalion_mult = {
-                    category = category_light_infantry
+                    category = category_vehicle_infantry
                     soft_attack = 0.05
                     defense = 0.05
                 }
             }
             light_tank_recon = {
                 battalion_mult = {
-                    category = category_light_infantry
+                    category = category_all_armor
                     soft_attack = 0.05
                     defense = 0.05
                 }
             }
             category_vehicle_infantry = {
-                max_organisation = 2
+                max_organisation = 10
             }
 
         }
         operational_concentration = {
         #2
-            category_tanks = {
-                max_organisation = 4
-            }
             armored_car = {
-                max_organisation = 4
+                max_organisation = 10
             }
             land_reinforce_rate = 0.05
         }
@@ -418,18 +415,9 @@ deep_battle = {
         breakthrough_priority = {
         #4
             org_loss_when_moving = -0.2
-            category_vehicle_infantry = {
+            category_army = {
                 max_organisation = 10
                 default_morale = 0.1
-            }
-            category_tanks = {
-                max_organisation = 2
-            }
-            category_all_armor = {
-                default_morale = 0.1
-            }
-            armored_car = {
-                max_organisation = 4
             }
         }
         operational_depth_control = {
@@ -437,17 +425,11 @@ deep_battle = {
             org_loss_when_moving = -0.1
             land_reinforce_rate = 0.05
             armored_car_recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    max_organisation = 10
-                    add = yes
-                }
-            }
-            light_tank_recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    max_organisation = 10
-                    add = yes
+                recon = 0.5
+                     battalion_mult = {
+                        category = category_army
+                        soft_attack = 0.05
+                        defense = 0.05
                 }
             }
         }
@@ -620,8 +602,8 @@ guerilla_war = {
     # EFFECTS
     enable_tactic = tactic_guerrilla_tactics
     category_light_infantry = {
-        soft_attack = 0.1
-        defense = 0.1
+        soft_attack = 0.05
+        defense = 0.05
     }
     rewards = {
         catch_and_seize = {
@@ -704,10 +686,10 @@ rapid_domination = {
     enable_tactic = tactic_breakthrough
     land_reinforce_rate = 0.02
     category_all_infantry = {
-        soft_attack = 0.1
+        soft_attack = 0.05
     }
     category_line_artillery = {
-        soft_attack = 0.1
+        soft_attack = 0.05
     }
 
 
@@ -743,8 +725,8 @@ rapid_domination = {
         #3
             signal_company = {
                 battalion_mult = {
-                    category = category_artillery
-                    soft_attack = 0.1
+                    category = category_army
+                    soft_attack = 0.05
                 }
             }
 
@@ -763,8 +745,8 @@ rapid_domination = {
                 soft_attack = 0.05
             }
             category_all_infantry = {
-                soft_attack = 0.1
-                hard_attack = 0.1
+                soft_attack = 0.05
+                hard_attack = 0.05
             }
             army_bonus_air_superiority_factor = 0.1 
            
@@ -809,7 +791,7 @@ expeditionary_warfare = {
             dig_in_speed_factor = 0.05
             out_of_supply_factor = -0.20
             category_army = {
-                defense = 0.1
+                defense = 0.05
             }
 
         }
@@ -819,7 +801,7 @@ expeditionary_warfare = {
             naval_invasion_penalty = -0.15
             naval_invasion_planning_bonus_speed = 0.2
             category_army = {
-                soft_attack = 0.1
+                soft_attack = 0.05
             }
             
         }

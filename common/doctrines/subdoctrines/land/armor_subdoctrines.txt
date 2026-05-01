@@ -152,6 +152,76 @@ armored_spearhead_no_lar = {
         }
     }
 }
+#SCUFFED PR0PH3TS1
+infantry_is_queen = {
+    track = armor
+    name = SUBDOCTRINE_INFANTRY_IS_QUEEN
+    description = SUBDOCTRINE_INFANTRY_IS_QUEEN_DESC
+    icon = GFX_doctrine_commandos_medium
+
+    xp_cost = 100
+    xp_type = army
+    
+    mastery = {
+        categories = {
+            category_light_infantry
+            category_line_artillery
+        }
+    }
+    available = {
+        always = yes
+    }
+    visible = {
+    }
+    ai_will_do = {
+
+        base = 1
+        modifier = {
+            factor = 25
+            OR = {
+            }
+        }
+        modifier = {
+            factor = 0.5
+            is_major = no
+        }
+    }
+
+    # EFFECTS
+    equipment_bonus = {
+        infantry_equipment = {
+            build_cost_ic = -0.05
+        }
+        artillery_equipment = {
+            build_cost_ic = -0.05
+        }
+    }
+    #TODO jack look if you can make a script effect for production bonuses
+
+    rewards = {
+        queen = {
+        #1
+        bm_command_regiment = {
+            battalion_mult = {
+                category = category_light_infantry
+                    soft_attack = 0.05
+                    defense = 0.05
+            } 
+        }
+        }
+        king = {
+        #2
+        bm_command_regiment = {
+            battalion_mult = {
+                category = category_line_artillery
+                    soft_attack = 0.05
+                    defense = 0.05
+            }
+        }
+        }
+    }
+}
+
 armored_infantry_support = {
     track = armor
     name = SUBDOCTRINE_ARMORED_INFANTRY_SUPPORT
@@ -685,8 +755,7 @@ tank_destroyer_force = {
 
         independent_counterattacks = {
             category_tank_destroyers = {
-                max_organisation = 6
-                initiative = 0.01
+                max_organisation = 10
             }
         }
 
@@ -694,15 +763,15 @@ tank_destroyer_force = {
             armored_signal = {
                 battalion_mult = {
                     category = category_tank_destroyers
-                    hard_attack = 0.1
-                    ap_attack = 0.1
+                    hard_attack = 0.05
+                    ap_attack = 0.05
 
                 }
             }
         }
     }
 }
-
+#SCUFFED PR0PH3TS1
 armored_infantry = {
     track = armor
     name = SUBDOCTRINE_ARMORED_INFANTRY
@@ -781,7 +850,7 @@ armored_infantry = {
         }
     }
 }
-
+#SCUFFED PR0PH3TS1
 heavy_armor_lance = {
     track = armor
     name = SUBDOCTRINE_HEAVY_ARMOR_LANCE
@@ -809,8 +878,8 @@ heavy_armor_lance = {
 
     category_heavy_armor = {
         armor_value = 0.20
-        hard_attack = 0.1
-        soft_attack = 0.1
+        hard_attack = 0.05
+        soft_attack = 0.05
         max_strength = 0.1
     }
 
@@ -821,9 +890,7 @@ heavy_armor_lance = {
                 battalion_mult = {
                     category = category_heavy_armor
                     max_organisation = 0.1
-                    breakthrough = 0.1
-                    defense = 0.1
-                    
+                    breakthrough = 0.05
                 }
             }
         }
@@ -833,9 +900,9 @@ heavy_armor_lance = {
             assault_engineer = {
                 battalion_mult = {
                     category = category_heavy_armor
-                    soft_attack = 0.1
-                    hard_attack = 0.1
-                    ap_attack = 0.1
+                    soft_attack = 0.05
+                    hard_attack = 0.05
+                    ap_attack = 0.05
                 }
             }
         }
@@ -851,8 +918,7 @@ heavy_armor_lance = {
 
         independent_maneuvers = {
             category_heavy_armor = {
-                max_organisation = 6
-                initiative = 0.01
+                max_organisation = 10
             }
         }
 
@@ -860,8 +926,8 @@ heavy_armor_lance = {
             armored_signal = {
                 battalion_mult = {
                     category = category_heavy_armor
-                    hard_attack = 0.15
-                    soft_attack = 0.15
+                    hard_attack = 0.05
+                    soft_attack = 0.05
 
                 }
             }
@@ -869,7 +935,7 @@ heavy_armor_lance = {
     }
 
 }
-
+#SCUFFED PR0PH3TS1
 mass_standardization = {
     track = armor
     name = SUBDOCTRINE_MASS_STANDARDIZATION
@@ -903,8 +969,8 @@ mass_standardization = {
 			}
 
     category_medium_armor = {
-        soft_attack = 0.1
-        hard_attack = 0.1
+        soft_attack = 0.05
+        hard_attack = 0.05
     }
 
     rewards = {
@@ -913,16 +979,16 @@ mass_standardization = {
             bm_medium_tank_command_regiment = {
                 battalion_mult = {
                     category = category_medium_armor
-                    soft_attack = 0.1
-                    hard_attack = 0.1
+                    soft_attack = 0.05
+                    hard_attack = 0.05
                 }
             }
         }
 
         firepower_standardization = {
             category_medium_armor = {
-                soft_attack = 0.1
-                hard_attack = 0.1
+                soft_attack = 0.05
+                hard_attack = 0.05
             }
         }
 
@@ -940,7 +1006,6 @@ mass_standardization = {
         reactive_crews = {
             category_medium_armor = {
                 max_organisation = 10
-                initiative = 0.01
             }
         }
 
@@ -948,14 +1013,14 @@ mass_standardization = {
             armored_signal = {
                 battalion_mult = {
                     category = category_medium_armor
-                    soft_attack = 0.1
-                    hard_attack = 0.1
+                    soft_attack = 0.05
+                    hard_attack = 0.05
                 }
             }
         }
     }
 }
-
+#SCUFFED PR0PH3TS1
 light_armor_maneuver = {
     track = armor
     name = SUBDOCTRINE_LIGHT_ARMOR_MANEUVER
@@ -988,9 +1053,9 @@ light_armor_maneuver = {
 			}
 
     category_light_armor = {
-        soft_attack = 0.15
-        breakthrough = 0.1
-        defense = 0.1
+        soft_attack = 0.1
+        breakthrough = 0.05
+        defense = 0.05
     }
 
     rewards = {
@@ -999,18 +1064,18 @@ light_armor_maneuver = {
             bm_light_tank_command_regiment = {
                 battalion_mult = {
                     category = category_light_armor
-                    soft_attack = 0.15
+                    soft_attack = 0.05
                     breakthrough = 0.05
-                    defense = 0.1
+                    defense = 0.05
                 }
             }
         }
 
         rapid_breakthrough = {
             category_light_armor = {
-                soft_attack = 0.15
+                soft_attack = 0.05
                 breakthrough = 0.05
-                defense = 0.1
+                defense = 0.05
             }
         }
 
@@ -1027,8 +1092,7 @@ light_armor_maneuver = {
 
         unified_crew = {
             category_light_armor = {
-                max_organisation = 10
-                initiative = 0.01
+                max_organisation = 20
             }
         }
 
@@ -1036,15 +1100,15 @@ light_armor_maneuver = {
             armored_signal = {
                 battalion_mult = {
                     category = category_light_armor
-                    soft_attack = 0.15
+                    soft_attack = 0.05
                     breakthrough = 0.05
-                    defense = 0.1
+                    defense = 0.05
                 }
             }
         }
     }
 }
-
+#SCUFFED PR0PH3TS1
 modern_armor_assault = {
     track = armor
     name = SUBDOCTRINE_MODERN_ARMOR_ASSAULT
