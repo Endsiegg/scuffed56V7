@@ -1105,7 +1105,7 @@ leader_traits = {
 		gain_xp = {
 			always = no # not gainable
 		}
-		cost = 1000
+		cost = 0
 		
 		field_marshal_modifier = {
 			max_army_group_size = 2
@@ -1165,7 +1165,7 @@ leader_traits = {
 		}
 		custom_gain_xp_trigger_tooltip = cavalary_ratio_over_40
 		
-		cost = 1000
+		cost = 500
 		modifier = {
 			cavalry_attack_factor = 0.12
 			motorized_attack_factor = 0.12
@@ -1193,7 +1193,7 @@ leader_traits = {
 		}
 		custom_gain_xp_trigger_tooltip = infantry_ratio_over_80
 		
-		cost = 1000
+		cost = 500
 		modifier = {
 			army_infantry_defence_factor = 0.13
 		}
@@ -1216,10 +1216,10 @@ leader_traits = {
 		}
 		custom_gain_xp_trigger_tooltip = fighting_with_at_least_23_units
 		
-		cost = 2000
+		cost = 500
 		
 		corps_commander_modifier = {
-			max_commander_army_size = 6
+			max_commander_army_size = 50
 		}
 		
 		ai_will_do = {
@@ -1244,7 +1244,7 @@ leader_traits = {
 		}
 		custom_gain_xp_trigger_tooltip = has_flanked
 		
-		cost = 500
+		cost = 300
 		modifier = {
 			recon_factor = 0.25
 		}
@@ -1282,7 +1282,7 @@ leader_traits = {
 		}
 		cost = 1000
 		modifier = {
-			terrain_penalty_reduction = 0.10
+			terrain_penalty_reduction = 0.05
 			acclimatization_cold_climate_gain_factor = 0.1
 			acclimatization_hot_climate_gain_factor = 0.1
 		}
@@ -1341,7 +1341,7 @@ leader_traits = {
 				has_combat_modifier = river_crossing
 			}
 		}
-		cost = 700
+		cost = 1000
 		modifier = {
 			river = {
 				attack = 0.05
@@ -1372,7 +1372,7 @@ leader_traits = {
 			check_variable = { num_armored > temp }
 		}
 		custom_gain_xp_trigger_tooltip = armored_ratio_over_40
-		cost = 700
+		cost = 1000
 		modifier = {
 			army_armor_speed_factor = 0.05 
 			army_armor_attack_factor = 0.16 
@@ -1396,13 +1396,13 @@ leader_traits = {
  		type = corps_commander
 		gain_xp = {
 			OR = {
-				temperature < -15
+				temperature < -1
 				temperature > 27
 				has_combat_modifier = paradrop
 				has_combat_modifier = amphibious_attack
 			}
 		}
-		cost = 700
+		cost = 100
 		modifier = {
 			out_of_supply_factor = -0.25
 		}
@@ -1443,12 +1443,12 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = desert
 		}
-		cost = 700
+		cost = 1000
 		modifier = {
 			desert = {
 				movement = 0.05
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		new_commander_weight = {
@@ -1475,8 +1475,8 @@ leader_traits = {
 		modifier = {
 			marsh = {
 				movement = 0.05
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		
@@ -1492,12 +1492,12 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = mountain
 		}
-		cost = 700
+		cost = 1000
 		modifier = {
 			mountain = {
 				movement = 0.05
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		
@@ -1513,12 +1513,12 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = hills
 		}
-		cost = 700
+		cost = 1000
 		modifier = {
 			hills = {
 				movement = 0.05
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		
@@ -1534,12 +1534,12 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = jungle
 		}
-		cost = 700
+		cost = 1000
 		modifier = {
 			jungle = {
 				movement = 0.05
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		
@@ -1555,12 +1555,12 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = forest
 		}
-		cost = 700
+		cost = 1000
 		modifier = {
 			forest = {
 				movement = 0.05
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		
@@ -1576,12 +1576,12 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = urban
 		}
-		cost = 500
+		cost = 1000
 		modifier = {
 			urban = {
 				movement = 0.05
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		
@@ -1598,7 +1598,7 @@ leader_traits = {
 		gain_xp = {
 			is_amphibious_invasion = yes
 		}
-		cost = 100
+		cost = 1
 		modifier = {
 			amphibious_invasion = 0.3 # 30% faster invasions
 			invasion_preparation = -0.3
@@ -1653,8 +1653,8 @@ leader_traits = {
 		}
 		cost = 500
 		modifier = {
-			motorized_defence_factor = 0.15
-			mechanized_defence_factor = 0.15
+			motorized_defence_factor = 0.10
+			mechanized_defence_factor = 0.10
 		}
 		
 		custom_effect_tooltip = INCREASED_BLITZ_AND_ENCIRCLEMENT_CHANCE
@@ -2002,10 +2002,10 @@ leader_traits = {
 
 	blockade_runner = { 
 		type = navy
-		cost = 500
+		cost = 100
 		gain_xp = {
 			OR = {
-				fastest_unit > 3.7
+				fastest_unit > 3
 				AND = {
 					convoy > 0.00 #friendly convoy in battle 
 					opponent = {
@@ -2033,7 +2033,7 @@ leader_traits = {
 		gain_xp = {
 			submarine > 0.8 # at least 80% subs
 		}
-		cost = 500 #Was 700
+		cost = 100 #Was 700
 		modifier = {
 			navy_submarine_attack_factor = 0.2 # +X% stronger damage for submarines
 		}
@@ -2056,8 +2056,8 @@ leader_traits = {
 		gain_xp = { # This trigger is not needed as it gets xp from spotting (not by combat)
 			always = no 
 		}
-		gain_xp_on_spotting = 10
-		cost = 300 #Was 500
+		gain_xp_on_spotting = 100
+		cost = 100 #Was 500
 		modifier = {
 			spotting_chance = 0.1
 		}
@@ -2083,7 +2083,7 @@ leader_traits = {
 			#should gain XP when screening_ratio > 0.5
 		}
 		custom_gain_xp_trigger_tooltip = FLEET_PROTECTOR_TRIGGER_TT
-		cost = 300 #Was 500
+		cost = 100 #Was 500
 		modifier = {
 			screening_efficiency = 0.2
 		}
@@ -2105,7 +2105,7 @@ leader_traits = {
 		gain_xp = {
 			is_winning = yes
 		}
-		cost = 300 #Was 500
+		cost = 100 #Was 500
 		modifier = {
 			positioning = 0.25
 		}
@@ -2131,7 +2131,7 @@ leader_traits = {
 				has_carrier_airwings_in_own_combat = yes
 			}
 		}
-		cost = 300 #Was 500
+		cost = 100 #Was 500
 		modifier = {
 			navy_carrier_air_targetting_factor = 0.1 # Airplanes from carriers has better naval targetting
 			sortie_efficiency = 0.1
@@ -2155,7 +2155,7 @@ leader_traits = {
 			}
 		}
 		custom_gain_xp_trigger_tooltip = IRONSIDE_TRIGGER_TT
-		cost = 300 #Was 500
+		cost = 100 #Was 500
 		modifier = {
 			navy_capital_ship_defence_factor = 0.1
 		}
@@ -2278,7 +2278,7 @@ leader_traits = {
 		sub_unit_modifiers = {
 			destroyer = {
 				naval_damage_factor = 0.1
-				naval_torpedo_hit_chance_factor = 0.1
+				naval_torpedo_hit_chance_factor = 0.05
 				navy_visibility = -0.1
 			}
 		}	
@@ -2323,9 +2323,9 @@ leader_traits = {
 	mine_craft = { 
 		type = navy
 		modifier = {
-			mines_planting_by_fleets_factor = 0.25
-			mines_sweeping_by_fleets_factor = 0.25
-			naval_mines_effect_reduction = 0.25	
+			#mines_planting_by_fleets_factor = 0.25
+			mines_sweeping_by_fleets_factor = 0.75
+			naval_mines_effect_reduction = 0.75
 		}
 				
 		ai_will_do = {
@@ -2444,7 +2444,7 @@ leader_traits = {
 	torpedo_expert = {
 		type = navy
 		modifier = {
-			naval_torpedo_hit_chance_factor = 0.1
+			naval_torpedo_hit_chance_factor = 0.05
 		}
 		
 		slot = high_command
@@ -2485,7 +2485,7 @@ leader_traits = {
 	hunter_killer = { 
 		type = navy
 		modifier = {
-			navy_submarine_detection_factor = 0.2
+			navy_submarine_detection_factor = 0.25
 			navy_submarine_attack_factor = 0.1
 		}
 				
@@ -2503,7 +2503,7 @@ leader_traits = {
 	fly_swatter = {
 		type = navy
 		modifier = {
-			navy_anti_air_attack_factor = 0.1
+			navy_anti_air_attack_factor = 0.25
 		}
 
 		trait_type = assignable_trait
@@ -2532,8 +2532,8 @@ leader_traits = {
 		}
 		
 		trait_type = assignable_trait
-		mutually_exclusive = dive_bomber
-		mutually_exclusive = torpedo_bomber
+	#	mutually_exclusive = dive_bomber
+	#	mutually_exclusive = torpedo_bomber
 		any_parent = { flight_deck_manager }
 		
 		gui_row = 7
@@ -2558,8 +2558,8 @@ leader_traits = {
 		genius_advisor_trait = navy_chief_naval_aviation_3
 		
 		trait_type = assignable_trait
-		mutually_exclusive = fighter_director
-		mutually_exclusive = torpedo_bomber
+	#	mutually_exclusive = fighter_director
+	#	mutually_exclusive = torpedo_bomber
 		any_parent = { flight_deck_manager }
 		
 		gui_row = 8
@@ -2586,8 +2586,8 @@ leader_traits = {
 		}
 		
 		trait_type = assignable_trait
-		mutually_exclusive = fighter_director
-		mutually_exclusive = dive_bomber
+	#	mutually_exclusive = fighter_director
+	#	mutually_exclusive = dive_bomber
 		any_parent = { flight_deck_manager }
 		
 		gui_row = 9
@@ -2645,9 +2645,9 @@ leader_traits = {
 			is_fighting_in_weather = arctic_water
 		}
 		
-		cost = 700 #was 1000
+		cost = 100 #was 1000
 		modifier = {
-			naval_attrition = -0.08
+			naval_attrition = -0.10
 		}
 
 		ai_will_do = {
@@ -2664,7 +2664,7 @@ leader_traits = {
 			is_fighting_in_terrain = water_fjords
 		}
 		
-		cost = 700 #was 1000
+		cost = 100 #was 1000
 		modifier = {
 			water_fjords = {
 				attack = 0.1
@@ -2687,7 +2687,7 @@ leader_traits = {
 			is_fighting_in_terrain = water_deep_ocean
 		}
 		
-		cost = 700 #was 1000
+		cost = 100 #was 1000
 		modifier = {
 			water_deep_ocean = {
 				attack = 0.1
@@ -2715,7 +2715,7 @@ leader_traits = {
 			is_fighting_in_terrain = water_shallow_sea
 		}
 		
-		cost = 700 #was 1000
+		cost = 100 #was 1000
 		modifier = {
 			water_shallow_sea = {
 				attack = 0.1

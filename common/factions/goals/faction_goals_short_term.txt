@@ -1101,22 +1101,22 @@ faction_goal_a_great_fortress = {
 	description = a_great_fortress_goal_desc
 	category = short_term
 	group = FOCUS_FILTER_CONSOLIDATION
-	visible = {
-	}
-	available = {
-		collection_size = {
-			input = {
-				input = collection:faction_owned_core_states
-				operators = {
-					limit = {
-						NOT = { is_fully_controlled_by = OWNER }
-					}
-				}
-				name = FACTION_CORE_STATES_NOT_FULLY_CONTROLLED
-			}
-			value < 1
-		}
-	}
+	# visible = {
+	# }
+	# available = {
+	# 	# collection_size = {
+	# 	# 	input = {
+	# 	# 		input = collection:faction_owned_core_states
+	# 	# 		operators = {
+	# 	# 			limit = {
+	# 	# 				NOT = { is_fully_controlled_by = OWNER }
+	# 	# 			}
+	# 	# 		}
+	# 	# 		name = FACTION_CORE_STATES_NOT_FULLY_CONTROLLED
+	# 	# 	}
+	# 	# 	value < 1
+	# 	# }
+	# }
 	completed = {
 		OR = {
 			ROOT = {
@@ -1133,8 +1133,8 @@ faction_goal_a_great_fortress = {
 					operators = { faction_members }
 					name = FACTION_NAME
 				}
-				buildings = { bunker coastal_bunker}
-				size > 29
+				# buildings = { bunker coastal_bunker}
+				# size > 29
 			}
 		}
 	}
@@ -1143,8 +1143,10 @@ faction_goal_a_great_fortress = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
+			set_country_flag = has_deterrence
 			limit = {
 				NOT = { has_idea = deterrence }
+				NOT = { has_country_flag = has_deterrence }
 			}
 			add_timed_idea = {
 				idea = deterrence
@@ -1509,12 +1511,12 @@ faction_goal_develop_curacao_oil = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+			#has_tech = excavation2
 		}
 	}
 	completed = {
 		695 = {
-			CONTROLLER = { has_tech = excavation3 }
+			#CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -1523,7 +1525,7 @@ faction_goal_develop_curacao_oil = {
 		695 = {
 			add_resource = {
 			    type = oil
-			    amount = 14
+			    amount = 28
 			}
 		}
 	}
@@ -1570,18 +1572,18 @@ faction_goal_develop_venezuelan_oil = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+			#has_tech = excavation2
 		}
 		489 = { is_controlled_by_ROOT_or_ally = yes }
 		307 = {	is_controlled_by_ROOT_or_ally = yes }
 	}
 	completed = {
 		489 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		307 = {
-			CONTROLLER = { has_tech = excavation3 }
+			#CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -1596,7 +1598,7 @@ faction_goal_develop_venezuelan_oil = {
 			}
 			add_resource = {
 			    type = oil
-			    amount = 8
+			    amount = 24
 			}
 		}
 	}
@@ -1642,13 +1644,13 @@ faction_goal_develop_guyanan_bauxite = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+			#has_tech = excavation2
 		}
 
 	}
 	completed = {
 		687 = {
-			CONTROLLER = { has_tech = excavation3 }
+			#CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -1657,7 +1659,7 @@ faction_goal_develop_guyanan_bauxite = {
 		687 = {
 			add_resource = {
 			    type = aluminium
-			    amount = 14
+			    amount = 28
 			}
 		}
 	}
@@ -1711,13 +1713,13 @@ faction_goal_develop_suriname_bauxite = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+		#	has_tech = excavation2
 		}
 
 	}
 	completed = {
 		309 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -1726,7 +1728,7 @@ faction_goal_develop_suriname_bauxite = {
 		309 = {
 			add_resource = {
 			    type = aluminium
-			    amount = 14
+			    amount = 28
 			}
 		}
 	}
@@ -1783,18 +1785,18 @@ faction_goal_develop_lappland_metals = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+			#has_tech = excavation2
 		}
 		666 = { is_controlled_by_ROOT_or_ally = yes }
 		1029 = { is_controlled_by_ROOT_or_ally = yes }
 	}
 	completed = {
 		666 = {
-			CONTROLLER = { has_tech = excavation3 }
+			#CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		1029 = {
-			CONTROLLER = { has_tech = excavation3 }
+			#CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -1803,29 +1805,29 @@ faction_goal_develop_lappland_metals = {
 		666 = {
 			add_resource = {
 			    type = tungsten
-			    amount = 14
+			    amount = 28
 			}
 			add_resource = {
 			    type = steel
-			    amount = 14
+			    amount = 28
 			}
 			add_resource = {
 			    type = chromium
-			    amount = 8
+			    amount = 28
 			}
 		}
 		1029 = {
 			add_resource = {
 			    type = tungsten
-			    amount = 10
+			    amount = 20
 			}
 			add_resource = {
 			    type = steel
-			    amount = 10
+			    amount = 20
 			}
 			add_resource = {
 			    type = chromium
-			    amount = 5
+			    amount = 20
 			}
 		}
 	}
@@ -1926,12 +1928,12 @@ faction_goal_develop_ploiesti_oil_fields = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+			#has_tech = excavation2
 		}
 	}
 	completed = {
 		46 = {
-			CONTROLLER = { has_tech = excavation3 }
+			#CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -1940,7 +1942,7 @@ faction_goal_develop_ploiesti_oil_fields = {
 		46 = {
 			add_resource = {
 			    type = oil
-			    amount = 14
+			    amount = 28
 			}
 		}
 	}
@@ -1988,7 +1990,7 @@ faction_goal_develop_baku_oil_fields = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+			#has_tech = excavation2
 		}
 		229 = { is_controlled_by_ROOT_or_ally = yes }
 		232 = {	is_controlled_by_ROOT_or_ally = yes }
@@ -1996,15 +1998,15 @@ faction_goal_develop_baku_oil_fields = {
 	}
 	completed = {
 		229 = {
-			CONTROLLER = { has_tech = excavation3 }
+			#CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		232 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		821 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -2019,13 +2021,13 @@ faction_goal_develop_baku_oil_fields = {
 			}
 			add_resource = {
 			    type = oil
-			    amount = 4
+			    amount = 28
 			}
 		}
 		229 = {
 			add_resource = {
 			    type = oil
-			    amount = 14
+			    amount = 28
 			}
 		}
 	}
@@ -2072,7 +2074,7 @@ faction_goal_develop_iraqi_oil = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+			#has_tech = excavation2
 		}
 		291 = { is_controlled_by_ROOT_or_ally = yes }
 		676 = {	is_controlled_by_ROOT_or_ally = yes }
@@ -2080,15 +2082,15 @@ faction_goal_develop_iraqi_oil = {
 	}
 	completed = {
 		291 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		676 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		1048 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -2097,19 +2099,19 @@ faction_goal_develop_iraqi_oil = {
 		291 = {
 			add_resource = {
 			    type = oil
-			    amount = 6
+			    amount = 18
 			}
 		}
 		676 = {
 			add_resource = {
 			    type = oil
-			    amount = 4
+			    amount = 18
 			}
 		}
 		1048 = {
 			add_resource = {
 			    type = oil
-			    amount = 2
+			    amount = 18
 			}
 		}
 	}
@@ -2156,7 +2158,7 @@ faction_goal_develop_persian_oil = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+		#	has_tech = excavation2
 		}
 		411 = { is_controlled_by_ROOT_or_ally = yes }
 		981 = {	is_controlled_by_ROOT_or_ally = yes }
@@ -2164,15 +2166,15 @@ faction_goal_develop_persian_oil = {
 	}
 	completed = {
 		411 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		981 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		413 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -2181,19 +2183,19 @@ faction_goal_develop_persian_oil = {
 		411 = {
 			add_resource = {
 			    type = oil
-			    amount = 6
+			    amount = 18
 			}
 		}
 		981 = {
 			add_resource = {
 			    type = oil
-			    amount = 4
+			    amount = 18
 			}
 		}
 		413 = {
 			add_resource = {
 			    type = oil
-			    amount = 8
+			    amount = 18
 			}
 		}
 	}
@@ -2241,7 +2243,7 @@ faction_goal_develop_chinese_metals = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+		#	has_tech = excavation2
 		}
 		592 = { is_controlled_by_ROOT_or_ally = yes }
 		593 = {	is_controlled_by_ROOT_or_ally = yes }
@@ -2250,19 +2252,19 @@ faction_goal_develop_chinese_metals = {
 	}
 	completed = {
 		592 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		593 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		594 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		599 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -2271,57 +2273,57 @@ faction_goal_develop_chinese_metals = {
 		592 = {
 			add_resource = {
 			    type = tungsten
-			    amount = 4
+			    amount = 12
 			}
 			add_resource = {
 			    type = steel
-			    amount = 6
+			    amount = 12
 			}
 			add_resource = {
 			    type = chromium
-			    amount = 2
+			    amount = 12
 			}
 		}
 		593 = {
 			add_resource = {
 			    type = tungsten
-			    amount = 6
+			    amount = 12
 			}
 			add_resource = {
 			    type = steel
-			    amount = 6
+			    amount = 12
 			}
 			add_resource = {
 			    type = chromium
-			    amount = 2
+			    amount = 12
 			}
 		}
 		594 = {
 			add_resource = {
 			    type = tungsten
-			    amount = 4
+			    amount = 12
 			}
 			add_resource = {
 			    type = steel
-			    amount = 4
+			    amount = 12
 			}
 			add_resource = {
 			    type = chromium
-			    amount = 2
+			    amount = 12
 			}
 		}
 		599 = {
 			add_resource = {
 			    type = tungsten
-			    amount = 6
+			    amount = 12
 			}
 			add_resource = {
 			    type = steel
-			    amount = 6
+			    amount = 12
 			}
 			add_resource = {
 			    type = chromium
-			    amount = 2
+			    amount = 12
 			}
 		}
 	}
@@ -2429,7 +2431,7 @@ faction_goal_develop_malayan_riches = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+		#	has_tech = excavation2
 		}
 		333 = { is_controlled_by_ROOT_or_ally = yes }
 		960 = {	is_controlled_by_ROOT_or_ally = yes }
@@ -2438,19 +2440,19 @@ faction_goal_develop_malayan_riches = {
 	}
 	completed = {
 		333 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		960 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		951 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		915 = {
-			CONTROLLER = { has_tech = excavation3 }
+			#CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -2459,21 +2461,21 @@ faction_goal_develop_malayan_riches = {
 		333 = {
 			add_resource = {
 			    type = oil
-			    amount = 2
+			    amount = 16
 			}
 			add_resource = {
 			    type = rubber
-			    amount = 8
+			    amount = 16
 			}
 			add_resource = {
 			    type = coal
-			    amount = 1
+			    amount = 24
 			}
 		}
 		915 = {
 			add_resource = {
 			    type = aluminium
-			    amount = 4
+			    amount = 16
 			}
 			add_resource = {
 			    type = rubber
@@ -2485,27 +2487,27 @@ faction_goal_develop_malayan_riches = {
 			}
 			add_resource = {
 			    type = steel
-			    amount = 4
+			    amount = 28
 			}
 		}
 		951 = {
 			add_resource = {
 			    type = aluminium
-			    amount = 3
+			    amount = 16
 			}
 			add_resource = {
 			    type = tungsten
-			    amount = 12
+			    amount = 16
 			}
 			add_resource = {
 			    type = steel
-			    amount = 4
+			    amount = 16
 			}
 		}
 		960 = {
 			add_resource = {
 			    type = rubber
-			    amount = 8
+			    amount = 16
 			}
 		}
 	}
@@ -2654,7 +2656,7 @@ faction_goal_develop_indonesian_riches = {
 	available = {
 		FROM = {
 			has_tech = excavation1
-			has_tech = excavation2
+			#has_tech = excavation2
 		}
 		334 = { is_controlled_by_ROOT_or_ally = yes }
 		335 = {	is_controlled_by_ROOT_or_ally = yes }
@@ -2664,23 +2666,23 @@ faction_goal_develop_indonesian_riches = {
 	}
 	completed = {
 		334 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		335 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		667 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		672 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 		673 = {
-			CONTROLLER = { has_tech = excavation3 }
+		#	CONTROLLER = { has_tech = excavation3 }
 			infrastructure > 4
 		}
 	}
@@ -2689,7 +2691,7 @@ faction_goal_develop_indonesian_riches = {
 		334 = {
 			add_resource = {
 			    type = oil
-			    amount = 3
+			    amount = 16
 			}
 			add_resource = {
 			    type = rubber
@@ -2697,13 +2699,13 @@ faction_goal_develop_indonesian_riches = {
 			}
 			add_resource = {
 			    type = coal
-			    amount = 2
+			    amount = 24
 			}
 		}
 		335 = {
 			add_resource = {
 			    type = oil
-			    amount = 4
+			    amount = 16
 			}
 			add_resource = {
 			    type = rubber
@@ -2713,17 +2715,17 @@ faction_goal_develop_indonesian_riches = {
 		667 = {
 			add_resource = {
 			    type = rubber
-			    amount = 6
+			    amount = 24
 			}
 		}
 		672 = {
 			add_resource = {
 			    type = oil
-			    amount = 5
+			    amount = 16
 			}
 			add_resource = {
 			    type = aluminium
-			    amount = 8
+			    amount = 24
 			}
 			add_resource = {
 			    type = rubber
@@ -2731,13 +2733,13 @@ faction_goal_develop_indonesian_riches = {
 			}
 			add_resource = {
 			    type = coal
-			    amount = 3
+			    amount = 24
 			}
 		}
 		673 = {
 			add_resource = {
 			    type = rubber
-			    amount = 10
+			    amount = 20
 			}
 		}
 	}
