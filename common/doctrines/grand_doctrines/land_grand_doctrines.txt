@@ -224,11 +224,14 @@ superior_firepower = {
         {
             #Armor
             enable_tactic = tactic_delay
-             BM_command_regiment = {
+            BM_command_regiment = {
                 battalion_mult = {
                     category = category_line_artillery
                     hard_attack = 0.1
                 }
+            }
+            category_army ={
+                default_morale = 0.1
             }
             planning_decay_rate_factor = -0.2
             effect = {
@@ -251,6 +254,9 @@ superior_firepower = {
             category_line_artillery = {
                 default_morale = 0.2
             }
+            category_army ={
+                default_morale = 0.1
+            }
             effect = {
                 if = {
                     limit = {
@@ -268,6 +274,7 @@ superior_firepower = {
 
     }
 }
+
 
 grand_battleplan = {
     folder = land
