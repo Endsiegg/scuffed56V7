@@ -14,6 +14,8 @@ ideas = {
 			available = {
 				NOT = {
 					has_government = democratic
+					has_government = communism
+					has_government = neutrality
 				}
 				custom_trigger_tooltip = {
 					tooltip = r56_tooltip_is_indepndent_or_has_democratic_overlord
@@ -31,8 +33,11 @@ ideas = {
 
 			modifier = {
 				democratic_drift = -0.05		#present also in communist countries, surely won't contribute to liberalization of society 
+				communism_drift = -0.05
+				neutrality_drift = -0.05
+				fascism_drift = 0.05
 				justify_war_goal_time = -0.25
-				political_power_cost = 0.05
+				#political_power_cost = 0.10
 			}
 
 			
@@ -115,6 +120,7 @@ ideas = {
 				NOT = {
 					has_government = communism
 					has_government = democratic
+					has_government = fascism
 				}
 				custom_trigger_tooltip = {
 					tooltip = r56_tooltip_is_independent_or_has_democratic_or_communist_overlord
@@ -139,40 +145,11 @@ ideas = {
 			
 			modifier = {
 				communism_drift = -0.05			#stalinists and trotskyist and their stance on religion
-				war_support_factor = 0.10
-				political_power_cost = 0.05
-			}
-
-			on_add = {
-				if = {
-					limit = {
-						original_tag = AFG
-						has_power_balance = {
-							id = AFG_power_balance
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_tribal_side
-					}
-				}
-			}
-
-			on_remove = {
-				if = {
-					limit = {
-						original_tag = AFG
-						has_power_balance = {
-							id = AFG_power_balance
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_government_side
-					}
-				}
+				democratic_drift = -0.05
+				fascism_drift = -0.05
+				neutrality_drift = 0.05
+				army_core_defence_factor = 0.10
+				#political_power_cost = 0.05
 			}
 
 			cost = 150
@@ -251,13 +228,16 @@ ideas = {
 
 			available = {
 				NOT = {
-					has_government = neutrality
+					has_government = communism
+					has_government = fascism
+					#has_government = neutrality
 				}
 				custom_trigger_tooltip = {
 					tooltip = r56_tooltip_is_indepedent_or_has_authoritarian_overlord
 					OR = {
 						is_subject = no
-						OVERLORD = { NOT = { has_government = neutrality } }
+						OVERLORD = { NOT = { has_government = fascism } }
+						OVERLORD = { NOT = { has_government = communism } }
 					}
 				}
 				hidden_trigger = {
@@ -269,8 +249,11 @@ ideas = {
 			
 			modifier = {
 				neutrality_drift = -0.05		#to represent an absolute power + theocratic states VS civilian authorities
+				fascism_drift = -0.05
+				communism_drift = -0.05
+				democratic_drift = 0.05
 				research_speed_factor = 0.05
-				political_power_cost = 0.05
+				#political_power_cost = 0.10
 			}
 
 			on_add = {
@@ -386,6 +369,8 @@ ideas = {
 			available = {
 				NOT = {
 					has_government = fascism
+					has_government = democratic
+					has_government = neutrality
 				}
 
 				# must use a custom trigger tooltip or the OVERLORD line will always display errors for independent countries, since it needed to be displayed in a tooltip
@@ -405,8 +390,11 @@ ideas = {
 			
 			modifier = {
 				fascism_drift = -0.05				#Sounds very pro-communist, historically some people might've applied to it too though
-				stability_factor = 0.05
-				political_power_cost = 0.05
+				democratic_drift = -0.05
+				neutrality_drift = -0.05
+				communism_drift = 0.05
+				supply_consumption_factor = -0.05
+				#political_power_cost = 0.05
 			}
 
 			cost = 150
@@ -504,11 +492,13 @@ ideas = {
 			}
 			
 			modifier = {
-				democratic_drift = -0.02		#more communes, a bit more communism too on top
-				fascism_drift = -0.02
-				conscription_factor = 0.05
-				research_speed_factor = 0.05
-				political_power_cost = 0.05	
+				democratic_drift = -0.05		#more communes, a bit more communism too on top
+				fascism_drift = -0.05
+				conscription_factor = 0.10
+				research_speed_factor = 0.10
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				#political_power_cost = 0.05	
 			}
 
 			cost = 150
