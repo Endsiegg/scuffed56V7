@@ -36,7 +36,7 @@ ideas = {
 				communism_drift = -0.05
 				neutrality_drift = -0.05
 				fascism_drift = 0.05
-				justify_war_goal_time = -0.25
+				justify_war_goal_time = -0.10
 				#political_power_cost = 0.10
 			}
 
@@ -152,7 +152,7 @@ ideas = {
 				#political_power_cost = 0.05
 			}
 
-			cost = 150
+			cost = 100
 			ai_will_do = {
 				factor = 0
 				# long list of political power things that should be taken first. If the idea impacts stability, checking for > 0.5 could be useful. I (Waffle) may have overdesigned it a bit, but this is just a reliable proof of concept, adaptable to more specific situations
@@ -256,39 +256,7 @@ ideas = {
 				#political_power_cost = 0.10
 			}
 
-			on_add = {
-				if = {
-					limit = {
-						original_tag = AFG
-						has_power_balance = {
-							id = AFG_power_balance
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.10
-						tooltip_side = AFG_government_side
-					}
-				}
-			}
-
-			on_remove = {
-				if = {
-					limit = {
-						original_tag = AFG
-						has_power_balance = {
-							id = AFG_power_balance
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.10
-						tooltip_side = AFG_tribal_side
-					}
-				}
-			}
-
-			cost = 150
+			cost = 100
 			
 			cancel_if_invalid = no
 
@@ -397,7 +365,7 @@ ideas = {
 				#political_power_cost = 0.05
 			}
 
-			cost = 150
+			cost = 100
 			
 			cancel_if_invalid = no
 
@@ -501,7 +469,7 @@ ideas = {
 				#political_power_cost = 0.05	
 			}
 
-			cost = 150
+			cost = 100
 
 			ai_will_do = {
 				factor = 0

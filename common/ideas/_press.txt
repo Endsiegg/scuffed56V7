@@ -5,15 +5,17 @@ ideas = {
 
 		free_press = {
 						
-			cost = 100
+			cost = 50
 			removal_cost = -1
 			
 			available = {
 			}
 
 			modifier = {
+				stability_factor = 0.10
 				drift_defence_factor = -0.20
 				army_intel_to_others = 20
+				airforce_intel_to_others = 20
 				navy_intel_to_others = 20
 				civilian_intel_to_others = 20
 			}
@@ -24,15 +26,20 @@ ideas = {
 		
 		censored_press = {
 						
-			cost = 100
+			cost = 50
 			removal_cost = -1
 			
 			available = {
 				NOT = { has_idea = mass_media_free }
+				has_idea = mass_media_censorship
 			}
 
 			modifier = {
-				stability_factor = 0.10
+				stability_factor = -0.05
+				army_intel_to_others = -10
+				airforce_intel_to_others = -10
+				navy_intel_to_others = -10
+				civilian_intel_to_others = -10
 			}
 			
 			cancel_if_invalid = yes
@@ -48,7 +55,9 @@ ideas = {
 
 			modifier = {
 				resistance_growth_on_our_occupied_states = 0.25
-				compliance_growth_on_our_occupied_states = -0.25
+				compliance_growth_on_our_occupied_states = -0.5
+				resistance_target_on_our_occupied_states = 0.25
+				resistance_damage_to_garrison_on_our_occupied_states = 0.25
 				#compliance_gain = 0.05
 			}
 			
@@ -85,12 +94,13 @@ ideas = {
 			
 			available = {
 				has_stability > 0.5
-				has_war = no
+				#has_war = no
 			}
 
 			modifier = {
 				#production_factory_efficiency_gain_factor = 0.10
 				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
 			}
 			
 			ai_will_do = {
@@ -107,7 +117,7 @@ ideas = {
 		
 		mobilization_press = {
 						
-			cost = 100
+			cost = 50
 			removal_cost = -1
 			
 			available = {
@@ -142,7 +152,7 @@ ideas = {
 			}
 
 			modifier = {
-				justify_war_goal_time = -0.20
+				justify_war_goal_time = -0.25
 				production_speed_arms_factory_factor = 0.05
 				production_speed_dockyard_factor = 0.05
 			}
@@ -201,7 +211,10 @@ ideas = {
 
 			modifier = {
 				enemy_operative_capture_chance_factor = 0.25
-				army_intel_to_others = -15
+				own_operative_detection_chance_factor = -0.25
+				intel_network_gain_factor = 0.25
+				#intel_from_operatives_factor = 0.25
+				intelligence_agency_defense = 1
 			}
 			
 			ai_will_do = {
