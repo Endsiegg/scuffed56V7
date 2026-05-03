@@ -71,8 +71,8 @@ focus_tree = {
 					limit = {
 						has_resistance = yes
 					}
-					add_compliance = 5
-					set_garrison_strength = 0.91
+					add_compliance = 10
+					set_garrison_strength = 0.95
 				}
 			}
 		}
@@ -134,7 +134,7 @@ focus_tree = {
 		}
 
 		complete_tooltip = {
-		army_experience = 5
+		army_experience = 25
 		if = {
 				limit = {
 					has_country_flag = ABC_establish_a_general_staff_a
@@ -154,7 +154,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			army_experience = 5
+			army_experience = 25
 
 			if = {
 				limit = {
@@ -194,7 +194,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = AOI_establish_a_general_staff
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -235,7 +235,7 @@ focus_tree = {
 				limit = {
 					has_resistance = yes
 				}
-				add_compliance = 5
+				add_compliance = 10
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -249,7 +249,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = AOI_securing_east_africa
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 6
@@ -359,7 +359,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = AOI_establish_a_general_staff
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -414,7 +414,7 @@ focus_tree = {
 		prerequisite = { focus = AOI_warm_climate_training }
 		
 		relative_position_id = AOI_organize_the_police_structure
-		cost = 10
+		cost = 5
 		available = {
 			any_controlled_state = {
 				is_on_continent = africa
@@ -432,8 +432,8 @@ focus_tree = {
 				limit = {
 					has_resistance = yes
 				}
-				add_compliance = 5
-				add_resistance = -5
+				add_compliance = 10
+				add_resistance = -10
 			}
 		}
 	}
@@ -444,7 +444,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = AOI_italian_african_police }
 		relative_position_id = AOI_italian_african_police
-		cost = 10
+		cost = 5
 		available = {
 			any_controlled_state = {
 				is_on_continent = africa
@@ -488,7 +488,7 @@ focus_tree = {
 				limit = {
 					has_resistance = yes
 				}
-				add_resistance = -3
+				add_resistance = -5
 			}		
 		}
 	}		
@@ -500,7 +500,7 @@ focus_tree = {
 		relative_position_id = AOI_organize_the_police_structure
 		x = -1
 		y = 1	
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 30
@@ -511,7 +511,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			army_experience = 25
+			army_experience = 50
 			add_ideas = FRA_colonial_recruitment
 		}
 	}
@@ -523,7 +523,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = AOI_expand_ascari_recruitment
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -554,7 +554,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = AOI_organize_the_police_structure
 		text = ABC_equipment_effort
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -580,7 +580,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = AOI_equipment_effort
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -612,7 +612,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = AOI_equipment_effort
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -676,7 +676,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = AOI_equipment_effort
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -703,7 +703,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = AOI_equipment_effort_3
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -740,7 +740,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = AOI_army_modernization
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -879,7 +879,7 @@ focus_tree = {
 		y = 1
 		text = ABC_establish_a_military_academy
 		relative_position_id = AOI_establish_a_armor_corp
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -980,7 +980,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = AOI_establish_a_armor_corp
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1056,7 +1056,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = AOI_mechanization_effort
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1

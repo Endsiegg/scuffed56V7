@@ -64,13 +64,13 @@ NDefines.NProduction.MIN_LICENSE_ACTIVE_DAYS = 1
 NDefines.NOperatives.OPERATIVE_MISSION_DETECTION_CHANCE_FACTOR = {
     -- Factor multiplied to the detection chance of an agent on mission before the offsets
     0.0, -- NoMission
-    1.0, -- BuildIntelNetwork
-    0.95, -- QuietIntelNetwork
+    0.5, -- BuildIntelNetwork
+    1.0, -- QuietIntelNetwork
     1.0, -- CounterIntelligence
     0.0, -- RootOutResistance
     3.0, -- BoostIdeology
-    0.1, -- ControlTrade
-    0.1, -- DiplomaticPressure
+    0.0, -- ControlTrade
+    0.0, -- DiplomaticPressure
     3.0, -- Propaganda
 }
 NDefines.NOperatives.BOOST_IDEOLOGY_NATIONAL_COVERAGE_FACTOR = 1.0				-- used to compute the drift factor as follow: BASE * SUB_NETWORK_NC * BOOST_IDEOLOGY_DEFENSE_FACTOR
@@ -84,10 +84,24 @@ NDefines.NOperatives.ON_CAPTURE_COUNTERINTELLIGENCE_OPERATIVE_XP_GAIN = 125					
 NDefines.NOperatives.ON_CAPTURE_COUNTERINTELLIGENCE_OPERATIVE_WEIGHT_OWN_COUNTRY_FOR_XP = 3			-- An integer on how likely an operative operating in his own country is to get selected for the xp reward on enemy operative capture
 NDefines.NOperatives.ON_CAPTURE_COUNTERINTELLIGENCE_OPERATIVE_WEIGHT_DIFFERENT_COUNTRY_FOR_XP = 1		-- same for an operative assigned to counter intelligence in a different country than his own
 NDefines.NOperatives.OPERATION_COMPLETION_XP = 75			-- XP given on completion of a mission. Was 18!
-NDefines.NOperatives.DIPLOMATIC_PRESSURE_DAILY_XP_GAIN = 0.155 			-- Daily XP given doing Diplomatic Pressure mission was 0.137
+NDefines.NOperatives.DIPLOMATIC_PRESSURE_DAILY_XP_GAIN = 0.5			-- Daily XP given doing Diplomatic Pressure mission was 0.137
 NDefines.NOperatives.COUNTER_INTELLIGENCE_DAILY_XP_GAIN = 0.115 		-- Daily XP given doing counter intelligence mission was 0.112
-NDefines.NOperatives.QUIET_INTEL_NETWORK_DAILY_XP_GAIN = 0.1  		-- Daily XP given doing quiet intel network mission was 0!
-NDefines.NOperatives.BUILD_INTEL_NETWORK_DAILY_XP_GAIN = 1.25  		-- was 1.0
+NDefines.NOperatives.QUIET_INTEL_NETWORK_DAILY_XP_GAIN = 0.2  		-- Daily XP given doing quiet intel network mission was 0!
+NDefines.NOperatives.BUILD_INTEL_NETWORK_DAILY_XP_GAIN = 2		-- was 1.0
+NDefines.NOperatives.CONTROL_TRADE_DAILY_XP_GAIN = 2		-- was 0.137
+NDefines.NOperatives.ROOT_OUT_RESISTANCE_DAILY_XP_GAIN = 0.5		-- was 0.068
+NDefines.NOperatives.CONTROL_TRADE_DAILY_XP_GAIN = 2		-- was 1.0
+
+NDefines.NOperatives.OPERATIVE_MAX_DAYS_HARMED = 31 --- was 120
+NDefines.NOperatives.OPERATIVE_MAX_DAYS_FORCED_INTO_HIDING = 8 -- was 120
+NDefines.NMilitary.NEW_OPERATIVE_RANDOM_PERSONALITY_TRAIT_CHANCES = {  -- chances to gain a personality trait for new operatives
+    	1.0, -- 100% for first trait was 50% in base
+		0.75  -- 75% for second trait after that was 10% in base
+}
+NDefines.NMilitary.NEW_OPERATIVE_RANDOM_BASIC_TRAIT_CHANCES = {  -- chances to gain a basic trait for new operatives
+    	1.0, -- 100% for first trait was 25% in base
+		0.75  -- 75% for second trait after that was 5% in base
+}
 ----------------------------------------------------------------------
 NDefines.NTechnology.MAX_SUBTECHS = 4						-- Max number of sub technologies a technology can have.
 NDefines.NTechnology.BASE_RESEARCH_POINTS_SAVED = 50.0		-- Base amount of research points a country can save per slot.

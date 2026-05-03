@@ -3,7 +3,7 @@ raid_trotskys_villa = { ### 1/50
 	map_icon = GFX_raid_trotskys_villa_map
 	name = raid_trotskys_villa
 	desc = raid_trotskys_villa_desc
-	days = 60
+	days = 30
 
 	priority = 11
 
@@ -36,7 +36,7 @@ raid_trotskys_villa = { ### 1/50
 	operatives = 1
 
 	# Integer [0-100] - Every operation has a hard requirement of network strength in the target country
-	network_strength = 50
+	network_strength = 25
 
 	equipment = {
 		infantry_equipment = 50
@@ -54,7 +54,7 @@ raid_trotskys_villa = { ### 1/50
 	outcome_potential = {
 		custom_effect_tooltip = raid_trotskys_villa_outcome_tt
 	}
-	risk_chance = 0.35
+	risk_chance = 0.15
 	experience = 5
 	# outcome is an effect that runs when the operation has completed
 	outcome_execute = { # SCOPE_OPERATION
@@ -114,7 +114,7 @@ murder_trotsky = { ### 1/50
 	map_icon = GFX_murder_trotsky_map
 	name = murder_trotsky
 	desc = murder_trotsky_desc
-	days = 270
+	days = 10
 
 	priority = 10
 
@@ -157,7 +157,7 @@ murder_trotsky = { ### 1/50
 	operatives = 1
 
 	# Integer [0-100] - Every operation has a hard requirement of network strength in the target country
-	network_strength = 25
+	network_strength = 10
 
 	on_start = {  # SCOPE_OPERATION
 		
@@ -170,7 +170,7 @@ murder_trotsky = { ### 1/50
 	outcome_potential = {
 		custom_effect_tooltip = murder_trotsky_outcome_tt
 	}
-	risk_chance = 0.25
+	risk_chance = 0.1
 	experience = 5
 	# outcome is an effect that runs when the operation has completed
 	outcome_execute = { # SCOPE_OPERATION

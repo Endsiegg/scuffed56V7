@@ -1742,16 +1742,16 @@ tactic_dday_landings = {
 				tag = BRA
 				tag = FRA
 			}
-			OR = {
-				AND = {
-					date < 1944.07.01
-					date > 1944.05.31
-				}
-				AND = {
-					date < 1945.07.01
-					date > 1945.05.31
-				}
-			}
+			# OR = {
+			# 	AND = {
+			# 		date < 1944.07.01
+			# 		date > 1944.05.31
+			# 	}
+			# 	AND = {
+			# 		date < 1945.07.01
+			# 		date > 1945.05.31
+			# 	}
+			# }
 		}
 	}
 	
@@ -1762,8 +1762,8 @@ tactic_dday_landings = {
 	}
 	picture = dday_landings
 
-	attacker = 0.35
-	defender = -0.15
+	attacker = 0.50
+	defender = -0.50
 }
 
 #soviet larp delaying tactic

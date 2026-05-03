@@ -82,11 +82,11 @@ on_actions = {
                    	    captured_by = ROOT
                    	}  	
                 }
-                kill_chance = {
-                    kill_operative = {
-                        killed_by = ROOT
-                    }
-                }
+                # kill_chance = {
+                #     kill_operative = {
+                #         killed_by = ROOT
+                #     }
+                # }
 
             }
 
@@ -165,30 +165,30 @@ on_actions = {
 	on_operative_detected_during_operation = {
 		effect = {
 			random_list = {
-				40 = {
+				90 = {
 					force_operative_leader_into_hiding = 45
 					operative_leader_event = {
 						id = lar_operative_event.2
 						set_from_from = FROM
 					}
 				}
-				35 = {
+				5 = {
 					capture_operative = {
 						captured_by = FROM
 					}
 				}
-				20 = {
+				5 = {
 					harm_operative_leader = 90
 					operative_leader_event = {
 						id = lar_operative_event.4
 						set_from_from = FROM
 					}
 				}
-				5 = {
-					kill_operative = {
-						killed_by = FROM
-					}
-				}
+				# 5 = {
+				# 	kill_operative = {
+				# 		killed_by = FROM
+				# 	}
+				# }
 			}
 		}
 	}
