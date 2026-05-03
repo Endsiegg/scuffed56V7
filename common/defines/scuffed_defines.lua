@@ -65,7 +65,7 @@ NDefines.NOperatives.OPERATIVE_MISSION_DETECTION_CHANCE_FACTOR = {
     -- Factor multiplied to the detection chance of an agent on mission before the offsets
     0.0, -- NoMission
     0.5, -- BuildIntelNetwork
-    0.95, -- QuietIntelNetwork
+    1.0, -- QuietIntelNetwork
     1.0, -- CounterIntelligence
     0.0, -- RootOutResistance
     3.0, -- BoostIdeology
@@ -94,6 +94,14 @@ NDefines.NOperatives.CONTROL_TRADE_DAILY_XP_GAIN = 2		-- was 1.0
 
 NDefines.NOperatives.OPERATIVE_MAX_DAYS_HARMED = 31 --- was 120
 NDefines.NOperatives.OPERATIVE_MAX_DAYS_FORCED_INTO_HIDING = 8 -- was 120
+NDefines.NMilitary.NEW_OPERATIVE_RANDOM_PERSONALITY_TRAIT_CHANCES = {  -- chances to gain a personality trait for new operatives
+    	1.0, -- 100% for first trait was 50% in base
+		0.75  -- 75% for second trait after that was 10% in base
+}
+NDefines.NMilitary.NEW_OPERATIVE_RANDOM_BASIC_TRAIT_CHANCES = {  -- chances to gain a basic trait for new operatives
+    	1.0, -- 100% for first trait was 25% in base
+		0.75  -- 75% for second trait after that was 5% in base
+}
 ----------------------------------------------------------------------
 NDefines.NTechnology.MAX_SUBTECHS = 4						-- Max number of sub technologies a technology can have.
 NDefines.NTechnology.BASE_RESEARCH_POINTS_SAVED = 50.0		-- Base amount of research points a country can save per slot.
