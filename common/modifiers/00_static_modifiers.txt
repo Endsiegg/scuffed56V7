@@ -5,79 +5,120 @@
 _test_power_balance_mod = {
 	power_balance_daily = 0.02
 }
+######################################
+####REGION SCOPED WEATHER MUHAHAHAH###
+######################################
 
 weather_rain_light = { # on Region
+	#AIR
 	air_accidents = 0.1
 	air_detection = -0.1
 	air_mission_efficiency = -0.1
-	local_org_regain = -0.05
-	naval_detection = -0.1
-	naval_hit_chance = -0.05
-	naval_retreat_speed = 0.05
+	ground_attack_factor  = -0.2
+	enemy_army_bonus_air_superiority_factor = -0.2
+
+	#NAVAL
+	naval_detection = -0.2
+	naval_hit_chance = -0.1
+	naval_retreat_speed = 0.1
 	naval_speed_factor = -0.05
-	naval_strike = -0.2
+	naval_strike = -0.5
+
+	#LAND
 	org_loss_when_moving = 0.05
+	local_org_regain = -0.05
 }
 weather_rain_heavy = { # on Region
+	#air
 	air_accidents = 0.3
 	air_bombing_targetting = -0.5
 	air_detection = -0.2
 	air_mission_efficiency = -0.3
-	carrier_traffic = -0.8
-	local_org_regain = -0.15
-	naval_detection = -0.2
-	naval_hit_chance = -0.2
-	naval_retreat_speed = 0.1
-	naval_speed_factor = -0.1
-	naval_strike = -0.4
+	ground_attack_factor  = -0.2
+	enemy_army_bonus_air_superiority_factor = -0.2
+
+	#NAVAL
+	carrier_traffic = -0.8	
+	naval_detection = -0.5
+	naval_hit_chance = -0.5
+	naval_retreat_speed = 0.2
+	naval_speed_factor = -0.3
+	naval_strike = -0.9
+	positioning = -0.1	
+
+	#LAND
 	org_loss_when_moving = 0.1
-	positioning = -0.1
-	supply_consumption_factor = 0.1
+	local_org_regain = -0.2
 	supply_factor = -0.05
 }
 weather_snow = { # on Region
+	#AIR
 	air_accidents = 0.1
 	air_detection = -0.15
-	air_mission_efficiency = -0.1
-	naval_detection = -0.15
-	naval_hit_chance = -0.05
-	naval_retreat_speed = 0.05
-	naval_speed_factor = -0.05
-	naval_strike = -0.3
-	org_loss_when_moving = 0.1
+	air_mission_efficiency = -0.2
+	ground_attack_factor = -0.3
+	enemy_army_bonus_air_superiority_factor = -0.3
+
+	#NAVAL
+	naval_detection = -0.3
+	naval_hit_chance = -0.2
+	naval_retreat_speed = 0.1
+	naval_speed_factor = -0.1
+	naval_strike = -0.7
 	positioning = -0.1
+
+	#LAND
+	local_org_regain = -0.05
+	army_speed_factor = -0.1
 	supply_factor = -0.10
 	truck_attrition_factor = 0.3
+	local_supplies = -0.05
 }
 weather_blizzard = { # on Region
+	#AIR
 	air_accidents = 0.3
 	air_bombing_targetting = -0.7
 	air_detection = -0.3
-	air_mission_efficiency = -0.3
+	air_mission_efficiency = -0.5
+	ground_attack_factor = -0.75
+	enemy_army_bonus_air_superiority_factor = -0.6
+
+	#NAVAL
 	carrier_traffic = -1.0
-	local_org_regain = -0.1
-	naval_detection = -0.3
-	naval_hit_chance = -0.1
-	naval_retreat_speed = 0.15
-	naval_speed_factor = -0.1
-	naval_strike = -0.4
+	naval_detection = -0.8
+	naval_hit_chance = -0.5
+	naval_retreat_speed = 0.2
+	naval_speed_factor = -0.5
+	naval_strike = -0.97
+	positioning = -0.2	
+
+	#LAND
+	local_org_regain = -0.3
 	org_loss_when_moving = 0.25
-	positioning = -0.2
-	supply_consumption_factor = 0.15
+	army_speed_factor = -0.3
+	supply_consumption_factor = 0.1
 	supply_factor = -0.25
 	truck_attrition_factor = 1.0
-	army_attack_speed_factor = -0.25
+	local_supplies = -0.35
 }
 weather_sandstorm = { # on Region
+	#AIR
 	air_accidents = 0.6
-	air_bombing_targetting = -1
+	air_bombing_targetting = -1.0
 	air_detection = -0.9
 	air_mission_efficiency = -0.5
-	local_org_regain = -0.2
-	naval_strike = -0.9
+	ground_attack_factor = -0.75
+	enemy_army_bonus_air_superiority_factor = -0.6
+
+	#NAVAL
+
+	#LAND
+	local_org_regain = -0.5
 	org_loss_when_moving = 0.25
+	army_speed_factor = -0.3
 	supply_factor = -0.15
 	truck_attrition_factor = 3.0
+	local_supplies = -0.2
 }
 
 weather_arctic_water = { # on Region
@@ -89,59 +130,92 @@ weather_arctic_water = { # on Region
 
 weather_mud = { # on Province
 	army_attack_factor = -0.4
-	army_speed_factor = -0.5
+	army_speed_factor = -0.6
 	attrition = 0.7
 	org_loss_when_moving = 0.25
+	#supply
 	supply_factor = -0.15
 	truck_attrition_factor = 5.0
+	local_supplies = -0.5
 }
 weather_extreme_cold = { # on Province
 	army_attack_factor = -0.2
 	breakthrough_factor = -0.3
 	dig_in_speed_factor = -0.6
 	local_org_regain = -0.05
+	ground_attack_factor = -0.2
+
 	supply_factor = -0.15
 	truck_attrition_factor = 1.0
 	winter_attrition = 0.5
+	local_supplies = -0.2
+	supply_consumption_factor = 0.25
 }
 weather_very_cold = { # on Province
 	army_attack_factor = -0.1
 	breakthrough_factor = -0.15
 	dig_in_speed_factor = -0.3
+	ground_attack_factor = -0.1
+
 	winter_attrition = 0.25
+	supply_consumption_factor =  0.1
+	supply_factor  = -0.05
+	truck_attrition_factor =  0.2
+	local_supplies = -0.1	
 }
 weather_very_hot = { # on Province
-	heat_attrition = 0.1
+	army_attack_factor = -0.1
+	ground_attack_factor = 0.1
 	local_org_regain = -0.05
+
+	heat_attrition = 0.1
+	supply_consumption_factor = 0.2
+	local_supplies = -0.1
 	supply_factor = -0.05
 }
 weather_extreme_hot = { # on Province
-	army_attack_factor = -0.1
-	heat_attrition = 0.2
+	army_attack_factor = -0.2
+	ground_attack_factor = -0.2
 	local_org_regain = -0.1
+
+	heat_attrition = 0.2
 	supply_consumption_factor = 0.5
+	supply_factor = -0.1
 	truck_attrition_factor = 0.1
+	local_supplies = -0.2
 }
 weather_ground_snow_medium = { # on Province
-	army_attack_factor = -0.2
+	#LAND Russia In Jan Fix, hope this slows germany downs finally
+	army_attack_factor = -0.40
 	army_speed_factor = -0.3
 	army_attack_speed_factor = -0.35
 	breakthrough_factor = -0.15
 	org_loss_when_moving = 0.1
-	supply_factor = -0.20
-	truck_attrition_factor = 0.5
+	local_org_regain = -0.05
 	dig_in_speed_factor = 0.05
+
+	supply_factor = -0.30
+	truck_attrition_factor = 0.5
+	winter_attrition = 0.2
+	local_supplies = -0.1
 }
 weather_ground_snow_high = { # on Province
-	army_attack_factor = -0.4
-	army_speed_factor = -0.7
+	#MAX POWER RUSSIAN WINTER OF DOOM PLEASE BRICK GERMANY
+	#ARMY
+	army_attack_factor = -0.6
+	army_speed_factor = -0.5
 	army_attack_speed_factor = -0.75
 	breakthrough_factor = -0.4
 	local_org_regain = -0.05
 	org_loss_when_moving = 0.25
-	supply_factor = -0.40
+	ground_attack_factor = -0.2
+	dig_in_speed_factor = 0.25	
+
+	#Supply
+	supply_factor = -0.45
 	truck_attrition_factor = 1.0
-	dig_in_speed_factor = 0.15
+	winter_attrition = 0.25
+	local_supplies = 0.2
 }
 
 flooded = { # on Province
@@ -162,11 +236,16 @@ unplanned_offensive = { # on Province
 }
 
 night = { # On province. Multiplied by amount of darkness.
+	#AIR
 	air_bombing_targetting = -0.5
-	carrier_traffic = -1.0
-	naval_hit_chance = -0.25
-	naval_retreat_speed = 0.1
 	air_attack_factor = -0.50
+	ground_attack_factor = -0.75
+
+	#NAVAL
+	carrier_traffic = -1.0
+	naval_hit_chance = -0.3
+	naval_retreat_speed = 0.1
+	naval_strike = -0.9
 }
 
 # The following is multiplied by local resistance strength.

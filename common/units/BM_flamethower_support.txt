@@ -7,12 +7,13 @@ sub_units = {
 		priority = 200
 		ai_priority = 100
 
-        can_be_parachuted = yes
-		affects_speed = no
-		active = yes
+
+		maximum_speed = 0.4
+		active = no
 
 		type = {
 			infantry
+			flame
 			support
 		}
 		
@@ -26,16 +27,27 @@ sub_units = {
 		}
 
 		combat_width = 0
-		max_strength = 5
-		max_organisation = 50
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 20
 		default_morale = 0.3
-		manpower = 100
+		manpower = 300
 		training_time = 180
+
+		#misc Abilities
 		weight = 0.1
-		supply_consumption = 0.03
-		
-		breakthrough = 0.15
-		soft_attack = 0.1		
+		supply_consumption = 0.02
+        can_be_parachuted = yes	
+
+		battalion_mult = {
+			category = category_light_infantry 
+			breakthrough = 0.05
+		}
+		#Support Nerfs to combat abilities	
+		breakthrough = -0.5
+		soft_attack = -0.5
+		hard_attack = -0.75
+		defense = -0.75
 
 		essential = {
 			infantry_equipment
@@ -43,17 +55,17 @@ sub_units = {
 		}
 
 		need = {
-			infantry_equipment = 25
-			support_equipment = 25
+			infantry_equipment = 10
+			support_equipment = 30
 		}
 
 		urban = {
-			attack = 0.1
-			defense = 0.1
+			attack = 0.05
+			#defence = 0.1
 		}
 		fort = {
-			attack = 0.1
-			defense = 0.1
+			attack = 0.05
+			#defense = 0.1
 		}
 		
 		same_support_type = flame
