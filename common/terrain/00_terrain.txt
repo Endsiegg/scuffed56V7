@@ -1,7 +1,7 @@
 
 ##################################################################
 ### Terrain Categories
-###
+### REDONE BY ENDSIEG TRYING TO FIX AMPHIBOUS
 ###
 
 categories =  {
@@ -41,20 +41,21 @@ categories =  {
 		}
 
 		units = {
-			attack = -0.15
+			attack = -0.30
+			defence = 0.15
 			movement = -0.2
 		}
 
-		enemy_army_bonus_air_superiority_factor = -0.1
+		enemy_army_bonus_air_superiority_factor = -0.25
 		
-		supply_flow_penalty_factor = 0.08
+		supply_flow_penalty_factor = 0.10
 		
 		truck_attrition_factor = 0.2
 	}
 
 	hills = {
 		color = { 248 255 153 }
-		movement_cost = 1.5
+		movement_cost = 1.6
 		#combat_width = -0.33
 		combat_width = 80
 		combat_support_width = 40
@@ -67,19 +68,20 @@ categories =  {
 		}
 
 		units = {
-			attack = -0.25
+			attack = -0.40
+			defence = 0.20
 			movement = -0.2
 		}
-		enemy_army_bonus_air_superiority_factor = -0.05
+		enemy_army_bonus_air_superiority_factor = -0.20
 		
-		supply_flow_penalty_factor = 0.1
+		supply_flow_penalty_factor = 0.12
 		
 		truck_attrition_factor = 0.2
 	}
 	
 	mountain = {
 		color = { 157 192 208 }
-		movement_cost = 2.0
+		movement_cost = 2.5
 		attrition = 0.3
 		#combat_width = -0.66
 		combat_width = 80
@@ -93,13 +95,14 @@ categories =  {
 		}
 
 		units = {
-			attack = -0.5
+			attack = -0.65
+			defence = 0.25
 			movement = -0.4
 		}
 
-		enemy_army_bonus_air_superiority_factor = -0.10
+		enemy_army_bonus_air_superiority_factor = -0.40
 		
-		supply_flow_penalty_factor = 0.12
+		supply_flow_penalty_factor = 0.35
 		
 		truck_attrition_factor = 1.0
 	}
@@ -108,7 +111,7 @@ categories =  {
 		color = { 255 129 66 }
 		movement_cost = 1.0
 		ai_terrain_importance_factor = 0.1
-		combat_width = 120
+		combat_width = 80
 		combat_support_width = 40
 		match_value = 0.5
 		sound_type = plains
@@ -133,18 +136,21 @@ categories =  {
 		}
 
 		units = {
-			attack = -0.3
+			attack = -0.55
+			defence = 0.30
 			movement = -0.2
 		}
 
 		enemy_army_bonus_air_superiority_factor = -0.50
 				
-		supply_flow_penalty_factor = -0.2
+		dig_in_speed_factor = 0.50
+
+		supply_flow_penalty_factor = -0.15
 	}
 	
 	jungle = {
 		color = { 127 191 0 }
-		movement_cost = 1.5
+		movement_cost = 2.5
 		attrition = 0.2
 		# combat_width = -0.25
 		combat_width = 80
@@ -159,22 +165,23 @@ categories =  {
 		}
 
 		units = {
-			attack = -0.3
+			attack = -0.50
+			defence = 0.15
 			movement = -0.3
 		}
 
-		enemy_army_bonus_air_superiority_factor = -0.25
+		enemy_army_bonus_air_superiority_factor = -0.35
 		
-		sickness_chance = 1.0
+		#sickness_chance = 1.2
 		
-		supply_flow_penalty_factor = 0.16
+		supply_flow_penalty_factor = 0.40
 		
-		truck_attrition_factor = 3.0
+		truck_attrition_factor = 3.5
 	}	
 	
 	marsh = {
 		color = { 76 96 35 }
-		movement_cost = 2.0
+		movement_cost = 2.2
 		attrition = 0.35
 		# combat_width = -0.25
 		combat_width = 80
@@ -188,20 +195,23 @@ categories =  {
 		}
 
 		units = {
-			attack = -0.4
+			attack = -0.50
+			defence = 0.10
 			movement = -0.4
 		}
 		
-		sickness_chance = 1.0
+		enemy_army_bonus_air_superiority_factor = -0.20
+
+		#sickness_chance = 1.0
 		
-		supply_flow_penalty_factor = 0.16
+		supply_flow_penalty_factor = 0.45
 		
-		truck_attrition_factor = 4.0
+		truck_attrition_factor = 4.5
 	}
 	
 	desert = {
 		color = { 255 127 0 }
-		movement_cost = 1.05
+		movement_cost = 1.1
 		attrition = 0.15
 		combat_width = 80
 		combat_support_width = 40
@@ -212,12 +222,16 @@ categories =  {
 			bunker = 4
 			coastal_bunker = 6
 		}
+
+		units = {
+			attack = -0.10
+			defence = -0.10
+		}
+		#sickness_chance = 1.0
 		
-		sickness_chance = 1.0
+		supply_flow_penalty_factor = 0.24
 		
-		supply_flow_penalty_factor = 0.14
-		
-		truck_attrition_factor = 0.5
+		truck_attrition_factor = 1.0
 	}
 	
 	water_fjords = {
@@ -272,9 +286,9 @@ categories =  {
 		sound_type = sea
 		
 		submarine = {
-			navy_visibility = 1.0
+			navy_visibility = 2.0
 		}
-		positioning = -0.05
+		positioning = -0.1
 		naval_mine_hit_chance = -0.5
 		minimum_seazone_dominance = 100
 	}
