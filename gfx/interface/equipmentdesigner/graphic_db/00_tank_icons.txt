@@ -2067,7 +2067,7 @@ FRA = {
 				GFX_FRA_light_ABA
 				GFX_FRA_light_AAC_camo
 				GFX_FRA_light_AAC
-				GFX_FRA_light_AAB_camo
+				#GFX_FRA_light_AAB_camo
 				GFX_FRA_light_AAB
 			}
 		}
@@ -2263,8 +2263,7 @@ FRA = {
 
 	medium_tank_destroyer_chassis = {
 		pool = {
-			icons_weight = 0.5
-			models_weight = 0.2
+			weight = 0.2
 			icons = {
 				GFX_FRA_medium_fixed_AFA #Basic Tank Destroyer
 				GFX_FRA_medium_fixed_AFB #Basic Tank Destroyer
@@ -2717,10 +2716,6 @@ ITA = {
 		}
 	}
 
-	medium_tank_chassis_0 = {
-
-	}
-
 	medium_tank_chassis_1 = {
 		pool = {
 			icons = { 
@@ -2859,9 +2854,6 @@ ITA = {
 		}
 	}
 
-	heavy_tank_chassis_0 = {
-
-	}
 	heavy_tank_chassis_1 = {
 		pool = {
 			icons = { 
@@ -3644,7 +3636,7 @@ SOV = {
 
 	light_tank_aa_chassis = {
 		pool = {
-			models_weight = 0.2
+			weight = 0.2
 			icons = { 
 				GFX_SOV_light_AA_A # Basic Light AA Tank
 				GFX_SOV_light_AA_B # Improved Light AA Tank
@@ -3845,7 +3837,7 @@ SOV = {
 
 	medium_tank_aa_chassis = {
 		pool = {
-			models_weight = 0.2
+			weight = 0.2
 
 			icons = { 
 				GFX_SOV_medium_AA_B # Improved Medium AA Tank
@@ -4035,7 +4027,7 @@ SOV = {
 
 	heavy_tank_aa_chassis = {
 		pool = {
-			models_weight = 0.2
+			weight = 0.2
 			icons = { 
 				GFX_SOV_heavy_AA_A # Basic Heavy AA Tank
 				GFX_SOV_heavy_AA_B # Improved Heavy AA Tank
@@ -5380,7 +5372,7 @@ AST = {
 RAJ = {
 	light_tank_chassis = {
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_light_tank_medium
 				GFX_ENG_improved_light_tank_medium
@@ -5401,7 +5393,7 @@ RAJ = {
 
 	light_tank_chassis_0 = {
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_light_tank_medium #Vickers Medium MK II (Should actually be Vickers MK V - Icon and Name are wrong) -> Pick oldest tank
 			}
@@ -5439,7 +5431,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_improved_light_tank_medium
 				GFX_ENG_advanced_light_tank_medium
@@ -5481,7 +5473,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_light_tank_medium
 				GFX_ENG_advanced_light_tank_medium
@@ -5523,7 +5515,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_light_tank_medium
 				GFX_ENG_improved_light_tank_medium
@@ -5577,7 +5569,7 @@ RAJ = {
 
 	medium_tank_chassis = {
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_medium_tank_medium
 				GFX_ENG_improved_medium_tank_medium
@@ -5598,7 +5590,7 @@ RAJ = {
 
 	medium_tank_chassis_0 = {
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = {
 				GFX_ENG_basic_medium_tank_medium #Crusader -> Pick oldest tank
 			}
@@ -5634,7 +5626,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 
 			icons = { 
 				GFX_ENG_improved_medium_tank_medium
@@ -5676,7 +5668,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_medium_tank_medium
 				GFX_ENG_advanced_medium_tank_medium
@@ -5717,7 +5709,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_medium_tank_medium
 				GFX_ENG_improved_medium_tank_medium
@@ -5771,7 +5763,7 @@ RAJ = {
 
 	heavy_tank_chassis = {
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_heavy_tank_medium
 				GFX_ENG_improved_heavy_tank_medium
@@ -5797,7 +5789,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_RAJ_basic_heavy_tank_medium
 			}
@@ -5831,7 +5823,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_improved_heavy_tank_medium
 				GFX_ENG_advanced_heavy_tank_medium
@@ -5872,7 +5864,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_heavy_tank_medium
 				GFX_ENG_advanced_heavy_tank_medium
@@ -5913,7 +5905,7 @@ RAJ = {
 			}
 		}
 		pool = {
-			models_weight = 0.5
+			weight = 0.5
 			icons = { 
 				GFX_ENG_basic_heavy_tank_medium
 				GFX_ENG_improved_heavy_tank_medium
@@ -7225,7 +7217,7 @@ SAF = {
 NZL = {
 	light_tank_chassis = {
 		pool = {
-			models_weight = 1.5
+			weight = 1.5
 			icons = { 
 				GFX_NZL_basic_light_tank_medium
 				GFX_NZL_improved_light_tank_medium
@@ -7435,7 +7427,7 @@ NZL = {
 			}
 		}
 		pool = {
-			models_weight = 1.5
+			weight = 1.5
 			icons = { 
 				GFX_NZL_basic_medium_tank_medium
 				GFX_NZL_improved_medium_tank_medium
@@ -9255,9 +9247,9 @@ POR = {
  				GFX_POR_improved_light_tank_medium
  				GFX_POR_advanced_light_tank_medium
 			 }
-			models = {
-				POR_light_armor_entity
-			}
+			# models = {
+			# 	POR_light_armor_entity
+			# }
 		}
 	}
 
@@ -9268,9 +9260,9 @@ POR = {
  				GFX_POR_improved_medium_tank_medium
  				GFX_POR_advanced_medium_tank_medium
 			 }
-			models = {
-				POR_medium_armor_entity
-			}
+			# models = {
+			# 	POR_medium_armor_entity
+			# }
 		}
 	}
 	heavy_tank_chassis = {
@@ -9280,9 +9272,9 @@ POR = {
  				GFX_POR_improved_heavy_tank_medium
  				GFX_POR_advanced_heavy_tank_medium
 			 }
-			models = {
-				POR_heavy_armor_entity
-			}
+			# models = {
+			# 	POR_heavy_armor_entity
+			# }
 		}
 	}
 	
@@ -9299,10 +9291,10 @@ POR = {
 			icons = {
 				GFX_POR_main_battle_tank_medium
 			}
-			models = {
-				"CZE_modern_armor_entity"
-				"POR_modern_armor_entity"
-			}
+			# models = {
+			# 	"CZE_modern_armor_entity"
+			# 	"POR_modern_armor_entity"
+			# }
 		}
 	}
 
@@ -9826,13 +9818,13 @@ SWE = {
 				GFX_SWE_advanced_light_tank_medium #Landsverk L-60 SIII-M/40L
 			}
 			models = {
-				SWE_light_sp_anti_air_brigade_0_entity 		#L-62 Anti II Basic
-				SWE_light_sp_anti_air_brigade_1_entity 		#Lvkv fm/43 Advanced (Has wrong entity name for its actutal tier)
-				SWE_light_tank_destroyer_brigade_1_entity 		#Strv m/40L (L60S III) - Pvkv Värjan	Advanced (Has wrong entity name for its actutal tier)
+			#	SWE_light_sp_anti_air_brigade_0_entity 		#L-62 Anti II Basic
+			#	SWE_light_sp_anti_air_brigade_1_entity 		#Lvkv fm/43 Advanced (Has wrong entity name for its actutal tier)
+				#SWE_light_tank_destroyer_brigade_1_entity 		#Strv m/40L (L60S III) - Pvkv Värjan	Advanced (Has wrong entity name for its actutal tier)
 				#SWE_iw_armor_entity 	#m21 (light armor IW)	#No Interwar in modern techs
 				SWE_light_armor_0_entity 	#Strv m38 (L60S) Basic
-				SWE_light_armor_1_entity #Strv m39 (L60 II) Improved
-				SWE_light_armor_2_entity 	#Strv m40 (L60 III) Advanced
+			#	SWE_light_armor_1_entity #Strv m39 (L60 II) Improved
+			#	SWE_light_armor_2_entity 	#Strv m40 (L60 III) Advanced
 			}
 		}
 	}
@@ -9847,7 +9839,7 @@ SWE = {
 				GFX_SWE_gwtank_medium #m21 (light armor IW)
 			}
 			models = {
-				SWE_iw_armor_entity 	#m21 (light armor IW)
+				#SWE_iw_armor_entity 	#m21 (light armor IW)
 			}
 		}
 	}
@@ -9877,7 +9869,7 @@ SWE = {
 				GFX_SWE_improved_light_tank_medium #Landsverk L-60 S-M/36
 			}
 			models = {
-				SWE_light_armor_1_entity #Strv m39 (L60 II) Improved
+			#	SWE_light_armor_1_entity #Strv m39 (L60 II) Improved
 			}
 		}
 	}
@@ -9891,7 +9883,7 @@ SWE = {
 				GFX_SWE_advanced_light_tank_medium #Landsverk L-60 SIII-M/40L
 			}
 			models = {
-				SWE_light_armor_2_entity 	#Strv m40 (L60 III) Advanced
+				#SWE_light_armor_2_entity 	#Strv m40 (L60 III) Advanced
 			}
 		}
 	}
@@ -10294,9 +10286,6 @@ SWE = {
 
 	modern_tank_destroyer_chassis = {
 		pool = {
-			limit = {
-				has_dlc = "Arms Against Tyranny"
-			}
 			icons = { 
 				#GFX_SWE_main_battle_tank_medium 	#same icon as modern tank chassis. Maybe this should be adjusted?
 			}
@@ -11088,37 +11077,37 @@ PER = {
 	}		
 }
 
-PRU = {
-	light_tank_chassis = {
-		pool = {
-			models = {
-				"PRU_light_armor_entity"
-			}
-		}
-	}
+# PRU = {
+# 	light_tank_chassis = {
+# 		pool = {
+# 			models = {
+# 				"PRU_light_armor_entity"
+# 			}
+# 		}
+# 	}
 
-	medium_tank_chassis = {
-		pool = {
-			models = {
-				"PRU_medium_armor_entity"
-			}
-		}
-	}
-	heavy_tank_chassis = {
-		pool = {
-			models = {
-				"PRU_heavy_armor_entity"
-			}		
-		}
-	}
+# 	medium_tank_chassis = {
+# 		pool = {
+# 			models = {
+# 				"PRU_medium_armor_entity"
+# 			}
+# 		}
+# 	}
+# 	heavy_tank_chassis = {
+# 		pool = {
+# 			models = {
+# 				"PRU_heavy_armor_entity"
+# 			}		
+# 		}
+# 	}
 
 	
-	modern_tank_chassis = {
-		pool = {
-			models = {
-				"CZE_modern_armor_entity"
-				"SOV_modern_armor_entity" # used T 55 historically
-			}
-		}
-	}		
-}
+# 	modern_tank_chassis = {
+# 		pool = {
+# 			models = {
+# 				"CZE_modern_armor_entity"
+# 				"SOV_modern_armor_entity" # used T 55 historically
+# 			}
+# 		}
+# 	}		
+# }
