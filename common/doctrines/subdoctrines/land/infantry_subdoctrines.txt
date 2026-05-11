@@ -253,13 +253,20 @@ assault_infantry = {
     # EFFECTS
 
     #OTHER BASE REWARDS
-    artillery = {   
+    artillery = {
+        soft_attack = 0.1
+    }
+    category_line_artillery = {
         soft_attack = 0.1
     }
     rewards = {
         low_echelon_fire_support = {
         #1
             artillery = {
+                battalion_mult = {
+                    category = category_line_artillery
+                    soft_attack = 0.05
+                }
                 battalion_mult = {
                     category = category_light_infantry
                     soft_attack = 0.05
@@ -269,6 +276,9 @@ assault_infantry = {
         organic_battalion_fire_support = {
         #2
             category_support_artillery = {
+                soft_attack = 0.05
+            }
+            category_line_artillery = {
                 soft_attack = 0.05
             }
             anti_tank = {
@@ -294,36 +304,39 @@ assault_infantry = {
                 max_organisation = 10
                 battalion_mult = {
                     category = category_all_infantry
+                    soft_attack = 0.05
                     breakthrough = 0.05
                 }
                 battalion_mult = {
-                    category = category_all_infantry
-                    max_organisation = 5
-                    add = yes
+                    category = category_line_artillery
+                    soft_attack = 0.05
+                    breakthrough = 0.05
                 }
             }
             light_tank_recon = {
                 max_organisation = 10
                 battalion_mult = {
                     category = category_all_infantry
+                    soft_attack = 0.05
                     breakthrough = 0.05
                 }
                 battalion_mult = {
-                    category = category_all_infantry
-                    max_organisation = 5
-                    add = yes
+                    category = category_line_artillery
+                    soft_attack = 0.05 
+                    breakthrough = 0.05
                 }
             }
             mot_recon = {
                 max_organisation = 10
                 battalion_mult = {
                     category = category_all_infantry
+                    soft_attack = 0.05
                     breakthrough = 0.05
                 }
                 battalion_mult = {
-                    category = category_all_infantry
-                    max_organisation = 5
-                    add = yes
+                    category = category_line_artillery
+                    soft_attack = 0.05
+                    breakthrough = 0.05
                 }
             }
 
@@ -331,8 +344,8 @@ assault_infantry = {
         }
         assault_detachments = {
         #5
-            category_support_artillery = {
-                supply_consumption = -0.02
+            category_line_artillery = {
+                supply_consumption = -0.05
             }
             bm_flamethower_support = {
                 battalion_mult = {
