@@ -1,7 +1,29 @@
 NDefines.NGame.END_DATE = "1956.1.1.1" -- we are called r56 for a reason!
 NDefines.NGame.HANDS_OFF_START_TAG = "YEM" --more central than vanilla's Haiti
 	
+NDefines.NDiplomacy.LICENSE_ACCEPTANCE_PUPPET_BASE = 20			-- Acceptance modifier for puppets requesting production licenses.
+NDefines.NDiplomacy.LICENSE_ACCEPTANCE_TECH_DIFFERENCE_BASE = 20    -- Acceptance base for tech difference
+NDefines.NDiplomacy.LICENSE_ACCEPTANCE_SAME_FACTION = 30			-- Acceptance modifier for being in the same faction
+NDefines.NDiplomacy.MAX_TRUST_VALUE = 200									-- Vanilla is 100
+NDefines.NDiplomacy.MIN_TRUST_VALUE = -200									-- Vanilla is -100
+NDefines.NDiplomacy.MAX_OPINION_VALUE = 200								-- Vanilla is 100
+NDefines.NDiplomacy.MIN_OPINION_VALUE = -200								-- Vanilla is -100
+NDefines.NDiplomacy.VERY_GOOD_OPINION = 100								-- Vanilla is 50
+NDefines.NDiplomacy.VERY_BAD_OPINION = -100								-- Vanilla is -50
+NDefines.NDiplomacy.FRONT_IS_DANGEROUS = 0									-- Vanilla is -100	
+NDefines.NDiplomacy.TENSION_VOLUNTEER_FORCE_DIVISION = 0.1
+NDefines.NDiplomacy.MAX_REMEMBERED_LEASED_IC = 2000				-- Maximum of leased equipment value that is remembered for opinion bonus
+NDefines.NDiplomacy.MAX_OPINION_FOR_LEASED_IC = 50					-- Positive opinion when remembering the MAX_REMEMBERED_LEASED_IC equipment
+NDefines.NDiplomacy.OPINION_FOR_DEMO_FROM_WT_GENERATION = -1.0		-- How much less do democracies like us if we generate world tension
 
+NDefines.NDiplomacy.PEACE_SCORE_TRANSFERRED_FROM_FACTION_INFLUENCE = 0 --R56: Influence is currently (12/2025) incredibly arbitrary, do not redistribute points based on it like vanilla
+
+NDefines.NDiplomacy.TENSION_CB_WAR = 7				-- R56: Lowered to balance out increase of peace conference tension
+NDefines.NDiplomacy.TENSION_DEMILITARIZE_ZONE = 0	-- R56: Was negative, no free tension reduction from abusing this
+NDefines.NDiplomacy.TENSION_ANNEX_NO_CLAIM = 0.6	-- R56: Was really low
+NDefines.NDiplomacy.TENSION_ANNEX_CLAIM = 0.3		-- R56: Was really low
+NDefines.NDiplomacy.TENSION_ANNEX_CORE = 0			-- R56: Civil wars no longer reduce tension
+NDefines.NDiplomacy.TENSION_PUPPET = 0.3			-- R56: Puppeting caused no tension, what?
 
 NDefines.NDiplomacy.DIPLOMACY_REQUEST_EXPIRY_DAYS = 30
 NDefines.NDiplomacy.NUM_DAYS_TO_ENABLE_KICKING_NEW_MEMBERS_OF_FACTION = 1			-- Number of days before being able to kick a new member of faction
@@ -31,6 +53,19 @@ NDefines.NCountry.NAVY_USE_HOME_BASE_FOR_RANGE = false
 NDefines.NCountry.CONVOY_RANGE_FACTOR = 0.5
 NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.2
 NDefines.NCountry.AIR_SUPPLY_CONVERSION_SCALE = 0.05  --BASE GAME IS 0.01
+NDefines.NCountry.STARTING_COMMAND_POWER = 25.0					-- starting command power for every country
+NDefines.NCountry.GIE_EXILE_ARMY_LEADER_START_LEVEL = 1	--Starting level for exile leader  -- why 3?!
+NDefines.NCountry.FEMALE_UNIT_LEADER_BASE_CHANCE = { 
+        -- applies as a factor to female unit leader randomization
+        -- the values needs to be zero if you don't actually have random portraits
+        0.0, -- Country Leaders
+        0.0, -- navy leaders
+        0.0, -- army leaders
+        0.0, -- air leaders
+        0.6, -- operatives
+        0.5, -- scientists
+}	
+
 ----------------------------------
 NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0					-- XP cost for adding a new equipment module in an empty slot when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0				-- XP cost for replacing one equipment module with an unrelated module when creating an equipment variant.
@@ -115,9 +150,9 @@ NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 50
 NDefines.NMilitary.BASE_DIVISION_BRIGADE_GROUP_COST = 0
 NDefines.NMilitary.BASE_DIVISION_BRIGADE_CHANGE_COST = 0
 NDefines.NMilitary.BASE_DIVISION_SUPPORT_SLOT_COST = 0
-NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 2000
-NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 2000
-NDefines.NMilitary.MAX_AIR_EXPERIENCE = 2000
+NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 9999
+NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 9999
+NDefines.NMilitary.MAX_AIR_EXPERIENCE = 9999
 NDefines.NMilitary.TRAINING_MAX_LEVEL = 10
 NDefines.NMilitary.DEPLOY_TRAINING_MAX_LEVEL = 5
 NDefines.NMilitary.ARMY_EXP_BASE_LEVEL = 5
@@ -130,8 +165,67 @@ NDefines.NMilitary.NUKE_MAX_DAMAGE_PERCENT = 1.2
 NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.15
 NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.1
 NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.05
-NDefines.NMilitary.PLANNING_DECAY = 0.04
 NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2 -- how many CAS/TAC can enter a combat depending on enemy width there
+NDefines.NMilitary.RECON_SKILL_IMPACT = 6
+NDefines.NMilitary.UNIT_EXPERIENCE_PER_COMBAT_HOUR = 0.000175
+NDefines.NMilitary.FIELD_EXPERIENCE_MAX_PER_DAY = 12
+NDefines.NMilitary.FIELD_MARSHAL_XP_RATIO = 0.7
+NDefines.NMilitary.COMMANDER_LEVEL_UP_STAT_WEIGHTS = {5, 5, 3, 4}
+NDefines.NMilitary.NEW_COMMANDER_RANDOM_PERSONALITY_TRAIT_CHANCES = { -- Chances to gain a personality trait for new generals
+    1.0, --100% for first trait
+    0.50, --50% for second trait after that
+    0.05, 
+    0.01,
+}
+NDefines.NMilitary.PLANNING_GAIN = 0.01
+NDefines.NMilitary.PLANNING_DECAY = 0.04
+NDefines.NMilitary.NAVAL_INVASION_PLANNING_BONUS_MALUS = 0.0 -- was -100% in base game Malus in percentage for the planning bonus gain for naval invasions
+NDefines.NMilitary.PLAN_PROVINCE_LOW_VP_IMPORTANCE_FRONT = 4.0
+NDefines.NMilitary.PLAN_PROVINCE_MEDIUM_VP_IMPORTANCE_FRONT = 6.0
+NDefines.NMilitary.PLAN_PROVINCE_HIGH_VP_IMPORTANCE_FRONT = 8.0
+NDefines.NMilitary.PLAN_AREA_DEFENSE_ENEMY_CONTROLLER_SCORE = 30.0
+NDefines.NMilitary.PLAN_MAX_PROGRESS_TO_JOIN = 0.60
+NDefines.NMilitary.PEN_VS_AVERAGE = 0.6
+NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.6		
+NDefines.NMilitary.PLAN_PORVINCE_PORT_BASE_IMPORTANCE = 18.0		-- increased from 12.0 ; Added importance for area defense province with a port
+NDefines.NMilitary.PLAN_STICKINESS_IGNORE_STACK_LIMIT = 1	
+NDefines.NMilitary.PLAN_BLITZ_OPTIMISM = 0.3	
+NDefines.NMilitary.NEW_COMMANDER_RANDOM_BASIC_TRAIT_CHANCES = {  -- chances to gain a basic trait for new generals
+    1.0, --100% for a first new trait
+    0.50, --50% for a second
+    0.05, --5% for a third
+    0.01, --1% for a fourth
+}
+
+NDefines.NMilitary.NEW_COMMANDER_RANDOM_STATUS_TRAIT_CHANCES = {  -- chances to gain a status trait for new generals
+    0.75, --75% for a first new trait
+    0.25, --25% for a second
+}
+NDefines.NMilitary.PIERCING_THRESHOLDS = {	-- Our piercing / their armor must be this value to deal damage fraction equal to the index in the array below [higher number = higher penetration]. If armor is 0, 1.00 will be returned.
+    2.00,
+    1.50,
+    1.00,
+    0.85,
+    0.75,
+    0.60,
+    0.00, --there isn't much point setting this higher than 0
+}
+NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {	-- 0 armor will always receive maximum damage (so add overmatching at your own peril). the system expects at least 2 values, with no upper limit.
+    2.00,
+    1.50,
+    1.00,
+    0.75,
+    0.50,
+    0.25,
+    0.00, --there isn't much point setting this higher than 0
+}
+NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.75 -- damage reduction if armor outclassing enemy
+NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.5 -- damage reduction if armor outclassing enemy
+NDefines.NMilitary.RIVER_CROSSING_PENALTY = -0.6                 -- small river crossing
+NDefines.NMilitary.RIVER_CROSSING_PENALTY_LARGE = -0.9           -- large river crossing
+NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY = -0.5           -- small river crossing
+NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY_LARGE = -0.75     -- large river crossing
+
 ----------------------------------
 --NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
 --NDefines.NAir.AIR_DEPLOYMENT_DAYS = 2
@@ -182,6 +276,14 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 }
 ---------------------------------
 --NDefines.NNavy.SUPPLY_NEED_FACTOR = 0	
+NDefines.NNavy.AMPHIBIOUS_LANDING_PENALTY = -0.5								-- amphibious landing penalty
+NDefines.NNavy.AMPHIBIOUS_INVADE_SPEED_BASE = 0.5 							-- every hour movement progress on amphibious invasion
+NDefines.NNavy.AMPHIBIOUS_INVADE_MOVEMENT_COST = 24.0 						-- total progress cost of movement while amphibious invading
+NDefines.NNavy.AMPHIBIOUS_INVADE_ATTACK_LOW = 0.2 							-- low and high cap of attack modifier scale. Scale interpolated by invasion progress.
+NDefines.NNavy.AMPHIBIOUS_INVADE_ATTACK_HIGH = 1.0
+NDefines.NNavy.AMPHIBIOUS_INVADE_DEFEND_LOW = 0.5 							-- low and high cap of defend modifier scale. Scale interpolated by invasion progress.
+NDefines.NNavy.AMPHIBIOUS_INVADE_DEFEND_HIGH = 1.0
+NDefines.NNavy.AMPHIBIOUS_INVADE_LANDING_PENALTY_DECREASE = 1				-- scale of bonus that decreases "amphibious penalty" during combat, relative to invading transporter tech.
 NDefines.NNavy.PRIDE_OF_THE_FLEET_UNASSIGN_COST = 0							-- cost to unassign/replace pride of the fleet
 NDefines.NNavy.PRIDE_OF_THE_FLEET_LOST_TEMP_MODIFIER_DURATION = 180	
 NDefines.NNavy.TRAINING_DAILY_COUNTRY_EXP_FACTOR = 0.002
