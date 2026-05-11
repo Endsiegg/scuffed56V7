@@ -185,8 +185,8 @@ NDefines.NMilitary.PLAN_PROVINCE_MEDIUM_VP_IMPORTANCE_FRONT = 6.0
 NDefines.NMilitary.PLAN_PROVINCE_HIGH_VP_IMPORTANCE_FRONT = 8.0
 NDefines.NMilitary.PLAN_AREA_DEFENSE_ENEMY_CONTROLLER_SCORE = 30.0
 NDefines.NMilitary.PLAN_MAX_PROGRESS_TO_JOIN = 0.60
-NDefines.NMilitary.PEN_VS_AVERAGE = 0.9
-NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.2		
+NDefines.NMilitary.PEN_VS_AVERAGE = 0.6
+NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.6		
 NDefines.NMilitary.PLAN_PORVINCE_PORT_BASE_IMPORTANCE = 18.0		-- increased from 12.0 ; Added importance for area defense province with a port
 NDefines.NMilitary.PLAN_STICKINESS_IGNORE_STACK_LIMIT = 1	
 NDefines.NMilitary.PLAN_BLITZ_OPTIMISM = 0.3	
@@ -201,6 +201,31 @@ NDefines.NMilitary.NEW_COMMANDER_RANDOM_STATUS_TRAIT_CHANCES = {  -- chances to 
     0.75, --75% for a first new trait
     0.25, --25% for a second
 }
+NDefines.NMilitary.PIERCING_THRESHOLDS = {	-- Our piercing / their armor must be this value to deal damage fraction equal to the index in the array below [higher number = higher penetration]. If armor is 0, 1.00 will be returned.
+    2.00,
+    1.50,
+    1.00,
+    0.85,
+    0.75,
+    0.60,
+    0.00, --there isn't much point setting this higher than 0
+}
+NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {	-- 0 armor will always receive maximum damage (so add overmatching at your own peril). the system expects at least 2 values, with no upper limit.
+    2.00,
+    1.50,
+    1.00,
+    0.75,
+    0.50,
+    0.25,
+    0.00, --there isn't much point setting this higher than 0
+}
+NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.75 -- damage reduction if armor outclassing enemy
+NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.5 -- damage reduction if armor outclassing enemy
+NDefines.NMilitary.RIVER_CROSSING_PENALTY = -0.6                 -- small river crossing
+NDefines.NMilitary.RIVER_CROSSING_PENALTY_LARGE = -0.9           -- large river crossing
+NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY = -0.5           -- small river crossing
+NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY_LARGE = -0.75     -- large river crossing
+
 ----------------------------------
 --NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
 --NDefines.NAir.AIR_DEPLOYMENT_DAYS = 2
@@ -255,10 +280,10 @@ NDefines.NNavy.AMPHIBIOUS_LANDING_PENALTY = -0.5								-- amphibious landing pe
 NDefines.NNavy.AMPHIBIOUS_INVADE_SPEED_BASE = 0.5 							-- every hour movement progress on amphibious invasion
 NDefines.NNavy.AMPHIBIOUS_INVADE_MOVEMENT_COST = 24.0 						-- total progress cost of movement while amphibious invading
 NDefines.NNavy.AMPHIBIOUS_INVADE_ATTACK_LOW = 0.2 							-- low and high cap of attack modifier scale. Scale interpolated by invasion progress.
-NDefines.NNavy.AMPHIBIOUS_INVADE_ATTACK_HIGH = 1.5
+NDefines.NNavy.AMPHIBIOUS_INVADE_ATTACK_HIGH = 1.0
 NDefines.NNavy.AMPHIBIOUS_INVADE_DEFEND_LOW = 0.5 							-- low and high cap of defend modifier scale. Scale interpolated by invasion progress.
-NDefines.NNavy.AMPHIBIOUS_INVADE_DEFEND_HIGH = 1.5
-NDefines.NNavy.AMPHIBIOUS_INVADE_LANDING_PENALTY_DECREASE = 0				-- scale of bonus that decreases "amphibious penalty" during combat, relative to invading transporter tech.
+NDefines.NNavy.AMPHIBIOUS_INVADE_DEFEND_HIGH = 1.0
+NDefines.NNavy.AMPHIBIOUS_INVADE_LANDING_PENALTY_DECREASE = 1				-- scale of bonus that decreases "amphibious penalty" during combat, relative to invading transporter tech.
 NDefines.NNavy.PRIDE_OF_THE_FLEET_UNASSIGN_COST = 0							-- cost to unassign/replace pride of the fleet
 NDefines.NNavy.PRIDE_OF_THE_FLEET_LOST_TEMP_MODIFIER_DURATION = 180	
 NDefines.NNavy.TRAINING_DAILY_COUNTRY_EXP_FACTOR = 0.002
