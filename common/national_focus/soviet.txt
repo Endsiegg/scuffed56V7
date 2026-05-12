@@ -2458,14 +2458,14 @@ focus_tree = {
 		}
 
 		available = {
-			has_war = no
+			#has_war = no
 		}
 
 		bypass = {
-			AND = {
-				date > 1939.1.1
-				has_war = yes
-			}
+			# AND = {
+			# 	date > 1939.1.1
+			# 	has_war = yes
+			# }
 		}
 
 		completion_reward = {
@@ -2478,7 +2478,7 @@ focus_tree = {
 					name = SOV_transpolar_flights
 					bonus = 1.0
 					uses = 1
-					category = cat_scout_plane
+					category = air_equipment
 				}				
 			}
 			add_doctrine_cost_reduction = {
@@ -4746,7 +4746,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = SOV_found_the_pcdi
-		cost = 10
+		cost = 5
 
 		available = {
 			has_full_control_of_state = 219 #MOSCOW
@@ -6197,7 +6197,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 3
+		cost = 1
 
 		#mutually_exclusive = { focus = SOV_improve_the_stalin_line }
 
@@ -6470,7 +6470,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 3
+		cost = 1
 
 		#mutually_exclusive = { focus = SOV_the_molotov_line }
 
@@ -8273,7 +8273,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SOV_strengthen_the_mobilization_plan
-		cost = 10
+		cost = 5
 
 		available = {
 			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
@@ -8294,7 +8294,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SOV_rehabilitated_military
-		cost = 10
+		cost = 5
 
 		select_effect = {
 			add_ideas = SOV_military_reorganization_ns
@@ -8334,9 +8334,9 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			any_enemy_country = {
-				SOV_is_major_not_original_sov = yes
-			}
+			# any_enemy_country = {
+			# 	SOV_is_major_not_original_sov = yes
+			# }
 		}
 
 		completion_reward = {
