@@ -54,7 +54,7 @@ NDefines.NCountry.CONVOY_RANGE_FACTOR = 0.5
 NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.2
 NDefines.NCountry.AIR_SUPPLY_CONVERSION_SCALE = 0.05  --BASE GAME IS 0.01
 NDefines.NCountry.STARTING_COMMAND_POWER = 25.0					-- starting command power for every country
-NDefines.NCountry.GIE_EXILE_ARMY_LEADER_START_LEVEL = 1	--Starting level for exile leader  -- why 3?!
+
 NDefines.NCountry.FEMALE_UNIT_LEADER_BASE_CHANCE = { 
         -- applies as a factor to female unit leader randomization
         -- the values needs to be zero if you don't actually have random portraits
@@ -65,7 +65,12 @@ NDefines.NCountry.FEMALE_UNIT_LEADER_BASE_CHANCE = {
         0.6, -- operatives
         0.5, -- scientists
 }	
-
+NDefines.NCountry.GIE_EXILE_ARMY_LEADER_START_LEVEL = 1	--Starting level for exile leader  -- why 3?!
+NDefines.NCountry.GIE_DIVISION_ATTACK_BONUS_AGAINST_OCCUPIER = 0.25 -- Attack bonus factor against whoever occupies your core territory.
+NDefines.NCountry.GIE_DIVISION_ATTACK_BONUS_ON_CORE = 0.25 -- Attack bonus factor when fighting on cores.
+NDefines.NCountry.GIE_DIVISION_DEFENSE_BONUS_ON_CORE = 0.25 -- Defense bonus factor when fighting on cores.
+NDefines.NCountry.GIE_ESCAPING_DIVISIONS_EQUIPMENT_RATIO = 1.0 -- Base equipment ratio on escaped troops.
+NDefines.NCountry.GIE_ESCAPING_DIVISIONS_AMOUNT_RATIO = 1.0 -- Ratio on amount of divisions that escapes. Scales with starting legitimacy    
 ----------------------------------
 NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0					-- XP cost for adding a new equipment module in an empty slot when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0				-- XP cost for replacing one equipment module with an unrelated module when creating an equipment variant.
@@ -88,6 +93,7 @@ NDefines.NProduction.BASE_FACTORY_EFFICIENCY_GAIN = 3		-- Base efficiency factor
 --NDefines.NProduction.BASE_FACTORY_MAX_EFFICIENCY_FACTOR = 100	-- Base max efficiency for factories expressed in %. THIS IS BASE PRODUCTION CAP
 NDefines.NProduction.SHIP_REFIT_MAX_PROGRESS_TO_CANCEL = 0.9			-- Maximum refitting progress % that we still allow to cancel wihtout having to scuttle the ship.
 NDefines.NProduction.SHIP_REFIT_DAMAGE_TO_PROGRESS_FACTOR = 0.1			-- When a ship is being damaged (for example port strike) while refitting, the damage is transferred to the production line progress instead. This variable is used to balance it.
+NDefines.NProduction.BASE_NAVAL_EQUIPMENT_CONVERSION_IC_COST_FACTOR = 0.1       -- Fraction of the hull industry cost which is always included in the refitting cost.
 
 NDefines.NProduction.LICENSE_EQUIPMENT_SPEED_NOT_FACTION = 0
 NDefines.NProduction.LICENSE_EQUIPMENT_TECH_SPEED_PER_YEAR = 0
@@ -95,6 +101,10 @@ NDefines.NProduction.LICENSE_EQUIPMENT_BASE_SPEED = 0.0
 NDefines.NProduction.BASE_LICENSE_IC_COST = 0
 NDefines.NProduction.LICENSE_IC_COST_YEAR_INCREASE = 0
 NDefines.NProduction.MIN_LICENSE_ACTIVE_DAYS = 1
+NDefines.NProduction.CAPITULATE_STOCKPILES_RATIO = 0.0 -- How much equipment from deployed divisions will be transferred on capitulation
+NDefines.NProduction.CAPITULATE_FUEL_RATIO = 0.0 -- How much fuel will be transferred on capitulation
+NDefines.NProduction.ANNEX_FUEL_RATIO = 1.0	-- How much fuel will be transferred on annexation
+NDefines.NProduction.ANNEX_CONVOYS_RATIO = 1.0			-- How many convoys will be transferred on annexation
 ----------------------------------
 NDefines.NOperatives.OPERATIVE_MISSION_DETECTION_CHANCE_FACTOR = {
     -- Factor multiplied to the detection chance of an agent on mission before the offsets
@@ -142,7 +152,7 @@ NDefines.NTechnology.MAX_SUBTECHS = 4						-- Max number of sub technologies a t
 NDefines.NTechnology.BASE_RESEARCH_POINTS_SAVED = 50.0		-- Base amount of research points a country can save per slot.
 NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 2		-- Base year ahead penalty
 NDefines.NTechnology.BASE_TECH_COST = 100					-- Base cost for a tech. multiplied with tech cost and ahead of time penalties
-NDefines.NTechnology.USE_BONUS_REGRET_TIMER = 10
+NDefines.NTechnology.USE_BONUS_REGRET_TIMER = 20
 ----------------------------------
 NDefines.NMilitary.UNIT_LEADER_USE_NONLINEAR_XP_GAIN = false
 NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 50
