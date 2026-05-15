@@ -14,16 +14,8 @@ equipments = {
 
 		interface_category = interface_category_land
 
-		# upgrades = { #R56
-		# 	# MOT_reliability_upgrade
-		# 	# MOT_speed_upgrade
-		# 	#MOT_hardness_upgrade good idea but bad because doesn't have armor
-		# }
-
 		maximum_speed = 12
 		reliability = 0.8
-		hardness = 0.1
-
 		breakthrough = 5
 
 		#Space taken in convoy
@@ -59,7 +51,6 @@ equipments = {
 		is_convertable = yes #R56
 	}
 
-	#Katyusha R56
 	motorized_rocket_equipment = {
 		year = 1934
 		family = motorized_equipment
@@ -75,22 +66,12 @@ equipments = {
 
 		interface_category = interface_category_land
 
-		# upgrades = {
-		# 	MRART_reliability_upgrade
-		# 	MRART_SA_upgrade
-		# 	MRART_BR_upgrade
-		# 	MRART_speed_upgrade
-		# 	#MRART_armor_upgrade - doesn't work because has 0 hardness.
-		# }
-
 		#Misc Abilities
 		reliability = 0.8
 
 		#Defensive Abilities
 		defense = 15
 		breakthrough = 12
-		hardness = 0
-		armor_value = 0
 
 		#Offensive Abilities
 		soft_attack = 36
@@ -100,7 +81,6 @@ equipments = {
 
 		build_cost_ic = 12
 		resources = {
-
 			rubber = 1
 			steel = 1
 		}
@@ -124,10 +104,10 @@ equipments = {
 		year = 1938
 
 		is_archetype = yes
-		picture = archetype_motorized_equipment	#TODO_Manu: check if new one needed
+		picture = archetype_motorized_equipment	
 		is_buildable = no
 		type = {
-			motorized #TODO_Manu: Maybe remove this?
+			motorized 
 			support
 		}
 		group_by = archetype
@@ -136,7 +116,7 @@ equipments = {
 		
 		maximum_speed = 12
 		reliability = 0.9
-		#hardness = 0
+
 
 		breakthrough = 1
 
@@ -145,7 +125,6 @@ equipments = {
 
 		build_cost_ic = 1.5
 		resources = {
-			#oil = 1
 			rubber = 1
 			steel = 1
 		}

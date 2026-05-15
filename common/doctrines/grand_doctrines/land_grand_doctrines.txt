@@ -177,7 +177,7 @@ superior_firepower = {
         {
             #Infantry
             enable_tactic = tactic_elastic_defense
-            supply_consumption_factor = -0.1
+            supply_consumption_factor = -0.15
 
             effect = {
                 if = {
@@ -202,7 +202,8 @@ superior_firepower = {
              BM_command_regiment = {
                 battalion_mult = {
                     category = category_line_artillery
-                    soft_attack = 0.05
+                    soft_attack = 0.1
+                    air_attack = 0.1
                 }
             }
             enable_tactic = tactic_barrage
@@ -229,6 +230,7 @@ superior_firepower = {
                 battalion_mult = {
                     category = category_line_artillery
                     hard_attack = 0.1
+                    ap_attack = 0.1
                 }
             }
             category_army ={
@@ -305,13 +307,14 @@ grand_battleplan = {
     enable_tactic = tactic_planned_attack
     
     max_planning = 0.1
+    planning_speed = -0.2
     command_power_gain = 0.25
     milestones = {
         {
             #Infantry 
             additional_brigade_column_size = 1
             enable_tactic = tactic_elastic_defense
-            max_dig_in = 10
+            max_dig_in = 5
             effect = {
                 if = {
                     limit = {
