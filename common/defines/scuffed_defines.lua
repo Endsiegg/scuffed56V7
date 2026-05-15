@@ -47,9 +47,9 @@ NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.1
 NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 40
 NDefines.NCountry.INTERPOLATED_FRONT_STEPS_SHORT = 1					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 NDefines.NCountry.MIN_MAJOR_COUNTRIES = 15
---NDefines.NCountry.SUPPLY_CONVOY_FACTOR = 0.1
+NDefines.NCountry.SUPPLY_CONVOY_FACTOR = 0.1
 NDefines.NCountry.CONVOY_CONTROLLED_ROUTE_COST_REDUCTION_FACTOR = 0.5
-NDefines.NCountry.NAVY_USE_HOME_BASE_FOR_RANGE = false
+NDefines.NCountry.NAVY_USE_HOME_BASE_FOR_RANGE = true
 NDefines.NCountry.CONVOY_RANGE_FACTOR = 0.5
 NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.2
 NDefines.NCountry.AIR_SUPPLY_CONVERSION_SCALE = 0.05  --BASE GAME IS 0.01
@@ -174,7 +174,7 @@ NDefines.NMilitary.NUKE_MIN_DAMAGE_PERCENT = 0.9
 NDefines.NMilitary.NUKE_MAX_DAMAGE_PERCENT = 1.2
 NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.15
 NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.1
-NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.05
+--NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.05 removed cause hurts too much
 NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2 -- how many CAS/TAC can enter a combat depending on enemy width there
 NDefines.NMilitary.RECON_SKILL_IMPACT = 6
 NDefines.NMilitary.UNIT_EXPERIENCE_PER_COMBAT_HOUR = 0.000175
@@ -187,16 +187,16 @@ NDefines.NMilitary.NEW_COMMANDER_RANDOM_PERSONALITY_TRAIT_CHANCES = { -- Chances
     0.05, 
     0.01,
 }
-NDefines.NMilitary.PLANNING_GAIN = 0.01
-NDefines.NMilitary.PLANNING_DECAY = 0.04
+--NDefines.NMilitary.PLANNING_GAIN = 0.01
+NDefines.NMilitary.PLANNING_DECAY = 0.02
 NDefines.NMilitary.NAVAL_INVASION_PLANNING_BONUS_MALUS = 0.0 -- was -100% in base game Malus in percentage for the planning bonus gain for naval invasions
 NDefines.NMilitary.PLAN_PROVINCE_LOW_VP_IMPORTANCE_FRONT = 4.0
 NDefines.NMilitary.PLAN_PROVINCE_MEDIUM_VP_IMPORTANCE_FRONT = 6.0
 NDefines.NMilitary.PLAN_PROVINCE_HIGH_VP_IMPORTANCE_FRONT = 8.0
 NDefines.NMilitary.PLAN_AREA_DEFENSE_ENEMY_CONTROLLER_SCORE = 30.0
 NDefines.NMilitary.PLAN_MAX_PROGRESS_TO_JOIN = 0.60
-NDefines.NMilitary.PEN_VS_AVERAGE = 0.6
-NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.6		
+NDefines.NMilitary.PEN_VS_AVERAGE = 0.9
+NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.5		
 NDefines.NMilitary.PLAN_PORVINCE_PORT_BASE_IMPORTANCE = 18.0		-- increased from 12.0 ; Added importance for area defense province with a port
 NDefines.NMilitary.PLAN_STICKINESS_IGNORE_STACK_LIMIT = 1	
 NDefines.NMilitary.PLAN_BLITZ_OPTIMISM = 0.3	
@@ -286,6 +286,9 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 }
 ---------------------------------
 --NDefines.NNavy.SUPPLY_NEED_FACTOR = 0	
+NDefines.NAVAL_HEADQUARTER_ADJACENCY = 3								-- How many extra steps of strategic regions from the first the naval headquarter provides benefits. 
+NDefines.NNavy.NAVAL_HEADQUARTERS_EXPERIENCE_SCALE = 1.0					-- Characters assigned to a naval HQ will gain 15% of all experience from taskforces in their regions
+NDefines.NNavy.UNDERWAY_REPLENISHMENT_CONVOY_COST_PER_FUEL = 0.1	-- Cost in convoys for underway replenishment multiplied by max daily fuel consumption (rounded up)
 NDefines.NNavy.AMPHIBIOUS_LANDING_PENALTY = -0.5								-- amphibious landing penalty
 NDefines.NNavy.AMPHIBIOUS_INVADE_SPEED_BASE = 0.5 							-- every hour movement progress on amphibious invasion
 NDefines.NNavy.AMPHIBIOUS_INVADE_MOVEMENT_COST = 24.0 						-- total progress cost of movement while amphibious invading
@@ -308,10 +311,15 @@ NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 35
 ----------------------------------
 NDefines.NBuildings.MAX_SHARED_SLOTS = 35
 ----------------------------------
---NDefines.NIndustrialOrganisation.DESIGN_TEAM_CHANGE_XP_COST = 1
+NDefines.MAX_FUNDS_FROM_MANUFACTURER_PER_DAY = 0					-- Max funds generated per manufacturer per day. Set to 0 for no Maximum.
 NDefines.NIndustrialOrganisation.DESIGN_TEAM_RESEARCH_BONUS = 0.1
 ------------------------------------
 NDefines.NSupply.MIN_SURRENDER_LIMIT_TO_MOVE_SUPPLY_CAPITAL = 0 -- move capital supply hub anytime
+NDefines.NSupply.CAPITAL_SUPPLY_BASE = 30.0 -- base supply for capital
+NDefines.NSupply.CAPITAL_SUPPLY_CIVILIAN_FACTORIES = 0.6 -- supply from one civilian factory
+NDefines.NSupply.CAPITAL_SUPPLY_DOCKYARDS = 0.6 --supply from one naval factory
+NDefines.NSupply.NAVAL_SUPPLY_HUB_REDUCTION_FACTOR = 0.0	-- naval supply hub will reduce the supply need to the fleet by this ratio
+
 --NDefines.NSupply.INFRA_TO_SUPPLY = 0.5  -- 0.3
 --NDefines.NSupply.VP_TO_SUPPLY_BASE = 0.1 --0.2
 --NDefines.NSupply.VP_TO_SUPPLY_BONUS_CONVERSION = 0.06 --0.05
