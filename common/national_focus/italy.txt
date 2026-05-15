@@ -7277,8 +7277,6 @@ focus_tree = {
 				}
 				has_tech = improved_ship_hull_light
 				has_tech = sonar
-				#has_tech = improved_ship_torpedo_launcher #Granting it anyways
-				#has_tech = improved_depth_charges #Granting it anyways
 			}
 			else = {
 				has_tech = improved_destroyer
@@ -7314,7 +7312,7 @@ focus_tree = {
 				#Equipment Variant
 				if = {
 					limit = {
-						has_tech = basic_dp_light_battery
+						has_tech = improved_ship_hull_light
 					}
 					create_equipment_variant = {
 						name = "Comandanti Medaglie d'Oro Class"
@@ -8059,7 +8057,7 @@ focus_tree = {
 					}
 					if = {
 						limit = {
-							has_tech = basic_dp_light_battery
+							has_tech = improved_ship_hull_cruiser
 						}
 						#Equipment Variant
 						create_equipment_variant = {
@@ -8135,7 +8133,7 @@ focus_tree = {
 				else = { #CRUISER HULL II
 					if = {
 						limit = {
-							has_tech = basic_dp_light_battery
+							has_tech = basic_ship_hull_cruiser
 						}
 						#Equipment Variant
 						create_equipment_variant = {
