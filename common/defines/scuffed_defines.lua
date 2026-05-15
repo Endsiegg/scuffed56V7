@@ -212,21 +212,23 @@ NDefines.NMilitary.NEW_COMMANDER_RANDOM_STATUS_TRAIT_CHANCES = {  -- chances to 
     0.25, --25% for a second
 }
 NDefines.NMilitary.PIERCING_THRESHOLDS = {	-- Our piercing / their armor must be this value to deal damage fraction equal to the index in the array below [higher number = higher penetration]. If armor is 0, 1.00 will be returned.
-    2.00,
     1.50,
+    1.25,
     1.00,
     0.85,
     0.75,
     0.60,
+    0.50,
     0.00, --there isn't much point setting this higher than 0
 }
 NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {	-- 0 armor will always receive maximum damage (so add overmatching at your own peril). the system expects at least 2 values, with no upper limit.
-    2.00,
     1.50,
+    1.25,
     1.00,
+    0.85,
     0.75,
+    0.60,
     0.50,
-    0.25,
     0.00, --there isn't much point setting this higher than 0
 }
 NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.75 -- damage reduction if armor outclassing enemy
