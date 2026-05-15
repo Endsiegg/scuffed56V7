@@ -142,35 +142,6 @@ sp_naval_cruiser_submarine = {
 					}
 				}
 			}
-
-			option = {
-				token = sp_naval_cruiser_submarine_preference_b
-				
-				iteration_output = {
-					country_effects = { 
-						if = {
-							limit = {
-								NOT = {has_dlc = "Man the Guns"}
-							}
-							add_equipment_bonus = {
-								name = sp_cruiser_submarine_eq_bonus_raiding
-								bonus = {
-									cruiser_submarine = {
-										torpedo_attack = 0.1
-									}
-								}
-							}
-						}
-					}
-					
-					enable_equipment_modules = {
-						limit = {
-							has_dlc = "Man the Guns"
-						}
-						ship_light_battery_sub
-					}
-				}
-			}
 		}
 	}
 	
@@ -954,7 +925,7 @@ sp_naval_nuclear_torpedo = {
 	}
 	
 	available = {
-		FROM = { has_tech = modern_ship_torpedo_launcher }
+		FROM = { has_tech = advanced_ship_hull_submarine has_tech = advanced_ship_hull_light has_tech = advanced_ship_hull_cruiser}
 	}
 
 	special_project_parent = {
@@ -2134,10 +2105,10 @@ sp_naval_super_heavy_battleship = {
 				limit = { 
 					has_dlc = "Man the Guns"
 				}
-				has_tech = early_ship_hull_heavy
+				has_tech = improved_ship_hull_heavy
 			}
 			else = {
-				has_tech = early_battleship
+				has_tech = improved_battleship
 			}
 		}
 	}
@@ -2826,11 +2797,11 @@ sp_naval_modern_carrier = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = advanced_ship_hull_carrier
+				has_tech = ship_hull_super_heavy
 			}
-			else = {
-				has_tech = advanced_carrier
-			}
+			#else = {
+			#	has_tech = SH_battleship_1
+			#}
 
 		}
 

@@ -13,7 +13,11 @@ technologies = {
 			ship_hull_light_1
 		}
 		enable_equipment_modules = {
+			ship_anti_air_1
 			light_ship_engine_1
+			ship_light_battery_1
+			ship_torpedo_1
+			dp_light_battery_1
 		}
 		path = {
 			leads_to_tech = basic_ship_hull_light
@@ -88,7 +92,11 @@ technologies = {
 			ship_hull_light_2
 		}
 		enable_equipment_modules = {
+			ship_anti_air_2
 			light_ship_engine_2
+			ship_light_medium_battery_2
+			ship_torpedo_2
+			dp_light_battery_2
 		}
 		path = {
 			leads_to_tech = improved_ship_hull_light
@@ -151,7 +159,11 @@ technologies = {
 			ship_hull_light_3
 		}
 		enable_equipment_modules = {
+			ship_anti_air_3
 			light_ship_engine_3
+			ship_light_battery_3
+			ship_torpedo_3
+			dp_light_battery_3
 		}
 
 		path = {
@@ -166,6 +178,13 @@ technologies = {
 		folder = {
 			name = mtgnavalfolder
 			position = { x = 0 y = 13 }
+		}
+
+		destroyer = {
+			torpedo_attack = 0.2
+			naval_torpedo_hit_chance_factor = 0.1
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
 		}
 
 		ai_will_do = {
@@ -209,12 +228,21 @@ technologies = {
 			ship_hull_light_4
 		}
 		enable_equipment_modules = {
+			ship_anti_air_4
 			light_ship_engine_4
+			ship_light_battery_4
+			ship_torpedo_4
+			dp_light_battery_4
 		}
 		path = {
 			leads_to_tech = modern_ship_hull_light 
 			research_cost_coeff = 1
-		}		
+		}	
+
+		destroyer = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+		}
 		research_cost = 2
 
 		start_year = 1944
@@ -819,9 +847,15 @@ technologies = {
 			ship_hull_cruiser_1
 		}
 		enable_equipment_modules = {
+			ship_anti_air_1
+			ship_torpedo_1
 			ship_airplane_launcher_1
 			cruiser_ship_engine_1
 			ship_armor_cruiser_1
+			ship_medium_battery_1
+			ship_light_medium_battery_1
+			ship_secondaries_1
+			dp_ship_secondaries_1
 		}
 		path = {
 			leads_to_tech = basic_ship_hull_cruiser
@@ -898,7 +932,13 @@ technologies = {
 			ship_hull_cruiser_2
 		}
 		enable_equipment_modules = {
+			ship_anti_air_2
+			ship_torpedo_2
+			ship_medium_battery_2
+			ship_light_medium_battery_2
 			cruiser_ship_engine_2
+			ship_secondaries_2
+			dp_ship_secondaries_2
 		}
 
 		path = {
@@ -965,7 +1005,12 @@ technologies = {
 			ship_hull_cruiser_3
 		}
 		enable_equipment_modules = {
+			ship_anti_air_3
+			ship_torpedo_3
+			ship_medium_battery_3
+			ship_light_medium_battery_3
 			cruiser_ship_engine_3
+			dp_ship_secondaries_3
 		}
 		path = {
 			leads_to_tech = advanced_ship_hull_cruiser
@@ -975,6 +1020,21 @@ technologies = {
 		research_cost = 1.5
 
 		start_year = 1940
+		
+		light_cruiser = {
+			torpedo_attack = 0.2
+			naval_torpedo_hit_chance_factor = 0.1
+			lg_attack = 0.1
+			lg_armor_piercing = 0.1
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.2
+			naval_torpedo_hit_chance_factor = 0.1
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
+		}
 
 		folder = {
 			name = mtgnavalfolder
@@ -1025,12 +1085,28 @@ technologies = {
 			ship_hull_cruiser_4
 		}
 		enable_equipment_modules = {
+			ship_anti_air_4
+			ship_torpedo_4
+			ship_medium_battery_4
+			dp_ship_medium_1
+			ship_light_medium_battery_4
 			cruiser_ship_engine_4
+			dp_ship_secondaries_4
 		}
 		path = {
 			leads_to_tech = modern_ship_hull_cruiser
 			research_cost_coeff = 1
 		}
+
+		light_cruiser = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+		}
+		heavy_cruiser = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+		}
+
 		research_cost = 1.5
 
 		start_year = 1944
@@ -1271,9 +1347,14 @@ technologies = {
 		}
 
 		enable_equipment_modules = {
+			ship_anti_air_1
+			ship_heavy_battery_1
+			ship_secondaries_1
+			dp_ship_secondaries_1
 			ship_armor_bb_1
 			heavy_ship_engine_1
 			ship_armor_bc_1
+			ship_super_heavy_battery_1
 		}
 
 		path = {
@@ -1351,7 +1432,13 @@ technologies = {
 			ship_hull_heavy_2
 		}
 		enable_equipment_modules = {
+			ship_anti_air_2
+			ship_heavy_battery_2
+			ship_secondaries_2
+			dp_ship_secondaries_2
+			ship_armor_bb_2
 			heavy_ship_engine_2
+			ship_armor_bc_2
 		}
 		path = {
 			leads_to_tech = improved_ship_hull_heavy
@@ -1468,11 +1555,29 @@ technologies = {
 			ship_hull_heavy_3
 		}
 		enable_equipment_modules = {
+			ship_anti_air_3
+			ship_heavy_battery_3
+			dp_ship_secondaries_3
+			ship_armor_bb_3
 			heavy_ship_engine_3
+			ship_armor_bc_3
 		}
 		path = {
 			leads_to_tech = advanced_ship_hull_heavy
 			research_cost_coeff = 1
+		}
+
+		battleship = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
+		}
+		battle_cruiser = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 
 		research_cost = 1.5
@@ -1534,6 +1639,9 @@ technologies = {
 			ship_hull_heavy_4
 		}
 		enable_equipment_modules = {
+			ship_anti_air_4
+			dp_ship_secondaries_4
+			ship_heavy_battery_4
 			heavy_ship_engine_4
 		}
 		path = {
@@ -1549,6 +1657,20 @@ technologies = {
 				}
 			}	
 		}
+
+		battleship = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
+		}
+		battle_cruiser = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
+		}
+
 		research_cost = 1.5
 
 		start_year = 1944
@@ -1778,7 +1900,10 @@ early_ship_hull_carrier = {
 
 		enable_equipment_modules = {
 			ship_armor_carrier_deck
+			ship_anti_air_1
 			carrier_ship_engine_1
+			ship_secondaries_1
+			dp_ship_secondaries_1
 			ship_deck_space
 		}
 
@@ -1838,7 +1963,10 @@ early_ship_hull_carrier = {
 			ship_hull_carrier_1
 		}
 		enable_equipment_modules = {
+			ship_anti_air_2
 			carrier_ship_engine_2
+			ship_secondaries_2
+			dp_ship_secondaries_2
 		}
 		path = {
 			leads_to_tech = improved_ship_hull_carrier
@@ -1913,6 +2041,8 @@ early_ship_hull_carrier = {
 		}
 		enable_equipment_modules = {
 			carrier_ship_engine_3
+			ship_anti_air_3
+			dp_ship_secondaries_3
 		}
 		on_research_complete = {
 			if = {
@@ -1933,6 +2063,10 @@ early_ship_hull_carrier = {
 			research_cost_coeff = 1
 		}
 
+		carrier = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+		}
 		research_cost = 1.5
 
 		start_year = 1940
@@ -1985,11 +2119,20 @@ early_ship_hull_carrier = {
 		}
 		enable_equipment_modules = {
 			carrier_ship_engine_4
+			ship_anti_air_4
+			dp_ship_secondaries_4
+			big_ship_deck_space
 		}
 		path = {
 			leads_to_tech = modern_ship_hull_carrier
 			research_cost_coeff = 1
-		}		
+		}
+
+		carrier = {
+			lg_attack = 0.05
+			lg_armor_piercing = 0.05
+		}
+		
 		research_cost = 1.5
 
 		start_year = 1944
@@ -2034,10 +2177,11 @@ early_ship_hull_carrier = {
 		}
 		special_project_specialization = { specialization_naval }
 	}
+	
 	modern_ship_hull_carrier = {
 
 		enable_equipments = {
-			ship_hull_carrier_4
+			ship_hull_carrier_3
 		}
 		
 		research_cost = 1.5
@@ -2098,8 +2242,8 @@ early_ship_hull_carrier = {
 		}
 
 		enable_equipment_modules = {
-			#ship_torpedo_sub_1
-			sub_ship_engine_1
+			sub_ship_engine_1 
+			ship_torpedo_sub_1
 		}
 
 		path = {
@@ -2168,8 +2312,8 @@ early_ship_hull_carrier = {
 			ship_hull_submarine_2
 		}
 		enable_equipment_modules = {
-			#ship_torpedo_sub_2
 			sub_ship_engine_2
+			ship_torpedo_sub_2	
 		}
 		on_research_complete = {
 			if = {
@@ -2184,7 +2328,9 @@ early_ship_hull_carrier = {
 				}				
 			}
 		}
-	
+		submarine = {
+			naval_torpedo_hit_chance_factor = 0.1
+		}
 		path = {
 			leads_to_tech = improved_ship_hull_submarine
 			research_cost_coeff = 1
@@ -2248,10 +2394,10 @@ early_ship_hull_carrier = {
 			ship_hull_submarine_3
 		}
 		enable_equipment_modules = {
-			#ship_torpedo_sub_3
 			sub_ship_engine_3
+			ship_torpedo_sub_3
+			ship_light_battery_sub
 		}
-
 
 		path = {
 			leads_to_tech = advanced_ship_hull_submarine
@@ -2266,7 +2412,11 @@ early_ship_hull_carrier = {
 		research_cost = 2.0
 
 		start_year = 1940
-
+		submarine = {
+			torpedo_attack = 0.2
+		}
+		naval_torpedo_reveal_chance_factor = -0.25
+		
 		folder = {
 			name = mtgnavalfolder
 			position = {  x = -2 y = 13 }
@@ -2313,7 +2463,7 @@ early_ship_hull_carrier = {
 			ship_hull_submarine_4
 		}
 		enable_equipment_modules = {
-			#ship_torpedo_sub_4
+			ship_torpedo_sub_4
 			sub_ship_engine_4
 		}
 		path = {
