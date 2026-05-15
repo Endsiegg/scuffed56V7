@@ -7,6 +7,7 @@ sub_units = {
 		priority = 1198
 		ai_priority = 100
 		active = yes
+		is_artillery_brigade = yes
 		
 		type = {
 			infantry
@@ -25,7 +26,7 @@ sub_units = {
 
 		manpower = 500
 		need = {
-			artillery_equipment = 36
+			artillery_equipment = 24
 		}
 		
 		max_strength = 0.6
@@ -82,6 +83,7 @@ sub_units = {
 		priority = 1198
 		ai_priority = 100
 		active = yes
+		is_artillery_brigade = yes
 		
 		type = {
 			motorized
@@ -91,6 +93,7 @@ sub_units = {
 		group = mobile
 		
 		categories = {
+			category_front_line
 			category_army
 			category_line_artillery
 			category_artillery
@@ -101,8 +104,8 @@ sub_units = {
 		transport = motorized_equipment
 		manpower = 500
 		need = {
-			artillery_equipment = 36
-			motorized_equipment = 36
+			artillery_equipment = 24
+			motorized_equipment = 30
 		}
 		
 		max_strength = 0.6
@@ -156,6 +159,7 @@ sub_units = {
 		priority = 1199
 		ai_priority = 100
 		active = yes
+		is_artillery_brigade = yes
 		
 		type = {
 			infantry
@@ -168,12 +172,13 @@ sub_units = {
 			category_army
 			category_line_artillery
 			category_artillery
+			category_rocket_artillery
 		}		
 
-		combat_width = 2
+		combat_width = 1
 
 		need = {
-			rocket_artillery_equipment = 36
+			rocket_artillery_equipment = 24
 		}
 		
 		manpower = 500
@@ -229,6 +234,7 @@ sub_units = {
 		priority = 1199
 		ai_priority = 100
 		active = yes
+		is_artillery_brigade = yes
 		
 		type = {
 			motorized
@@ -241,13 +247,15 @@ sub_units = {
 			category_army
 			category_line_artillery
 			category_artillery
+			category_rocket_artillery
+			category_mobile_and_mobile_combat_sup
 		}		
 
-		combat_width = 2
+		combat_width = 1
 		transport = motorized_equipment
 		need = {
-			rocket_artillery_equipment = 36
-			motorized_equipment = 36
+			rocket_artillery_equipment = 24
+			motorized_equipment = 30
 		}
 		
 		manpower = 500
@@ -303,7 +311,8 @@ sub_units = {
 		priority = 1199
 		ai_priority = 100
 		active = no
-		
+		is_artillery_brigade = yes
+
 		type = {
 			artillery
 			motorized
@@ -316,13 +325,15 @@ sub_units = {
 			category_army
 			category_line_artillery
 			category_artillery
+			category_rocket_artillery
+			category_mobile_and_mobile_combat_sup
 		}		
 
-		combat_width = 2
+		combat_width = 1
 
 		need = {
-			motorized_rocket_equipment = 20
-			motorized_equipment = 15
+			motorized_rocket_equipment = 16
+			motorized_equipment = 16
 		}
 		
 		manpower = 500
@@ -331,8 +342,6 @@ sub_units = {
 		max_strength = 0.6
 		training_time = 120
 		weight = 0.5
-		
-
 		
 		supply_consumption = 0.25
 		
