@@ -87,7 +87,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		xor = { rangers }
+	#	xor = { rangers }
 		
 		rangers_support = {
 			acclimatization_cold_climate_gain_factor = 0.25
@@ -133,7 +133,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		xor = { ski_troops }
+	#	xor = { ski_troops }
 		
 		rangers_support = {
 			mountain = {
@@ -228,7 +228,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		xor = { mountaineers_combat_2 }
+		#xor = { mountaineers_combat_2 }
 		
 		doctrine = yes	
 		research_cost = 4.5
@@ -279,7 +279,7 @@ technologies = {
 			}
 		}
 		
-		xor = { mountaineers_combat_1 }
+		#xor = { mountaineers_combat_1 }
 		
 		doctrine = yes	
 		research_cost = 4.5
@@ -392,7 +392,7 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 		
-		special_forces_cap = 0.06
+		special_forces_cap = 0.10
 		special_forces_out_of_supply_factor = -0.1
 		special_forces_attack_factor = 0.10
 		acclimatization_hot_climate_gain_factor = 0.10
@@ -507,12 +507,12 @@ technologies = {
 		xp_research_type = navy
 		xp_unlock_cost = 60
 		
-		xor = { marines_shore_parties }
+		#xor = { marines_shore_parties }
 		
 		force_use_small_tech_layout = yes
 		
 		pioneer_support = {
-			jungle = {
+			desert = {
 				attack = 0.15
 				defence = 0.10
 				movement = 0.10
@@ -553,7 +553,7 @@ technologies = {
 		xp_research_type = navy
 		xp_unlock_cost = 60
 		
-		xor = { marines_jungle_troops }
+	#	xor = { marines_jungle_troops }
 		
 		force_use_small_tech_layout = yes
 		
@@ -614,7 +614,7 @@ technologies = {
 		unit_marine_design_cost_factor = -0.50
 
 		marine = {
-			max_organisation = 5
+			max_organisation = 10
 		}
 			
 		doctrine = yes	
@@ -653,7 +653,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		xor = { marines_expeditionary }
+		#xor = { marines_expeditionary }
 		
 		enable_subunits = {
 			marine_commando
@@ -702,7 +702,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		xor = { marines_commandoes }
+	#	xor = { marines_commandoes }
 
 		special_forces_cap = 0.06
 		naval_invasion_planning_bonus_speed = 0.2
@@ -746,7 +746,7 @@ technologies = {
 		}
 
 		marine_commando = {
-			breakthrough = 0.15
+			breakthrough = 0.30
 		}
 		
 		doctrine = yes	
@@ -835,6 +835,7 @@ technologies = {
 		amphibious_mechanized = {
 			 soft_attack = 0.1
 			 breakthrough = 0.1
+			 armor = 0.1
 			 max_organisation = 5
 		}
 		
@@ -1464,7 +1465,7 @@ technologies = {
 		doctrine = yes	
 		research_cost = 2.25
 		
-		xor = { rangers_jungle_training }
+		#xor = { rangers_jungle_training }
 		
 		categories = {
 			special_forces_doctrine
@@ -1492,8 +1493,8 @@ technologies = {
 
 		ranger_battalion = {
 			acclimatization_hot_climate_gain_factor = 0.25
-			jungle = {
-				attack = 0.1
+			desert = {
+				attack = 0.15
 				defence = 0.1
 				movement = 0.05
 			}
@@ -1502,7 +1503,7 @@ technologies = {
 		doctrine = yes	
 		research_cost = 2.25
 		
-		xor = { rangers_jaegers_training }
+		#xor = { rangers_jaegers_training }
 		
 		categories = {
 			special_forces_doctrine
@@ -1557,10 +1558,10 @@ technologies = {
 		
 		force_use_small_tech_layout = yes
 
-		xor = {	rangers_fire_support_integration }
+		#xor = {	rangers_fire_support_integration }
 
 		rangers_support = {
-			jungle = {
+			desert = {
 				attack = 0.05
 				defence = 0.05
 				movement = 0.05
@@ -1597,7 +1598,7 @@ technologies = {
 		
 		force_use_small_tech_layout = yes
 
-		xor = { rangers_recon_terrain_training }
+		#xor = { rangers_recon_terrain_training }
 		
 		path = {
 			leads_to_tech = rangers_urban_combat
@@ -1768,7 +1769,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		
+
 		category_special_forces = {
 			soft_attack = 0.05
 		}
@@ -1813,7 +1814,7 @@ technologies = {
 		
 		force_use_small_tech_layout = yes
 
-		xor = { shocktroop_level_1_b }
+		#xor = { shocktroop_level_1_b }
 
 		
 		path = {
@@ -1839,7 +1840,7 @@ technologies = {
 		}
 
 		category_shocktroops = {
-			soft_attack = 0.01
+			soft_attack = 0.05
 		}
 
 		
@@ -1864,7 +1865,7 @@ technologies = {
 		
 		force_use_small_tech_layout = yes
 
-		xor = { shocktroop_level_1_a }
+		#xor = { shocktroop_level_1_a }
 
 		path = {
 			leads_to_tech = shocktroop_keystone_1
@@ -1887,8 +1888,8 @@ technologies = {
 		}
 
 		category_shocktroops = {
-			breakthrough = 0.01
-			hard_attack = 0.01
+			breakthrough = 0.05
+			hard_attack = 0.05
 		}
 
 		
@@ -1980,7 +1981,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		xor = { shocktroop_level_2_b }
+		#xor = { shocktroop_level_2_b }
 
 			
 		doctrine = yes	
@@ -2010,7 +2011,7 @@ technologies = {
 		}
 
 
-		special_forces_no_supply_grace = 5
+		special_forces_no_supply_grace = 24
 		
 		folder = {
 			name = special_forces_doctrine_folder
@@ -2039,7 +2040,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		xor = { shocktroop_level_2_a }
+		#xor = { shocktroop_level_2_a }
 		
 			
 		doctrine = yes	

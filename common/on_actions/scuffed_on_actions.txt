@@ -1296,3 +1296,27 @@ on_actions = {
 		}
 	}
 }
+on_actions = {
+    on_startup = {
+        effect = {
+			every_country = { 
+					add_timed_idea = {
+						idea = Day_one_production
+						days = 60
+					}	
+			}
+			CHI = {
+				add_timed_idea = {
+					idea = taming_the_tiger
+					days = 1095
+				}
+			}
+			ETH = {
+				add_timed_idea = {
+					idea = taming_the_lion
+					days = 730
+				}
+			}
+		  } 
+    }
+}
