@@ -1336,12 +1336,11 @@ sp_naval_aip_engine = {
 			else = {
 				has_tech = basic_submarine 
 			}
-
 		}
 	}
 	
 	breakthrough_cost = {
-		specialization_naval = 2
+		specialization_naval = 1
 	}
 	
 	complexity = sp_complexity.large 
@@ -1444,9 +1443,7 @@ sp_naval_aip_engine = {
 							fuel_consumption = 0.1
 							instant = yes
 						}				
-
 					}					 
-
 				}
 			}
 
@@ -1462,15 +1459,11 @@ sp_naval_aip_engine = {
 							fuel_consumption = -0.05
 							instant = yes
 						}				
-
 					}					 
-
 				}
 			}
-
 		}	
 	}
-
 }
 
 #ANECHOIC TILES
@@ -2792,23 +2785,27 @@ sp_naval_modern_carrier = {
 	}
 	
 	available = {
-		FROM = {
+				FROM = {
 			if = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = ship_hull_super_heavy
+				has_tech = improved_ship_hull_carrier
 			}
-			#else = {
-			#	has_tech = SH_battleship_1
-			#}
+			else = {
+				has_tech = improved_carrier
+			}
 
 		}
 
 	}
+
+	special_project_parent = {
+		sp_naval_super_heavy_battleship
+	}
 	
 	breakthrough_cost = {
-		specialization_naval = 2
+		specialization_naval = 1
 	}
 	
 
@@ -3349,7 +3346,7 @@ sp_naval_underway_replenishment = {
 	}
 
 	breakthrough_cost = {
-		specialization_naval = 1
+		specialization_naval = 0
 	}
 	
 	complexity = sp_complexity.large
@@ -3609,7 +3606,7 @@ sp_naval_support_ships = {
 	}
 
 	breakthrough_cost = {
-		specialization_naval = 1
+		specialization_naval = 0
 	}
 	
 	complexity = sp_complexity.medium
