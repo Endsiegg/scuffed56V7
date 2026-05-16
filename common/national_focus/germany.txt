@@ -2655,137 +2655,138 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = GER_seize_foreign_industries
-		cost = 10
+		cost = 5
 		available = {
-			all_core_state = {
-				is_fully_controlled_by = ROOT
-			}
-			OR = {
-				has_resources_in_country = {
-					resource = steel
-					amount > 799 #This needs to correspond to the Bypass values in the previous focuses
-					extracted = yes
-				}
-				any_subject_country = {
-					has_resources_in_country = {
-						resource = steel
-						amount > 799 #This needs to correspond to the Bypass values in the previous focuses
-						extracted = yes
-					}
-				}
-				any_allied_country = {
-					has_resources_in_country = {
-						resource = steel
-						amount > 799
-						extracted = yes
-					}
-				}
-			}
-			OR = {
-				has_resources_in_country = {
-					resource = aluminium
-					amount > 199 #This needs to correspond to the Bypass values in the previous focuses
-					extracted = yes
-				}
-				any_subject_country = {
-					has_resources_in_country = {
-						resource = aluminium
-						amount > 199 #This needs to correspond to the Bypass values in the previous focuses
-						extracted = yes
-					}
-				}
-				any_allied_country = {
-					has_resources_in_country = {
-						resource = aluminium
-						amount > 199
-						extracted = yes
-					}
-				}
-			}
-			OR = {
-				has_resources_in_country = {
-					resource = oil
-					amount > 149 #This needs to correspond to the Bypass values in the previous focuses
-					extracted = yes
-				}
-				any_subject_country = {
-					has_resources_in_country = {
-						resource = oil
-						amount > 149 #This needs to correspond to the Bypass values in the previous focuses
-						extracted = yes
-					}
-				}
-				any_allied_country = {
-					has_resources_in_country = {
-						resource = oil
-						amount > 149
-						extracted = yes
-					}
-				}
-			}
-			OR = {
-				has_resources_in_country = {
-					resource = tungsten
-					amount > 99 #This needs to correspond to the Bypass values in the previous focuses
-					extracted = yes
-				}
-				any_subject_country = {
-					has_resources_in_country = {
-						resource = tungsten
-						amount > 99 #This needs to correspond to the Bypass values in the previous focuses
-						extracted = yes
-					}
-				}
-				any_allied_country = {
-					has_resources_in_country = {
-						resource = tungsten
-						amount > 99
-						extracted = yes
-					}
-				}
-			}
-			OR = {
-				has_resources_in_country = {
-					resource = chromium
-					amount > 99 #This needs to correspond to the Bypass values in the previous focuses
-					extracted = yes
-				}
-				any_subject_country = {
-					has_resources_in_country = {
-						resource = chromium
-						amount > 99 #This needs to correspond to the Bypass values in the previous focuses
-						extracted = yes
-					}
-				}
-				any_allied_country = {
-					has_resources_in_country = {
-						resource = chromium
-						amount > 99
-						extracted = yes
-					}
-				}
-			}
-			OR = {
-				has_resources_in_country = {
-					resource = rubber
-					amount > 49 #This needs to correspond to the Bypass values in the previous focuses
-					extracted = yes
-				}
-				any_subject_country = {
-					has_resources_in_country = {
-						resource = rubber
-						amount > 49 #This needs to correspond to the Bypass values in the previous focuses
-						extracted = yes
-					}
-				}
-				any_allied_country = {
-					has_resources_in_country = {
-						resource = rubber
-						amount > 49
-						extracted = yes
-					}
-				}
-			}
+			has_war_with = SOV
+			# all_core_state = {
+			# 	is_fully_controlled_by = ROOT
+			# }
+			# OR = {
+			# 	has_resources_in_country = {
+			# 		resource = steel
+			# 		amount > 799 #This needs to correspond to the Bypass values in the previous focuses
+			# 		extracted = yes
+			# 	}
+			# 	any_subject_country = {
+			# 		has_resources_in_country = {
+			# 			resource = steel
+			# 			amount > 799 #This needs to correspond to the Bypass values in the previous focuses
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# 	any_allied_country = {
+			# 		has_resources_in_country = {
+			# 			resource = steel
+			# 			amount > 799
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# }
+			# OR = {
+			# 	has_resources_in_country = {
+			# 		resource = aluminium
+			# 		amount > 199 #This needs to correspond to the Bypass values in the previous focuses
+			# 		extracted = yes
+			# 	}
+			# 	any_subject_country = {
+			# 		has_resources_in_country = {
+			# 			resource = aluminium
+			# 			amount > 199 #This needs to correspond to the Bypass values in the previous focuses
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# 	any_allied_country = {
+			# 		has_resources_in_country = {
+			# 			resource = aluminium
+			# 			amount > 199
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# }
+			# OR = {
+			# 	has_resources_in_country = {
+			# 		resource = oil
+			# 		amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+			# 		extracted = yes
+			# 	}
+			# 	any_subject_country = {
+			# 		has_resources_in_country = {
+			# 			resource = oil
+			# 			amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# 	any_allied_country = {
+			# 		has_resources_in_country = {
+			# 			resource = oil
+			# 			amount > 149
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# }
+			# OR = {
+			# 	has_resources_in_country = {
+			# 		resource = tungsten
+			# 		amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+			# 		extracted = yes
+			# 	}
+			# 	any_subject_country = {
+			# 		has_resources_in_country = {
+			# 			resource = tungsten
+			# 			amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# 	any_allied_country = {
+			# 		has_resources_in_country = {
+			# 			resource = tungsten
+			# 			amount > 99
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# }
+			# OR = {
+			# 	has_resources_in_country = {
+			# 		resource = chromium
+			# 		amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+			# 		extracted = yes
+			# 	}
+			# 	any_subject_country = {
+			# 		has_resources_in_country = {
+			# 			resource = chromium
+			# 			amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# 	any_allied_country = {
+			# 		has_resources_in_country = {
+			# 			resource = chromium
+			# 			amount > 99
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# }
+			# OR = {
+			# 	has_resources_in_country = {
+			# 		resource = rubber
+			# 		amount > 49 #This needs to correspond to the Bypass values in the previous focuses
+			# 		extracted = yes
+			# 	}
+			# 	any_subject_country = {
+			# 		has_resources_in_country = {
+			# 			resource = rubber
+			# 			amount > 49 #This needs to correspond to the Bypass values in the previous focuses
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# 	any_allied_country = {
+			# 		has_resources_in_country = {
+			# 			resource = rubber
+			# 			amount > 49
+			# 			extracted = yes
+			# 		}
+			# 	}
+			# }
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -5250,7 +5251,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = GER_adopt_new_panzer_doctrine
-		cost = 10
+		cost = 5
 		available = {
 			has_tech = radio
 		}
@@ -6231,7 +6232,7 @@ focus_tree = {
 		x = 12
 		y = 0
 		relative_position_id = GER_develop_modern_maneuver_warfare
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -7255,7 +7256,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = GER_reorganize_the_luftwaffe
-		cost = 10
+		cost = 5
 		available = {
 			has_war_with_major = yes
 		}
@@ -7277,7 +7278,7 @@ focus_tree = {
 		relative_position_id = GER_defense_of_the_reich
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}
@@ -7845,7 +7846,7 @@ focus_tree = {
 		x = 12
 		y = 0
 		relative_position_id = GER_expanding_the_luftwaffe
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -7885,7 +7886,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_strengthen_the_kriegsmarine
-		cost = 5
+		cost = 2
 		available = {
 			# OR = {
 			# 	NOT = { has_completed_focus = GER_trade_interdiction }
@@ -8708,7 +8709,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = GER_strengthen_the_kriegsmarine
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -9025,7 +9026,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = GER_strengthen_the_kriegsmarine
-		cost = 5
+		cost = 2
 	
 		available = {
 			# OR = {
@@ -10135,7 +10136,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_war_preparations
-		cost = 10
+		cost = 5
 		available = {
 			is_subject = no
 			has_war = no
@@ -10174,7 +10175,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_war_preparations
-		cost = 10
+		cost = 5
 
 		allow_branch = {
 			has_dlc = "La Resistance"
@@ -10304,7 +10305,7 @@ focus_tree = {
 		x = 7
 		y = 1
 		relative_position_id = GER_reorganize_the_wehrmacht
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -10805,7 +10806,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_befriend_czechoslovakia
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -11645,7 +11646,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = GER_anschluss
 
-		cost = 10
+		cost = 5
 
 		will_lead_to_war_with = CZE
 		will_lead_to_war_with = FRA
@@ -11943,7 +11944,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_demand_sudetenland
-		cost = 10
+		cost = 2
 
 		bypass = {
 			OR = {
@@ -12018,7 +12019,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_first_vienna_award
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
