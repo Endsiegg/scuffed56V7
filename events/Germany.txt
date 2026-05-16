@@ -138,7 +138,7 @@ country_event = {
 		USA = {
 			set_country_flag = { flag = USA_anschluss_window days = 60 value = 1 }
 		}
-		custom_effect_tooltip = anschluss_mefo_bills_tt
+		#custom_effect_tooltip = anschluss_mefo_bills_tt
 		# hidden_effect = { # Having it appear twice might be confusing	#seems obsolete after Gotterdammerung
 		# 	GER_mefo_bills_level_down = yes
 		# 	GER_mefo_bills_level_down = yes
@@ -146,9 +146,9 @@ country_event = {
 
 		GER_anschluss_modify_mefo_bills_or_economy_of_conquest = yes
 		GER_seize_gold_reserves_in_europe_peacefully = yes
-		add_to_variable = { var = GER_mefo_bill_counter value = -10 }
+		add_to_variable = { var = GER_mefo_bill_counter value = -20 }
 
-		custom_effect_tooltip = anschluss_mefo_bills_double_reduction
+		custom_effect_tooltip = generic_skip_one_line_tt
 		
 		if = {
 			limit = {
@@ -3717,6 +3717,9 @@ country_event = {
 		add_stability = 0.05
 		play_peace_in_our_time_effect = yes
 
+		GER_czechoslovakia_modify_mefo_bills_or_economy_of_conquest = yes
+		GER_seize_gold_reserves_in_europe_peacefully = yes
+		
 		if = {
 			limit = {
 				72 = { is_owned_by = CZE }	#r56
@@ -4220,36 +4223,36 @@ country_event = {
 			hidden_effect = { GER = { country_event = r56.ger.15 } } # r56.ger.15 - Giving Southern Slovakia to Hungary
 		}
 
-		custom_effect_tooltip = r56_GER_first_vienna_award_II_tt
-		custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
-		GER_mefo_bills_level_down = yes
+		# custom_effect_tooltip = r56_GER_first_vienna_award_II_tt
+		# custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		# GER_mefo_bills_level_down = yes
 		
 		USA = {	#USA can denounce the aggression
 			set_country_flag = { flag = USA_prague_window days = 60 value = 1 }	#probably missing
 		}
 
-		hidden_effect = {
-			if = { #Fate of Ruthenia event chain
-				limit = {
-					RUT = {
-						exists = yes
-						is_neighbor_of = HUN
-						has_war = no
-						is_subject = no
-						is_in_faction = no
-					}
-					73 = {
-						is_owned_and_controlled_by = RUT
-					}
-					HUN = {
-						is_subject = no
-					}
-				}
-				RUT = {
-					country_event = { id = axis_minors_ruthenia.2 days = 20 }
-				}
-			}
-		}
+		# hidden_effect = {
+		# 	if = { #Fate of Ruthenia event chain
+		# 		limit = {
+		# 			RUT = {
+		# 				exists = yes
+		# 				is_neighbor_of = HUN
+		# 				has_war = no
+		# 				is_subject = no
+		# 				is_in_faction = no
+		# 			}
+		# 			73 = {
+		# 				is_owned_and_controlled_by = RUT
+		# 			}
+		# 			HUN = {
+		# 				is_subject = no
+		# 			}
+		# 		}
+		# 		RUT = {
+		# 			country_event = { id = axis_minors_ruthenia.2 days = 20 }
+		# 		}
+		# 	}
+		# }
 
 		GER_czechoslovakia_modify_mefo_bills_or_economy_of_conquest = yes
 		GER_seize_gold_reserves_in_europe_peacefully = yes
@@ -4307,28 +4310,28 @@ country_event = {
 		GER_seize_gold_reserves_in_europe_peacefully = yes
 
 		add_to_variable = { var = GER_mefo_bill_counter value = -10 }
-		hidden_effect = {
-			if = { #Fate of Ruthenia event chain
-				limit = {
-					RUT = {
-						exists = yes
-						is_neighbor_of = HUN
-						has_war = no
-						is_subject = no
-						is_in_faction = no
-					}
-					73 = {
-						is_owned_and_controlled_by = RUT
-					}
-					HUN = {
-						is_subject = no
-					}
-				}
-				RUT = {
-					country_event = { id = axis_minors_ruthenia.2 days = 20 }
-				}
-			}
-		}
+		# hidden_effect = {
+		# 	if = { #Fate of Ruthenia event chain
+		# 		limit = {
+		# 			RUT = {
+		# 				exists = yes
+		# 				is_neighbor_of = HUN
+		# 				has_war = no
+		# 				is_subject = no
+		# 				is_in_faction = no
+		# 			}
+		# 			73 = {
+		# 				is_owned_and_controlled_by = RUT
+		# 			}
+		# 			HUN = {
+		# 				is_subject = no
+		# 			}
+		# 		}
+		# 		RUT = {
+		# 			country_event = { id = axis_minors_ruthenia.2 days = 20 }
+		# 		}
+		# 	}
+		# }
 	}
 	option = {
 		name = germany.55.c
@@ -4362,31 +4365,32 @@ country_event = {
 			news_event = { hours = 6 id = news.62 }
 		}
 
-		custom_effect_tooltip = r56_GER_first_vienna_award_II_tt
-		custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
-		GER_mefo_bills_level_down = yes
-		hidden_effect = {
-			if = { #Fate of Rutenia event chain
-				limit = {
-					RUT = {
-						exists = yes
-						is_neighbor_of = HUN
-						has_war = no
-						is_subject = no
-						is_in_faction = no
-					}
-					73 = {
-						is_owned_and_controlled_by = RUT
-					}
-					HUN = {
-						is_subject = no
-					}
-				}
-				RUT = {
-					country_event = { id = axis_minors_ruthenia.2 days = 20 }
-				}
-			}
-		}
+		# custom_effect_tooltip = r56_GER_first_vienna_award_II_tt
+		# custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		# GER_mefo_bills_level_down = yes
+		# hidden_effect = {
+		# 	if = { #Fate of Rutenia event chain
+		# 		limit = {
+		# 			RUT = {
+		# 				exists = yes
+		# 				is_neighbor_of = HUN
+		# 				has_war = no
+		# 				is_subject = no
+		# 				is_in_faction = no
+		# 			}
+		# 			73 = {
+		# 				is_owned_and_controlled_by = RUT
+		# 			}
+		# 			HUN = {
+		# 				is_subject = no
+		# 			}
+		# 		}
+		# 		RUT = {
+		# 			country_event = { id = axis_minors_ruthenia.2 days = 20 }
+		# 		}
+		# 	}
+		# }
+
 		if = {
 			limit = {
 				any_state = {
@@ -4396,7 +4400,7 @@ country_event = {
 			}
 			GER_czechoslovakia_modify_mefo_bills_or_economy_of_conquest = yes
 			GER_seize_gold_reserves_in_europe_peacefully = yes
-			add_to_variable = { var = GER_mefo_bill_counter value = -10 }
+			add_to_variable = { var = GER_mefo_bill_counter value = -20 }
 		}
 	}
 
@@ -4415,31 +4419,31 @@ country_event = {
 		HUN = { country_event = DOD_hungary.101 }
 		add_war_support = 0.1
 		set_global_flag = GER_HUN_CZE_split_end
-		custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
-		GER_mefo_bills_level_down = yes
+		# custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		# GER_mefo_bills_level_down = yes
 		
-		hidden_effect = {
-			if = { #Fate of Ruthenia event chain
-				limit = {
-					RUT = {
-						exists = yes
-						is_neighbor_of = HUN
-						has_war = no
-						is_subject = no
-						is_in_faction = no
-					}
-					73 = {
-						is_owned_and_controlled_by = RUT
-					}
-					HUN = {
-						is_subject = no
-					}
-				}
-				RUT = {
-					country_event = { id = axis_minors_ruthenia.2 days = 20 }
-				}
-			}
-		}
+		# hidden_effect = {
+		# 	if = { #Fate of Ruthenia event chain
+		# 		limit = {
+		# 			RUT = {
+		# 				exists = yes
+		# 				is_neighbor_of = HUN
+		# 				has_war = no
+		# 				is_subject = no
+		# 				is_in_faction = no
+		# 			}
+		# 			73 = {
+		# 				is_owned_and_controlled_by = RUT
+		# 			}
+		# 			HUN = {
+		# 				is_subject = no
+		# 			}
+		# 		}
+		# 		RUT = {
+		# 			country_event = { id = axis_minors_ruthenia.2 days = 20 }
+		# 		}
+		# 	}
+		# }
 
 		GER_czechoslovakia_modify_mefo_bills_or_economy_of_conquest = yes
 		GER_seize_gold_reserves_in_europe_peacefully = yes
@@ -4473,6 +4477,9 @@ country_event = {
 			GER = {
 				annex_country = { target = CZE }
 				add_to_faction = HUN
+				GER_czechoslovakia_modify_mefo_bills_or_economy_of_conquest = yes
+				GER_seize_gold_reserves_in_europe_peacefully = yes
+				add_to_variable = { var = GER_mefo_bill_counter value = -10 }
 			}
 			HUN = {
 				add_ai_strategy = {
