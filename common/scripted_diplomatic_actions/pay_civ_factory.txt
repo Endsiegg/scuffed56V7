@@ -1,6 +1,10 @@
 scripted_diplomatic_actions = {
 pay_civ_factory= {
 visible = {
+	has_game_rule = {
+		rule = CIV_BUTTON_SELECTION
+		option = yes
+	}
 	THIS = {
 		NOT= {
 			has_war_with = ROOT
