@@ -665,7 +665,7 @@ equipment_modules = {
 			naval_speed = -0.05
 		}
 		add_average_stats = {
-			lg_armor_piercing = 8
+			lg_armor_piercing = 9
 			max_strength = 20
 		}
 		# build_cost_resources = {
@@ -705,7 +705,7 @@ equipment_modules = {
 			naval_speed = -0.06
 		}
 		add_average_stats = {
-			lg_armor_piercing = 9
+			lg_armor_piercing = 10
 			max_strength = 20
 		}
 		# build_cost_resources = {
@@ -784,16 +784,12 @@ equipment_modules = {
 
 		
 		add_stats = {
-			lg_attack = 3
-			build_cost_ic = 180
-		}
-		
-		multiply_stats = {
-			naval_speed = -0.02
+			lg_attack = 7
+			build_cost_ic = 280
 		}
 
 		add_average_stats = {
-			lg_armor_piercing = 5.5
+			lg_armor_piercing = 9.5
 		}
 		
 		can_convert_from = {
@@ -810,15 +806,12 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_turret
 
 		add_stats = {
-			lg_attack = 4
-			build_cost_ic = 240
-		}
-		multiply_stats = {
-			naval_speed = -0.03
+			lg_attack = 8
+			build_cost_ic = 320
 		}
 		
 		add_average_stats = {
-			lg_armor_piercing = 7
+			lg_armor_piercing = 11
 		}
 		
 		can_convert_from = {
@@ -835,17 +828,17 @@ equipment_modules = {
 		gfx = dp_secondary_battery_1
 		sfx = sfx_ui_sd_module_turret
 		add_stats = {
-			lg_attack = 2
+			lg_attack = 3
 			anti_air_attack = 1
 			build_cost_ic = 180
 		}
 
 		multiply_stats = {
-			naval_speed = -0.01
+			naval_speed = -0.03
 		}
-		
+
 		add_average_stats = {
-			lg_armor_piercing = 3
+			lg_armor_piercing = 6
 		}
 		
 		can_convert_from = {
@@ -868,17 +861,17 @@ equipment_modules = {
 		gfx = dp_secondary_battery_2
 		sfx = sfx_ui_sd_module_turret
 		add_stats = {
-			lg_attack = 3
+			lg_attack = 4
 			anti_air_attack = 2
 			build_cost_ic = 200 # R56
 		}
 
 		multiply_stats = {
-			naval_speed = -0.01
+			naval_speed = -0.03
 		}
-		
+
 		add_average_stats = {
-			lg_armor_piercing = 4
+			lg_armor_piercing = 7
 		}
 		
 		can_convert_from = {
@@ -901,7 +894,7 @@ equipment_modules = {
 		gfx = dp_secondary_battery_3
 		sfx = sfx_ui_sd_module_turret
 		add_stats = {
-			lg_attack = 4
+			lg_attack = 5
 			anti_air_attack = 2.5
 			build_cost_ic = 240 # R56
 		}
@@ -909,9 +902,9 @@ equipment_modules = {
 		multiply_stats = {
 			naval_speed = -0.03
 		}
-		
+
 		add_average_stats = {
-			lg_armor_piercing = 7
+			lg_armor_piercing = 8
 		}
 		
 		can_convert_from = {
@@ -934,7 +927,7 @@ equipment_modules = {
 		gfx = dp_secondary_battery_4
 		sfx = sfx_ui_sd_module_turret
 		add_stats = {
-			lg_attack = 4.5
+			lg_attack = 6.5
 			anti_air_attack = 3
 			build_cost_ic = 290 # R56
 		}
@@ -942,9 +935,9 @@ equipment_modules = {
 		multiply_stats = {
 			naval_speed = -0.03
 		}
-		
+
 		add_average_stats = {
-			lg_armor_piercing = 7
+			lg_armor_piercing = 9
 		}
 		
 		can_convert_from = {
@@ -2572,14 +2565,11 @@ ship_light_battery_sub = {
 		add_equipment_type = capital_ship
 		add_stats = {
 			carrier_size = 2
-			build_cost_ic = 700
-			carrier_surface_detection = 2
-			carrier_sub_detection = 10
+			build_cost_ic = 600
+			carrier_surface_detection = 4
+			carrier_sub_detection = 15
 		}
-		manpower = 50
-		multiply_stats = {
-			naval_speed = -0.05
-		}
+		manpower = 50 
 		build_cost_resources = {
 			steel = 0
 		}
@@ -2810,7 +2800,6 @@ ship_light_battery_sub = {
 		parent = ship_armor_bc_1
 		multiply_stats = {
 			build_cost_ic = 0.125
-			naval_speed = -0
 			max_strength = 0.1
 		}
 		build_cost_resources = {
@@ -2859,7 +2848,6 @@ ship_light_battery_sub = {
 		parent = ship_armor_bc_2
 		multiply_stats = {
 			build_cost_ic = 0.125
-			naval_speed = -0.10
 			max_strength = 0.15
 		}
 		build_cost_resources = {
@@ -2880,7 +2868,7 @@ ship_light_battery_sub = {
 	}
 	ship_armor_shbb = {
 		abbreviation = "sk"
-		category = ship_heavy_armor
+		category = ship_super_heavy_armor
 		gfx = ship_armor_thick_3
 		
 		multiply_stats = {
