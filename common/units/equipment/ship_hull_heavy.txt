@@ -137,7 +137,7 @@ equipments = {
 		surface_detection = 20
 		sub_detection = 1
 		surface_visibility = 20
-		naval_speed = 20
+		naval_speed = 22
 		reliability = 0.80
 		
 		naval_range = 3000
@@ -210,7 +210,7 @@ equipments = {
 		naval_dominance_factor = 240
 		
 		max_strength = 300
-		naval_speed = 18
+		naval_speed = 20
 		fuel_consumption = 67
 		reliability = 0.65
 		build_cost_ic = 2600
@@ -235,7 +235,7 @@ equipments = {
 			}
 			fixed_ship_anti_air_slot = {
 				required = no
-				allowed_module_categories = { ship_anti_air }
+				allowed_module_categories = { ship_anti_air ship_dp_secondaries }
 			}
 			fixed_ship_fire_control_system_slot = {
 				required = no
@@ -286,6 +286,8 @@ equipments = {
 				required = no
 				allowed_module_categories = {
 					ship_anti_air
+					ship_secondaries
+					ship_dp_secondaries
 					ship_heavy_battery
 				}
 			}
@@ -325,7 +327,10 @@ equipments = {
 		visual_level = 1
 		module_slots = {
 			fixed_ship_battery_slot = inherit
-			fixed_ship_anti_air_slot = inherit
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air ship_dp_secondaries }
+			}
 			fixed_ship_fire_control_system_slot = inherit
 			fixed_ship_radar_slot = inherit
 			fixed_ship_engine_slot = inherit
@@ -371,7 +376,7 @@ equipments = {
 		max_strength = 370
 		reliability = 0.85
 		fuel_consumption = 67
-		naval_speed = 24
+		naval_speed = 26
 		build_cost_ic = 3000
 		resources = {
 			#oil = 1
@@ -392,7 +397,10 @@ equipments = {
 		visual_level = 1
 		module_slots = {
 			fixed_ship_battery_slot = inherit
-			fixed_ship_anti_air_slot = inherit
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air ship_dp_secondaries }
+			}
 			fixed_ship_fire_control_system_slot = inherit
 			fixed_ship_radar_slot = inherit
 			fixed_ship_engine_slot = inherit
@@ -421,6 +429,8 @@ equipments = {
 				required = no
 				allowed_module_categories = {
 					ship_anti_air
+					ship_secondaries
+					ship_dp_secondaries
 					ship_heavy_battery
 					ship_airplane_launcher
 				}
@@ -433,7 +443,7 @@ equipments = {
 			
 		}
 		naval_range = 4000
-		naval_speed = 25
+		naval_speed = 28
 		max_strength = 400
 		reliability = 0.9
 		fuel_consumption = 67
@@ -458,7 +468,10 @@ equipments = {
 		visual_level = 1
 		module_slots = {
 			fixed_ship_battery_slot = inherit
-			fixed_ship_anti_air_slot = inherit
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air ship_dp_secondaries }
+			}
 			fixed_ship_fire_control_system_slot = inherit
 			fixed_ship_radar_slot = inherit
 			fixed_ship_engine_slot = inherit
@@ -550,7 +563,7 @@ equipments = {
 			}
 			fixed_ship_armor_slot = {
 				required = yes
-				allowed_module_categories = { ship_heavy_armor }	
+				allowed_module_categories = { ship_super_heavy_armor }	
 			}
 			front_1_custom_slot = {
 				required = no
