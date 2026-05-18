@@ -679,10 +679,13 @@ focus_tree = {
 			add_political_power = 1								#can be done like this too :D
 			#country_event = { id = rt56.iron_guard.1 days = 1 } # This is a dummy event, just to make it so that the focus can not be cancelled :)
 		}
-
+		bypass = {
+			has_government = fascism
+			#has_government = fascist
+		}
 		completion_reward = {
 			set_country_flag = ROM_codreanu_will_live_slightly_longer
-			add_threat = 5
+			#add_threat = 5
 			if = {
 				limit = {
 					is_ai = no
@@ -717,8 +720,8 @@ focus_tree = {
 					original_tag = ROM
 					has_government = neutrality
 				}
-				set_stability = 0.9
-				set_war_support = 0.8
+				set_stability = 0.1
+				set_war_support = 0.1
 				load_oob = ROM_civil_war_monarchist
 				set_rule = {
 					can_join_factions = no
@@ -732,6 +735,8 @@ focus_tree = {
 						original_tag = ROM
 						has_government = fascism
 					}
+				set_stability = 1.0
+				set_war_support = 1.0
 					set_cosmetic_tag = ROM_LEGIONARY
 					load_oob = ROM_civil_war_iron_guard
 					set_rule = {
