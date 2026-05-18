@@ -11280,6 +11280,16 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
+			custom_effect_tooltip = wuw_HUN_renew_the_rome_protocols_interventionalism_tt
+			IF = {
+				limit = {
+					has_idea = HUN_wuw_interventionism
+				}
+				swap_ideas = {
+					add_idea = HUN_interventionism_2
+					remove_idea = HUN_wuw_interventionism
+				}
+			}
 
 			add_popularity = {
 				ideology = GER
