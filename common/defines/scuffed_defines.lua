@@ -179,7 +179,7 @@ NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2 -- how many CA
 NDefines.NMilitary.RECON_SKILL_IMPACT = 6
 NDefines.NMilitary.UNIT_EXPERIENCE_PER_COMBAT_HOUR = 0.0002
 NDefines.NMilitary.FIELD_EXPERIENCE_MAX_PER_DAY = 12
---NDefines.NMilitary.FIELD_MARSHAL_XP_RATIO = 0.7
+NDefines.NMilitary.FIELD_MARSHAL_XP_RATIO = 1.0
 --NDefines.NMilitary.COMMANDER_LEVEL_UP_STAT_WEIGHTS = {5, 5, 3, 4}
 NDefines.NMilitary.NEW_COMMANDER_RANDOM_PERSONALITY_TRAIT_CHANCES = { -- Chances to gain a personality trait for new generals
     1.0, --100% for first trait
