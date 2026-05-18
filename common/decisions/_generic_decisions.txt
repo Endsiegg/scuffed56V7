@@ -96,7 +96,7 @@ political_actions = {
 		}
 
 		days_remove = 180
-		days_re_enable = 540
+		days_re_enable = 180
 
 		cost = 100
 
@@ -1879,7 +1879,7 @@ war_measures = {
 		fire_only_once = no
 
 		days_remove = 45
-		days_re_enable = 360
+		days_re_enable = 60
 
 		cost = 50
 		ai_will_do = {
@@ -2131,21 +2131,21 @@ war_measures = {
 		icon = GFX_decision_generic_military
 
 		allowed = {
-			has_dlc = "Arms Against Tyranny"
-			NOT = {	#r56 note: moved here from visible, some majors dont have this unlock ported yet
-				original_tag = SOV
-				AND = {
-					has_dlc = "Trial of Allegiance"
-					OR = {
-						original_tag = CHL
-						original_tag = BRA
-						original_tag = ARG
-						#original_tag = URG #currently uses R56 tree, but might be supplemented with DLC branches
-						original_tag = PAR
-					}
-				}
-				PHI_SEA = yes
-			}
+			# has_dlc = "Arms Against Tyranny"
+			# NOT = {	#r56 note: moved here from visible, some majors dont have this unlock ported yet
+			# 	original_tag = SOV
+			# 	AND = {
+			# 		has_dlc = "Trial of Allegiance"
+			# 		OR = {
+			# 			original_tag = CHL
+			# 			original_tag = BRA
+			# 			original_tag = ARG
+			# 			#original_tag = URG #currently uses R56 tree, but might be supplemented with DLC branches
+			# 			original_tag = PAR
+			# 		}
+			# 	}
+			# 	PHI_SEA = yes
+			# }
 		}
 
 		available = {
@@ -2153,7 +2153,7 @@ war_measures = {
 		}
 
 		visible = {
-			date > 1939.1.1		#R56 addition - avoid long lists of unavailable decisions
+			#date > 1939.1.1		#R56 addition - avoid long lists of unavailable decisions
 			NOT = {
 				AND = {
 					has_dlc = "Gotterdammerung"
@@ -2182,7 +2182,7 @@ war_measures = {
 
 		fire_only_once = yes
 
-		cost = 50
+		cost = 150
 
 		complete_effect = {
 			add_potential_special_forces_tree = yes
@@ -2204,7 +2204,7 @@ foreign_politics = {
         cost = 50
         fire_only_once = no
 
-        days_re_enable = 30
+        days_re_enable = 120
 
         available = {
         }
@@ -2442,17 +2442,17 @@ economy_decisions = {
 
 foreign_support = {
 
-###  #  # ###  #   #  ##      ###   ##   ##  ###
-#  # #  # #  # ## ## #  #     #  # #  # #  # #  #
-###  #  # ###  # # # ####     ###  #  # #### #  #
-#  # #  # #  # #   # #  #     #  # #  # #  # #  #
-###   ##  #  # #   # #  #     #  #  ##  #  # ###
+	###  #  # ###  #   #  ##      ###   ##   ##  ###
+	#  # #  # #  # ## ## #  #     #  # #  # #  # #  #
+	###  #  # ###  # # # ####     ###  #  # #### #  #
+	#  # #  # #  # #   # #  #     #  # #  # #  # #  #
+	###   ##  #  # #   # #  #     #  #  ##  #  # ###
 
-	 ##  #    ##   ## ###
-	#  # #   #  # #   #
-	#    #   #  #  #  ##
-	#  # #   #  #   # #
-	 ##  ###  ##  ##  ###
+		##  #    ##   ## ###
+		#  # #   #  # #   #
+		#    #   #  #  #  ##
+		#  # #   #  #   # #
+		##  ###  ##  ##  ###
 
 	CHI_close_burma_road = {
 
@@ -2800,18 +2800,18 @@ foreign_support = {
 		}
 	}
 
-#   ### ###   ##      ###   ##   ##  ###
-#   #   #  # #  #     #  # #  # #  # #  #
-#   ##  #  # #  #     ###  #  # #### #  #
-#   #   #  # #  #     #  # #  # #  # #  #
-### ### ###   ##      #  #  ##  #  # ###
+	#   ### ###   ##      ###   ##   ##  ###
+	#   #   #  # #  #     #  # #  # #  # #  #
+	#   ##  #  # #  #     ###  #  # #### #  #
+	#   #   #  # #  #     #  # #  # #  # #  #
+	### ### ###   ##      #  #  ##  #  # ###
 
 
-	 ##  #    ##   ## ###
-	#  # #   #  # #   #
-	#    #   #  #  #  ##
-	#  # #   #  #   # #
-	 ##  ###  ##  ##  ###
+		##  #    ##   ## ###
+		#  # #   #  # #   #
+		#    #   #  #  #  ##
+		#  # #   #  #   # #
+		##  ###  ##  ##  ###
 
 	CHI_close_ledo_road = {
 
@@ -3171,17 +3171,17 @@ foreign_support = {
 		}
 	}
 
-### #  # ###     #  # #  # #   # ###
- #  #  # #       #  # #  # ## ## #  #
- #  #### ##      #### #  # # # # ###
- #  #  # #       #  # #  # #   # #
- #  #  # ###     #  #  ##  #   # #
+	### #  # ###     #  # #  # #   # ###
+	#  #  # #       #  # #  # ## ## #  #
+	#  #### ##      #### #  # # # # ###
+	#  #  # #       #  # #  # #   # #
+	#  #  # ###     #  #  ##  #   # #
 
-	 ##  #    ##   ## ###
-	#  # #   #  # #   #
-	#    #   #  #  #  ##
-	#  # #   #  #   # #
-	 ##  ###  ##  ##  ###
+		##  #    ##   ## ###
+		#  # #   #  # #   #
+		#    #   #  #  #  ##
+		#  # #   #  #   # #
+		##  ###  ##  ##  ###
  	CHI_close_the_hump = {
 
  		allowed = {
@@ -3482,17 +3482,17 @@ foreign_support = {
  	}
 
 
-#  #  ##  #  #  ##  ###     ###   ##  #  # ### ###
-#  # #  # ## # #  #  #      #  # #  # #  #  #  #
-#### #### # ## #  #  #      ###  #  # #  #  #  ##
-#  # #  # #  # #  #  #      #  # #  # #  #  #  #
-#  # #  # #  #  ##  ###     #  #  ##   ##   #  ###
+	#  #  ##  #  #  ##  ###     ###   ##  #  # ### ###
+	#  # #  # ## # #  #  #      #  # #  # #  #  #  #
+	#### #### # ## #  #  #      ###  #  # #  #  #  ##
+	#  # #  # #  # #  #  #      #  # #  # #  #  #  #
+	#  # #  # #  #  ##  ###     #  #  ##   ##   #  ###
 
-	 ##  #    ##   ## ###
-	#  # #   #  # #   #
-	#    #   #  #  #  ##
-	#  # #   #  #   # #
-	 ##  ###  ##  ##  ###
+		##  #    ##   ## ###
+		#  # #   #  # #   #
+		#    #   #  #  #  ##
+		#  # #   #  #   # #
+		##  ###  ##  ##  ###
 
 	CHI_close_hanoi_route = {
 
