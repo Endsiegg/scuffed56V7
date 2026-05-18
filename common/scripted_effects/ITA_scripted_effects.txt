@@ -209,6 +209,13 @@ ITA_missiolini_conquer_ethiopia_success_effect = {
 	add_war_support = 0.05
 	army_experience = 25
 	add_command_power = 25
+		every_controlled_state = {
+		limit = {
+			NOT = { is_owned_by = ROOT }
+			is_core_of = ETH
+		}
+		add_compliance = 10
+	}
 }
 
 ### PACIFY ETHIOPIA ###
