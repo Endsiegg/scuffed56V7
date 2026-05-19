@@ -233,10 +233,10 @@ NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {	-- 0 armor will always r
 }
 NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.75 -- damage reduction if armor outclassing enemy
 NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.5 -- damage reduction if armor outclassing enemy
-NDefines.NMilitary.RIVER_CROSSING_PENALTY = -0.6                 -- small river crossing
-NDefines.NMilitary.RIVER_CROSSING_PENALTY_LARGE = -0.9           -- large river crossing
-NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY = -0.5           -- small river crossing
-NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY_LARGE = -0.75     -- large river crossing
+--NDefines.NMilitary.RIVER_CROSSING_PENALTY = -0.6                 -- small river crossing-
+--NDefines.NMilitary.RIVER_CROSSING_PENALTY_LARGE = -0.9           -- large river crossing
+--NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY = -0.5           -- small river crossing
+--NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY_LARGE = -0.75     -- large river crossing
 
 ----------------------------------
 --NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
