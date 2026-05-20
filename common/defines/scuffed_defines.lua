@@ -195,8 +195,8 @@ NDefines.NMilitary.PLAN_PROVINCE_MEDIUM_VP_IMPORTANCE_FRONT = 6.0
 NDefines.NMilitary.PLAN_PROVINCE_HIGH_VP_IMPORTANCE_FRONT = 8.0
 NDefines.NMilitary.PLAN_AREA_DEFENSE_ENEMY_CONTROLLER_SCORE = 30.0
 NDefines.NMilitary.PLAN_MAX_PROGRESS_TO_JOIN = 0.60
-NDefines.NMilitary.PEN_VS_AVERAGE = 0.9
-NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.5		
+NDefines.NMilitary.PEN_VS_AVERAGE = 0.4
+NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.4		
 NDefines.NMilitary.PLAN_PORVINCE_PORT_BASE_IMPORTANCE = 18.0		-- increased from 12.0 ; Added importance for area defense province with a port
 NDefines.NMilitary.PLAN_STICKINESS_IGNORE_STACK_LIMIT = 1	
 NDefines.NMilitary.PLAN_BLITZ_OPTIMISM = 0.3	
@@ -379,8 +379,8 @@ NDefines.NSupply.NAVAL_SUPPLY_HUB_REDUCTION_FACTOR = 0.0	-- naval supply hub wil
 -- NDefines.NAI.INDUSTRIAL_ORG_RESEARCH_BONUS_FACTOR 1.0 -- Research bonus will be multiplied by this factor when evaluating design teams
 --------------------------------------------------
 ----10 SUPP COMPANIES DEFINES
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 4
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 1
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 5
 NDefines.NDoctrines.TRAINING_MASTERY_GAIN_FACTOR = 0.25
 NDefines.NDoctrines.MILITARY_ATTACHE_MASTERY_TRANSFER_FACTOR = 0.25
 NDefines.NDoctrines.MASTERY_BANK_MAX = 400
