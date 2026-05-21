@@ -85,7 +85,7 @@ NDefines.NProduction.RAILWAY_GUN_MAX_MIL_FACTORIES_PER_LINE = 10
 NDefines.NProduction.BASE_FACTORY_SPEED = 2
 NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 1.0
 NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 1.0
-NDefines.NProduction.POWERED_FACTORY_SPEED_MIL = 3
+NDefines.NProduction.POWERED_FACTORY_SPEED_MIL = 3.25
 NDefines.NProduction.POWERED_FACTORY_SPEED_NAV = 3.5
 NDefines.NProduction.MIN_LAND_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.2   --Cost for army refits
 NDefines.NProduction.MIN_NAVAL_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.2 --Cost for navy refits
@@ -324,7 +324,7 @@ NDefines.NIndustrialOrganisation.FUNDS_FOR_RESEARCH_COMPLETION_PER_RESEARCH_COST
 NDefines.NIndustrialOrganisation.FUNDS_FOR_CREATING_EQUIPMENT_VARIANT = 0					-- Funds added to MIO when a new variant is created with the Design Team assigned to it
 NDefines.NIndustrialOrganisation.FUNDS_FROM_MANUFACTURER_PER_IC_PER_DAY = 0.1				-- Funds added to MIO when a manufacturer is attached to a production line. Added every day proportional to IC produced.
 NDefines.NIndustrialOrganisation.MAX_FUNDS_FROM_MANUFACTURER_PER_DAY = 0					-- Max funds generated per manufacturer per day. Set to 0 for no Maximum.
-NDefines.NIndustrialOrganisation.DESIGN_TEAM_RESEARCH_BONUS = 0.25							-- Research bonus for applying a Design Team that matches the technology
+NDefines.NIndustrialOrganisation.DESIGN_TEAM_RESEARCH_BONUS = 0.15							-- Research bonus for applying a Design Team that matches the technology
 NDefines.NIndustrialOrganisation.ENABLE_TASK_CAPACITY = false								-- Enable limited task capacity for MIOs
 NDefines.NIndustrialOrganisation.DEFAULT_INITIAL_TASK_CAPACITY = 0							-- Default start task capacity for each MIO (may be overriden in DB)
 NDefines.NIndustrialOrganisation.DEFAULT_INITIAL_POLICY_ATTACH_COST = 25					-- Default start attach cost in PP for policies
