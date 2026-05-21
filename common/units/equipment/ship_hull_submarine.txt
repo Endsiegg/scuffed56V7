@@ -401,22 +401,30 @@ equipments = {
 		module_slots = {
 			fixed_ship_torpedo_slot = inherit 
 			fixed_ship_engine_slot = inherit
+			fixed_ship_radar_slot = {
+				required = no
+				allowed_module_categories = { ship_radar }
+			}
 			front_1_custom_slot = {
 				required = no
 				allowed_module_categories = {
 					ship_torpedo_sub
-					ship_airplane_launcher
 					ship_mine_layer_sub
-					ship_extra_fuel_tank
-					ship_light_battery_sub
 				}
 			}
 			mid_1_custom_slot = {
 				required = no
 				allowed_module_categories = {
-					ship_radar
 					ship_sub_snorkel
 					ship_sub_coating
+				}
+			}
+			mid_2_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_airplane_launcher
+					ship_extra_fuel_tank
+					ship_light_battery_sub
 				}
 			}
 			rear_1_custom_slot = {
@@ -424,8 +432,6 @@ equipments = {
 				allowed_module_categories = {
 					ship_torpedo_sub
 					ship_mine_layer_sub
-					ship_airplane_launcher
-					ship_extra_fuel_tank
 				}
 			}
 		}
