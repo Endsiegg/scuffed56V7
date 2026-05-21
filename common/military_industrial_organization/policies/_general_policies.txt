@@ -1,7 +1,11 @@
 mio_policy_general_ruthless_contracts = {
 	icon = GFX_mio_policy_ruthless_contracts
-	allowed = { always = yes  }
-	available = { has_mio_size > 1}
+	allowed = {
+		always = yes  
+	}
+	available = { 
+		has_mio_size > 1
+	}
 	organization_modifier = {
 		military_industrial_organization_funds_gain = 0.25
 	}
@@ -70,7 +74,7 @@ mio_policy_general_experimental_development_teams = {
 	allowed = { always = yes }
 	available = { has_mio_size > 1}
 	organization_modifier = {
-		military_industrial_organization_research_bonus = 0.3
+		military_industrial_organization_research_bonus = 0.1
 	}
 }
 
@@ -80,7 +84,7 @@ mio_policy_NOR_general_permanent_industrial_revolution = {
 		owner = { NOR_AAT = yes } 	
 	}
 	available = { 
-		has_mio_size > 5
+		has_mio_size > 2
 		owner = { has_completed_focus = NOR_norwegian_engineering } 
 	}
 	organization_modifier = {
@@ -103,7 +107,7 @@ mio_policy_RAJ_general_ordnance_factory_board = {
 		} 	
 	}
 	available = { 
-		has_mio_size > 7
+		has_mio_size > 2
 		owner = {
 			has_completed_focus = RAJ_the_ordnance_factories_board
 		} 
