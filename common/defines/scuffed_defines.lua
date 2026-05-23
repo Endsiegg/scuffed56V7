@@ -43,8 +43,8 @@ NDefines.NFactions.FACTION_INITIATIVE_CHANGE_RULE_COST = 0
 ----------------------------------
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 80						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
-NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.1
-NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 40
+NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.05
+NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 24
 NDefines.NCountry.INTERPOLATED_FRONT_STEPS_SHORT = 1					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 NDefines.NCountry.MIN_MAJOR_COUNTRIES = 15
 NDefines.NCountry.SUPPLY_CONVOY_FACTOR = 0.1
@@ -379,8 +379,8 @@ NDefines.NSupply.NAVAL_SUPPLY_HUB_REDUCTION_FACTOR = 0.0	-- naval supply hub wil
 -- NDefines.NAI.INDUSTRIAL_ORG_RESEARCH_BONUS_FACTOR 1.0 -- Research bonus will be multiplied by this factor when evaluating design teams
 --------------------------------------------------
 ----10 SUPP COMPANIES DEFINES
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 1
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 5
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 3
 NDefines.NDoctrines.TRAINING_MASTERY_GAIN_FACTOR = 0.25
 NDefines.NDoctrines.MILITARY_ATTACHE_MASTERY_TRANSFER_FACTOR = 0.25
 NDefines.NDoctrines.MASTERY_BANK_MAX = 400

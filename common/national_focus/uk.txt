@@ -578,7 +578,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = limited_rearmament_focus
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}
@@ -2655,7 +2655,7 @@ focus_tree = {
 				
 			}
 		}
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 9
 			modifier = {
@@ -2709,7 +2709,7 @@ focus_tree = {
 			}
 		}
 		relative_position_id = ENG_reinforce_the_empire
-		cost = 5
+		cost = 3
 
 		available_if_capitulated = yes
 
@@ -2738,7 +2738,7 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = uk_service_focus
-		cost = 3
+		cost = 2
 		completion_reward = {
 			if = {
 				limit = {
@@ -2795,7 +2795,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = uk_mediterranean_focus
-		cost = 5
+		cost = 3
 
 		available_if_capitulated = yes
 
@@ -2894,7 +2894,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = uk_mediterranean_focus
-		cost = 2
+		cost = 1
 		completion_reward = {
 			118 = {
 				add_building_construction = {
@@ -3022,7 +3022,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = uk_mediterranean_focus
-		cost = 3
+		cost = 1
 		ai_will_do = {
 			factor = 1
 		}
@@ -6189,7 +6189,7 @@ focus_tree = {
 			}
 		}
 		relative_position_id = uk_asia_focus
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}
@@ -6330,7 +6330,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = uk_asia_focus
-		cost = 3
+		cost = 1
 
 		available = {
 			336 = {
@@ -6378,7 +6378,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = singapore_focus
-		cost = 3
+		cost = 1
 		ai_will_do = {
 			factor = 1
 		}	
@@ -6438,7 +6438,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = sp_landward_forts_focus
-		cost = 3
+		cost = 1
 		ai_will_do = {
 			factor = 1
 		}	
@@ -6695,7 +6695,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = uk_colonial_focus
-		cost = 5
+		cost = 3
 
 		available_if_capitulated = yes
 
@@ -7732,109 +7732,11 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				CAN = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_government = ROOT
-						}
-						exists = no
-					}
-				}
-				SAF = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_government = ROOT
-						}
-						AND = {
-							is_subject_of = ENG
-							has_government = neutrality
-							ENG = {
-								has_government = democratic
-							}
-						}
-						exists = no
-					}
-				}
-				AST = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_government = ROOT
-						}
-						exists = no
-					}
-				}
-				NZL = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_government = ROOT
-						}
-						exists = no
-					}
-				}
-			}
-			NOT = {
-				any_state = {
-					OR = {
-						is_core_of = ENG
-						is_core_of = CAN
-						is_core_of = SAF
-						is_core_of = AST
-						is_core_of = NZL
-					}
-					NOT = { state = 331 }
-					OWNER = {
-						NOT = {
-							OR = {
-								tag = ENG
-								tag = CAN
-								tag = SAF
-								tag = AST
-								tag = NZL
-							}
-						}
-					}
-				}
-			}
+			
 		}
 
 		bypass = {
-			CAN = {
-				exists = no
-			}
-			SAF = {
-				exists = no
-			}
-			RAJ = {
-				OR = {
-					exists = no
-					NOT = { is_subject_of = ENG }
-				}
-			}
-			AST = {
-				exists = no
-			}
-			NZL = {
-				exists = no
-			}
-			NOT = {
-				any_state = {
-					OR = {
-						is_core_of = ENG
-						is_core_of = CAN
-						is_core_of = SAF
-						is_core_of = AST
-						is_core_of = NZL
-					}
-					OWNER = {
-						NOT = { tag = ENG }
-					}
-				}
-			}
+
 		}
 		icon = GFX_goal_generic_national_unity
 
@@ -8189,7 +8091,7 @@ focus_tree = {
 			}
 		}
 		relative_position_id = ENG_revisit_colonial_policy
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 80
 			modifier = {
@@ -8212,186 +8114,7 @@ focus_tree = {
 
 	### GLOBAL DEFENSE BRANCH ###
 
-	focus = {
-		id = ENG_global_defense
-		prerequisite = { focus = ENG_steady_as_she_goes }
-		#mutually_exclusive = { focus = ENG_home_defence }
 
-		allow_branch = {
-			#has_dlc = "Man the Guns"
-			always = no
-		}
-
-		available = {
-
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_eng_global_defense
-		x = -9
-		y = 1
-		relative_position_id = ENG_steady_as_she_goes
-		cost = 5
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 0
-				has_completed_focus = ENG_revisit_colonial_policy
-			}
-		}	
-		completion_reward = {
-			# Singapore
-			336 = {
-				if = {
-					limit = {
-						OR = {
-							is_controlled_by = ROOT
-							AND = {
-								is_controlled_by = MAL
-								MAL = { is_in_faction_with = ROOT }
-							}
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					# Singapore
-					add_building_construction = {
-						type = naval_base
-						level = 2
-						province = 12299
-						instant_build = yes
-					}
-				}								
-			}
-			# Egypt
-			907 = {
-				if = {
-					limit = {
-						OR = {
-							is_controlled_by = ROOT
-							AND = {
-								is_controlled_by = EGY
-								EGY = { is_in_faction_with = ROOT }
-							}
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-				}								
-			}
-			447 = {
-				if = {
-					limit = {
-						OR = {
-							is_controlled_by = ROOT
-							AND = {
-								is_controlled_by = EGY
-								EGY = { is_in_faction_with = ROOT }
-							}
-						}
-					}
-					# Alexandria
-					add_building_construction = {
-						type = naval_base
-						level = 2
-						province = 4076
-						instant_build = yes
-					}
-				}								
-			}
-			# Nova Scotia
-			464 = {
-				if = {
-					limit = {
-						OR = {
-							is_controlled_by = ROOT
-							AND = {
-								is_controlled_by = CAN
-								CAN = { is_in_faction_with = ROOT }
-							}
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					# Halifax
-					add_building_construction = {
-						type = naval_base
-						level = 2
-						province = 7361
-						instant_build = yes
-					}
-				}								
-			}
-			# Malta
-			116 = {
-				if = {
-					limit = {
-						OR = {
-							is_controlled_by = ROOT
-							AND = {
-								is_controlled_by = MAL
-								MAL = { is_in_faction_with = ROOT }
-							}
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 1
-						instant_build = yes
-					}
-				}								
-			}
-			# Gibraltar
-			118 = {
-				if = {
-					limit = {
-						is_controlled_by = ROOT
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						province = 4135
-						instant_build = yes
-					}
-				}								
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-
-	focus = {
-		id = ENG_every_man_will_do_his_duty
-		prerequisite = { focus = ENG_global_defense }
-		available = { 
-			
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_commonwealth_build_infantry
-		x = -1
-		y = 1
-		relative_position_id = ENG_global_defense
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			add_stability = -0.1
-			remove_ideas = ENG_the_war_to_end_all_wars
-		}
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
 
 	focus = {
 		id = ENG_secure_the_oil_imports
@@ -8583,7 +8306,7 @@ focus_tree = {
 		x = -7
 		y = 1
 		relative_position_id = ENG_steady_as_she_goes
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}	
@@ -8623,6 +8346,163 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ENG_global_defense
+		prerequisite = { focus = ENG_maintaining_imperial_integrity focus = ENG_maintaining_the_balance_of_power  }
+		#mutually_exclusive = { focus = ENG_home_defence }
+
+		allow_branch = {
+			#has_dlc = "Man the Guns"
+			#always = no
+		}
+
+		available = {
+
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_focus_eng_global_defense
+		x = 2
+		y = 1
+		relative_position_id = ENG_maintaining_imperial_integrity
+		cost = 2
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_completed_focus = ENG_revisit_colonial_policy
+			}
+		}	
+		completion_reward = {
+			# Singapore
+			336 = {
+				if = {
+					limit = {
+						OR = {
+							is_controlled_by = ROOT
+							AND = {
+								is_controlled_by = MAL
+								MAL = { is_in_faction_with = ROOT }
+							}
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					# Singapore
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 12299
+						instant_build = yes
+					}
+				}								
+			}
+			# Egypt
+			907 = {
+				if = {
+					limit = {
+						OR = {
+							is_controlled_by = ROOT
+							AND = {
+								is_controlled_by = EGY
+								EGY = { is_in_faction_with = ROOT }
+							}
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}								
+			}
+			447 = {
+				if = {
+					limit = {
+						OR = {
+							is_controlled_by = ROOT
+							AND = {
+								is_controlled_by = EGY
+								EGY = { is_in_faction_with = ROOT }
+							}
+						}
+					}
+					# Alexandria
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 4076
+						instant_build = yes
+					}
+				}								
+			}
+			# Nova Scotia
+			464 = {
+				if = {
+					limit = {
+						OR = {
+							is_controlled_by = ROOT
+							AND = {
+								is_controlled_by = CAN
+								CAN = { is_in_faction_with = ROOT }
+							}
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					# Halifax
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 7361
+						instant_build = yes
+					}
+				}								
+			}
+			# Malta
+			116 = {
+				if = {
+					limit = {
+						OR = {
+							is_controlled_by = ROOT
+							AND = {
+								is_controlled_by = MAL
+								MAL = { is_in_faction_with = ROOT }
+							}
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}								
+			}
+			# Gibraltar
+			118 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = 4135
+						instant_build = yes
+					}
+				}								
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
 		id = ENG_motion_of_no_confidence
 		prerequisite = { focus = ENG_maintaining_imperial_integrity }
 		available = { 
@@ -8651,7 +8531,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_eng_motion_of_no_confidence
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = ENG_maintaining_imperial_integrity
 		cost = 5
@@ -8675,7 +8555,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_hol_war_on_pacifism
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = ENG_motion_of_no_confidence
 		cost = 5
@@ -8698,13 +8578,37 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ENG_every_man_will_do_his_duty
+		prerequisite = { focus = ENG_no_further_appeasement }
+		available = { 
+			
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		x = -1
+		y = 1
+		relative_position_id = ENG_no_further_appeasement
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			#add_stability = -0.1
+			remove_ideas = ENG_the_war_to_end_all_wars
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
 		id = ENG_enforce_the_naval_treaties
 		prerequisite = { focus = ENG_maintaining_imperial_integrity }
 		available = { 
 			is_subject = no
 		}
 		allow_branch = {
-			always = no
+			#always = no
 		}
 
 		continue_if_invalid = yes
@@ -8745,7 +8649,7 @@ focus_tree = {
 			}
 		}
 		relative_position_id = ENG_steady_as_she_goes
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}	
@@ -8807,7 +8711,7 @@ focus_tree = {
 		x = -10
 		y = 1
 		relative_position_id = ENG_maintaining_the_balance_of_power
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}
@@ -8905,7 +8809,7 @@ focus_tree = {
 			}
 		}
 		relative_position_id = ENG_maintaining_the_balance_of_power
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 8
 			modifier = {
@@ -9251,7 +9155,7 @@ focus_tree = {
 			}
 		}
 		allow_branch = {
-			always = no
+		#	always = no
 		}
 		relative_position_id = ENG_home_defence
 		cost = 5
@@ -10582,32 +10486,10 @@ focus_tree = {
 		available = {
 			is_subject = no
 			country_exists = IRE
-			OR = {
-				IRE = {
-					NOT = {
-						OR = {
-							is_in_faction_with = ROOT
-							has_war_with = ROOT
-						}
-					}				
-					OR = {
-						communism > 0.2
-						fascism > 0.2
-					}
-				}
-				any_other_country = {
-					OR = {
-						has_government = fascism
-						has_government = communism
-						has_war_with = ROOT
-					}
-					is_in_faction_with = IRE
-				}
-			}
 		}
 
 		bypass = {
-			
+			is_subject = yes
 		}
 		
 		completion_reward = {

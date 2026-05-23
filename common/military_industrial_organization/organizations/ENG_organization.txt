@@ -228,8 +228,24 @@ ENG_vauxhall_organization = {
 
 	initial_trait = {
 		equipment_bonus = {
-			armor_value = 0.05
+			armor_value = 0.10
 		}
+	}
+	add_trait = { 
+		token = ENG_mio_trait_expanded_production_facilities
+		name = ENG_mio_trait_expanded_production_facilities
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_technology
+		special_trait_background = yes
+
+		position = { x=2 y=1 }
+		relative_position_id = generic_mio_trait_adaptable_chassis
+
+		all_parents = { generic_mio_trait_adaptable_chassis  }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.15
+			production_efficiency_gain_factor = 0.1
+		}
+		
 	}
 }
 ENG_vulcan_foundry_organization = {	#HOL werkspoor copy
@@ -522,10 +538,10 @@ ENG_yarrow_shipbuilders_organization = {
 		name = generic_mio_initial_trait_escort_fleet
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		production_bonus = {
-			production_capacity_factor = 0.05
+			production_capacity_factor = 0.15
 		}
 	}	
 }
@@ -613,9 +629,13 @@ ENG_supermarine_organization = {
 	initial_trait = {
 		name = generic_mio_initial_trait_high_agility_fighters_designer
 
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+
 		equipment_bonus = {
 			air_agility = 0.10
-			air_range = -0.10
+			air_range = 0.10
 		}
 	}
 
@@ -626,7 +646,7 @@ ENG_supermarine_organization = {
 
 	research_categories = {	
 		mio_cat_all_light_fighter_and_modules 
-#		mio_cat_all_naval_bomber_and_modules 
+		mio_cat_all_naval_bomber_and_modules 
 			#Could be used to allow Supermarine to research naval bombs, but this could overpower English fighter MIO trait gain early on.
 	}
 
@@ -701,6 +721,28 @@ ENG_supermarine_organization = {
 		equipment_bonus = {
 			air_defence = 0.1	
 		}
+	}
+	add_trait = { 
+		token = ENG_mio_trait_expanded_production_facilities
+		name = ENG_mio_trait_expanded_production_facilities
+		icon = GFX_generic_mio_department_icon_plane_fighter_technology
+		special_trait_background = yes
+		visible = {
+			has_completed_focus = aircraft_production_focus
+		}
+		available = {
+			has_completed_focus = aircraft_production_focus
+		}
+		position = { x=2 y=1 }
+		relative_position_id = generic_mio_trait_minimum_weapon_requirements
+
+	#	all_parents = { generic_mio_trait_adaptable_chassis  }
+		
+		production_bonus = {
+			production_efficiency_cap_factor = 0.15
+			production_efficiency_gain_factor = 0.1
+		}
+		
 	}
 }
 
@@ -957,15 +999,15 @@ ENG_rsaf_enfield_organization = {
 		name = generic_mio_initial_trait_infantry_manufacturer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.10
 		}
 
 		production_bonus = {
-			production_efficiency_cap_factor = 0.03
+			production_efficiency_cap_factor = 0.05
 		}
 
 		equipment_bonus = {
-			soft_attack = 0.03
+			soft_attack = 0.05
 		}
 	}
 

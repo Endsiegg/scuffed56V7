@@ -18,6 +18,8 @@ ideas = {
 	anti_civ_boost = {
 		picture = generic_production_bonus
 
+		allowed = { always = yes }
+		allowed_civil_war =  { always  = yes }
 		removal_cost = -1
 
 		modifier = {
@@ -34,6 +36,22 @@ ideas = {
 		}
 
 	}
+
+	player_idea = {
+		allowed = { always = yes }
+
+		removal_cost = -1
+
+		picture = generic_infantry_bonus
+
+		rule = {
+				can_create_factions = yes
+				can_send_volunteers = yes
+				can_join_factions = yes
+	
+		}
+	}
+
 	taming_the_tiger = {
 		picture = chi_forced_conscription
 
