@@ -7866,10 +7866,10 @@ focus_tree = {
 					}
 				}
 				random_select_amount = 2
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -7929,7 +7929,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_plan_z
-		cost = 5
+		cost = 3
 		available = {
 			#NOT = { has_completed_focus = GER_high_seas_fleet }
 		}
@@ -8243,7 +8243,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_expand_kriegsmarinewerft
-		cost = 5
+		cost = 3
 
 		available = {
 		#	NOT = { has_completed_focus = GER_high_seas_fleet }
@@ -8460,7 +8460,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_expand_kriegsmarinewerft
-		cost = 5
+		cost = 3
 		available = {
 		#	NOT = { has_completed_focus = GER_high_seas_fleet }
 			if = {
@@ -8634,7 +8634,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_construct_aircraft_carriers
-		cost = 5
+		cost = 2
 		available = {
 		}
 
@@ -8709,7 +8709,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = GER_strengthen_the_kriegsmarine
-		cost = 3
+		cost = 2
 		available = {
 		}
 
@@ -8722,7 +8722,7 @@ focus_tree = {
 
 			GER_modify_navy_modifier = yes
 			add_to_variable = { 
-				GER_military_navy_max_range_factor = 0.1
+				GER_military_navy_max_range_factor = 0.15
 				tooltip = navy_max_range_factor_tt
 			}
 			
@@ -8749,7 +8749,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_re_establish_the_seekriegsleitung
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -8783,7 +8783,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			GER_modify_army_modifier = yes
 			add_to_variable = { 
-				GER_military_special_forces_cap = 0.05
+				GER_military_special_forces_cap = 0.10
 				tooltip = special_forces_cap_tt
 			}
 		}
@@ -8797,7 +8797,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_re_establish_the_seekriegsleitung
-		cost = 5
+		cost = 3
 		available = { #These states start out with naval bases in western France
 			14 = { #Brittany
 				state_is_fully_controlled_by_ROOT_or_subject = yes
@@ -8888,7 +8888,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_marinestosstrupp
-		cost = 5
+		cost = 3
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GER_controls_an_atantic_island_tt
@@ -8938,7 +8938,7 @@ focus_tree = {
 		completion_reward = {
 			GER_modify_navy_modifier = yes
 			add_to_variable = { 
-				GER_military_navy_max_range_factor = 0.1
+				GER_military_navy_max_range_factor = 0.15
 				tooltip = navy_max_range_factor_tt
 			}
 
@@ -9079,7 +9079,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_trade_interdiction
-		cost = 5
+		cost = 3
 		available = {
 		#	NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 		}
@@ -9126,6 +9126,17 @@ focus_tree = {
 				if = {
 					limit = {
 						GER_erich_raeder = {
+							NOT = { has_trait = bold }
+						}
+					}
+					add_trait = {
+					    character = GER_erich_raeder
+					    trait = bold
+					}
+				}
+				if = {
+					limit = {
+						GER_erich_raeder = {
 							NOT = { has_trait = superior_tactician }
 						}
 					}
@@ -9134,7 +9145,7 @@ focus_tree = {
 					    trait = superior_tactician
 					}
 				}
-				else_if = {
+				if = {
 					limit = {
 						GER_erich_raeder = {
 							NOT = { has_trait = cruiser_captain }
@@ -9207,7 +9218,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_cruiser_warfare
-		cost = 5
+		cost = 2
 		available = {
 			#NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 		}
@@ -9284,7 +9295,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = GER_trade_interdiction
-		cost = 5
+		cost = 2
 		available = {
 			#NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 			has_war = yes
@@ -9322,7 +9333,7 @@ focus_tree = {
 					    trait = bold
 					}
 				}
-				else_if = {
+				if = {
 					limit = {
 						GER_karl_donitz = {
 							NOT = { has_trait = spotter }
@@ -9337,7 +9348,7 @@ focus_tree = {
 
 			add_timed_idea = {
 				idea = GER_rudeltaktik_ns
-				days = 365
+				days = 1095
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -9354,7 +9365,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_wolfpack_tactics
-		cost = 5
+		cost = 3
 		available = {
 			#NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 		}
@@ -9461,7 +9472,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_panzerschiff_raiders
-		cost = 5
+		cost = 2
 		available = {
 		}
 
@@ -9539,7 +9550,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = GER_atlantic_naval_dominance
 
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -9553,6 +9564,18 @@ focus_tree = {
 				add_trait = { trait = blue_water_expert }
 			}
 			random_navy_leader = {
+				limit = {
+					NOT = { has_trait = blue_water_expert }
+				}
+				add_trait = { trait = blue_water_expert }
+			}
+			GER_erich_raeder = {
+				limit = {
+					NOT = { has_trait = blue_water_expert }
+				}
+				add_trait = { trait = blue_water_expert }
+			}
+			GER_karl_donitz = {
 				limit = {
 					NOT = { has_trait = blue_water_expert }
 				}
