@@ -288,10 +288,11 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 }
 ---------------------------------
 --NDefines.NNavy.SUPPLY_NEED_FACTOR = 0	
-NDefines.NNavy.
-NDefines.NNavy.
+--NDefines.NNavy. dont remove easy to copy paste for testing
+NDefines.NNavy.HIGHER_SHIP_RATIO_POSITIONING_PENALTY_FACTOR	= 1.5 -- was .25 / if one side has more ships than the other, that side will get this penalty for each +100% ship ratio it has
+	
 NDefines.NNavy.MAX_ANTI_AIR_REDUCTION_EFFECT_ON_INCOMING_AIR_DAMAGE = 0.90	-- was .75 / damage reduction for incoming air attacks is clamped to this value at maximum.
-NDefines.NNavy.MAX_POSITIONING_PENALTY_FROM_HIGHER_SHIP_RATIO	= 2.00  -- was .75 / maximum penalty to get from larger fleets
+NDefines.NNavy.MAX_POSITIONING_PENALTY_FROM_HIGHER_SHIP_RATIO	= 3.00  -- was .75 / maximum penalty to get from larger fleets
 NDefines.NNavy.MIN_SHIPS_FOR_HIGHER_SHIP_RATIO_PENALTY = 10    -- was 4 ships causings issues  for convoy raiding / the minimum fleet size in ships that a fleet must be before having the large fleet penalty applied to them
 NDefines.NNavy.NAVAL_HEADQUARTER_ADJACENCY = 3								-- How many extra steps of strategic regions from the first the naval headquarter provides benefits. 
 NDefines.NNavy.NAVAL_HEADQUARTERS_EXPERIENCE_SCALE = 1.0					-- Characters assigned to a naval HQ will gain 15% of all experience from taskforces in their regions
