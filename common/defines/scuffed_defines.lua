@@ -19,11 +19,11 @@ NDefines.NDiplomacy.OPINION_FOR_DEMO_FROM_WT_GENERATION = -1.0		-- How much less
 NDefines.NDiplomacy.PEACE_SCORE_TRANSFERRED_FROM_FACTION_INFLUENCE = 0 --R56: Influence is currently (12/2025) incredibly arbitrary, do not redistribute points based on it like vanilla
 
 NDefines.NDiplomacy.TENSION_CB_WAR = 7				-- R56: Lowered to balance out increase of peace conference tension
-NDefines.NDiplomacy.TENSION_DEMILITARIZE_ZONE = 0	-- R56: Was negative, no free tension reduction from abusing this
-NDefines.NDiplomacy.TENSION_ANNEX_NO_CLAIM = 0.6	-- R56: Was really low
-NDefines.NDiplomacy.TENSION_ANNEX_CLAIM = 0.3		-- R56: Was really low
+--NDefines.NDiplomacy.TENSION_DEMILITARIZE_ZONE = 0	-- R56: Was negative, no free tension reduction from abusing this
+--NDefines.NDiplomacy.TENSION_ANNEX_NO_CLAIM = 0.6	-- R56: Was really low
+--NDefines.NDiplomacy.TENSION_ANNEX_CLAIM = 0.3		-- R56: Was really low
 NDefines.NDiplomacy.TENSION_ANNEX_CORE = 0			-- R56: Civil wars no longer reduce tension
-NDefines.NDiplomacy.TENSION_PUPPET = 0.3			-- R56: Puppeting caused no tension, what?
+NDefines.NDiplomacy.TENSION_FACTION_JOIN = 0.0			-- Scuffed faction joining no longer spik tension
 
 NDefines.NDiplomacy.DIPLOMACY_REQUEST_EXPIRY_DAYS = 30
 NDefines.NDiplomacy.NUM_DAYS_TO_ENABLE_KICKING_NEW_MEMBERS_OF_FACTION = 1			-- Number of days before being able to kick a new member of faction
@@ -293,7 +293,7 @@ NDefines.NNavy.HIGHER_SHIP_RATIO_POSITIONING_PENALTY_FACTOR	= 1.5 -- was .25 / i
 	
 NDefines.NNavy.MAX_ANTI_AIR_REDUCTION_EFFECT_ON_INCOMING_AIR_DAMAGE = 0.90	-- was .75 / damage reduction for incoming air attacks is clamped to this value at maximum.
 NDefines.NNavy.MAX_POSITIONING_PENALTY_FROM_HIGHER_SHIP_RATIO	= 3.00  -- was .75 / maximum penalty to get from larger fleets
-NDefines.NNavy.MIN_SHIPS_FOR_HIGHER_SHIP_RATIO_PENALTY = 10    -- was 4 ships causings issues  for convoy raiding / the minimum fleet size in ships that a fleet must be before having the large fleet penalty applied to them
+NDefines.NNavy.MIN_SHIPS_FOR_HIGHER_SHIP_RATIO_PENALTY = 11    -- was 4 ships causings issues  for convoy raiding / the minimum fleet size in ships that a fleet must be before having the large fleet penalty applied to them
 NDefines.NNavy.NAVAL_HEADQUARTER_ADJACENCY = 3								-- How many extra steps of strategic regions from the first the naval headquarter provides benefits. 
 NDefines.NNavy.NAVAL_HEADQUARTERS_EXPERIENCE_SCALE = 1.0					-- Characters assigned to a naval HQ will gain 15% of all experience from taskforces in their regions
 NDefines.NNavy.UNDERWAY_REPLENISHMENT_CONVOY_COST_PER_FUEL = 0.1	-- Cost in convoys for underway replenishment multiplied by max daily fuel consumption (rounded up)
