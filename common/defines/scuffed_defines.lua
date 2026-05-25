@@ -11,19 +11,19 @@ NDefines.NDiplomacy.MIN_OPINION_VALUE = -200								-- Vanilla is -100
 NDefines.NDiplomacy.VERY_GOOD_OPINION = 100								-- Vanilla is 50
 NDefines.NDiplomacy.VERY_BAD_OPINION = -100								-- Vanilla is -50
 NDefines.NDiplomacy.FRONT_IS_DANGEROUS = 0									-- Vanilla is -100	
-NDefines.NDiplomacy.TENSION_VOLUNTEER_FORCE_DIVISION = 0.1
+NDefines.NDiplomacy.TENSION_VOLUNTEER_FORCE_DIVISION = 0.0
 NDefines.NDiplomacy.MAX_REMEMBERED_LEASED_IC = 2000				-- Maximum of leased equipment value that is remembered for opinion bonus
 NDefines.NDiplomacy.MAX_OPINION_FOR_LEASED_IC = 50					-- Positive opinion when remembering the MAX_REMEMBERED_LEASED_IC equipment
 NDefines.NDiplomacy.OPINION_FOR_DEMO_FROM_WT_GENERATION = -1.0		-- How much less do democracies like us if we generate world tension
 
 NDefines.NDiplomacy.PEACE_SCORE_TRANSFERRED_FROM_FACTION_INFLUENCE = 0 --R56: Influence is currently (12/2025) incredibly arbitrary, do not redistribute points based on it like vanilla
 
-NDefines.NDiplomacy.TENSION_CB_WAR = 7				-- R56: Lowered to balance out increase of peace conference tension
-NDefines.NDiplomacy.TENSION_DEMILITARIZE_ZONE = 0	-- R56: Was negative, no free tension reduction from abusing this
-NDefines.NDiplomacy.TENSION_ANNEX_NO_CLAIM = 0.6	-- R56: Was really low
-NDefines.NDiplomacy.TENSION_ANNEX_CLAIM = 0.3		-- R56: Was really low
+NDefines.NDiplomacy.TENSION_CB_WAR = 5				-- R56: Lowered to balance out increase of peace conference tension
+--NDefines.NDiplomacy.TENSION_DEMILITARIZE_ZONE = 0	-- R56: Was negative, no free tension reduction from abusing this
+--NDefines.NDiplomacy.TENSION_ANNEX_NO_CLAIM = 0.6	-- R56: Was really low
+--NDefines.NDiplomacy.TENSION_ANNEX_CLAIM = 0.3		-- R56: Was really low
 NDefines.NDiplomacy.TENSION_ANNEX_CORE = 0			-- R56: Civil wars no longer reduce tension
-NDefines.NDiplomacy.TENSION_PUPPET = 0.3			-- R56: Puppeting caused no tension, what?
+NDefines.NDiplomacy.TENSION_FACTION_JOIN = 0.0			-- Scuffed faction joining no longer spik tension
 
 NDefines.NDiplomacy.DIPLOMACY_REQUEST_EXPIRY_DAYS = 30
 NDefines.NDiplomacy.NUM_DAYS_TO_ENABLE_KICKING_NEW_MEMBERS_OF_FACTION = 1			-- Number of days before being able to kick a new member of faction
@@ -43,7 +43,7 @@ NDefines.NFactions.FACTION_INITIATIVE_CHANGE_RULE_COST = 0
 ----------------------------------
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 80						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
-NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.05
+NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.03
 NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 24
 NDefines.NCountry.INTERPOLATED_FRONT_STEPS_SHORT = 1					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 NDefines.NCountry.MIN_MAJOR_COUNTRIES = 15
@@ -150,7 +150,7 @@ NDefines.NMilitary.NEW_OPERATIVE_RANDOM_BASIC_TRAIT_CHANCES = {  -- chances to g
 ----------------------------------------------------------------------
 NDefines.NTechnology.MAX_SUBTECHS = 4						-- Max number of sub technologies a technology can have.
 NDefines.NTechnology.BASE_RESEARCH_POINTS_SAVED = 50.0		-- Base amount of research points a country can save per slot.
-NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 2		-- Base year ahead penalty
+NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 10		-- Base year ahead penalty
 NDefines.NTechnology.BASE_TECH_COST = 100					-- Base cost for a tech. multiplied with tech cost and ahead of time penalties
 NDefines.NTechnology.USE_BONUS_REGRET_TIMER = 20
 ----------------------------------
@@ -174,7 +174,7 @@ NDefines.NMilitary.NUKE_MIN_DAMAGE_PERCENT = 0.9
 NDefines.NMilitary.NUKE_MAX_DAMAGE_PERCENT = 1.2
 NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.3
 NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.1
---NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.05 removed cause hurts too much
+NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.04 --readded cause planning OP
 NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2 -- how many CAS/TAC can enter a combat depending on enemy width there
 NDefines.NMilitary.RECON_SKILL_IMPACT = 6
 NDefines.NMilitary.UNIT_EXPERIENCE_PER_COMBAT_HOUR = 0.0002
@@ -288,7 +288,13 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 }
 ---------------------------------
 --NDefines.NNavy.SUPPLY_NEED_FACTOR = 0	
-NDefines.NAVAL_HEADQUARTER_ADJACENCY = 3								-- How many extra steps of strategic regions from the first the naval headquarter provides benefits. 
+--NDefines.NNavy. dont remove easy to copy paste for testing
+NDefines.NNavy.HIGHER_SHIP_RATIO_POSITIONING_PENALTY_FACTOR	= 1.5 -- was .25 / if one side has more ships than the other, that side will get this penalty for each +100% ship ratio it has
+	
+NDefines.NNavy.MAX_ANTI_AIR_REDUCTION_EFFECT_ON_INCOMING_AIR_DAMAGE = 0.90	-- was .75 / damage reduction for incoming air attacks is clamped to this value at maximum.
+NDefines.NNavy.MAX_POSITIONING_PENALTY_FROM_HIGHER_SHIP_RATIO	= 3.00  -- was .75 / maximum penalty to get from larger fleets
+NDefines.NNavy.MIN_SHIPS_FOR_HIGHER_SHIP_RATIO_PENALTY = 11    -- was 4 ships causings issues  for convoy raiding / the minimum fleet size in ships that a fleet must be before having the large fleet penalty applied to them
+NDefines.NNavy.NAVAL_HEADQUARTER_ADJACENCY = 3								-- How many extra steps of strategic regions from the first the naval headquarter provides benefits. 
 NDefines.NNavy.NAVAL_HEADQUARTERS_EXPERIENCE_SCALE = 1.0					-- Characters assigned to a naval HQ will gain 15% of all experience from taskforces in their regions
 NDefines.NNavy.UNDERWAY_REPLENISHMENT_CONVOY_COST_PER_FUEL = 0.1	-- Cost in convoys for underway replenishment multiplied by max daily fuel consumption (rounded up)
 NDefines.NNavy.AMPHIBIOUS_LANDING_PENALTY = -0.5								-- amphibious landing penalty

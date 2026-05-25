@@ -55,23 +55,23 @@ HUN_mavag_assault_guns_organization = {
 
 	allowed = {	
 		original_tag = HUN
-		has_dlc = "Arms Against Tyranny"
+	#	has_dlc = "Arms Against Tyranny"
 	}
 
 	available = {
-		IF = {
-			limit = {
-				has_dlc = "Gotterdammerung"
-			}
-			FROM = {
-				has_completed_focus = wuw_HUN_establish_the_mavag_army_division
-			}
-		}
-		ELSE = {
-			FROM = {
-				has_completed_focus = HUN_assault_gun_focus
-			}
-		}
+		# IF = {
+		# 	limit = {
+		# 		has_dlc = "Gotterdammerung"
+		# 	}
+		# 	FROM = {
+		# 		has_completed_focus = wuw_HUN_establish_the_mavag_army_division
+		# 	}
+		# }
+		# ELSE = {
+		# 	FROM = {
+		# 		has_completed_focus = HUN_assault_gun_focus
+		# 	}
+		# }
 	}
 }
 
@@ -313,12 +313,38 @@ HUN_mw_aircraft_organization = {
 	initial_trait = {
 		name = generic_mio_initial_trait_light_aircraft_designer
 
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		#	funds_gain = 0.15
+		}
 		equipment_bonus = {
-			air_agility = 0.05
-			maximum_speed = 0.05
-			air_attack = 0.05
+			air_agility = 0.10
+			maximum_speed = 0.10
+			air_attack = 0.10
 		}
 	}	
+	add_trait = { 
+		token = ENG_mio_trait_expanded_production_facilities
+		name = ENG_mio_trait_expanded_production_facilities
+		icon = GFX_generic_mio_department_icon_plane_fighter_technology
+		special_trait_background = yes
+		# visible = {
+		# 	has_completed_focus = aircraft_production_focus
+		# }
+		available = {
+			has_completed_focus = wuw_HUN_the_matyasfold_fighter_factory
+		}
+		position = { x=8 y=0 }
+		#relative_position_id = generic_mio_trait_minimum_weapon_requirements
+
+		#	all_parents = { generic_mio_trait_adaptable_chassis  }
+		
+		production_bonus = {
+			production_efficiency_cap_factor = 0.15
+			production_efficiency_gain_factor = 0.1
+		}
+		
+	}
 }
 
 HUN_mavag_aircraft_organization = {
@@ -335,6 +361,40 @@ HUN_mavag_aircraft_organization = {
 			has_completed_focus = wuw_HUN_establish_the_mavag_aircraft_factory
 		}
 	}
+	initial_trait = {
+		#name = generic_range_focused_aircraft_organization
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+		equipment_bonus = {
+			air_range = 0.20
+			#maximum_speed = 0.10
+			air_attack = 0.10
+		}
+	}	
+	add_trait = { 
+		token = ENG_mio_trait_expanded_production_facilities
+		name = ENG_mio_trait_expanded_production_facilities
+		icon = GFX_generic_mio_department_icon_plane_fighter_technology
+		special_trait_background = yes
+		# visible = {
+		# 	has_completed_focus = aircraft_production_focus
+		# }
+		available = {
+			has_completed_focus = wuw_HUN_establish_the_mavag_aircraft_factory
+		}
+		position = { x=1 y=1 }
+		#relative_position_id = generic_mio_trait_minimum_weapon_requirements
+
+		#	all_parents = { generic_mio_trait_adaptable_chassis  }
+		
+		production_bonus = {
+			production_efficiency_cap_factor = 0.15
+			production_efficiency_gain_factor = 0.1
+		}
+		
+	}
 }
 
 HUN_ikarus_organization = { #Made Buses but Switched to planes in 1942, Uhri Brothers Car Body and Vehicle Factory Ikarus communist name
@@ -343,19 +403,19 @@ HUN_ikarus_organization = { #Made Buses but Switched to planes in 1942, Uhri Bro
 	icon = GFX_idea_generic_motorized_equipment_manufacturer_1
 	allowed = { 
 		original_tag = HUN
-		NOT = {	#not yet linked to any DLC tree focus
-			has_dlc = "Gotterdammerung"
-		}
+		# NOT = {	#not yet linked to any DLC tree focus
+		# 	has_dlc = "Gotterdammerung"
+		# }
 	}
 
 	available = {
-		owner = {
-			has_completed_focus = HUN_boost_hungarian_aviation_industry
-			OR = {
-				has_idea = war_economy
-				has_idea = tot_economic_mobilisation
-			}
-		}
+		# owner = {
+		# 	has_completed_focus = HUN_boost_hungarian_aviation_industry
+		# 	OR = {
+		# 		has_idea = war_economy
+		# 		has_idea = tot_economic_mobilisation
+		# 	}
+		# }
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_multi_role_aircraft_designer
@@ -363,10 +423,10 @@ HUN_ikarus_organization = { #Made Buses but Switched to planes in 1942, Uhri Bro
 		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane }
 
 		equipment_bonus = {
-			air_ground_attack = 0.02
-			naval_strike_attack = 0.02
-			air_attack = 0.02
-			air_defence = 0.02
+			air_ground_attack = 0.05
+			naval_strike_attack = 0.05
+			air_attack = 0.05
+			air_defence = 0.05
 		}
 	}	
 }
@@ -386,7 +446,7 @@ HUN_repulo_muszaki_intezet_organization = {
 
 		equipment_bonus = {
 			surface_detection = 0.05
-			air_ground_attack = 0.05
+			air_ground_attack = 0.10
 		}
 	}	
 }

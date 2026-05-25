@@ -12,7 +12,7 @@ ideas = {
 			}
 
 			modifier = {
-				stability_factor = 0.10
+			#	stability_factor = 0.10
 				drift_defence_factor = -0.20
 				army_intel_to_others = 20
 				airforce_intel_to_others = 20
@@ -36,10 +36,10 @@ ideas = {
 
 			modifier = {
 				stability_factor = -0.05
-				army_intel_to_others = -10
-				airforce_intel_to_others = -10
-				navy_intel_to_others = -10
-				civilian_intel_to_others = -10
+				army_intel_to_others = -5
+				airforce_intel_to_others = -5
+				navy_intel_to_others = -5
+				civilian_intel_to_others = -5
 			}
 			
 			cancel_if_invalid = yes
@@ -55,7 +55,7 @@ ideas = {
 
 			modifier = {
 				resistance_growth_on_our_occupied_states = 0.25
-				compliance_growth_on_our_occupied_states = -0.5
+				#compliance_growth_on_our_occupied_states = -0.5
 				resistance_target_on_our_occupied_states = 0.25
 				resistance_damage_to_garrison_on_our_occupied_states = 0.25
 				#compliance_gain = 0.05
@@ -180,7 +180,9 @@ ideas = {
 			removal_cost = -1
 			
 			available = {
-				#NOT = { tag = USA }
+				NOT = { tag = USA }
+				NOT = { tag = FRA }
+				NOT = { tag = ENG }
 			}
 
 			modifier = {
@@ -211,8 +213,8 @@ ideas = {
 
 			modifier = {
 				enemy_operative_capture_chance_factor = 0.25
-				own_operative_detection_chance_factor = -0.25
-				intel_network_gain_factor = 0.25
+				#own_operative_detection_chance_factor = -0.25
+				intel_network_gain_factor = 0.1
 				#intel_from_operatives_factor = 0.25
 				intelligence_agency_defense = 1
 			}

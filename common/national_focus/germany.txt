@@ -1381,7 +1381,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = GER_construct_the_reichsautobahn
-		cost = 5
+		cost = 2
 		available = {
 			is_subject = no
 			AND = {
@@ -3271,7 +3271,7 @@ focus_tree = {
 		x = 7
 		y = 0
 		#relative_position_id = GER_prioritize_economic_growth
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -3343,7 +3343,7 @@ focus_tree = {
 		x = -1 # R56
 		y = 1
 		relative_position_id = GER_develop_modern_maneuver_warfare
-		cost = 5
+		cost = 2
 		available = {
 		}
 
@@ -3395,7 +3395,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_develop_modern_maneuver_warfare
-		cost = 5.00
+		cost = 2.00
 		available = {
 			has_war_with_major = yes
 		}
@@ -3620,7 +3620,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_the_prussian_legacy
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -3647,7 +3647,7 @@ focus_tree = {
 
 			GER_modify_army_modifier = yes
 			add_to_variable = { 
-				GER_military_max_dig_in_factor = 0.1
+				GER_military_max_dig_in_factor = 0.25
 				tooltip = max_dig_in_factor_tt
 			}
 
@@ -3656,7 +3656,7 @@ focus_tree = {
 			custom_effect_tooltip = GER_modify_bewegungskrieg_modifier_tt
 			effect_tooltip = {
 				add_to_variable = { 
-					GER_bewegungskrieg_army_infantry_attack_factor = 0.05
+					GER_bewegungskrieg_army_infantry_attack_factor = 0.10
 					tooltip = army_infantry_attack_factor_tt
 				}
 			}
@@ -3672,7 +3672,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_improve_motorized_troops
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -3698,13 +3698,13 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_artillery_bombardment
-				bonus = 0.5
+				bonus = 1
 				uses = 2
 				category = artillery
 			}
 			add_tech_bonus = {
 				name = GER_artillery_bombardment
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = infantry_weapons
 			}
@@ -3763,7 +3763,7 @@ focus_tree = {
 
 			GER_modify_army_modifier = yes
 			add_to_variable = { 
-				GER_military_army_artillery_defence_factor = 0.1
+				GER_military_army_artillery_defence_factor = 0.2
 				tooltip = army_artillery_defence_factor_tt
 			}
 			
@@ -3780,7 +3780,7 @@ focus_tree = {
 			custom_effect_tooltip = GER_modify_bewegungskrieg_modifier_tt
 			effect_tooltip = {
 				add_to_variable = { 
-					GER_bewegungskrieg_army_artillery_attack_factor = 0.1
+					GER_bewegungskrieg_army_artillery_attack_factor = 0.2
 					tooltip = army_artillery_attack_factor_tt
 				}
 			}
@@ -3844,11 +3844,11 @@ focus_tree = {
 			custom_effect_tooltip = GER_modify_bewegungskrieg_modifier_tt
 			effect_tooltip = {
 				add_to_variable = { 
-					GER_bewegungskrieg_army_infantry_attack_factor = 0.05
+					GER_bewegungskrieg_army_infantry_attack_factor = 0.1
 					tooltip = army_infantry_attack_factor_tt
 				}
 				add_to_variable = { 
-					GER_bewegungskrieg_breakthrough_factor = 0.05
+					GER_bewegungskrieg_breakthrough_factor = 0.1
 					tooltip = breakthrough_factor_tt
 				}
 			}
@@ -3907,7 +3907,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_the_prussian_legacy
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -4036,7 +4036,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = GER_the_prussian_legacy
-		cost = 5
+		cost = 2
 		available = {
 			has_war_with_major = yes
 		}
@@ -4074,7 +4074,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_equipment_conversion_speed = 0.1
+				GER_industrial_equipment_conversion_speed = 0.2
 				tooltip = equipment_conversion_speed_tt
 			}
 
@@ -4804,7 +4804,7 @@ focus_tree = {
 	focus = {
 		id = GER_improve_the_logistics_system
 		icon = GFX_focus_generic_reinforcing_the_supply_network
-		mutually_exclusive = { focus = GER_defend_the_vaterland }
+		#mutually_exclusive = { focus = GER_defend_the_vaterland }
 		prerequisite = { focus = GER_panzergrenadier }
 
 		x = -1
@@ -4834,7 +4834,7 @@ focus_tree = {
 	focus = {
 		id = GER_defend_the_vaterland
 		icon = GFX_goal_GER_entrench_honor_in_society
-		mutually_exclusive = { focus = GER_improve_the_logistics_system }
+		#mutually_exclusive = { focus = GER_improve_the_logistics_system }
 		prerequisite = { focus = GER_panzergrenadier }
 
 		x = 1
@@ -5261,7 +5261,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = GER_advanced_panzer_research
-				#ahead_reduction = 1
+				ahead_reduction = 1
 				bonus = 1
 				uses = 1
 				category = cat_medium_armor
@@ -10374,7 +10374,7 @@ focus_tree = {
 		will_lead_to_war_with = AUS	#56
 		
 		available = {
-			date > 1936.6.1
+			#date > 1936.6.1
 			if = {
 				limit = { #DONT CUCK ME!
 					has_war_with = ETH
@@ -10977,7 +10977,7 @@ focus_tree = {
 		x = -14
 		y = 1
 		relative_position_id = GER_remilitarize_the_rhineland
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -11073,7 +11073,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_bribe_senior_officers
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -11247,12 +11247,12 @@ focus_tree = {
 		id = GER_strafbataillon
 		icon = GFX_focus_GER_strafbataillon
 
-		prerequisite = { focus = GER_army_indoctrination }
+		prerequisite = { focus = GER_army_indoctrination focus = GER_autonomy_in_the_kriegsschulen }
 
 		x = 0
 		y = 1
 		relative_position_id = GER_army_indoctrination
-		cost = 5
+		cost = 2
 		available = {
 		}
 
@@ -11498,7 +11498,7 @@ focus_tree = {
 		x = -7
 		y = 1
 		relative_position_id = GER_heed_von_neuraths_concerns
-		cost = 5
+		cost = 2
 		# offset = {
 		# 	x = 11
 		# 	y = 0
@@ -11704,7 +11704,7 @@ focus_tree = {
 		}
 
 		available = {
-			date > 1937.1.1
+		#	date > 1937.1.1
 			is_subject = no
 			has_army_manpower = { size > 724999 } #80 div
 		}
@@ -12144,113 +12144,113 @@ focus_tree = {
 	}
 
 	#Peace For Our Time#
-	# focus = { #All related content and local will be in Czech related files and local locations
-	# 	id = GER_integrate_czech_manufacturers
-	# 	icon = GFX_focus_PER_czech_tanks
-	# 	prerequisite = { focus = GER_integrate_czechoslovakia  focus = GER_fate_of_czechoslovakia }
+	focus = { #All related content and local will be in Czech related files and local locations
+		id = GER_integrate_czech_manufacturers
+		icon = GFX_focus_PER_czech_tanks
+		prerequisite = { focus = GER_integrate_czechoslovakia  focus = GER_fate_of_czechoslovakia }
 
-	# 	x = -4
-	# 	y = 2
-	# 	relative_position_id = GER_fate_of_czechoslovakia
-	# 	cost = 5
+		x = -4
+		y = 2
+		relative_position_id = GER_fate_of_czechoslovakia
+		cost = 5
 
-	# 	ai_will_do = {
-	# 		base = 0
-	# 		modifier = {
-	# 			is_historical_focus_on = no
-	# 			add = 1
-	# 		}
-	# 	}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
 
-	# 	allow_branch = {
-	# 		has_dlc = "Peace For Our Time"
-	# 		if = {
-	# 			limit = {
-	# 				has_game_rule = {
-	# 					rule = obsolete_focus_branches_visibility
-	# 					option = HIDE
-	# 				}
-	# 			}
-	# 			NOT = {
-	# 				has_completed_focus = GER_oppose_hitler
-	# 				has_completed_focus = GER_oppose_hitler_ww
-	# 			}
-	# 		}
-	# 	}
+		allow_branch = {
+			has_dlc = "Peace For Our Time"
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					has_completed_focus = GER_oppose_hitler
+					has_completed_focus = GER_oppose_hitler_ww
+				}
+			}
+		}
 
-	# 	available = {
-	# 		9 = {
-	# 			state_is_fully_controlled_by_ROOT_or_subject = yes
-	# 		}
-	# 	}
+		available = {
+			9 = {
+				state_is_fully_controlled_by_ROOT_or_subject = yes
+			}
+		}
 
-	# 	search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-	# 	completion_reward = {
-	# 		GER_modify_industrial_modifier = yes
-	# 		add_to_variable = { 
-	# 			GER_industrial_equipment_conversion_speed = 0.05
-	# 			tooltip = equipment_conversion_speed_tt
-	# 		}
+		completion_reward = {
+			GER_modify_industrial_modifier = yes
+			add_to_variable = { 
+				GER_industrial_equipment_conversion_speed = 0.05
+				tooltip = equipment_conversion_speed_tt
+			}
 
-	# 		custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 
-	# 		if = {
-	# 			limit = {
-	# 				has_dlc = "Arms Against Tyranny"
-	# 			}
-	# 			unlock_military_industrial_organization_tooltip = mio:CZE_skoda_works_german_organization
-	# 			mio:CZE_skoda_works_german_organization = {
-	# 				add_mio_size = 2
-	# 				add_mio_funds_gain_factor = 0.25
-	# 			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				unlock_military_industrial_organization_tooltip = mio:CZE_skoda_works_german_organization
+				mio:CZE_skoda_works_german_organization = {
+					add_mio_size = 2
+					add_mio_funds_gain_factor = 0.25
+				}
 
-	# 			custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-	# 			unlock_military_industrial_organization_tooltip = mio:CZE_ceska_zbrojovka_uhersky_brod_organization
-	# 			mio:CZE_ceska_zbrojovka_uhersky_brod_organization = {
-	# 				add_mio_size = 2
-	# 				add_mio_funds_gain_factor = 0.25
-	# 			}
+				unlock_military_industrial_organization_tooltip = mio:CZE_ceska_zbrojovka_uhersky_brod_organization
+				mio:CZE_ceska_zbrojovka_uhersky_brod_organization = {
+					add_mio_size = 2
+					add_mio_funds_gain_factor = 0.25
+				}
 
-	# 			custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-	# 			unlock_military_industrial_organization_tooltip = mio:CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization
-	# 			mio:CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization = {
-	# 				add_mio_size = 2
-	# 				add_mio_funds_gain_factor = 0.25
-	# 			}
+				unlock_military_industrial_organization_tooltip = mio:CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization
+				mio:CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization = {
+					add_mio_size = 2
+					add_mio_funds_gain_factor = 0.25
+				}
 
-	# 			custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-	# 			unlock_military_industrial_organization_tooltip = mio:CZE_avia_german_organization
-	# 			mio:CZE_avia_german_organization = {
-	# 				add_mio_size = 2
-	# 				add_mio_funds_gain_factor = 0.25
-	# 			}
+				unlock_military_industrial_organization_tooltip = mio:CZE_avia_german_organization
+				mio:CZE_avia_german_organization = {
+					add_mio_size = 2
+					add_mio_funds_gain_factor = 0.25
+				}
 
-	# 			custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-	# 			add_timed_idea = { idea = CZE_integrate_czech_manufacturers_GER_idea_aat days = 180 }
-	# 		}
-	# 		else = {
-	# 			custom_effect_tooltip = GER_integrate_czech_manufacturers_no_aat_tt
+				add_timed_idea = { idea = CZE_integrate_czech_manufacturers_GER_idea_aat days = 180 }
+			}
+			else = {
+				custom_effect_tooltip = GER_integrate_czech_manufacturers_no_aat_tt
 
-	# 			custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-	# 			# custom_effect_tooltip = available_industrial_concern
-	# 			# show_ideas_tooltip = CZE_skoda_works_german_manufacturer
-	# 			# custom_effect_tooltip = available_industrial_concern
-	# 			# show_ideas_tooltip = CZE_ceska_zbrojovka_uhersky_brod
-	# 			# custom_effect_tooltip = available_industrial_concern
-	# 			# show_ideas_tooltip = CZE_zlin_aircraft
-	# 			# custom_effect_tooltip = available_industrial_concern
-	# 			# show_ideas_tooltip = CZE_bohmische_mahrische_maschinenfabrik_ag_german_manufacturer
+				# custom_effect_tooltip = available_industrial_concern
+				# show_ideas_tooltip = CZE_skoda_works_german_manufacturer
+				# custom_effect_tooltip = available_industrial_concern
+				# show_ideas_tooltip = CZE_ceska_zbrojovka_uhersky_brod
+				# custom_effect_tooltip = available_industrial_concern
+				# show_ideas_tooltip = CZE_zlin_aircraft
+				# custom_effect_tooltip = available_industrial_concern
+				# show_ideas_tooltip = CZE_bohmische_mahrische_maschinenfabrik_ag_german_manufacturer
 
-	# 			add_timed_idea = { idea = CZE_integrate_czech_manufacturers_GER_idea_no_aat days = 180 }
-	# 		}
-	# 	}
-	# }
+				add_timed_idea = { idea = CZE_integrate_czech_manufacturers_GER_idea_no_aat days = 180 }
+			}
+		}
+	}
 	#End Peace For Our Time#
 	focus = {
 		id = GER_demonstration_of_military_achievements

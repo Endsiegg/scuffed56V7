@@ -74,7 +74,7 @@ focus_tree = {
 					has_state_flag = BUL_initial_bulgarian_state_flag
 					NOT = { state = 48 }
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -281,7 +281,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = industrial_complex
 						level = 2
@@ -411,7 +411,7 @@ focus_tree = {
 		relative_position_id = BUL_increase_industry_investments
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = BUL_nationalization }
 
 		available = {
@@ -462,7 +462,7 @@ focus_tree = {
 						has_state_flag = BUL_historical_bulgarian_claim_flag
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 			}
 			if = {
 				limit = {
@@ -522,10 +522,10 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			48 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -541,7 +541,7 @@ focus_tree = {
 		#mutually_exclusive = { focus = BUL_all_that_glitters }
 		x = 1
 		y = 1
-		cost = 5
+		cost = 2
 
 		available = {
 			controls_state = 48
@@ -557,7 +557,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {	#56 Because this focus is horrible compared to the mutual-exclusive
 				name = BUL_light_metal_exploitation
-				bonus = 1
+				bonus = 2
 				uses = 1
 				category = excavation_tech
 			}
@@ -626,7 +626,7 @@ focus_tree = {
 		relative_position_id = BUL_steel_plant_in_pernik
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			has_tech = excavation2
@@ -658,7 +658,7 @@ focus_tree = {
 		relative_position_id = BUL_utmost_optimization
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			has_tech = excavation3
@@ -755,7 +755,7 @@ focus_tree = {
 		relative_position_id = BUL_georgi_benkovski_aircraft_repair_facilities
 		x = 0
 		y = 1
-		cost = 5		
+		cost = 3		
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH}	#56
 		completion_reward = {
 			air_experience = 15
@@ -807,7 +807,7 @@ focus_tree = {
 		relative_position_id = BUL_acquire_modern_tools
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 
 		bypass = {
 			hidden_trigger = {
@@ -840,7 +840,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = BUL_reorganize_the_military_industry
 			    bonus = 1.0
-			    uses = 1
+			    uses = 2
 			    category = infantry_weapons
 				category = artillery
 			}
@@ -856,7 +856,7 @@ focus_tree = {
 		relative_position_id = BUL_pilot_training_program
 		x = 0
 		y = 2
-		cost = 5
+		cost = 3
 		#mutually_exclusive = { focus = BUL_foreign_aircraft_designers }
 
 		available = {
@@ -907,7 +907,7 @@ focus_tree = {
 		relative_position_id = BUL_darzhavna_aeroplanna_rabotilnitsa
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			801 = {
@@ -963,7 +963,7 @@ focus_tree = {
 		relative_position_id = BUL_darzhavna_aeroplanna_rabotilnitsa
 		x = 2
 		y = 0
-		cost = 5
+		cost = 2
 	#	mutually_exclusive = { focus = BUL_darzhavna_aeroplanna_rabotilnitsa }
 
 		available = {
@@ -1031,7 +1031,7 @@ focus_tree = {
 		relative_position_id = BUL_foreign_aircraft_designers
 		x = 2
 		y = 0
-		cost = 10
+		cost = 5
 
 		available = {
 			212 = {
@@ -1081,7 +1081,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1232,7 +1232,7 @@ focus_tree = {
 		relative_position_id = BUL_reorganize_the_military_industry
 		x = 3
 		y = 1
-		cost = 5
+		cost = 3
 
 		available = {
 		}
@@ -1308,7 +1308,7 @@ focus_tree = {
 		relative_position_id = BUL_reorganize_the_military_industry
 		x = 5
 		y = 1
-		cost = 5
+		cost = 3
 
 		available = {
 		}
@@ -1379,7 +1379,7 @@ focus_tree = {
 		relative_position_id = BUL_vasil_levsky_national_military_university
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 
 		available = {
 			controls_state = 48
@@ -1422,7 +1422,7 @@ focus_tree = {
 		relative_position_id = BUL_negotiate_bulgarian_rearmament
 		x = 7
 		y = 1
-		cost = 5
+		cost = 3
 		
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_RESEARCH}	#56
 		completion_reward = {
@@ -1463,7 +1463,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = BUL_war_logistics
-			    bonus = 0.5
+			    bonus = 1
 			    ahead_reduction = 2
 			    uses = 2
 				category = support_tech
@@ -1471,6 +1471,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = BUL_war_logistics
 			    bonus = 1
+				ahead_reduction = 2
 			    uses = 1
 				category = motorized_equipment
 			}
@@ -1485,7 +1486,7 @@ focus_tree = {
 		relative_position_id = BUL_war_logistics
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 	#	mutually_exclusive = { focus = BUL_reinforce_naval_bases }
 
 		available = {
@@ -1568,7 +1569,7 @@ focus_tree = {
 		relative_position_id = BUL_negotiate_bulgarian_rearmament
 		x = 12
 		y = 1
-		cost = 5
+		cost = 3
 
 		available = {
 			NOT = { has_idea = BUL_army_restrictions }
@@ -1636,7 +1637,7 @@ focus_tree = {
 		relative_position_id = BUL_a_black_sea_fleet
 		x = -3
 		y = 1
-		cost = 5
+		cost = 3
 
 		available = {
 			211 = {
@@ -1710,7 +1711,7 @@ focus_tree = {
 		relative_position_id = BUL_improve_coastal_defenses
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 		#mutually_exclusive = { focus = BUL_defensive_lines }
 
 		available = {
@@ -1780,7 +1781,7 @@ focus_tree = {
 		relative_position_id = BUL_defensive_lines
 		x = 1
 		y = 2
-		cost = 5
+		cost = 3
 
 		available = {
 			NOT = { has_idea = BUL_army_restrictions }
@@ -2303,7 +2304,7 @@ focus_tree = {
 		relative_position_id = BUL_a_black_sea_fleet
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
@@ -2324,7 +2325,7 @@ focus_tree = {
 		relative_position_id = BUL_a_black_sea_fleet
 		x = 0
 		y = 2
-		cost = 5
+		cost = 3
 
 		available = {
 			controls_state = 211
@@ -2365,7 +2366,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		cost = 5
-		mutually_exclusive = { focus = BUL_a_powerful_bulgarian_navy }
+		#mutually_exclusive = { focus = BUL_a_powerful_bulgarian_navy }
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
@@ -2389,7 +2390,7 @@ focus_tree = {
 		relative_position_id = BUL_acquire_modern_tools
 		x = 15
 		y = 2
-		cost = 5
+		cost = 3
 
 		available = {
 			controls_state = 211
@@ -2438,7 +2439,7 @@ focus_tree = {
 		relative_position_id = BUL_expand_varna_naval_base
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 
 		available = {
 			controls_state = 211
@@ -2473,7 +2474,7 @@ focus_tree = {
 		relative_position_id = BUL_a_black_sea_fleet
 		x = 2
 		y = 2
-		cost = 5
+		cost = 3
 
 		available = {
 			any_controlled_state = {
@@ -2538,8 +2539,8 @@ focus_tree = {
 		relative_position_id = BUL_an_aegean_sea_fleet
 		x = 0
 		y = 1
-		cost = 10
-		mutually_exclusive = { focus = BUL_strike_from_the_seas }
+		cost = 5
+		#mutually_exclusive = { focus = BUL_strike_from_the_seas }
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
@@ -2567,7 +2568,7 @@ focus_tree = {
 		relative_position_id = BUL_strike_from_the_seas
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
@@ -2617,7 +2618,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = BUL_power_to_the_tsar }
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS}
@@ -2653,7 +2654,7 @@ focus_tree = {
 		relative_position_id = BUL_oppose_the_royal_dictatorship
 		x = -2
 		y = 2
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = BUL_democratic_principles }
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS}
@@ -2680,7 +2681,7 @@ focus_tree = {
 		relative_position_id = BUL_appoint_communist_ministers
 		x = -2
 		y = 1
-		cost = 5
+		cost = 1
 
 		available = {
 			has_civil_war = no
@@ -2789,7 +2790,7 @@ focus_tree = {
 		relative_position_id = BUL_appoint_communist_ministers
 		x = -1
 		y = 2
-		cost = 10
+		cost = 5
 
 		available = {
 			communism > 0.3
@@ -2931,7 +2932,7 @@ focus_tree = {
 		relative_position_id = BUL_overthrow_the_tsar
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS}
 		completion_reward = {
@@ -2953,7 +2954,7 @@ focus_tree = {
 		relative_position_id = BUL_appoint_communist_ministers
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS}
 		completion_reward = {
@@ -2975,7 +2976,7 @@ focus_tree = {
 		relative_position_id = BUL_unify_the_bourgeois_movement
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS}
 		completion_reward = {
@@ -3000,7 +3001,7 @@ focus_tree = {
 		relative_position_id = BUL_united_front_against_fascism
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -3101,7 +3102,7 @@ focus_tree = {
 		relative_position_id = BUL_the_fatherland_front
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 		}
@@ -3177,7 +3178,7 @@ focus_tree = {
 		relative_position_id = BUL_overthrow_the_tsar
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 
 		available = {
 			communism > 0.4
@@ -3254,7 +3255,7 @@ focus_tree = {
 		relative_position_id = BUL_the_peoples_republic_of_bulgaria
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			country_exists = SOV
@@ -3457,7 +3458,7 @@ focus_tree = {
 		relative_position_id = BUL_follow_the_stalinist_doctrine
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			BUL_is_not_alone_in_faction = yes
@@ -3493,7 +3494,7 @@ focus_tree = {
 		relative_position_id = BUL_joint_research_effort
 		x = 0
 		y = 1
-		cost = 10
+		cost = 2
 
 		available = {
 			is_in_faction_with = SOV
@@ -3532,10 +3533,10 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
 			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = BUL_soviet_bulgarian_war_industry_flag
@@ -3544,10 +3545,10 @@ focus_tree = {
 				limit = {
 					NOT = { has_state_flag = BUL_soviet_bulgarian_war_industry_flag }
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = BUL_soviet_bulgarian_war_industry_flag
@@ -3556,10 +3557,10 @@ focus_tree = {
 				limit = {
 					NOT = { has_state_flag = BUL_soviet_bulgarian_war_industry_flag }
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -3726,7 +3727,7 @@ focus_tree = {
 		relative_position_id = BUL_follow_the_stalinist_doctrine
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			has_government = communism
@@ -3866,7 +3867,7 @@ focus_tree = {
 		relative_position_id = BUL_carry_the_revolution_abroad
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			has_government = communism
@@ -3911,7 +3912,7 @@ focus_tree = {
 		relative_position_id = BUL_liberation_of_the_proletariat
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			has_government = communism
@@ -3964,7 +3965,7 @@ focus_tree = {
 		relative_position_id = BUL_liberation_of_the_proletariat
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			if = {
@@ -4043,7 +4044,7 @@ focus_tree = {
 		relative_position_id = BUL_united_we_shall_prevail
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = BUL_free_balkan_states }
 
 		available = {
@@ -4123,7 +4124,7 @@ focus_tree = {
 		relative_position_id = BUL_the_peoples_republic_of_bulgaria
 		x = -1
 		y = 2
-		cost = 10
+		cost = 5
 
 		available = {
 			if = {
@@ -4156,7 +4157,7 @@ focus_tree = {
 		relative_position_id = BUL_the_peoples_republic_of_bulgaria
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS}
 		completion_reward = {
@@ -4186,7 +4187,7 @@ focus_tree = {
 		relative_position_id = BUL_purge_the_elites
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 
 		available = {
 			communism > 0.7
@@ -4214,7 +4215,7 @@ focus_tree = {
 		relative_position_id = BUL_collectivization_of_the_countryside
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			num_of_factories > 30
@@ -4231,10 +4232,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -4253,7 +4254,7 @@ focus_tree = {
 		relative_position_id = BUL_the_peoples_republic_of_bulgaria
 		x = 1
 		y = 2
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER}
 		completion_reward = {
@@ -4270,7 +4271,7 @@ focus_tree = {
 		relative_position_id = BUL_the_peoples_republic_of_bulgaria
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 
 		bypass = {
 			OR = {
@@ -4431,7 +4432,7 @@ focus_tree = {
 		relative_position_id = BUL_balkan_federation_of_socialist_republics
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			is_subject = no
@@ -4543,7 +4544,7 @@ focus_tree = {
 		relative_position_id = BUL_bury_the_grudges_of_the_past
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
@@ -4577,7 +4578,7 @@ focus_tree = {
 		relative_position_id = BUL_balkan_trade_union_secretariat
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			country_exists = SOV
@@ -4662,7 +4663,7 @@ focus_tree = {
 		relative_position_id = BUL_bury_the_grudges_of_the_past
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			BUL_is_not_alone_in_faction = yes
@@ -4688,7 +4689,7 @@ focus_tree = {
 		relative_position_id = BUL_bury_the_grudges_of_the_past
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			country_exists = ITA
@@ -4735,7 +4736,7 @@ focus_tree = {
 		relative_position_id = BUL_oppose_the_royal_dictatorship
 		x = 3
 		y = 2
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = BUL_appoint_communist_ministers }
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS}
@@ -4765,7 +4766,7 @@ focus_tree = {
 		relative_position_id = BUL_democratic_principles
 		x = -1
 		y = 2
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = BUL_seek_cooperation_with_the_tsar }
 
 		bypass = {
@@ -4816,7 +4817,7 @@ focus_tree = {
 		relative_position_id = BUL_legalize_the_agrarian_party
 		x = -1
 		y = 1
-		cost = 10
+		cost = 3
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS}
 		completion_reward = {
@@ -4845,7 +4846,7 @@ focus_tree = {
 		relative_position_id = BUL_legalize_the_agrarian_party
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		bypass = {
 			has_completed_focus = BUL_legalize_the_agrarian_party
@@ -4986,7 +4987,7 @@ focus_tree = {
 		relative_position_id = BUL_democratic_principles
 		x = 1
 		y = 2
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = BUL_legalize_the_agrarian_party }
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS}
@@ -5018,7 +5019,7 @@ focus_tree = {
 		relative_position_id = BUL_abolish_the_monarchy
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			democratic > 0.4
@@ -5070,7 +5071,7 @@ focus_tree = {
 		relative_position_id = BUL_seek_cooperation_with_the_tsar
 		x = 4
 		y = 1
-		cost = 10
+		cost = 5
 		offset = {	#56 Vanilla tree doesn't support Autohiding
 			x = -2
 			y = 0
@@ -5106,7 +5107,7 @@ focus_tree = {
 		relative_position_id = BUL_legislative_elections
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 
 		available = {
 			has_stability > 0.5
@@ -5121,7 +5122,7 @@ focus_tree = {
 					is_core_of = ROOT
 					is_fully_controlled_by = ROOT
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 6
 			}
 		}
 	}
@@ -5134,8 +5135,8 @@ focus_tree = {
 		relative_position_id = BUL_land_reorganization
 		x = -1
 		y = 2
-		cost = 10
-		mutually_exclusive = { focus = BUL_modernize_the_industry }
+		cost = 5
+		#mutually_exclusive = { focus = BUL_modernize_the_industry }
 
 		available = {
 			democratic > 0.8
@@ -5166,8 +5167,8 @@ focus_tree = {
 		relative_position_id = BUL_land_reorganization
 		x = 1
 		y = 2
-		cost = 10
-		mutually_exclusive = { focus = BUL_agrarian_cooperative_movement }
+		cost = 5
+		#mutually_exclusive = { focus = BUL_agrarian_cooperative_movement }
 
 		available = {
 			democratic > 0.8
@@ -5197,7 +5198,7 @@ focus_tree = {
 		relative_position_id = BUL_legislative_elections
 		x = -3
 		y = 1
-		cost = 10
+		cost = 5
 
 		bypass = {
 			OR = {
@@ -5347,7 +5348,7 @@ focus_tree = {
 				has_completed_focus = BUL_power_to_the_tsar
 			}
 		}
-		cost = 10
+		cost = 5
 
 		bypass = {
 			OR = {
@@ -5562,7 +5563,7 @@ focus_tree = {
 		relative_position_id = BUL_join_the_allies
 		x = -3
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -5600,7 +5601,7 @@ focus_tree = {
 		relative_position_id = BUL_consolidate_the_third_bulgarian_state
 		x = 0
 		y = 3
-		cost = 10
+		cost = 5
 		mutually_exclusive = { focus = BUL_the_unification_of_the_balkans }
 
 		available = {
@@ -5742,7 +5743,7 @@ focus_tree = {
 		relative_position_id = BUL_consolidate_the_third_bulgarian_state
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -5820,7 +5821,7 @@ focus_tree = {
 		relative_position_id = BUL_join_the_allies
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			is_in_faction_with = ENG
@@ -5988,7 +5989,7 @@ focus_tree = {
 		relative_position_id = BUL_join_the_allies
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -6100,7 +6101,7 @@ focus_tree = {
 		relative_position_id = BUL_appeal_to_european_capitalists
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -6175,7 +6176,7 @@ focus_tree = {
 		relative_position_id = BUL_join_the_allies
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			BUL_is_not_alone_in_faction = yes
@@ -6301,7 +6302,7 @@ focus_tree = {
 				has_completed_focus = BUL_power_to_the_tsar
 			}
 		}
-		cost = 5
+		cost = 2
 		mutually_exclusive = { focus = BUL_support_macedonian_organizations }
 		
 		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS}
@@ -6345,7 +6346,7 @@ focus_tree = {
 		relative_position_id = BUL_condemn_macedonian_organizations
 		x = 2
 		y = 0
-		cost = 5
+		cost = 3
 
 		mutually_exclusive = { focus = BUL_condemn_macedonian_organizations }
 		
@@ -6442,7 +6443,7 @@ focus_tree = {
 				has_completed_focus = BUL_power_to_the_tsar
 			}
 		}
-		cost = 5
+		cost = 3
 
 		mutually_exclusive = { focus = BUL_cooperate_with_the_zveno }
 
@@ -6473,7 +6474,7 @@ focus_tree = {
 		relative_position_id = BUL_dissolve_the_military_union	#56 Icon Improvement
 		x = 2	#56 For Compact Layout
 		y = 0
-		cost = 5
+		cost = 2
 
 		mutually_exclusive = { focus = BUL_dissolve_the_military_union }
 
@@ -6506,7 +6507,7 @@ focus_tree = {
 		relative_position_id = BUL_power_to_the_tsar
 		x = -3
 		y = 2
-		cost = 5
+		cost = 3
 
 		mutually_exclusive = { focus = BUL_appoint_right_wing_ministers }
 		
@@ -6555,7 +6556,7 @@ focus_tree = {
 				has_completed_focus = BUL_power_to_the_tsar
 			}
 		}
-		cost = 5
+		cost = 3
 
 		mutually_exclusive = { focus = BUL_ban_far_right_organizations }
 		
@@ -6587,7 +6588,7 @@ focus_tree = {
 		relative_position_id = BUL_restrained_paramilitary_organizations
 		x = -2
 		y = 0
-		cost = 5
+		cost = 3
 
 		mutually_exclusive = { focus = BUL_restrained_paramilitary_organizations }
 		
@@ -6615,7 +6616,7 @@ focus_tree = {
 		relative_position_id = BUL_the_tsars_regime
 		x = 1
 		y = 1
-		cost = 5
+		cost = 3
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS}
 		completion_reward = {
@@ -6638,7 +6639,7 @@ focus_tree = {
 		relative_position_id = BUL_restore_the_tarnovo_constitution
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 
 		available = {
 			BUL_has_freedom_of_press = yes
@@ -6676,7 +6677,7 @@ focus_tree = {
 		relative_position_id = BUL_the_tsars_regime
 		x = 3
 		y = 2
-		cost = 5
+		cost = 3
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT}
 		completion_reward = {
@@ -6694,7 +6695,7 @@ focus_tree = {
 		relative_position_id = BUL_the_tsars_regime
 		x = 4
 		y = 1
-		cost = 5
+		cost = 3
 
 		available = {
 			NOT = { has_country_flag = BUL_bs_legalized_flag }
@@ -6746,7 +6747,7 @@ focus_tree = {
 		relative_position_id = BUL_the_tsars_regime
 		x = 0
 		y = 3
-		cost = 5
+		cost = 3
 
 		available = {
 			democratic > 0.20
@@ -6774,7 +6775,7 @@ focus_tree = {
 		relative_position_id = BUL_illusions_of_a_non_partisan_system
 		x = 2
 		y = 0
-		cost = 5
+		cost = 3
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
 		completion_reward = {
@@ -6849,7 +6850,7 @@ focus_tree = {
 		relative_position_id = BUL_promote_bulgarian_nationalism
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY}
 		completion_reward = {
@@ -6909,7 +6910,7 @@ focus_tree = {
 		relative_position_id = BUL_found_the_brannik
 		x = 0
 		y = 2
-		cost = 5
+		cost = 10
 
 		available = {
 			#has_war = yes
@@ -6965,6 +6966,13 @@ focus_tree = {
 				}
 				add_ideas = war_economy
 			}
+			else_if = {
+				limit = {
+					NOT = { has_idea = tot_economic_mobilisation }
+					#NOT = { has_idea = war_economy }
+				}
+				add_ideas = tot_economic_mobilisation
+			}
 			if = {
 				limit = {
 					NOT = { has_idea = scraping_the_barrel }
@@ -6985,7 +6993,7 @@ focus_tree = {
 		relative_position_id = BUL_illusions_of_a_non_partisan_system
 		x = -2
 		y = 1
-		cost = 5
+		cost = 3
 		offset = {	#56 Since Vanilla Tree Doesn't Have Autohiding
 			x = -1
 			y = 0
@@ -7015,7 +7023,7 @@ focus_tree = {
 		relative_position_id = BUL_liberalization_of_trade_policies
 		x = 0
 		y = 1
-		cost = 5
+		cost = 2
 		mutually_exclusive = { focus = BUL_strengthen_the_royal_dictatorship }
 
 		bypass = {
@@ -7042,7 +7050,7 @@ focus_tree = {
 		relative_position_id = BUL_plot_against_boris
 		x = -1
 		y = 2
-		cost = 5
+		cost = 3
 		mutually_exclusive = { focus = BUL_form_a_regency_council }
 
 		available = {
@@ -7281,7 +7289,7 @@ focus_tree = {
 		relative_position_id = BUL_plot_against_boris
 		x = 1
 		y = 2
-		cost = 5
+		cost = 2
 		mutually_exclusive = { focus = BUL_the_return_of_ferdinand_i }
 
 		available = {
@@ -7605,7 +7613,7 @@ focus_tree = {
 		relative_position_id = BUL_nationalist_propaganda
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			is_subject = no
@@ -7764,7 +7772,7 @@ focus_tree = {
 		relative_position_id = BUL_power_to_the_tsar
 		x = 4
 		y = 2
-		cost = 5
+		cost = 2
 
 		mutually_exclusive = { focus = BUL_the_tsars_regime }
 		
@@ -7847,7 +7855,7 @@ focus_tree = {
 		relative_position_id = BUL_the_path_towards_a_greater_bulgaria
 		x = 0
 		y = 2
-		cost = 5
+		cost = 3
 
 		mutually_exclusive = { focus = BUL_found_the_brannik }
 
@@ -8131,7 +8139,7 @@ focus_tree = {
 			}
 			add_stability = -0.05
 			BUL_bs_low_loyalty_decrease_effect = yes
-			BUL_bzns_low_loyalty_decrease_effect = yes
+			BUL_bzns_low_loyalty_increase_effect = yes
 			BUL_nsm_medium_loyalty_increase_effect = yes
 			BUL_nsm_medium_popularity_increase_effect = yes
 
@@ -8159,7 +8167,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = BUL_ratniks
 			BUL_bs_low_loyalty_decrease_effect = yes
-			BUL_bzns_low_loyalty_decrease_effect = yes
+			BUL_bzns_low_loyalty_increase_effect = yes
 			BUL_nsm_low_loyalty_increase_effect = yes
 		}
 	}
@@ -8172,7 +8180,7 @@ focus_tree = {
 		relative_position_id = BUL_appoint_right_wing_ministers
 		x = 1
 		y = 1
-		cost = 5
+		cost = 3
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_INTERNAL_AFFAIRS}
 		completion_reward = {
@@ -8203,7 +8211,7 @@ focus_tree = {
 				add_idea = BUL_government_reforms_fascists_02
 			}
 			BUL_zveno_low_loyalty_increase_effect = yes
-			BUL_bzns_low_loyalty_decrease_effect = yes
+			BUL_bzns_low_loyalty_increase_effect = yes
 			BUL_nsm_low_loyalty_increase_effect = yes
 		}
 	}
@@ -8217,7 +8225,7 @@ focus_tree = {
 		relative_position_id = BUL_industrial_autarky
 		x = 0
 		y = 5
-		cost = 10
+		cost = 5
 
 		available = {
 			num_of_factories > 30
@@ -8282,7 +8290,7 @@ focus_tree = {
 		relative_position_id = BUL_bulgarian_irredentism
 		x = 2
 		y = 2
-		cost = 5
+		cost = 2
 
 		bypass = {
 			AND = {
@@ -8627,7 +8635,7 @@ focus_tree = {
 		relative_position_id = BUL_approach_germany
 		x = 1
 		y = 1
-		cost = 5
+		cost = 2
 
 		bypass = {
 			OR = {
@@ -9404,7 +9412,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -9450,7 +9458,7 @@ focus_tree = {
 						}
 					}
 					set_state_flag = BUL_imperial_industrial_upgrade_flag
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -9479,7 +9487,7 @@ focus_tree = {
 						}
 					}
 					set_state_flag = BUL_imperial_industrial_upgrade_flag
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -9507,7 +9515,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
