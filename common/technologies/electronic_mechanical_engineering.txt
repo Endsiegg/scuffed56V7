@@ -215,6 +215,7 @@ technologies = {
 		}
 		
 		enable_equipment_modules = { 
+			radio_navigation_2
 			tank_radio_3
 			lc_radio_3 #Module for Land Cruiser
 		}
@@ -1139,10 +1140,6 @@ modern_radio = {
 			research_cost_coeff = 1
 		}
 
-		path = {
-			leads_to_tech = basic_fire_control_system
-			research_cost_coeff = 1
-		}
 		enable_equipment_modules = {
 			bomb_sights_1
 		}
@@ -1183,9 +1180,8 @@ modern_radio = {
 			leads_to_tech = basic_decryption 
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = improved_fire_control_system
-			research_cost_coeff = 1
+		enable_equipment_modules = { 
+			ship_fire_control_system_1
 		}
 		research_cost = 2.5
 		start_year = 1938
@@ -1238,12 +1234,9 @@ modern_radio = {
 			leads_to_tech = improved_decryption 
 			research_cost_coeff = 1
 		}
-
-		path = {
-			leads_to_tech = advanced_fire_control_system
-			research_cost_coeff = 1
+		enable_equipment_modules = { 
+			ship_fire_control_system_2
 		}
-		
 		research_cost = 2.5
 		start_year = 1940
 		
@@ -1298,7 +1291,9 @@ modern_radio = {
 			leads_to_tech = future_computing_machine
 			research_cost_coeff = 1
 		}
-		
+		enable_equipment_modules = { 
+			ship_fire_control_system_3
+		}
 		research_cost = 2.5
 		start_year = 1942
 		
@@ -2007,127 +2002,6 @@ modern_radio = {
 			decryption_tech
 		}
 	}
-
-	basic_fire_control_system = {
-
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
-
-		enable_equipment_modules = { 
-			ship_fire_control_system_1
-		}
-		
-		research_cost = 1
-		
-		folder = {
-			name = electronics_folder
-			position = { x = @firecontrol y = 4 }
-		}
-		
-		ai_will_do = {
-			factor = 0.75
-			modifier = {
-				OR = {
-					tag = ENG
-					tag = USA
-					tag = JAP
-				}
-				factor = 3
-			}
-			modifier = {
-				OR = {
-					can_research = improved_fire_control_system
-					has_tech = improved_fire_control_system
-				}
-				factor = 0
-			}
-		}
-		
-		categories = {
-			electronics
-			computing_tech
-			naval_equipment
-		}
-	}
-
-	improved_fire_control_system = {
-
-		enable_equipment_modules = { 
-			ship_fire_control_system_2
-		}
-		
-		research_cost = 1
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
-		folder = {
-			name = electronics_folder
-			position = { x = @firecontrol y = 8 }
-		}
-		
-		ai_will_do = {
-			factor = 0.75
-			modifier = {
-				OR = {
-					tag = ENG
-					tag = USA
-					tag = JAP
-				}
-				factor = 3
-			}
-			modifier = {
-				OR = {
-					can_research = advanced_fire_control_system
-					has_tech = advanced_fire_control_system
-				}
-				factor = 0
-			}
-		}
-		
-		categories = {
-			electronics
-			computing_tech
-			naval_equipment
-		}
-	}
-
-	advanced_fire_control_system = {
-
-		enable_equipment_modules = { 
-			ship_fire_control_system_3
-		}
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
-		
-		research_cost = 1
-		
-		folder = {
-			name = electronics_folder
-			position = { x = @firecontrol y = 12 }
-		}
-		
-		ai_will_do = {
-			factor = 0.75
-			modifier = {
-				OR = {
-					tag = ENG
-					tag = USA
-					tag = JAP
-				}
-				factor = 3
-			}
-			
-		}
-		
-		categories = {
-			electronics
-			computing_tech
-			naval_equipment
-		}
-	}
-
 
 ###  ##  ###  ### ### ### ###  ##   ##  ### ###  ##  #  #     ### ###  ##  #  # #  #  ##  #    ##   ##  #   #     
 #   #  # #  #  #   #  #    #  #  # #  #  #   #  #  # ## #      #  #   #  # #  # ## # #  # #   #  # #     # #      
