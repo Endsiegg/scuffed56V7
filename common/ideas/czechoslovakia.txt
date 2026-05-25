@@ -1643,40 +1643,6 @@ ideas = {
 			}	
 		}
 
-		CZE_rural_education_efforts = {
-			picture = generic_research_bonus
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			available = {
-				original_tag = CZE
-			}
-
-			modifier = {
-				research_speed_factor = 0.03
-				custom_modifier_tooltip = CZE_rural_education_efforts_modifier_tt
-			}
-
-			on_remove = { #Theres the same check on the focus, just being extra safe
-				owner = {
-					if = {
-						limit = {
-							amount_research_slots < 7
-						}
-						add_research_slot = 1
-					}
-				}
-            }
-		}
-
 		CZE_joint_stock_schemes_idea_aat = {
 			picture = RAJ_issue_bonds_on_the_stock_market
 
