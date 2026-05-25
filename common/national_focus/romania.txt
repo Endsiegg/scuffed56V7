@@ -186,11 +186,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 46 }						
-				add_extra_state_shared_building_slots = 2
-				remove_building = {
-					type = industrial_complex
-					level = 1
-				}
+				add_extra_state_shared_building_slots = 4
 			}
         }
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
@@ -265,7 +261,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 						type = industrial_complex
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 			}
@@ -279,7 +275,7 @@ focus_tree = {
 		relative_position_id = ROM_public_department_buildings
 		x = -1
 		y = 1
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -292,11 +288,11 @@ focus_tree = {
 			}
 			add_popularity = {
 				ideology = communism
-				popularity = -0.05
+				popularity = -0.10
 			}
 			add_popularity = {
 				ideology = fascism
-				popularity = -0.05
+				popularity = -0.10
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
@@ -308,7 +304,7 @@ focus_tree = {
 		relative_position_id = ROM_public_department_buildings
 		x = 1
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -319,7 +315,7 @@ focus_tree = {
 				days = 365
 				idea = r56_ROM_restrict_freedom_of_press
 			}
-			add_political_power = 15
+			add_political_power = 50
         }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
     }	
@@ -328,7 +324,7 @@ focus_tree = {
 		icon = GFX_goal_ROM_general_election
 		x = 0
 		y = 2
-		cost = 5
+		cost = 3
 		prerequisite = { focus = ROM_restrict_freedom_of_press focus = ROM_clamp_down_on_extremism }
 		relative_position_id = ROM_public_department_buildings
 
@@ -377,7 +373,7 @@ focus_tree = {
 		relative_position_id = ROM_a_flawed_democracy
 		x = 9
 		y = 1
-		cost = 5
+		cost = 3
 		prerequisite = { focus = ROM_a_flawed_democracy }
 
 		ai_will_do = {
@@ -436,7 +432,7 @@ focus_tree = {
 				limit = {
 					date < 1937.6.1
 				}
-				add_stability = -0.15
+				#add_stability = -0.05
 			}
 			country_event = { id = rt56.rom_general_election.8 hours = 6 }
         }
@@ -447,7 +443,7 @@ focus_tree = {
 		id = ROM_oppose_the_royal_dictatorship
 		icon = GFX_focus_rom_abdicate
 		prerequisite = { focus = ROM_hold_emergency_election }
-		cost = 5
+		cost = 3
 		relative_position_id = ROM_hold_emergency_election
 		x = 0 
 		y = 1
@@ -499,7 +495,7 @@ focus_tree = {
 		mutually_exclusive = { focus = ROM_deadlock_in_election }
 		x = -7
 		y = 1
-		cost = 5
+		cost = 3
 		offset = {
 			x = 7
 			y = 0
@@ -536,15 +532,15 @@ focus_tree = {
 			mark_focus_tree_layout_dirty = yes
 			add_popularity = {
 				ideology = communism
-				popularity = -0.03
+				popularity = -0.05
 			} 
 			add_popularity = {
 				ideology = fascism
-				popularity = 0.03
+				popularity = 0.05
 			}
 			add_popularity = {
 				ideology = democratic
-				popularity = -0.03
+				popularity = -0.05
 			}
 			activate_mission = ROM_codreanu_assassination_mission
 			hidden_effect = {
@@ -562,7 +558,7 @@ focus_tree = {
 		relative_position_id = ROM_the_iron_guard
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -583,7 +579,7 @@ focus_tree = {
 		relative_position_id = ROM_initial_political_reforms
 		x = -1
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -624,7 +620,7 @@ focus_tree = {
 		relative_position_id = ROM_initial_political_reforms
 		x = 1
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -669,7 +665,7 @@ focus_tree = {
 		relative_position_id = ROM_crack_down_on_anti_legionary_activity
 		x = -1
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -804,7 +800,7 @@ focus_tree = {
 	focus = {
 		id = ROM_expand_the_iron_guard
 		icon = GFX_goal_ROM_iron_guard_symbol
-		prerequisite = { focus = ROM_simas_ascendancy }
+		prerequisite = { focus = ROM_simas_ascendancy focus = ROM_cordreanus_iron_guard }
 		relative_position_id = ROM_simas_ascendancy
 		x = -1
 		y = 1
@@ -827,7 +823,7 @@ focus_tree = {
 		relative_position_id = ROM_expand_the_iron_guard
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -1560,7 +1556,7 @@ focus_tree = {
         completion_reward = {
             add_timed_idea = {
 				idea = r56_ROM_seized_royal_assets
-				days = 240
+				days = 365
 			}
         }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -4457,7 +4453,7 @@ focus_tree = {
 		relative_position_id = ROM_the_general_election
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 
 		
 
@@ -4504,7 +4500,7 @@ focus_tree = {
 		relative_position_id = ROM_dissolve_the_parliament
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -4555,7 +4551,7 @@ focus_tree = {
 		relative_position_id = ROM_enforce_royal_dictatorship
 		x = -1
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -4593,7 +4589,7 @@ focus_tree = {
 		relative_position_id = ROM_constitutional_reform
 		x = 1
 		y = 1
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -4716,7 +4712,7 @@ focus_tree = {
 		relative_position_id = ROM_preservation_of_greater_romania
 		x = -1
 		y = 1
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -4913,7 +4909,7 @@ focus_tree = {
 		relative_position_id = ROM_the_german_four_year_plan
 		x = 1
 		y = 1
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -4993,7 +4989,7 @@ focus_tree = {
 		relative_position_id = ROM_the_german_four_year_plan
 		x = -1
 		y = 1
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -5222,11 +5218,11 @@ focus_tree = {
 	focus = {
 		id = ROM_prepare_the_eastern_front
 		icon = GFX_goal_ROM_prepare_eastern_front
-		prerequisite = { focus = ROM_axis_membership }
+		prerequisite = { focus = ROM_axis_membership focus = ROM_alliance_with_the_germans } 
 		relative_position_id = ROM_axis_membership
 		x = -1
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -5303,7 +5299,7 @@ focus_tree = {
 		relative_position_id = ROM_prepare_the_eastern_front
 		x = 0
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -5440,46 +5436,12 @@ focus_tree = {
 
 		x = 0
 		y = 2
-		cost = 5
+		cost = 1
 
 		cancel_if_invalid = no
 				
 		available = {
-			has_war_with = SOV
-			OR = {	
-				GER = {
-					exists = yes
-					has_war_with = SOV
-				}
-				GER = {
-					exists = no
-				}
-			}
-			OR = {
-				surrender_progress > 0.15
-				AND = {
-					surrender_progress > 0.01
-					NOT = {
-						ROOT = {
-							has_full_control_of_state = 78
-							has_full_control_of_state = 766
-						}
-					}
-				}
-				AND = {
-					casualties_inflicted_by = {	#replaces a date check to make sure it isnt too early, hopefully more flexible
-						opponent = SOV
-						thousands > 200
-					}
-					war_length_with = {
-						tag = SOV
-						months > 18
-					}
-					SOV = {
-						surrender_progress < 0.10
-					}
-				}
-			}
+		
 		}
 
 		will_lead_to_war_with = GER
@@ -5509,56 +5471,7 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-			SOV = {
-				country_event = { id = rt56.rom_stab_ger.2 days = 1 }
-			}
-			custom_effect_tooltip = FIN_stabinthebackev_tt
-			effect_tooltip = {
-				SOV = {
-					white_peace = ROM
-				}
 
-				every_country = {
-					limit = {
-						is_in_faction_with = SOV
-						has_war_with = ROM
-					}
-					white_peace = ROM
-				}
-
-				if = {
-					limit = {
-						ROM = {
-							controls_state = 766
-							controls_state = 78
-							controls_state = 80
-						}
-					}
-					SOV = {
-						transfer_state = 766
-						transfer_state = 78
-						transfer_state = 80
-					}
-					
-				}
-
-				if = {
-					limit = {
-						GER = {
-							exists = yes
-							has_war_with = SOV
-						}
-					}
-					declare_war_on = {
-						target = GER
-						type = topple_government
-					}
-				}				
-			}
-			custom_effect_tooltip = FIN_stabinthebackev_tt_2
-			effect_tooltip = {
-				unlock_national_focus = ROM_romanias_final_stand
-			}
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
 	}			
@@ -5570,24 +5483,21 @@ focus_tree = {
 		relative_position_id = ROM_royal_coup
 		x = 2
 		y = 1
-		cost = 3
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-			has_country_flag = ROM_SOV_said_no_peace	
+	
 		}
 		will_lead_to_war_with = HUN
 
 		
 
         completion_reward = {
-			add_timed_idea = {
-				days = 365
-				idea = r56_ROM_last_stand
-			}
+			add_ideas = r56_ROM_last_stand
         }
     }
 	focus = {
@@ -5597,7 +5507,7 @@ focus_tree = {
 		relative_position_id = ROM_romanias_final_stand
 		x = -1
 		y = 1
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -5608,7 +5518,7 @@ focus_tree = {
 
         completion_reward = {
 			add_timed_idea = {
-				days = 120
+				days = 365
 				idea = r56_ROM_carpathian_trap
 			}
 			84 = {
@@ -5635,7 +5545,7 @@ focus_tree = {
 		relative_position_id = ROM_romanias_final_stand
 		x = 1
 		y = 1
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -5665,7 +5575,7 @@ focus_tree = {
 		relative_position_id = ROM_crush_the_fatherland_front
 		x = -1
 		y = 1
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -5692,7 +5602,7 @@ focus_tree = {
 		relative_position_id = ROM_dominate_the_black_sea
 		x = -1
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -5738,7 +5648,7 @@ focus_tree = {
 		relative_position_id = ROM_dominate_the_black_sea
 		x = 1
 		y = 1
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
