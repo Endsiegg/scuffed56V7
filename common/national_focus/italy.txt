@@ -10316,9 +10316,9 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER}
 
 		completion_reward = {
-					add_to_variable = { ITA_iri_production_speed_arms_factory_factor = 0.05 } 
+			add_to_variable = { ITA_iri_production_speed_arms_factory_factor = 0.10 } 
 			custom_effect_tooltip = ITA_stop_the_squandering_ricostruzione_industriale_tt
-			add_to_variable = { ITA_military_industry_dm_factory_max_efficiency_factor = 0.05 }
+			add_to_variable = { ITA_military_industry_dm_factory_max_efficiency_factor = 0.10 }
 			custom_effect_tooltip = ITA_stop_the_squandering_military_industry_tt
 			add_political_power = 50
 			add_stability = 0.05
@@ -17193,12 +17193,10 @@ focus_tree = {
 					id = r56_italy.18
 				}
 				add_opinion_modifier = { target = ITA modifier = pact_of_steel_opinion }
-				hidden_effect = {
 					add_timed_idea = {
 					idea = ITA_pact_of_steel
 					days = 365
 					}
-				}
 				add_relation_modifier = {
 					target = ROOT
 					modifier = ITA_military_agreements
