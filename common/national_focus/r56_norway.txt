@@ -1261,19 +1261,19 @@ focus_tree = {
 			if = {
 				limit = {
 					NOT = {
-						has_tech = jaegers
+						has_tech = rangers
 					}
 				}
 				set_technology = {
-					jaegers = 1
+					rangers_tech = 1
 				}				
 			}
 			else = {
 				add_tech_bonus = {
 					name = special_bonus
-					bonus = 0.7
+					bonus = 0.5
 					uses = 2
-					category = r56_jaeger_infantry_tech
+					category = rangers_tech_cat
 				}				
 			}
 
@@ -1285,15 +1285,15 @@ focus_tree = {
 					priority = 2
 					
 					regiments = {
-						jaeger = { x = 0 y = 0 }
-						jaeger = { x = 0 y = 1 }
-						jaeger = { x = 0 y = 2 }
+						ranger_battalion = { x = 0 y = 0 }
+						ranger_battalion = { x = 0 y = 1 }
+						ranger_battalion = { x = 0 y = 2 }
 						
-						jaeger = { x = 1 y = 0 }
-						jaeger = { x = 1 y = 1 }
-						jaeger = { x = 1 y = 2 }
+						ranger_battalion = { x = 1 y = 0 }
+						ranger_battalion = { x = 1 y = 1 }
+						ranger_battalion = { x = 1 y = 2 }
 						
-						jaeger = { x = 2 y = 0 }
+						ranger_battalion = { x = 2 y = 0 }
 						artillery_brigade = { x = 2 y = 1 }
 						artillery_brigade = { x = 2 y = 2 }
 					}

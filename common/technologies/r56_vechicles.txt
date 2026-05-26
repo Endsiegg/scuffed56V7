@@ -176,6 +176,10 @@ technologies = {
 		truck_attrition_factor = -0.05
 		repair_speed_supply_node_factor = 0.05
 		repair_speed_rail_way_factor = 0.05
+		
+		production_speed_supply_node_factor = 0.10
+		production_speed_rail_way_factor = 0.10
+		repair_speed_rail_way_factor = 0.05
 
 		special_project_specialization = { specialization_land }
 		special_project_specialization = { specialization_air }
@@ -184,6 +188,8 @@ technologies = {
 			motorized_equipment
 			logistics_tech
 			supply_node_tech
+			train_tech
+			railway_construction_tech
 		}
 
 		on_research_complete = {
@@ -264,9 +270,15 @@ technologies = {
 		truck_attrition_factor = -0.05
 		repair_speed_supply_node_factor = 0.05
 
+		production_speed_supply_node_factor = 0.10
+		production_speed_rail_way_factor = 0.10
+		repair_speed_rail_way_factor = 0.05
+
 		special_project_specialization = { specialization_land }
 
 		categories = {
+			train_tech
+			railway_construction_tech
 			motorized_equipment
 			logistics_tech
 			supply_node_tech
@@ -345,9 +357,14 @@ technologies = {
 		supply_node_range = 0.05
 		truck_attrition_factor = -0.05
 		repair_speed_supply_node_factor = 0.05
-
+		
+		production_speed_supply_node_factor = 0.10
+		production_speed_rail_way_factor = 0.10
+		repair_speed_rail_way_factor = 0.05
 
 		categories = {
+			train_tech
+			railway_construction_tech
 			motorized_equipment
 			logistics_tech
 			supply_node_tech
@@ -376,10 +393,16 @@ technologies = {
 		truck_attrition_factor = -0.05
 		repair_speed_supply_node_factor = 0.05
 
+		production_speed_supply_node_factor = 0.10
+		production_speed_rail_way_factor = 0.10
+		repair_speed_rail_way_factor = 0.05
+
 		special_project_specialization = { specialization_land }
 
 
 		categories = {
+			train_tech
+			railway_construction_tech
 			motorized_equipment
 			logistics_tech
 			supply_node_tech
@@ -403,8 +426,13 @@ technologies = {
 		truck_attrition_factor = -0.05
 		repair_speed_supply_node_factor = 0.05
 
+		production_speed_supply_node_factor = 0.10
+		production_speed_rail_way_factor = 0.10
+		repair_speed_rail_way_factor = 0.05
 
 		categories = {
+			train_tech
+			railway_construction_tech
 			motorized_equipment
 			logistics_tech
 			supply_node_tech
@@ -967,12 +995,7 @@ technologies = {
 			leads_to_tech = armored_train
 			research_cost_coeff = 1
 		}
-
-		path = {
-			leads_to_tech = r56_flexible_railnetwork 
-			research_cost_coeff = 1
-		}
-		
+	
 		categories = {
 			train_tech
 		}
@@ -1318,168 +1341,6 @@ technologies = {
 		}
 	}
 	
-	###------> New railway stat techs <><> <><> <><> <><> <><>
-	r56_flexible_railnetwork = {
-		research_cost = 1.50
-		start_year = 1936
-		folder = {
-			name = r56_vechicles_folder
-			position = { x = -1 y = 6 }
-		}
-
-		path = {
-			leads_to_tech = r56_military_railnetwork
-			research_cost_coeff = 1
-		}
-
-		production_speed_supply_node_factor = 0.10
-		production_speed_rail_way_factor = 0.10
-		repair_speed_rail_way_factor = 0.05
-
-		categories = {
-			train_tech
-			railway_construction_tech
-		}
-
-		ai_will_do = {
-			factor = 1
-		
-			modifier = {
-				factor = 2
-				date > "1938.1.1"
-			}
-			
-			modifier = {
-				factor = 3
-				date > "1939.1.1"
-			}
-
-		}
-	}
-
-
-	r56_military_railnetwork = {
-		research_cost = 1.50
-		start_year = 1941
-		folder = {
-			name = r56_vechicles_folder
-			position = { x = -1 y = 10 }
-		}
-
-		path = {
-			leads_to_tech = r56_modern_military_railnetwork
-			research_cost_coeff = 1
-		}
-
-		production_speed_supply_node_factor = 0.10
-		production_speed_rail_way_factor = 0.10
-		repair_speed_rail_way_factor = 0.05
-
-		categories = {
-			train_tech
-			railway_construction_tech
-		}
-
-		ai_will_do = {
-			factor = 0
-		
-			modifier = {
-				factor = 1
-				date > "1941.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1942.1.1"
-			}
-
-			modifier = {
-				factor = 3
-				date > "1943.1.1"
-			}
-
-		}
-	}
-
-	r56_modern_military_railnetwork = {
-		research_cost = 2
-		start_year = 1944
-		folder = {
-			name = r56_vechicles_folder
-			position = { x = -1 y = 16 }
-		}
-
-		path = {
-			leads_to_tech = r56_modern_military_railnetwork_2
-			research_cost_coeff = 1
-		}
-
-		production_speed_supply_node_factor = 0.10
-		production_speed_rail_way_factor = 0.10
-		repair_speed_rail_way_factor = 0.05
-
-		categories = {
-			train_tech
-			railway_construction_tech
-		}
-
-		ai_will_do = {
-			factor = 1
-		
-			modifier = {
-				factor = 1
-				date > "1944.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1945.1.1"
-			}
-
-			modifier = {
-				factor = 3
-				date > "1946.1.1"
-			}
-		}
-	}
-
-	r56_modern_military_railnetwork_2 = {
-		research_cost = 2
-		start_year = 1950
-		folder = {
-			name = r56_vechicles_folder
-			position = { x = -1 y = 24 }
-		}
-
-		production_speed_supply_node_factor = 0.10
-		production_speed_rail_way_factor = 0.10
-		repair_speed_rail_way_factor = 0.05
-
-		categories = {
-			train_tech
-			railway_construction_tech
-		}
-
-		ai_will_do = {
-			factor = 1
-		
-			modifier = {
-				factor = 1
-				date > "1948.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1950.1.1"
-			}
-
-			modifier = {
-				factor = 3
-				date > "1952.1.1"
-			}
-		}
-	}
-
 	tech_recon_focus_bonus = { #gained from Help from the Nagas
 
 		allow = {
