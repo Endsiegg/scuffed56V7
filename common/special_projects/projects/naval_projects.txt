@@ -155,7 +155,7 @@ sp_naval_fleet_submarine = {
 	}
 
 	complexity = sp_complexity.medium
-	prototype_time = sp_time.prototype.long
+	prototype_time = sp_time.prototype.medium
 
 	available = { 
 		FROM = {
@@ -337,8 +337,8 @@ sp_naval_nuclear_submarine = {
 		base = 1
 	}
 
-	complexity = sp_complexity.insane
-	prototype_time = sp_time.prototype.long	
+	complexity = sp_complexity.large
+	prototype_time = sp_time.prototype.large	
 	allowed = {
 		has_dlc = "Gotterdammerung"
 	}
@@ -353,7 +353,7 @@ sp_naval_nuclear_submarine = {
 	}
 	
 	breakthrough_cost = {
-		specialization_naval = 3
+		specialization_naval = 2
 	}
 
 	resource_cost = {
@@ -532,7 +532,7 @@ sp_naval_rocket_launching_submarine = {
 		}
 	}	
 	complexity = sp_complexity.medium 
-	prototype_time = sp_time.prototype.long
+	prototype_time = sp_time.prototype.medium
 	allowed = {
 		has_dlc = "Gotterdammerung"
 	}
@@ -547,7 +547,7 @@ sp_naval_rocket_launching_submarine = {
 	}
 
 	breakthrough_cost = {
-		specialization_naval = 2
+		specialization_naval = 1
 	}
 	
 	 
@@ -726,8 +726,8 @@ sp_naval_nuclear_missile_submarine = {
 			chromium = 16
 		}
 	}	
-	complexity = sp_complexity.large 
-	prototype_time = sp_time.prototype.very_long 
+	complexity = sp_complexity.medium 
+	prototype_time = sp_time.prototype.medium 
 	allowed = {
 		has_dlc = "Gotterdammerung"
 	}
@@ -742,7 +742,7 @@ sp_naval_nuclear_missile_submarine = {
 	}
 
 	breakthrough_cost = {
-		specialization_naval = 2
+		specialization_naval = 1
 	}
 	
 	
@@ -906,8 +906,8 @@ sp_naval_nuclear_torpedo = {
 		}
 	}
 	
-	complexity = sp_complexity.large
-	prototype_time = sp_time.prototype.long
+	complexity = sp_complexity.medium
+	prototype_time = sp_time.prototype.medium
 
 	allowed = {
 		AND = {
@@ -1051,7 +1051,7 @@ sp_naval_midget_submarine = {
 		}
 	}
 
-	complexity = sp_complexity.medium
+	complexity = sp_complexity.small
 	prototype_time = sp_time.prototype.short
 	
 
@@ -1335,8 +1335,8 @@ sp_naval_aip_engine = {
 		specialization_naval = 1
 	}
 	
-	complexity = sp_complexity.large 
-	prototype_time = sp_time.prototype.medium
+	complexity = sp_complexity.small 
+	prototype_time = sp_time.prototype.short
 	
 	project_output = {
 		country_effects = {
@@ -1509,8 +1509,8 @@ sp_naval_anechoic_tiles = {
 		}
 	}
 
-	complexity = sp_complexity.medium 
-	prototype_time = sp_time.prototype.medium 
+	complexity = sp_complexity.small 
+	prototype_time = sp_time.prototype.short 
 		
 	project_output = {
 		country_effects = {
@@ -1677,7 +1677,7 @@ specialization = specialization_naval
 		specialization_naval = 1
 	}
 	
-	complexity = sp_complexity.large
+	complexity = sp_complexity.medium
 	prototype_time = sp_time.prototype.medium
 	project_output = {
 		country_effects = {
@@ -1885,7 +1885,7 @@ sp_naval_torpedo_cruiser = {
 	}
 	
 	complexity = sp_complexity.small
-	prototype_time = sp_time.prototype.medium
+	prototype_time = sp_time.prototype.short
 	
 	resource_cost = {
 		resources = { 
@@ -2090,16 +2090,16 @@ sp_naval_super_heavy_battleship = {
 				limit = { 
 					has_dlc = "Man the Guns"
 				}
-				has_tech = improved_ship_hull_heavy
+				has_tech = basic_ship_hull_heavy
 			}
 			else = {
-				has_tech = improved_battleship
+				has_tech = basic_battleship
 			}
 		}
 	}
 
-	complexity = sp_complexity.medium
-	prototype_time = sp_time.prototype.medium
+	complexity = sp_complexity.small
+	prototype_time = sp_time.prototype.short
 	
 
 	resource_cost = {
@@ -2449,8 +2449,8 @@ sp_naval_modern_battleship = {
 		}
 	}
 	
-	complexity = sp_complexity.large
-	prototype_time = sp_time.prototype.long
+	complexity = sp_complexity.medium
+	prototype_time = sp_time.prototype.medium
 	
 	
 	resource_cost = {
@@ -2462,7 +2462,7 @@ sp_naval_modern_battleship = {
 	}
 
 	breakthrough_cost = {
-		specialization_naval = 2
+		specialization_naval = 1
 	}
 
 	project_output = {
@@ -2808,8 +2808,8 @@ sp_naval_modern_carrier = {
 		}
 	}
 
-	complexity = sp_complexity.large
-	prototype_time = sp_time.prototype.long	
+	complexity = sp_complexity.small
+	prototype_time = sp_time.prototype.short	
 	
 	project_output = {
 		country_effects = {
@@ -3137,8 +3137,8 @@ sp_naval_ice_carrier = {
 		}
 	}	
 
-	complexity = sp_complexity.large 
-	prototype_time = sp_time.prototype.very_long 
+	complexity = sp_complexity.medium 
+	prototype_time = sp_time.prototype.medium 
 
 	breakthrough_cost = {
 		specialization_naval = 2
@@ -3341,8 +3341,8 @@ sp_naval_underway_replenishment = {
 		specialization_naval = 0
 	}
 	
-	complexity = sp_complexity.large
-	prototype_time = sp_time.prototype.medium 
+	complexity = sp_complexity.small
+	prototype_time = sp_time.prototype.short 
 	
 	project_output = {
 		country_effects = {
@@ -3472,8 +3472,8 @@ sp_naval_proximity_fuze = {
 		}
 	}
 
-	complexity = sp_complexity.large 
-	prototype_time = sp_time.prototype.long 
+	complexity = sp_complexity.small 
+	prototype_time = sp_time.prototype.short 
 	
 	breakthrough_cost = {
 		specialization_naval = 2
@@ -3601,8 +3601,8 @@ sp_naval_support_ships = {
 		specialization_naval = 0
 	}
 	
-	complexity = sp_complexity.medium
-	prototype_time = sp_time.prototype.medium 
+	complexity = sp_complexity.small
+	prototype_time = sp_time.prototype.short 
 	project_output = {
 		country_effects = {
 		}
@@ -3797,11 +3797,11 @@ specialization = specialization_naval
 	}
 
 	breakthrough_cost = {
-		specialization_naval = 1
+		specialization_naval = 0
 	}
 	
-	complexity = sp_complexity.medium
-	prototype_time = sp_time.prototype.medium 
+	complexity = sp_complexity.small
+	prototype_time = sp_time.prototype.short 
 	project_output = {
 		country_effects = {
 			add_design_template_bonus = {
