@@ -24,7 +24,8 @@ JAP_mitsubishi_tank_organization = {
 		}
 		
 		equipment_bonus = {
-			soft_attack = 0.1 
+			soft_attack = 0.1
+			armor_value = 0.1 
 			reliability = 0.1
 						
 		}
@@ -47,14 +48,90 @@ JAP_mitsubishi_tank_organization = {
 		}
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.10
 		}
 
 		production_bonus = {
-			production_cost_factor = -0.07
+			production_cost_factor = -0.10
 		}
+		
 	}	
-	
+	add_trait = {
+		token = JAP_mio_trait_foreign_research_and_development_cooperation
+		name = JAP_mio_trait_foreign_research_and_development_cooperation
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		relative_position_id = generic_mio_trait_improved_boogies
+
+		position = { x = 2 y = 0 }  
+		
+		visible = {
+			FROM = { original_tag = JAP }
+		}
+
+		available = {
+			FROM = {
+				has_completed_focus = JAP_foreign_tank_modernization_cooperation
+				NOT = { has_country_flag = JAP_mio_trait_foreign_research_and_development_cooperation_taken_flag }
+			}
+		}
+
+		on_complete = {
+			custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+			FROM = {
+				set_country_flag = JAP_mio_trait_foreign_research_and_development_cooperation_taken_flag
+			}
+		}
+
+		organization_modifier = {
+		    military_industrial_organization_research_bonus = 0.15
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+	add_trait = {
+		token = JAP_mio_trait_military_arsenal_trait
+		name = JAP_mio_trait_military_arsenal_trait
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		relative_position_id = generic_mio_trait_improved_boogies
+
+		position = { x = 4 y = 0 }  
+		
+		visible = {
+			FROM = { original_tag = JAP }
+		}
+
+		available = {
+			FROM = {
+				JAP_army_faction_is_not_subdued = yes
+			}
+		}
+
+		on_complete = {
+			
+		}
+
+		organization_modifier = {
+		    
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
 }
 
 # JAP_sagami_army_arsenal_organization = {	#duplicate but different type than the DLC one

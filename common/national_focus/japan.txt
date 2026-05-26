@@ -12166,35 +12166,35 @@ focus_tree = {
 			605 = {
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 16
 				}
 			}
 			325 = {
 				add_resource = {
 					type = aluminium
-					amount = 12
+					amount = 24
 				}
 				add_resource = {
 					type = tungsten
-					amount = 8
+					amount = 16
 				}
 			}
 			597 = {
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 16
 				}
 			}
 			614 = {
 				add_resource = {
 					type = coal
-					amount = 12
+					amount = 24
 				}
 			}
 			602 = {
 				add_resource = {
 					type = tungsten
-					amount = 10
+					amount = 20
 				}
 			}
 			
@@ -12936,7 +12936,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_nanshin_ron }
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -13145,7 +13145,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_unsinkable_aircraft_carriers }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -13412,7 +13412,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_nanshin_ron }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -13448,7 +13448,7 @@ focus_tree = {
 			951 = {
 				add_resource = {
 					type = aluminium
-					amount = 12
+					amount = 24
 				}
 				IF = {
 					limit = {
@@ -13521,7 +13521,7 @@ focus_tree = {
 			671 = {
 				add_resource = {
 					type = aluminium
-					amount = 6
+					amount = 24
 				}
 			}
 			
@@ -14088,7 +14088,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_occupy_siam focus = JAP_sea_pressure_siam }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -14954,7 +14954,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_ensure_temporary_peace_with_china }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -15104,7 +15104,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_hokushin_ron }
 
-		cost = 10
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -15170,7 +15170,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_strenghten_manchukuo_imperial_army }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -15256,7 +15256,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_hokushin_ron }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -15332,7 +15332,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_utilize_ainu_expertise }
 
-		cost = 10
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -15757,7 +15757,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_a_green_persimmon focus = JAP_the_persimmon_has_ripened }
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -15870,7 +15870,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_okadas_military_purge_speech }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -28424,7 +28424,7 @@ focus_tree = {
 		x = -3
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -28452,19 +28452,19 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = JAP_rethink_armor_doctrine
-				bonus = 0.25
+				bonus = 1
 				uses = 1
 				category = cat_mechanized_equipment
 			}
 			add_doctrine_cost_reduction = {
 				name = JAP_rethink_armor_doctrine
-				cost_reduction = 0.25
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
 			add_tech_bonus = {
 				name = JAP_rethink_armor_doctrine
-				bonus = 0.5
+				bonus = 1
 				uses = 2
 				category = armor	
 			}
@@ -28472,8 +28472,8 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
 			JAP_add_or_modify_imperial_army = yes
-			add_to_variable = { JAP_army_motorized_attack_factor = 0.05 tooltip = motorized_attack_factor_tt }
-			add_to_variable = { JAP_army_mechanized_attack_factor = 0.05 tooltip = mechanized_attack_factor_tt }
+			add_to_variable = { JAP_army_motorized_attack_factor = 0.10 tooltip = motorized_attack_factor_tt }
+			add_to_variable = { JAP_army_mechanized_attack_factor = 0.10 tooltip = mechanized_attack_factor_tt }
 
 			IF = {
 				limit = {
@@ -28501,9 +28501,9 @@ focus_tree = {
 		id = JAP_foreign_tank_modernization_cooperation
 		icon = GFX_focus_generic_heavy_tank
 		
-		mutually_exclusive = {
-			focus = JAP_domestic_tank_modernization_program
-		}
+		# mutually_exclusive = {
+		# 	focus = JAP_domestic_tank_modernization_program
+		# }
 
 		prerequisite = { focus = JAP_rethink_armor_doctrine }
 
@@ -28511,7 +28511,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -28606,9 +28606,9 @@ focus_tree = {
 		id = JAP_domestic_tank_modernization_program
 		icon = GFX_focus_generic_tank_assembly
 		
-		mutually_exclusive = {
-			focus = JAP_foreign_tank_modernization_cooperation
-		}
+		# mutually_exclusive = {
+		# 	focus = JAP_foreign_tank_modernization_cooperation
+		# }
 
 		prerequisite = { focus = JAP_rethink_armor_doctrine }
 
@@ -28643,20 +28643,21 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}	
 				mio:JAP_mitsubishi_heavy_industries_organization = {
-					add_mio_size = 1
+					add_mio_size = 3
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
 			add_tech_bonus = {
 				name = JAP_domestic_tank_modernization_program
-				bonus = 0.5
+				bonus = 1
+				ahead_reduction = 1
 				uses = 1
 				category = armor
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_land
-				value = 0.25
+				value = 0.5
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -28682,7 +28683,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -28717,13 +28718,14 @@ focus_tree = {
 
 			add_breakthrough_progress = {
 				specialization = specialization_land
-				value = 0.25
+				value = 0.5
 			}
 
 			add_tech_bonus = {
 				name = JAP_the_ultimate_tank
-				bonus = 0.75
-				uses = 2
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
 				category = cat_heavy_armor	
 			}
 
@@ -28751,9 +28753,9 @@ focus_tree = {
 			}
 
 			JAP_add_or_modify_imperial_army = yes
-			add_to_variable = { JAP_army_army_armor_attack_factor = 0.1 tooltip = army_armor_attack_factor_tt }
-			add_to_variable = { JAP_army_motorized_attack_factor = 0.05 tooltip = motorized_attack_factor_tt }
-			add_to_variable = { JAP_army_mechanized_attack_factor = 0.05 tooltip = mechanized_attack_factor_tt }
+			add_to_variable = { JAP_army_army_armor_attack_factor = 0.15 tooltip = army_armor_attack_factor_tt }
+			add_to_variable = { JAP_army_motorized_attack_factor = 0.10 tooltip = motorized_attack_factor_tt }
+			add_to_variable = { JAP_army_mechanized_attack_factor = 0.10 tooltip = mechanized_attack_factor_tt }
 
 			IF = {
 				limit = {
