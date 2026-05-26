@@ -2483,7 +2483,7 @@ focus_tree = {
 		# 	}
 		# }
 	
-		cost = 5
+		cost = 3
 	
 		ai_will_do = {	#don't take randomly - overriden by defeatist fascists
 			factor = 0
@@ -3859,7 +3859,7 @@ focus_tree = {
 			}
 		}
 	
-		cost = 5
+		cost = 3
 	
 		ai_will_do = {
 			factor = 1
@@ -3927,7 +3927,7 @@ focus_tree = {
 			}
 		}
 	
-		cost = 5
+		cost = 3
 	
 		ai_will_do = {
 			factor = 1
@@ -4015,7 +4015,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 3
 	
 		ai_will_do = {
 			factor = 4
@@ -4065,7 +4065,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 3
 	
 		ai_will_do = {
 			factor = 1
@@ -4111,7 +4111,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 3
 	
 		ai_will_do = {
 			factor = 1
@@ -4143,7 +4143,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 3
 	
 		ai_will_do = {
 			factor = 1
@@ -7392,7 +7392,7 @@ focus_tree = {
 		# }
 		
 	
-		cost = 5
+		cost = 3
 	
 		ai_will_do = {
 			factor = 1
@@ -12910,7 +12910,6 @@ focus_tree = {
 		id = CZE_continue_the_central_bohemia_plan
 		icon = GFX_focus_CZE_bohemia_plan
 		prerequisite = { focus = CZE_raise_more_industrial_funds }
-		mutually_exclusive = { focus = CZE_balance_industrial_invevestments }
 
 		relative_position_id = CZE_raise_more_industrial_funds
 		x = -4
@@ -12974,7 +12973,6 @@ focus_tree = {
 		icon = GFX_focus_CZE_balance_plan
 		#overlay = GFX_focus_overlay_cze_industry_focus
 		prerequisite = { focus = CZE_raise_more_industrial_funds }
-		mutually_exclusive = { focus = CZE_continue_the_central_bohemia_plan }
 
 		relative_position_id = CZE_raise_more_industrial_funds
 		x = -2
@@ -16219,7 +16217,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			CZE_has_a_skoda_infantry_focus = yes #Forces the player to interact with this focus atleast once
+			CZE_has_a_skoda_any_focus = yes
 			has_full_control_of_state = 75
 		}
 
@@ -16706,7 +16704,7 @@ focus_tree = {
 		relative_position_id = CZE_master_of_armaments
 		x = -2
 		y = 2
-		cost = 15
+		cost = 10
 
 		available = {
 			#num_of_military_factories > 30
@@ -16821,7 +16819,7 @@ focus_tree = {
 		relative_position_id = CZE_only_the_best_is_good_enough
 		x = -4
 		y = 1
-		cost = 20
+		cost = 10
 
 		available = {
 			custom_trigger_tooltip = {
@@ -16896,7 +16894,7 @@ focus_tree = {
 		relative_position_id = CZE_an_industrial_legacy
 		x = 0
 		y = 1
-		cost = 20
+		cost = 10
 
 		available = {
 			CZE_has_a_skoda_no_focus = yes
@@ -19938,7 +19936,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_expand_the_land_department_of_vtu
-		icon = GFX_focus_research
+		icon = GFX_focus_generic_mass_production
 		overlay = GFX_focus_overlay_cze_military_equipment
 		prerequisite = { focus = CZE_the_tvp_project }
 		prerequisite = { focus = CZE_rearmed_and_retooled }
@@ -19962,14 +19960,6 @@ focus_tree = {
 		}
 	
 		completion_reward = {
-			if = {
-				limit = {
-					amount_research_slots < 7
-				}
-				add_research_slot = 1
-
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
 
 			#This will always be the last idea swap so the tooltip should display a swap effect always
 			effect_tooltip = {
