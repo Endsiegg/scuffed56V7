@@ -13106,7 +13106,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 10
 	
 		ai_will_do = {
 			factor = 1
@@ -13761,10 +13761,10 @@ focus_tree = {
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -13792,10 +13792,7 @@ focus_tree = {
 		}
 	
 		available = {
-			#has_tech = excavation1
-			any_core_state = {
-				is_controlled_by = ROOT
-			}
+			has_tech = excavation1
 		}
 	
 		cancel_if_invalid = yes
@@ -13870,9 +13867,7 @@ focus_tree = {
 		}
 	
 		available = {
-			74 = {
-				is_fully_controlled_by = CZE
-			}
+			has_tech = excavation1
 		}
 	
 		cancel_if_invalid = yes
@@ -13891,12 +13886,12 @@ focus_tree = {
 
 			if = {
 				limit = {
-					74 = {
-						is_fully_controlled_by = ROOT
-					}
+					#74 = {
+					#	is_fully_controlled_by = ROOT
+					#}
 				}
 				random_owned_controlled_state = {
-					prioritize = { 74 }
+					prioritize = { 9 }
 					limit = {
 						free_building_slots = {
 							building = industrial_complex
@@ -13919,10 +13914,10 @@ focus_tree = {
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 					add_resource = {
@@ -13968,9 +13963,7 @@ focus_tree = {
 		}
 	
 		available = {
-			9 = {
-				is_fully_controlled_by = CZE
-			}
+			has_tech = excavation2
 		}
 	
 		cancel_if_invalid = yes
@@ -13989,9 +13982,9 @@ focus_tree = {
 
 			if = {
 				limit = {
-					9 = {
-						is_fully_controlled_by = ROOT
-					}
+					#9 = {
+					#	is_fully_controlled_by = ROOT
+					#}
 				}
 				random_core_state = {
 					limit = {
@@ -14058,7 +14051,6 @@ focus_tree = {
 		available = {
 			#CZE_has_a_skoda_no_focus = yes
 			has_tech = excavation2
-			controls_state = 69
 		}
 
 		completion_reward = {
@@ -14257,10 +14249,6 @@ focus_tree = {
 	
 		available = {
 			CZE_has_a_skoda_no_focus = yes
-			any_core_state = {
-				is_controlled_by = ROOT
-			}
-			synthetic_refinery > 0
 		}
 			
 	
@@ -14321,10 +14309,7 @@ focus_tree = {
 		}
 	
 		available = {
-			OR = {
-				has_full_control_of_state = 69
-				has_full_control_of_state = 972
-			}
+			has_tech = excavation1
 		}
 	
 		cancel_if_invalid = yes
@@ -14343,14 +14328,14 @@ focus_tree = {
 
 			if = {
 				limit = {
-					69 = {
-						is_fully_controlled_by = ROOT
-					}
+					#69 = {
+					#	is_fully_controlled_by = ROOT
+					#}
 				}
 				random_core_state = {
-					limit = {
-						is_fully_controlled_by = ROOT
-					}
+					#limit = {
+					#	is_fully_controlled_by = ROOT
+					#}
 					prioritize = { 69 }
 					add_resource = {
 						type = tungsten
@@ -14364,14 +14349,14 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					972 = {
-						is_fully_controlled_by = ROOT
-					}
+					#972 = {
+					#	is_fully_controlled_by = ROOT
+					#}
 				}
 				random_core_state = {
-					limit = {
-						is_fully_controlled_by = ROOT
-					}
+					#limit = {
+					#	is_fully_controlled_by = ROOT
+					#}
 					prioritize = { 972 }
 					add_resource = {
 						type = tungsten
@@ -14381,14 +14366,14 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					74 = {
-						is_fully_controlled_by = ROOT
-					}
+					#74 = {
+					#	is_fully_controlled_by = ROOT
+					#}
 				}
 				random_core_state = {
-					limit = {
-						is_fully_controlled_by = ROOT
-					}
+					#limit = {
+					#	is_fully_controlled_by = ROOT
+					#}
 					prioritize = { 74 }
 					add_resource = {
 						type = coal
@@ -14429,10 +14414,7 @@ focus_tree = {
 		}
 	
 		available = {
-			has_tech = excavation3
-			any_core_state = {
-				is_controlled_by = ROOT
-			}
+			has_tech = excavation2
 		}		
 	
 		cancel_if_invalid = yes
@@ -14451,9 +14433,9 @@ focus_tree = {
 
 			if = {
 				limit = {
-					any_core_state = {
-						is_controlled_by = ROOT
-					}
+					#any_core_state = {
+					#	is_controlled_by = ROOT
+					#}
 				}
 				random_owned_controlled_state = {
 					prioritize = { 9 }
@@ -14530,36 +14512,7 @@ focus_tree = {
 	
 		available = {
 			CZE_has_a_skoda_no_focus = yes
-			any_core_state = {
-				is_controlled_by = ROOT
-			}
-			if = {
-				limit = {
-					num_subjects < 1
-				}
-				has_resources_in_country = {
-					resource = steel
-					amount > 49
-					extracted = yes
-				}
-				has_resources_in_country = {
-					resource = tungsten
-					amount > 9
-					extracted = yes
-				}
-			}
-			else = {
-				has_resources_in_country = {
-					resource = steel
-					amount > 49
-					#extracted = no in general
-				}
-				has_resources_in_country = {
-					resource = tungsten
-					amount > 9
-					#extracted = no in general
-				}
-			}
+
 		}
 	
 		cancel_if_invalid = yes
@@ -16499,10 +16452,10 @@ focus_tree = {
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
