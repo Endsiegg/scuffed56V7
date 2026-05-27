@@ -8116,154 +8116,7 @@ focus_tree = {
 
 
 
-	focus = {
-		id = ENG_secure_the_oil_imports
-		prerequisite = { focus = ENG_continental_intervention }
-		available = { 
-			is_subject = no
-			if = {
-				limit = { #resource rights
-					has_dlc = "Man the Guns"
-				}
-				count_triggers = {
-					amount = 2
-					any_country={
-						has_war_with = ENG
-						is_major = yes
-					}
-					IRQ = {
-						has_war_with = ENG
-					}
-					PER = {
-						OR = {
-							has_war_with = ENG
-							has_completed_focus = PER_nationalize_the_means_of_production
-							has_completed_focus = PER_nationalize_aioc
-						}
-					}
-					SAU = {
-						OR = {
-							has_war_with = ENG
-							has_completed_focus = SAU_invite_brabag
-							has_completed_focus = SAU_2_Invite_the_Soviet_oil_barons
-							has_completed_focus = SAU_concessions_to_standard_oil
-						}
-					}
-				}
-			}
-			else={
-				any_country={
-					has_war_with = ENG
-					is_major = yes
-				}
-			}
-		}
 
-		continue_if_invalid = yes
-		allow_branch = {
-			always = no
-		}
-		icon = GFX_goal_desert_oil
-		x = 0
-		y = 1
-		relative_position_id = ENG_every_man_will_do_his_duty
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			if = {
-				limit = { #resource rights
-					has_dlc = "Man the Guns"
-				}
-				if = {
-					limit = {
-						SAU = {
-							OR = {
-								has_completed_focus = SAU_invite_brabag
-								has_completed_focus = SAU_2_Invite_the_Soviet_oil_barons
-								has_completed_focus = SAU_concessions_to_standard_oil
-							}
-							NOT = {
-								is_in_faction_with = ENG
-							}
-						}
-					}
-					create_wargoal = {
-						target = SAU
-						type = puppet_wargoal_focus
-						expire = 0
-					}
-				}
-				if = {
-					limit = {
-						PER = {
-							OR = {
-								has_completed_focus = PER_nationalize_the_means_of_production
-								has_completed_focus = PER_nationalize_aioc
-							}
-							NOT = {
-								is_in_faction_with = ENG
-							}
-						}
-					}
-					create_wargoal = {
-						target = PER
-						type = puppet_wargoal_focus
-						expire = 0
-					}
-				}
-				if = {
-					limit = {
-						OR = {
-							IRQ = { #can we trust them to keep giving oil
-								OR = {
-									has_government = fascism
-									has_government = communism
-								}
-								NOT = {
-									is_in_faction_with = ENG
-								}
-							}
-							AND = { #cant reach PER to take their oil
-								NOT = {
-									is_in_faction_with = RAJ
-									is_in_faction_with = PAK
-									is_in_faction_with = PER
-									is_in_faction_with = IRQ
-								}
-								has_wargoal_against = PER
-							}
-						}
-					}
-					create_wargoal = {
-						target = IRQ
-						type = puppet_wargoal_focus
-						expire = 0
-					}
-				}
-				#possibly later add decisions to threaten states in the Americas/the Netherlands into giving oil rights, could use ships_in_area to threaten naval action/invasion
-			}
-			else = {
-				create_wargoal = {
-					target = IRQ
-					type = puppet_wargoal_focus
-					expire = 0
-				}
-				create_wargoal = {
-					target = PER
-					type = puppet_wargoal_focus
-					expire = 0
-				}
-				create_wargoal = {
-					target = SAU
-					type = puppet_wargoal_focus
-					expire = 0
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_OIL}
-	}
 
 	focus = {
 		id = ENG_maintaining_imperial_integrity
@@ -8746,7 +8599,155 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
+	focus = {
+		id = ENG_secure_the_oil_imports
+		prerequisite = { focus = ENG_continental_intervention }
+		available = { 
+			is_subject = no
+			if = {
+				limit = { #resource rights
+					has_dlc = "Man the Guns"
+				}
+				count_triggers = {
+					amount = 2
+					any_country={
+						has_war_with = ENG
+						is_major = yes
+					}
+					IRQ = {
+						has_war_with = ENG
+					}
+					PER = {
+						OR = {
+							has_war_with = ENG
+							has_completed_focus = PER_nationalize_the_means_of_production
+							has_completed_focus = PER_nationalize_aioc
+						}
+					}
+					SAU = {
+						OR = {
+							has_war_with = ENG
+							has_completed_focus = SAU_invite_brabag
+							has_completed_focus = SAU_2_Invite_the_Soviet_oil_barons
+							has_completed_focus = SAU_concessions_to_standard_oil
+						}
+					}
+				}
+			}
+			else={
+				any_country={
+					has_war_with = ENG
+					is_major = yes
+				}
+			}
+		}
 
+		continue_if_invalid = yes
+		allow_branch = {
+			always = no
+		}
+		icon = GFX_goal_desert_oil
+		x = 0
+		y = 1
+		relative_position_id = ENG_every_man_will_do_his_duty
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			if = {
+				limit = { #resource rights
+					has_dlc = "Man the Guns"
+				}
+				if = {
+					limit = {
+						SAU = {
+							OR = {
+								has_completed_focus = SAU_invite_brabag
+								has_completed_focus = SAU_2_Invite_the_Soviet_oil_barons
+								has_completed_focus = SAU_concessions_to_standard_oil
+							}
+							NOT = {
+								is_in_faction_with = ENG
+							}
+						}
+					}
+					create_wargoal = {
+						target = SAU
+						type = puppet_wargoal_focus
+						expire = 0
+					}
+				}
+				if = {
+					limit = {
+						PER = {
+							OR = {
+								has_completed_focus = PER_nationalize_the_means_of_production
+								has_completed_focus = PER_nationalize_aioc
+							}
+							NOT = {
+								is_in_faction_with = ENG
+							}
+						}
+					}
+					create_wargoal = {
+						target = PER
+						type = puppet_wargoal_focus
+						expire = 0
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							IRQ = { #can we trust them to keep giving oil
+								OR = {
+									has_government = fascism
+									has_government = communism
+								}
+								NOT = {
+									is_in_faction_with = ENG
+								}
+							}
+							AND = { #cant reach PER to take their oil
+								NOT = {
+									is_in_faction_with = RAJ
+									is_in_faction_with = PAK
+									is_in_faction_with = PER
+									is_in_faction_with = IRQ
+								}
+								has_wargoal_against = PER
+							}
+						}
+					}
+					create_wargoal = {
+						target = IRQ
+						type = puppet_wargoal_focus
+						expire = 0
+					}
+				}
+				#possibly later add decisions to threaten states in the Americas/the Netherlands into giving oil rights, could use ships_in_area to threaten naval action/invasion
+			}
+			else = {
+				create_wargoal = {
+					target = IRQ
+					type = puppet_wargoal_focus
+					expire = 0
+				}
+				create_wargoal = {
+					target = PER
+					type = puppet_wargoal_focus
+					expire = 0
+				}
+				create_wargoal = {
+					target = SAU
+					type = puppet_wargoal_focus
+					expire = 0
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_OIL}
+	}
+	
 	focus = {
 		id = ENG_special_operations_executive
 		prerequisite = { focus = ENG_maintaining_imperial_integrity focus = ENG_maintaining_the_balance_of_power }

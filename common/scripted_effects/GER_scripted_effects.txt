@@ -1235,6 +1235,18 @@ GER_anschluss_modify_mefo_bills_or_economy_of_conquest = {
 	}
 }
 
+GER_integrate_modify_mefo_bills_or_economy_of_conquest = {
+	if = {
+		limit = { 
+			OR = {
+				has_dynamic_modifier = { modifier = GER_mefo_bills_modifier }
+				has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
+			}
+		}
+		custom_effect_tooltip = integrate_mefo_bills_tt
+	}
+}
+
 GER_czechoslovakia_modify_mefo_bills_or_economy_of_conquest = {
 	if = {
 		limit = { 

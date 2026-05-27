@@ -2016,7 +2016,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_autarky_efforts
-		cost = 5
+		cost = 3
 		available = {
 		}
 
@@ -3053,10 +3053,10 @@ focus_tree = {
 		y = 2
 		relative_position_id = GER_concentrated_armament_program
 		cost = 5
-		available = {
-			has_war_with_major = yes
-			has_civil_war = no
-		}
+		# available = {
+		# 	has_war_with_major = yes
+		# 	has_civil_war = no
+		# }
 
 		continue_if_invalid = yes
 
@@ -7328,8 +7328,8 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = antiair_tech_bonus_name
-			 	bonus = 0.25
-			 	uses = 1
+			 	bonus = 1
+			 	uses = 2
 			 	category = cat_anti_air
 		 	}
 		}
@@ -7470,7 +7470,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = anti_air_building
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -9213,7 +9213,7 @@ focus_tree = {
 		id = GER_panzerschiff_raiders
 		icon = GFX_focus_GER_panzerschiff
 		prerequisite = { focus = GER_cruiser_warfare }
-	#	mutually_exclusive = { focus = GER_u_boat_efforts }
+		#mutually_exclusive = { focus = GER_u_boat_efforts }
 
 		x = 0
 		y = 1
@@ -9396,7 +9396,8 @@ focus_tree = {
 			add_tech_bonus = {
 				name = GER_u_boat_efforts
 				bonus = 2.0
-				uses = 1
+				ahead_reduction = 1
+				uses = 2
 				category = ss_tech
 			}
 		
@@ -9570,15 +9571,9 @@ focus_tree = {
 				add_trait = { trait = blue_water_expert }
 			}
 			GER_erich_raeder = {
-				limit = {
-					NOT = { has_trait = blue_water_expert }
-				}
 				add_trait = { trait = blue_water_expert }
 			}
 			GER_karl_donitz = {
-				limit = {
-					NOT = { has_trait = blue_water_expert }
-				}
 				add_trait = { trait = blue_water_expert }
 			}
 
@@ -10684,291 +10679,1119 @@ focus_tree = {
 		}
 	}
 
+	# focus = {
+	# 	id = GER_befriend_czechoslovakia
+	# 	icon = GFX_focus_generic_befriend_czechoslovakia
+	# 	prerequisite = { focus = GER_anschluss }
+	# 	mutually_exclusive = { focus = GER_demand_sudetenland }
+	# 	x = -5
+	# 	y = 1
+	# 	relative_position_id = GER_anschluss
+	# 	cost = 5
+
+	# 	bypass = {
+	# 		CZE = { 
+	# 			is_in_faction_with = GER
+	# 			has_war_with = GER
+	# 		}
+	# 	}
+
+	# 	available = { 
+	# 		has_army_manpower = { size > 749999 }
+	# 		NOT = { has_war_with = CZE }
+	# 		CZE = {
+	# 			custom_trigger_tooltip = {
+	# 				tooltip = GER_alone_or_peace_faction_tt
+	# 				is_alone_or_in_faction_at_peace_with_GER = yes
+	# 			}
+	# 			exists = yes
+	# 		}
+	# 	}
+		
+	# 	cancel = {
+	# 		OR = {
+	# 			NOT = { country_exists = CZE }
+	# 			has_war_with = CZE
+	# 		}
+	# 	}
+
+	# 	continue_if_invalid = no
+	# 	cancel_if_invalid = yes
+	# 	available_if_capitulated = no
+
+	# 	ai_will_do = {
+	# 		factor = 2.5
+	# 		modifier = {
+	# 			factor = 0
+	# 			CZE = {
+	# 				has_opinion = {
+	# 					target = GER
+	# 					value < 0
+	# 				}
+	# 			}
+	# 		}
+	# 		modifier = {
+	# 			factor = 5
+	# 			CZE = {
+	# 				has_opinion = {
+	# 					target = GER
+	# 					value > 20
+	# 				}
+	# 			}
+	# 		}
+	# 		modifier = {
+	# 			factor = 8
+	# 			CZE = {
+	# 				OR = {
+	# 				#	has_completed_focus = CZKE_state_defense_law NEW_DLC_FIX_THIS
+	# 				#	has_completed_focus = CZKE_democratic_reforms NEW_DLC_FIX_THIS
+	# 				#	has_completed_focus = CZKE_military_coup NEW_DLC_FIX_THIS
+	# 				}
+	# 				NOT = {
+	# 				#	has_completed_focus = CZKE_zaolzie_for_alliance NEW_DLC_FIX_THIS
+	# 				}
+	# 			}
+	# 		}
+	# 		modifier = {
+	# 			factor = 0
+	# 			OR = {
+	# 				has_government = democratic
+	# 				has_government = communism
+	# 			}
+	# 		}
+	# 	}		
+
+	# 	search_filters = { FOCUS_FILTER_POLITICAL }
+
+	# 	completion_reward = {
+	# 		CZE = {
+	# 			country_event = { id = wuw_GER_diplomacy.10 hours = 6 }
+	# 		}
+
+	# 		custom_effect_tooltip = if_they_accept_tt
+
+	# 		CZE = {
+	# 			effect_tooltip = {
+	# 				IF = {
+	# 					limit = {
+	# 						PREV = {
+	# 							has_government = fascism
+	# 						}
+	# 					}
+	# 					add_timed_idea = {
+	# 						idea = GER_fascism_influence
+	# 						days = 730
+	# 					}
+	# 				}		
+	# 				ELSE_IF = {
+	# 					limit = {
+	# 						PREV = {
+	# 							has_government = democratic
+	# 						}
+	# 					}
+	# 					add_timed_idea = {
+	# 						idea = GER_democratic_influence
+	# 						days = 730
+	# 					}
+	# 				}
+	# 				ELSE_IF = {
+	# 					limit = {
+	# 						PREV = {
+	# 							has_government = neutrality
+	# 						}
+	# 					}
+	# 					add_timed_idea = {
+	# 						idea = GER_neutrality_influence
+	# 						days = 730
+	# 					}
+	# 				}
+	# 				add_opinion_modifier = { target = GER modifier = ger_cze_diplomatic_focus }
+	# 			}
+	# 		}
+	# 		hidden_effect = {
+	# 			CZE = {
+	# 				set_country_flag = GER_influencing_CZE_flag
+	# 			}
+	# 			news_event = { hours = 6 id = news.200 }
+	# 		}
+	# 	}
+	# }
+
+	# focus = {
+	# 	id = GER_integrate_czechoslovakia
+	# 	icon = GFX_focus_GER_integrate_czechoslovakia
+	# 	prerequisite = { focus = GER_befriend_czechoslovakia }
+
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = GER_befriend_czechoslovakia
+	# 	cost = 5
+
+	# 	ai_will_do = {
+	# 		factor = 10
+	# 		modifier = {
+	# 			factor = 0
+	# 			OR = {
+	# 				has_government = democratic
+	# 				has_government = communism
+	# 			}
+	# 		}
+	# 	}
+
+	# 	available = {
+	# 		date > 1937.1.1
+	# 		r56_script_i_am_sane = yes
+	# 		is_subject = no
+	# 		CZE = {
+	# 			OR = {
+	# 				has_government = fascism
+	# 				fascism > 0.5
+	# 			}
+	# 			OR = {
+	# 				is_in_faction = no
+	# 				is_in_faction_with = ROOT
+	# 			}
+	# 			OR = {
+	# 				is_subject = no
+	# 				is_subject_of = ROOT
+	# 			}
+	# 		}
+	# 	}
+
+	# 	bypass = {
+	# 		OR = {
+	# 			has_war_with = CZE
+	# 			NOT = { country_exists = CZE }
+	# 			CZE = {
+	# 				is_subject = yes
+	# 				NOT = { is_subject_of = ROOT }
+	# 				OVERLORD = {
+	# 					is_in_faction_with = ROOT
+	# 				}	
+	# 			}
+	# 		}
+	# 	}
+
+	# 	will_lead_to_war_with = CZE
+
+	# 	search_filters = { FOCUS_FILTER_ANNEXATION }
+
+	# 	completion_reward = {
+	# 		add_named_threat = { threat = 5 name = GER_integrate_czechoslovakia }
+	# 		### CLAIMS
+	# 		if = {
+	# 			limit = {
+	# 				69 = {
+	# 					controller = {
+	# 						NOT = {
+	# 							tag = ROOT
+	# 							is_subject_of = ROOT
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 			add_state_claim = 69
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				1078 = {
+	# 					controller = {
+	# 						NOT = {
+	# 							tag = ROOT
+	# 							is_subject_of = ROOT
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 			add_state_claim = 1078
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				74 = {
+	# 					controller = {
+	# 						NOT = {
+	# 							tag = ROOT
+	# 							is_subject_of = ROOT
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 			add_state_claim = 74
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				CZE = {
+	# 					OR = {
+	# 						is_subject = no
+	# 						is_subject_of = ROOT
+	# 					}
+	# 				}
+	# 			}
+	# 			CZE = { country_event = { id = wuw_GER_diplomacy.117 days = 1 }}
+	# 			custom_effect_tooltip = if_they_accept_tt
+	# 			effect_tooltip = {
+	# 				annex_country = {
+	# 					target = CZE
+	# 					transfer_troops = yes
+	# 				}
+
+	# 				custom_effect_tooltip =  generic_skip_one_line_tt
+	# 				every_state = {
+	# 					limit = {
+	# 						is_owned_and_controlled_by = CZE
+	# 						OR = {
+	# 							state = 69
+	# 							state = 1078
+	# 							state = 74
+	# 						}
+	# 					}
+	# 					add_core_of = PREV
+	# 				}
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				CZE = {
+	# 					is_subject = yes
+	# 					NOT = { is_subject_of = ROOT }
+	# 				}
+	# 			}
+	# 			create_wargoal = {
+	# 				type = annex_everything
+	# 				target = CZE
+	# 			}
+	# 		}
+	# 	}
+	# }
+
 	focus = {
-		id = GER_befriend_czechoslovakia
-		icon = GFX_focus_generic_befriend_czechoslovakia
-		prerequisite = { focus = GER_anschluss }
-		mutually_exclusive = { focus = GER_demand_sudetenland }
+		id = GER_integrate_war_economies
+		icon = GFX_goal_hungary_alliance_with_romania
+		prerequisite = { 
+			focus = GER_anschluss 
+		}
+		mutually_exclusive = {
+			focus = GER_demand_sudetenland
+		}
 		x = -5
 		y = 1
 		relative_position_id = GER_anschluss
-		cost = 5
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
 
-		bypass = {
-			CZE = { 
-				is_in_faction_with = GER
-				has_war_with = GER
+		available = {
+			is_subject = no
+			OR = {
+				HUN = {
+					is_in_faction_with = ROOT
+					is_free_or_subject_of_root = yes
+				}
+				ROM = {
+					is_in_faction_with = ROOT
+					is_free_or_subject_of_root = yes
+				}
+				BUL = {
+					is_in_faction_with = ROOT
+					is_free_or_subject_of_root = yes
+				}
+				CZE = {
+					is_in_faction_with = ROOT
+					is_free_or_subject_of_root = yes
+				}
+				AUS = {
+					is_in_faction_with = ROOT
+					is_free_or_subject_of_root = yes
+				}
 			}
 		}
 
-		available = { 
-			has_army_manpower = { size > 749999 }
-			NOT = { has_war_with = CZE }
-			CZE = {
-				custom_trigger_tooltip = {
-					tooltip = GER_alone_or_peace_faction_tt
-					is_alone_or_in_faction_at_peace_with_GER = yes
+		
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = GER_integrate_war_economies_1 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
 				}
-				exists = yes
+			}
+			every_state = {
+				limit = { has_state_flag = GER_integrate_war_economies_2 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			HUN = {
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_1 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_2 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			ROM = {
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_1 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_2 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			BUL = {
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_1 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_2 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			CZE = {
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_1 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_2 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			AUS = {
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_1 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				every_state = {
+					limit = { has_state_flag = GER_integrate_war_economies_2 }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
 			}
 		}
 		
-		cancel = {
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			GER_integrate_modify_mefo_bills_or_economy_of_conquest = yes
+			hidden_effect = {
+			GER_seize_gold_reserves_in_europe_peacefully = yes
+			add_to_variable = { var = GER_mefo_bill_counter value = -20 }	
+			if = {
+				limit = {
+					HUN = {
+						is_in_faction_with = GER
+						is_free_or_subject_of_root = yes
+					}
+				}
+				HUN = { country_event = { id = wtt_germany.72 } }
+				effect_tooltip = {
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					HUN = {
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_1
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_2
+						}
+					}
+					if = {
+						limit = {
+							has_dlc = "Death or Dishonor" 
+						}						
+						set_autonomy = { target = HUN autonomy_state = autonomy_satellite }
+					}
+					if = {
+						limit = { 
+							has_dlc = "Together for Victory"
+							NOT = { has_dlc = "Death or Dishonor" } 
+						}
+						set_autonomy = { target = HUN autonomy_state = autonomy_dominion }
+					}
+					if = {
+						limit = { 
+							NOT = { has_dlc = "Together for Victory" }
+							NOT = { has_dlc = "Death or Dishonor" }
+						}
+						puppet = HUN
+					}
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt3
+			}
+			if = {
+				limit = {
+					ROM = {
+						is_in_faction_with = GER
+						is_free_or_subject_of_root = yes
+					}
+				}
+				ROM = { country_event = { id = wtt_germany.72 } }
+				effect_tooltip = {
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					ROM = {
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_1
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_2
+						}
+					}
+					if = {
+						limit = {
+							has_dlc = "Death or Dishonor" 
+						}
+						set_autonomy = { target = ROM autonomy_state = autonomy_satellite }
+					}
+					if = {
+						limit = { 
+							has_dlc = "Together for Victory"
+							NOT = { has_dlc = "Death or Dishonor" } 
+						}
+						set_autonomy = { target = ROM autonomy_state = autonomy_dominion }
+					}
+					if = {
+						limit = { 
+							NOT = { has_dlc = "Together for Victory" }
+							NOT = { has_dlc = "Death or Dishonor" }
+						}
+						puppet = ROM
+					}
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt4
+			}
+			if = {
+				limit = {
+					BUL = {
+						is_in_faction_with = GER
+						is_free_or_subject_of_root = yes
+					}
+				}
+				BUL = { country_event = { id = wtt_germany.72 } }
+				effect_tooltip = {
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					BUL = {
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_1
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_2
+						}
+					}
+					if = {
+						limit = {
+							has_dlc = "Death or Dishonor" 
+						}
+						set_autonomy = { target = BUL autonomy_state = autonomy_satellite }
+					}
+					if = {
+						limit = { 
+							has_dlc = "Together for Victory"
+							NOT = { has_dlc = "Death or Dishonor" } 
+						}
+						set_autonomy = { target = BUL autonomy_state = autonomy_dominion }
+					}
+					if = {
+						limit = { 
+							NOT = { has_dlc = "Together for Victory" }
+							NOT = { has_dlc = "Death or Dishonor" }
+						}
+						puppet = BUL
+					}
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt4
+			}
+			if = {
+				limit = {
+					CZE = {
+						is_in_faction_with = GER
+						is_free_or_subject_of_root = yes
+					}
+				}
+				CZE = { country_event = { id = wtt_germany.72 } }
+				effect_tooltip = {
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					CZE = {
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_1
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_2
+						}
+					}
+					if = {
+						limit = {
+							has_dlc = "Death or Dishonor" 
+						}
+						set_autonomy = { target = CZE autonomy_state = autonomy_dominion }
+						#change_ideology = no
+					}
+					if = {
+						limit = { 
+							has_dlc = "Together for Victory"
+							NOT = { has_dlc = "Death or Dishonor" } 
+						}
+						set_autonomy = { target = CZE autonomy_state = autonomy_dominion }
+					#	change_ideology = no
+					}
+					if = {
+						limit = { 
+							NOT = { has_dlc = "Together for Victory" }
+							NOT = { has_dlc = "Death or Dishonor" }
+						}
+						puppet = CZE
+						#change_ideology = no
+					}
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt4
+			}
+			if = {
+				limit = {
+					AUS = {
+						is_in_faction_with = GER
+						is_free_or_subject_of_root = yes
+					}
+				}
+				AUS = { country_event = { id = wtt_germany.72 } }
+				effect_tooltip = {
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							NOT = { has_state_flag = GER_integrate_war_economies }
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						set_state_flag = GER_integrate_war_economies
+					}
+					AUS = {
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_1
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+							set_state_flag = GER_integrate_war_economies_2
+						}
+					}
+					if = {
+						limit = {
+							has_dlc = "Death or Dishonor" 
+						}						
+						set_autonomy = { target = AUS autonomy_state = autonomy_satellite }
+					}
+					if = {
+						limit = { 
+							has_dlc = "Together for Victory"
+							NOT = { has_dlc = "Death or Dishonor" } 
+						}
+						set_autonomy = { target = AUS autonomy_state = autonomy_dominion }
+					}
+					if = {
+						limit = { 
+							NOT = { has_dlc = "Together for Victory" }
+							NOT = { has_dlc = "Death or Dishonor" }
+						}
+						puppet = AUS
+					}
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt10
+			}			
+			}
+			if = {
+				limit = {
+					NOT = { is_in_faction_with = HUN }
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt
+				custom_effect_tooltip = GER_integrate_war_economies_tt3
+			}
+			if = {
+				limit = {
+					NOT = { is_in_faction_with = ROM }
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt2
+				custom_effect_tooltip = GER_integrate_war_economies_tt4
+			}
+			if = {
+				limit = {
+					NOT = { is_in_faction_with = BUL }
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt5
+				custom_effect_tooltip = GER_integrate_war_economies_tt6
+			}
+			if = {
+				limit = {
+					NOT = { is_in_faction_with = CZE }
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt7
+				custom_effect_tooltip = GER_integrate_war_economies_tt8
+			}
+			if = {
+				limit = {
+					NOT = { is_in_faction_with = AUS }
+				}
+				custom_effect_tooltip = GER_integrate_war_economies_tt9
+				custom_effect_tooltip = GER_integrate_war_economies_tt10
+			}
+			
+
+		}
+	}
+
+	focus = {
+		id = GER_expand_the_romanian_oil_fields
+		text = ITA_expand_the_romanian_oil_fields
+		icon = GFX_goal_oil
+		prerequisite = { focus = GER_integrate_war_economies }
+		available = {
 			OR = {
-				NOT = { country_exists = CZE }
-				has_war_with = CZE
+				has_full_control_of_state = 46
+				any_other_country = {
+					OR = {
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = 46
+				}
 			}
 		}
-
-		continue_if_invalid = no
-		cancel_if_invalid = yes
-		available_if_capitulated = no
-
+		x = 0
+		y = 1
+		relative_position_id = GER_integrate_war_economies
+		cost = 5
 		ai_will_do = {
-			factor = 2.5
+			factor = 1
 			modifier = {
-				factor = 0
-				CZE = {
-					has_opinion = {
-						target = GER
-						value < 0
-					}
-				}
-			}
-			modifier = {
-				factor = 5
-				CZE = {
-					has_opinion = {
-						target = GER
-						value > 20
-					}
-				}
-			}
-			modifier = {
-				factor = 8
-				CZE = {
-					OR = {
-					#	has_completed_focus = CZKE_state_defense_law NEW_DLC_FIX_THIS
-					#	has_completed_focus = CZKE_democratic_reforms NEW_DLC_FIX_THIS
-					#	has_completed_focus = CZKE_military_coup NEW_DLC_FIX_THIS
-					}
-					NOT = {
-					#	has_completed_focus = CZKE_zaolzie_for_alliance NEW_DLC_FIX_THIS
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = democratic
-					has_government = communism
-				}
-			}
-		}		
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
+				factor = 10
+				date > 1941.04.01
+			}					
+		}
+		
 		completion_reward = {
-			CZE = {
-				country_event = { id = wuw_GER_diplomacy.10 hours = 6 }
+			add_tech_bonus = {
+				bonus = 3.0
+				uses = 3
+				category = synth_resources
 			}
-
-			custom_effect_tooltip = if_they_accept_tt
-
-			CZE = {
-				effect_tooltip = {
-					IF = {
-						limit = {
-							PREV = {
-								has_government = fascism
-							}
-						}
-						add_timed_idea = {
-							idea = GER_fascism_influence
-							days = 730
-						}
-					}		
-					ELSE_IF = {
-						limit = {
-							PREV = {
-								has_government = democratic
-							}
-						}
-						add_timed_idea = {
-							idea = GER_democratic_influence
-							days = 730
-						}
-					}
-					ELSE_IF = {
-						limit = {
-							PREV = {
-								has_government = neutrality
-							}
-						}
-						add_timed_idea = {
-							idea = GER_neutrality_influence
-							days = 730
-						}
-					}
-					add_opinion_modifier = { target = GER modifier = ger_cze_diplomatic_focus }
-				}
-			}
-			hidden_effect = {
-				CZE = {
-					set_country_flag = GER_influencing_CZE_flag
-				}
-				news_event = { hours = 6 id = news.200 }
+			add_resource = {
+				type = oil
+				amount = 24
+				state = 46
 			}
 		}
 	}
 
 	focus = {
-		id = GER_integrate_czechoslovakia
-		icon = GFX_focus_GER_integrate_czechoslovakia
-		prerequisite = { focus = GER_befriend_czechoslovakia }
-
+		id = GER_the_breitspurbahn
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = GER_expand_the_romanian_oil_fields }
 		x = 0
 		y = 1
-		relative_position_id = GER_befriend_czechoslovakia
+		relative_position_id = GER_expand_the_romanian_oil_fields
 		cost = 5
 
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = democratic
-					has_government = communism
-				}
-			}
-		}
-
 		available = {
-			date > 1937.1.1
-			r56_script_i_am_sane = yes
-			is_subject = no
-			CZE = {
-				OR = {
-					has_government = fascism
-					fascism > 0.5
-				}
-				OR = {
-					is_in_faction = no
-					is_in_faction_with = ROOT
-				}
-				OR = {
-					is_subject = no
-					is_subject_of = ROOT
-				}
-			}
+			controls_state = 64
+			#num_subjects > 1
+			num_of_factories > 150
+
 		}
-
-		bypass = {
-			OR = {
-				has_war_with = CZE
-				NOT = { country_exists = CZE }
-				CZE = {
-					is_subject = yes
-					NOT = { is_subject_of = ROOT }
-					OVERLORD = {
-						is_in_faction_with = ROOT
-					}	
-				}
-			}
-		}
-
-		will_lead_to_war_with = CZE
-
-		search_filters = { FOCUS_FILTER_ANNEXATION }
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
-			add_named_threat = { threat = 5 name = GER_integrate_czechoslovakia }
-			### CLAIMS
+
 			if = {
 				limit = {
-					69 = {
-						controller = {
-							NOT = {
-								tag = ROOT
-								is_subject_of = ROOT
+					num_subjects > 1
+				}
+				every_subject_country = {
+					add_autonomy_score = {
+						value = -100
+						localization = GER_the_breitspurbahn
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = SOV_the_construction_of_communism_puppet_autonomy_tt
+			}
+
+			custom_effect_tooltip = GER_the_breitspurbah_railways_tt
+			#Build railway from Moscow to Puppets
+			hidden_effect = { #Hiidden for tooltip reasons
+				every_faction_member = {
+					limit = {
+						capital_scope = {
+							OR = {
+								is_on_continent = europe
+								is_on_continent = asia
+								is_on_continent = middle_east
 							}
 						}
-					}
-				}
-				add_state_claim = 69
-			}
-			if = {
-				limit = {
-					1078 = {
-						controller = {
-							NOT = {
-								tag = ROOT
-								is_subject_of = ROOT
-							}
-						}
-					}
-				}
-				add_state_claim = 1078
-			}
-			if = {
-				limit = {
-					74 = {
-						controller = {
-							NOT = {
-								tag = ROOT
-								is_subject_of = ROOT
-							}
-						}
-					}
-				}
-				add_state_claim = 74
-			}
-			if = {
-				limit = {
-					CZE = {
-						OR = {
-							is_subject = no
-							is_subject_of = ROOT
-						}
-					}
-				}
-				CZE = { country_event = { id = wuw_GER_diplomacy.117 days = 1 }}
-				custom_effect_tooltip = if_they_accept_tt
-				effect_tooltip = {
-					annex_country = {
-						target = CZE
-						transfer_troops = yes
 					}
 
-					custom_effect_tooltip =  generic_skip_one_line_tt
-					every_state = {
+					if = {
 						limit = {
-							is_owned_and_controlled_by = CZE
-							OR = {
-								state = 69
-								state = 1078
-								state = 74
+							can_build_railway = {
+								start_state = ROOT.capital
+								target_state = THIS.capital
+								build_only_on_allied = yes
 							}
 						}
-						add_core_of = PREV
-					}
-				}
-			}
-			if = {
-				limit = {
-					CZE = {
-						is_subject = yes
-						NOT = { is_subject_of = ROOT }
-					}
-				}
-				create_wargoal = {
-					type = annex_everything
-					target = CZE
+						build_railway = {				
+							start_state = ROOT.capital
+							target_state = THIS.capital
+							build_only_on_allied = yes
+							level = 5
+						}
+					}		
 				}
 			}
 		}
 	}
-
+	
+#############END OF NEW BALKAN BUFFS ##########
 	focus = {
 		id = GER_bribe_senior_officers
 		icon = GFX_goal_generic_dangerous_deal
@@ -11665,7 +12488,7 @@ focus_tree = {
 
 		prerequisite = { focus = GER_anschluss }
 
-		mutually_exclusive = { focus = GER_befriend_czechoslovakia }
+		mutually_exclusive = { focus = GER_integrate_war_economies }
 
 		x = -3
 		y = 1
@@ -12147,7 +12970,7 @@ focus_tree = {
 	focus = { #All related content and local will be in Czech related files and local locations
 		id = GER_integrate_czech_manufacturers
 		icon = GFX_focus_PER_czech_tanks
-		prerequisite = { focus = GER_integrate_czechoslovakia  focus = GER_fate_of_czechoslovakia }
+		prerequisite = { focus = GER_integrate_war_economies  focus = GER_fate_of_czechoslovakia }
 
 		x = -4
 		y = 2
@@ -12179,8 +13002,9 @@ focus_tree = {
 		}
 
 		available = {
+
 			9 = {
-				state_is_fully_controlled_by_ROOT_or_subject = yes
+				state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
 			}
 		}
 
@@ -12768,7 +13592,7 @@ focus_tree = {
 	focus = {
 		id = GER_second_vienna_award	#R56: was disabled in vanilla, consider adding in focuses around it
 		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = GER_fate_of_czechoslovakia focus = GER_befriend_czechoslovakia }
+		prerequisite = { focus = GER_fate_of_czechoslovakia focus = GER_integrate_war_economies }
 
 		x = -3
 		y = 1
@@ -13425,7 +14249,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = GER_reassert_eastern_claims
-		cost = 10
+		cost = 5
 
 		will_lead_to_war_with = POL
 
@@ -13617,7 +14441,7 @@ focus_tree = {
 	focus = {
 		id = GER_befriend_poland
 		icon = GFX_focus_generic_polish_deal
-		prerequisite = { focus = GER_fate_of_czechoslovakia focus = GER_befriend_czechoslovakia }
+		prerequisite = { focus = GER_fate_of_czechoslovakia}
 		mutually_exclusive = {
 			focus = GER_danzig_or_war
 		}
@@ -14394,7 +15218,7 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = GER_war_with_france
-		cost = 5
+		cost = 2
 
 		cancel_if_invalid = yes
 		
@@ -14481,7 +15305,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_war_with_france
-		cost = 10
+		cost = 5
 
 		will_lead_to_war_with = SWI
 		will_lead_to_war_with = LIE
