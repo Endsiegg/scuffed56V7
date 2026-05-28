@@ -1250,7 +1250,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = GER_prioritize_economic_growth
-		cost = 5
+		cost = 3
 		available = {
 			OR = {
 				has_full_control_of_state = 64 #Brandenburg
@@ -1490,10 +1490,10 @@ focus_tree = {
 						}
 					}
 					59 = { #Hannover
-						add_extra_state_shared_building_slots = 2
+						add_extra_state_shared_building_slots = 3
 						add_building_construction = {
 							type = industrial_complex
-							level = 2
+							level = 3
 							instant_build = yes
 						}
 						add_dynamic_modifier = { modifier = r56_GER_kdf_wagen_scheme  days = 180 } # R56
@@ -1509,10 +1509,10 @@ focus_tree = {
 								include_locked = yes
 							}
 						}
-						add_extra_state_shared_building_slots = 2
+						add_extra_state_shared_building_slots = 3
 						add_building_construction = {
 							type = industrial_complex
-							level = 2
+							level = 3
 							instant_build = yes
 						}
 						add_dynamic_modifier = { modifier = r56_GER_kdf_wagen_scheme days = 180 } # R56
@@ -1530,7 +1530,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_kdf_wagen_factories
-		cost = 5
+		cost = 2
 		available = {
 			OR = {
 				53 = { #Niederbayern
@@ -1644,7 +1644,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_kdf_wagen_factories
-		cost = 5
+		cost = 2
 		available = {
 			OR = {
 				68 = { #Ostmark
@@ -1836,22 +1836,22 @@ focus_tree = {
 					}
 				}
 				random_select_amount = 3 # R56
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			add_tech_bonus = {
-				name = GER_the_four_year_plan
-				bonus = 1
-				uses = 1
-				category = industry
-			}
+			# add_tech_bonus = {
+			# 	name = GER_the_four_year_plan
+			# 	bonus = 1
+			# 	uses = 1
+			# 	category = industry
+			# }
 			# R56
 			custom_effect_tooltip = generic_skip_one_line_tt
 			remove_ideas = r56_GER_economic_uncertainty
@@ -1959,10 +1959,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1971,7 +1971,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 				}
 				random_select_amount = 4
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2023,7 +2023,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			add_stability = -0.05
+			#add_stability = -0.05
+			add_tech_bonus = {
+				name = GER_the_four_year_plan
+				bonus = 1
+				uses = 1
+				category = industry
+			}
 			add_popularity = {
 			    ideology = ROOT
 			    popularity = -0.05
@@ -2378,10 +2384,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 65 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = synthetic_refinery
-					level = 1
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -2390,8 +2396,8 @@ focus_tree = {
 			
 			add_tech_bonus = {
 				name = GER_coal_liquefaction
-				bonus = 1
-				uses = 1
+				bonus = 3
+				uses = 2
 				category = synth_resources
 			}
 
@@ -2843,11 +2849,11 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				random_select_amount = 2
-				add_extra_state_shared_building_slots = 1
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2969,80 +2975,80 @@ focus_tree = {
 		}
 	}
 	
-	#focus = {
-	#	id = GER_prioritize_the_army
-	#	icon = GFX_focus_generic_tank_production
-	#	prerequisite = { focus = GER_concentrated_armament_program }
-	#	mutually_exclusive = { focus = GER_prioritize_the_navy }
-	#	x = -1
-	#	y = 1
-	#	relative_position_id = GER_concentrated_armament_program
-	#	cost = 10
-	#	available = {
-	#	}
-#
-	#	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
-#
-	#	completion_reward = {
-	#		random_core_state = {
-	#			limit = {
-	#				is_controlled_by = ROOT
-	#			}
-	#			add_extra_state_shared_building_slots = 2
-	#			add_building_construction = {
-	#				type = arms_factory
-	#				level = 2
-	#				instant_build = yes
-	#			}
-	#		}
-	#		
-	#		custom_effect_tooltip = generic_skip_one_line_tt
-#
-	#		GER_modify_industrial_modifier = yes
-	#		add_to_variable = { 
-	#			GER_industrial_industrial_capacity_factory = 0.05
-	#			tooltip = industrial_capacity_factory_tt
-	#		}
-	#	}
-	#}
-	#
-	#focus = {
-	#	id = GER_prioritize_the_navy
-	#	icon = GFX_goal_generic_navy_battleship
-	#	prerequisite = { focus = GER_concentrated_armament_program }
-	#	mutually_exclusive = { focus = GER_prioritize_the_army }
-	#	x = 1
-	#	y = 1
-	#	relative_position_id = GER_concentrated_armament_program
-	#	cost = 10
-	#	available = {
-	#	}
-#
-	#	search_filters = { FOCUS_FILTER_INDUSTRY }
-#
-	#	completion_reward = {
-	#		random_core_state = {
-	#			limit = {
-	#				is_controlled_by = ROOT
-	#				is_coastal = yes
-	#			}
-	#			add_extra_state_shared_building_slots = 2
-	#			add_building_construction = {
-	#				type = dockyard
-	#				level = 2
-	#				instant_build = yes
-	#			}
-	#		}
-#
-	#		custom_effect_tooltip = generic_skip_one_line_tt
-#
-	#		GER_modify_industrial_modifier = yes
-	#		add_to_variable = { 
-	#			GER_industrial_industrial_capacity_dockyard = 0.05
-	#			tooltip = industrial_capacity_dockyard_tt
-	#		}
-	#	}
-	#}
+	focus = {
+		id = GER_prioritize_the_army
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = GER_concentrated_armament_program focus = GER_establish_production_targets }
+		mutually_exclusive = { focus = GER_prioritize_the_navy }
+		x = 0
+		y = 1
+		relative_position_id = GER_concentrated_armament_program
+		cost = 5
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			GER_modify_industrial_modifier = yes
+			add_to_variable = { 
+				GER_industrial_industrial_capacity_factory = 0.10
+				tooltip = industrial_capacity_factory_tt
+			}
+		}
+	}
+	
+	focus = {
+		id = GER_prioritize_the_navy
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = GER_concentrated_armament_program focus = GER_establish_production_targets }
+		mutually_exclusive = { focus = GER_prioritize_the_army }
+		x = 2
+		y = 1
+		relative_position_id = GER_concentrated_armament_program
+		cost = 5
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			GER_modify_industrial_modifier = yes
+			add_to_variable = { 
+				GER_industrial_industrial_capacity_dockyard = 0.10
+				tooltip = industrial_capacity_dockyard_tt
+			}
+		}
+	}
 	
 	focus = {
 		id = GER_zentrale_planung
