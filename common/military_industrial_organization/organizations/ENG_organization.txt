@@ -728,10 +728,16 @@ ENG_supermarine_organization = {
 		icon = GFX_generic_mio_department_icon_plane_fighter_technology
 		special_trait_background = yes
 		visible = {
-			has_completed_focus = aircraft_production_focus
+			FROM = {
+				has_completed_focus = aircraft_production_focus	
+			}
+			
 		}
 		available = {
-			has_completed_focus = aircraft_production_focus
+			FROM = {
+				has_completed_focus = aircraft_production_focus
+			}
+			
 		}
 		position = { x=2 y=1 }
 		relative_position_id = generic_mio_trait_minimum_weapon_requirements
