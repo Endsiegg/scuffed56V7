@@ -38,8 +38,15 @@ NDefines.NDiplomacy.REVOKE_GUARANTEE_COST = 0
 NDefines.NDiplomacy.OPINION_PER_VOLUNTEER = 15
 NDefines.NDiplomacy.MAX_OPINION_FROM_VOLUNTEERS = 100
 ----------------------------------
+NDefines.NFactions.AI_DAYS_TO_SELECT_GOAL = 100
+NDefines.NFactions.THEATER_COMMANDER_LAND_EXPERIENCE_SCALE = 2
+NDefines.NFactions.THEATER_COMMANDER_NAVY_EXPERIENCE_SCALE = 2
 NDefines.NFactions.PASSIVE_INITIATIVE_GENERATION = 0.03
 NDefines.NFactions.FACTION_INITIATIVE_CHANGE_RULE_COST = 0
+NDefines.NFactions.REPLACING_UNFINISHED_FACTION_GOAL_COST = 0			-- The cost of replacing a goal if it is not finished
+NDefines.NFactions.MAX_NUM_LONG_TERM_GOALS = 2						-- Maximum number of long term goals a faction can have at any one time
+NDefines.NFactions.MAX_NUM_SHORT_TERM_GOALS = 2-- Maximum number of short term goals a faction can have at any one time
+NDefines.NFactions.MAX_NUM_MEDIUM_TERM_GOALS = 2						-- Maximum number of medium term goals a faction can have at any one time
 ----------------------------------
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 80						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
