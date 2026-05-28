@@ -1,93 +1,112 @@
 ideas = {
 
 	country = {
-	Day_one_production = {
-		picture = generic_production_bonus
+		Day_one_production = {
+			picture = generic_production_bonus
 
-		removal_cost = -1
+			removal_cost = -1
 
-		modifier = {
-			production_factory_start_efficiency_factor = 0.4
-			production_factory_efficiency_gain_factor = 0.5
-			line_change_production_efficiency_factor = 0.5
-			#industrial_capacity_factory = 1
-			#production_factory_max_efficiency_factor = 1
-			#production_lack_of_resource_penalty_factor = -0.50
+			modifier = {
+				production_factory_start_efficiency_factor = 0.4
+				production_factory_efficiency_gain_factor = 0.5
+				line_change_production_efficiency_factor = 0.5
+				#industrial_capacity_factory = 1
+				#production_factory_max_efficiency_factor = 1
+				#production_lack_of_resource_penalty_factor = -0.50
+			}
 		}
-	}
-	anti_civ_boost = {
-		picture = generic_production_bonus
+		anti_civ_boost = {
+			picture = generic_production_bonus
 
-		allowed = { always = yes }
-		allowed_civil_war =  { always  = yes }
-		removal_cost = -1
+			allowed = { always = yes }
+			allowed_civil_war =  { always  = yes }
+			removal_cost = -1
 
-		modifier = {
-		min_export = -100
-		production_lack_of_resource_penalty_factor = -1.0
-		factory_energy_consumption = -1.0
-		country_resource_coal = 1000
-		country_resource_oil = 1000
-		country_resource_steel = 1000
-		country_resource_tungsten = 1000
-		country_resource_chromium = 1000
-		country_resource_aluminium = 1000
-		country_resource_rubber = 1000
-		}
+			modifier = {
+			min_export = -100
+			production_lack_of_resource_penalty_factor = -1.0
+			factory_energy_consumption = -1.0
+			country_resource_coal = 100
+			country_resource_oil = 100
+			country_resource_steel = 100
+			country_resource_tungsten = 100
+			country_resource_chromium = 100
+			country_resource_aluminium = 100
+			country_resource_rubber = 100
+			}
 
-	}
-
-	player_idea = {
-		allowed = { always = yes }
-
-		removal_cost = -1
-
-		picture = generic_infantry_bonus
-
-		rule = {
-				can_create_factions = yes
-				can_send_volunteers = yes
-				can_join_factions = yes
-	
-		}
-	}
-
-	taming_the_tiger = {
-		picture = chi_forced_conscription
-
-		allowed_civil_war = {
-			always = yes
 		}
 
-		modifier = {
-			surrender_limit = -0.10
-			army_attack_factor = -0.10
+		player_idea = {
+			allowed = { always = yes }
+
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+
+			rule = {
+					can_create_factions = yes
+					can_send_volunteers = yes
+					can_join_factions = yes
+		
+			}
 		}
 
-		removal_cost = -1
+		taming_the_tiger = {
+			picture = chi_forced_conscription
 
-		rule = {
-			can_access_market = no
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				surrender_limit = -0.10
+				army_attack_factor = -0.10
+			}
+
+			removal_cost = -1
+
+			rule = {
+				can_access_market = no
+			}
 		}
-	}
 
-	taming_the_lion = {
-		picture = chi_forced_conscription
+		taming_the_lion = {
+			picture = chi_forced_conscription
 
-		allowed_civil_war = {
-			always = yes
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				army_attack_factor = -0.10
+			}
+
+			removal_cost = -1
+
+			rule = {
+				can_access_market = no
+			}
 		}
 
-		modifier = {
-			army_attack_factor = -0.10
+		convoy_sufficiency = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				convoy = {
+					instant = yes
+					build_cost_ic = -0.25
+				}
+			}
 		}
-
-		removal_cost = -1
-
-		rule = {
-			can_access_market = no
-		}
-	}
-
 	}
 }

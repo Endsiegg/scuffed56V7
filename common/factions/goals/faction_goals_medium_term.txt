@@ -26,7 +26,7 @@ faction_goal_undo_versailles = {
 	category = medium_term
 	group = FOCUS_FILTER_WAR_SUPPORT
 	visible = {
-		FROM = { original_tag = GER }
+		controls_state = 64
 	}
 	completed = {
 		OR = {
@@ -83,7 +83,8 @@ faction_goal_undo_versailles = {
 				faction_influence_ratio > 0.3
 			}
 			add_war_support = 0.05
-			add_political_power = 50
+			add_stability = 0.05
+			add_political_power = 150
 		}
 	}
 	ai_will_do = {
@@ -101,9 +102,7 @@ faction_goal_secure_european_continent = {
 	category = medium_term
 	group = FOCUS_FILTER_ANNEXATION
 	visible = {
-		FROM = {
-			original_tag = GER
-		}
+		controls_state = 64	
 	}
 	cancel = { 
 		FROM = {
@@ -157,11 +156,10 @@ faction_goal_secure_north_africa = {
 	category = medium_term
 	visible = {
 		OR = {
-			FROM = { original_tag = ITA }
-			any_allied_country = {
-				original_tag = ITA 
-			}
+			controls_state = 2
+			controls_state = 64
 		}
+		
 	}
 	available = {
 		OR = {
@@ -172,10 +170,10 @@ faction_goal_secure_north_africa = {
 		}
 	}
 	completed = {
-		AND = {
+		OR = {
 			911 = {  is_controlled_by_ROOT_or_ally = yes } # Suez
-			448 = {  is_controlled_by_ROOT_or_ally = yes } # Tripoli
-			116 = {  is_controlled_by_ROOT_or_ally = yes } # Malta
+			447 = {  is_controlled_by_ROOT_or_ally = yes } # alexandria
+			995 = {  is_controlled_by_ROOT_or_ally = yes } # East Suez
 		}
 		OR = {
 			118 = {  is_controlled_by_ROOT_or_ally = yes } # Gibraltar
@@ -212,17 +210,7 @@ faction_goal_high_seas_fleet = {
 	allowed = {
 	}
 	visible = {
-		FROM = {
-			OR = {
-				original_tag = GER
-				AND = {
-					any_allied_country = {
-						original_tag = GER
-					}
-					num_of_naval_factories > 0
-				}
-			}
-		}
+		controls_state = 64
 	}
 	completed = {
 		has_war_with_major = yes 
@@ -252,10 +240,10 @@ faction_goal_high_seas_fleet = {
 				}
 				name = ALL_FACTION_MEMBERS
 			}
-			navy_experience = 50
+			navy_experience = 100
 			add_tech_bonus = {
 				name = high_seas_fleet_tech_bonus
-				bonus = 0.5
+				bonus = 3
 				uses = 2
 				category = naval_equipment
 			}
@@ -298,20 +286,22 @@ faction_goal_the_arteries_of_trade = {
 	}
 	completed = {
 		count_triggers = {
-			amount = 10
+			amount = 7
+			has_naval_control = 18
 			has_naval_control = 43
 			has_naval_control = 49
 			has_naval_control = 51
 			has_naval_control = 56
 			has_naval_control = 57
+			has_naval_control = 47			
 			has_naval_control = 68
 			has_naval_control = 29
 			has_naval_control = 69
-			has_naval_control = 72
 			has_naval_control = 100
 			has_naval_control = 104
-			has_naval_control = 71
 			has_naval_control = 60	
+			has_naval_control = 71
+			has_naval_control = 72		
 			has_naval_control = 48
 			has_naval_control = 61
 			has_naval_control = 62
@@ -320,7 +310,7 @@ faction_goal_the_arteries_of_trade = {
 	complete_effect = {
 		add_faction_power_projection = 100
 		every_faction_member = {
-			add_stability = 0.05
+			add_stability = 0.10
 		}
 	}
 	ai_will_do = {
@@ -347,19 +337,20 @@ faction_goal_imperial_glory = {
 	allowed = {
 	}
 	visible = {
-		FROM = {
-			OR = {
-				original_tag = ENG
-				original_tag = CAN
-				original_tag = RAJ
-				original_tag = AST
-				original_tag = NZL
-				original_tag = MAL
-				original_tag = FRA
-				original_tag = HOL
-				original_tag = INS
-			}
-		}
+		controls_state = 126
+		# FROM = {
+		# 	OR = {
+		# 		original_tag = ENG
+		# 		original_tag = CAN
+		# 		original_tag = RAJ
+		# 		original_tag = AST
+		# 		original_tag = NZL
+		# 		original_tag = MAL
+		# 		original_tag = FRA
+		# 		original_tag = HOL
+		# 		original_tag = INS
+		# 	}
+		# }
 	}
 	available = {
 		FROM = { has_war = yes }
@@ -405,7 +396,7 @@ faction_goal_imperial_glory = {
 			custom_effect_tooltip = OWNS_LISTED_STATE
 			add_faction_initiative = 1
 			add_faction_influence_ratio = 0.05
-			add_stability = 0.05
+			add_stability = 0.10
 		}
 	}
 	ai_will_do = {
@@ -479,7 +470,7 @@ faction_goal_guardians_of_peace = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			add_stability = 0.05
+			add_stability = 0.10
 		}
 	}
 	ai_will_do = {
@@ -825,7 +816,7 @@ faction_goal_control_the_chinese_capitals = {
 				name = ALL_FACTION_MEMBERS
 			}
 			custom_effect_tooltip = ALL_FACTION_MEMBERS
-			army_experience = 50 
+			army_experience = 100 
 		}
 	}
 	ai_will_do = {
@@ -846,9 +837,7 @@ faction_goal_secure_the_oil_supply = {
 		
 	}
 	visible = {
-		FROM = {
-			original_tag = JAP
-		}
+		controls_state = 282
 	}
 	completed = {
 		has_resources_in_collection = {
@@ -876,8 +865,8 @@ faction_goal_secure_the_oil_supply = {
 			add_faction_influence_ratio = 0.15
 			add_tech_bonus = {
 				name = secure_the_oil_supply_tech_bonus
-				bonus = 0.75
-				uses = 1
+				bonus = 1
+				uses = 2
 				category = excavation_tech
 			}
 		}
@@ -909,9 +898,7 @@ faction_goal_indifference_is_a_threat = {
 		
 	}
 	visible = {
-		FROM = {
-			original_tag = SOV
-		}
+		controls_state = 219
 	}
 	completed = {
 		collection_size = {
@@ -927,10 +914,10 @@ faction_goal_indifference_is_a_threat = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			add_political_power = 50
+			add_political_power = 100
 			add_popularity = {
 				ideology = communism
-				popularity = 0.05
+				popularity = 0.10
 			}
 		}
 	}
@@ -948,9 +935,7 @@ faction_goal_undoing_brest_litowsk = {
 		
 	}
 	visible = {
-		FROM = {
-			original_tag = SOV
-		}
+		controls_state = 219
 	}
 	completed = {
 		count_triggers = {
@@ -986,7 +971,10 @@ faction_goal_undoing_brest_litowsk = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			army_experience = 50
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 150
+			army_experience = 150
 		}
 	}
 	ai_will_do = {
@@ -1014,7 +1002,7 @@ faction_goal_the_two_seas = {
 	category = medium_term
 	group = FOCUS_FILTER_NAVY_XP
 	visible = {
-		FROM = { original_tag = POL }
+		 controls_state = 10 
 	}
 	
 	completed = {
@@ -1074,13 +1062,13 @@ faction_goal_a_large_faction = {
 		num_faction_members > 4
 	}
 	completed = {
-		num_faction_members > 9
+		num_faction_members > 8
 	}
 	complete_effect = {
 		add_faction_power_projection = 200
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = THE_FACTION_LEADER
-		add_faction_initiative = 1
+		add_faction_initiative = 2
 	}
 	ai_will_do = {
 		base = 1
@@ -1105,7 +1093,7 @@ faction_goal_marine_corps = {
 			}
 			unit_category = { marine marine_commando amphibious_mechanized category_amphibious_tanks }
 			equipment_ratio = 0.9
-			size > 29
+			size > 99
 		}
 	}
 	complete_effect = {
@@ -1114,7 +1102,7 @@ faction_goal_marine_corps = {
 		add_faction_initiative = 1
 		custom_effect_tooltip = generic_skip_one_line_tt
 		hidden_effect = {
-			every_collection_element = {
+			every_faction_member = {
 				input = {
 					input = game:scope
 					operators = { 
@@ -1140,8 +1128,8 @@ faction_goal_marine_corps = {
 						NOT = { has_trait = panzer_leader }
 						NOT = { has_trait = naval_invader }
 					}
-					gain_xp = 400
-					add_attack = 1
+					gain_xp = 2000
+					add_attack = 2
 					add_trait = { trait = naval_invader }
 				}
 			}
@@ -1158,8 +1146,8 @@ faction_goal_marine_corps = {
 					NOT = { has_trait = panzer_leader }
 					NOT = { has_trait = naval_invader }
 				}
-				gain_xp = 400
-				add_attack = 1
+				gain_xp = 2000
+				add_attack = 2
 				add_trait = { trait = naval_invader }
 			}
 		}
@@ -1168,7 +1156,7 @@ faction_goal_marine_corps = {
 		every_faction_member = {
 			add_tech_bonus = {
 				name = marine_corps_tech_bonus
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = marine_tech
 			}
@@ -1209,7 +1197,7 @@ faction_goal_airborne_corps = {
 			}
 			unit_category = { paratrooper }
 			equipment_ratio = 0.9
-			size > 29
+			size > 99
 		}
 	}
 	complete_effect = {
@@ -1218,7 +1206,7 @@ faction_goal_airborne_corps = {
 		add_faction_initiative = 1
 		custom_effect_tooltip = generic_skip_one_line_tt
 		hidden_effect = {
-			every_collection_element = {
+			every_faction_member = {
 				input = {
 					input = game:scope
 					operators = { 
@@ -1239,8 +1227,8 @@ faction_goal_airborne_corps = {
 						NOT = { has_trait = panzer_leader }
 						NOT = { has_trait = commando }
 					}
-					gain_xp = 400
-					add_attack = 1
+					gain_xp = 2000
+					add_attack = 2
 					add_trait = { trait = commando }
 				}
 			}
@@ -1257,8 +1245,8 @@ faction_goal_airborne_corps = {
 					NOT = { has_trait = panzer_leader }
 					NOT = { has_trait = commando }
 				}
-				gain_xp = 400
-				add_attack = 1
+				gain_xp = 2000
+				add_attack = 2
 				add_trait = { trait = commando }
 			}
 		}
@@ -1267,7 +1255,7 @@ faction_goal_airborne_corps = {
 		every_faction_member = {
 			add_tech_bonus = {
 				name = airborne_corps_tech_bonus
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = para_tech
 			}
@@ -1300,7 +1288,7 @@ faction_goal_mountaineer_corps = {
 			}
 			unit_category = { mountaineers }
 			equipment_ratio = 0.9
-			size > 29
+			size > 99
 		}
 	}
 	complete_effect = {
@@ -1309,7 +1297,7 @@ faction_goal_mountaineer_corps = {
 		add_faction_initiative = 1
 		custom_effect_tooltip = generic_skip_one_line_tt
 		hidden_effect = {
-			every_collection_element = {
+			every_faction_member = {
 				input = {
 					input = game:scope
 					operators = { 
@@ -1330,8 +1318,8 @@ faction_goal_mountaineer_corps = {
 						NOT = { has_trait = panzer_leader }
 						NOT = { has_trait = trait_mountaineer }
 					}
-					gain_xp = 400
-					add_attack = 1
+					gain_xp = 2000
+					add_attack = 2
 					add_trait = { trait = trait_mountaineer }
 				}
 			}
@@ -1348,8 +1336,8 @@ faction_goal_mountaineer_corps = {
 					NOT = { has_trait = panzer_leader }
 					NOT = { has_trait = trait_mountaineer }
 				}
-				gain_xp = 400
-				add_attack = 1
+				gain_xp = 2000
+				add_attack = 2
 				add_trait = { trait = trait_mountaineer }
 			}
 		}
@@ -1358,7 +1346,7 @@ faction_goal_mountaineer_corps = {
 		every_faction_member = {
 			add_tech_bonus = {
 				name = mountaineer_corps_tech_bonus
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = mountaineers_tech
 			}
@@ -1395,13 +1383,13 @@ faction_goal_submarine_force = {
 				name = FACTION
 			}
 			unit = submarine
-			size > 99
+			size > 199
 		}
 	}
 	complete_effect = {
 		add_faction_power_projection = 100
 		custom_effect_tooltip = generic_skip_one_line_tt
-		every_collection_element = {
+		every_faction_member = {
 			input = {
 				input = game:scope
 				operators = { 
@@ -1421,13 +1409,9 @@ faction_goal_submarine_force = {
 				limit = {
 					is_navy_leader = yes 
 					NOT = { has_trait = seawolf }
-					NOT = { has_trait = ironside }
-					NOT = { has_trait = battleship_adherent }
-					NOT = { has_trait = gunnery_expert }
-					NOT = { has_trait = aviation_enthusiast }
 				}
-				gain_xp = 400
-				add_attack = 1
+				gain_xp = 2000
+				add_attack = 2
 				add_trait = { trait = seawolf }
 			}
 			add_mastery = {
@@ -1440,9 +1424,10 @@ faction_goal_submarine_force = {
 		every_faction_member = {
 			add_tech_bonus = {
 				name = submarine_force_tech_bonus
-				bonus = 0.5
+				bonus = 1
+				ahead_reduction = 1
 				uses = 1
-				category = naval_equipment
+				category = ss_tech
 			}
 		}
 	}
@@ -1483,13 +1468,13 @@ faction_goal_convoy_escort_force = {
 				name = FACTION
 			}
 			unit = screen_ship
-			size > 99
+			size > 199
 		}
 	}
 	complete_effect = {
 		add_faction_power_projection = 100
 		custom_effect_tooltip = generic_skip_one_line_tt
-		every_collection_element = {
+		every_faction_member = {
 			input = {
 				input = game:scope
 				operators = { 
@@ -1510,13 +1495,13 @@ faction_goal_convoy_escort_force = {
 					is_navy_leader = yes
 					NOT = { has_trait = fleet_protector }
 					NOT = { has_trait = seawolf }
-					NOT = { has_trait = ironside }
-					NOT = { has_trait = battleship_adherent }
-					NOT = { has_trait = gunnery_expert }
-					NOT = { has_trait = aviation_enthusiast }
+					#NOT = { has_trait = ironside }
+					#NOT = { has_trait = battleship_adherent }
+					#NOT = { has_trait = gunnery_expert }
+					#NOT = { has_trait = aviation_enthusiast }
 				}
-				gain_xp = 400
-				add_attack = 1
+				gain_xp = 2000
+				add_attack = 2
 				add_trait = { trait = fleet_protector }
 			}
 			add_mastery = {
@@ -1529,7 +1514,7 @@ faction_goal_convoy_escort_force = {
 		every_faction_member = {
 			add_tech_bonus = {
 				name = convoy_escort_force_tech_bonus
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = naval_equipment
 			}
@@ -1568,7 +1553,7 @@ faction_goal_air_superiority = {
 				name = FACTION
 			}
 			unit = fighter
-			size > 999
+			size > 4999
 		}
 	}
 	complete_effect = {
@@ -1581,7 +1566,7 @@ faction_goal_air_superiority = {
 					faction_members 
 					limit = {
 						has_army_size = {
-							size > 249
+							size > 999
 							type = fighter
 						}
 					}
@@ -1599,7 +1584,7 @@ faction_goal_air_superiority = {
 		every_faction_member = {
 			add_tech_bonus = {
 				name = air_superiority_tech_bonus
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = air_equipment
 			}
@@ -1666,7 +1651,7 @@ faction_goal_industrial_expansion = {
 			}
 			add_tech_bonus = {
 				name = industrial_expansion_tech_bonus
-				bonus = 0.5
+				bonus = 1
 				uses = 2
 				category = industry
 			}
@@ -1790,8 +1775,8 @@ faction_goal_a_military_base = {
 			}
 			add_tech_bonus = {
 				name = a_military_base_tech_bonus
-				bonus = 0.5
-				uses = 2
+				bonus = 3
+				uses = 3
 				category = excavation_tech
 			}
 		}
@@ -7471,11 +7456,7 @@ faction_goal_centralize_europe = {
 		
 	}
 	visible = {
-		FROM = {
-			original_tag = GER
-			has_completed_focus = GER_a_europe_around_the_reich
-			is_faction_leader = yes
-		}
+		controls_state = 64
 	}
 	available = {
 		FROM = { is_faction_leader = yes }
@@ -7520,11 +7501,7 @@ faction_goal_sovereign_europe = {
 		
 	}
 	visible = {
-		FROM = {
-			original_tag = GER
-			has_completed_focus = GER_a_europe_of_the_fatherlands
-			is_faction_leader = yes
-		}
+		controls_state = 64		
 	}
 	available = {
 		FROM = { is_faction_leader = yes }

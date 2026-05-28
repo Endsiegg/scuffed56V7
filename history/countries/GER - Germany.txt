@@ -579,6 +579,23 @@ set_popularities = {
 #Diplo
 create_faction_from_template = faction_template_axis
 add_to_faction = GER
+IF= {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
+	add_faction_goal_slot = {
+		category = long_term
+		value = 1 
+	}
+		add_faction_goal_slot = {
+		category = medium_term
+		value = 1 
+	}
+		add_faction_goal_slot = {
+		category = short_term
+		value = 1 
+	}
+}
 
 #Stops start up market access spam
 if = {

@@ -1102,6 +1102,23 @@ set_popularities = {
 }
 
 create_faction_from_template = faction_template_comintern
+IF= {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
+	add_faction_goal_slot = {
+		category = long_term
+		value = 1 
+	}
+		add_faction_goal_slot = {
+		category = medium_term
+		value = 1 
+	}
+		add_faction_goal_slot = {
+		category = short_term
+		value = 1 
+	}
+}
 add_to_faction = SOV
 add_to_faction = MON
 add_to_faction = TAN

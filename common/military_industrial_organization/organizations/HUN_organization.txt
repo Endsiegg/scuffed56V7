@@ -20,21 +20,6 @@ HUN_hti_turan_organization = {
  		has_dlc = "Arms Against Tyranny"
  	}
  	
- 	available = {
- 		IF = {
- 			limit = {
- 				has_dlc = "Gotterdammerung"
- 			}
- 			FROM = {
- 				has_completed_focus = wuw_HUN_the_turan
- 			}
- 		}
- 		ELSE = {
- 			FROM = {
- 				has_completed_focus = HUN_develop_tanks
- 			}
- 		}
- 	}
 }
 
 HUN_magyar_honvedseg_haditechnikai_intezete_organization = {
@@ -203,54 +188,7 @@ HUN_ganz_danubius_organization = { #TODO_Manu: Could do with an extra trait ## R
 		}
 	}
 
-	available = {
-		IF = {
-			limit = { 
-				owner = {
-					OR = {
-						original_tag = CZE
-						original_tag = CRO
-					}
-				}
-			}
-			owner = { has_completed_focus = AH_increase_naval_production }
-		}
-		if = {
-			limit = {
-				owner = {
-					original_tag = AUS
-				}
-			}
-			owner = {
-				controls_state = 43
-			}
-		}	
-		IF = {
-			limit = { 
-				owner = {
-					original_tag = HUN
-					has_dlc = "Gotterdammerung"
-				}
-			}
-			owner = { 
-				has_completed_focus = wuw_HUN_enlarge_the_ganz_danubius_division 
-			}
-		}	
-		else_if = {
-			limit = { 
-				owner = {
-					original_tag = HUN
-					NOT = {
-						has_dlc = "Gotterdammerung"
-					}
-				}
-			}
-			owner = { 
-				has_completed_focus = HUN_naval_warfare 
-			}
-		}	
 
-	}
 	initial_trait = {
 		name = generic_mio_initial_trait_escort_fleet
 
@@ -272,24 +210,7 @@ HUN_obudai_hajogyar_organization = {
 		has_dlc = "Gotterdammerung"
 	}
 	available = {
-		IF = {
-			limit = { 
-				AND = {
-					has_dlc = "Death or Dishonor" 
-					NOT = {
-						has_dlc = "Gotterdammerung"
-					}
-				}
-			}
-			owner = { has_completed_focus = HUN_naval_warfare }
-		}
 
-		IF = {
-			limit = { 
-				has_dlc = "Gotterdammerung"
-			}
-			owner = { has_completed_focus = wuw_HUN_reinstate_the_navy }
-		}
 	}
 }
 
@@ -331,9 +252,6 @@ HUN_mw_aircraft_organization = {
 		# visible = {
 		# 	has_completed_focus = aircraft_production_focus
 		# }
-		available = {
-			has_completed_focus = wuw_HUN_the_matyasfold_fighter_factory
-		}
 		position = { x=8 y=0 }
 		#relative_position_id = generic_mio_trait_minimum_weapon_requirements
 
@@ -357,9 +275,7 @@ HUN_mavag_aircraft_organization = {
 	}
 
 	available = {
-		FROM = {
-			has_completed_focus = wuw_HUN_establish_the_mavag_aircraft_factory
-		}
+
 	}
 	initial_trait = {
 		#name = generic_range_focused_aircraft_organization
@@ -381,9 +297,7 @@ HUN_mavag_aircraft_organization = {
 		# visible = {
 		# 	has_completed_focus = aircraft_production_focus
 		# }
-		available = {
-			has_completed_focus = wuw_HUN_establish_the_mavag_aircraft_factory
-		}
+
 		position = { x=1 y=1 }
 		#relative_position_id = generic_mio_trait_minimum_weapon_requirements
 
@@ -513,19 +427,7 @@ HUN_danuvia_inf_organization = {
 	}
 
 	available = {
-		IF = {
-			limit = {
-				has_dlc = "Gotterdammerung"
-			}
-			FROM = {
-				has_completed_focus = wuw_HUN_danuvia_submachine_guns
-			}
-		}
-		ELSE = {
-			FROM = {
-				has_completed_focus = HUN_danuvia_submachine_guns
-			}
-		}
+
 	}
 
 	initial_trait = {
@@ -669,16 +571,7 @@ HUN_raba_organization = {
 	}
 
 	available = {
-		if = {
-			limit = {
-				FROM = {
-					has_focus_tree = wuw_hungarian_focus
-				}
-			}
-			FROM = {
-				has_completed_focus = wuw_HUN_the_botond
-			}
-		}
+
 	}
 
 	visible = {

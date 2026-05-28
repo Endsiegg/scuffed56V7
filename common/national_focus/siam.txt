@@ -1549,12 +1549,12 @@ focus_tree = {
 			has_capitulated = yes
 			NOT = { has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56 }
 		}
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = { has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56 }
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = { has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56 }
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			if = {
@@ -1621,12 +1621,12 @@ focus_tree = {
 			has_capitulated = yes
 			NOT = { has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56 }
 		}
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = { has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56 }
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = { has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56 }
+		# 	}
+		# }
 		completion_reward = {
 			if = {
 				limit = { has_intelligence_agency = yes }
@@ -1670,13 +1670,13 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SIA_continue_the_fight_underground_r56
-		offset = {
-			y = -1
-			trigger = {
-				has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	y = -1
+		# 	trigger = {
+		# 		has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		prerequisite = { focus = SIA_continue_the_fight_underground_r56 }
 		ai_will_do = { base = 999 }
 		available_if_capitulated = yes
@@ -1686,7 +1686,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+		#	#mark_focus_tree_layout_dirty_r56 = yes
 			if = {
 				limit = {
 					OR = {
@@ -2107,21 +2107,21 @@ focus_tree = {
 		relative_position_id = SIA_acquire_modern_equipment_r56
 		ai_will_do = { base = 5 }
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = { has_completed_focus = SIA_continue_importing_foreign_equipment_r56 }
-			}
-		}
-		offset = {
-			x = -2
-			trigger = {
-				has_completed_focus = SIA_shift_to_national_designs_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = { has_completed_focus = SIA_continue_importing_foreign_equipment_r56 }
+		# 	}
+		# }
+		# offset = {
+		# 	x = -2
+		# 	trigger = {
+		# 		has_completed_focus = SIA_shift_to_national_designs_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+		#	#mark_focus_tree_layout_dirty_r56 = yes
 			add_tech_bonus = {
 				name = SIA_shift_to_national_designs_r56
 				bonus = 1.25
@@ -2141,21 +2141,21 @@ focus_tree = {
 		relative_position_id = SIA_shift_to_national_designs_r56
 		ai_will_do = { base = 5 }
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
-		offset = {
-			x = -1
-			trigger = {
-				has_completed_focus = SIA_shift_to_national_designs_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
-		offset = {
-			x = 1
-			trigger = {
-				has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56
-				NOT = { has_completed_focus = SIA_shift_to_national_designs_r56 }
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	x = -1
+		# 	trigger = {
+		# 		has_completed_focus = SIA_shift_to_national_designs_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
+		# offset = {
+		# 	x = 1
+		# 	trigger = {
+		# 		has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56
+		# 		NOT = { has_completed_focus = SIA_shift_to_national_designs_r56 }
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		completion_reward = { add_ideas = SIA_asias_innovation_powerhouse_r56 }
 	}
 
@@ -2169,16 +2169,16 @@ focus_tree = {
 		y = 2
 		relative_position_id = SIA_acquire_modern_equipment_r56
 		ai_will_do = { base = 5 }
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = { has_completed_focus = SIA_shift_to_national_designs_r56 }
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = { has_completed_focus = SIA_shift_to_national_designs_r56 }
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 		available_if_capitulated = yes
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			##mark_focus_tree_layout_dirty_r56 = yes
 			add_tech_bonus = {
 				name = SIA_shift_to_national_designs_r56
 				bonus = 1
@@ -2200,17 +2200,17 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = SIA_continue_importing_foreign_equipment_r56
-		offset = {
-			y = -1
-			trigger = {
-				has_focus_autohide_rule_trigger_r56 = yes
-				OR = {
-					has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56
-					has_completed_focus = SIA_shift_to_national_designs_r56
-					has_completed_focus = SIA_continue_importing_foreign_equipment_r56
-				}
-			}
-		}
+		# offset = {
+		# 	y = -1
+		# 	trigger = {
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 		OR = {
+		# 			has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56
+		# 			has_completed_focus = SIA_shift_to_national_designs_r56
+		# 			has_completed_focus = SIA_continue_importing_foreign_equipment_r56
+		# 		}
+		# 	}
+		# }
 		ai_will_do = { base = 1 }
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
@@ -2237,16 +2237,16 @@ focus_tree = {
 		cost = 4
 		y = 1
 		relative_position_id = SIA_continue_importing_foreign_equipment_r56
-		offset = {
-			x = -1
-			trigger = {
-				has_focus_autohide_rule_trigger_r56 = yes
-				OR = {
-					has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56
-					has_completed_focus = SIA_continue_importing_foreign_equipment_r56
-				}
-			}
-		}
+		# offset = {
+		# 	x = -1
+		# 	trigger = {
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 		OR = {
+		# 			has_completed_focus = SIA_take_the_fight_to_our_enemies_soil_r56
+		# 			has_completed_focus = SIA_continue_importing_foreign_equipment_r56
+		# 		}
+		# 	}
+		# }
 		ai_will_do = { base = 5 }
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		available_if_capitulated = yes
@@ -2361,16 +2361,16 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SIA_standardize_troop_recruitment_r56
-		offset = {
-			x = -2
-			trigger = {
-				has_focus_autohide_rule_trigger_r56 = yes
-				OR = {
-					has_completed_focus = SIA_continue_importing_foreign_equipment_r56
-					has_completed_focus = SIA_shift_to_national_designs_r56
-				}
-			}
-		}
+		# offset = {
+		# 	x = -2
+		# 	trigger = {
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 		OR = {
+		# 			has_completed_focus = SIA_continue_importing_foreign_equipment_r56
+		# 			has_completed_focus = SIA_shift_to_national_designs_r56
+		# 		}
+		# 	}
+		# }
 		ai_will_do = { base = 1 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -2521,16 +2521,16 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_continue_sending_cadets_abroad_r56
 		ai_will_do = { base = 1 }
-		offset = {
-			x = -2
-			trigger = {
-				has_focus_autohide_rule_trigger_r56 = yes
-				OR = {
-					has_completed_focus = SIA_continue_importing_foreign_equipment_r56
-					has_completed_focus = SIA_shift_to_national_designs_r56	
-				}
-			}
-		}
+		# offset = {
+		# 	x = -2
+		# 	trigger = {
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 		OR = {
+		# 			has_completed_focus = SIA_continue_importing_foreign_equipment_r56
+		# 			has_completed_focus = SIA_shift_to_national_designs_r56	
+		# 		}
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_tech_bonus = {
@@ -2689,16 +2689,16 @@ focus_tree = {
 		x = -2
 		y = 2
 		relative_position_id = SIA_issue_economic_mobilization_r56
-		offset = {
-			x = 2
-			trigger = {
-				has_completed_focus = SIA_scale_up_naval_production_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	x = 2
+		# 	trigger = {
+		# 		has_completed_focus = SIA_scale_up_naval_production_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		ai_will_do = { base = 1 }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+		#	#mark_focus_tree_layout_dirty_r56 = yes
 			random_controlled_state = {
 				limit = {
 					is_coastal = yes
@@ -2754,7 +2754,7 @@ focus_tree = {
 		ai_will_do = { base = 1 }
 		#available = { SIA_issue_economic_mobilization_trigger_r56 = yes }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			##mark_focus_tree_layout_dirty_r56 = yes
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -2805,17 +2805,17 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = SIA_issue_economic_mobilization_r56
-		offset = {
-			x = -2
-			trigger = {
-				has_completed_focus = SIA_expand_the_ground_armaments_industry_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	x = -2
+		# 	trigger = {
+		# 		has_completed_focus = SIA_expand_the_ground_armaments_industry_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		ai_will_do = { base = 999 }
 		#available = { SIA_issue_economic_mobilization_trigger_r56 = yes }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+		#	#mark_focus_tree_layout_dirty_r56 = yes
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -2897,7 +2897,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			##mark_focus_tree_layout_dirty_r56 = yes
 			289 = {	#Central Siam
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -2967,7 +2967,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			##mark_focus_tree_layout_dirty_r56 = yes
 			289 = {	#Central Siam
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -3156,7 +3156,7 @@ focus_tree = {
 		#available = { has_tech = construction4 }
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			#mark_focus_tree_layout_dirty_r56 = yes
 			add_stability = -0.04
 			289 = {	#Central Siam
 				add_extra_state_shared_building_slots = 4
@@ -3187,7 +3187,7 @@ focus_tree = {
 		#available = { has_tech = construction4 }
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			#mark_focus_tree_layout_dirty_r56 = yes
 			289 = {	#Central Siam
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -3904,7 +3904,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			#mark_focus_tree_layout_dirty_r56 = yes
 			add_stability = 0.04
 			if = {
 				limit = {
@@ -4035,7 +4035,7 @@ focus_tree = {
 		cost = 3
 		ai_will_do = { base = 1 }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			#mark_focus_tree_layout_dirty_r56 = yes
 			add_stability = 0.04
 			add_war_support = 0.04
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4179,15 +4179,15 @@ focus_tree = {
 			focus = SIA_peace_with_the_western_order_r56
 			focus = SIA_the_non_aligned_movement_r56
 		}
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = {
-					has_completed_focus = SIA_peace_with_the_western_order_r56
-					has_completed_focus = SIA_the_non_aligned_movement_r56
-				}
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = {
+		# 			has_completed_focus = SIA_peace_with_the_western_order_r56
+		# 			has_completed_focus = SIA_the_non_aligned_movement_r56
+		# 		}
+		# 	}
+		# }
 		icon = GFX_goal_generic_befriend_siam
 		x = 1
 		y = 2
@@ -4202,7 +4202,7 @@ focus_tree = {
 
 		}
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			#mark_focus_tree_layout_dirty_r56 = yes
 			add_war_support = 0.04
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = SIA_between_a_rock_and_a_hard_place_r56
@@ -4751,17 +4751,17 @@ focus_tree = {
 		y = 3
 		relative_position_id = SIA_build_rural_popular_support_r56
 		continue_if_invalid = yes
-		offset = {
-			y = -1
-			trigger = {
-				has_focus_autohide_rule_trigger_r56 = yes
-				OR = {
-					has_completed_focus = SIA_songsuradets_ascendency_r56
-					has_completed_focus = SIA_pridis_premiership_r56
-					has_completed_focus = SIA_phibuns_takeover_r56
-				}
-			}
-		}
+		# offset = {
+		# 	y = -1
+		# 	trigger = {
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 		OR = {
+		# 			has_completed_focus = SIA_songsuradets_ascendency_r56
+		# 			has_completed_focus = SIA_pridis_premiership_r56
+		# 			has_completed_focus = SIA_phibuns_takeover_r56
+		# 		}
+		# 	}
+		# }
 		available = {
 			OR = {
 				democratic > 0.4
@@ -4863,22 +4863,22 @@ focus_tree = {
 		x = -9
 		y = 1
 		relative_position_id = SIA_phahon_steps_down_r56
-		offset = {
-			x = 9
-			trigger = {
-				has_completed_focus = SIA_songsuradets_ascendency_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = {
-					has_completed_focus = SIA_pridis_premiership_r56
-					has_completed_focus = SIA_phibuns_takeover_r56
-				}
-			}
-		}
+		# offset = {
+		# 	x = 9
+		# 	trigger = {
+		# 		has_completed_focus = SIA_songsuradets_ascendency_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = {
+		# 			has_completed_focus = SIA_pridis_premiership_r56
+		# 			has_completed_focus = SIA_phibuns_takeover_r56
+		# 		}
+		# 	}
+		# }
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = SIA_songsuradets_ascendency_r56_tt
@@ -4887,7 +4887,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			#mark_focus_tree_layout_dirty_r56 = yes
 			effect_tooltip = { SIA_songsuradets_ascendency_effects_r56_effects = yes }
 		}
 	}
@@ -4904,13 +4904,13 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = SIA_songsuradets_ascendency_r56
-		offset = {
-			x = 2
-			trigger = {
-				has_completed_focus = SIA_songsuradets_ascendency_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	x = 2
+		# 	trigger = {
+		# 		has_completed_focus = SIA_songsuradets_ascendency_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_STABILITY }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -4960,13 +4960,13 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SIA_respond_to_the_international_crisis_r56
-		offset = {
-			x = 2
-			trigger = {
-				has_completed_focus = SIA_songsuradets_ascendency_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	x = 2
+		# 	trigger = {
+		# 		has_completed_focus = SIA_songsuradets_ascendency_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		available = { has_war = yes }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
@@ -5000,13 +5000,13 @@ focus_tree = {
 		x = 6
 		y = 1
 		relative_position_id = SIA_songsuradets_ascendency_r56
-		offset = {
-			x = -2
-			trigger = {
-				has_completed_focus = SIA_songsuradets_ascendency_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	x = -2
+		# 	trigger = {
+		# 		has_completed_focus = SIA_songsuradets_ascendency_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -5370,17 +5370,17 @@ focus_tree = {
 			focus = SIA_protectors_of_the_old_order_r56
 		}
 		mutually_exclusive = { focus = SIA_disciplined_separate_army_r56 }
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = {
-					has_completed_focus = SIA_pridis_premiership_r56
-					has_completed_focus = SIA_phibuns_takeover_r56
-					has_completed_focus = SIA_disciplined_separate_army_r56
-					has_completed_focus = SIA_continue_the_democratic_transition_r56
-				}
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = {
+		# 			has_completed_focus = SIA_pridis_premiership_r56
+		# 			has_completed_focus = SIA_phibuns_takeover_r56
+		# 			has_completed_focus = SIA_disciplined_separate_army_r56
+		# 			has_completed_focus = SIA_continue_the_democratic_transition_r56
+		# 		}
+		# 	}
+		# }
 		icon = GFX_focus_generic_strike_at_democracy2
 		cost = 5
 		ai_will_do = { base = 1 }
@@ -5407,19 +5407,19 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = SIA_absorb_the_nationalist_movement_r56
-		offset = {
-			x = -2
-			trigger = {
-				has_focus_autohide_rule_trigger_r56 = yes
-				OR = {
-					has_completed_focus = SIA_disciplined_separate_army_r56
-					has_completed_focus = SIA_continue_the_democratic_transition_r56
-				}
-			}
-		}
+		# offset = {
+		# 	x = -2
+		# 	trigger = {
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 		OR = {
+		# 			has_completed_focus = SIA_disciplined_separate_army_r56
+		# 			has_completed_focus = SIA_continue_the_democratic_transition_r56
+		# 		}
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_IMPROVEMENT }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			#mark_focus_tree_layout_dirty_r56 = yes
 			swap_ideas = {
 				remove_idea = SIA_nationalist_conservative_cooperation_r56
 				add_idea = SIA_disciplined_separate_army_idea_r56
@@ -5482,17 +5482,17 @@ focus_tree = {
 		x = -2
 		y = 2
 		relative_position_id = SIA_restore_the_honor_of_the_chakri_r56
-		offset = {
-			x = 1
-			y = -1
-			trigger = {
-				has_focus_autohide_rule_trigger_r56 = yes
-				OR = {
-					has_completed_focus = SIA_consolidate_the_peoples_assembly_r56
-					has_completed_focus = SIA_push_wichitwathakan_to_the_forefront_r56
-				}
-			}
-		}
+		# offset = {
+		# 	x = 1
+		# 	y = -1
+		# 	trigger = {
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 		OR = {
+		# 			has_completed_focus = SIA_consolidate_the_peoples_assembly_r56
+		# 			has_completed_focus = SIA_push_wichitwathakan_to_the_forefront_r56
+		# 		}
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_political_power = 15
@@ -5514,17 +5514,17 @@ focus_tree = {
 			focus = SIA_push_wichitwathakan_to_the_forefront_r56
 			focus = SIA_consolidate_the_peoples_assembly_r56
 		}
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = {
-					has_completed_focus = SIA_pridis_premiership_r56
-					has_completed_focus = SIA_phibuns_takeover_r56
-					has_completed_focus = SIA_consolidate_the_peoples_assembly_r56
-					has_completed_focus = SIA_push_wichitwathakan_to_the_forefront_r56
-				}
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = {
+		# 			has_completed_focus = SIA_pridis_premiership_r56
+		# 			has_completed_focus = SIA_phibuns_takeover_r56
+		# 			has_completed_focus = SIA_consolidate_the_peoples_assembly_r56
+		# 			has_completed_focus = SIA_push_wichitwathakan_to_the_forefront_r56
+		# 		}
+		# 	}
+		# }
 		icon = GFX_goal_generic_internal_democracy
 		cost = 5
 		ai_will_do = { base = 1 }
@@ -5540,7 +5540,7 @@ focus_tree = {
 		bypass = { has_government = democratic }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			#mark_focus_tree_layout_dirty_r56 = yes
 			add_ruling_to_dem = yes
 			effect_tooltip = {
 				custom_effect_tooltip = NOR_enable_puppet_states_tt
@@ -5589,7 +5589,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+		#	#mark_focus_tree_layout_dirty_r56 = yes
 			add_political_power = 105
 			add_stability = 0.05
 			add_popularity = {
@@ -5694,23 +5694,23 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = SIA_songsuradets_ascendency_r56
-		offset = {
-			x = 2
-			trigger = {
-				has_completed_focus = SIA_negotiate_a_mass_development_plan_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = {
-					has_completed_focus = SIA_strengthen_the_anti_communist_act_r56
-					has_completed_focus = SIA_pridis_premiership_r56
-					has_completed_focus = SIA_phibuns_takeover_r56
-				}
-			}
-		}
+		# offset = {
+		# 	x = 2
+		# 	trigger = {
+		# 		has_completed_focus = SIA_negotiate_a_mass_development_plan_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = {
+		# 			has_completed_focus = SIA_strengthen_the_anti_communist_act_r56
+		# 			has_completed_focus = SIA_pridis_premiership_r56
+		# 			has_completed_focus = SIA_phibuns_takeover_r56
+		# 		}
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = -35
@@ -5825,16 +5825,16 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = SIA_songsuradets_ascendency_r56
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = {
-					has_completed_focus = SIA_negotiate_a_mass_development_plan_r56
-					has_completed_focus = SIA_pridis_premiership_r56
-					has_completed_focus = SIA_phibuns_takeover_r56
-				}
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = {
+		# 			has_completed_focus = SIA_negotiate_a_mass_development_plan_r56
+		# 			has_completed_focus = SIA_pridis_premiership_r56
+		# 			has_completed_focus = SIA_phibuns_takeover_r56
+		# 		}
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 75
@@ -5912,15 +5912,15 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SIA_phahon_steps_down_r56
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = {
-					has_completed_focus = SIA_songsuradets_ascendency_r56
-					has_completed_focus = SIA_phibuns_takeover_r56
-				}
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = {
+		# 			has_completed_focus = SIA_songsuradets_ascendency_r56
+		# 			has_completed_focus = SIA_phibuns_takeover_r56
+		# 		}
+		# 	}
+		# }
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = SIA_pridis_premiership_r56_tt
@@ -5929,7 +5929,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = { 
-			mark_focus_tree_layout_dirty_r56 = yes
+			##mark_focus_tree_layout_dirty_r56 = yes
 			effect_tooltip = { SIA_pridis_premiership_effects_r56_effects = yes }
 		}
 	}
@@ -6510,22 +6510,22 @@ focus_tree = {
 		x = 9
 		y = 1
 		relative_position_id = SIA_phahon_steps_down_r56
-		offset = {
-			x = -9
-			trigger = {
-				has_completed_focus = SIA_phibuns_takeover_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = {
-					has_completed_focus = SIA_songsuradets_ascendency_r56
-					has_completed_focus = SIA_pridis_premiership_r56
-				}
-			}
-		}
+		# offset = {
+		# 	x = -9
+		# 	trigger = {
+		# 		has_completed_focus = SIA_phibuns_takeover_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = {
+		# 			has_completed_focus = SIA_songsuradets_ascendency_r56
+		# 			has_completed_focus = SIA_pridis_premiership_r56
+		# 		}
+		# 	}
+		# }
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = SIA_phibuns_takeover_r56_tt
@@ -6535,7 +6535,7 @@ focus_tree = {
 		ai_will_do = { base = 1 }
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+		#	#mark_focus_tree_layout_dirty_r56 = yes
 			effect_tooltip = { SIA_phibuns_takeover_r56_effects = yes }
 			hidden_effect = {
 				if = {
@@ -6558,13 +6558,13 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = SIA_phibuns_takeover_r56
-		offset = {
-			x = -1
-			trigger = {
-				has_completed_focus = SIA_prove_thailands_worth_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	x = -1
+		# 	trigger = {
+		# 		has_completed_focus = SIA_prove_thailands_worth_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		available = { has_government = fascism }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		completion_reward = {
@@ -6793,20 +6793,20 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = SIA_pridis_premiership_r56
-		offset = {
-			x = -9
-			trigger = {
-				has_completed_focus = SIA_phibuns_takeover_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
-		offset = {
-			x = 1
-			trigger = {
-				has_completed_focus = SIA_prove_thailands_worth_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	x = -9
+		# 	trigger = {
+		# 		has_completed_focus = SIA_phibuns_takeover_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
+		# offset = {
+		# 	x = 1
+		# 	trigger = {
+		# 		has_completed_focus = SIA_prove_thailands_worth_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_tech_bonus = {
@@ -7266,16 +7266,16 @@ focus_tree = {
 		cost = 5
 		ai_will_do = { base = 15 }
 		available = { has_war_with_major = yes }
-		allow_branch = {
-			if = {
-				limit = { has_focus_autohide_rule_trigger_r56 = yes }
-				NOT = {
-					has_completed_focus = SIA_songsuradets_ascendency_r56
-					has_completed_focus = SIA_pridis_premiership_r56
-					has_completed_focus = SIA_prove_thailands_worth_r56
-				}
-			}
-		}
+		# allow_branch = {
+		# 	if = {
+		# 		limit = { has_focus_autohide_rule_trigger_r56 = yes }
+		# 		NOT = {
+		# 			has_completed_focus = SIA_songsuradets_ascendency_r56
+		# 			has_completed_focus = SIA_pridis_premiership_r56
+		# 			has_completed_focus = SIA_prove_thailands_worth_r56
+		# 		}
+		# 	}
+		# }
 		completion_reward = { add_ideas = SIA_focus_on_domestic_stability_r56 }
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
@@ -7383,17 +7383,17 @@ focus_tree = {
 		cost = 5
 		ai_will_do = { base = 15 }
 		available = { has_war_with_major = yes }
-		offset = {
-			x = 1
-			trigger = {
-				has_completed_focus = SIA_prove_thailands_worth_r56
-				has_focus_autohide_rule_trigger_r56 = yes
-			}
-		}
+		# offset = {
+		# 	x = 1
+		# 	trigger = {
+		# 		has_completed_focus = SIA_prove_thailands_worth_r56
+		# 		has_focus_autohide_rule_trigger_r56 = yes
+		# 	}
+		# }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT }
 		completion_reward = {
-			mark_focus_tree_layout_dirty_r56 = yes
+			##mark_focus_tree_layout_dirty_r56 = yes
 			if = {
 				limit = { has_completed_focus = SIA_forced_out_of_neutrality_r56 }
 				swap_ideas = {
