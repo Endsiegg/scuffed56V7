@@ -1931,8 +1931,8 @@ generic_task_force_ship_organization = {
 	
 	initial_trait = {
 		name = generic_mio_initial_trait_task_force_ship_builders
-
 		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.50
 			military_industrial_organization_research_bonus = 0.10
 		}
 		equipment_bonus = {
@@ -2188,6 +2188,7 @@ generic_battle_line_ship_organization = {
 		name = generic_mio_initial_trait_battle_line_ship_builders
 
 		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.50
 			military_industrial_organization_research_bonus = 0.10
 		}
 		production_bonus = {
@@ -2494,10 +2495,11 @@ generic_escort_ship_organization = {
 		name = generic_mio_initial_trait_escort_fleet
 
 		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.50
 			military_industrial_organization_research_bonus = 0.10
 		}
 		production_bonus = {
-			production_capacity_factor = 0.05
+			production_capacity_factor = 0.10
 		}
 	}
 
@@ -2738,10 +2740,11 @@ generic_raider_ship_organization = {
 		name = generic_mio_initial_trait_raiding_fleet
 
 		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.50
 			military_industrial_organization_research_bonus = 0.10
 		}
 		equipment_bonus = {
-			surface_visibility = -0.05
+			surface_visibility = -0.10
 		}
 	}
 
@@ -3033,10 +3036,11 @@ generic_submarine_organization = {
 		name = generic_mio_initial_trait_submarine_designer
 
 		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.50
 			military_industrial_organization_research_bonus = 0.10
 		}
 		equipment_bonus = {
-			sub_visibility = -0.05
+			sub_visibility = -0.10
 		}
 	}
 
@@ -3366,6 +3370,11 @@ generic_black_sea_fleet_organization = {
 	initial_trait = {
 		name = generic_mio_initial_trait_black_sea_fleet_designer
 		limit_to_equipment_type = { capital_ship screen_ship ship_hull_submarine }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+			military_industrial_organization_research_bonus = 0.10
+		}
 		equipment_bonus = {
 			anti_air_attack = 0.02
 			armor_value = 0.02
@@ -3564,7 +3573,7 @@ generic_black_sea_fleet_organization = {
 		relative_position_id = generic_mio_trait_anti_air_defense
 		
 		organization_modifier = {
-			military_industrial_organization_funds_gain = 0.1
+			military_industrial_organization_funds_gain = 0.25
 		}
 		
 	}
@@ -3675,6 +3684,7 @@ generic_refurbishment_repair_organization = {
 		}
 
 		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.50
 			military_industrial_organization_research_bonus = 0.10
 		}
 	}
@@ -7322,7 +7332,7 @@ generic_infantry_equipment_organization = {
 
 		equipment_bonus = {
 			soft_attack = 0.05
-			breakthrough = 0.03
+			breakthrough = 0.05
 		}
 	}
 
@@ -7339,8 +7349,8 @@ generic_infantry_equipment_organization = {
 		mutually_exclusive = { generic_mio_trait_improved_small_arms_bullet_design }
 
 		equipment_bonus = {
-			ap_attack = 0.25
-			hard_attack = 0.05
+			ap_attack = 0.50
+			hard_attack = 0.10
 		}
 	}
 
@@ -7353,8 +7363,8 @@ generic_infantry_equipment_organization = {
 		relative_position_id = generic_mio_trait_reinforced_stocks
 
 		equipment_bonus = {
-			hard_attack = 0.1
-			ap_attack = 0.25
+			hard_attack = 0.10
+			ap_attack = 0.50
 		}
 	}
 

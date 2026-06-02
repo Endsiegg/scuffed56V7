@@ -307,26 +307,26 @@ CZE_skoda_plzen_tank_destroyer_organization = {
 	}
 
 	available = {
-		if = {
-			limit = {
-				FROM = {
-					original_tag = CZE
-				}
-			}
-			FROM = {
-				has_completed_focus = CZE_rearmed_and_retooled
-			}
-		}
-		if = {
-			limit = {
-				FROM = {
-					original_tag = AUS
-				}
-			}
-			FROM = {
-				controls_state = 9
-			}
-		}
+		# if = {
+		# 	limit = {
+		# 		FROM = {
+		# 			original_tag = CZE
+		# 		}
+		# 	}
+		# 	FROM = {
+		# 		has_completed_focus = CZE_rearmed_and_retooled
+		# 	}
+		# }
+		# if = {
+		# 	limit = {
+		# 		FROM = {
+		# 			original_tag = AUS
+		# 		}
+		# 	}
+		# 	FROM = {
+		# 		controls_state = 9
+		# 	}
+		# }
 	}
 }
 
@@ -340,14 +340,17 @@ CZE_skoda_works_german_organization = {
 	}
 
 	available = {
-		FROM = { #state_is_fully_controlled_by_ROOT_or_subject = yes tooltip's FROM and Subject names don't show up in this context. It would of course be a better check to use if not for this
-			OR = {
-				controls_state = 9
-				any_subject_country = {
-					controls_state = 9
-				}	
-			}
-		}
+		# FROM = { #state_is_fully_controlled_by_ROOT_or_subject = yes tooltip's FROM and Subject names don't show up in this context. It would of course be a better check to use if not for this
+		# 	OR = {
+		# 		controls_state = 9
+		# 		any_allied_country = {
+		# 			controls_state = 9
+		# 		}
+		# 		any_subject_country = {
+		# 			controls_state = 9
+		# 		}	
+		# 	}
+		# }
 	}
 
 	visible = {
@@ -389,14 +392,14 @@ CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization = {
 	}
 
 	available = {
-		FROM = { #state_is_fully_controlled_by_ROOT_or_subject = yes tooltip's FROM and Subject names don't show up in this context. It would of course be a better check to use if not for this
-			OR = {
-				controls_state = 9
-				any_subject_country = {
-					controls_state = 9
-				}	
-			}
-		}
+		# FROM = { #state_is_fully_controlled_by_ROOT_or_subject = yes tooltip's FROM and Subject names don't show up in this context. It would of course be a better check to use if not for this
+		# 	OR = {
+		# 		controls_state = 9
+		# 		any_subject_country = {
+		# 			controls_state = 9
+		# 		}	
+		# 	}
+		# }
 	}
 
 	visible = {
@@ -1195,14 +1198,14 @@ CZE_avia_german_organization = {
 	}
 
 	available = {
-		FROM = {
-			OR = {
-				controls_state = 9
-				any_subject_country = {
-					controls_state = 9
-				}	
-			}
-		}
+		# FROM = {
+		# 	OR = {
+		# 		controls_state = 9
+		# 		any_subject_country = {
+		# 			controls_state = 9
+		# 		}	
+		# 	}
+		# }
 	}
 
 	equipment_type = {
