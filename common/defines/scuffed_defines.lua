@@ -95,7 +95,7 @@ NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 1.0
 NDefines.NProduction.POWERED_FACTORY_SPEED_MIL = 3.25
 NDefines.NProduction.POWERED_FACTORY_SPEED_NAV = 3.5
 NDefines.NProduction.MIN_LAND_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.2   --Cost for army refits
-NDefines.NProduction.MIN_NAVAL_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.2 --Cost for navy refits
+NDefines.NProduction.MIN_NAVAL_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.1 --Cost for navy refits
 NDefines.NProduction.BASE_FACTORY_EFFICIENCY_GAIN = 3		-- Base efficiency factor. GROWTH OVER TIME
 --NDefines.NProduction.BASE_FACTORY_MAX_EFFICIENCY_FACTOR = 100	-- Base max efficiency for factories expressed in %. THIS IS BASE PRODUCTION CAP
 NDefines.NProduction.SHIP_REFIT_MAX_PROGRESS_TO_CANCEL = 0.9			-- Maximum refitting progress % that we still allow to cancel wihtout having to scuttle the ship.
@@ -170,19 +170,19 @@ NDefines.NMilitary.BASE_DIVISION_SUPPORT_SLOT_COST = 0
 NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 9999
 NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 9999
 NDefines.NMilitary.MAX_AIR_EXPERIENCE = 9999
-NDefines.NMilitary.TRAINING_MAX_LEVEL = 10
-NDefines.NMilitary.DEPLOY_TRAINING_MAX_LEVEL = 5
-NDefines.NMilitary.ARMY_EXP_BASE_LEVEL = 5
+--NDefines.NMilitary.TRAINING_MAX_LEVEL = 2 -- was 2
+--NDefines.NMilitary.DEPLOY_TRAINING_MAX_LEVEL = 1 -- Was 2
+--NDefines.NMilitary.ARMY_EXP_BASE_LEVEL = 1
 NDefines.NMilitary.SUPPLY_GRACE = 84 -- 72 3 days as they say and remain hungry for another 12
-NDefines.NMilitary.UNIT_EXP_LEVELS = {0.02, 0.04, 0.06,	0.08, 0.1, 0.14, 0.18, 0.22, 0.26, 0.3, 0.39, 0.48, 0.57, 0.66, 0.75, 0.78, 0.81, 0.84, 0.87, 0.9}
-NDefines.NMilitary.UNIT_EXPERIENCE_PER_TRAINING_DAY = 0.0015
+--NDefines.NMilitary.UNIT_EXP_LEVELS = { 0.1, 0.3, 0.75, 0.9 }
+NDefines.NMilitary.UNIT_EXPERIENCE_PER_TRAINING_DAY = 0.003
 NDefines.NMilitary.EXPERIENCE_COMBAT_FACTOR = 0.03
 NDefines.NMilitary.NUKE_MIN_DAMAGE_PERCENT = 0.9
 NDefines.NMilitary.NUKE_MAX_DAMAGE_PERCENT = 1.2
 NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.3
 NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.1
 NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.04 --readded cause planning OP
-NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2 -- how many CAS/TAC can enter a combat depending on enemy width there
+NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 3 -- how many CAS/TAC can enter a combat depending on enemy width there
 NDefines.NMilitary.RECON_SKILL_IMPACT = 6
 NDefines.NMilitary.UNIT_EXPERIENCE_PER_COMBAT_HOUR = 0.0002
 NDefines.NMilitary.FIELD_EXPERIENCE_MAX_PER_DAY = 12
@@ -249,30 +249,30 @@ NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.5 -- damage reduc
 --NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
 --NDefines.NAir.AIR_DEPLOYMENT_DAYS = 2
 --NDefines.NAir.AIR_WING_FLIGHT_SPEED_MULT = 0.02
-NDefines.NAir.AIR_WING_XP_LEVELS = { 20, 40, 60, 80, 100, 140, 180, 220, 260, 300, 390, 480, 570, 660, 750, 780, 810, 840, 870, 900 }
+--NDefines.NAir.AIR_WING_XP_LEVELS = { 100, 300, 700, 900 }
 NDefines.NAir.AIR_WING_XP_TRAINING_MAX = 300.0
-NDefines.NAir.AIR_WING_XP_TRAINING_MISSION_GAIN_DAILY = 4.5
+NDefines.NAir.AIR_WING_XP_TRAINING_MISSION_GAIN_DAILY = 8.0 -- was 4.5
 NDefines.NAir.AIR_WING_COUNTRY_XP_FROM_TRAINING_FACTOR = 0.01
-NDefines.NAir.AIR_WING_XP_LOSS_WHEN_KILLED = 200
+NDefines.NAir.AIR_WING_XP_LOSS_WHEN_KILLED = 300 -- was 200
 NDefines.NAir.AIR_WING_MAX_STATS_ATTACK = 1000 -- Max stats was 200
 NDefines.NAir.AIR_WING_MAX_STATS_DEFENCE = 1000 -- was 200
 NDefines.NAir.AIR_WING_MAX_STATS_AGILITY = 1000 -- was 200
 NDefines.NAir.AIR_WING_MAX_STATS_SPEED = 9999 -- Used to balance the damage done while bombing. was 1500
 NDefines.NAir.AIR_WING_XP_LOSS_REDUCTION_OVER_FRIENDLY_TERRITORY_FACTOR = 0.7
 
-NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_NO_TRUCK_DISRUPTION_FACTOR = 0.05 --0.2 was 0.1 Base 0.02
-NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRUCK_DAMAGE_FACTOR = 0.25 -- 0.5 was 0.25 Base 0.27
-NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_INFRA_DAMAGE_SPILL_FACTOR = 0.0012 --Base 0.0016
-NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRAIN_DAMAGE_FACTOR = 0.05 -- was 0.0375 Base 0.075
-NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRAIN_DAMAGE_DISRUPTION_MITIGATION = 6.0 -- 6.0 Multiply Train Damage by (Smooth / (Smooth + (Disruption * Mitigation)))
-NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRAIN_DAMAGE_DISRUPTION_SMOOTHING = 5 -- 5
+NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_NO_TRUCK_DISRUPTION_FACTOR = 0.01 --0.2 was 0.1 Base 0.02
+NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRUCK_DAMAGE_FACTOR = 0.20 -- 0.5 was 0.25 Base 0.27
+NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_INFRA_DAMAGE_SPILL_FACTOR = 0.0008 --Base 0.0016
+NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRAIN_DAMAGE_FACTOR = 0.02 -- was 0.0375 Base 0.040
+NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRAIN_DAMAGE_DISRUPTION_MITIGATION = 3.0 -- 6.0 Multiply Train Damage by (Smooth / (Smooth + (Disruption * Mitigation)))
+NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRAIN_DAMAGE_DISRUPTION_SMOOTHING = 2.5 -- 5
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_RAILWAY_DAMAGE_SPILL_FACTOR = 0.003 -- 0.006
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_DISRUPTION_MIN_DAMAGE_FACTOR = 0.05 -- 0.1 Multiply train damage by this factor scale from 1.0 at 0 disruption to this at AIR_WING_ATTACK_LOGISTICS_MAX_DISRUPTION_DAMAGE_TO_CONSIDER
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_MAX_DISRUPTION_DAMAGE_TO_CONSIDER = 7.5 -- 15 Base
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_DIRECT_DISRUPTION_DAMAGE_FACTOR = 0.005 -- 0.01
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_TRUCK_MAX_FACTOR = 0.2 -- was 0.03 Base 0.3
 --NDefines.NAir.NAVAL_STRIKE_AIR_VS_AIR_PASS_CHANCE = 25.0
-NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = -0.10				-- 5x levels = 50% defense from bombing. Reduced since Technology would otherwise give you above 100% damage reduction.
+NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = -0.05				-- 5x levels = 50% defense from bombing. Reduced since Technology would otherwise give you above 100% damage reduction.
 NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to create a mission
 0.0, -- AIR_SUPERIORITY
 0.0, -- CAS
@@ -293,6 +293,9 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 0.0, -- SAM
 0.0, -- BARRAGE
 }
+--NDefines.NAir.DETECT_EFFICIENCY_BASE = 0.10						-- Base value for detection efficiency (once something detected, efficiency says how many airplanes was detected).
+NDefines.NAir.DETECT_CHANCE_FROM_OCCUPATION = 0.20 				-- How much the controlled provinces in area affects the air detection base value.
+	
 ---------------------------------
 --NDefines.NNavy.SUPPLY_NEED_FACTOR = 0	
 --NDefines.NNavy. dont remove easy to copy paste for testing
@@ -349,6 +352,7 @@ NDefines.NSupply.CAPITAL_SUPPLY_BASE = 30.0 -- base supply for capital
 NDefines.NSupply.CAPITAL_SUPPLY_CIVILIAN_FACTORIES = 0.6 -- supply from one civilian factory
 NDefines.NSupply.CAPITAL_SUPPLY_DOCKYARDS = 0.6 --supply from one naval factory
 NDefines.NSupply.NAVAL_SUPPLY_HUB_REDUCTION_FACTOR = 0.0	-- naval supply hub will reduce the supply need to the fleet by this ratio
+NDefines.NSupply.TRAIN_ANTI_AIR_HIT_CHANCE = 0.99 -- Balancing value to determine the chance of train anti-air hitting an attacking airwing.
 
 --NDefines.NSupply.INFRA_TO_SUPPLY = 0.5  -- 0.3
 --NDefines.NSupply.VP_TO_SUPPLY_BASE = 0.1 --0.2
