@@ -750,13 +750,14 @@ instant_effect = {
 		##### Equipments #####
 		add_equipment_production = { 
 			equipment = { 
-				type = infantry_equipment_1 
+				type = infantry_equipment_1
 				creator = "ITA" 
 			} 
 
 			requested_factories = 4 
 			progress = 0.1 
 			efficiency = 50 
+			industrial_manufacturer = mio:ITA_beretta_organization
 		} 
 
 		add_equipment_production = { 
@@ -767,20 +768,57 @@ instant_effect = {
 
 			requested_factories = 1 
 			progress = 0.3 
-			efficiency = 50 
+			efficiency = 50
+			industrial_manufacturer = mio:ITA_ansaldo_train_organization
 		} 
 
 		add_equipment_production = { 
 			equipment = { 
-				type = light_tank_chassis_1 
+				type = artillery_equipment_1 
 				creator = "ITA" 
-				version_name = "L3/35"
+			} 
+
+			requested_factories = 1 
+			progress = 0.3 
+			efficiency = 50
+			industrial_manufacturer = mio:ITA_breda_organization
+		}
+
+		add_equipment_production = { 
+			equipment = { 
+				type = anti_air_equipment_1 
+				creator = "ITA" 
+			} 
+
+			requested_factories = 1 
+			progress = 0.3 
+			efficiency = 50
+			industrial_manufacturer = mio:ITA_breda_organization
+		}
+
+		add_equipment_production = { 
+			equipment = { 
+				type = anti_tank_equipment_1 
+				creator = "ITA" 
+			} 
+
+			requested_factories = 1 
+			progress = 0.3 
+			efficiency = 50
+			industrial_manufacturer = mio:ITA_breda_organization
+		}
+
+		add_equipment_production = { 
+			equipment = { 
+				type = train_equipment_3
+				creator = "ITA" 
 			} 
 
 			requested_factories = 1 
 			progress = 0.4 
 			efficiency = 50 
-		} 
+			industrial_manufacturer = mio:ITA_ansaldo_train_organization
+		}
 
 		add_equipment_production = { 
 			equipment = { 
@@ -791,6 +829,7 @@ instant_effect = {
 			requested_factories = 2 
 			progress = 0.4 
 			efficiency = 50 
+			industrial_manufacturer = mio:ITA_lancia_organization
 		}
 	}
 } 
