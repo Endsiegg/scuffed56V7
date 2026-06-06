@@ -571,17 +571,21 @@ equipment_modules = {
 		abbreviation = "s3m"
 		category = tank_super_heavy_turret_type
 		sfx = sfx_ui_sd_module_turret
+		forbid_equipment_type = {
+			artillery
+			anti_air
+			anti_tank
+			flame
+		}	
 
 		allowed_module_categories = {
 			main_armament_slot = {
-				tank_medium_main_armament
-				tank_heavy_main_armament
 				tank_super_heavy_main_armament
 			}
 		}
 		add_stats = {
 			build_cost_ic = 10
-			#reliability = -0.1
+			reliability = -0.1
 			maximum_speed = -0.2
 			breakthrough = 24
 		}
@@ -597,18 +601,21 @@ equipment_modules = {
 		abbreviation = "s4m"
 		category = tank_super_heavy_turret_type
 		sfx = sfx_ui_sd_module_turret
-
+		forbid_equipment_type = {
+			artillery
+			anti_air
+			anti_tank
+			flame
+		}	
 		allowed_module_categories = {
 			main_armament_slot = {
-				tank_medium_main_armament
-				tank_heavy_main_armament
 				tank_super_heavy_main_armament
 			}
 		}
 		add_stats = {
 			build_cost_ic = 12
-			#reliability = -0.25
-			maximum_speed = -0.4
+			reliability = -0.25
+			maximum_speed = -0.5
 			breakthrough = 35
 		}
 		dismantle_cost_ic = 1
@@ -1262,19 +1269,18 @@ equipment_modules = {
 		allow_equipment_type = anti_tank
 
 		add_stats = {
-			soft_attack = 45
+			soft_attack = 35
 			hard_attack = 45
-			ap_attack = 250
+			ap_attack = 225
 			build_cost_ic = 12.5
-			maximum_speed = -0.3
-			reliability = -0.3
+			maximum_speed = -0.6
+			reliability = -0.35
 		}
 		dismantle_cost_ic = 1
 		xp_cost = 0
 		build_cost_resources = {
-			tungsten = 4
-			chromium = 3
-			steel = 4
+			tungsten = 5
+			chromium = 2
 		}
 	}
 

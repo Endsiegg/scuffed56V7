@@ -18,7 +18,7 @@ NDefines.NDiplomacy.OPINION_FOR_DEMO_FROM_WT_GENERATION = -1.0		-- How much less
 
 NDefines.NDiplomacy.PEACE_SCORE_TRANSFERRED_FROM_FACTION_INFLUENCE = 0 --R56: Influence is currently (12/2025) incredibly arbitrary, do not redistribute points based on it like vanilla
 
-NDefines.NDiplomacy.TENSION_CB_WAR = 5				-- R56: Lowered to balance out increase of peace conference tension
+--NDefines.NDiplomacy.TENSION_CB_WAR = 7				-- R56: Lowered to balance out increase of peace conference tension
 --NDefines.NDiplomacy.TENSION_DEMILITARIZE_ZONE = 0	-- R56: Was negative, no free tension reduction from abusing this
 --NDefines.NDiplomacy.TENSION_ANNEX_NO_CLAIM = 0.6	-- R56: Was really low
 --NDefines.NDiplomacy.TENSION_ANNEX_CLAIM = 0.3		-- R56: Was really low
@@ -116,14 +116,14 @@ NDefines.NProduction.ANNEX_CONVOYS_RATIO = 1.0			-- How many convoys will be tra
 NDefines.NOperatives.OPERATIVE_MISSION_DETECTION_CHANCE_FACTOR = {
     -- Factor multiplied to the detection chance of an agent on mission before the offsets
     0.0, -- NoMission
-    0.5, -- BuildIntelNetwork
-    1.0, -- QuietIntelNetwork
+    1.0, -- BuildIntelNetwork
+    0.5, -- QuietIntelNetwork
     1.0, -- CounterIntelligence
     0.0, -- RootOutResistance
-    3.0, -- BoostIdeology
+    1.0, -- BoostIdeology
     0.0, -- ControlTrade
     0.0, -- DiplomaticPressure
-    3.0, -- Propaganda
+    5.0, -- Propaganda
 }
 NDefines.NOperatives.BOOST_IDEOLOGY_NATIONAL_COVERAGE_FACTOR = 1.0				-- used to compute the drift factor as follow: BASE * SUB_NETWORK_NC * BOOST_IDEOLOGY_DEFENSE_FACTOR
 NDefines.NOperatives.BOOST_IDEOLOGY_MAX_DRIFT_BY_OPERATIVE = 0.3				-- the maximum drift an operative can cause a negative value means no maximum
@@ -236,7 +236,7 @@ NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {	-- 0 armor will always r
     0.75,
     0.60,
     0.50,
-    0.00, --there isn't much point setting this higher than 0
+    0.25, -- No longer set to zero, now to 25% ~EndSieg
 }
 NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.75 -- damage reduction if armor outclassing enemy
 NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.5 -- damage reduction if armor outclassing enemy
