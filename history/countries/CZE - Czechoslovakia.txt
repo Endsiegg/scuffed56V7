@@ -98,7 +98,10 @@ set_technology = {
 	fuel_silos = 1
 	fuel_refining = 1
 	synth_oil_experiments = 1
+	aluminum_production_1 = 1 
+	steel_production_1 = 1
 	basic_train = 1
+	armored_train = 1
 	basic_fortification_tech = 1
 }
 
@@ -144,11 +147,19 @@ create_equipment_variant = {
 	show_position = no
 	mark_older_equipment_obsolete = yes
 }
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 5000
+}
 create_equipment_variant = {
 	type = artillery_equipment_1
 	design_team = mio:CZE_skoda_artillery_organization
 	show_position = no
 	mark_older_equipment_obsolete = yes
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 160
 }
 create_equipment_variant = {
 	type = anti_tank_equipment_1
@@ -156,17 +167,29 @@ create_equipment_variant = {
 	show_position = no
 	mark_older_equipment_obsolete = yes
 }
+add_equipment_to_stockpile = {
+	type = anti_tank_equipment_1
+	amount = 80
+}
 create_equipment_variant = {
 	type = anti_air_equipment_1
 	design_team = mio:CZE_skoda_artillery_organization
 	show_position = no
 	mark_older_equipment_obsolete = yes
 }
+add_equipment_to_stockpile = {
+	type = anti_air_equipment_1
+	amount = 80
+}
 create_equipment_variant = {
 	type = motorized_equipment_1
 	design_team = mio:CZE_praga_organization
 	show_position = no
 	mark_older_equipment_obsolete = yes
+}
+add_equipment_to_stockpile = {
+	type = motorized_equipment_1
+	amount = 600
 }
 create_equipment_variant = {
 	type = transport_plane_equipment_1
@@ -183,6 +206,10 @@ if = {
 		design_team = mio:CZE_zbrojovka_vsetin_organization
 		show_position = no
 		mark_older_equipment_obsolete = yes
+	}
+	add_equipment_to_stockpile = {
+		type = support_equipment_1
+		amount = 100
 	}
 }
 if = {
@@ -365,19 +392,10 @@ if = {
 		}
 	}
 	add_equipment_to_stockpile = {
-    	type = light_tank_chassis_1
-    	amount = 50
+    	type = light_tank_chassis_2
+    	amount = 120
 		producer = CZE
 		variant_name = "Lt vz. 34"
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	add_equipment_to_stockpile = {
-		type = light_tank_equipment_1
-		amount = 50
 	}
 }
 
@@ -390,6 +408,24 @@ if = {
 	create_equipment_variant = {
     	name = "Lokomotiva 464"
     	type = train_equipment_1
+		mark_older_equipment_obsolete = yes
+		design_team = mio:CZE_CKD_plzen_organization
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_1
+		amount = 40
+		producer = CZE
+		variant_name = "Lokomotiva 464"
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Arms Against Tyranny"
+		has_dlc = "Peace For Our Time"
+	}
+	create_equipment_variant = {
+    	name = "Lokomotiva 575"
+    	type = train_equipment_3
 		mark_older_equipment_obsolete = yes
 		design_team = mio:CZE_CKD_plzen_organization
 	}
