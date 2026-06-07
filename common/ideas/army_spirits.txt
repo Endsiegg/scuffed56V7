@@ -234,14 +234,14 @@ ideas = {
 			visible = { has_doctrine = new_mobile_warfare }
 			modifier = {
 				custom_modifier_tooltip = mobile_warfare_academy_spirit_tt
-				trait_panzer_leader_xp_gain_factor = 0.2
+				trait_panzer_leader_xp_gain_factor = 0.25
 				experience_gain_light_armor_training_factor = 0.25
-				experience_gain_light_armor_combat_factor = 0.15
+				experience_gain_light_armor_combat_factor = 0.25
 				experience_gain_medium_armor_training_factor = 0.25
-				experience_gain_medium_armor_combat_factor = 0.15				
+				experience_gain_medium_armor_combat_factor = 0.25
 				experience_gain_heavy_armor_training_factor = 0.25
-				experience_gain_heavy_armor_combat_factor = 0.15
-				tank_manufacturer_cost_factor = -0.25
+				experience_gain_heavy_armor_combat_factor = 0.25
+				tank_manufacturer_cost_factor = -0.75
 			}
 			ai_will_do = {
 				factor = 1.5
@@ -274,7 +274,7 @@ ideas = {
 				trait_engineer_xp_gain_factor = 0.2
 				trait_fortress_buster_xp_gain_factor = 0.1
 				trait_scavenger_xp_gain_factor = 0.1
-				#fortification_damage = 0.1
+				fortification_damage = 0.1
 				initiative_factor = 0.04
 			}
 			ai_will_do = {
@@ -413,7 +413,7 @@ ideas = {
 			}
 
 			modifier = {
-				automatic_grant_medal_chance = 0.50
+				automatic_grant_medal_chance = 0.99
 				unit_medal_effectiveness = -0.25    		  			    			    			 			    			 				
 			}
 
@@ -575,7 +575,7 @@ ideas = {
 			visible = { has_government = democratic }
 			modifier = {
 				experience_gain_army_factor = 0.25
-				army_advisor_cost_factor = -0.25 #Vanilla 50
+				army_advisor_cost_factor = -0.50 #Vanilla 50
 				reassignment_duration_factor = -0.25
 			}
 			ai_will_do = {
@@ -757,7 +757,7 @@ ideas = {
 				unit_light_sp_artillery_brigade_design_cost_factor = -1
 				unit_medium_sp_artillery_brigade_design_cost_factor = -1
 				unit_heavy_sp_artillery_brigade_design_cost_factor = -1
-				unit_super_heavy_sp_artillery_brigade_design_cost_factor = -1
+				#unit_super_heavy_sp_artillery_brigade_design_cost_factor = -1
 				unit_rocket_artillery_brigade_design_cost_factor = -1
 				unit_rocket_artillery_design_cost_factor = -1
 				unit_mot_rocket_artillery_brigade_design_cost_factor = -1
@@ -852,7 +852,7 @@ ideas = {
 			}
 			modifier = {
 				experience_gain_infantry_combat_factor = 0.05
-				special_forces_cap = 0.05
+				special_forces_cap = 0.15
 				special_forces_training_time_factor = 0.1
 				special_forces_out_of_supply_factor = -0.1
 			#	unit_marine_design_cost_factor = -1
@@ -890,7 +890,7 @@ ideas = {
 				has_dlc = "By Blood Alone"
 			}
 			modifier = {
-				grant_medal_cost_factor = -0.5
+				grant_medal_cost_factor = -1.0
 				field_officer_promotion_penalty = -1.0
 			}
 			ai_will_do = {
@@ -904,7 +904,7 @@ ideas = {
 
 		living_off_the_land_army_spirit = {
 			ledger = army
-			visible = { has_dlc = "No Compromise, No Surrender" }
+			#visible = { has_dlc = "No Compromise, No Surrender" }
 			available = { 	#56 - Adding support for Asym
 				OR = {
 					has_doctrine = mass_assault
@@ -930,12 +930,12 @@ ideas = {
 
 		subsidized_contracts_army_spirit = {
 			ledger = army
-			visible = { 
-				AND = {
-				has_dlc = "No Compromise, No Surrender"
-				has_dlc = "La Resistance" 
-				}
-			}
+			# visible = { 
+			# 	AND = {
+			# 	has_dlc = "No Compromise, No Surrender"
+			# 	has_dlc = "La Resistance" 
+			# 	}
+			# }
 			available = {
 				OR = {
 					#has_doctrine = new_mobile_warfare	 	#56 - We currently don't have any subdoctrine checks on our other stuff; I'll follow by example here
@@ -1041,7 +1041,7 @@ ideas = {
 			}
 			modifier = {
 				resistance_target_on_our_occupied_states = 0.25
-				resistance_growth_on_our_occupied_states = 0.5			    		  			    			    			 			    			 				
+				resistance_growth_on_our_occupied_states = 0.25			    		  			    			    			 			    			 				
 			}
 			ai_will_do = {
 				factor = 1
@@ -1070,7 +1070,7 @@ ideas = {
 			}
 
 			modifier = {
-				army_experience_from_volunteers = 0.5    		  			    			    			 			    			 				
+				army_experience_from_volunteers = 0.75    		  			    			    			 			    			 				
 			}
 
 			ai_will_do = {
@@ -1376,6 +1376,7 @@ ideas = {
 				OR = { 
 					has_doctrine = superior_firepower
 					has_doctrine = tank_destroyer_force
+					has_doctrine = anti_tank_frontline
 				}
 			}
 			
@@ -1466,6 +1467,7 @@ ideas = {
 				OR = {
 				has_doctrine = superior_firepower
 				has_doctrine = flying_batteries
+				has_doctrine = fire_concentration
 				}
 			}
 				
@@ -1531,19 +1533,19 @@ ideas = {
 			ledger = army		
 			available = {
 				OR = {
-					has_doctrine = new_mobile_warfare
-					has_doctrine = superior_firepower
-					has_doctrine = grand_battleplan
+				#	has_doctrine = new_mobile_warfare
+				#	has_doctrine = superior_firepower
+				#	has_doctrine = grand_battleplan
 					has_doctrine = mass_assault
 					has_doctrine = r56_guerilla_warfare
 				}
 			}
-			visible = { has_doctrine = r56_guerilla_warfare }
+			#visible = { has_doctrine = r56_guerilla_warfare }
 			modifier = {
 				tactic_guerrilla_tactics_preferred_weight_factor = 1
 				tactic_double_envelopment_preferred_weight_factor = 1
-				#supply_consumption_factor = -0.05
-				#experience_gain_infantry_combat_factor = 0.05
+				supply_consumption_factor = -0.05
+				experience_gain_infantry_combat_factor = 0.05
 				out_of_supply_factor = -0.10
 				#experience_gain_militia_combat_factor = 0.10
 				equipment_capture_factor = 0.10
