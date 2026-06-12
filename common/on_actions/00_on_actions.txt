@@ -24,7 +24,53 @@ on_actions = {
 				}
 			}
 		}
-
+		# Add Dams
+		effect = {
+			IF = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+				}
+				285 = {
+					add_building_construction = {
+						type = cataract_dam_mountain
+						level = 1
+						instant_build = yes
+						province =  4864
+					}
+				}
+				ELSE = {
+					285 = {
+						add_building_construction = {
+							type = dam
+							level = 1
+							instant_build = yes
+							province =  4864
+						}
+					}
+				}
+			}
+		}
+		#Setup Colonial Powers
+		effect = {
+			if = {
+				limit = {
+					any_country = {
+						any_owned_state = {
+							NOT = { is_core_of = PREV }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							NOT = { is_core_of = PREV }
+						}
+					}
+					add_to_array = { global.colonial_powers = THIS }
+				}
+			}
+		}
+		
 		#Setup Asian + Oceania Nations
 		effect = {
 			IF = {
@@ -129,6 +175,36 @@ on_actions = {
 				}
 			}
 		}
+		#Setup Middle Eastern Nations
+		effect = {
+			IF = {
+				limit = {
+					any_country = {
+						any_core_state = {
+							is_on_continent = middle_east
+						}
+						capital_scope = {
+							is_on_continent = middle_east
+						}
+						OR =  {
+							exists = yes
+							exists = no
+						}
+					}
+				}
+				every_possible_country = {
+					limit = {
+						any_core_state = {
+							is_on_continent = middle_east
+						}
+						capital_scope = {
+							is_on_continent = middle_east
+						}
+					}
+					add_to_array = { global.middle_eastern_countries = THIS }
+				}
+			}
+		}
 
 	}
 	# country
@@ -165,6 +241,52 @@ on_actions = {
 		}
 	}
 
+	on_daily_SWE = {
+		effect = {
+			if = {
+				limit = {
+					#is_ironman =  = yes
+					original_tag = SWE
+					has_completed_focus = SWE_per_albin_bus
+					divisions_in_state = {
+						state = 141
+						size > 0 # use < or ><state_id>
+						unit = bus # optional. specific unit eg. mountaineers, light_tank
+					}
+				}
+				set_variable = { global.achievement_days_since_bus_left_stockholm = 0 }
+		
+			}
+
+			if = {
+				limit = {
+					divisions_in_state = {
+						state = 141
+						size < 1 # use < or ><state_id>
+						unit = bus # optional. specific unit eg. mountaineers, light_tank
+					}
+					check_variable = { global.achievement_days_since_bus_left_stockholm < 100 }
+				}
+				add_to_variable = { global.achievement_days_since_bus_left_stockholm = 1 }
+			}
+			
+			if = {
+				limit = {
+					original_tag = SWE
+					has_completed_focus = SWE_per_albin_bus
+					divisions_in_state = {
+						state = 681
+						size > 0 # use < or ><state_id>
+						unit = bus # optional. specific unit eg. mountaineers, light_tank
+					}
+
+					check_variable = { global.achievement_days_since_bus_left_stockholm < 19 }
+				}
+
+				set_global_flag = achievement_has_managed_to_travel_to_cape_town_in_18_days
+			}
+		}
+	}
 
 	# Ace pilots
 	# country, FROM = ace
@@ -3645,6 +3767,63 @@ on_actions = {
 		}
 	}
 
+	on_deployed_leader_defeated = {
+		effect = {
+			if = {
+				limit = { can_be_captured = yes }
+				# TODO TAOG: a percentage chance to be captured? Other effects otherwise?
+
+				# is_in_state requires the leader to still be deployed, so check before capture_by
+				if = {
+					limit = {
+						is_in_state = 224
+						FROM = { is_ai = no }
+					}
+					FROM = {
+						set_country_flag = achievement_captured_general_in_bryansk
+					}
+				}
+
+				capture_by = FROM
+				FROM = {
+					if = {
+						limit = { is_ai = no }
+						set_country_flag = achievement_captured_a_general
+					}
+				}
+				if = {
+					limit = {
+						is_field_marshal = yes
+						FROM = { is_ai = no }
+					}
+					FROM = {
+						set_country_flag = achievement_captured_a_field_marshal
+					}
+				}
+				if = {
+					limit = {
+						tag = GER
+						FROM = { is_ai = no }
+					}
+					if = {
+						limit = { is_character = GER_erwin_rommel }
+						FROM = { set_country_flag = achievement_captured_rommel }
+					}
+				}
+			}
+			else = {
+				# uncapturable leaders (e.g. country leaders) get wounded instead
+				if = {
+					limit = { NOT = { has_trait = wounded } }
+					add_timed_unit_leader_trait = {
+						trait = wounded
+						days = 90
+					}
+				}
+			}
+		}
+	}
+
 	# root country that invades
 	# scope state that is invaded
 	# from scope state that the invasion started
@@ -3690,12 +3869,48 @@ on_actions = {
 			}
 		}
 	}
+	on_unit_leader_promote_from_ranks_veteran = { #Unit leader scope, FROM is unit
+		effect = {
+			if = {
+				limit = {
+					is_navy_leader = yes
+					OWNER = { is_ai = no }
+				}
+				OWNER = { set_country_flag = achievement_navy_promoted_from_ranks }
+			}
+		}
+	}
 
+	on_unit_leader_promote_from_ranks_green = { #Unit leader scope, FROM is unit
+		effect = {
+			if = {
+				limit = {
+					is_navy_leader = yes
+					OWNER = { is_ai = no }
+				}
+				OWNER = { set_country_flag = achievement_navy_promoted_from_ranks }
+			}
+		}
+	}
 	on_add_history = { #Unit Scope
 		effect = {
 			#add_unit_medal_to_latest_entry = {
 			#	unit_medals = iron_cross_second_class
 			#} #This would add a unit medal to the history entry you just received
+		}
+	}
+
+	# Achievement: "Steiner!" - track if GER reaches 30% surrender progress after Barbarossa
+	on_daily_GER = {
+		effect = {
+			if = {
+				limit = {
+					date > 1941.06.22
+					surrender_progress > 0.30
+					NOT = { has_country_flag = achievement_steiner_reached_surrender }
+				}
+				set_country_flag = achievement_steiner_reached_surrender
+			}
 		}
 	}
 
@@ -3864,6 +4079,100 @@ on_actions = {
 					GER_add_mefo_bills_penalty = yes #Clamps CGFF too 100% and adds penalties
 				}
 				GER_reduce_mefo_bills_penalty = yes #This is a fail-safe, in case it wasn't lowered elsewhere but should have been
+			}
+		}
+	}
+
+	on_monthly_CZE = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = CZE_update_weapon_sales
+				}
+				clr_country_flag = CZE_update_weapon_sales
+				if = {
+					limit = {
+						has_idea = CZE_skoda_weapon_sales_dummy_idea
+					}
+					subtract_from_variable = { weapon_sales_industry_points = weapon_sales_factory_var }
+					subtract_from_variable = { CZE_weapon_sales_duration = 1 }
+				}
+	
+				if = {
+					limit = {
+						OR = {
+							check_variable = { weapon_sales_factory_var = 4 }
+							check_variable = { weapon_sales_industry_points > 20 }
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								NOT = {
+									has_idea = CZE_skoda_weapon_sales_dummy_idea
+								}
+								check_variable = { weapon_sales_factory_var = 2 }
+							}
+						}
+						if = {
+							limit = {
+								check_variable = { weapon_sales_factory_var = 2 }
+							}
+							remove_ideas = CZE_skoda_weapon_sales_dummy_idea
+						}
+						set_variable = { weapon_sales_factory_var = 4 }
+						set_variable = { CZE_weapon_sales_duration = weapon_sales_industry_points }
+						divide_variable = { CZE_weapon_sales_duration = weapon_sales_factory_var }
+						add_timed_idea = {
+							idea = CZE_skoda_weapon_sales_dummy_idea
+							months = CZE_weapon_sales_duration
+						}
+						add_offsite_building = { type = industrial_complex level = weapon_sales_factory_var }
+					}
+					else = {
+						set_variable = { CZE_weapon_sales_duration_2 = weapon_sales_industry_points }
+						divide_variable = { CZE_weapon_sales_duration_2 = weapon_sales_factory_var }
+
+						set_variable = { CZE_weapon_sales_duration_temp = CZE_weapon_sales_duration }
+						set_variable = { CZE_weapon_sales_duration = CZE_weapon_sales_duration_2 }					#set variable to new idea duration
+						subtract_from_variable = { CZE_weapon_sales_duration_2 = CZE_weapon_sales_duration_temp }	#calculate months to add
+
+						modify_timed_idea = {
+							idea = CZE_skoda_weapon_sales_dummy_idea
+							months = CZE_weapon_sales_duration_2
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							NOT = {
+								has_idea = CZE_skoda_weapon_sales_dummy_idea
+							}
+						}
+						set_variable = { weapon_sales_factory_var = 2 }
+						set_variable = { CZE_weapon_sales_duration = weapon_sales_industry_points }
+						divide_variable = { CZE_weapon_sales_duration = weapon_sales_factory_var }
+						add_timed_idea = {
+							idea = CZE_skoda_weapon_sales_dummy_idea
+							months = CZE_weapon_sales_duration
+						}
+						add_offsite_building = { type = industrial_complex level = weapon_sales_factory_var }
+					}
+					else = {			#idea was previously already there
+						set_variable = { CZE_weapon_sales_duration_2 = weapon_sales_industry_points }
+						divide_variable = { CZE_weapon_sales_duration_2 = weapon_sales_factory_var }
+
+						set_variable = { CZE_weapon_sales_duration_temp = CZE_weapon_sales_duration }
+						set_variable = { CZE_weapon_sales_duration = CZE_weapon_sales_duration_2 }					#set variable to new idea duration
+						subtract_from_variable = { CZE_weapon_sales_duration_2 = CZE_weapon_sales_duration_temp }	#calculate months to add
+
+						modify_timed_idea = {
+							idea = CZE_skoda_weapon_sales_dummy_idea
+							months = CZE_weapon_sales_duration_2
+						}
+					}
+				}
 			}
 		}
 	}
