@@ -396,8 +396,9 @@ NDefines.NSupply.TRAIN_ANTI_AIR_HIT_CHANCE = 0.99 -- Balancing value to determin
 -- NDefines.NAI.INDUSTRIAL_ORG_RESEARCH_BONUS_FACTOR 1.0 -- Research bonus will be multiplied by this factor when evaluating design teams
 --------------------------------------------------
 ----10 SUPP COMPANIES DEFINES
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 3
+--NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2
+--NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 3
+--------------------------------------------------------
 NDefines.NDoctrines.TRAINING_MASTERY_GAIN_FACTOR = 0.25
 NDefines.NDoctrines.MILITARY_ATTACHE_MASTERY_TRANSFER_FACTOR = 0.25
 NDefines.NDoctrines.MASTERY_BANK_MAX = 400
