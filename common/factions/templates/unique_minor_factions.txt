@@ -702,6 +702,7 @@ faction_template_PRC_the_peoples_front = {
 		change_leader_rule_manifest_below_35
 	}
 }
+
 ### R56 ### # strangely putting them in another file caused problems
 # Qing Sphere Manchuria
 faction_template_MAN_qing_sphere = {
@@ -1303,24 +1304,77 @@ faction_template_ECU_COL_counter_faction = { # ecuador makes a faction with Pana
 	
 }
 
+##############
+#### TAOG ####
+##############
+faction_template_AST_pacific_resistance = {
+	name = AST_pacific_resistance
+	manifest = faction_manifest_suppress_regional_fascism 
+	icon = GFX_faction_logo_generic_19 
 
+	goals = {
 
+		# Short 
+		faction_goal_unlock_research
 
+		# Medium 
 
+		# Long 
+		faction_goal_defeating_our_enemies
+		
+	}
 
+	default_rules = {
+		dismissal_rule_ideology_not_democratic
+		government_in_exile_allowed
+	}
+}
 
+faction_template_AST_nations_of_the_empire = {
+	name = AST_nations_of_the_empire
+	manifest = faction_manifest_protector_of_peace  
+	icon = GFX_faction_logo_generic_15 
 
+	goals = {
 
+		# Short 
+		faction_goal_unlock_research
 
+		# Medium 
 
+		# Long 
+		faction_goal_industrial_domination
+		
+	}
 
+	default_rules = {
+		government_in_exile_allowed
+	}
+}
 
+faction_template_SIA_asian_democratic_compact = {
+	name = asian_democratic_compact
+	manifest = faction_manifest_protector_of_peace 
+	icon = GFX_faction_logo_generic_12
+	goals = {
 
+		# Short 
+		faction_goal_unlock_research
+		faction_goal_unlock_military
+		# Medium 
+		faction_goal_control_indonesian_riches
+		faction_goal_control_chinese_metals
+		# Long 
+		faction_goal_resource_control
+		
+	}
 
+	default_rules = {
+		faction_peace_take_claimed_focus
+		dismissal_rule_offensive_war
+		goals_only_faction_leader
+		manpower_contribution_high
+		war_declaration_rule_faction_leader_only
 
-
-
-
-
-
-
+	}
+}
