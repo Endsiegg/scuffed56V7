@@ -78,8 +78,8 @@ set_variable = { SIA_propaganda_undauntedly_love_nation_cost = constant:propagan
 set_variable = { SIA_propaganda_campaigns_taken = 0 } #Used as a requirement
 
 
-set_war_support = 0
-set_stability = 0.07 #+12 from ruling party
+set_war_support = 0.5
+set_stability = 0.5 #+12 from ruling party
 
 
 if = {
@@ -159,8 +159,8 @@ if = {
 	set_technology = {
 		basic_naval_mines = 1
 		early_ship_hull_light = 1
-		basic_battery = 1
-		basic_torpedo = 1
+	#	basic_battery = 1
+	#	basic_torpedo = 1
 		coastal_defense_ships = 1
 		early_ship_hull_submarine = 1
 		early_ship_hull_heavy = 1
@@ -178,140 +178,6 @@ if = {
 }
 set_convoys = 15
 
-1939.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	if = {
-		limit ={
-			has_dlc = "Thunder at Our Gates"
-		}
-
-				##1936
-		complete_national_focus =SIA_for_the_preservation_of_siamese_independence		#35
-		complete_national_focus =SIA_the_khana_ratsadon 									#7
-		complete_national_focus =SIA_shuffle_pridi_to_the_minister_of_interior			#35
-		complete_national_focus =SIA_thammasat_university								#70
-		complete_national_focus =SIA_military_academies_indoctrination					#35
-		complete_national_focus =SIA_hold_military_parades								#70
-		complete_national_focus =SIA_sideline_disloyal_officers							#35
-
-		complete_national_focus =SIA_the_army_of_siam									#35
-		complete_national_focus =SIA_intermediate_war_preparation						#35
-													#357
-
-		complete_national_focus =SIA_industrialization_drive								#35
-		complete_national_focus =SIA_revision_of_unequal_treaties						#35
-		complete_national_focus =SIA_thai_rice_company									#35
-		complete_national_focus =SIA_diversity_foreign_reserves							#70
-		complete_national_focus =SIA_contingency_funds									#70
-		complete_national_focus =SIA_all_weather_roads									#35
-		complete_national_focus =SIA_reduction_of_agricultural_yield_taxes				#35
-		complete_national_focus =SIA_sell_privy_purse_lands								#35
-
-		complete_national_focus =SIA_a_fledgling_tobacco_industry						#35
-		complete_national_focus =SIA_drum_up_irredentism									#35
-		complete_national_focus =SIA_siam_cement_group									#35
-		complete_national_focus =SIA_boon_rawd_brewery									#35
-		complete_national_focus =SIA_revise_the_taxation_system							#70
-		complete_national_focus =SIA_increase_rice_exports								#35
-		complete_national_focus =SIA_direct_funds_from_the_military_towards_development	#35
-		complete_national_focus =SIA_prepare_northern_infrastructure_for_war				#35
-		complete_national_focus =SIA_phibuns_premiership									#70
-																#1092
-		#1939
-	}
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "SIA_1939"
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "SIA_1939_naval_mtg"
-		else = {
-			set_naval_oob = "SIA_1939_naval_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "SIA_1939_air_bba"
-			set_technology = {
-				bba_early_transport_plane = 1
-			}
-		else = {
-			set_air_oob = "SIA_1939_air_legacy"
-			set_technology = {
-				early_bomber = 1
-				early_transport_plane = 1
-			}
-		}
-	}
-
-	set_technology = {
-		tech_support = 1
-		tech_recon = 1
-		support_weapons = 1
-		interwar_artillery = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		fuel_silos = 1
-		oil_processing = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-	}
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "No Step Back" }
-		}
-		set_technology = {
-			gwtank = 1
-		}
-	}
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		set_technology = {
-			basic_submarine = 1
-			basic_heavy_cruiser = 1
-		}
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		set_technology = {
-			early_ship_hull_submarine = 1
-			basic_ship_hull_submarine = 1
-			early_ship_hull_cruiser = 1
-			#basic_medium_battery = 1
-		}
-	}
-}
-
 
 set_politics = {
 	ruling_party = neutrality
@@ -322,21 +188,6 @@ set_politics = {
 set_popularities = {
 	fascism = 20
 	neutrality = 80
-}
-
-1939.1.1 = {
-	set_politics = {
-		ruling_party = fascism
-		last_election = "1936.1.1"
-		election_frequency = 48
-		elections_allowed = no
-	}
-	set_popularities = {
-		fascism = 100
-	}
-
-	promote_character = SIA_plaek_phibunsongkhram
-	retire_character = SIA_nangklao_suriyawongse
 }
 
 ### VARIANTS ###
@@ -414,47 +265,6 @@ if = {
 			fixed_ship_torpedo_slot = ship_torpedo_1
 			mid_1_custom_slot = empty
 			rear_1_custom_slot = empty
-		}
-	}
-}
-
-# 1939 Start #
-1939.1.1 = {
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		# Ship variants #
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		# Submarines #
-		create_equipment_variant = {
-			name = "Vilun Class"				
-			type = ship_hull_submarine_1
-			name_group = SIA_SS_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_torpedo_slot = ship_torpedo_sub_1
-				fixed_ship_engine_slot = sub_ship_engine_2
-				rear_1_custom_slot = ship_torpedo_sub_1
-			}
-		}
-		# Cruisers #
-		create_equipment_variant = {
-			name = "Sri Ayuthia Class"
-			type = ship_hull_cruiser_coastal_defense_ship
-			name_group = SIA_CA_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = ship_medium_battery_2
-				fixed_ship_anti_air_slot = ship_anti_air_1
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = cruiser_ship_engine_1
-				fixed_ship_armor_slot = empty
-				mid_1_custom_slot = empty
-				mid_2_custom_slot = empty
-				rear_1_custom_slot = empty
-			}
 		}
 	}
 }
