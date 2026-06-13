@@ -666,7 +666,12 @@ technologies = {
 		enable_subunits = {
 			paratrooper
 		}
-		
+
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_paratrooper
+		}		
+
 		path = {
 			leads_to_tech = paratroopers2
 			research_cost_coeff = 1
@@ -1864,6 +1869,11 @@ technologies = {
 
 	support_weapons = {
 
+		enable_subunits = {
+			fire_support
+			mot_fire_support
+		}
+
 		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
@@ -1939,6 +1949,22 @@ technologies = {
 	}
 	
 	support_weapons2 = {
+
+		field_guns = {
+			defense = 0.1
+			soft_attack = 0.1
+		}
+		fire_support = {
+			defense = 0.15
+			breakthrough = 0.15
+			soft_attack = 0.1
+		}
+
+		mot_fire_support = {
+			defense = 0.15
+			breakthrough = 0.05
+			soft_attack = 0.1
+		}
 
 		category_infantry_and_bicycle = {
 			defense = 0.05
@@ -2030,6 +2056,23 @@ technologies = {
  
 	support_weapons3 = {
 
+		field_guns = {
+			defense = 0.1
+			soft_attack = 0.1
+		}
+
+		fire_support = {
+			defense = 0.15
+			breakthrough = 0.15
+			soft_attack = 0.1
+		}
+
+		mot_fire_support = {
+			defense = 0.15
+			breakthrough = 0.05
+			soft_attack = 0.1
+		}
+
 		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
@@ -2097,6 +2140,22 @@ technologies = {
 	
 	support_weapons4 = {
 
+		field_guns = {
+			defense = 0.1
+			soft_attack = 0.1
+		}
+
+		fire_support = {
+			defense = 0.15
+			breakthrough = 0.15
+			soft_attack = 0.1
+		}
+		mot_fire_support = {
+			defense = 0.15
+			breakthrough = 0.05
+			soft_attack = 0.1
+		}
+		
 		category_infantry_and_bicycle = {
 			defense = 0.05
 			breakthrough = 0.05
@@ -2791,7 +2850,7 @@ technologies = {
 	}
 	
 ###------> Jaeger Troops  <><> <><> <><> <><> <><>
-
+################ SHOCK TROOPS#################
 	shocktroops = {
 
 		enable_subunits = {
@@ -3133,7 +3192,7 @@ technologies = {
 		}
 	}
 	
-	######### FROM JAPANESE FOCUS ##########
+######### FROM JAPANESE FOCUS ##########
 	bicycle_infantry = {
 		
 		allow = {
@@ -3189,7 +3248,7 @@ technologies = {
 		}
 	}
 
-
+############### TURKSIH TREE ######################
 	camelry = {
 		
 		allow = {
@@ -3203,6 +3262,7 @@ technologies = {
 			camelry
 		}		
 	}
+################################ INDIAN FOCUS ############	
 	elephantry = {
 
 		allow = {
@@ -3216,7 +3276,7 @@ technologies = {
 			elephantry
 		}
 	}
-	######### FROM SOVIET FOCUS ##########
+######### FROM SOVIET FOCUS ##########
 	penal_infantry = {
 		
 		allow = {
@@ -3230,7 +3290,7 @@ technologies = {
 			penal_battalion
 		}
 	}	
-
+############### CAMO #############
 	camo = {
 
 		path = {
@@ -3398,8 +3458,8 @@ technologies = {
 			factor = 1
 		}
 	}
-
-	######### FROM ITALIAN FOCUS ##########
+############### CAMO END################
+######### FROM ITALIAN FOCUS ##########
 	blackshirt_assault_battalion_tech = {
 	
 		allow = {
@@ -3437,7 +3497,7 @@ technologies = {
 
 	#Base game has an unfinished tech here, port if implemented
 
-	######### FROM FINNISH FOCUS ##########
+######### FROM FINNISH FOCUS ##########
 	molotov_cocktails_tech = {
 	
 		allow = {
@@ -3559,6 +3619,13 @@ technologies = {
 		}
 	}
 
+ 	militia_tech = {
+ 		allow = { always = no }
+		enable_subunits = {
+			militia
+		}
+	}
+
 	r56_SWE_lynx_armored_car = {	#was elsewhere in the file, but structure is different in R56
 		allow = { always = no }
 		enable_equipments = {
@@ -3613,7 +3680,7 @@ technologies = {
 			}
 		}
    }
-
+############### FROM TOA SHARED FOCUS# ################
 	TOA_jungle_pioneers_support_tech = {
 			
 		allow = {
@@ -3647,7 +3714,7 @@ technologies = {
 		}
 	}
 	
-	######### FROM GERMAN FOCUS ##########
+######## FROM GERMAN FOCUS ##########
 	sturmtruppe_battalion_tech = {
 		
 		allow = {
@@ -3702,7 +3769,7 @@ technologies = {
 	}	
 
 
-	##### FROM BELGIAN FOCUS #####
+##### FROM BELGIAN FOCUS #####
 	BEL_chasseurs_ardennais = { #hidden tech to boost Mountaineers in Forests. Remember to update BEL_chasseurs_ardennais_tt if you change these numbers!
 		
 		allow = {
@@ -3788,7 +3855,7 @@ technologies = {
 		}
 	}
 
-	##### FROM PHILIPPINE FOCUS #####
+##### FROM PHILIPPINE FOCUS #####
 	PHI_battalion_combat_teams = {
 
 		allow = {
@@ -3830,11 +3897,10 @@ technologies = {
 			irregular_infantry
 		}
 	}
-###------> X <><> <><> <><> <><> <><>	
+
 
 	
-###------> X   <><> <><> <><> <><> <><>
-	##### FROM CZECH FOCUS #####
+##### FROM CZECH FOCUS #####
 	#Pfot
 	MUN_CZE_establish_air_defense_zones = { #gained from Establish Air Defense Zones
 
@@ -3972,7 +4038,23 @@ technologies = {
 		}
 	}
 	#End Pfot
+	
 
+#### FROM AUSTRALIAN FOCUS  ####
+
+	northern_territory_recon_support_tech = {
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			northern_territory_recon_support
+		}
+	}
 }
 
 #####-----------------------------------------------------------> End
