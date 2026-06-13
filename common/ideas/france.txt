@@ -1768,7 +1768,7 @@ ideas = {
 			}
 
 			modifier = {
-				communism_drift = -0.05
+				communism_drift = -0.5
 				communism_acceptance = -80
 			}
 		}
@@ -3371,6 +3371,25 @@ ideas = {
 				naval_morale_factor = 0.1
 			}
 		}
+		ABDA_corps_expeditionnaire_spirit = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+
+			targeted_modifier = {
+				tag = JAP
+				defense_bonus_against = 0.10
+			}
+		}		
 	}
 	
 	tank_manufacturer = {
