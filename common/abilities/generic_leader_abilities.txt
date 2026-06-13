@@ -1,4 +1,3 @@
-#####---------------------------------------------------------------------> edited by Greatexperiment
 ability = {
 	force_attack = {
 		name = ABILITY_FORCE_ATTACK
@@ -41,18 +40,13 @@ ability = {
 		cost = 0.22
 		duration = 168
 
-		one_time_effect = {
-			add_temporary_buff_to_units = {
-				combat_offense = 0.2
-				combat_breakthrough = 0.25
+		unit_modifiers = {
+				offence = 0.2
+				breakthrough_factor = 0.25
 				org_damage_multiplier = -1.0
 				str_damage_multiplier = 0.6
 				war_support_reduction_on_damage = 0.2
-				cannot_retreat_while_attacking = 1.0
-
-				days = 7
-				tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
-			}
+				cannot_retreat_while_attacking = 1.0		
 		}
 	}
 
@@ -82,18 +76,13 @@ ability = {
 		cost = 0.22
 		duration = 168
 
-		one_time_effect = {
-			add_temporary_buff_to_units = {
-				combat_defense = 0.2
-				#combat_entrenchment = 0.25
+		unit_modifiers = {
+				defence = 0.2
+				combat_entrenchment = 0.25
 				org_damage_multiplier = -1.0
 				str_damage_multiplier = 0.6
 				war_support_reduction_on_damage = 0.2
-				cannot_retreat_while_defending = 1.0
-
-				days = 7
-				tooltip = ABILITY_LAST_STAND_TOOLTIP
-			}
+				cannot_retreat_while_defending = 1.0			
 		}
 
 		ai_will_do = {
@@ -130,7 +119,7 @@ ability = {
 		duration = 168
 
 		unit_modifiers = {
-			planning_speed = 1.0
+			planning_speed = 2.0
 			#land_reinforce_rate = 1
 		}
 
@@ -349,7 +338,7 @@ ability = {
 		}
 	}
 
-		extra_medics = {
+	extra_medics = {
 		name = ABILITY_EXTRA_MEDICS
 		desc = ABILITY_EXTRA_MEDICS_DESC
 		
