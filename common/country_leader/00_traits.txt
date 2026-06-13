@@ -2852,6 +2852,7 @@ leader_traits = {
 	}
 
 	veteran_communist = {
+		sprite = 12
 		random = no
 		stability_factor = 0.05
 		industrial_capacity_factory = 0.05
@@ -3695,7 +3696,7 @@ leader_traits = {
 	}
 
 	elected_regency_council_pro_axis = { #Regency Council (pro axis)
-		#name = elected_regency_council
+		name = elected_regency_council
 
 		random = no
 		political_power_factor = 0.05
@@ -3705,7 +3706,7 @@ leader_traits = {
 	}
 
 	elected_regency_council_pro_allies = { #Regency Council (pro allies)
-		#name = elected_regency_council
+		name = elected_regency_council
 
 		random = no
 		political_power_factor = 0.05
@@ -8222,6 +8223,14 @@ leader_traits = {
 				has_completed_focus = IRE_finna_fail
 				add = 150
 			}
+			modifier = {
+				original_tag = TAN
+				has_game_rule = {
+					rule = TAN_ai_behavior
+					option = DEMOCRATIC
+				}
+				add = 1
+			}
 		}
 	}
 
@@ -10857,6 +10866,7 @@ leader_traits = {
 		}
 	}
 
+
 	CAS_manufacturer = {
 		random = no
 		equipment_bonus = {
@@ -11057,7 +11067,6 @@ leader_traits = {
 		}
 	}
 
-
 	armored_car_manufacturer = {
 		random = no
 		equipment_bonus = {
@@ -11099,7 +11108,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-	}		
+	}
 
 	assault_gun_manufacturer = {
 		random = no
@@ -11477,7 +11486,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-	}	
+	}
 
 	helicopter_equipment_manufacturer = { #Needs to be tied to a GOT owned check on concern
 		random = no
@@ -11674,6 +11683,30 @@ leader_traits = {
 	}
 
 	central_bank = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	infrastructure_group = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	brewery = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	food_distributor = {
 		random = no
 
 		ai_will_do = {
@@ -11933,6 +11966,7 @@ leader_traits = {
 
 	inventive_genius = {
 		random = no
+		sprite = 13
 
 		political_power_gain = 0.05
 		opinion_gain_monthly_factor = 0.05
@@ -12032,6 +12066,7 @@ leader_traits = {
 		consumer_goods_factor = -0.15
 		trade_opinion_factor = 0.15
 	}
+
 	################################
 	##       NORWAY TRAITS 		  ##
 	################################
@@ -17456,7 +17491,7 @@ leader_traits = {
 				command_power < @tier3_cp_cost
 			}
 		}
-	}	
+	}
 
 	evans_deakin_trait = { #at end for save compat
 		random = no
@@ -18185,6 +18220,16 @@ leader_traits = {
 		defensive_war_stability_factor = 0.1
 	}
 
+	MAL_governor_of_the_straits_settlements_trait  = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.05
+		stability_factor = -0.1
+		production_speed_buildings_factor = 0.05
+
+	}
+
 	bridgebuilder = {
 		sprite = 13
 		random = no
@@ -18335,6 +18380,7 @@ leader_traits = {
 			}
 		}
 	}
+
 ############Pfot - CZE - SLO - RUT
 	CZE_pro_soviet_diplomat = { 
 		random = no
@@ -18368,6 +18414,15 @@ leader_traits = {
 
 		improve_relations_maintain_cost_factor = -0.1
 		trade_opinion_factor = 0.1
+	}
+
+	CZE_exiled_president = { #Needs to be the same as 	CZE_edvard_benesh_eng_exile_ns
+		random = no
+		sprite = 13
+		
+		exile_manpower_factor = 0.25
+		legitimacy_gain_factor = 0.25
+		exiled_government_weekly_manpower = 25
 	}
 
 	de_facto_leader = {
@@ -18759,7 +18814,31 @@ leader_traits = {
 		}
 	}
 
-	INS_trusted_leader = {
+	bold_intelligence_officer = {
+		random = no
+		sprite = 15
+		#new_operative_slot_bonus = 1
+		operative_slot = 1
+		intel_network_gain_factor = 0.15
+		commando_trait_chance_factor = 0.50
+		operation_boost_resistance_cost = -0.25
+		boost_resistance_factor = 0.25
+		operation_make_resistance_contacts_risk = -0.25
+		resistance_damage_to_garrison_on_our_occupied_states = 0.25
+		operation_make_resistance_contacts_cost = -0.25
+	}
+
+	bold_intelligence_officer_no_lar = {
+		random = no
+		sprite = 15
+		subversive_activites_upkeep = -0.30
+		army_intel_factor = 0.25
+		decryption_factor = 0.25
+		resistance_growth_on_our_occupied_states = 0.15
+		resistance_damage_to_garrison_on_our_occupied_states = 0.25
+	}
+
+		INS_trusted_leader = {
 		random = no
 		sprite = 14
 
@@ -19078,27 +19157,24 @@ leader_traits = {
 		experience_gain_army = 0.03
 	}
 
-	
-	bold_intelligence_officer = {
+	bold_intelligence_officer_lesser = {
 		random = no
 		sprite = 15
 		operative_slot = 1
-		intel_network_gain_factor = 0.15
-		commando_trait_chance_factor = 0.50
+		#commando_trait_chance_factor = 0.25
+		operation_boost_resistance_cost = -0.25
 		boost_resistance_factor = 0.25
 		operation_make_resistance_contacts_risk = -0.25
-		resistance_damage_to_garrison_on_our_occupied_states = 0.25
+		operation_make_resistance_contacts_cost = -0.25
 	}
 
-	bold_intelligence_officer_no_lar = {
+	bold_intelligence_officer_no_lar_lesser = {
 		random = no
 		sprite = 15
-		subversive_activites_upkeep = -0.30
-		army_intel_factor = 0.25
-		decryption_factor = 0.25
+		decryption_factor = 0.15
+		subversive_activites_upkeep = -0.15
 		resistance_growth_on_our_occupied_states = 0.15
 		resistance_damage_to_garrison_on_our_occupied_states = 0.25
 	}
-
 }
 
