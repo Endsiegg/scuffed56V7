@@ -3837,7 +3837,11 @@ on_actions = {
 							 size > 0
 							 state = PREV
 						}
-						 has_tech = marines_commandos_demolition 
+						has_mastery_level = {
+							amount = 3
+						 	sub_doctrine = marines_1
+						 	#has_tech = marines_commandos_demolition - old equivalent
+						} 
 					}
 					NOT = { has_state_flag = marines_commando_effect }
 					OWNER = { NOT = { tag = ROOT } }
@@ -3936,7 +3940,12 @@ on_actions = {
 		effect = {
 			if = {
 				limit = { 
-					FROM = { has_tech = paras_dispersed_drop } 
+					FROM = { 
+						has_mastery_level = {
+							amount = 1
+							sub_doctrine = paratroopers_1
+						}
+					 } 
 					NOT = { 
 						has_state_flag = {
 						    flag = para_drop_effect
@@ -3949,7 +3958,12 @@ on_actions = {
 			}
 			if = {
 				limit = { 
-					FROM = { has_tech = paras_combat_drop } 
+					FROM = { 
+						has_mastery_level = {
+							amount = 1
+							sub_doctrine = paratroopers_1
+						}
+					} 
 					NOT = { 
 						has_state_flag = {
 						    flag = para_drop_effect
