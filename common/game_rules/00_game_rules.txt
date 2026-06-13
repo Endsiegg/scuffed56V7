@@ -660,6 +660,7 @@ ARG_ai_behavior = {
 AST_ai_behavior = {
 	name = "AST_AI_BEHAVIOR"
 	group = "RULE_GROUP_AI_BEHAVIOR"
+	required_dlc = "Together for Victory"
 	default = {
 		name = DEFAULT
 		text = "RULE_OPTION_DEFAULT"
@@ -667,29 +668,24 @@ AST_ai_behavior = {
 	}
 	option = {
 		name = COMMUNIST
-		text = "RULE_OPTION_COMMUNIST_AST"
+		text = "RULE_OPTION_COMMUNIST"
 		desc = "RULE_OPTION_COMMUNIST_AST_AI_DESC"
 	}
 	option = {
 		name = DEMOCRATIC_HISTORICAL
-		text = "RULE_OPTION_DEMOCRATIC_HISTORICAL_AST"
+		text = "RULE_OPTION_DEMOCRATIC_HISTORICAL"
 		desc = "RULE_OPTION_DEMOCRATIC_HISTORICAL_AST_AI_DESC"
 		allow_achievements = yes
 	}
 	option = {
 		name = DEMOCRATIC_ALTERNATE
-		text = "RULE_OPTION_DEMOCRATIC_ALTERNATE_AST"
-		desc = "RULE_OPTION_DEMOCRATIC_ALTERNATE_AST_AI_DESC"
-	}
-	option = {
-		name = FASCIST_AF
-		text = "RULE_OPTION_FASCIST_AF_AST"
-		desc = "RULE_OPTION_FASCIST_AF_AST_AI_DESC"
+		text = "RULE_OPTION_DEMOCRATIC_ALTERNATE"
+		desc = "RULE_DEMOCRATIC_ALTERNATE_AST_AI_DESC"
 	}
 	option = {
 		name = FASCIST
-		text = "RULE_OPTION_FASCIST_CTR_AST"
-		desc = "RULE_OPTION_FASCIST_CTR_AST_AI_DESC"
+		text = "RULE_OPTION_FASCIST"
+		desc = "RULE_FASCIST_AST_AI_DESC"
 	}
 	option = {
 		name = RANDOM
@@ -2016,48 +2012,6 @@ ITA_ai_behavior = {
 	}
 }
 
-#-> INS: Indonesia <><>
-INS_ai_behavior = {
-	name = "INS_AI_BEHAVIOR"
-	group = "RULE_GROUP_AI_BEHAVIOR"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_DEFAULT_AI_DESC"
-	}
-	option = {
-		name = COMMUNIST
-		text = "RULE_OPTION_COMMUNIST"
-		desc = "RULE_OPTION_COMMUNIST_INS_AI_DESC"
-	}
-	option = {
-		name = MARHAENIST
-		text = "RULE_OPTION_MARHAENIST"
-		desc = "RULE_OPTION_MARHAENIST_INS_AI_DESC"
-	}
-	option = {
-		name = FASCIST
-		text = "RULE_OPTION_FASCIST"
-		desc = "RULE_OPTION_FASCIST_INS_AI_DESC"
-	}
-	option = {
-		name = DEMOCRATIC
-		text = "RULE_OPTION_DEMOCRATIC"
-		desc = "RULE_OPTION_DEMOCRATIC_INS_AI_DESC"
-	}
-	option = {
-		name = INS_HISTORICAL
-		text = "RULE_OPTION_COLONIAL_INS_HISTORICAL"
-		desc = "RULE_OPTION_COLONIAL_INS_HISTORICAL_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = RANDOM
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_OPTION_RANDOM_AI_DESC"
-	}
-}
-
 IRQ_ai_behavior = {
 	name = "IRQ_AI_BEHAVIOR"
 	group = "RULE_GROUP_AI_BEHAVIOR"
@@ -3080,53 +3034,6 @@ SAU_ai_behavior = {
 	}
 }
 
-#-> SIA: Siam <><>
-SIA_ai_behavior = {
-	name = "SIA_AI_BEHAVIOR"
-	group = "RULE_GROUP_AI_BEHAVIOR"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_DEFAULT_AI_DESC"
-	}
-	option = {
-		name = FASCIST_HISTORICAL
-		text = SIA_historical_phibuns_takeover_r56
-		desc = SIA_historical_phibuns_takeover_r56_desc
-		allow_achievements = yes
-	}
-	option = {
-		name = MONARCHIST
-		text = SIA_songsuradets_conservative_regime_r56
-		desc = SIA_songsuradets_conservative_regime_r56_desc
-	}
-	option = {
-		name = DEMOCRATIC_CONSERVATIVE
-		text = SIA_songsuradet_restores_elections_r56
-		desc = SIA_songsuradet_restores_elections_r56_desc
-	}
-	option = {
-		name = COMMUNIST_PEASANT
-		text = SIA_songsuradet_promotes_wichit_r56
-		desc = SIA_songsuradet_promotes_wichit_r56_desc
-	}
-	option = {
-		name = DEMOCRATIC_LIBERAL
-		text = SIA_pridis_democratic_firebrand_r56
-		desc = SIA_pridis_democratic_firebrand_r56_desc
-	}
-	option = {
-		name = COMMUNIST_SOVIET
-		text = SIA_pridi_prioritizes_national_reform_r56
-		desc = SIA_pridi_prioritizes_national_reform_r56_desc
-	}
-	option = {
-		name = RANDOM
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_OPTION_RANDOM_AI_DESC"
-	}
-}
-
 #-> SOV: Soviet Union <><>
 SOV_ai_behavior = {
 	name = "SOV_AI_BEHAVIOR"
@@ -3684,6 +3591,139 @@ YUG_ai_behavior = {
 	}
 }
 
+AST_AI_BEHAVIOR_TAOG = {
+	name = "AST_AI_BEHAVIOR"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	required_dlc = "Thunder at Our Gates"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = HISTORICAL
+		text = "RULE_OPTION_AST_AI_RANDOM_TAOG_HISTORICAL"
+		desc = "RULE_OPTION_AST_AI_RANDOM_TAOG_HISTORICAL_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ADELA
+		text = "RULE_OPTION_AST_ADELA_FASCIST_TAOG_AI"
+		desc = "RULE_OPTION_AST_ADELA_FASCIST_TAOG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = PETER
+		text = "RULE_OPTION_AST_PETER_FASCIST_TAOG_AI"
+		desc = "RULE_OPTION_AST_PETER_FASCIST_TAOG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = DEMOCRATIC_TAOG
+		text = "RULE_OPTION_AST_RANDOM_DEMOCRATIC_TAOG_AI"
+		desc = "RULE_OPTION_AST_RANDOM_DEMOCRATIC_TAOG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = ANTICOMMONWEALTHCOMMUNIST
+		text = "RULE_OPTION_AST_ANTI_COMMONWEALTH_COMMUNIST_TAOG_AI"
+		desc = "RULE_OPTION_AST_ANTI_COMMONWEALTH_COMMUNIST_TAOG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = COMINTERNCOMMUNIST
+		text = "RULE_OPTION_AST_COMINTERN_COMMUNIST_TAOG_AI"
+		desc = "RULE_OPTION_AST_COMINTERN_COMMUNIST_TAOG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM" 
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+		allow_achievements = no
+	}
+}
+INS_ai_behavior = {
+	name = "INS_ai_behavior"
+	required_dlc = "Thunder at Our Gates"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = TRUE_HISTORICAL
+		text = "RULE_OPTION_TRUE_HISTORICAL_INS_AI"
+		desc = "RULE_OPTION_TRUE_HISTORICAL_INS_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = LOYALIST
+		text = "RULE_OPTION_LOYALIST_INS_AI"
+		desc = "RULE_OPTION_LOYALIST_INS_AI_DESC"
+	}
+	option = {
+		name = REVOLUTION_DEMOCRATIC
+		text = "RULE_OPTION_REVOLUTION_DEMOCRATIC_INS_AI"
+		desc = "RULE_OPTION_REVOLUTION_DEMOCRATIC_INS_AI_DESC"
+	}
+	option = {
+		name = REVOLUTION_UNALIGNED
+		text = "RULE_OPTION_REVOLUTION_UNALIGNED_INS_AI"
+		desc = "RULE_OPTION_REVOLUTION_UNALIGNED_INS_AI_DESC"
+	}
+	option = {
+		name = REVOLUTION_COMMUNIST
+		text = "RULE_OPTION_REVOLUTION_COMMUNIST_INS_AI"
+		desc = "RULE_OPTION_REVOLUTION_COMMUNIST_INS_AI_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+
+SIA_ai_behavior = {
+	name = "SIA_ai_behavior"
+	required_dlc = "Thunder at Our Gates"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+
+	option = {
+		name = HISTORICAL
+		text = "RULE_OPTION_HISTORICAL_SIA_AI"
+		desc = "RULE_OPTION_HISTORICAL_SIA_AI_DESC"
+		allow_achievements = yes
+	}
+
+	option = {
+		name = MONARCHIST
+		text = "RULE_OPTION_MONARCHIST_SIA_AI"
+		desc = "RULE_OPTION_MONARCHIST_SIA_AI_DESC"
+		allow_achievements = no
+	}
+
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_OPTION_DEMOCRATIC"
+		desc = "RULE_OPTION_DEMOCRATIC_SIA_AI_DESC"
+		allow_achievements = no
+	}
+
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+		
+	}
+}
 ###---> Foreign Policy <><> <><> <><>
 
 allow_wargoals = {
