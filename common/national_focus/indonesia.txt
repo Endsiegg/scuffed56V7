@@ -4062,10 +4062,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 1051 335 1058 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -4079,12 +4079,8 @@ focus_tree = {
 
 		available = {
 			controls_state = 672
-			controls_state = 1048
-			controls_state = 1049
-			OR = {
-				controls_state = 1050
-				controls_state = 1047
-			}
+			controls_state = 974
+			controls_state = 909
 		}
 		prerequisite = { focus = INS_recovering_from_the_great_depression }
 		#mutually_exclusive = {}
@@ -4121,7 +4117,7 @@ focus_tree = {
 					infrastructure < 5
 					impassable = no
 				}
-				prioritize = { 1048 }
+				prioritize = { 974 }
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -4135,7 +4131,7 @@ focus_tree = {
 					infrastructure < 5
 					impassable = no
 				}
-				prioritize = { 1049 }
+				prioritize = { 909 }
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -4152,12 +4148,8 @@ focus_tree = {
 
 		available = {
 			controls_state = 672
-			controls_state = 1048
-			controls_state = 1049
-			OR = {
-				controls_state = 1050
-				controls_state = 1047
-			}
+			controls_state = 974
+		#	controls_state = 909
 		}
 		prerequisite = { focus = INS_developing_sumatra }
 		#mutually_exclusive = {}
@@ -4177,7 +4169,7 @@ focus_tree = {
 			build_railway = {
 				level = 3
 				build_only_on_allied = yes
-				path = { 1342 12165 1246 1401 12296 10322 4381 4364 1345 1332 12212 10225 10209 1277 7463 12302 7673 13402 4652 1648 10509 13398 }
+				path = { 1342 12165 1246 1401 12268 4364 1345 1332 10225 12168 1277 7463 12302 4652 1648 10509 7658 12488 8360 10522 4446 1460 10382 }
 			}
 			random_owned_controlled_state = {
 				limit = {
@@ -4189,10 +4181,10 @@ focus_tree = {
 					impassable = no
 				}
 				prioritize = { 1050 1049 1048 672 1047 }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -4205,7 +4197,7 @@ focus_tree = {
 
 		available = {
 			has_full_control_of_state = 334
-			has_full_control_of_state = 1055
+			has_full_control_of_state = 978
 		}
 		prerequisite = { focus = INS_developing_sumatra }
 		#mutually_exclusive = { }
@@ -4234,7 +4226,7 @@ focus_tree = {
 					# }
 				}
 				prioritize = { 334 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -4247,8 +4239,8 @@ focus_tree = {
 					impassable = no
 					infrastructure < 5
 				}
-				prioritize = { 1055 }
-				add_extra_state_shared_building_slots = 2
+				prioritize = { 978 }
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -4264,7 +4256,7 @@ focus_tree = {
 
 		available = {
 			has_full_control_of_state = 334
-			has_full_control_of_state = 1055
+			has_full_control_of_state = 978
 		}
 		prerequisite = { focus = INS_develop_borneo }
 		#mutually_exclusive = { }
@@ -4287,6 +4279,7 @@ focus_tree = {
 					infrastructure < 5
 				}
 				prioritize = { 334 }
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -4298,13 +4291,13 @@ focus_tree = {
 					impassable = no
 					infrastructure < 5
 				}
-				prioritize = { 1055 }
+				prioritize = { 978 }
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_infrastructure
 					level = 1
@@ -4350,10 +4343,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 334 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -4366,7 +4359,7 @@ focus_tree = {
 
 		available = {
 			has_full_control_of_state = 673
-			has_full_control_of_state = 1056
+			has_full_control_of_state = 975
 		}
 		prerequisite = { focus = INS_developing_sumatra }
 		#mutually_exclusive = { }
@@ -4404,10 +4397,10 @@ focus_tree = {
 					# }
 				}
 				prioritize = { 673 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -4437,16 +4430,16 @@ focus_tree = {
 					# 	include_locked = yes
 					# }
 				}
-				prioritize = { 1056 }
-				add_extra_state_shared_building_slots = 1
+				prioritize = { 975 }
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
 				add_building_construction = {
-					type = industrial_infrastructure
-					level = 1
+					type = industrial_complex
+					level = 2
 					instant_build = yes
 				}
 				if = {
@@ -4472,14 +4465,14 @@ focus_tree = {
 			num_of_military_factories > 6
 
 			has_full_control_of_state = 672
-			has_full_control_of_state = 1047
-			has_full_control_of_state = 1048
-			has_full_control_of_state = 1049
-			has_full_control_of_state = 1050
-			has_full_control_of_state = 334
-			has_full_control_of_state = 1055
+			has_full_control_of_state = 974
+			has_full_control_of_state = 909
+			has_full_control_of_state = 335
+			has_full_control_of_state = 976
+			has_full_control_of_state = 446
+			has_full_control_of_state = 667
 			has_full_control_of_state = 673
-			has_full_control_of_state = 1056
+			has_full_control_of_state = 975
 		}
 		prerequisite = { focus = INS_sumatra_railway }
 		prerequisite = { focus = INS_develop_sulawesi }
@@ -4505,14 +4498,20 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 672
-						state = 1047
-						state = 1048
-						state = 1049
-						state = 1050
-						state = 334
-						state = 1055
+						state = 974
+						state = 909
+						state = 335
+						state = 976
+						state = 446
+						state = 667
 						state = 673
-						state = 1056
+						state = 975
+						state = 334
+						state = 978
+						state = 909
+						state = 668
+						state = 669
+						state = 738						
 					}
 					is_core_of = ROOT
 				}
@@ -4528,14 +4527,20 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 672
-						state = 1047
-						state = 1048
-						state = 1049
-						state = 1050
-						state = 334
-						state = 1055
+						state = 974
+						state = 909
+						state = 335
+						state = 976
+						state = 446
+						state = 667
 						state = 673
-						state = 1056
+						state = 975
+						state = 334
+						state = 978
+						state = 909
+						state = 668
+						state = 669
+						state = 738
 					}
 					NOT = { is_core_of = ROOT }
 				}
@@ -4551,7 +4556,7 @@ focus_tree = {
 		icon = GFX_focus_generic_develop_bangka
 
 		available = {
-			has_full_control_of_state = 1047
+			has_full_control_of_state = 672
 		}
 		prerequisite = { focus = INS_recovering_from_the_great_depression }
 		#mutually_exclusive = {}
@@ -4576,7 +4581,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			1047 = {
+			672 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -4653,14 +4658,14 @@ focus_tree = {
 		icon = GFX_focus_generic_aluminum
 
 		available = {
-			has_full_control_of_state = 1047
+			has_full_control_of_state = 672
 			has_dynamic_modifier = {
 				modifier = INS_bangka_bauxite_export
 			}
 			has_tech = excavation1
 		}
 		prerequisite = { focus = INS_the_bangka_project }
-		mutually_exclusive = { focus = INS_bauxite_export }
+		#mutually_exclusive = { focus = INS_bauxite_export }
 
 		x = 1
 		y = 1
@@ -4684,7 +4689,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = INS_great_depression_tt
 			add_to_variable = { var = INS_great_depression_min_export value = 0.05 tooltip = min_export_tt }
-			1047 = { #Bangka-Belitung
+			672 = { #Bangka-Belitung
 				add_resource = {
 					type = aluminium
 					amount = 74
@@ -4702,14 +4707,14 @@ focus_tree = {
 		icon = GFX_focus_RAJ_special_economic_zones
 
 		available = {
-			has_full_control_of_state = 1047
+			has_full_control_of_state = 672
 			has_dynamic_modifier = {
 				modifier = INS_bangka_bauxite_export
 			}
 			has_tech = excavation1
 		}
 		prerequisite = { focus = INS_the_bangka_project }
-		mutually_exclusive = { focus = INS_aluminium_factory }
+		#mutually_exclusive = { focus = INS_aluminium_factory }
 
 		x = -1
 		y = 1
@@ -4734,7 +4739,7 @@ focus_tree = {
 		icon = GFX_goal_generic_trade
 
 		available = {
-			has_full_control_of_state = 1047
+			has_full_control_of_state = 672
 			has_dynamic_modifier = {
 				modifier = INS_bangka_bauxite_export
 			}
@@ -4772,8 +4777,8 @@ focus_tree = {
 		icon = GFX_focus_CHI_import_fertilisers
 
 		available = {
-			has_tech = excavation4
-			1047 = {
+			#has_tech = excavation4
+			672 = {
 				is_fully_controlled_by = ROOT
 				infrastructure > 4
 			}
@@ -4795,7 +4800,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = INS_great_depression_tt
 			add_to_variable = { var = INS_great_depression_min_export value = 0.05 tooltip = min_export_tt }
-			1047 = {
+			672 = {
 				if = {
 					limit = {
 						free_building_slots = {
@@ -4812,19 +4817,19 @@ focus_tree = {
 					}
 					add_resource = {
 						type = aluminium
-						amount = 14
+						amount = 28
 					}
 					add_resource = {
 						type = steel
-						amount = 8
+						amount = 16
 					}
 					add_resource = {
 						type = tungsten
-						amount = 6
+						amount = 16
 					}
 					add_resource = {
 						type = chromium
-						amount = 6
+						amount = 16
 					}
 				}
 			}
@@ -4838,11 +4843,9 @@ focus_tree = {
 
 		available = {
 			OR = {
-				AND = {
-					controls_state = 335
-					controls_state = 1051
-				}
-				controls_state = 1058
+				controls_state = 335
+				controls_state = 976
+				controls_state = 446
 			}
 		}
 		prerequisite = { focus = INS_recovering_from_the_great_depression }
@@ -4866,19 +4869,37 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1051 335 }
-				add_extra_state_shared_building_slots = 1
+				prioritize = { 335 }
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
+			random_owned_controlled_state = {
+				limit = {
+					INS_only_militia_states_if_possible_and_needed = yes
+					impassable = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				prioritize = { 976 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}			
 			if = {
 				limit = {
-					controls_state = 1058
+					controls_state = 335
 				}
-				1058 = {
+				335 = {
 					set_state_category = metropolis
 				}
 			}
@@ -4891,9 +4912,9 @@ focus_tree = {
 
 		available = {
 			OR = {
-				has_full_control_of_state = 1058
-				has_full_control_of_state = 1051
 				has_full_control_of_state = 335
+				has_full_control_of_state = 976
+				has_full_control_of_state = 446
 			}
 		}
 
@@ -4914,91 +4935,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			if = {
-				limit = {
-					has_full_control_of_state = 1058
-					has_full_control_of_state = 1051
-					has_full_control_of_state = 335
-				}
-				1058 = {
-					add_extra_state_shared_building_slots = 3
-				}
-				1051 = {
-					add_extra_state_shared_building_slots = 3
-				}
-				335 = {
-					add_extra_state_shared_building_slots = 3
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { has_full_control_of_state = 1058 }
-					has_full_control_of_state = 1051
-					has_full_control_of_state = 335
-				}
-				1051 = {
-					add_extra_state_shared_building_slots = 4
-				}
-				335 = {
-					add_extra_state_shared_building_slots = 4
-				}
-			}
-			else_if = {
-				limit = {
-					has_full_control_of_state = 1058
-					NOT = { has_full_control_of_state = 1051 }
-					has_full_control_of_state = 335
-				}
-				1058 = {
-					add_extra_state_shared_building_slots = 4
-				}
-				335 = {
-					add_extra_state_shared_building_slots = 4
-				}
-			}
-			else_if = {
-				limit = {
-					has_full_control_of_state = 1058
-					has_full_control_of_state = 1051
-					NOT = { has_full_control_of_state = 335 }
-				}
-				1058 = {
-					add_extra_state_shared_building_slots = 4
-				}
-				1051 = {
-					add_extra_state_shared_building_slots = 4
-				}
-			}
-			else_if = {
-				limit = {
-					has_full_control_of_state = 1058
-					NOT = { has_full_control_of_state = 1051 }
-					NOT = { has_full_control_of_state = 335 }
-				}
-				1058 = {
-					add_extra_state_shared_building_slots = 6
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { has_full_control_of_state = 1058 }
-					has_full_control_of_state = 1051
-					NOT = { has_full_control_of_state = 335 }
-				}
-				1051 = {
-					add_extra_state_shared_building_slots = 6
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { has_full_control_of_state = 1058 }
-					NOT = { has_full_control_of_state = 1051 }
-					has_full_control_of_state = 335
-				}
 				335 = {
 					add_extra_state_shared_building_slots = 6
 				}
-			}
+				976 = {
+					add_extra_state_shared_building_slots = 6
+				}
+				446 = {
+					add_extra_state_shared_building_slots = 6
+				}
 		}
 	}
 
@@ -5007,8 +4952,8 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 
 		available = {
-			has_full_control_of_state = 1058
-			has_full_control_of_state = 1051
+			has_full_control_of_state = 335
+			has_full_control_of_state = 976
 		}
 		prerequisite = { focus = INS_developing_java }
 		mutually_exclusive = { focus = INS_not_industry }
@@ -5033,11 +4978,11 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1058 }
+				prioritize = { 335 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				if = {
@@ -5059,11 +5004,11 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1051 }
-				add_extra_state_shared_building_slots = 1
+				prioritize = { 976 }
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				if = {
@@ -5085,9 +5030,7 @@ focus_tree = {
 		icon = GFX_focus_research
 
 		available = {
-			1058 = { #Batavia
-				is_fully_controlled_by = ROOT
-			}
+
 		}
 		prerequisite = { focus = INS_developing_java }
 		#mutually_exclusive = { }
@@ -5095,7 +5038,7 @@ focus_tree = {
 		x = 4
 		y = 0
 		relative_position_id = INS_not_industry
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			base = 5
@@ -5113,7 +5056,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construction2
 
 		available = {
-			has_tech = construction3
+			#has_tech = construction3
 		}
 		prerequisite = { focus = INS_expand_batavia_technical_institute focus = INS_all_cards_into_industry focus = INS_not_industry }
 		#mutually_exclusive = { }
@@ -5216,7 +5159,7 @@ focus_tree = {
 		icon = GFX_focus_generic_american_investments
 
 		available = {
-			controls_state = 1049 #Medan/Riouw
+			controls_state = 974 #Medan/Riouw
 		}
 		prerequisite = { focus = INS_realign_supply_chains }
 		mutually_exclusive = { focus = INS_all_in_on_rubber }
@@ -5291,7 +5234,7 @@ focus_tree = {
 		icon = GFX_focus_generic_mining_industry
 
 		available = {
-			has_full_control_of_state = 1047
+			has_full_control_of_state = 672
 			has_dynamic_modifier = {
 				modifier = INS_bangka_bauxite_export
 			}
@@ -5313,7 +5256,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = in_240_days_tt
 			effect_tooltip = {
-				1047 = {
+				672 = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
@@ -5392,7 +5335,7 @@ focus_tree = {
 			custom_effect_tooltip = INS_great_depression_tt
 			add_to_variable = { var = INS_great_depression_min_export value = 0.1 tooltip = min_export_tt }
 			add_to_variable = { var = INS_great_depression_stability_factor value = 0.05 tooltip = stability_factor_tt }
-			add_to_variable = { var = INS_great_depression_global_building_slots_factor value = 0.10 tooltip = global_building_slots_factor_tt }
+			add_to_variable = { var = INS_great_depression_global_building_slots_factor value = 0.20 tooltip = global_building_slots_factor_tt }
 		}
 	}
 
@@ -5515,7 +5458,7 @@ focus_tree = {
 
 			add_offsite_building = {
 				type = dockyard
-				level = 1
+				level = 2
 			}
 			custom_effect_tooltip = newline_tt
 		}
@@ -5588,14 +5531,6 @@ focus_tree = {
 
 		available = {
 		}
-
-		bypass = {
-			NOT = {
-				any_owned_state = {
-					has_state_category = rural
-				}
-			}
-		}
 		prerequisite = { focus = INS_first_come_first_serve }
 		mutually_exclusive = { }
 
@@ -5608,9 +5543,6 @@ focus_tree = {
 
 		completion_reward = {
 			every_owned_state = {
-				limit = {
-					has_state_category = rural
-				}
 				add_dynamic_modifier = {
 					modifier = INS_agrarian_funding_state
 				}
@@ -5715,7 +5647,7 @@ focus_tree = {
 		available = {
 		}
 		prerequisite = { focus = INS_the_jewel_in_the_crown }
-		mutually_exclusive = { focus = INS_prioritize_dutch_companies }
+		#mutually_exclusive = { focus = INS_prioritize_dutch_companies }
 
 		x = 3
 		y = 1
@@ -5748,25 +5680,25 @@ focus_tree = {
 			add_to_variable = { var = INS_dutch_east_indies_stability_factor value = 0.1 tooltip = stability_factor_tt }
 
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 1
 				uses = 1
 				category = industry
 				name = INS_subsidize_local_business
 			}
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 1
 				uses = 1
 				category = electronics
 				name = INS_subsidize_local_business
 			}
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus =1
 				uses = 1
 				category = infantry_tech
 				name = INS_subsidize_local_business
 			}
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 1
 				uses = 1
 				category = naval_equipment
 				name = INS_subsidize_local_business
@@ -5781,7 +5713,7 @@ focus_tree = {
 		available = {
 		}
 		prerequisite = { focus = INS_the_jewel_in_the_crown }
-		mutually_exclusive = { focus = INS_subsidize_local_business }
+		#mutually_exclusive = { focus = INS_subsidize_local_business }
 
 		x = 2
 		y = 0
@@ -5928,7 +5860,7 @@ focus_tree = {
 		completion_reward = {
 			add_timed_idea = {
 				idea = idea_INS_policy_shift
-				days = 240
+				days = 365
 			}
 		}
 	}
@@ -6100,7 +6032,7 @@ focus_tree = {
 			}
 		}
 		prerequisite = { focus = INS_detangle_supply_chains }
-		mutually_exclusive = { focus = INS_closer_economic_ties_to_netherlands }
+		#mutually_exclusive = { focus = INS_closer_economic_ties_to_netherlands }
 
 		x = 1
 		y = 3
@@ -6120,11 +6052,11 @@ focus_tree = {
 					}
 					infrastructure < 5
 				}
-				prioritize = { 1058 1051 335 }
-				add_extra_state_shared_building_slots = 1
+				#prioritize = { 1058 1051 335 }
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -6147,7 +6079,7 @@ focus_tree = {
 			}
 		}
 		prerequisite = { focus = INS_detangle_supply_chains }
-		mutually_exclusive = { focus = INS_prioritize_industrial_growth }
+	#	mutually_exclusive = { focus = INS_prioritize_industrial_growth }
 
 		x = -1
 		y = 3
@@ -6342,41 +6274,41 @@ focus_tree = {
 					# 	include_locked = yes
 					# }
 				}
-				prioritize = { 1058 }
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = energy_infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					# free_building_slots = {
-					# 	building = energy_infrastructure
-					# 	size > 0
-					# 	include_locked = yes
-					# }
-				}
-				prioritize = { 1051 }
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = energy_infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					# free_building_slots = {
-					# 	building = energy_infrastructure
-					# 	size > 0
-					# 	include_locked = yes
-					# }
-				}
 				prioritize = { 335 }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = energy_infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					# free_building_slots = {
+					# 	building = energy_infrastructure
+					# 	size > 0
+					# 	include_locked = yes
+					# }
+				}
+				prioritize = { 976 }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = energy_infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					# free_building_slots = {
+					# 	building = energy_infrastructure
+					# 	size > 0
+					# 	include_locked = yes
+					# }
+				}
+				prioritize = { 446 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = energy_infrastructure
