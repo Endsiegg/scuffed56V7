@@ -9,6 +9,7 @@ bookmarks = {
 		default_country = "GER"
 		default = yes
 
+		filters = { new_content continent }
 		###---> Majors <><> <><> <><>
 
 		"FRA" = {
@@ -94,7 +95,7 @@ bookmarks = {
 			history = "JAP_GATHERING_STORM_DESC"
 			available = { NOT = { has_dlc = "No Compromise, No Surrender" } }
 			ideology = neutrality
-			new_content = yes
+			#new_content = yes
 			override_leader_portrait = JAP_emperor_hirohito
 			ideas = {
 				JAP_1936_fake_state_shintoism_idea
@@ -113,7 +114,7 @@ bookmarks = {
 			history = "JAP_GATHERING_STORM_DESC"
 			available = { has_dlc = "No Compromise, No Surrender" }
 			ideology = neutrality
-			new_content = yes
+			#new_content = yes
 			override_leader_portrait = JAP_emperor_hirohito
 			ideas = {
 				JAP_1936_fake_state_shintoism_idea
@@ -374,22 +375,22 @@ bookmarks = {
 			}
 		}
 
-		"SIA" = {
-			minor = yes
-			history = SIA_GATHERING_STORM_r56_DESC
-			ideology = neutrality
-			ideas = {
-				SIA_rama_viii_r56
-				SIA_state_of_the_civilian_wing_r56
-				SIA_siamese_ultranationalist_movement_r56
-				SIA_agrarian_society_r56
-			}
-			focuses = {
-				SIA_address_rama_viis_abdication_r56
-				SIA_towards_a_great_thai_empire_r56
-				SIA_amend_the_military_service_act_r56
-			}
-		}
+		# "SIA" = {
+		# 	minor = yes
+		# 	history = SIA_GATHERING_STORM_r56_DESC
+		# 	ideology = neutrality
+		# 	ideas = {
+		# 		SIA_rama_viii_r56
+		# 		SIA_state_of_the_civilian_wing_r56
+		# 		SIA_siamese_ultranationalist_movement_r56
+		# 		SIA_agrarian_society_r56
+		# 	}
+		# 	focuses = {
+		# 		SIA_address_rama_viis_abdication_r56
+		# 		SIA_towards_a_great_thai_empire_r56
+		# 		SIA_amend_the_military_service_act_r56
+		# 	}
+		# }
 
 #		"LIE" = {
 #            minor = yes
@@ -427,7 +428,7 @@ bookmarks = {
 			minor = yes
 			history = "CHI_GATHERING_STORM_DESC"
 			ideology = neutrality
-			new_content = yes
+		#	new_content = yes
 			ideas = {
 				KMT_harpo_1
 				KMT_weak_army

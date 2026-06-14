@@ -24,6 +24,16 @@ focus_tree = {
 
 	continuous_focus_position = { x = 50 y = 1500 }
 
+	shared_focus = INSHOL_dutch_east_indies
+	shared_focus = INSHOL_reasserting_control
+	shared_focus = INSHOL_reform_knil
+	shared_focus = ABDA_abdacom
+
+	initial_show_position = { 
+		x = 65
+		y = 0
+	}	
+	
  ##   ##  #    ##  #  # ###  ##  #       ### #  # ###  #  #  ## ### ###  #   #     ### ###  ### ### 
 #  # #  # #   #  # ## #  #  #  # #        #  ## # #  # #  # #    #  #  #  # #       #  #  # #   #   
 #    #  # #   #  # # ##  #  #### #        #  # ## #  # #  #  #   #  ###    #        #  ###  ##  ##  
@@ -68,6 +78,47 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_OIL }
 	}
 
+	focus = {
+		id = HOL_taog_guarantee_colonial_loyalty #TAOG NEW
+
+		allow_branch = {
+			has_dlc = "Thunder at Our Gates"
+			INS = {
+				is_ai = yes
+			}
+		}
+
+		available = {
+			date < 1936.4.15
+		}
+		bypass = {
+		}
+
+		prerequisite = { focus = HOL_obtain_foreign_colonial_investments }
+		continue_if_invalid = yes
+		
+		icon = GFX_focus_INS_the_declaration_of_independence
+		x = 0
+		y = 1
+		relative_position_id = HOL_obtain_foreign_colonial_investments
+
+		cost = 1
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = -100
+			custom_effect_tooltip = HOL_taog_guarantee_colonial_loyalty_tt
+			custom_effect_tooltip = newline_tt
+			INS = {
+				add_autonomy_score = { 
+					value = 500 
+					localization = HOL_taog_guarantee_colonial_loyalty
+				}
+				add_political_power = 250
+			}
+		}
+	}
 #   # ###  ## ###     ### #  # ###  ### ###  ## 
 #   # #   #    #       #  ## # #  #  #  #   #   
 # # # ##   #   #       #  # ## #  #  #  ##   #  
@@ -3898,7 +3949,7 @@ focus_tree = {
 				set_technology = {
 					basic_ship_hull_heavy = 1
 					antiair2 = 1
-					improved_fire_control_system = 1
+					#improved_fire_control_system = 1
 				}
 				custom_effect_tooltip = r56_newline
 				create_equipment_variant = {

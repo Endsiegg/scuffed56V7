@@ -14,7 +14,8 @@ focus_tree = {
 	continuous_focus_position = { x = 1000 y = 1200 }
 
 	default = no
-
+	shared_focus = ABDA_abdacom
+	
 	shortcut = {
 		name = ENG_rearmament_sc
 		target = limited_rearmament_focus
@@ -6372,12 +6373,91 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }
 	}
 	focus = {
-		id = sp_landward_forts_focus
+		id = ENG_territorial_army_of_malaysia_focus
+
 		prerequisite = { focus = singapore_focus }
-		icon = GFX_goal_generic_construct_military
+
+		icon = GFX_focus_RAJ_indian_gurkhas
+
 		x = 0
 		y = 1
 		relative_position_id = singapore_focus
+
+		mutually_exclusive = { focus = ENG_royal_malay_regiment_focus }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}	
+
+		available = {
+			has_subject = MAL
+		}
+
+		available_if_capitulated = no
+
+		bypass = {
+			NOT = {
+				has_subject = MAL 
+			}
+		}
+
+		completion_reward = {
+
+			MAL = {
+				add_autonomy_score = { 
+					value = 150
+					localization = ENG_territorial_army_of_malaysia_focus
+				}	
+				army_experience = 50 
+				add_manpower = 10000
+			}
+
+			IF = {
+				limit = {
+					MAL = {
+						has_idea = MAL_ketuanan_melayu
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				MAL = {
+					remove_ideas = MAL_ketuanan_melayu
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					MAL = {
+						has_idea = MAL_ketuanan_melayu_2
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				MAL = {
+					remove_ideas = MAL_ketuanan_melayu_2
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					MAL = {
+						has_idea = MAL_ketuanan_melayu_3
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				MAL = {
+					remove_ideas = MAL_ketuanan_melayu_3
+				}
+			}
+
+		}
+
+	}
+	focus = {
+		id = sp_landward_forts_focus
+		prerequisite = { focus = ENG_territorial_army_of_malaysia_focus }
+		icon = GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		relative_position_id = ENG_territorial_army_of_malaysia_focus
 		cost = 1
 		ai_will_do = {
 			factor = 1
@@ -6507,6 +6587,194 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }
 	}
+
+	focus = {
+		id = ENG_sarawakrangers_focus 
+
+		prerequisite = { focus = peninsular_focus }
+
+		icon = GFX_focus_CHI_guerrilla_warfare
+
+		x = 0
+		y = 1
+		relative_position_id = peninsular_focus
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}	
+
+		available = {
+			OR = {
+				has_subject = MAL
+				has_subject = SAR
+				333 = {
+					is_owned_and_controlled_by = ROOT 
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+
+			hidden_effect = {
+				set_technology = { 
+					TOA_jungle_pioneers_support_tech = 1 
+					popup = no
+				}
+			}
+			custom_effect_tooltip = SMB_jungle_pioneers_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				
+				add_tech_bonus = {
+					name = ENG_sarawakrangers_focus
+					bonus = 0.5 
+					uses = 1
+					category = rangers_tech_cat
+				}
+				
+				IF = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					add_doctrine_cost_reduction = {
+						name = ENG_sarawakrangers_focus
+						cost_reduction = 0.5 
+						uses = 1
+						category = special_forces_doctrine
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			IF = {
+				limit = {
+					has_subject = MAL
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				MAL = {
+
+					hidden_effect = {
+						set_technology = { 
+							TOA_jungle_pioneers_support_tech = 1 
+							popup = no
+						}
+					}
+					custom_effect_tooltip = SMB_jungle_pioneers_tt
+
+					IF = {
+						limit = {
+							has_dlc = "No Compromise, No Surrender"
+						}
+
+						custom_effect_tooltip = generic_skip_one_line_tt
+						
+						add_tech_bonus = {
+							name = ENG_sarawakrangers_focus
+							bonus = 0.75 
+							uses = 1
+							category = rangers_tech_cat
+						}
+						
+						IF = {
+							limit = {
+								has_dlc = "Arms Against Tyranny"
+							}
+							add_doctrine_cost_reduction = {
+								name = ENG_sarawakrangers_focus
+								cost_reduction = 0.75 
+								uses = 1
+								category = special_forces_doctrine
+							}
+							custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
+							hidden_effect = {
+								add_mastery_bonus = {
+									name = PHI_philippine_scouts
+									bonus = 0.1
+									days = 240
+									sub_doctrine = rangers_1
+								}
+								add_mastery_bonus = {
+									name = PHI_philippine_scouts
+									bonus = 0.1
+									days = 240
+									sub_doctrine = rangers_2
+								}
+							}				
+						}
+					}
+				}
+			}
+
+			IF = {
+				limit = {
+					has_subject = SAR
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				SAR = {
+
+					hidden_effect = {
+						set_technology = { 
+							TOA_jungle_pioneers_support_tech = 1 
+							popup = no
+						}
+					}
+					custom_effect_tooltip = SMB_jungle_pioneers_tt
+
+					IF = {
+						limit = {
+							has_dlc = "No Compromise, No Surrender"
+						}
+
+						custom_effect_tooltip = generic_skip_one_line_tt
+						
+						add_tech_bonus = {
+							name = ENG_sarawakrangers_focus
+							bonus = 0.75 
+							uses = 1
+							category = rangers_tech_cat
+						}
+						
+						IF = {
+							limit = {
+								has_dlc = "Arms Against Tyranny"
+							}
+							add_doctrine_cost_reduction = {
+								name = ENG_sarawakrangers_focus
+								cost_reduction = 0.75 
+								uses = 1
+								category = special_forces_doctrine
+							}
+							custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
+							hidden_effect = {
+								add_mastery_bonus = {
+									name = PHI_philippine_scouts
+									bonus = 0.1
+									days = 240
+									sub_doctrine = rangers_1
+								}
+								add_mastery_bonus = {
+									name = PHI_philippine_scouts
+									bonus = 0.1
+									days = 240
+									sub_doctrine = rangers_2
+								}
+							}				
+						}
+					}
+				}
+			}
+		}
+	}
+
 	focus = {
 		id = hongkong_focus
 		prerequisite = { focus = uk_asia_focus }
@@ -6541,12 +6809,137 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = hk_landward_forts_focus
+		id = ENG_south_east_asia_air_command_focus
+
 		prerequisite = { focus = hongkong_focus }
-		icon = GFX_goal_generic_construct_military
+
+		icon = GFX_focus_generic_air_bases
+
 		x = 0
 		y = 1
 		relative_position_id = hongkong_focus
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+				326 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				1021 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				1024 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		bypass = {
+			NOT = {
+				326 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				1021 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				1024 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+			}
+		}
+
+		completion_reward = { 
+
+			air_experience = 25 
+
+			add_doctrine_cost_reduction = {
+				name = ENG_south_east_asia_air_command_focus 
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			IF = {
+				limit = {
+					326 = {
+						is_controlled_by_ROOT_or_subject = yes 
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+
+				326 = {
+					add_building_construction = {
+						type = air_base
+						level = 4
+						instant_build = yes
+					}
+				}
+				
+			}	
+
+			IF = {
+				limit = {
+					1021 = {
+						is_controlled_by_ROOT_or_subject = yes 
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+
+				1021 = {
+					add_building_construction = {
+						type = air_base
+						level = 4
+						instant_build = yes
+					}
+				}
+
+			}	
+
+			IF = {
+				limit = {
+					1024 = {
+						is_controlled_by_ROOT_or_subject = yes 
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+
+				1024 = {
+					add_building_construction = {
+						type = air_base
+						level = 3
+						instant_build = yes
+					}
+				}
+
+			}	
+			
+		}
+	}	
+	focus = {
+		id = hk_landward_forts_focus
+		prerequisite = { focus = ENG_south_east_asia_air_command_focus }
+		icon = GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		relative_position_id = ENG_south_east_asia_air_command_focus
 		cost = 1
 		ai_will_do = {
 			factor = 1
@@ -6586,6 +6979,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
+
 	focus = {
 		id = hk_air_focus
 		prerequisite = { focus = hk_landward_forts_focus }
@@ -6634,7 +7028,162 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
-	
+
+	focus = {
+		id = ENG_east_indies_fleet_focus 
+
+		prerequisite = { focus = hk_air_focus }
+		#prerequisite = { focus = ENG_south_east_asia_air_command_focus }
+
+		icon = GFX_focus_JAP_assure_superior_naval_quality
+
+		x = 0
+		y = 1
+		relative_position_id = hk_air_focus
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}	
+
+		available = {
+			OR = {
+				326 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				1021 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				422 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				333 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+			}
+		}
+
+		bypass = {
+			NOT = {
+				326 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				1021 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				422 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+				333 = {
+					is_controlled_by_ROOT_or_subject = yes 
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+
+			navy_experience = 25 
+
+			add_doctrine_cost_reduction = {
+				name = ENG_east_indies_fleet_focus 
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					1021 = {
+						is_controlled_by_ROOT_or_subject = yes 
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+				1021 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}	
+				}
+			}
+
+			IF = {
+				limit = {
+					326 = {
+						is_controlled_by_ROOT_or_subject = yes 
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+				326 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}	
+				}
+			}
+
+			IF = {
+				limit = {
+					422 = {
+						is_controlled_by_ROOT_or_subject = yes 
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+				422 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}	
+				}
+			}
+
+			IF = {
+				limit = {
+					333 = {
+						is_controlled_by_ROOT_or_subject = yes 
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+				333 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}	
+				}
+			}
+
+		}
+
+	}
+
 	focus = {
 		id = uk_commonwealth_focus 
 		prerequisite = { focus = uk_colonial_focus }

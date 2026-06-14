@@ -7,6 +7,9 @@ technologies = {
 
 	gw_artillery = {
 
+		enable_subunits = {
+			field_guns
+		}
 		enable_equipments = {
 			artillery_equipment_1
 		}
@@ -1059,6 +1062,10 @@ technologies = {
 
 	interwar_antiair = {
 
+		enable_subunits = {
+			anti_air_battery
+		}
+
 		enable_equipments = {
 			anti_air_equipment_1
 		}
@@ -1681,6 +1688,10 @@ technologies = {
 ###------> Old Anti-Tank <><> <><> <><> <><> <><>
 
 	interwar_antitank = {
+
+		enable_subunits = {
+			anti_tank_battery
+		}
 
 		enable_equipments = {
 			anti_tank_equipment_1
@@ -2639,10 +2650,10 @@ technologies = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
-		super_heavy_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
+		# super_heavy_tank_destroyer_brigade = {
+		# 	hard_attack = 0.1
+		# 	ap_attack = 0.1
+		# }
 		modern_tank_destroyer_brigade = {
 			hard_attack = 0.1
 			ap_attack = 0.1
@@ -2899,7 +2910,10 @@ technologies = {
 				attack = 0.15
 			}
 		}
-		
+		field_guns = {
+			ap_attack = 0.1
+		}		
+
 		allow = {
 			always = no
 		}
@@ -2938,7 +2952,9 @@ technologies = {
 				attack = 0.15
 			}
 		}
-		
+		field_guns = {
+			ap_attack = 0.1
+		}		
 		allow = {
 			always = no
 		}
@@ -2999,7 +3015,17 @@ technologies = {
 			}
 		}
 	}
-	#End Pfot	
+
+	#End Pfot
+	#TAOG
+	the_thunder_at_our_gates_artillery = {
+
+		artillery_brigade = {
+			combat_width = -0.5
+		}
+
+	}
+	#End TAOG		
 }
 
 #####---------------------------------------------------------------------> End

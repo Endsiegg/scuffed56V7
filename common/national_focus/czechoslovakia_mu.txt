@@ -7097,18 +7097,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_strike_at_the_heart_of_bolshevism
-
-		icon = {
-			trigger = {
-				SOV = {
-					has_government = communism
-				}
-			}
-			value = GFX_focus_attack_soviet
-		}
-		icon = {
-			value = GFX_goal_generic_occupy_states_ongoing_war
-		}
+		icon = GFX_focus_attack_soviet
 
 		dynamic = yes
 
@@ -9746,19 +9735,13 @@ focus_tree = {
 		# }
 
 		icon = {
-			trigger = {
+			GFX_focus_ger_great_red_menace = {
 				has_government = communism
 			}
-			value = GFX_SOV_a_global_class_struggle_ccp_2d_sov_compatibility
-		}
-		icon = {
-			trigger = {
+			GFX_focus_POL_support_global_falangism = {
 				has_government = fascism
 			}
-			value = GFX_focus_POL_support_global_falangism
-		}
-		icon = {
-			value = GFX_focus_CZE_czechoslovak_legion
+			GFX_focus_CZE_czechoslovak_legion = yes
 		}
 
 		relative_position_id = CZE_coalition_building
@@ -9917,13 +9900,10 @@ focus_tree = {
 		id = CZE_state_sponsored_recruitment_for_spain
 
 		icon = {
-			trigger = {
+			GFX_focus_intervention_spain_nationalists = {
 				has_government = fascism
 			}
-			value = GFX_focus_intervention_spain_nationalists
-		}
-		icon = {
-			value = GFX_focus_intervention_spain_republic
+			GFX_focus_intervention_spain_republic = yes
 		}
 
 		cost = 5

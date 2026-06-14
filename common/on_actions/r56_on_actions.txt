@@ -2260,38 +2260,38 @@ on_actions = {
 				}
 				country_event = { id = naw_norway.141 days = 14 random_days = 2	}
 			}
-			if = {
-				limit = {
-					ROOT = {
-						original_tag = INS
-						has_completed_focus = INS_limited_autonomy
-						has_war_with = HOL
-					}
-				}
-				white_peace = HOL
-			}
+			# if = {
+			# 	limit = {
+			# 		ROOT = {
+			# 			original_tag = INS
+			# 			has_completed_focus = INS_limited_autonomy
+			# 			has_war_with = HOL
+			# 		}
+			# 	}
+			# 	white_peace = HOL
+			# }
 			#End of Indonesian Revolution - PKI won
-			if = {
-				limit = {
-					FROM = {
-						original_tag = INS
-						has_government = neutrality
-					}
-					original_tag = INS
-					OR = {
-						AND = {
-							has_government = communism
-							has_completed_focus = INS_reorganize_the_underground
-						}
-						AND = {
-							has_government = neutrality
-							has_completed_focus = INS_the_new_party_leadership
-						}
-					}
-					NOT = { is_subject_of = HOL }
-				}
-				country_event = { id = indonesia.57 }
-			}
+			# if = {
+			# 	limit = {
+			# 		FROM = {
+			# 			original_tag = INS
+			# 			has_government = neutrality
+			# 		}
+			# 		original_tag = INS
+			# 		OR = {
+			# 			AND = {
+			# 				has_government = communism
+			# 				has_completed_focus = INS_reorganize_the_underground
+			# 			}
+			# 			AND = {
+			# 				has_government = neutrality
+			# 				has_completed_focus = INS_the_new_party_leadership
+			# 			}
+			# 		}
+			# 		NOT = { is_subject_of = HOL }
+			# 	}
+			# 	country_event = { id = indonesia.57 }
+			# }
 			if = {
 				limit = {
 					ROOT = {
@@ -4364,16 +4364,16 @@ on_actions = {
 				}
 			}
 
-			if = {
-				limit = {
-					original_tag = AST
-					AST = {
-						has_government = fascism
-						has_completed_focus = AST_R56_australia_first
-					}
-				}
-				set_cosmetic_tag = AST_ALT
-			}
+			# if = {
+			# 	limit = {
+			# 		original_tag = AST
+			# 		AST = {
+			# 			has_government = fascism
+			# 			has_completed_focus = AST_R56_australia_first
+			# 		}
+			# 	}
+			# 	set_cosmetic_tag = AST_ALT
+			# }
 
 			if = {
 				limit = {
@@ -4502,14 +4502,14 @@ on_actions = {
 					country_event = { id = mexico_1940.4 }
 				}
 			}
-			if = {
-				limit = { tag = AST }
-				country_event = { id = r56_australia.8 }
-				country_event = { id = r56_australia.9 }
-				country_event = { id = r56_australia.10 }
-				country_event = { id = r56_australia.11 }
-				country_event = { id = r56_australia.12 }
-			}
+			# if = {
+			# 	limit = { tag = AST }
+			# 	country_event = { id = r56_australia.8 }
+			# 	country_event = { id = r56_australia.9 }
+			# 	country_event = { id = r56_australia.10 }
+			# 	country_event = { id = r56_australia.11 }
+			# 	country_event = { id = r56_australia.12 }
+			# }
 			if = {
 				limit = {
 					original_tag = FRA
@@ -11697,32 +11697,32 @@ on_actions = {
 					}
 				}
 			}
-			AST = {
-				if = {
-					limit = {
-						OR = {
-							AND = {
-								is_historical_focus_on = no
-								has_game_rule = {
-									rule = AST_ai_behavior
-									option = DEFAULT
-								}
-							}
-							has_game_rule = {
-								rule = AST_ai_behavior
-								option = RANDOM
-							}
-						}
-					}
-					random_list = {
-						20 = { set_country_flag = AST_AI_RANDOM_COMMUNIST }
-						25 = { set_country_flag = AST_AI_RANDOM_DEMOCRATIC_ALTERNATE }
-						25 = { set_country_flag = AST_AI_RANDOM_DEMOCRATIC_HISTORICAL }
-						10 = { set_country_flag = AST_AI_RANDOM_FASCIST }
-						20 = { set_country_flag = AST_AI_RANDOM_FASCIST_AF }
-					}
-				}
-			}
+			# AST = {
+			# 	if = {
+			# 		limit = {
+			# 			OR = {
+			# 				AND = {
+			# 					is_historical_focus_on = no
+			# 					has_game_rule = {
+			# 						rule = AST_ai_behavior
+			# 						option = DEFAULT
+			# 					}
+			# 				}
+			# 				has_game_rule = {
+			# 					rule = AST_ai_behavior
+			# 					option = RANDOM
+			# 				}
+			# 			}
+			# 		}
+			# 		random_list = {
+			# 			20 = { set_country_flag = AST_AI_RANDOM_COMMUNIST }
+			# 			25 = { set_country_flag = AST_AI_RANDOM_DEMOCRATIC_ALTERNATE }
+			# 			25 = { set_country_flag = AST_AI_RANDOM_DEMOCRATIC_HISTORICAL }
+			# 			10 = { set_country_flag = AST_AI_RANDOM_FASCIST }
+			# 			20 = { set_country_flag = AST_AI_RANDOM_FASCIST_AF }
+			# 		}
+			# 	}
+			# }
 			AUS = {
 				if = {
 					limit = {
@@ -18669,9 +18669,9 @@ on_actions = {
 				}
 				set_state_flag = r56_SWI_swiss_fortifications_flag
 			}
-			AST = {	#Remove placeholder shown in country selection
-                remove_ideas = AST_R56_economy_placeholder
-            }
+			# AST = {	#Remove placeholder shown in country selection
+            #     remove_ideas = AST_R56_economy_placeholder
+            # }
 			#Create VP renaming exception array
 			add_to_array = {
 				global.vp_rename_exceptions = 9833	#Instanbul
@@ -21715,32 +21715,32 @@ on_actions = {
 				}
 				DEN = { set_country_flag = den_lost_core_state }
 			}
-			if = {
-				limit = {
-					FROM = { tag = AST }
-					FROM.FROM = {
-						state = 725
-					}
-					NOT = { FROM = { has_country_flag = AST_lost_725 } }
-				}
-				FROM = {
-					set_country_flag = AST_lost_725
-					add_to_variable = { AST_industry_local_resources_factor = -0.1 }
-				}
-			}
-			if = {
-				limit = {
-					ROOT = { tag = AST }
-					FROM.FROM = {
-						state = 725
-					}
-					ROOT = { has_country_flag = AST_lost_725 } 
-				}
-				ROOT = {
-					clr_country_flag = AST_lost_725
-					add_to_variable = { AST_industry_local_resources_factor = 0.1 }
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		FROM = { tag = AST }
+			# 		FROM.FROM = {
+			# 			state = 725
+			# 		}
+			# 		NOT = { FROM = { has_country_flag = AST_lost_725 } }
+			# 	}
+			# 	FROM = {
+			# 		set_country_flag = AST_lost_725
+			# 		add_to_variable = { AST_industry_local_resources_factor = -0.1 }
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		ROOT = { tag = AST }
+			# 		FROM.FROM = {
+			# 			state = 725
+			# 		}
+			# 		ROOT = { has_country_flag = AST_lost_725 } 
+			# 	}
+			# 	ROOT = {
+			# 		clr_country_flag = AST_lost_725
+			# 		add_to_variable = { AST_industry_local_resources_factor = 0.1 }
+			# 	}
+			# }
 		}
 	}
 

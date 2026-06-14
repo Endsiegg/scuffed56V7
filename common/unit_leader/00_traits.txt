@@ -181,6 +181,20 @@ leader_traits = {
 		logistics_skill_factor = 1
 	}
 
+	brave = {
+		type = land
+		trait_type = personality_trait
+		
+		modifier = {
+			org_loss_at_low_org_factor = -0.1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		
+		defense_skill = 1
+	}
+
 	war_hero = { 
 		type = { land navy }
 		trait_type = personality_trait
@@ -835,6 +849,37 @@ leader_traits = {
 
 		defense_skill_factor = 1
 		planning_skill_factor = 1
+	}
+	
+	jaeger = { 
+		type = land
+		trait_type = personality_trait 
+
+		allowed = {
+			FROM = { original_tag = FIN }
+		}
+				
+		trait_xp_factor = {
+			trickster = 1     #+100%
+			winter_specialist = 1     #+100%
+			commando = 1     #+100%
+			swamp_fox = 1     #+100%
+			ranger = 1     #+100%
+			hill_fighter = 1     #+100%
+			urban_assault_specialist = 1     #+100%
+			naval_invader = 1     #+100%
+		}
+
+		modifier = {
+			equipment_capture = 0.03
+		}
+		
+		new_commander_weight = {
+			factor = 0			
+		}
+
+		attack_skill_factor = 1
+		logistics_skill_factor = 1
 	}
 
 	jaeger_trait = { 
@@ -3093,8 +3138,254 @@ leader_traits = {
 		}
 	}
 
-#R56 or removed vanilla content?
-#naval personality traits
+#################################
+# Ship Captains
+#################################
+
+	submarine_officer = {
+		type = navy
+		trait_type = personality_trait
+
+		country_trigger = {
+			NOT = {
+				OR = {
+					has_idea = best_of_the_best_naval_academy_spirit
+					has_idea = naval_academy_scholarships_spirit
+					has_idea = SOV_purged_junior_navy_officers_3 
+				}
+			}
+		}
+
+		allowed_ship_equipments = {
+			ship_hull_submarine
+		}
+
+		trait_xp_factor = {
+			seawolf = 0.5
+			spotter = 0.5
+		}
+		new_commander_weight = {
+			factor = 1  
+			modifier = {
+				FROM = { has_idea = best_of_the_best_naval_academy_spirit }
+				factor = 0
+			}
+			modifier = {
+				FROM = { has_idea = naval_academy_scholarships_spirit }
+				factor = 0
+			}
+			modifier = { #Purged Junior Navy Officers
+				FROM = { has_idea = SOV_purged_junior_navy_officers_3 }
+				factor = 0
+			}
+			modifier = {
+				FROM = { 
+					has_dlc = "Thunder at Our Gates"
+				}
+				factor = 0
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	destroyer_officer = {
+		type = navy
+		trait_type = personality_trait
+
+		country_trigger = {
+			NOT = {
+				OR = {
+					has_idea = best_of_the_best_naval_academy_spirit
+					has_idea = naval_academy_scholarships_spirit
+					has_idea = SOV_purged_junior_navy_officers_3 
+				}
+			}
+		}
+
+		allowed_ship_equipments = {
+			ship_hull_light
+		}
+
+		trait_xp_factor	= {
+			blockade_runner = 0.5
+			fleet_protector = 0.5
+		}
+		new_commander_weight = {
+			factor = 1  
+			modifier = {
+				FROM = { has_idea = best_of_the_best_naval_academy_spirit }
+				factor = 0
+			}
+			modifier = {
+				FROM = { has_idea = naval_academy_scholarships_spirit }
+				factor = 0
+			}
+			modifier = { #Purged Junior Navy Officers
+				FROM = { has_idea = SOV_purged_junior_navy_officers_3 }
+				factor = 0
+			}
+			modifier = {
+				FROM = { 
+					has_dlc = "Thunder at Our Gates"
+				}
+				factor = 0
+			}
+		}		
+		ai_will_do = {
+			factor = 1
+		}
+
+	}
+
+	cruiser_officer = {
+		type = navy
+		trait_type = personality_trait
+
+		country_trigger = {
+			NOT = {
+				OR = {
+					has_idea = best_of_the_best_naval_academy_spirit
+					has_idea = naval_academy_scholarships_spirit
+					has_idea = SOV_purged_junior_navy_officers_3 
+				}
+			}
+		}
+
+		allowed_ship_equipments = {
+			ship_hull_cruiser
+		}
+
+		trait_xp_factor	= {
+			superior_tactician = 0.5
+			fleet_protector = 0.5
+		}
+		new_commander_weight = {
+			factor = 1  
+			modifier = {
+				FROM = { has_idea = best_of_the_best_naval_academy_spirit }
+				factor = 0
+			}
+			modifier = {
+				FROM = { has_idea = naval_academy_scholarships_spirit }
+				factor = 0
+			}
+			modifier = { #Purged Junior Navy Officers
+				FROM = { has_idea = SOV_purged_junior_navy_officers_3 }
+				factor = 0
+			}
+			modifier = {
+				FROM = { 
+					has_dlc = "Thunder at Our Gates"
+				}
+				factor = 0
+			}
+		}		
+		ai_will_do = {
+			factor = 1
+		}
+
+	}
+
+	heavy_ship_officer = {
+		type = navy
+		trait_type = personality_trait
+
+		country_trigger = {
+			NOT = {
+				OR = {
+					has_idea = best_of_the_best_naval_academy_spirit
+					has_idea = naval_academy_scholarships_spirit
+					has_idea = SOV_purged_junior_navy_officers_3 
+				}
+			}
+		}
+
+		allowed_ship_equipments = {
+			ship_hull_heavy
+		}
+
+		trait_xp_factor	= {
+			superior_tactician = 0.5
+			ironside = 0.5
+		}
+		new_commander_weight = {
+			factor = 1  
+			modifier = {
+				FROM = { has_idea = best_of_the_best_naval_academy_spirit }
+				factor = 0
+			}
+			modifier = {
+				FROM = { has_idea = naval_academy_scholarships_spirit }
+				factor = 0
+			}
+			modifier = { #Purged Junior Navy Officers
+				FROM = { has_idea = SOV_purged_junior_navy_officers_3 }
+				factor = 0
+			}
+			modifier = {
+				FROM = { 
+					has_dlc = "Thunder at Our Gates"
+				}
+				factor = 0
+			}
+		}		
+		ai_will_do = {
+			factor = 1
+		}
+
+	}
+
+	carrier_officer = {
+		type = navy
+		trait_type = personality_trait
+
+		country_trigger = {
+			NOT = {
+				OR = {
+					has_idea = best_of_the_best_naval_academy_spirit
+					has_idea = naval_academy_scholarships_spirit
+					has_idea = SOV_purged_junior_navy_officers_3 
+				}
+			}
+		}
+
+		allowed_ship_equipments = {
+			ship_hull_carrier
+		}
+
+		trait_xp_factor	= {
+			air_controller = 0.5
+			spotter = 0.5
+		}
+		new_commander_weight = {
+			factor = 1  
+			modifier = {
+				FROM = { has_idea = best_of_the_best_naval_academy_spirit }
+				factor = 0
+			}
+			modifier = {
+				FROM = { has_idea = naval_academy_scholarships_spirit }
+				factor = 0
+			}
+			modifier = { #Purged Junior Navy Officers
+				FROM = { has_idea = SOV_purged_junior_navy_officers_3 }
+				factor = 0
+			}
+			modifier = {
+				FROM = { 
+					has_dlc = "Thunder at Our Gates"
+				}
+				factor = 0
+			}
+		}		
+		ai_will_do = {
+			factor = 1
+		}		
+	}
+
+##################################
 	submarine_captain = { 
 		type = navy
 		trait_type = personality_trait
@@ -3995,4 +4286,30 @@ leader_traits = {
 		
 	}
 
+	INS_loyalty_to_indonesia = {
+		type = { land }
+		trait_type = personality_trait
+		
+		new_commander_weight = {
+			factor = 0  
+		}
+	}
+
+	INS_loyalty_to_netherlands = {
+		type = { land }
+		trait_type = personality_trait
+		
+		new_commander_weight = {
+			factor = 0  
+		}
+	}
+
+	INS_secret_commander = {
+		type = { land }
+		trait_type = status_trait
+		
+		new_commander_weight = {
+			factor = 0  
+		}
+	}
 }

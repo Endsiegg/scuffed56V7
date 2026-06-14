@@ -3,25 +3,23 @@ sub_units = {
 		abbreviation = "PHOW"
 		sprite = artillery
 		map_icon_category = infantry
-		group = support
-
 		active = yes
-
 		priority = 600
 		ai_priority = 250
-		special_forces = no
 		can_be_parachuted = yes
 		affects_speed = no
+		is_artillery_brigade = yes
 
 		# TYPE
 		type = {
 			support
 			infantry
 		}
-
+		group = support
 		# CATEGORIES
 		categories = {
 			category_support_battalions
+			category_divisional_support_battalions
 			category_army
 			category_artillery
 			category_support_artillery
@@ -29,8 +27,10 @@ sub_units = {
 			category_front_line
 		}
 
-		# MODIFERS
+		regimental = no
 		combat_width = 0
+		# MODIFERS
+
 		manpower = 300
 		training_time = 120
 		max_organisation = 0
