@@ -3,10 +3,7 @@ sub_units = {
 		abbreviation = "MRT"
         sprite = infantry
         map_icon_category = infantry
-        group = support
-
         active = yes
-
         priority = 600
         ai_priority = 250
 		affects_speed = no     # Used to check if the unit will affect the template's speed, support companies have it set to no.
@@ -21,11 +18,14 @@ sub_units = {
 		categories = {
 			category_front_line
 			category_support_battalions
+			category_divisional_support_battalions
 			category_army
 			category_light_infantry
 			category_all_infantry
 		}
 
+        group = support
+		regimental = no
 		combat_width = 0
 	
 		#Size Definitions
