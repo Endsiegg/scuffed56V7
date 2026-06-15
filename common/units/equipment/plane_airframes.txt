@@ -35,7 +35,6 @@ equipments = {
 		}
 
 		is_archetype = yes
-		#is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
 		type = fighter
@@ -1447,11 +1446,24 @@ equipments = {
 		year = 1933
 		is_convertable = yes
 		can_convert_from = {
+			medium_plane_airframe
+			medium_plane_fighter_airframe
+			medium_plane_scout_plane_airframe
 			medium_plane_airframe_0
 			medium_plane_airframe_1
 			medium_plane_airframe_2
 			medium_plane_airframe_3
 			medium_plane_airframe_4
+			medium_plane_fighter_airframe_0
+			medium_plane_fighter_airframe_1
+			medium_plane_fighter_airframe_2
+			medium_plane_fighter_airframe_3
+			medium_plane_fighter_airframe_4
+			medium_plane_scout_plane_airframe_0
+			medium_plane_scout_plane_airframe_1
+			medium_plane_scout_plane_airframe_2
+			medium_plane_scout_plane_airframe_3
+			medium_plane_scout_plane_airframe_4
 		}
 		can_be_produced = {
 			NOT = {
@@ -1464,7 +1476,6 @@ equipments = {
 		}
 
 		is_archetype = yes
-		is_convertable = yes
 		picture = archetype_strat_bomber_equipment
 		is_buildable = no
 		type = tactical_bomber
@@ -1707,7 +1718,7 @@ equipments = {
 		archetype = medium_plane_airframe
 		module_slots = inherit
 		priority = 5
-
+		is_convertable = yes
 		air_range = 750
 		maximum_speed = 200
 		air_agility = 25
@@ -1733,6 +1744,7 @@ equipments = {
 		air_agility = 30
 		air_defence = 18
 		weight = 8
+		is_convertable = yes
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 8
@@ -1863,6 +1875,7 @@ equipments = {
 		maximum_speed = 375
 		air_agility = 35
 		air_defence = 20
+		is_convertable = yes
 		weight = 12
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
@@ -2011,6 +2024,7 @@ equipments = {
 		maximum_speed = 425
 		air_agility = 40
 		air_defence = 24
+		is_convertable = yes
 		weight = 12
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
@@ -2171,6 +2185,7 @@ equipments = {
 		maximum_speed = 500
 		air_agility = 45
 		air_defence = 24
+		is_convertable = yes
 		weight = 14
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
@@ -2322,6 +2337,7 @@ equipments = {
 		year = 1933
 		is_convertable = yes
 		can_convert_from = {
+			large_plane_airframe
 			large_plane_airframe_0
 			large_plane_airframe_1
 			large_plane_airframe_2
@@ -2576,7 +2592,7 @@ equipments = {
 		archetype = large_plane_airframe
 		module_slots = inherit
 		priority = 5
-
+		is_convertable = yes
 		air_range = 1000
 		maximum_speed = 200
 		air_agility = 20
@@ -2594,7 +2610,7 @@ equipments = {
 		archetype = large_plane_airframe
 		parent = large_plane_airframe_0
 		priority = 5
-
+		is_convertable = yes
 		air_range = 1500
 		maximum_speed = 225
 		air_agility = 25
@@ -2732,7 +2748,7 @@ equipments = {
 		archetype = large_plane_airframe
 		parent = large_plane_airframe_1
 		priority = 5
-
+		is_convertable = yes
 		air_range = 2000
 		maximum_speed = 300
 		air_agility = 30
@@ -2896,7 +2912,7 @@ equipments = {
 		archetype = large_plane_airframe
 		parent = large_plane_airframe_2
 		priority = 5
-
+			is_convertable = yes
 		air_range = 3000
 		maximum_speed = 350
 		air_agility = 35
@@ -3058,7 +3074,7 @@ equipments = {
 		abbreviation = "afl4"
 		derived_variant_name = jet_strat_bomber_equipment_1
 		year = 1945
-
+		is_convertable = yes
 		archetype = large_plane_airframe
 		parent = large_plane_airframe_3
 		priority = 5
