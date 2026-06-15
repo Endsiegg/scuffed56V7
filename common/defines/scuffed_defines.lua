@@ -50,8 +50,8 @@ NDefines.NFactions.MAX_NUM_MEDIUM_TERM_GOALS = 2						-- Maximum number of mediu
 ----------------------------------
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 80						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
-NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.03
-NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 24
+NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.0
+NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 1000
 NDefines.NCountry.INTERPOLATED_FRONT_STEPS_SHORT = 1					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 NDefines.NCountry.MIN_MAJOR_COUNTRIES = 15
 NDefines.NCountry.SUPPLY_CONVOY_FACTOR = 0.1
@@ -219,8 +219,8 @@ NDefines.NMilitary.NEW_COMMANDER_RANDOM_BASIC_TRAIT_CHANCES = {  -- chances to g
 --     0.25, --25% for a second
 -- }
 NDefines.NMilitary.PIERCING_THRESHOLDS = {	-- Our piercing / their armor must be this value to deal damage fraction equal to the index in the array below [higher number = higher penetration]. If armor is 0, 1.00 will be returned.
-    1.50,
-    1.25,
+   -- 1.50,
+   -- 1.25,
     1.00,
     0.85,
     0.75,
@@ -229,8 +229,8 @@ NDefines.NMilitary.PIERCING_THRESHOLDS = {	-- Our piercing / their armor must be
     0.00, --there isn't much point setting this higher than 0
 }
 NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {	-- 0 armor will always receive maximum damage (so add overmatching at your own peril). the system expects at least 2 values, with no upper limit.
-    1.50,
-    1.25,
+  --  1.50,
+ --   1.25,
     1.00,
     0.85,
     0.75,

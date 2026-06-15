@@ -327,7 +327,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -345,7 +345,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}	
@@ -561,10 +561,10 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 10
 
 		available = {
-			has_war = yes
+			#has_war = yes
 		}
 
 		bypass = {
@@ -639,9 +639,6 @@ focus_tree = {
 	
 		completion_reward = { 
 			every_owned_state = {
-				limit = {
-					has_state_category = rural
-				}
 				add_dynamic_modifier = {
 					modifier = INS_agrarian_funding_state
 				}
@@ -2205,11 +2202,6 @@ focus_tree = {
 	
 		completion_reward = {
 			every_owned_state = {
-				limit = {
-					NOT = {
-						is_core_of = AST
-					}
-				}
 				add_dynamic_modifier = {
 					modifier = AST_standing_with_canberra_state_modifier
 				} 
@@ -2220,8 +2212,8 @@ focus_tree = {
 					has_dlc = "No Compromise, No Surrender"
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
-				set_faction_leader = yes
-				add_faction_influence_ratio = 0.30
+				#set_faction_leader = yes
+				add_faction_influence_ratio = 0.10
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -5149,7 +5141,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			979 = { #New Guineas
+			1096 = { #New Guineas
             	is_owned_by = ROOT
 				is_controlled_by = ROOT
 				compliance > 70
@@ -5161,18 +5153,6 @@ focus_tree = {
 				is_controlled_by = ROOT
 				compliance > 70
 				resistance < 10
-			}
-
-			1070 = { #Bougainville
-				is_owned_by = ROOT
-				is_controlled_by = ROOT
-				compliance > 70
-				resistance < 10
-			}
-
-			1073 = { #Interior Papua
-				is_owned_by = ROOT
-				is_controlled_by = ROOT
 			}
 
 			523 = { #Papua
@@ -5192,16 +5172,10 @@ focus_tree = {
 		completion_reward = {
 			add_country_leader_trait = AST_motherland_advocate_leader 
 
-			979 = {
+			1096 = {
 				add_core_of = ROOT
 			}
 			737 = {
-				add_core_of = ROOT
-			}
-			1070 = {
-				add_core_of = ROOT
-			}
-			1073 = {
 				add_core_of = ROOT
 			}
 			523 = {
@@ -7788,7 +7762,7 @@ focus = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			AST_add_or_modify_forging_australias_future = yes
-			add_to_variable = { AST_forging_australias_future_spirit_local_resources_factor = 0.10 tooltip = local_resources_factor_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_local_resources_factor = 0.20 tooltip = local_resources_factor_tt }
 			add_to_variable = { AST_forging_australias_future_spirit_local_resource_gain_efficiency_per_infrastructure = 0.05 tooltip = local_resource_gain_efficiency_per_infrastructure_tt }
 			add_to_variable = { AST_forging_australias_future_spirit_trade_opinion_factor = 0.10 tooltip = trade_opinion_factor_tt }
 			add_to_variable = { AST_forging_australias_future_spirit_trade_laws_cost_factor = 1.00 tooltip = trade_laws_cost_factor_tt }
@@ -7852,9 +7826,9 @@ focus = {
 	
 		completion_reward = {
 			AST_add_or_modify_forging_australias_future = yes
-			add_to_variable = { AST_forging_australias_future_spirit_consumer_goods_factor = -0.05 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_consumer_goods_factor = -0.10 tooltip = consumer_goods_factor_tt }
 			add_to_variable = { AST_forging_australias_future_spirit_stability_factor = 0.05 tooltip = stability_factor_tt }
-			add_to_variable = { AST_forging_australias_future_spirit_production_speed_buildings_factor = 0.05 tooltip = production_speed_buildings_factor_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_production_speed_buildings_factor = 0.10 tooltip = production_speed_buildings_factor_tt }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
@@ -7868,7 +7842,7 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -7892,7 +7866,7 @@ focus = {
 		x = 8
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available = {
 		}
@@ -7957,10 +7931,10 @@ focus = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = AST_forging_australias_future_spirit_tt
-			add_to_variable = { AST_forging_australias_future_spirit_consumer_goods_factor = -0.05 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_consumer_goods_factor = -0.10 tooltip = consumer_goods_factor_tt }
 			add_to_variable = { AST_forging_australias_future_spirit_stability_factor = 0.05 tooltip = stability_factor_tt }
 			add_to_variable = { AST_forging_australias_future_spirit_production_speed_buildings_factor = 0.05 tooltip = production_speed_buildings_factor_tt }
-			add_to_variable = { AST_forging_australias_future_spirit_political_power_cost = -0.05 tooltip = political_power_cost_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_political_power_cost = 0.05 tooltip = political_power_cost_tt }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
@@ -7974,7 +7948,7 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -7996,7 +7970,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available = {
 		}
@@ -8020,13 +7994,13 @@ focus = {
 		icon = GFX_focus_generic_supply_line
 		prerequisite = { focus = AST_lang_is_right }
 		prerequisite = { focus = AST_reverse_wage_cuts }
-#		mutually_exclusive = { }
+		#mutually_exclusive = { }
 		relative_position_id = AST_lang_is_right
 
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 		}
@@ -8053,7 +8027,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 		}
@@ -8120,7 +8094,7 @@ focus = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 2
 
 		available = {
 		}
@@ -8144,8 +8118,8 @@ focus = {
 
 			add_tech_bonus = {
 				name = AST_radium_hill
-				bonus = 0.5
-				uses = 2
+				bonus = 3
+				uses = 3
 				category = excavation_tech
 			}
 		}
@@ -8206,7 +8180,7 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -8230,7 +8204,7 @@ focus = {
 		x = 2
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 		}
@@ -8245,8 +8219,8 @@ focus = {
 			add_to_variable = { AST_great_depression_consumer_goods_factor = -0.10 tooltip = consumer_goods_factor_tt }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-
-			random_owned_controlled_state = {
+			every_controlled_state = {
+				random_select_amount = 3
 				limit = {
 					impassable = no
 					free_building_slots = {
@@ -8255,8 +8229,8 @@ focus = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 285 } 
-				add_extra_state_shared_building_slots = 2
+				#prioritize = { 285 } 
+				add_extra_state_shared_building_slots = 4
 			}
 		}
 
@@ -8272,7 +8246,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 10
 
 		available = {
 		}
@@ -8320,7 +8294,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 		}
@@ -8332,8 +8306,8 @@ focus = {
 	
 		completion_reward = {
 			custom_effect_tooltip = AST_great_depression_taog_spirit_tt
-			add_to_variable = { AST_great_depression_industrial_capacity_factory = 0.07 tooltip = industrial_capacity_factory_tt }
-			add_to_variable = { AST_great_depression_industrial_capacity_dockyard = 0.07 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { AST_great_depression_industrial_capacity_factory = 0.10 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { AST_great_depression_industrial_capacity_dockyard = 0.10 tooltip = industrial_capacity_dockyard_tt }
 		}
 
 		search_filters = {  }
@@ -8370,7 +8344,8 @@ focus = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			random_owned_controlled_state = {
+			every_controlled_state = {
+				random_select_amount = 3
 				limit = {
 					impassable = no
 					free_building_slots = {
@@ -8379,8 +8354,8 @@ focus = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 517 } 
-				add_extra_state_shared_building_slots = 2
+			#	prioritize = { 517 } 
+				add_extra_state_shared_building_slots = 4
 			}	
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -8399,7 +8374,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 		}
@@ -8428,7 +8403,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 		}
@@ -8456,7 +8431,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 		}
@@ -8499,10 +8474,10 @@ focus = {
 		completion_reward = {
 			AST_add_or_modify_forging_australias_future = yes
 
-			add_to_variable = { AST_forging_australias_future_spirit_consumer_goods_factor = 0.05 tooltip = consumer_goods_factor_tt }
-			add_to_variable = { AST_forging_australias_future_spirit_overlord_trade_cost_factor = -0.15 tooltip = overlord_trade_cost_factor_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_consumer_goods_factor = -0.10 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_overlord_trade_cost_factor = -0.3 tooltip = overlord_trade_cost_factor_tt }
 			add_to_variable = { 
-				AST_forging_australias_future_spirit_resource_trade_cost_bonus_per_factory = 1
+				AST_forging_australias_future_spirit_resource_trade_cost_bonus_per_factory = 2
 				tooltip = resource_trade_cost_bonus_per_factory_tt				
 			}
 
@@ -8518,7 +8493,7 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -8552,12 +8527,12 @@ focus = {
 	
 		completion_reward = {
 			custom_effect_tooltip = AST_forging_australias_future_spirit_tt
-			add_to_variable = { AST_forging_australias_future_spirit_research_speed_factor = 0.05 tooltip = research_speed_factor_tt }
-			add_to_variable = { AST_forging_australias_future_spirit_trade_opinion_factor = 0.10 tooltip = trade_opinion_factor_tt }
-			add_to_variable = { AST_forging_australias_future_spirit_convoy_retreat_speed = 0.10 tooltip = convoy_retreat_speed_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_research_speed_factor = 0.1 tooltip = research_speed_factor_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_trade_opinion_factor = 0.20 tooltip = trade_opinion_factor_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_convoy_retreat_speed = 0.20 tooltip = convoy_retreat_speed_tt }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = { type = industrial_complex level = 4 }
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_INTERNATIONAL_TRADE }
@@ -8585,7 +8560,7 @@ focus = {
 		completion_reward = {
 			custom_effect_tooltip = AST_forging_australias_future_spirit_tt
 			add_to_variable = { AST_forging_australias_future_spirit_consumer_goods_factor = -0.10 tooltip = consumer_goods_factor_tt }
-			add_to_variable = { AST_forging_australias_future_spirit_local_resources_factor = 0.10 tooltip = local_resources_factor_tt }
+			add_to_variable = { AST_forging_australias_future_spirit_local_resources_factor = 0.20 tooltip = local_resources_factor_tt }
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -9186,10 +9161,10 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}	
 			}
@@ -9262,10 +9237,10 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}	
 			}
@@ -9475,10 +9450,10 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}	
 			}
@@ -9735,7 +9710,7 @@ focus = {
 				limit = { has_dlc = "Arms Against Tyranny"}
 
 				mio:AST_new_south_wales_government_railways_organization = {
-					add_mio_size = 1
+					add_mio_size = 3
 					add_mio_funds_gain_factor = 0.1
 					add_mio_research_bonus = 0.05
 				}
@@ -9933,19 +9908,19 @@ focus = {
 			
 			add_tech_bonus = {
 				name = AST_army_inventions_directorate_taog 
-				bonus = 0.25
+				bonus = 1
 				uses = 1
 				category = air_equipment 
 			}
 			add_tech_bonus = {
 				name = AST_army_inventions_directorate_taog 
-				bonus = 0.25
+				bonus = 1
 				uses = 1
 				category = armor 
 			}
 			add_tech_bonus = {
 				name = AST_army_inventions_directorate_taog 
-				bonus = 0.25
+				bonus = 1
 				uses = 1
 				category = naval_equipment 
 			}
@@ -10037,7 +10012,7 @@ focus = {
 					add_building_construction = {
 						type = supply_node
 						province = 2223
-						level = 1
+						level = 5
 						instant_build = yes
 					}
 				}
@@ -10220,7 +10195,7 @@ focus = {
 				air_experience = 25
 				add_tech_bonus = {
 					name = AST_ride_the_lightning
-					bonus = 0.5
+					bonus = 1 
 					uses = 2
 					category = light_air
 				}
@@ -10232,7 +10207,7 @@ focus = {
 				air_experience = 25
 				add_tech_bonus = {
 					name = AST_ride_the_lightning
-					bonus = 0.50
+					bonus = 1
 					uses = 2
 					category = light_air
 				}
@@ -10358,7 +10333,7 @@ focus = {
 				limit = { has_dlc = "Arms Against Tyranny"}
 
 				mio:AST_commonwealth_aircraft_corporation_organization = {
-					add_mio_size = 1
+					add_mio_size = 3
 					add_mio_funds_gain_factor = 0.1
 					add_mio_research_bonus = 0.05
 				}
@@ -10420,7 +10395,7 @@ focus = {
 				}
 				add_tech_bonus = {
 					name = AST_the_gathering_storm
-					bonus = 0.5
+					bonus = 1
 					uses = 2
 					category = medium_air
 				}
@@ -10431,7 +10406,7 @@ focus = {
 				}
 				add_tech_bonus = {
 					name = AST_the_gathering_storm
-					bonus = 0.50
+					bonus = 1
 					uses = 2
 					category = medium_air
 				}
@@ -10611,7 +10586,7 @@ focus = {
 				}
 				add_tech_bonus = {
 					name = AST_hear_the_thunder
-					bonus = 0.5
+					bonus = 1
 					uses = 2
 					category = heavy_air
 				}
@@ -10622,7 +10597,7 @@ focus = {
 				}
 				add_tech_bonus = {
 					name = AST_hear_the_thunder
-					bonus = 0.50
+					bonus = 1
 					uses = 2
 					category = heavy_air
 				}
@@ -10807,10 +10782,10 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 4
 					instant_build = yes
 				}	
 			}
@@ -10833,7 +10808,7 @@ focus = {
 		x = -2
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 		}
@@ -10886,7 +10861,8 @@ focus = {
 			}
 			add_tech_bonus = {
 				name = AST_marines
-				bonus = 1
+				bonus = 2
+				ahead_reduction = 1
 				uses = 1
 				category = marine_tech
 			}
@@ -10905,7 +10881,7 @@ focus = {
 		x = 2
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 		}
@@ -10948,7 +10924,7 @@ focus = {
 				limit = { has_dlc = "Arms Against Tyranny"}
 
 				mio:AST_cockatoo_docks_organization = {
-					add_mio_size = 1
+					add_mio_size = 3
 					add_mio_funds_gain_factor = 0.1
 					add_mio_research_bonus = 0.05
 				}
@@ -11012,7 +10988,7 @@ focus = {
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 				mio:AST_evan_deakin_and_company_organization = {
-					add_mio_size = 2
+					add_mio_size = 3
 					add_mio_funds_gain_factor = 0.2
 					add_mio_research_bonus = 0.05
 				}
@@ -11071,7 +11047,7 @@ focus = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = AST_scrap_iron_flotilla_taog
-				bonus = 0.5
+				bonus = 3
 				uses = 1
 				category = dd_tech
 			}
@@ -11106,7 +11082,7 @@ focus = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = AST_cruising_for_a_bruising
-				bonus = 0.5
+				bonus = 3
 				uses = 1
 				category = ca_tech
 			}
@@ -11141,7 +11117,7 @@ focus = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = AST_strike_from_down_under
-				bonus = 0.5
+				bonus = 3
 				uses = 1
 				category = ss_tech
 			}
