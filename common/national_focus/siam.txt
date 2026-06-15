@@ -55,7 +55,7 @@ focus_tree = {
 	#####    Civilian Wing     #	
 	############################
 
-		focus = {
+	focus = {
 		id = SIA_shuffle_pridi_to_the_minister_of_interior
 		icon = GFX_focus_SIA_shuffle_pridi_to_the_minister_of_interior
 		prerequisite = { focus = SIA_the_khana_ratsadon }
@@ -63,7 +63,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_the_khana_ratsadon
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -133,7 +133,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_shuffle_pridi_to_the_minister_of_interior
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -177,7 +177,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_civil_nationalism
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -196,7 +196,7 @@ focus_tree = {
 			}
 
 			add_tech_bonus = {
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = electronics # optional 
 				# technology  = technology_id # optional
@@ -213,7 +213,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_the_true_heirs_of_1932
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
@@ -236,7 +236,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_civil_nationalism
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -274,7 +274,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_dominate_public_symbols
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -287,7 +287,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = SIA_civil_service_heroism
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = electronics
 			}
@@ -309,7 +309,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = SIA_thammasat_university
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -323,7 +323,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = SIA_spread_democratic_sentiment_in_universities
-				bonus = 0.33
+				bonus = 1
 				uses = 1
 				category = industry
 			}
@@ -345,7 +345,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_spread_democratic_sentiment_in_universities
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -371,7 +371,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_shuffle_pridi_to_the_minister_of_interior
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -440,7 +440,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_sideline_disloyal_officers
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -469,7 +469,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_sideline_disloyal_officers
 		#mutually_exclusive = { focus =  focus =  }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 			modifier = { 
@@ -511,7 +511,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_support_songsuradets_military_clique
 		mutually_exclusive = { }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 			modifier = { 
@@ -631,7 +631,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = SIA_for_the_preservation_of_siamese_independence
-				bonus = 0.33
+				bonus = 1
 				uses = 1
 				category = infantry_weapons
 			}
@@ -649,8 +649,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_for_the_preservation_of_siamese_independence
 		prerequisite = { focus = SIA_for_the_preservation_of_siamese_independence }
-		mutually_exclusive = { focus = SIA_hold_military_parades }
-		cost = 5
+		#mutually_exclusive = { focus = SIA_hold_military_parades }
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -681,8 +681,8 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_the_peoples_day
 		prerequisite = { focus = SIA_for_the_preservation_of_siamese_independence }
-		mutually_exclusive = { focus = SIA_the_peoples_day }
-		cost = 5
+	#	mutually_exclusive = { focus = SIA_the_peoples_day }
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -741,8 +741,8 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_hold_military_parades
 		prerequisite = { focus = SIA_for_the_preservation_of_siamese_independence }
-		mutually_exclusive = { focus = SIA_military_academies_indoctrination }
-		cost = 5
+	#	mutually_exclusive = { focus = SIA_military_academies_indoctrination }
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -767,8 +767,8 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_embed_technocrats_in_civilian_institutions
 		prerequisite = { focus = SIA_for_the_preservation_of_siamese_independence }
-		mutually_exclusive = { focus = SIA_embed_technocrats_in_civilian_institutions }
-		cost = 5
+		#mutually_exclusive = { focus = SIA_embed_technocrats_in_civilian_institutions }
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -800,7 +800,7 @@ focus_tree = {
 		relative_position_id = SIA_the_peoples_day
 		prerequisite = { focus = SIA_the_peoples_day focus = SIA_hold_military_parades }
 		#mutually_exclusive = { focus = SIA_drum_up_irredentism }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -832,7 +832,7 @@ focus_tree = {
 		relative_position_id = SIA_the_king_of_the_white_elephant
 		prerequisite = { focus = SIA_embed_technocrats_in_civilian_institutions focus = SIA_military_academies_indoctrination }
 		#mutually_exclusive = { focus = SIA_the_king_of_the_white_elephant }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -875,7 +875,7 @@ focus_tree = {
 		relative_position_id = SIA_drum_up_irredentism
 		prerequisite = { focus =  SIA_military_academies_indoctrination focus = SIA_embed_technocrats_in_civilian_institutions }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -916,7 +916,7 @@ focus_tree = {
 		relative_position_id = SIA_the_king_of_the_white_elephant
 		prerequisite = { focus = SIA_drum_up_irredentism }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -952,7 +952,7 @@ focus_tree = {
 	#####    Monarchist    	   #	
 	############################
 
-		focus = {
+	focus = {
 		id = SIA_the_midnight_meeting 
 		icon = GFX_focus_SIA_the_midnight_meeting
 		x = 0
@@ -960,7 +960,7 @@ focus_tree = {
 		relative_position_id = SIA_support_songsuradets_military_clique
 		prerequisite = { focus = SIA_support_songsuradets_military_clique }
 		mutually_exclusive = { focus = SIA_to_lay_the_bait focus = SIA_phibuns_premiership }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -1047,7 +1047,7 @@ focus_tree = {
 		relative_position_id = SIA_the_midnight_meeting
 		prerequisite = { focus = SIA_the_midnight_meeting }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -1075,8 +1075,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_meet_with_king_prajadhipok
 		prerequisite = { focus = SIA_meet_with_king_prajadhipok }
-		mutually_exclusive = { focus = SIA_facilitate_prajadhipoks_move_to_japan }
-		cost = 5
+		#mutually_exclusive = { focus = SIA_facilitate_prajadhipoks_move_to_japan }
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -1132,8 +1132,8 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_prajadhipok_audience_with_churchill
 		prerequisite = { focus = SIA_meet_with_king_prajadhipok }
-		mutually_exclusive = { focus = SIA_prajadhipok_audience_with_churchill }
-		cost = 5
+		#mutually_exclusive = { focus = SIA_prajadhipok_audience_with_churchill }
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -1156,7 +1156,7 @@ focus_tree = {
 		relative_position_id = SIA_prajadhipok_audience_with_churchill
 		prerequisite = { focus = SIA_prajadhipok_audience_with_churchill focus = SIA_facilitate_prajadhipoks_move_to_japan }
 
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -1541,7 +1541,7 @@ focus_tree = {
 		relative_position_id = SIA_the_kings_gambit
 		prerequisite = { focus = SIA_the_kings_gambit }
 
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -1568,7 +1568,7 @@ focus_tree = {
 		relative_position_id = SIA_restore_order
 		prerequisite = { focus = SIA_restore_order }
 
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -1615,7 +1615,7 @@ focus_tree = {
 		relative_position_id = SIA_to_forge_a_king
 		prerequisite = { focus = SIA_to_forge_a_king }
 
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -1765,7 +1765,7 @@ focus_tree = {
 		relative_position_id = SIA_the_kings_gambit
 		prerequisite = { focus = SIA_the_kings_gambit }
 
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -1810,7 +1810,7 @@ focus_tree = {
 		relative_position_id = SIA_the_provincial_council_of_state
 		prerequisite = { focus = SIA_the_provincial_council_of_state }
 		mutually_exclusive = { focus = SIA_the_regency_of_rangsit focus = SIA_the_regency_of_songsuradet }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 50
 		}
@@ -1871,7 +1871,7 @@ focus_tree = {
 		relative_position_id = SIA_the_regency_of_boworadet
 		prerequisite = { focus = SIA_the_provincial_council_of_state }
 		mutually_exclusive = { focus = SIA_the_regency_of_boworadet focus = SIA_the_regency_of_rangsit }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 50
 		}
@@ -1907,7 +1907,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_the_regency_of_songsuradet
 		prerequisite = { focus = SIA_the_regency_of_songsuradet }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 50
 		}
@@ -1930,7 +1930,7 @@ focus_tree = {
 		relative_position_id = SIA_the_regency_of_songsuradet
 		prerequisite = { focus = SIA_the_provincial_council_of_state }
 		mutually_exclusive = { focus = SIA_the_regency_of_boworadet focus = SIA_the_regency_of_songsuradet }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 50
 		}
@@ -2304,7 +2304,7 @@ focus_tree = {
 		relative_position_id = SIA_the_purge
 		prerequisite = { focus = SIA_the_purge focus = SIA_military_oversight_bureau }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 60
 		}
@@ -2362,7 +2362,7 @@ focus_tree = {
 		relative_position_id = SIA_secure_the_state
 		prerequisite = { focus = SIA_secure_the_state }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 60
 		}
@@ -2426,7 +2426,7 @@ focus_tree = {
 		relative_position_id = SIA_achieve_domestic_legitimacy
 		prerequisite = { focus = SIA_achieve_domestic_legitimacy }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -2460,7 +2460,7 @@ focus_tree = {
 		relative_position_id = SIA_end_military_grift
 		prerequisite = { focus = SIA_achieve_domestic_legitimacy }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 50
 		}
@@ -2595,7 +2595,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_rebuild_the_war_torn_economy
 		prerequisite = { focus = SIA_rebuild_the_war_torn_economy  }
-		mutually_exclusive = { focus = SIA_a_more_moderate_option }
+		#mutually_exclusive = { focus = SIA_a_more_moderate_option }
 		cost = 5
 		ai_will_do = {
 			factor = 50
@@ -2647,7 +2647,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_the_yellow_dossier
 		prerequisite = { focus = SIA_rebuild_the_war_torn_economy  }
-		mutually_exclusive = { focus = SIA_the_yellow_dossier }
+		#mutually_exclusive = { focus = SIA_the_yellow_dossier }
 		cost = 5
 		ai_will_do = {
 			factor = 30
@@ -2935,7 +2935,7 @@ focus_tree = {
 			}
 
 			add_tech_bonus = {
-				bonus = 0.5
+				bonus = 1
 				uses = 3
 				category = naval_equipment
 				name = SIA_allies_integration
@@ -3547,7 +3547,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = SIA_a_land_war_in_asia
-				bonus = 0.25
+				bonus = 1
 				uses = 2
 				category = support_tech 
 			}
@@ -3883,7 +3883,7 @@ focus_tree = {
 		relative_position_id = SIA_drum_up_irredentism	 
 		prerequisite = { focus =  SIA_drum_up_irredentism focus = SIA_sell_privy_purse_lands }
 		mutually_exclusive = { focus = SIA_to_lay_the_bait focus = SIA_the_midnight_meeting }
-		cost = 5 
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -3957,7 +3957,7 @@ focus_tree = {
 		relative_position_id = SIA_asian_democratic_compact
 		prerequisite = { focus = SIA_asian_democratic_compact }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -3981,7 +3981,7 @@ focus_tree = {
 		relative_position_id = SIA_southeast_asia_joint_command
 		prerequisite = { focus = SIA_asian_democratic_compact }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -4005,7 +4005,7 @@ focus_tree = {
 		relative_position_id = SIA_pan_asian_weapon_standardization
 		prerequisite = { focus = SIA_asian_democratic_compact }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -4029,7 +4029,7 @@ focus_tree = {
 		relative_position_id = SIA_united_against_aggression
 		prerequisite = { focus = SIA_asian_democratic_compact }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -4104,7 +4104,7 @@ focus_tree = {
 		relative_position_id = SIA_phibuns_premiership	
 		prerequisite = { focus =  SIA_phibuns_premiership }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -4127,7 +4127,7 @@ focus_tree = {
 		relative_position_id = SIA_siamese_youth_movement	
 		prerequisite = { focus =  SIA_siamese_youth_movement }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -4273,7 +4273,7 @@ focus_tree = {
 		relative_position_id = SIA_phibuns_premiership	
 		prerequisite = { focus = SIA_phibuns_premiership }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -4300,7 +4300,7 @@ focus_tree = {
 		relative_position_id = SIA_look_to_european_fascism	
 		prerequisite = { focus = SIA_look_to_european_fascism }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -4365,7 +4365,7 @@ focus_tree = {
 				}
 
 				every_military_industrial_organization = {
-					add_mio_funds = 1000
+					add_mio_funds = 5000
 				}
 			}
 
@@ -4378,7 +4378,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1076 }
+			#	prioritize = { 1076 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -4446,7 +4446,7 @@ focus_tree = {
 		}
 		available = {
 			has_idea = idea_SIA_cemented_control_2
-			has_war = yes
+			#has_war = yes
 		}
 		#allow_branch = {
 		#}
@@ -4460,28 +4460,7 @@ focus_tree = {
 		}
 	}
 
-#	focus = {
-#		id = SIA_recognize_manchukuo
-#		icon = GFX_focus_PLACEHOLDER
-#		x = 2
-#		y = 0
-#		relative_position_id = SIA_the_duty_of_the_thai_people_during_the_war_act	
-#		prerequisite = { focus = SIA_suspend_ordinary_legal_procedures }
-#		#mutually_exclusive = { focus =  }
-#		cost = 5
-#		ai_will_do = {
-#			factor = 10
-#		}
-#		available = {
-#		}
-#		#allow_branch = {
-#		#}
-#		search_filters = { }
-#
-#		completion_reward = {
-#			custom_effect_tooltip = "CM_TODO"
-#		}
-#	}
+
 
 	focus = {
 		id = SIA_press_censorship
@@ -4491,7 +4470,7 @@ focus_tree = {
 		relative_position_id = SIA_suspend_ordinary_legal_procedures
 		prerequisite = { focus = SIA_suspend_ordinary_legal_procedures }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -4520,7 +4499,7 @@ focus_tree = {
 		relative_position_id = SIA_look_to_european_fascism	
 		prerequisite = { focus = SIA_look_to_european_fascism }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -4604,95 +4583,95 @@ focus_tree = {
 			hidden_effect = {
 
 				#Move arms factories
-				for_loop_effect = {
-					end = 3
-					break = b
+				# for_loop_effect = {
+				# 	end = 3
+				# 	break = b
 
-					if = {
-						limit = {
-							1076 = { 
-								check_variable = { building_level@arms_factory > 0 } 
-							}
+				# 	if = {
+				# 		limit = {
+				# 			1076 = { 
+				# 				check_variable = { building_level@arms_factory > 0 } 
+				# 			}
 
-							1077 = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}	
-						}
+				# 			1077 = {
+				# 				free_building_slots = {
+				# 					building = arms_factory
+				# 					size > 0
+				# 					include_locked = yes
+				# 				}
+				# 			}	
+				# 		}
 
-						1076 = {
-							remove_building = {
-								type = arms_factory 
-								level = 1
-							}
-						}
+				# 		1076 = {
+				# 			remove_building = {
+				# 				type = arms_factory 
+				# 				level = 1
+				# 			}
+				# 		}
 
-						1077 = {
-							add_extra_state_shared_building_slots = 1
-							add_building_construction = {
-								type = arms_factory
-								level = 1 
-								instant_build = yes
-							}
-						}
+				# 		1077 = {
+				# 			add_extra_state_shared_building_slots = 1
+				# 			add_building_construction = {
+				# 				type = arms_factory
+				# 				level = 1 
+				# 				instant_build = yes
+				# 			}
+				# 		}
 
-					}
-					else = {
-						set_variable = { b = 1 }
-					}
-				}
+				# 	}
+				# 	else = {
+				# 		set_variable = { b = 1 }
+				# 	}
+				# }
 
 				#Move Civs
-				for_loop_effect = {
-					end = 3
-					break = b
+				# for_loop_effect = {
+				# 	end = 3
+				# 	break = b
 
-					if = {
-						limit = {
-							1076 = { 
-								check_variable = { building_level@industrial_complex > 0 } 
-							}
+				# 	if = {
+				# 		limit = {
+				# 			1076 = { 
+				# 				check_variable = { building_level@industrial_complex > 0 } 
+				# 			}
 
-							1077 = {
-								free_building_slots = {
-									building = industrial_complex
-									size > 0
-									include_locked = yes
-								}
-							}	
-						}
+				# 			1077 = {
+				# 				free_building_slots = {
+				# 					building = industrial_complex
+				# 					size > 0
+				# 					include_locked = yes
+				# 				}
+				# 			}	
+				# 		}
 
-						1076 = {
-							remove_building = {
-								type = industrial_complex 
-								level = 1
-							}
-						}
+				# 		1076 = {
+				# 			remove_building = {
+				# 				type = industrial_complex 
+				# 				level = 1
+				# 			}
+				# 		}
 
-						1077 = {
-							add_extra_state_shared_building_slots = 1
-							add_building_construction = {
-								type = industrial_complex
-								level = 1 
-								instant_build = yes
-							}
-						}
+				# 		1077 = {
+				# 			add_extra_state_shared_building_slots = 1
+				# 			add_building_construction = {
+				# 				type = industrial_complex
+				# 				level = 1 
+				# 				instant_build = yes
+				# 			}
+				# 		}
 
-					}
-					else = {
-						set_variable = { b = 1 }
-					}
-				}
+				# 	}
+				# 	else = {
+				# 		set_variable = { b = 1 }
+				# 	}
+				# }
 
 				#Build Bunkers
 
 				if = {
 					limit = {
 						controls_province = 10398
-						1077 = {
+						289 = {
 							free_building_slots = {
 								building = bunker
 								size > 2
@@ -4701,7 +4680,7 @@ focus_tree = {
 						}
 					}
 
-					1077 = {
+					289 = {
 						add_building_construction = {
 							type = bunker
 							level = 3
@@ -4714,7 +4693,7 @@ focus_tree = {
 				if = {
 					limit = {
 						controls_province = 12345
-						1077 = {
+						289 = {
 							free_building_slots = {
 								building = bunker
 								size > 2
@@ -4723,7 +4702,7 @@ focus_tree = {
 						}
 					}
 
-					1077 = { 
+					289 = { 
 						add_building_construction = {
 							type = bunker
 							level = 3
@@ -4736,7 +4715,7 @@ focus_tree = {
 				if = {
 					limit = {
 						controls_province = 10411
-						1077 = {
+						289 = {
 							free_building_slots = {
 								building = bunker
 								size > 2
@@ -4745,7 +4724,7 @@ focus_tree = {
 						}
 					}
 
-					1077 = {
+					289 = {
 						add_building_construction = {
 							type = bunker
 							level = 3
@@ -4755,12 +4734,12 @@ focus_tree = {
 					}
 				}
 			}
-			custom_effect_tooltip = SIA_relocate_the_capital_to_phetchabun_tt
+			#custom_effect_tooltip = SIA_relocate_the_capital_to_phetchabun_tt
 			custom_effect_tooltip = newline_tt
 
 			add_timed_idea = {
 			 	idea = idea_SIA_desperate_gambit
-			 	days = 90
+			 	days = 180
 			 }
 
 			 custom_effect_tooltip = SIA_relocate_the_capital_to_phetchabun_tt2
@@ -4960,7 +4939,7 @@ focus_tree = {
 		}
 	}
 
-		focus = {
+	focus = {
 		id = SIA_demand_the_return_of_lost_territory
 		icon = GFX_goal_demand_sudetenland
 		x = 2
@@ -4978,14 +4957,15 @@ focus_tree = {
 		#}
 
 		bypass = {
-			controls_state = 1069  
-			controls_state = 1067
+			controls_state = 925  
 			controls_state = 741
-			controls_state = 1068
-			controls_state = 1061
-			controls_state = 1064
-			controls_state = 1065
+			controls_state = 286
+			controls_state = 927
 			controls_state = 670
+			controls_state = 928
+			controls_state = 926
+			controls_state = 671
+			controls_state = 924
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -5068,41 +5048,50 @@ focus_tree = {
 				}
 			}
 			
-			993 = {
+			925 = {
 				is_controlled_by = ROOT
 				compliance > var:ROOT.SIA_greater_thai_empire_compliance_requirement
 			}
 
-			999 = {
+			741 = {
 				is_controlled_by = ROOT
 				compliance > var:ROOT.SIA_greater_thai_empire_compliance_requirement
 			}
 
-			994 = {
+			286 = {
 				is_controlled_by = ROOT
 				compliance > var:ROOT.SIA_greater_thai_empire_compliance_requirement
 			}
 
-			1062 = {
+			927 = {
 				is_controlled_by = ROOT
 				compliance > var:ROOT.SIA_greater_thai_empire_compliance_requirement
 			}
 
-			1064 = {
+			670 = {
 				is_controlled_by = ROOT
 				compliance > var:ROOT.SIA_greater_thai_empire_compliance_requirement
 			}
 
-			1061 = {
+			928 = {
 				is_controlled_by = ROOT
 				compliance > var:ROOT.SIA_greater_thai_empire_compliance_requirement
 			}
 
-			1065 = {
+			926 = {
 				is_controlled_by = ROOT
 				compliance > var:ROOT.SIA_greater_thai_empire_compliance_requirement
 			}
 
+			924 = {
+				is_controlled_by = ROOT
+				compliance > var:ROOT.SIA_greater_thai_empire_compliance_requirement
+			}
+
+			671 = {
+				is_controlled_by = ROOT
+				compliance > var:ROOT.SIA_greater_thai_empire_compliance_requirement
+			}
 		}
 		#allow_branch = {
 		#}
@@ -5134,7 +5123,7 @@ focus_tree = {
 		relative_position_id = SIA_demand_the_return_of_lost_territory	
 		prerequisite = { focus = SIA_pan_thaiism }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -5179,7 +5168,7 @@ focus_tree = {
 				limit = { has_dlc = "Arms Against Tyranny" }
 
 				every_military_industrial_organization = {
-					add_mio_funds = 1500
+					add_mio_funds = 5000
 				}
 			}
 
@@ -5199,7 +5188,7 @@ focus_tree = {
 		relative_position_id = SIA_retake_lost_british_states	
 		prerequisite = { focus = SIA_retake_lost_british_states focus = SIA_recover_indochina focus = SIA_demand_the_return_of_lost_territory }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -5227,7 +5216,7 @@ focus_tree = {
 	###			Economy			###
 	###############################
 
-		focus = {
+	focus = {
 		id = SIA_industrialization_drive
 		icon = GFX_focus_generic_industry_1
 		x = 29
@@ -5271,8 +5260,8 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1076 } #optional: to pick those states first if they fulfill the limit
-				add_extra_state_shared_building_slots = 1
+				#prioritize = { 1076 } #optional: to pick those states first if they fulfill the limit
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -5346,7 +5335,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = SIA_asian_financial_compact
-				bonus = 0.33
+				bonus = 1
 				uses = 2
 				category = infantry_weapons # optional
 				# technology  = technology_id # optional
@@ -5588,8 +5577,8 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					infrastructure < 5
 				}
-				prioritize = { 1076 868 1077 } #optional: to pick those states first if they fulfill the limit
-				add_extra_state_shared_building_slots = 1
+		#		prioritize = { 1076 868 1077 } #optional: to pick those states first if they fulfill the limit
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -5603,8 +5592,8 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					infrastructure < 5
 				}
-				prioritize = { 1076 868 1077 } #optional: to pick those states first if they fulfill the limit
-				add_extra_state_shared_building_slots = 1
+			#	prioritize = { 1076 868 1077 } #optional: to pick those states first if they fulfill the limit
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -5623,7 +5612,7 @@ focus_tree = {
 		relative_position_id = SIA_asian_financial_compact
 		prerequisite = { focus = SIA_asian_financial_compact focus = SIA_revision_of_unequal_treaties }
 		mutually_exclusive = { focus = SIA_thai_rice_company }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -5683,7 +5672,7 @@ focus_tree = {
 		relative_position_id = SIA_revision_of_unequal_treaties
 		prerequisite = { focus = SIA_asian_financial_compact focus = SIA_revision_of_unequal_treaties }
 		mutually_exclusive = { focus = SIA_the_bank_of_siam }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -5790,7 +5779,7 @@ focus_tree = {
 		relative_position_id = SIA_the_bank_of_siam	
 		prerequisite = { focus = SIA_the_bank_of_siam }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -5818,7 +5807,7 @@ focus_tree = {
 		relative_position_id = SIA_send_bureaucrats_abroad	
 		prerequisite = { focus = SIA_the_bank_of_siam }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -5872,7 +5861,7 @@ focus_tree = {
 		relative_position_id = SIA_siamese_development_cooperative	
 		prerequisite = { focus = SIA_siamese_development_cooperative focus = SIA_reduction_of_agricultural_yield_taxes}
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -5938,7 +5927,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1076 } 
+				prioritize = { 289 } 
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -6055,7 +6044,7 @@ focus_tree = {
 		completion_reward = {
 			add_timed_idea = {
 				idea = idea_SIA_deficit_spending
-				days = 420
+				days = 724
 			}
 			custom_effect_tooltip = newline_tt
 			custom_effect_tooltip = SIA_deficit_spending_tt
@@ -6090,7 +6079,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = SIA_acquire_light_tools
 				ahead_reduction = 1
-				uses = 1
+				uses = 2
 				category = industry # optional 
 				# technology  = technology_id # optional
 			}
