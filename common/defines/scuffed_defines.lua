@@ -50,8 +50,8 @@ NDefines.NFactions.MAX_NUM_MEDIUM_TERM_GOALS = 2						-- Maximum number of mediu
 ----------------------------------
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 80						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
-NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.03
-NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 24
+NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.0
+NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 1000
 NDefines.NCountry.INTERPOLATED_FRONT_STEPS_SHORT = 1					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 NDefines.NCountry.MIN_MAJOR_COUNTRIES = 15
 NDefines.NCountry.SUPPLY_CONVOY_FACTOR = 0.1
