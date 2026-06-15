@@ -6128,7 +6128,6 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-
 			controls_province = 7408
 		}
 		#allow_branch = {
@@ -6136,7 +6135,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			1076 = {
+			289 = {
 				add_building_construction = {
 					type = naval_base
 					level = 2
@@ -6151,7 +6150,7 @@ focus_tree = {
 					is_controlled_by = ROOT
 					infrastructure < 5
 				}
-				prioritize = { 1076 }
+				prioritize = { 289 }
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -6202,9 +6201,7 @@ focus_tree = {
 			factor = 20
 		}
 		available = {
-			has_equipment = {
-				motorized_equipment > 999
-			}
+
 		}
 		#allow_branch = {
 		#}
@@ -6222,10 +6219,10 @@ focus_tree = {
 					}
 				}
 
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -6248,7 +6245,7 @@ focus_tree = {
 		relative_position_id = SIA_mechanization_of_agriculture	
 		prerequisite = { focus = SIA_acquire_light_tools }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 20
 		}
@@ -6260,17 +6257,8 @@ focus_tree = {
 
 		completion_reward = {
 			every_core_state = {
-				limit = {
-					NOT = {
-						OR = {
-							state = 1076
-							state = 1066
-							state = 671
-						}
-					}
-				}
 				add_dynamic_modifier = { modifier = idea_SIA_irrigation }
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 
 			}
 		}
@@ -6284,7 +6272,7 @@ focus_tree = {
 		relative_position_id = SIA_irrigation	
 		prerequisite = { focus = SIA_railway_and_port_extensions }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -6393,7 +6381,7 @@ focus_tree = {
 		relative_position_id = SIA_mechanization_of_agriculture	
 		prerequisite = { focus = SIA_mechanization_of_agriculture }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 30
 		}
@@ -6425,16 +6413,14 @@ focus_tree = {
 			factor = 20
 		}
 		available = {
-			1076 = {
-				is_controlled_by = ROOT
-			}
+
 		}
 		#allow_branch = {
 		#}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
-			1076 = {
+			289 = {
 				add_dynamic_modifier = {
 					modifier = idea_SIA_farmers_moving_to_bangkok_good
 				}
@@ -6477,17 +6463,13 @@ focus_tree = {
 						value = THIS
 					}
 					NOT = {
-						state = 1076
+						state = 289
 					}
 				}
 
 				add_dynamic_modifier = {
 					modifier = idea_SIA_farmers_moving_to_bangkok_bad
 				}
-			}
-
-			hidden_effect = {
-				add_manpower = -10400
 			}
 		}
 	}
@@ -6521,8 +6503,8 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1076 } #optional: to pick those states first if they fulfill the limit
-				add_extra_state_shared_building_slots = 1
+				prioritize = { 869 } #optional: to pick those states first if they fulfill the limit
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -6539,8 +6521,8 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1076 } #optional: to pick those states first if they fulfill the limit
-				add_extra_state_shared_building_slots = 1
+				prioritize = { 868 } #optional: to pick those states first if they fulfill the limit
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -6621,10 +6603,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_timed_idea = {
-				idea = idea_SIA_a_modern_economy
-				days = 365
-			}
+			add_ideas = idea_SIA_a_modern_economy
+			
 		}
 	}
 
@@ -6776,7 +6756,7 @@ focus_tree = {
 						limit = {
 							is_controlled_by = ROOT
 						}
-						add_extra_state_shared_building_slots = 2
+						add_extra_state_shared_building_slots = 3
 						add_building_construction = {
 							type = fuel_silo
 							level = 2
@@ -6796,7 +6776,7 @@ focus_tree = {
 				# 		include_locked = yes
 				# 	}
 				# }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = fuel_silo
 					level = 2
@@ -6806,7 +6786,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = SIA_fuel_oil_act
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = synth_resources 
 			}
@@ -6818,7 +6798,7 @@ focus_tree = {
 				}
 				add_tech_bonus = {
 					name = SIA_fuel_oil_act
-					bonus = 0.5
+					bonus = 1
 					uses = 1
 					category = cat_air_engine 
 				}
@@ -6830,7 +6810,7 @@ focus_tree = {
 				}
 				add_tech_bonus = {
 					name = SIA_fuel_oil_act
-					bonus = 0.5
+					bonus = 1
 					uses = 1
 					category = cat_air_engine 
 				}
@@ -6911,7 +6891,7 @@ focus_tree = {
 		relative_position_id = SIA_revise_the_taxation_system	
 		prerequisite = { focus = SIA_revise_the_taxation_system }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -7010,16 +6990,16 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = idea_SIA_agrarian_economical_policy_modify
 			add_to_variable = { SIA_aep_factory_energy_consumption= -0.1 tooltip = factory_energy_consumption_tt }
-			add_to_variable = { SIA_aep_extraction = 0.05 tooltip = local_resources_factor_tt }
+			add_to_variable = { SIA_aep_extraction = 0.10 tooltip = local_resources_factor_tt }
 			every_core_state = {
-				random_select_amount = 2
+				random_select_amount = 3
 				limit = {
 					is_controlled_by = ROOT
 				}
-
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = synthetic_refinery
-					level = 1
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -7045,39 +7025,42 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
-			add_resource = {
-				type = steel
-				amount = 6
-				state = 724
+			869 = {
+				add_resource = {
+					type = steel
+					amount = 18
+					state = 724
+				}
+
+				add_resource = {
+					type = chromium
+					amount = 16
+					state = 724
+				}
+
+				add_resource = {
+					type = tungsten
+					amount = 16
+					state = 289
+				}
+
+				add_resource = {
+					type = coal
+					amount = 24
+					state = 869
+				}				
 			}
 
-			add_resource = {
-				type = chromium
-				amount = 8
-				state = 724
-			}
-
-			add_resource = {
-				type = tungsten
-				amount = 8
-				state = 289
-			}
-
-			add_resource = {
-				type = coal
-				amount = 8
-				state = 869
-			}
 
 			add_tech_bonus = {
 				name = SIA_domestic_tin_smelters
-				bonus = 0.75
+				bonus = 3
 				uses = 1
-				category = excavation_tech #
+				category = excavation_tech 
 			}
 
 			custom_effect_tooltip = idea_SIA_agrarian_economical_policy_modify
-			add_to_variable = { SIA_aep_extraction = 0.05 tooltip = local_resources_factor_tt }
+			add_to_variable = { SIA_aep_extraction = 0.1 tooltip = local_resources_factor_tt }
 
 			unlock_decision_tooltip = {
 				decision = open_mae_moh_lignite_mine
@@ -7118,7 +7101,7 @@ focus_tree = {
 		relative_position_id = SIA_railway_and_port_extensions	
 		prerequisite = { focus = SIA_railway_and_port_extensions focus = SIA_prepare_for_the_next_blockade }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -7141,12 +7124,12 @@ focus_tree = {
 		relative_position_id = SIA_kasetsart_university	
 		prerequisite = { focus = SIA_kasetsart_university }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		available = {
-			is_major = yes
+			#is_major = yes
 			num_of_factories > 100
 		}
 		#allow_branch = {
@@ -7181,12 +7164,12 @@ focus_tree = {
 				
 			custom_effect_tooltip = idea_SIA_agrarian_economical_policy_modify
 			add_to_variable = { SIA_aep_convoy_retreat_speed = 0.2 tooltip = convoy_retreat_speed_tt }
-			add_to_variable = { SIA_aep_weekly_convoys_war_support = 0.003 tooltip = weekly_convoys_war_support_tt }
+			add_to_variable = { SIA_aep_weekly_convoys_war_support = 0.006 tooltip = weekly_convoys_war_support_tt }
 			add_to_variable = { SIA_aep_resource_trade_cost_bonus_per_factory = 1 tooltip = resource_trade_cost_bonus_per_factory_tt }
 
 			add_equipment_to_stockpile = { 
 				type = convoy_1
-				amount = 35
+				amount = 100
 				producer = SIA
 			}
 			random_core_state = {
@@ -7200,7 +7183,7 @@ focus_tree = {
 					is_controlled_by = ROOT
 				}
 
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
 					level = 1
@@ -7231,7 +7214,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = idea_SIA_agrarian_economical_policy_modify 
-			add_to_variable = { SIA_aep_production_speed_arms_factory_factor = 0.1 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { SIA_aep_production_speed_arms_factory_factor = 0.15 tooltip = production_speed_arms_factory_factor_tt }
 
 
 			add_to_variable = {  SIA_aep_production_factory_start_efficiency_factor = 0.1 tooltip = production_factory_start_efficiency_factor_tt }
@@ -7292,7 +7275,7 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				every_military_industrial_organization = {
-					add_mio_size = 1
+					add_mio_size = 3
 				}
 			}
 
@@ -7307,10 +7290,10 @@ focus_tree = {
 					}
 				}
 
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -7397,10 +7380,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 3 }
+			add_offsite_building = { type = arms_factory level = 5 }
 			add_timed_idea = {
 				idea = idea_SIA_short_war
-				days = 180
+				days = 365
 			}
 		}
 	}
@@ -7424,7 +7407,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 1 }
+			add_offsite_building = { type = arms_factory level = 3 }
 			add_ideas = idea_SIA_intermediate_war
 		}
 	}
@@ -7459,7 +7442,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_plan_for_a_short_war
 		prerequisite = { focus = SIA_the_army_of_siam }
-		mutually_exclusive = { focus = SIA_artillery_reigns_supreme }
+		#mutually_exclusive = { focus = SIA_artillery_reigns_supreme }
 		cost = 5
 		ai_will_do = {
 			factor = 15
@@ -7484,7 +7467,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_specialized_warfare	
 		prerequisite = { focus = SIA_the_army_of_siam }
-		mutually_exclusive = { focus = SIA_specialized_warfare }
+	#	mutually_exclusive = { focus = SIA_specialized_warfare }
 		cost = 5
 		ai_will_do = {
 			factor = 20
@@ -7497,7 +7480,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 0.5
+				bonus = 1
 				uses = 2
 				category = artillery
 				name = SIA_artillery_reigns_supreme
@@ -7516,7 +7499,7 @@ focus_tree = {
 		relative_position_id = SIA_intermediate_war_preparation	
 		prerequisite = { focus = SIA_plan_for_a_short_war focus = SIA_intermediate_war_preparation focus = SIA_prepare_for_a_long_war }
 		#mutually_exclusive = { }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -7544,7 +7527,7 @@ focus_tree = {
 				start_province = 7408
 				target_province = 1535
 				build_only_on_allied = yes
-				level = 2
+				level = 3
 			}
 			289 = {
 				add_building_construction = {
@@ -7563,7 +7546,7 @@ focus_tree = {
 				start_province = 7408
 				target_province = 4566
 				build_only_on_allied = yes
-				level = 2
+				level = 3
 			}
 		}
 	}
@@ -7575,7 +7558,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_prepare_northern_infrastructure_for_war	
 		prerequisite = { focus = SIA_prepare_northern_infrastructure_for_war }
-		mutually_exclusive = { focus = SIA_directorate_of_aeronautical_engineering }
+		#mutually_exclusive = { focus = SIA_directorate_of_aeronautical_engineering }
 		cost = 5
 		ai_will_do = {
 			factor = 10
@@ -7598,7 +7581,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_yield_the_air_war	
 		prerequisite = { focus = SIA_prepare_northern_infrastructure_for_war }
-		mutually_exclusive = { focus = SIA_yield_the_air_war }
+		#mutually_exclusive = { focus = SIA_yield_the_air_war }
 		cost = 5
 		ai_will_do = {
 			factor = 10
@@ -7616,7 +7599,7 @@ focus_tree = {
 				}
 
 				mio:SIA_directorate_of_aeronautical_engineering = {
-					add_mio_size = 2
+					add_mio_size = 5
 				}
 			}
 			else = {
@@ -7630,7 +7613,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = SIA_directorate_of_aeronautical_engineering #Usually the name of the focus decision or event that grants the bonus
-				bonus = 0.33
+				bonus = 1
 				uses = 3
 				category = air_equipment
 			}
@@ -7725,7 +7708,7 @@ focus_tree = {
 		relative_position_id = SIA_the_thunder_at_the_gates	
 		prerequisite = { focus = SIA_the_thunder_at_the_gates focus = SIA_night_time_training }
 		#mutually_exclusive = {  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -7748,7 +7731,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_prepare_for_a_long_war
 		prerequisite = { focus = SIA_the_army_of_siam }
-		mutually_exclusive = { focus = SIA_conventional_tank_construction }
+		#mutually_exclusive = { focus = SIA_conventional_tank_construction }
 		cost = 5
 		ai_will_do = {
 			factor = 20
@@ -7771,8 +7754,8 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_unconventional_tank_construction
 		prerequisite = { focus = SIA_the_army_of_siam }
-		mutually_exclusive = { focus = SIA_unconventional_tank_construction }
-		cost = 5
+		#mutually_exclusive = { focus = SIA_unconventional_tank_construction }
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -7800,23 +7783,23 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			OR = {
-				AND = {
-					controls_state = 993
-					controls_state = 999
-				}
-				AND = {
-					controls_state = 671
-					controls_state = 670
-					controls_state = 286
-					controls_state = 741
-					controls_state = 1017
-					controls_state = 1066 
-					controls_state = 1067 
-					controls_state = 1068 
-					controls_state = 1069 
-				}
-			}
+			# OR = {
+			# 	AND = {
+			# 		controls_state = 993
+			# 		controls_state = 999
+			# 	}
+			# 	AND = {
+			# 		controls_state = 671
+			# 		controls_state = 670
+			# 		controls_state = 286
+			# 		controls_state = 741
+			# 		controls_state = 1017
+			# 		controls_state = 1066 
+			# 		controls_state = 1067 
+			# 		controls_state = 1068 
+			# 		controls_state = 1069 
+			# 	}
+			# }
 		}
 		#allow_branch = {
 		#}
@@ -7824,7 +7807,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 0.5
+				bonus = 1
 				uses = 3
 				category = armor
 				name = SIA_reverse_engineer_allied_tanks
@@ -8079,7 +8062,7 @@ focus_tree = {
 			add_to_variable = { seri_thai_contacts_command_power_gain = 0.2 tooltip = command_power_gain_tt }
 			add_offsite_building = {
 				type = arms_factory
-				level = 3
+				level = 5
 			}
 		}
 	}
@@ -8119,7 +8102,7 @@ focus_tree = {
 		relative_position_id = SIA_seri_thai
 		prerequisite = { focus = SIA_seri_thai }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -8132,20 +8115,20 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = SIA_when_civil_war_starts
 			effect_tooltip = {
-				add_cic = 15000
+				add_cic = 30000
 				add_equipment_to_stockpile = {
 					type = infantry_equipment
-					amount = 1200
+					amount = 2400
 					producer = USA
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment
-					amount = 150
+					amount = 1000
 					producer = USA
 				}
 				add_equipment_to_stockpile = {
 					type = artillery_equipment
-					amount = 70
+					amount = 1000
 					producer = USA
 				}
 			}
@@ -8160,7 +8143,7 @@ focus_tree = {
 		relative_position_id = SIA_american_investment_aid
 		prerequisite = { focus = SIA_american_investment_aid }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -8190,10 +8173,10 @@ focus_tree = {
 				}
 				add_intel = {
 					target = JAP
-					civilian_intel = 2
-					army_intel = 2
-					navy_intel = 2
-					airforce_intel = 2
+					civilian_intel = 10
+					army_intel = 10
+					navy_intel = 10
+					airforce_intel = 10
 				}
 				add_decryption = {
 					target = JAP
@@ -8202,10 +8185,10 @@ focus_tree = {
 				USA = {
 					add_intel = {
 						target = JAP
-						civilian_intel = 2
-						army_intel = 2
-						navy_intel = 2
-						airforce_intel = 2
+						civilian_intel = 10
+						army_intel = 10
+						navy_intel = 10
+						airforce_intel = 10
 					}
 					add_decryption = {
 						target = JAP
@@ -8224,7 +8207,7 @@ focus_tree = {
 		relative_position_id = SIA_thai_students_in_the_oss
 		prerequisite = { focus = SIA_thai_students_in_the_oss }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -8283,7 +8266,7 @@ focus_tree = {
 		prerequisite = { focus = SIA_prepare_to_drop }
 		prerequisite = { focus = SIA_broadcast_weather_reports_to_the_allies }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -8355,12 +8338,12 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 0.25
-				uses = 1
+				bonus = 1
+				uses = 2
 				category = artillery
 			}
 			add_tech_bonus = {
-				bonus = 0.50
+				bonus = 1
 				uses = 1
 				category = support_tech
 			}
@@ -8409,7 +8392,7 @@ focus_tree = {
 				target = MAL
 			}
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 3
 				uses = 2
 				category = excavation_tech
 			}
@@ -8441,7 +8424,7 @@ focus_tree = {
 		completion_reward = {
 			add_timed_idea = {
 				idea = idea_SIA_breaking_the_burmese_line
-				days = 90
+				days = 180
 			}
 		}
 	}
@@ -8454,7 +8437,7 @@ focus_tree = {
 		relative_position_id = SIA_breaking_the_burmese_line
 		prerequisite = { focus = SIA_securing_the_rubber_islands }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -8478,7 +8461,7 @@ focus_tree = {
 		relative_position_id = SIA_the_phayap_army
 		prerequisite = { focus = SIA_the_phayap_army }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -8501,7 +8484,7 @@ focus_tree = {
 		relative_position_id = SIA_joint_asian_military_command
 		prerequisite = { focus = SIA_joint_asian_military_command }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 200
 		}
@@ -8569,7 +8552,7 @@ focus_tree = {
 		completion_reward = {
 			add_timed_idea = {
 			 	idea = idea_SIA_standing_our_ground_mission_temp_buff
-			 	days = 90
+			 	days = 365
 			 }
 			#activate_mission = SIA_standing_our_ground_mission
 
@@ -8595,7 +8578,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SIA_standing_our_ground	
 		prerequisite = { focus = SIA_standing_our_ground }
-		mutually_exclusive = { focus = SIA_japanese_fighters }
+	#	mutually_exclusive = { focus = SIA_japanese_fighters }
 		cost = 5
 		ai_will_do = {
 			factor = 10
@@ -8608,8 +8591,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 2 }
-			add_offsite_building = { type = arms_factory level = 1 }
+			add_offsite_building = { type = industrial_complex level = 5 }
+			add_offsite_building = { type = arms_factory level = 5 }
 		}
 	}
 
@@ -8620,8 +8603,8 @@ focus_tree = {
 		y = 0
 		relative_position_id = SIA_ask_for_the_release_of_american_commodities	
 		prerequisite = { focus = SIA_standing_our_ground }
-		mutually_exclusive = { focus = SIA_ask_for_the_release_of_american_commodities }
-		cost = 5
+		#mutually_exclusive = { focus = SIA_ask_for_the_release_of_american_commodities }
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -8635,7 +8618,7 @@ focus_tree = {
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = small_plane_airframe
-				amount = 120
+				amount = 240
 				producer = JAP
 			}
 		}
@@ -8649,7 +8632,7 @@ focus_tree = {
 		relative_position_id = SIA_japanese_fighters	
 		prerequisite = { focus = SIA_standing_our_ground }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}
@@ -8667,7 +8650,7 @@ focus_tree = {
 		completion_reward = {
 			add_timed_idea = {
 				idea = idea_SIA_get_off_our_shores
-				days = 42
+				days = 365
 			}
 
 			custom_effect_tooltip = newline_tt
@@ -8709,7 +8692,7 @@ focus_tree = {
 		relative_position_id = SIA_ask_for_the_release_of_american_commodities	
 		prerequisite = { focus = SIA_ask_for_the_release_of_american_commodities }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}
@@ -8720,10 +8703,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
-			add_manpower = 27000
+			add_manpower = 50000
 			add_tech_bonus = {
 				name = SIA_singaporean_reinforcements
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = support_tech
 			}
@@ -8738,7 +8721,7 @@ focus_tree = {
 		relative_position_id = SIA_singaporean_reinforcements	
 		prerequisite = { focus = SIA_japanese_fighters }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -8778,7 +8761,7 @@ focus_tree = {
 		relative_position_id = SIA_singaporean_reinforcements	
 		prerequisite = { focus = SIA_singaporean_reinforcements focus = SIA_aid_for_resources }
 		#mutually_exclusive = { focus =  }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -8879,15 +8862,15 @@ focus_tree = {
 					 }
 				}
 
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 4
 					instant_build = yes
 				}
 			}
 
-			add_to_variable = { SIA_royal_navy_experience_gain_navy = 0.02 tooltip = experience_gain_navy_tt }
+			add_to_variable = { SIA_royal_navy_experience_gain_navy = 0.15 tooltip = experience_gain_navy_tt }
 		}
 	}
 
@@ -8930,7 +8913,7 @@ focus_tree = {
 		relative_position_id = SIA_direct_army_fundings_towards_the_navy
 		prerequisite = { focus = SIA_royal_thai_navy }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		} 
@@ -8955,7 +8938,7 @@ focus_tree = {
 		relative_position_id = SIA_thonburi_class_coastal_defense_ship
 		prerequisite = { focus = SIA_royal_thai_navy }
 		#mutually_exclusive = { focus = }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -8996,12 +8979,13 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 0.75
-				uses = 1
+				bonus = 3
+				ahead_reduction = 1.0
+				uses = 2
 				category = ss_tech
 				name = SIA_submarine_day
 			}
-			add_stability = 0.03
+			add_stability = 0.05
    			add_war_support = 0.05
 			
 			SIA_increase_military_approval = yes
@@ -9042,7 +9026,7 @@ focus_tree = {
 					}
 				}
 				prioritize = { 1076 }
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = dockyard
 					level = 3
@@ -9068,7 +9052,7 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			1076 = {
+			724 = {
 				is_owned_by = ROOT
 				is_fully_controlled_by = ROOT
 			}
@@ -9088,8 +9072,8 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1076 }
-				add_extra_state_shared_building_slots = 2
+				prioritize = { 724 }
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = dockyard
 					level = 2
@@ -9115,7 +9099,7 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			1076 = {
+			724 = {
 				is_owned_by = ROOT
 				is_fully_controlled_by = ROOT
 			}
@@ -9135,8 +9119,8 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1076 }
-				add_extra_state_shared_building_slots = 2
+				prioritize = { 724 }
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = dockyard
 					level = 2
@@ -9162,7 +9146,7 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			1076 = {
+			289 = {
 				is_owned_by = ROOT
 				is_fully_controlled_by = ROOT
 			}
@@ -9182,8 +9166,8 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 1076 }
-				add_extra_state_shared_building_slots = 2
+				prioritize = { 289 }
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = dockyard
 					level = 1
@@ -9191,7 +9175,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -9216,7 +9200,7 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			1076 = {
+			869 = {
 				is_owned_by = ROOT
 				is_fully_controlled_by = ROOT
 			}
@@ -9229,18 +9213,18 @@ focus_tree = {
 			random_core_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
-					is_coastal = yes
-					free_building_slots = {
-						building = dockyard
-						size > 0
-						include_locked = yes
-					}
+					# is_coastal = yes
+					# free_building_slots = {
+					# 	building = dockyard
+					# 	size > 0
+					# 	include_locked = yes
+					# }
 				}
-				prioritize = { 1076 }
-				add_extra_state_shared_building_slots = 1
+				prioritize = { 869 }
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = dockyard
-					level = 1
+					type = industrial_complex
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -9248,7 +9232,7 @@ focus_tree = {
 			add_to_variable = { SIA_royal_navy_industrial_capacity_dockyard = 0.05 tooltip = industrial_capacity_dockyard_tt }
 			add_tech_bonus = {
 				name = SIA_establish_the_foundry_and_machine_shop
-				bonus = 0.25
+				bonus = 1
 				uses = 1
 				category = cat_production
 			}
@@ -9276,7 +9260,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			1078 = {
+			289 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = dockyard
@@ -9291,9 +9275,9 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					1076 = { naval_facility < 1 }
+					289 = { naval_facility < 1 }
 				}
-				1076 = {
+				289 = {
 					add_building_construction = {
 						type = naval_facility
 						level = 1
@@ -9317,8 +9301,8 @@ focus_tree = {
 
 			custom_effect_tooltip = newline_tt
 			custom_effect_tooltip = modify_royal_thai_navy
-			add_to_variable = { SIA_royal_navy_navy_capital_ship_attack_factor = 0.08 tooltip = navy_capital_ship_attack_factor_tt }
-			add_to_variable = { SIA_royal_navy_navy_screen_attack_factor = 0.08 tooltip = navy_screen_attack_factor_tt }
+			add_to_variable = { SIA_royal_navy_navy_capital_ship_attack_factor = 0.1 tooltip = navy_capital_ship_attack_factor_tt }
+			add_to_variable = { SIA_royal_navy_navy_screen_attack_factor = 0.1 tooltip = navy_screen_attack_factor_tt }
 		}
 	}
 
@@ -9335,7 +9319,7 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			1076 = {
+			724 = {
 				is_owned_by = ROOT
 				is_fully_controlled_by = ROOT
 			}
@@ -9348,14 +9332,14 @@ focus_tree = {
 			random_core_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
-					is_coastal = yes
+					#is_coastal = yes
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
 						include_locked = yes
 					}
 				}
-				prioritize = { 1076 }
+				prioritize = { 724 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -9366,7 +9350,7 @@ focus_tree = {
 
 			custom_effect_tooltip = modify_royal_thai_navy
 			add_to_variable = { SIA_royal_navy_industrial_capacity_dockyard = -0.25 tooltip = industrial_capacity_dockyard_tt }
-			add_to_variable = { SIA_royal_navy_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { SIA_royal_navy_industrial_capacity_factory = 0.10 tooltip = industrial_capacity_factory_tt }
 
 			SIA_increase_civilian_approval = yes
 			SIA_decrease_military_approval = yes
@@ -9425,7 +9409,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = modify_royal_thai_navy
-			add_to_variable = { SIA_royal_navy_conscription = 0.006 tooltip = conscription_tt }
+			add_to_variable = { SIA_royal_navy_conscription = 0.02 tooltip = conscription_tt }
 			SIA_increase_military_approval = yes
 		}
 	}
@@ -9451,7 +9435,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = modify_royal_thai_navy
 			add_to_variable = { SIA_royal_navy_supply_combat_penalties_on_core_factor = -0.10 tooltip = supply_combat_penalties_on_core_factor_tt }
-			add_to_variable = { SIA_royal_navy_army_core_defence_factor = 0.05 tooltip = army_core_defence_factor_tt }
+			add_to_variable = { SIA_royal_navy_army_core_defence_factor = 0.10 tooltip = army_core_defence_factor_tt }
 		}
 	}
 }
