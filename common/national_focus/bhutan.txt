@@ -40,13 +40,13 @@ focus_tree = {
 	focus = {
 		id = BHU_create_an_army
 		icon = GFX_goal_BHU_coa_army
-		mutually_exclusive = { focus = BHU_peace_will_reign }
+		#mutually_exclusive = { focus = BHU_peace_will_reign }
 		prerequisite = { focus = BHU_aftermath_of_the_visit_to_india }
 		relative_position_id = BHU_aftermath_of_the_visit_to_india
 		x = 4
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 0.5
@@ -96,7 +96,7 @@ focus_tree = {
 	focus = {
 		id = BHU_peace_will_reign
 		icon = GFX_focus_smiling_buddha
-		mutually_exclusive = { focus = BHU_create_an_army }
+		#mutually_exclusive = { focus = BHU_create_an_army }
 		prerequisite = { focus = BHU_aftermath_of_the_visit_to_india }
 		relative_position_id = BHU_aftermath_of_the_visit_to_india
 		x = 6
@@ -161,7 +161,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 8
+		cost = 5
 
 		available = {
 			any_neighbor_country = {
@@ -226,7 +226,7 @@ focus_tree = {
 		x = 0
 		y = 2
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -265,7 +265,7 @@ focus_tree = {
 		icon = GFX_focus_generic_military_mission
 		x = -1
 		y = 1
-		cost = 8
+		cost = 5
 
 		available = {
 			has_country_flag = bhutan_improved_military_standards
@@ -301,7 +301,7 @@ focus_tree = {
 		relative_position_id = BHU_officers_training		
 		x = 0
 		y = 2
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -343,7 +343,7 @@ focus_tree = {
 		icon = GFX_goal_generic_mountain_warfare
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -392,7 +392,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 1
 		y = 1
-		cost = 8
+		cost = 5
 
 		available = {
 			has_country_flag = bhutan_improved_military_standards
@@ -429,7 +429,7 @@ focus_tree = {
 		icon = GFX_goal_generic_small_arms
 		x = -1
 		y = 1
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -451,7 +451,7 @@ focus_tree = {
 		icon = GFX_goal_ammunitions		
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -493,7 +493,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_artillery
 		x = 0
 		y = 1
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -515,7 +515,7 @@ focus_tree = {
 		icon = GFX_focus_SMB_mountain_guns
 		x = 1
 		y = 1
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -552,7 +552,7 @@ focus_tree = {
 		relative_position_id = BHU_aftermath_of_the_visit_to_india
 		x = 8
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}		
@@ -610,7 +610,7 @@ focus_tree = {
 		relative_position_id = BHU_follow_the_1921_modernization_roadmap		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 15
 		}		
@@ -655,7 +655,7 @@ focus_tree = {
 		relative_position_id = BHU_education_reform		
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -705,7 +705,7 @@ focus_tree = {
 		relative_position_id = BHU_improve_agriculture		
 		x = 4
 		y = 1
-		cost = 8
+		cost = 5
 
 		bypass = {
 			custom_trigger_tooltip = {
@@ -752,7 +752,7 @@ focus_tree = {
 		relative_position_id = BHU_improve_the_roads		
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {	#shouldnt be too harmful to AI as it can exploit resources instead for the next focus, alternatively, can make train equipment conditional on this tech
 			has_tech = basic_train
@@ -827,7 +827,7 @@ focus_tree = {
 		relative_position_id = BHU_improve_agriculture		
 		x = 2
 		y = 1
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -849,7 +849,7 @@ focus_tree = {
 		relative_position_id = BHU_mineral_survey		
 		x = 1
 		y = 1
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}		
@@ -857,7 +857,7 @@ focus_tree = {
 			324 = {
 				add_resource = {
 					type = steel
-					amount = 4
+					amount = 24
 				}
 			}
 		}
@@ -870,7 +870,7 @@ focus_tree = {
 		relative_position_id = BHU_improve_agriculture		
 		x = 0
 		y = 1
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -902,7 +902,7 @@ focus_tree = {
 		relative_position_id = BHU_new_weaving_techniques
 		x = 1
 		y = 1
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}		
@@ -942,7 +942,7 @@ focus_tree = {
 		relative_position_id = BHU_new_weaving_techniques
 		x = -1
 		y = 1
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}		
@@ -972,7 +972,7 @@ focus_tree = {
 		relative_position_id = BHU_exploit_the_findings	
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -993,7 +993,7 @@ focus_tree = {
 		relative_position_id = BHU_reform_the_taxation_system
 		x = -1
 		y = 1
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 4
 		}		
@@ -1039,7 +1039,7 @@ focus_tree = {
 		relative_position_id = BHU_fledgeling_industry		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}		
@@ -1056,7 +1056,7 @@ focus_tree = {
 		relative_position_id = BHU_fledgeling_industry		
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}		
@@ -1101,7 +1101,7 @@ focus_tree = {
 		relative_position_id = BHU_industrial_modernization		
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 50
 		}		
@@ -1118,7 +1118,7 @@ focus_tree = {
 		relative_position_id = BHU_industrial_modernization
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1251,7 +1251,7 @@ focus_tree = {
 		relative_position_id = BHU_naval_effort
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1287,7 +1287,7 @@ focus_tree = {
 		relative_position_id = BHU_naval_effort
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1322,7 +1322,7 @@ focus_tree = {
 		relative_position_id = BHU_large_navy
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1350,7 +1350,7 @@ focus_tree = {
 		relative_position_id = BHU_flexible_navy
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1386,7 +1386,7 @@ focus_tree = {
 		relative_position_id = BHU_large_navy
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1423,7 +1423,7 @@ focus_tree = {
 		relative_position_id = BHU_submarine_effort
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1459,7 +1459,7 @@ focus_tree = {
 		relative_position_id = BHU_cruiser_effort
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1497,7 +1497,7 @@ focus_tree = {
 		relative_position_id = BHU_ammunitions		
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1596,7 +1596,7 @@ focus_tree = {
 		relative_position_id = BHU_build_air_strip
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 	
@@ -1646,7 +1646,7 @@ focus_tree = {
 		relative_position_id = BHU_build_air_strip
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1695,7 +1695,7 @@ focus_tree = {
 		relative_position_id = BHU_small_airframes
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1745,7 +1745,7 @@ focus_tree = {
 		relative_position_id = BHU_maintain_monarchic_regime
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 10
@@ -1764,7 +1764,7 @@ focus_tree = {
 		relative_position_id = BHU_maintain_monarchic_regime		
 		x = 1
 		y = 1
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1782,7 +1782,7 @@ focus_tree = {
 		relative_position_id = BHU_delegate_to_the_tslzogdu		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 3
@@ -1813,7 +1813,7 @@ focus_tree = {
 		relative_position_id = BHU_reinforce_the_throne		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 3
@@ -1846,7 +1846,7 @@ focus_tree = {
 		relative_position_id = BHU_aftermath_of_the_visit_to_india
 		x = -4
 		y = 1
-		cost = 8
+		cost = 5
 		
 		ai_will_do = {
 			factor = 20
@@ -1905,7 +1905,7 @@ focus_tree = {
 		relative_position_id = BHU_new_ideas		
 		x = -3
 		y = 1
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 20
@@ -1954,7 +1954,7 @@ focus_tree = {
 		relative_position_id = BHU_traders_of_the_himalaya		
 		x = 0
 		y = 2
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1999,7 +1999,7 @@ focus_tree = {
 		relative_position_id = BHU_constitutional_parlementarism		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		bypass = {
 			has_government = democratic
 		}
@@ -2054,7 +2054,7 @@ focus_tree = {
 		relative_position_id = BHU_new_ideas		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 20
@@ -2081,7 +2081,7 @@ focus_tree = {
 		relative_position_id = BHU_denounce_the_aristocracy		
 		x = 0
 		y = 1
-		cost = 8
+		cost = 5
 
 		available = {
 			communism > 0.35
@@ -2130,7 +2130,7 @@ focus_tree = {
 		relative_position_id = BHU_overthrow_the_feudals		
 		x = 0
 		y = 1
-		cost = 8
+		cost = 5
 		
 		ai_will_do = {
 			factor = 10
@@ -2171,7 +2171,7 @@ focus_tree = {
 		relative_position_id = BHU_land_redistribution		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -2199,7 +2199,7 @@ focus_tree = {
 		relative_position_id = BHU_mobilization_of_the_masses
 		x = -3
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2217,7 +2217,7 @@ focus_tree = {
 		relative_position_id = BHU_mobilization_of_the_masses		
 		x = -1
 		y = 1
-		cost = 8
+		cost = 5
 
 		available = {
 			has_government = communism
@@ -2282,7 +2282,7 @@ focus_tree = {
 		relative_position_id = BHU_mobilization_of_the_masses		
 		x = 1
 		y = 1
-		cost = 8
+		cost = 5
 
 		available = {
 			has_government = communism
@@ -2341,7 +2341,7 @@ focus_tree = {
 		relative_position_id = BHU_forced_industrial_progress		
 		x = 0
 		y = 1
-		cost = 8
+		cost = 5
 		
 		ai_will_do = {
 			factor = 7
@@ -2375,7 +2375,7 @@ focus_tree = {
 		relative_position_id = BHU_new_ideas		
 		x = 3
 		y = 1
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 20
@@ -2404,7 +2404,7 @@ focus_tree = {
 		relative_position_id = BHU_embrace_radical_nationalism		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2456,7 +2456,7 @@ focus_tree = {
 		relative_position_id = BHU_spread_aggressive_attitude		
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -2501,7 +2501,7 @@ focus_tree = {
 		relative_position_id = BHU_spread_aggressive_attitude		
 		x = 1
 		y = 1
-		cost = 8			
+		cost = 5			
 
 		ai_will_do = {
 			factor = 10
@@ -2550,7 +2550,7 @@ focus_tree = {
 		relative_position_id = BHU_armement_program	
 		x = 1
 		y = 1
-		cost = 8			
+		cost = 5			
 
 		ai_will_do = {
 			factor = 10
@@ -2588,7 +2588,7 @@ focus_tree = {
 		relative_position_id = BHU_mass_conscription		
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 5
@@ -2628,7 +2628,7 @@ focus_tree = {
 		relative_position_id = BHU_dragons_storm		
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			is_subject = no
@@ -2762,7 +2762,7 @@ focus_tree = {
 		relative_position_id = BHU_dragons_storm		
 		x = -1
 		y = 2
-		cost = 10
+		cost = 5
 
 		available = {
 			is_subject = no
@@ -2824,7 +2824,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = BHU_attack_the_plateau
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 		}
@@ -2960,7 +2960,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = BHU_attack_the_plateau
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 0
