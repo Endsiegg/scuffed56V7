@@ -4062,7 +4062,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = CHI_denounce_feudalism
-		cost = 20
+		cost = 5
 		available = {
 			any_other_country = {
 				is_chinese_warlord_tooltip = yes
@@ -4201,79 +4201,79 @@ focus_tree = {
 		}
 	
 		completion_reward = {
-			IF = {
-				limit = {
-					is_in_faction = no
+			#IF = {
+				#limit = {
+				#	is_in_faction = no
 
-				}
-				IF = { ## Added check to prevent two CUFs from being formed - if PRC has created CUF, but CHI does not join, then create Nanjing front instead
-					limit = {
-						PRC = {
-							has_faction_template = faction_template_chinese_united_front
-						}
-					}
-					custom_effect_tooltip = CHI_one_nation_undivided_tt
-					create_faction_from_template = faction_template_wang_front 
-					add_faction_initiative = 1
-					every_other_country = {
-						limit = {
-							is_chinese_warlord = yes
-							is_subject = no
-							NOT = {
-								has_war_with = ROOT
-								is_in_faction_with = ROOT
-								any_other_country = {
-									is_chinese_warlord = yes
-									has_war_with = PREV
-								}
-								has_idea = SIK_battle_for_sinkiang
-								#tag = HBC
-								tag = SHX
-							}
-						}
+				#}
+				# IF = { ## Added check to prevent two CUFs from being formed - if PRC has created CUF, but CHI does not join, then create Nanjing front instead
+				# 	limit = {
+				# 		PRC = {
+				# 			has_faction_template = faction_template_chinese_united_front
+				# 		}
+				# 	}
+				# 	custom_effect_tooltip = CHI_one_nation_undivided_tt
+				# 	create_faction_from_template = faction_template_wang_front 
+				# 	add_faction_initiative = 1
+				# 	# every_other_country = {
+				# 	# 	limit = {
+				# 	# 		is_chinese_warlord = yes
+				# 	# 		is_subject = no
+				# 	# 		NOT = {
+				# 	# 			has_war_with = ROOT
+				# 	# 			is_in_faction_with = ROOT
+				# 	# 			any_other_country = {
+				# 	# 				is_chinese_warlord = yes
+				# 	# 				has_war_with = PREV
+				# 	# 			}
+				# 	# 			has_idea = SIK_battle_for_sinkiang
+				# 	# 			#tag = HBC
+				# 	# 			tag = SHX
+				# 	# 		}
+				# 	# 	}
 						
-						country_event = {
-							id = SEA_china.7
-							days = 1
-						}
-						add_war_support = 0.05
-					}
-				}
-				else = {
-					custom_effect_tooltip = CHI_one_nation_undivided_tt
-					create_faction_from_template = faction_template_chinese_united_front 
-					add_faction_initiative = 1
-					every_other_country = {
-						limit = {
-							is_chinese_warlord = yes
-							is_subject = no
-							NOT = {
-								has_war_with = ROOT
-								is_in_faction_with = ROOT
-								any_other_country = {
-									is_chinese_warlord = yes
-									has_war_with = PREV
-								}
-								has_idea = SIK_battle_for_sinkiang
-								#tag = HBC
-								tag = SHX
-							}
-						}
+				# 	# 	country_event = {
+				# 	# 		id = SEA_china.7
+				# 	# 		days = 1
+				# 	# 	}
+				# 	# 	add_war_support = 0.05
+				# 	# }
+				# }
+				# else = {
+				# 	custom_effect_tooltip = CHI_one_nation_undivided_tt
+				# 	create_faction_from_template = faction_template_chinese_united_front 
+				# 	add_faction_initiative = 1
+				# 	every_other_country = {
+				# 		limit = {
+				# 			is_chinese_warlord = yes
+				# 			is_subject = no
+				# 			NOT = {
+				# 				has_war_with = ROOT
+				# 				is_in_faction_with = ROOT
+				# 				any_other_country = {
+				# 					is_chinese_warlord = yes
+				# 					has_war_with = PREV
+				# 				}
+				# 				has_idea = SIK_battle_for_sinkiang
+				# 				#tag = HBC
+				# 				tag = SHX
+				# 			}
+				# 		}
 						
-						country_event = {
-							id = SEA_china.7
-							days = 1
-						}
-						add_war_support = 0.05
-					}
-				}
-			}
-			ELSE = {
+				# 		country_event = {
+				# 			id = SEA_china.7
+				# 			days = 1
+				# 		}
+				# 		add_war_support = 0.05
+				# 	}
+				# }
+			#}
+			#ELSE = {
 				add_timed_idea = {
 					idea = idea_CHI_our_place
 					days = 365
 				}
-			}
+			#}
 		}
 	}
 	focus = {
@@ -6185,26 +6185,26 @@ focus_tree = {
 		relative_position_id = CHI_the_sky_cannot_have_two_suns
 		cost = 3
 		available = {
-			OR = {
-				NXM = {
-					is_ally_with = ROOT
-				}
-				SHX = {
-					is_ally_with = ROOT
-				}
-				GSM = {
-					is_ally_with = ROOT
-				}
-				HBC = {
-					is_ally_with = ROOT
-				}
-				XIC = { # TODO_JNS Might not be needed
-					is_ally_with = ROOT
-				}
-				SND = { # TODO_JNS Have a thunk
-					is_ally_with = ROOT
-				}
-			}
+			# OR = {
+			# 	NXM = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	SHX = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	GSM = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	HBC = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	XIC = { # TODO_JNS Might not be needed
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	SND = { # TODO_JNS Have a thunk
+			# 		is_ally_with = ROOT
+			# 	}
+			# }
 		}
 		bypass = {
 			AND = {
@@ -6219,17 +6219,17 @@ focus_tree = {
 						exists = no
 					}
 				}
-				SHX = {
-					OR = {
-						AND = {
-							is_subject = yes
-							NOT = {
-								is_subject_of = ROOT
-							}
-						}
-						exists = no
-					}
-				}
+				# SHX = {
+				# 	OR = {
+				# 		AND = {
+				# 			is_subject = yes
+				# 			NOT = {
+				# 				is_subject_of = ROOT
+				# 			}
+				# 		}
+				# 		exists = no
+				# 	}
+				# }
 				GSM = {
 					OR = {
 						AND = {
@@ -6284,6 +6284,10 @@ focus_tree = {
 	
 		completion_reward = {
 			annex_country = {
+				target = PRC
+				transfer_troops = yes
+			}
+			annex_country = {
 				target = SND
 			transfer_troops = yes				
 			}
@@ -6331,20 +6335,20 @@ focus_tree = {
 		relative_position_id = CHI_the_sky_cannot_have_two_suns
 		cost = 3
 		available = {
-			OR = {
-				XSM = {
-					is_ally_with = ROOT
-				}
-				KHM = {
-					is_ally_with = ROOT
-				}
-				SIK = {
-					is_ally_with = ROOT
-				}
-				SIC = {
-					is_ally_with = ROOT
-				}
-			}
+			# OR = {
+			# 	XSM = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	KHM = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	SIK = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	SIC = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# }
 		}
 		bypass = {
 			AND = {
@@ -6475,17 +6479,17 @@ focus_tree = {
 		relative_position_id = CHI_the_sky_cannot_have_two_suns
 		cost = 3
 		available = {
-			OR = {
-				YUN = {
-					is_ally_with = ROOT
-				}
-				GXC = {
-					is_ally_with = ROOT
-				}
-				GDC = {
-					is_ally_with = ROOT
-				}
-			}
+			# OR = {
+			# 	YUN = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	GXC = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# 	GDC = {
+			# 		is_ally_with = ROOT
+			# 	}
+			# }
 		}
 		bypass = {
 			AND = {
