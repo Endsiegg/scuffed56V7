@@ -1,7 +1,7 @@
 sp_nuclear_reactor = {
 	specialization = specialization_nuclear	
 	icon = GFX_sp_nuclear_reactor
-	complexity = sp_complexity.insane 
+	complexity = sp_complexity.large 
 
 	project_tags = sp_tag_nuclear_power
 
@@ -10,7 +10,7 @@ sp_nuclear_reactor = {
 	}
 
 	breakthrough_cost = {
-		specialization_nuclear = 2
+		specialization_nuclear = 1
 	}
 
 	available = { 
@@ -279,7 +279,7 @@ sp_commercial_nuclear_reactor = {
 	}
 
 	breakthrough_cost = {
-		specialization_nuclear = 1
+		specialization_nuclear = 0
 	}
 	allowed = {
 		has_dlc = "Gotterdammerung"
@@ -417,7 +417,7 @@ sp_nuclear_engines = {
 	project_tags = sp_tag_nuclear_power
 	
 	prototype_time = sp_time.prototype.long	 
-	complexity = sp_complexity.insane
+	complexity = sp_complexity.medium
 
 	resource_cost = {
 		resources = { steel=4 tungsten=2 chromium=5 }
@@ -427,7 +427,7 @@ sp_nuclear_engines = {
 		sp_nuclear_reactor	#changed from commercial reactor since there was just 8 months between these technologies IRL, and commercial reactor requires Gotterdamerung
 	}
 	breakthrough_cost = {
-		specialization_nuclear = 2
+		specialization_nuclear = 1
 	}
 	allowed = {
 		#has_dlc = "Gotterdammerung"	#DLC in vanilla, but we had these modules before them
@@ -484,7 +484,7 @@ sp_nuclear_bomb = {
 	project_tags = sp_tag_nuclear_warfare
 	
 	prototype_time = sp_time.prototype.long	
-	complexity = sp_complexity.insane
+	complexity = sp_complexity.large
 	resource_cost = {
 		resources = { steel=2 tungsten=8 chromium=2 }
 	}
@@ -492,7 +492,7 @@ sp_nuclear_bomb = {
 		sp_nuclear_reactor
 	}
 	breakthrough_cost = {
-		specialization_nuclear = 3
+		specialization_nuclear = 2
 	}
 	allowed = {
 		#year = 1945
