@@ -495,7 +495,6 @@ BEL_renard_organization = { # made light aircraft prototype, advanced but unreli
             	OR = {
             		has_completed_focus = COG_standardize_military_production
             		has_completed_focus = BEL_fn_herstal
-					has_completed_focus = BEL_invest_in_FN_Herstal # R56
             	}
             }
         }			
@@ -815,14 +814,7 @@ BEL_minerva_imperia_armored_car_organization = {
 
 	available = {
 		owner = {
-			if = {
-				limit = {
-					NOT = {
-						has_dlc = "Gotterdammerung"
-					}
-				}
-				has_completed_focus = BEL_restore_the_auto_canon_unit
-			}
+
 		}
 	}
 
