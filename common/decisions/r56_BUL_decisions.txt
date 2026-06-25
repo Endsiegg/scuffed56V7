@@ -6,8 +6,7 @@ BUL_agrarian_land_reforms_category = {
 
 		available = {
 			tag = BUL
-			has_completed_focus = BUL_initiate_land_reforms
-      has_political_power > 29
+      		has_political_power > 29
 		}
 
 		fire_only_once = yes
@@ -23,21 +22,21 @@ BUL_agrarian_land_reforms_category = {
 		days_remove = 35
 
 		visible = {
-      has_completed_focus = BUL_initiate_land_reforms
-	  }
+
+	  	}
 
 		remove_effect = {
-      add_stability = 0.05
+      		add_stability = 0.05
 			211 = {
 			  add_extra_state_shared_building_slots = 1
-		  }
+		  	}
 			212 = {
 			  add_extra_state_shared_building_slots = 1
-		  }
-    }
+		 	 }
+    	}
 		complete_effect = {
-      add_political_power = -30
-      set_country_flag = BUL_land_ownership_reformed
+			add_political_power = -30
+			set_country_flag = BUL_land_ownership_reformed
 		}
 	}
 
@@ -47,7 +46,6 @@ BUL_agrarian_land_reforms_category = {
 
     available = {
       tag = BUL
-      has_completed_focus = BUL_initiate_land_reforms
       has_country_flag = BUL_land_ownership_reformed
 			has_political_power  > 49
     }
@@ -67,16 +65,15 @@ BUL_agrarian_land_reforms_category = {
     visible = {
       has_country_flag = BUL_land_ownership_reformed
       tag = BUL
-      has_completed_focus = BUL_initiate_land_reforms
     }
 
     remove_effect = {
       add_ideas = BUL_tax_reforms
-		}
+	}
 
-    complete_effect = {
+    	complete_effect = {
 		  add_political_power = -50
-    }
+   		}
   }
 
   BUL_agrarian_welfare = {
@@ -85,7 +82,6 @@ BUL_agrarian_land_reforms_category = {
 
   available = {
     tag = BUL
-    has_completed_focus = BUL_initiate_land_reforms
     has_country_flag = BUL_land_ownership_reformed
   }
 
@@ -104,7 +100,6 @@ BUL_agrarian_land_reforms_category = {
   visible = {
     has_country_flag = BUL_land_ownership_reformed
     tag = BUL
-    has_completed_focus = BUL_initiate_land_reforms
   }
 
     remove_effect = {
@@ -128,7 +123,6 @@ BUL_agrarian_land_reforms_category = {
 
  		available = {
  			tag = BUL
- 			has_completed_focus = BUL_invite_investors
       has_political_power > 74
  		}
 
@@ -167,7 +161,6 @@ BUL_agrarian_land_reforms_category = {
 
  		available = {
  			tag = BUL
- 			has_completed_focus = BUL_invite_investors
       		has_political_power > 74
  		}
 
@@ -206,7 +199,6 @@ BUL_agrarian_land_reforms_category = {
 
  		available = {
  			tag = BUL
- 			has_completed_focus = BUL_invite_investors
     		has_political_power > 74
  		}
 
@@ -247,7 +239,6 @@ BUL_concessions_to_lukov_category = {
 
 		available = {
 			tag = BUL
-			has_completed_focus = BUL_concessions_to_lukov
 		}
 
 		cost = 90
