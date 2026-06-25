@@ -4118,10 +4118,6 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			r56_script_i_am_sane = yes
-			GER = {
-				r56_script_target_is_sane = yes
-			}
 			is_subject = no
 			country_exists = GER
 			NOT = { is_in_faction_with = GER }
@@ -4385,10 +4381,6 @@ focus_tree = {
 		relative_position_id = FIN_secure_the_baltic_sea
 		cost = 10
 		available = {
-			r56_script_i_am_sane = yes
-			SOV = {
-				r56_script_target_is_sane = yes
-			}
 			is_subject = no
 			country_exists = SOV
 			NOT = { is_in_faction_with = SOV }
@@ -16484,15 +16476,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = fin_ourownway
 		available = {
-			r56_script_i_am_sane = yes
-			SOV = {
-				r56_script_target_is_sane = yes
-			}
+
 		}
 		bypass = {
-			SOV = {
-				r56_script_standard_bypass = yes
-			}
+
 		}
 		ai_will_do = {
 			base = 0
@@ -16588,11 +16575,10 @@ focus_tree = {
 			focus = fin_unholyalliance
 		}
 		available = {
-			r56_script_i_am_sane = yes
-			GER = { r56_script_target_is_sane = yes }
+
 		}
 		bypass = {
-			GER = { r56_script_standard_bypass = yes }
+
 		}
 		x = -1
 		y = 1
@@ -16995,14 +16981,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		available = {
-			r56_script_i_am_sane = yes
-			ICE = {
-				r56_script_target_is_sane = yes
-				AND = {
-					exists = yes
-					is_subject = no
-				}
-			}
+
 		}
 		bypass = {
 			100 = { is_controlled_by_ROOT_or_subject = yes }
@@ -17186,15 +17165,10 @@ focus_tree = {
 		prerequisite = { focus = FIN_the_dream_of_greater_finland_r56 }
 		mutually_exclusive = { focus = fin_estonia }
 		available = {
-			r56_script_i_am_sane = yes
-			SOV = {
-				r56_script_target_is_sane = yes
-			}
+
 		}
 		bypass = {
-			SOV = {
-				r56_script_standard_bypass = yes
-			}
+
 		}
 		ai_will_do = {
 			base = 0

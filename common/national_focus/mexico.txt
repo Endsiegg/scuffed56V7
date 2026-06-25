@@ -4456,7 +4456,6 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			r56_script_i_am_sane = yes
 			OR = {
 				has_government = fascism
 				has_government = communism
@@ -4549,7 +4548,6 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			r56_script_i_am_sane = yes
 		}
 		available_if_capitulated = yes
 		will_lead_to_war_with = NIC
@@ -4648,7 +4646,6 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			r56_script_i_am_sane = yes
 		}
 		available_if_capitulated = yes
 		will_lead_to_war_with = CUB
@@ -4869,7 +4866,6 @@ focus_tree = {
 		ai_will_do = { base = 100 }
 		available = {
 			is_subject = no
-			r56_script_i_am_sane = yes
 			NOT = { has_war_with = USA }
 			NOT = { is_in_faction_with = USA }
 		}
@@ -4932,7 +4928,6 @@ focus_tree = {
 		ai_will_do = { base = 100 }
 		available = {
 			is_subject = no
-			r56_script_i_am_sane = yes
 		}
 		available_if_capitulated = yes
 		completion_reward = {
@@ -5022,7 +5017,6 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			r56_script_i_am_sane = yes
 		}
 		available_if_capitulated = yes
 		will_lead_to_war_with = PRU
@@ -5187,11 +5181,10 @@ focus_tree = {
 			threat > 0.5
 			NOT = { is_in_faction_with = USA }
 			NOT = { has_non_aggression_pact_with = USA }
-			r56_script_i_am_sane = yes
 		}
 
 		bypass = {
-			USA = { r56_script_standard_bypass = yes }
+
 		}
 		available_if_capitulated = yes
 		will_lead_to_war_with = USA

@@ -95,7 +95,7 @@ focus_tree = {
 		relative_position_id = SCO_choose_a_monarch
  		x = 4
 		y = 1
-        cost = 10
+        cost = 5
         available_if_capitulated = yes
         search_filters = {FOCUS_FILTER_POLITICAL}
 		ai_will_do = {
@@ -151,7 +151,7 @@ focus_tree = {
 
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2.5
@@ -207,7 +207,7 @@ focus_tree = {
 
 		x = 4
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2.5
@@ -250,7 +250,7 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2.5
@@ -546,7 +546,7 @@ focus_tree = {
 
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2.5
@@ -558,7 +558,6 @@ focus_tree = {
 
 			has_government = neutrality
 
-			r56_script_i_am_sane = yes
 			is_subject = no
 			has_army_manpower = { size > 59999 }
 			ENG = {
@@ -586,7 +585,7 @@ focus_tree = {
 	focus = {
 		id = SCO_devise_cunning_plans
 		icon = GFX_focus_SWI_embrace_rote_drei
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SCO_demand_the_stone_of_scone
 		}
@@ -689,7 +688,7 @@ focus_tree = {
 			focus = SCO_free_bavaria
 		}
 		relative_position_id = SCO_free_bavaria
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -740,7 +739,7 @@ focus_tree = {
 			focus = SCO_free_bavaria
 		}
 		relative_position_id = SCO_free_bavaria
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -785,7 +784,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SCO_grant_power_to_the_crown }
  		x = -3
 		y = 1
-        cost = 10
+        cost = 5
         available_if_capitulated = yes
         search_filters = {FOCUS_FILTER_POLITICAL}
         ai_will_do = {
@@ -890,7 +889,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SCO_promote_chemical_industry }
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -936,7 +935,7 @@ focus_tree = {
 		relative_position_id = SCO_support_trade
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -972,7 +971,7 @@ focus_tree = {
 		
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -992,7 +991,7 @@ focus_tree = {
 		
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -1012,7 +1011,7 @@ focus_tree = {
 		
 		x = 1
 		y = 2
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -1086,7 +1085,7 @@ focus_tree = {
 #		x = 6
 #		y = 1
 #		relative_position_id = SCO_democratic_constitutionalism
-#		cost = 10
+#		cost = 5
 #		available = {
 #		}
 #
@@ -1105,7 +1104,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SCO_the_volunteer_corps }
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 
 		
 
@@ -1151,7 +1150,7 @@ focus_tree = {
 		}
 
 		relative_position_id = SCO_deterrence
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -1171,7 +1170,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SCO_economic_mobilization
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -1202,7 +1201,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SCO_women_army_service
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -1260,7 +1259,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SCO_scottish_democratic_fascist_party }
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = {
@@ -1311,7 +1310,7 @@ focus_tree = {
         y = 1
         relative_position_id = SCO_the_scottish_workers_republican_party
     
-        cost = 10
+        cost = 5
     
         ai_will_do = {
             factor = 15
@@ -1379,7 +1378,7 @@ focus_tree = {
 		relative_position_id = SCO_political_batallions
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		
 		completion_reward = {
 			add_ideas = political_commissars_focus
@@ -1409,7 +1408,7 @@ focus_tree = {
         y = 1
 		relative_position_id = SCO_political_commissars
     
-        cost = 10
+        cost = 5
     
         ai_will_do = {
             factor = 12
@@ -1436,9 +1435,8 @@ focus_tree = {
 		}
 		relative_position_id = SCO_red_army
 		
-		cost = 10
+		cost = 5
 		available = {
-			r56_script_i_am_sane = yes
 			is_subject = no
 			has_army_manpower = { size > 59999 }
 			OR = {
@@ -1621,7 +1619,6 @@ focus_tree = {
 		
 		cost = 5
 		available = {
-			r56_script_i_am_sane = yes
 			is_subject = no
 			has_army_manpower = { size > 89999 }
 			OR = {
@@ -1698,7 +1695,7 @@ focus_tree = {
 	focus = {
 		id = SCO_revolutionary_guards
 		icon = GFX_goal_HON_nkvd_assistance
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = SCO_political_commissars
 		}
@@ -1812,7 +1809,7 @@ focus_tree = {
 	focus = {
 		id = SCO_one_union_for_all_workers
 		icon = GFX_goal_generic_karl_marx
-		cost = 10
+		cost = 5
 		prerequisite = { focus = SCO_the_scottish_workers_republican_party }
 		x = 2
 		y = 1
@@ -1841,7 +1838,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SCO_one_union_for_all_workers
 
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -1864,7 +1861,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = SCO_one_union_for_all_workers
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
@@ -1910,7 +1907,7 @@ focus_tree = {
 		}	
 		x = -1
 		y = 2
-		cost = 10
+		cost = 5
 			
 		completion_reward = {
 			if = {
@@ -1993,7 +1990,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SCO_the_scottish_workers_republican_party }
 		x = -6
 		y = 1
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = {
@@ -2176,7 +2173,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = SCO_perfect_the_propaganda
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -2224,7 +2221,7 @@ focus_tree = {
 		#mutually_exclusive = { focus = ADU_promote_quietism }
 		x = 1
 		y = 2
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = {
@@ -2300,7 +2297,7 @@ focus_tree = {
 
 		x = -2
 		y = 2
-		cost = 10
+		cost = 5
 		
 		completion_reward = {
 			if = {
@@ -2499,7 +2496,7 @@ focus_tree = {
 	
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 		
 		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_POLITICAL}
 
@@ -2520,7 +2517,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SCO_propagate_the_importance_of_struggle
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 50
@@ -2592,7 +2589,7 @@ focus_tree = {
 #		#mutually_exclusive = { focus = ADU_promote_quietism }
 #		x = -1
 #		y = 1
-#		cost = 10
+#		cost = 5
 #		available = {
 #			if = {
 #				limit = {

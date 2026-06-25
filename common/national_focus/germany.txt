@@ -12908,7 +12908,6 @@ focus_tree = {
 		}
 		
 		available = { 
-			r56_script_i_am_sane = yes
 			is_subject = no
 			has_army_manpower = { size > 749999 }
 		}
@@ -14285,7 +14284,6 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		available = {
-			r56_script_i_am_sane = yes
 			is_subject = no
 			OR = {
 				has_army_manpower = {
@@ -15320,29 +15318,16 @@ focus_tree = {
 			has_army_manpower = {
 				size > 624999
 			}
-			r56_script_i_am_sane = yes
 			OR = {
 				AND = {
 					is_neighbor_of = SWI
-					SWI = {
-						r56_script_target_is_sane = yes
-					}
 				}
 				AND = {
 					is_neighbor_of = LIE
-					LIE = {
-						r56_script_target_is_sane = yes
-					}
 				}
 			}
 		}
 		bypass = {
-			SWI = {
-				r56_script_standard_bypass = yes
-			}
-			LIE = {
-				r56_script_standard_bypass = yes
-			}
 		}
 
 		ai_will_do = {
@@ -16448,7 +16433,6 @@ focus_tree = {
 
 		available = {
 			has_war_with_major = yes
-			r56_script_i_am_sane = yes
 			has_army_manpower = {
 				size > 874999 
 			}
@@ -16461,15 +16445,10 @@ focus_tree = {
 				controls_state = 1054
 				surrender_progress < 0.01
 			}
-			YUG = {
-				r56_script_target_is_sane = yes
-			}
 		}
 
 		bypass = {
-			YUG = {
-				r56_script_standard_bypass = yes
-			}
+
 		}
 
 		will_lead_to_war_with = YUG
@@ -67485,7 +67464,6 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			r56_script_i_am_sane = yes
 			if = {
 				limit = {
 					is_ai = yes
@@ -67501,9 +67479,7 @@ focus_tree = {
 			}
 		}
 		bypass = {
-			SOV = {
-				r56_script_standard_bypass = yes
-			}
+
 		}
 		will_lead_to_war_with = SOV
 		completion_reward = {
