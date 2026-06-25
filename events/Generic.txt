@@ -79,20 +79,6 @@ country_event = {
 				add_offsite_building = { type = arms_factory level = 2 }
 			}
 		}
-		if = {
-			limit = {
-				original_tag = PER
-				FROM = {
-					original_tag = AFG
-					has_completed_focus = AFG_persian_socialism
-				}
-			}
-			unlock_decision_category_tooltip = AFG_persian_socialism_decision_category
-			effect_tooltip = {
-				activate_mission = AFG_march_on_tehran
-				add_ideas = AFG_communist_influence_r56
-			}
-		}
 		# if = {
 		# 	limit = {
 		# 		OR = {
@@ -110,23 +96,6 @@ country_event = {
 		# 		add_ideas = GER_pro_german_propaganda
 		# 	}
 		# }
-		if = {
-			limit = {
-				FROM = {
-					original_tag = AFG
-					has_completed_focus = AFG_beacon_of_the_orient
-				}
-				ROOT = {
-					is_major = no
-					any_neighbor_country = {
-						original_tag = AFG
-					}
-				}
-			}
-			effect_tooltip = {
-				add_ideas = democratic_influence
-			}
-		}
 	}
 }
 
