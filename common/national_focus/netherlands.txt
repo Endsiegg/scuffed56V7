@@ -1333,9 +1333,6 @@ focus_tree = {
                 }
 				NOT = {
 					OR = {
-						has_completed_focus = BEL_go_right
-						has_completed_focus = BEL_go_left
-						has_completed_focus = BEL_benelux_economic_cooperation
 						has_idea = closed_economy
 					}
 				}
@@ -1418,7 +1415,6 @@ focus_tree = {
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
-			news_event = { id = belgium.97 }
 			hidden_effect = {
 				set_country_flag = benelux_accepted
 			}
@@ -1446,21 +1442,6 @@ focus_tree = {
 			OR ={
 				BEL = { is_faction_leader = yes }
 				HOL = { is_faction_leader = yes }
-			}
- 			OR = {
-				NOT = {
-					BEL = {
-						focus_progress = {
-							focus = BEL_benelux_tech_sharing_group
-							progress > 0
-						}
-					}
-				}
-				NOT = {
-					BEL = {
-						has_completed_focus = BEL_benelux_tech_sharing_group
-					}
-				}
 			}
 		}
 
@@ -2619,9 +2600,6 @@ focus_tree = {
 
 		
 		available = {
-			BEL = {
-				has_completed_focus = BEL_go_right
-			}
 
 		}
 
