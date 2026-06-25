@@ -14,7 +14,6 @@ TUR_ticaret_organization = {
 	icon = GFX_idea_tur_koc_ticaret_as
 	allowed = {	
 		tag = TUR
-		has_dlc = "Battle for the Bosporus"
 	}
 }
 TUR_tulomsas_organization = {
@@ -22,7 +21,7 @@ TUR_tulomsas_organization = {
 	icon = GFX_idea_tur_tulomsas
 	allowed = {	
 		tag = TUR
-		has_dlc = "Battle for the Bosporus"
+
 	}
 	equipment_type = {  
         armor
@@ -39,7 +38,7 @@ TUR_tulomsas_organization = {
         name = NOR_mio_initial_trait_mechanical_workshop
         
         equipment_bonus = {
-            build_cost_ic = -0.05
+            build_cost_ic = -0.15
         }
     }
 }
@@ -101,10 +100,10 @@ TUR_taskizak_shipyard_organaztion  = {
 		name = generic_mio_initial_trait_raiding_fleet
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		equipment_bonus = {
-			surface_visibility = -0.05
+			surface_visibility = -0.10
 		}
 	}		
 }
@@ -120,10 +119,10 @@ TUR_istinye_shipyard_organization = {
 		name = generic_mio_initial_trait_battle_line_ship_builders
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		production_bonus = {
-			production_capacity_factor = 0.05
+			production_capacity_factor = 0.10
 		}
 	}	
 }
@@ -144,7 +143,6 @@ TUR_thk_organization = {
 	icon = GFX_idea_generic_air_manufacturer_2
 	allowed = {	
 		tag = TUR
-		NOT = { has_dlc = "Battle for the Bosporus" }
 	}
 }
 TUR_ktf_organization = {
@@ -152,7 +150,7 @@ TUR_ktf_organization = {
 	icon = GFX_idea_man_five_year_plan_air
 	allowed = {	
 		tag = TUR
-		NOT = { has_dlc = "Battle for the Bosporus" }
+
 	}
 }
 TUR_thk_bftb_organization = {
@@ -160,7 +158,6 @@ TUR_thk_bftb_organization = {
 	icon = GFX_idea_man_five_year_plan_air
 	allowed = {	
 		tag = TUR
-		has_dlc = "Battle for the Bosporus"
 	}
 }
 TUR_gok_okulu_organization = {
@@ -168,7 +165,6 @@ TUR_gok_okulu_organization = {
 	icon = GFX_idea_tur_gok_okulu
 	allowed = {	
 		tag = TUR
-		has_dlc = "Battle for the Bosporus"
 	}
 }
 
@@ -177,7 +173,6 @@ TUR_nud_organization = {
 	icon = GFX_idea_tur_nud
 	allowed = {	
 		tag = TUR
-		has_dlc = "Battle for the Bosporus"
 	}
 }
 
@@ -186,7 +181,6 @@ TUR_tomtasch_organization = {
 	icon = GFX_idea_tur_tomtasch
 	allowed = {	
 		tag = TUR
-		has_dlc = "Battle for the Bosporus"
 	}
 }
 
@@ -244,19 +238,7 @@ TUR_killigil_endustrileri_organization = {
 		tag = TUR
 	}
 	available = {
-		if = {
-			limit = {
-				has_global_flag = tur_bftb_focus_tree
-			}
-			owner = {
-				has_country_flag = TUR_sponsored_killigil_armaments_flag
-			}
-		}
-		else = {
-			owner = {
-				has_completed_focus = TUR_rejuvenate_the_great_war_arsenal
-			}
-		}
+
 	}
 }
 #TUR_koc_ticaret_as_defense_industry_organization = {
