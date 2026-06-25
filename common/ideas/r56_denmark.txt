@@ -174,7 +174,6 @@ ideas = {
 					NOT = {
 						has_government = democratic
 					}
-					has_country_flag = den_monarchy_abolished
 				}
 
 			}
@@ -1189,20 +1188,7 @@ ideas = {
 			}
 			picture = porsche
 			available = {
-				OR = {
-					is_subject_of = GER
-					is_subject_of = WGR
-					if = {
-						limit = {
-							NOT = { has_global_flag = DEN_use_DLC_tree }
-						}
-						has_completed_focus = DEN_Invite_the_Wehrwirtschaftsfuhrer
-					}
-				}
-				NOT = {
-					has_war_with = GER
-					has_war_with = WGR
-				}
+
 			}
 			research_bonus = {
 				armor = 0.2
@@ -1326,15 +1312,7 @@ ideas = {
 			}
 			
 			available = {
-				OR = {
-					is_subject_of = GER
-					is_subject_of = WGR
-					has_completed_focus = DEN_Invite_the_Wehrwirtschaftsfuhrer
-				}
-				NOT = {
-					has_war_with = GER
-					has_war_with = WGR
-				}
+
 			}
 			
 			research_bonus = {
