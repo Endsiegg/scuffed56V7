@@ -49,38 +49,6 @@ characters = {
 			ai_will_do = {
 				factor = 10
 			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_tribal_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_government_side
-					}
-				}
-			}
 		}
 	}
 	AFG_mohammed_zahir_shah = {
@@ -108,7 +76,6 @@ characters = {
 				original_tag = AFG
 			}
 			available = {
-				has_completed_focus = AFG_power_to_the_king
 				has_country_leader = {
 					character = AFG_mohammed_zahir_shah
 					ruling_only = yes
@@ -133,39 +100,6 @@ characters = {
 				}
 				modifier = {
 					factor = 20
-					has_completed_focus = AFG_power_to_the_king
-				}
-			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_government_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_tribal_side
-					}
 				}
 			}
 		}
@@ -223,38 +157,6 @@ characters = {
 			ai_will_do = {
 				factor = 10
 			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_government_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_tribal_side
-					}
-				}
-			}
 		}
 		field_marshal = {
 			traits = {
@@ -295,7 +197,6 @@ characters = {
 				}
 				else = {
 					NOT = {
-						has_completed_focus = AFG_form_weekh_zalmian
 						has_government = communism
 					}
 				}
@@ -363,7 +264,6 @@ characters = {
 		advisor = {
 			cost = 150
 			available = {
-				has_completed_focus = AFG_power_to_the_king
 				NOT = {
 					has_government = communism
 				}
@@ -380,46 +280,12 @@ characters = {
 			ai_will_do = {
 				base = 5
 				modifier = {
-					has_completed_focus = AFG_abolish_the_regency
 					has_government = neutrality
 					factor = 5
 				}
 				modifier = {
-					has_completed_focus = AFG_afghanistan_bank
 					has_government = neutrality
 					factor = 10
-				}
-			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_tribal_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_government_side
-					}
 				}
 			}
 		}
@@ -460,7 +326,6 @@ characters = {
 			cost = 150
 			available = {
 				NOT = {
-					has_completed_focus = AFG_form_weekh_zalmian
 					has_government = communism
 				}
 			}
@@ -478,38 +343,6 @@ characters = {
 			traits = {
 				AFG_ruthless_goon
 			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_tribal_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_government_side
-					}
-				}
-			}
 		}
 		advisor = {
 			cost = 100
@@ -524,7 +357,6 @@ characters = {
 				}
 				else = {
 					NOT = {
-						has_completed_focus = AFG_form_weekh_zalmian
 						has_government = communism
 					}
 				}
@@ -569,7 +401,6 @@ characters = {
 			cost = 150
 			available = {
 				NOT = {
-					has_completed_focus = AFG_form_weekh_zalmian
 					has_government = communism
 				}
 			}
@@ -582,38 +413,6 @@ characters = {
 			traits = {
 				nationalist_symbol
 			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_tribal_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_government_side
-					}
-				}
-			}
 			ai_will_do = {
 				factor = 10
 			}
@@ -625,7 +424,6 @@ characters = {
 			}
 			available = {
 				NOT = {
-					has_completed_focus = AFG_form_weekh_zalmian
 					has_government = communism
 				}
 			}
@@ -683,7 +481,6 @@ characters = {
 				}
 			}
 			available = {
-				has_completed_focus = AFG_contact_faqir
 				NOT = {
 					has_country_leader = {
 						character = AFG_haji_mirzali_khan
@@ -708,39 +505,6 @@ characters = {
 				}
 				modifier = {
 					factor = 50
-					has_completed_focus = AFG_contact_faqir
-				}
-			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.1
-						tooltip_side = AFG_tribal_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.1
-						tooltip_side = AFG_government_side
-					}
 				}
 			}
 		}
@@ -769,7 +533,6 @@ characters = {
 							character = AFG_amanullah_khan
 							ruling_only = yes
 						}
-						has_country_flag = AFG_approached_haji_mirzali_khan
 						NOT = {
 							has_country_flag = AFG_dissatisfied_haji_mirzali_khan
 						}
@@ -806,7 +569,6 @@ characters = {
 								character = AFG_amanullah_khan
 								ruling_only = yes
 							}
-							has_country_flag = AFG_approached_haji_mirzali_khan
 							NOT = {
 								has_country_flag = AFG_dissatisfied_haji_mirzali_khan
 							}
@@ -849,7 +611,6 @@ characters = {
 									character = AFG_amanullah_khan
 									ruling_only = yes
 								}
-								has_country_flag = AFG_approached_haji_mirzali_khan
 								NOT = {
 									has_country_flag = AFG_dissatisfied_haji_mirzali_khan
 								}
@@ -891,7 +652,6 @@ characters = {
 				original_tag = AFG
 			}
 			available = {
-				has_completed_focus = AFG_approach_mubashir
 				NOT = {
 					has_government = communism
 					has_government = democratic
@@ -899,38 +659,6 @@ characters = {
 			}
 			traits = {
 				AFG_islamic_scholar
-			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_government_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_tribal_side
-					}
-				}
 			}
 		}
 	}
@@ -949,7 +677,6 @@ characters = {
 				original_tag = AFG
 			}
 			available = {
-				has_completed_focus = AFG_invite_amin_al_husseini
 				NOT = {
 					PAL = {
 						OR = {
@@ -1026,7 +753,6 @@ characters = {
 				politically_connected
 			}
 			visible = {
-				has_completed_focus = AFG_waaidu
 				has_government = fascism
 				NOT = {
 					has_global_flag = afg_dlc_focus_tree
@@ -1063,7 +789,6 @@ characters = {
 				original_tag = AFG
 			}
 			available = {
-				has_completed_focus = AFG_form_watan_party
 				NOT = {
 					has_government = fascism
 					has_country_leader = {
@@ -1080,38 +805,6 @@ characters = {
 			}
 			ai_will_do = {
 				factor = 10
-			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_government_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_tribal_side
-					}
-				}
 			}
 		}
 	}
@@ -1156,11 +849,9 @@ characters = {
 			available = {
 				OR = {
 					AND = {
-						has_completed_focus = AFG_universal_suffarage
 						has_government = communism
 					}
 					AND = {
-						has_completed_focus = AFG_the_getyear_general_elections
 						has_government = democratic
 					}
 				}
@@ -1174,38 +865,6 @@ characters = {
 			ai_will_do = {
 				factor = 10
 			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_communist_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_parcham_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_communist_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_khalq_side
-					}
-				}
-			}
 		}
 	}
 	AFG_gul_pacha_ulfat = {
@@ -1216,7 +875,6 @@ characters = {
 				original_tag = AFG
 			}
 			available = {
-				has_completed_focus = AFG_form_weekh_zalmian
 				NOT = {
 					has_government = fascism
 				}
@@ -1240,39 +898,6 @@ characters = {
 				}
 				modifier = {
 					factor = 5
-					has_completed_focus = AFG_form_weekh_zalmian
-				}
-			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_communist_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_parcham_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_communist_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_khalq_side
-					}
 				}
 			}
 		}
@@ -1291,7 +916,6 @@ characters = {
 				original_tag = AFG
 			}
 			available = {
-				has_completed_focus = AFG_utilize_the_sufis
 				NOT = {
 					has_government = communism
 				}
@@ -1301,38 +925,6 @@ characters = {
 			}
 			ai_will_do = {
 				base = 100
-			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_government_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_tribal_side
-					}
-				}
 			}
 		}
 		name = AFG_fazl_omar_mojadidi
@@ -1360,38 +952,6 @@ characters = {
 			}
 			traits = {
 				popular_figurehead
-			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_communist_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.05
-						tooltip_side = AFG_khalq_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_communist_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.05
-						tooltip_side = AFG_parcham_side
-					}
-				}
 			}
 		}
 	}
@@ -1447,39 +1007,6 @@ characters = {
 				}
 				modifier = {
 					factor = 5
-					has_completed_focus = AFG_form_weekh_zalmian
-				}
-			}
-			on_add = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_communist_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = 0.1
-						tooltip_side = AFG_khalq_side
-					}
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						AFG = {
-							has_power_balance = {
-								id = AFG_communist_power_balance
-							}
-						}
-					}
-					add_power_balance_value = {
-						id = AFG_power_balance
-						value = -0.1
-						tooltip_side = AFG_parcham_side
-					}
 				}
 			}
 		}
@@ -1625,7 +1152,6 @@ characters = {
 				trickster
 			}
 			visible = {
-				has_completed_focus = AFG_waaidu
 				has_government = fascism
 			}
 			skill = 2
@@ -1663,7 +1189,6 @@ characters = {
 							}
 						}
 						else = {
-							has_country_flag = AFG_approached_haji_mirzali_khan
 							NOT = {
 								has_country_flag = AFG_dissatisfied_haji_mirzali_khan
 							}
@@ -1700,7 +1225,6 @@ characters = {
 							}
 						}
 						else = {
-							has_country_flag = AFG_approached_haji_mirzali_khan
 							NOT = {
 								has_country_flag = AFG_dissatisfied_haji_mirzali_khan
 							}
@@ -1747,7 +1271,6 @@ characters = {
 									character = AFG_amanullah_khan
 									ruling_only = yes
 								}
-								has_country_flag = AFG_approached_haji_mirzali_khan
 								NOT = {
 									has_country_flag = AFG_dissatisfied_haji_mirzali_khan
 								}
@@ -1791,7 +1314,6 @@ characters = {
 				caring_leader
 			}
 			visible = {
-				has_completed_focus = AFG_waaidu
 				has_government = fascism
 			}
 			skill = 2
@@ -1831,8 +1353,6 @@ characters = {
 			available = {
 				has_government = communism
 				OR = {
-					has_country_flag = AFG_nisar_arrives
-					has_completed_focus = AFG_approach_the_soviets
 					has_country_leader = {
 						character = AFG_nisar_muhammad
 						ruling_only = yes
@@ -1998,7 +1518,6 @@ characters = {
 				}
 				else = {
 					OR = {
-						has_completed_focus = AFG_invite_wehrmacht_officers
 						is_in_faction_with = GER
 					}
 				}
@@ -2018,7 +1537,6 @@ characters = {
 				politically_connected
 			}
 			visible = {
-				has_completed_focus = AFG_invite_wehrmacht_officers
 				OR = {
 					has_government = neutrality
 					has_government = fascism
@@ -2063,7 +1581,6 @@ characters = {
 					original_tag = AFG
 				}
 				available = {
-					has_country_flag = AFG_amanullah_has_returned
 					has_government = fascism
 					NOT = {
 						has_country_leader = {
@@ -2108,7 +1625,6 @@ characters = {
 					original_tag = AFG
 				}
 				available = {
-					has_country_flag = AFG_amanullah_has_returned
 					has_government = fascism
 					NOT = {
 						has_country_leader = {
@@ -2137,11 +1653,7 @@ characters = {
 				original_tag = AFG
 			}
 			available = {
-				OR = {
-					has_country_flag = AFG_pardoned_prisoners
-					has_completed_focus = AFG_the_exiled_king
-					has_completed_focus = AFG_return_of_the_king
-				}
+
 			}
 			traits = {
 				staunch_loyalist
@@ -2224,7 +1736,6 @@ characters = {
 				NOT = {
 					has_government = fascism
 				}
-				has_completed_focus = AFG_expand_university
 			}
 			slot = political_advisor
 			ledger = civilian
@@ -2235,7 +1746,7 @@ characters = {
 			ai_will_do = {
 				base = 5
 				modifier = {
-					has_completed_focus = AFG_expand_university
+
 					has_government = neutrality
 					factor = 30
 				}
@@ -2292,12 +1803,7 @@ characters = {
 					}
 				}
 				else = {
-					OR = {
-						has_completed_focus = AFG_invite_wehrmacht_officers
-						has_completed_focus = AFG_german_junker_purchase
-						has_country_flag = AFG_german_support_recieved
-						is_in_faction_with = GER
-					}
+					is_in_faction_with = GER			
 				}
 			}
 			traits = {
@@ -2509,9 +2015,6 @@ characters = {
 					}
 					has_completed_focus = AFG_establish_naval_bases
 				}
-				else = {
-					has_completed_focus = AFG_first_afghani_navy
-				}
 			}
 			cost = 100
 			ai_will_do = {
@@ -2533,9 +2036,6 @@ characters = {
 						has_global_flag = afg_dlc_focus_tree
 					}
 					has_completed_focus = AFG_establish_naval_bases
-				}
-				else = {
-					has_completed_focus = AFG_first_afghani_navy
 				}
 			}
 			cost = 100
@@ -2652,7 +2152,6 @@ characters = {
 			slot = army_chief
 			idea_token = AFG_fakhri_pasha
 			available = {
-				has_country_flag = AFG_get_fakhri_pasha
 				has_country_leader = {
 					character = AFG_amanullah_khan
 					ruling_only = yes
@@ -2672,7 +2171,6 @@ characters = {
 			}
 			visible = {
 				has_government = neutrality
-				has_country_flag = AFG_get_fakhri_pasha
 			}
 			skill = 4
 			attack_skill = 2
@@ -2704,11 +2202,7 @@ characters = {
 					has_government = communism
 				}
 				else = {
-					has_country_flag = AFG_get_vitaly_primakov
 					has_government = communism
-					NOT = {
-						has_completed_focus = AFG_undermine_moscow
-					}
 				}
 			}
 			traits = {
@@ -2732,9 +2226,6 @@ characters = {
 			}
 			available = {
 				has_government = communism
-				NOT = {
-					has_completed_focus = AFG_undermine_moscow
-				}
 			}
 			traits = {
 				army_infantry_1
@@ -2763,9 +2254,6 @@ characters = {
 					}
 					has_completed_focus = AFG_international_brigades
 				}
-				else = {
-					has_completed_focus = AFG_invite_pakistani_military
-				}
 			}
 			traits = {
 				army_infantry_1
@@ -2793,9 +2281,6 @@ characters = {
 						has_global_flag = afg_dlc_focus_tree
 					}
 					has_completed_focus = AFG_international_brigades
-				}
-				else = {
-					has_completed_focus = AFG_invite_pakistani_military
 				}
 			}
 			traits = {

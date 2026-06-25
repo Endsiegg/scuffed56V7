@@ -363,7 +363,7 @@ characters={
 			logistics_skill=2
 			legacy_id=-1
 			visible = {
-				has_completed_focus = DEN_Reinvigorate_the_Officer_Corp
+
 			}
 		}
 	}
@@ -484,7 +484,7 @@ characters={
 					has_government = communism
 					AND = {
 						has_government = democratic
-						has_completed_focus = DEN_Invite_Select_Communist_Ministers
+
 					}
 				}
 			}
@@ -712,7 +712,7 @@ characters={
 			}
 			available  = {
 				has_government = democratic
-				has_country_flag = socialdemokratiet_dominating
+
 				custom_trigger_tooltip = {
 					tooltip = "Vilhelm Buhl has not died"
 					date < 1954.12.18
@@ -744,11 +744,10 @@ characters={
 				OR = {
 					AND = {
 						has_government = democratic
-						has_country_flag = socialdemokratiet_dominating
+
 					}
 					AND = {
 						has_government = communism
-						has_completed_focus = DEN_The_Hammer_and_the_Sickle
 					}
 				}
 			}
@@ -778,9 +777,7 @@ characters={
 				OR = {
 					AND = {
 						has_government = democratic
-						NOT = { has_country_flag = socialdemokratiet_dominating }	#REVISIT GRACE PERIOD + POSSIBLY KEEPING
 					}
-					has_completed_focus = DEN_Form_a_Cabinet
 				}
 			}
 			allowed = {
@@ -809,9 +806,7 @@ characters={
 				OR = {
 					AND = {
 						has_government = democratic
-						NOT = { has_country_flag = socialdemokratiet_dominating }	#REVISIT GRACE PERIOD + POSSIBLY KEEPING
 					}
-					has_completed_focus = DEN_Form_a_Cabinet
 				}
 			}
 			allowed = {
@@ -905,7 +900,6 @@ characters={
 					AND = {
 						has_government = democratic
 						NOT = {
-							has_country_flag = socialdemokratiet_dominating
 							has_country_leader = {
 								character= DEN_John_Christmas_Moller
 								ruling_only = yes
@@ -914,7 +908,6 @@ characters={
 					}
 					AND = {
 						has_government = neutrality
-						has_completed_focus = DEN_Form_a_Cabinet
 					}
 				}
 				custom_trigger_tooltip = {
@@ -952,7 +945,6 @@ characters={
 					has_government = communism
 					AND = {
 						has_government = democratic
-						has_completed_focus = DEN_Invite_Select_Communist_Ministers
 					}
 				}
 				NOT = {
@@ -1014,7 +1006,6 @@ characters={
 					has_government = communism
 					AND = {
 						has_government = democratic
-						has_completed_focus = DEN_Invite_Select_Communist_Ministers
 					}
 				}
 			}
@@ -1136,9 +1127,6 @@ characters={
 							has_completed_focus = DEN_contribute_to_the_war
 						}
 					}
-				}
-				else = {
-					has_country_flag = den_schalburg_recruited
 				}
 			}
 			skill = 3
@@ -2457,7 +2445,6 @@ characters={
 					}
 					else = {
 						has_government = democratic
-						has_completed_focus = DEN_Expand_the_Copenhagen_University
 					}
 				}
 			}

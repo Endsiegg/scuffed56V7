@@ -161,13 +161,10 @@ characters={
 			allowed = { original_tag = MEX }
 			available = {
 				has_government = communism
-				if = {
-					limit = { has_global_flag = mex_mtg_focus_tree }
 					OR = {
 						has_completed_focus = MEX_focus_party_of_the_revolution
 						has_completed_focus = MEX_focus_communist_revolution
-					}
-				}
+					}		
 			}
 			traits = { devoted_communist }
 		}
@@ -242,15 +239,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				army_regrouping_2
@@ -284,19 +273,6 @@ characters={
 			logistics_skill = 2
 			legacy_id=-1
 			visible = {
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = mex_mtg_focus_tree
-						}
-					}
-					NOT = {
-						OR = {
-							has_country_flag = juan_is_dead
-							has_country_flag = juan_loses
-						}
-					}
-				}
 			}
 		}
 	}
@@ -534,15 +510,6 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
 			}
 			traits = {
 				navy_fleet_logistics_3
@@ -579,15 +546,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				navy_chief_decisive_battle_1
@@ -624,15 +583,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				naval_theorist
@@ -667,15 +618,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				air_chief_safety_2
@@ -737,15 +680,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				military_theorist
@@ -769,15 +704,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				assault_avaition
@@ -808,15 +735,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				assault_avaition
@@ -847,15 +766,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				air_warfare_theorist
@@ -879,15 +790,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				air_warfare_theorist
@@ -917,7 +820,7 @@ characters={
 				has_dlc = "Man the Guns"
 			}
 			visible = {
-				has_global_flag = mex_mtg_focus_tree
+
 			}
 			available = {
 				has_completed_focus = MEX_focus_support_general_cedillo
@@ -948,15 +851,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				army_chief_defensive_2
@@ -982,15 +877,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				army_chief_drill_2
@@ -1080,15 +967,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				air_air_combat_training_3
@@ -1115,15 +994,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				air_chief_ground_support_2
@@ -1183,15 +1054,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				air_strategic_bombing_2
@@ -1218,15 +1081,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				air_strategic_bombing_2
@@ -1253,15 +1108,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				air_air_superiority_2
@@ -1288,15 +1135,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				navy_screen_2
@@ -1323,15 +1162,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				army_entrenchment_2
@@ -1358,15 +1189,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				army_regrouping_2
@@ -1394,12 +1217,6 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = mex_mtg_focus_tree
-					}
-					has_completed_focus = MEX_focus_purge_the_bureaucracy
-				}
 				NOT = {	#was anti-maximato rebeller
 					has_government = fascism
 				}
@@ -1429,15 +1246,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				navy_naval_air_defense_2
@@ -1464,15 +1273,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				air_close_air_support_2
@@ -1721,21 +1522,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = mex_mtg_focus_tree
-					}
-					has_completed_focus = MEX_focus_liberalize_the_banking_sector 
-				}
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
+
 			}
 			traits = {
 				financial_expert 
@@ -1758,20 +1545,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = mex_mtg_focus_tree
-					}
-					has_completed_focus = MEX_focus_agricultural_credit_bank 
-				}
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = mex_mtg_focus_tree
-						}
-					}
-					has_completed_focus = MEX_cleanse_the_cabinet
-				}
+
 			}
 			traits = {
 				captain_of_industry 
@@ -1795,12 +1569,7 @@ characters={
 				original_tag = MEX
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = mex_mtg_focus_tree
-					}
-					has_completed_focus = MEX_focus_triumph_over_the_cristeros 
-				}
+
 			}
 			traits = {
 				prince_of_terror 
@@ -1816,15 +1585,6 @@ characters={
 			}
 			available = {
 					has_government = fascism
-					if = {
-                	    limit = {
-                        has_global_flag = mex_mtg_focus_tree
-                 	   }
-                	OR = {
-                	    has_completed_focus = MEX_focus_revanchist_revolution
-                	    has_completed_focus = MEX_focus_legion_of_christ
-                	}
-            	}
 			}
 			traits  = {
 				fascist_figurehead
@@ -1847,15 +1607,6 @@ characters={
 			}
 			available = {
 				has_government = fascism
-				if = {
-					limit = {
-					has_global_flag = mex_mtg_focus_tree
-					}
-				OR = {
-					has_completed_focus = MEX_focus_revanchist_revolution
-					has_completed_focus = MEX_focus_legion_of_christ
-				}
-			}
 			}
 			traits  = {
 				lawyer
@@ -1880,7 +1631,7 @@ characters={
 				has_government = fascism
 				if = {
 					limit = {
-					has_global_flag = mex_mtg_focus_tree
+
 					}
 				OR = {
 					has_completed_focus = MEX_focus_revanchist_revolution
@@ -2055,7 +1806,7 @@ characters={
 			available = { 
 					if = {
 						limit = {
-						has_global_flag = mex_mtg_focus_tree
+
 						}
 					OR = {
 						has_completed_focus = MEX_focus_state_education
@@ -2105,7 +1856,7 @@ characters={
 				has_government = democratic
 				if = {
 					limit = {
-					has_global_flag = mex_mtg_focus_tree
+
 					}
 				OR = {
 					has_completed_focus = MEX_focus_institutional_revolution
@@ -2134,15 +1885,10 @@ characters={
 			}
 			available = {
 				has_government = democratic
-				if = {
-					limit = {
-					has_global_flag = mex_mtg_focus_tree
-					}
 				OR = {
 					has_completed_focus = MEX_focus_institutional_revolution
 					has_completed_focus = MEX_focus_catholic_politics
-				}
-			}
+				}	
 			}
 			traits  = {
 				liberal_journalist

@@ -97,22 +97,7 @@ characters={
 				original_tag = RAJ
 			}
 			available = {
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = raj_dlc_focus_tree
-						}
-					}
-					has_completed_focus = RAJ_Independent_Labour_Party
-				}
-				if = {
-					limit = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state = autonomy_supervised_state
-					}
-				}
+
 			}
 			traits = {
 				communist_revolutionary 
@@ -303,21 +288,6 @@ characters={
 			slot = political_advisor
 			idea_token = RAJ_john_mathai
 			available = {
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = raj_dlc_focus_tree
-						}
-					}
-					OR = {
-						hidden_trigger = {
-							has_country_flag = INC_BYPASSED
-							has_country_flag = UP_BYPASSED
-							has_country_flag = ILP_BYPASSED
-						}
-						has_country_flag = john_mathai_enable
-					}
-				}
 			}
 			allowed = {
 				original_tag = RAJ
@@ -465,15 +435,6 @@ characters={
 			}
 			available = {
 				has_government = communism
-				OR = {
-					has_completed_focus = RAJ_Pillais_Influence
-					hidden_trigger = {
-						has_country_flag = ILP_BYPASSED
-					}
-					NOT = {
-						has_country_flag = ILP_victory
-					}
-				}
 				NOT = {
 					has_country_leader = {
 						character = RAJ_p_krishna_pillai
@@ -503,7 +464,7 @@ characters={
 			traits={ armor_officer }
 			skill=3
 			visible = {
-				NOT = { has_country_flag = independence_granted }
+
 			}
 			attack_skill=3
 			defense_skill=3
@@ -526,7 +487,7 @@ characters={
 			traits={ hill_fighter }
 			skill=3
 			visible = {
-				NOT = { has_country_flag = independence_granted }
+
 			}
 			attack_skill=2
 			defense_skill=2
@@ -549,7 +510,7 @@ characters={
 			traits={ desert_fox }
 			skill=3
 			visible = {
-				NOT = { has_country_flag = independence_granted }
+
 			}
 			attack_skill=1
 			defense_skill=3
@@ -570,7 +531,7 @@ characters={
 			traits={ career_officer infantry_officer }
 			skill=2
 			visible = {
-				NOT = { has_country_flag = independence_granted }
+
 			}
 			attack_skill=2
 			defense_skill=3
@@ -591,7 +552,7 @@ characters={
 			traits={ career_officer promising }
 			skill=1
 			visible = {
-				NOT = { has_country_flag = independence_granted }
+
 			}
 			attack_skill=1
 			defense_skill=1
@@ -612,7 +573,7 @@ characters={
 			traits={ desert_fox trait_mountaineer trait_cautious war_hero }
 			skill=2
 			visible = {
-				NOT = { has_country_flag = independence_granted }
+
 			}
 			attack_skill=1
 			defense_skill=2
@@ -637,7 +598,7 @@ characters={
 			traits={ commando }
 			skill=2
 			visible = {
-				NOT = { has_country_flag = independence_granted }
+
 			}
 			attack_skill=2
 			defense_skill=1
@@ -660,7 +621,7 @@ characters={
 			traits={ old_guard cavalry_leader }
 			skill=2
 			visible = {
-				NOT = { has_country_flag = independence_granted }
+
 			}
 			attack_skill=1
 			defense_skill=2
@@ -681,7 +642,7 @@ characters={
 			traits = { artillerist }
 			skill = 2
 			visible = {
-				has_country_flag = independence_granted
+
 			}
 			legacy_id = 5800
 			attack_skill = 3
@@ -704,7 +665,7 @@ characters={
 			traits = { artillerist }
 			skill = 2
 			visible = {
-				has_country_flag = independence_granted
+
 			}
 			legacy_id = 5801
 			attack_skill = 3
@@ -725,7 +686,7 @@ characters={
 			traits = { infantry_officer }
 			skill = 3
 			visible = {
-				has_country_flag = independence_granted
+
 			}
 			legacy_id = 5802
 			attack_skill = 2
@@ -748,7 +709,7 @@ characters={
 			traits={ old_guard_navy }
 			skill=2
 			visible = {
-				NOT = { has_country_flag = independence_granted }
+
 			}
 			attack_skill=2
 			defense_skill=2
@@ -987,14 +948,6 @@ characters={
 				NOT = {
 					has_idea = r56i_laws_gender_patriarchy
 				}
-				OR = {
-					has_country_flag = sarojini_naidu_enable
-					hidden_trigger = {
-						has_country_flag = INC_BYPASSED
-						has_country_flag = UP_BYPASSED
-						has_country_flag = ILP_BYPASSED
-					}
-				}
 			}
 			traits = {
 				raj_womens_figurehead
@@ -1085,7 +1038,6 @@ characters={
 			slot = political_advisor
 			idea_token = RAJ_mahatma_mohandas_gandhi
 			available = {
-				has_completed_focus = RAJ_Launch_The_Quit_India_Movement
 				is_subject = yes
 			}
 			cost = 75.000
@@ -1273,14 +1225,7 @@ characters={
 			slot = political_advisor
 			idea_token = RAJ_Francis_Mudie
 			available = {
-				OR = {
-					hidden_trigger = {
-						has_country_flag = INC_BYPASSED
-						has_country_flag = UP_BYPASSED
-						has_country_flag = ILP_BYPASSED
-					}
-					has_country_flag = Francis_Mudie_enable
-				}
+
 			}
 			allowed = {
 				tag = RAJ
@@ -1526,10 +1471,7 @@ characters={
 			slot = political_advisor
 			idea_token = RAJ_Chhotu_Ram
 			available = {
-				OR = {
-					has_country_flag = UP_victory
-					has_country_flag = Chhotu_Ram_enable
-				}
+
 			}
 			allowed = {
 				tag = RAJ
@@ -1641,10 +1583,7 @@ characters={
 			slot = political_advisor
 			idea_token = RAJ_Jwala_Prasad_Srivastava
 			available = {
-				OR = {
-					has_country_flag = Jwala_Prasad_Srivastava_enable
-					has_country_flag = UP_victory
-				}
+
 			}
 			allowed = {
 				tag = RAJ
@@ -1797,15 +1736,6 @@ characters={
 				idea_token = RAJ_shripad_amrit_dange
 				available = {
 					has_government = communism
-					OR = {
-						has_completed_focus = RAJ_Danges_Influence
-						hidden_trigger = {
-							has_country_flag = ILP_BYPASSED
-						}
-						NOT = {
-							has_country_flag = ILP_victory
-						}
-					}
 				}
 				allowed = {
 					original_tag = RAJ
@@ -1840,15 +1770,6 @@ characters={
 						has_completed_focus = RAJ_rally_the_indian_left
 						else = {
 							has_government = communism
-							OR = {
-								has_completed_focus = RAJ_Danges_Influence
-								hidden_trigger = {
-									has_country_flag = ILP_BYPASSED
-								}
-								NOT = {
-									has_country_flag = ILP_victory
-								}
-							}
 						}
 					}
 				}
@@ -1860,15 +1781,6 @@ characters={
 						has_completed_focus = RAJ_rally_the_indian_left
 						else = {
 							has_government = communism
-							OR = {
-								has_completed_focus = RAJ_Danges_Influence
-								hidden_trigger = {
-									has_country_flag = ILP_BYPASSED
-								}
-								NOT = {
-									has_country_flag = ILP_victory
-								}
-							}
 						}
 					}
 				}
@@ -1883,7 +1795,7 @@ characters={
 			slot = political_advisor
 			idea_token = RAJ_agha_khan_iii
 			available = {
-				has_country_flag = AIML_UP_COALITION
+
 			}
 			allowed = {
 				tag = RAJ
@@ -1927,7 +1839,6 @@ characters={
 			idea_token = RAJ_Ram_Manohar
 			available = {
 				OR = {
-					has_completed_focus = RAJ_An_Offer_for_Rajagopalachari
 					hidden_trigger = {
 						has_country_flag = INC_BYPASSED
 					}
@@ -1956,13 +1867,7 @@ characters={
 			slot = political_advisor
 			idea_token = RAJ_Sir_Jeremy_Raisman
 			available = {
-				OR = {
-					has_country_flag = Sir_Jeremy_Raisman_enable
-					has_completed_focus = RAJ_Azads_Support
-					hidden_trigger = {
-						has_country_flag = INC_BYPASSED
-					}
-				}
+
 			}
 			allowed = {
 				tag = RAJ
@@ -2040,11 +1945,7 @@ characters={
 				tag = RAJ
 			}
 			available = {
-				has_country_flag = RAJ_subhas_chanda_bose_enable
-				has_completed_focus = RAJ_Linlithgows_Reign
-				NOT = {
-					has_global_flag = azad_hind_spawed
-				}
+
 			}
 			traits = {
 				militiant_independence_activist

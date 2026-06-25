@@ -151,7 +151,6 @@ characters={
 					has_global_flag = tur_bftb_focus_tree
 					NOT = {
 						has_completed_focus = TUR_continue_the_policy_of_etatism 
-						has_country_flag = TUR_menderes_rebellion 
 						has_country_leader = {
 							character = TUR_celal_bayar
 							ruling_only = yes 
@@ -382,11 +381,6 @@ characters={
 						NOT = {
 							has_country_flag = TUR_ottoman_officers_invited_back
 						}					
-					}
-					else = {
-						NOT = {
-							has_completed_focus = TUR_overthrow_inonus_government
-						}
 					}
 				}
 				visible = {
@@ -630,28 +624,11 @@ characters={
 				original_tag = TUR
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = tur_bftb_focus_tree
-					}
-					NOT = {
-						has_country_flag = TUR_ottoman_officers_invited_back
-					}					
-				}
-				if = {
-					limit = {
-						has_focus_tree = turkish_focus_r56
-					}
-					NOT = {
-						has_completed_focus = TUR_overthrow_inonus_government
-					}
-				}
+
+
 			}
 			visible = {
-				NOT = {
-					has_country_flag = TUR_ottoman_officers_invited_back
-					has_completed_focus = TUR_overthrow_inonus_government
-				}					
+				
 			}
 			traits = {
 				navy_chief_maneuver_2
@@ -920,9 +897,6 @@ characters={
 							has_country_flag = TUR_ottoman_officers_invited_back
 						}				
 					}
-					else = {
-						has_completed_focus = TUR_found_an_air_war_academy
-					}
 				}
 				visible = {
 					NOT = {
@@ -1029,20 +1003,9 @@ characters={
 							has_country_flag = TUR_ottoman_officers_invited_back
 						}					
 					}
-					if = {
-						limit = {
-							has_focus_tree = turkish_focus_r56
-						}
-						NOT = {
-							has_completed_focus = TUR_overthrow_inonus_government
-						}
-					}
 				}
 				visible = {
-					NOT = {
-						has_country_flag = TUR_ottoman_officers_invited_back
-						has_completed_focus = TUR_overthrow_inonus_government
-					}
+
 				}
 				traits = {
 					army_chief_reform_2
@@ -1127,9 +1090,6 @@ characters={
 					}
 					has_country_flag = TUR_PROVISIONARY_flag 
 				}
-				else = {
-					has_completed_focus = TUR_stabilize_the_nation
-				}
 			}
 		}
 	}
@@ -1158,9 +1118,6 @@ characters={
 						has_global_flag = tur_bftb_focus_tree
 					}
 					has_country_flag = TUR_PROVISIONARY_flag 
-				}
-				else = {
-					has_completed_focus = TUR_stabilize_the_nation
 				}
 			}
 		}
@@ -1191,9 +1148,6 @@ characters={
 					}
 					has_country_flag = TUR_PROVISIONARY_flag 
 				}
-				else = {
-					has_completed_focus = TUR_stabilize_the_nation
-				}
 			}
 		}
 	}
@@ -1219,9 +1173,6 @@ characters={
 						has_global_flag = tur_bftb_focus_tree
 					}
 					has_country_flag = TUR_ottoman_officers_invited_back
-				}
-				else = {
-					has_completed_focus = TUR_stabilize_the_nation
 				}
 			}
 			traits = {
@@ -1268,19 +1219,11 @@ characters={
 							has_country_flag = TUR_ottoman_officers_invited_back
 						}					
 					}
-					if = {
-						limit = {
-							has_focus_tree = turkish_focus_r56
-						}
-						NOT = {
-							has_completed_focus = TUR_overthrow_inonus_government
-						}
-					}
 				}
 				visible = {
 					NOT = {
 						has_country_flag = TUR_ottoman_officers_invited_back
-						has_completed_focus = TUR_overthrow_inonus_government
+
 					}
 				}
 				traits = {
@@ -1534,19 +1477,10 @@ characters={
 						has_country_flag = TUR_ottoman_officers_invited_back
 					}					
 				}
-				if = {
-					limit = {
-						has_focus_tree = turkish_focus_r56
-					}
-					NOT = {
-						has_completed_focus = TUR_overthrow_inonus_government
-					}
-				}
 			}
 			visible = {
 				NOT = {
 					has_country_flag = TUR_ottoman_officers_invited_back
-					has_completed_focus = TUR_overthrow_inonus_government
 				}
 			}
 			traits = {
@@ -1859,21 +1793,10 @@ characters={
 						has_country_flag = TUR_ottoman_officers_invited_back
 					}					
 				}
-				if = {
-					limit = {
-						has_focus_tree = turkish_focus_r56
-					}
-					NOT = {
-						has_completed_focus = TUR_consolidate_the_chp
-						has_completed_focus = TUR_overthrow_inonus_government
-					}
-				}
 			}
 			visible = {
 				NOT = {
 					has_country_flag = TUR_ottoman_officers_invited_back
-					has_completed_focus = TUR_consolidate_the_chp
-					has_completed_focus = TUR_overthrow_inonus_government
 				}
 			}
 			traits = {
@@ -2167,9 +2090,6 @@ characters={
 					}
 					has_country_flag = TUR_ottoman_officers_invited_back
 				}
-				else = {
-					has_completed_focus = TUR_stabilize_the_nation
-				}
 			}
 			traits = {
 				army_logistics_1
@@ -2246,24 +2166,6 @@ characters={
 			traits = {
 				inventive_genius 
 			}
-			on_add = {
-				hidden_effect = {
-					ROOT = {
-						add_ideas = {
-							TUR_inventive_genius_hidden_idea
-						}
-					}
-				}
-			}
-			on_remove = {
-				hidden_effect = {
-					ROOT = {
-						remove_ideas = {
-							TUR_inventive_genius_hidden_idea
-						}
-					}
-				}
-			}
 		}		
 	}
 
@@ -2296,12 +2198,6 @@ characters={
 						}
 					}
 				}
-				else = {
-					OR = {
-						has_completed_focus = TUR_cult_of_the_marshal
-						has_completed_focus = TUR_overthrow_inonus_government
-					}
-				}
 			}
 			traits = {
 				irredentist_academic 
@@ -2328,9 +2224,6 @@ characters={
 						has_global_flag = tur_bftb_focus_tree
 					}
 					has_completed_focus = TUR_misak_i_milli 					
-				}
-				else = {
-					has_completed_focus = TUR_pan_turkism
 				}
 			}
 			traits = {
@@ -2675,9 +2568,6 @@ characters={
 					}
 					has_completed_focus = TUR_the_sun_language_theory
 				}
-				else = {
-					has_completed_focus = TUR_expand_the_centralization_efforts			 
-				}
 			}
 			traits = {
 				feminist_ultranationalist
@@ -2892,13 +2782,7 @@ characters={
 						has_completed_focus = TUR_pivot_to_the_past 
 						has_country_flag = TUR_sponsored_killigil_armaments_flag 
 					}					
-				}
-				else = {
-					OR = {
-						has_completed_focus = TUR_befriend_the_fascist_council
-						has_completed_focus = TUR_overthrow_inonus_government
-					}					
-				}				
+				}			
 
 			}
 			traits = {
@@ -3104,15 +2988,6 @@ characters={
 						has_completed_focus = TUR_establish_the_committee_of_pan_turkism 
 						has_completed_focus = TUR_misak_i_milli 
 					}				
-				}
-				if = {
-					limit = {
-						has_focus_tree = turkish_focus_r56
-					}
-					OR = {
-						has_completed_focus = TUR_befriend_the_fascist_council		
-						has_completed_focus = TUR_batum_and_the_muslim_caucasian_states
-					}	
 				}
 					
 			}

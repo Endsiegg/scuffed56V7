@@ -36,7 +36,6 @@ characters={
 			}
 			available = {	
 				has_government = communism
-				has_country_flag = decoster_in_government
 			}					
 		}		
 	}
@@ -572,7 +571,7 @@ characters={
 				}
 	
 				available = {
-					has_completed_focus = COG_air_force_congo
+
 				}
 	
 				traits = {
@@ -617,9 +616,7 @@ characters={
 							has_completed_focus = COG_force_arienne_congolaise
 						}
 					}
-					else = {
-						has_completed_focus = COG_air_force_congo
-					}
+
 				}
 	
 				traits = {
@@ -645,7 +642,7 @@ characters={
 		advisor={
 			cost = 100
 			available = {
-				has_completed_focus = COG_air_force_congo
+
 			}			
 			slot = air_chief
 			idea_token = COG_franz_burniaux
@@ -669,7 +666,7 @@ characters={
 		advisor={
 			cost = 100
 			available = {
-				has_completed_focus = COG_air_force_congo
+
 			}			
 			slot = air_chief
 			idea_token = COG_nicolas_florine
@@ -694,7 +691,7 @@ characters={
 				mining_engineer 
 			}
 			available = {
-				has_completed_focus = COG_war_mining_production_directorate
+
 			}			
 			research_bonus = {
 				excavation_tech = 0.15
@@ -762,16 +759,7 @@ characters={
 					factor = 1
 					modifier = {
 						factor = 0
-							OR = {
-								NOT = {
-									has_completed_focus = COG_affinity_fascism
-									}
-								AND = {
-									has_completed_focus = COG_affinity_fascism
-									}								
-								has_completed_focus = COG_empower_congolese
-								date > 1939.1.1
-						}
+							date > 1939.1.1
 					}
 				}								
 			}
@@ -800,11 +788,7 @@ characters={
 				factor = 0
 				modifier = {
 					factor = 1
-						OR = {
-							has_completed_focus = COG_affinity_fascism
-							has_completed_focus = COG_colonial_loyalty
-							date > 1939.1.1
-					}
+					date > 1939.1.1				
 				}
 			}								
 		}
@@ -839,11 +823,7 @@ characters={
 				factor = 0
 				modifier = {
 					factor = 1
-						OR = {
-							has_completed_focus = COG_affinity_fascism
-							has_completed_focus = COG_colonial_loyalty
-							date > 1939.1.1
-					}
+					date > 1939.1.1
 				}
 			}							
 		}
@@ -885,11 +865,7 @@ characters={
 					factor = 0
 					modifier = {
 						factor = 1
-							OR = {
-								has_completed_focus = COG_affinity_fascism
-								has_completed_focus = COG_colonial_loyalty
-								date > 1939.1.1
-						}
+						date > 1939.1.1				
 					}
 				}							
 			}
@@ -1157,7 +1133,6 @@ characters={
 				factor = 0
 				modifier = {
 					add = 200
-					has_completed_focus = COG_empower_congolese
 				}
 			}
 
@@ -1194,7 +1169,6 @@ characters={
 				factor = 0
 				modifier = {
 					add = 200
-					has_completed_focus = COG_affinity_fascism
 				}
 			}
 
@@ -1364,7 +1338,6 @@ characters={
 				modifier = {
 					factor = 10
 					OR = {
-						has_country_flag = COG_AI_RANDOM_COM_INDEPENDENCE
 						has_game_rule = {
 							rule = COG_AI_BEHAVIOR
 							option = COG_COM_INDEPENDENCE
@@ -1374,7 +1347,6 @@ characters={
 				modifier = {
 					factor = 10
 					OR = {
-						has_country_flag = COG_AI_RANDOM_COM_REVOLUTION
 						has_game_rule = {
 							rule = COG_AI_BEHAVIOR
 							option = COG_COM_REVOLUTION
@@ -1669,7 +1641,6 @@ characters={
 								option = DEFAULT
 							}
 						}
-						has_country_flag = COG_AI_RANDOM_HISTORICAL
 						has_game_rule = {
 							rule = COG_AI_BEHAVIOR
 							option = HISTORICAL
@@ -1679,7 +1650,6 @@ characters={
 				modifier = {
 					factor = 10
 					OR = {
-						has_country_flag = COG_AI_RANDOM_DEM_INDEPENDENCE
 						has_game_rule = {
 							rule = COG_AI_BEHAVIOR
 							option = COG_DEM_INDEPENDENCE

@@ -2523,9 +2523,7 @@ characters={
 			planning_skill=2
 			logistics_skill=1
 			visible = {
-				tag = N56
-				NOT = { tag = S56 }
-				has_completed_focus = SPR_Expand
+
 			}
 		}
 	}
@@ -2546,9 +2544,7 @@ characters={
 			planning_skill=2
 			logistics_skill=3
 			visible={
-				tag = N56
-				NOT = { tag = S56 }
-				has_completed_focus = SPR_Expand
+
 			}
 		}
 	}
@@ -2571,7 +2567,7 @@ characters={
 			visible={
 				tag = N56
 				NOT = { tag = S56 }
-				has_completed_focus = SPR_Expand
+
 			}
 		}
 	}
@@ -2640,9 +2636,7 @@ characters={
 			planning_skill=3
 			logistics_skill=2
 			visible={
-				has_global_flag = spanish_civil_war
-				NOT = { tag = N56 }
-				tag = S56
+
 			}
 		}
 	}
@@ -2663,10 +2657,7 @@ characters={
 			planning_skill=3
 			logistics_skill=2
 			visible={
-				has_global_flag = spanish_civil_war
-				NOT = { tag = N56 }
-				tag = S56
-				S56 = { has_completed_focus = SPR_Expand }
+
 			}
 		}
 	}
@@ -5320,12 +5311,6 @@ characters={
 						}
 					}
 					has_completed_focus = SPR_new_leadership
-					else_if = {
-						limit = {
-							has_focus_tree = Spain_focus
-						}
-						has_completed_focus = SPR_appease_the_workers
-					}
 					else = {
 						OR = {
 							has_government = democratic

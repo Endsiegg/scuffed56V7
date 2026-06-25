@@ -44,17 +44,12 @@ characters = {
 						ruling_only = yes
 					}
 				}
-				has_power_balance = {
-					id = AUS_heimwehr_power_balance
-				}
 				NOT = {
 					has_idea = AUS_president_starhemberg
 				}
 			}
 			visible = {
-				has_power_balance = {
-					id = AUS_heimwehr_power_balance
-				}
+
 			}
 			can_be_fired = no
 			traits = {
@@ -91,7 +86,6 @@ characters = {
 						character = AUS_ernst_rudiger_starhemberg
 					}
 				}
-				has_country_flag = aus_dlc_focus_tree
 			}
 
 			available = {
@@ -130,7 +124,6 @@ characters = {
 						character = AUS_ernst_rudiger_starhemberg
 						ruling_only = yes
 					}
-					has_completed_focus = AUS_empower_the_heimatblock
 				}
 			}
 			traits = {
@@ -266,7 +259,6 @@ characters = {
 				}
 				else = {
 					OR = {
-						has_completed_focus = AUS_appoint_inquart
 						has_idea = AUS_july_agreement
 					}
 					NOT = {
@@ -483,10 +475,6 @@ characters = {
 						has_government = neutrality
 						AND = {
 							has_government = democratic
-							OR = {
-								has_completed_focus = AUS_oust_schuschnigg
-								has_completed_focus = AUS_reform_the_constitution
-							}
 						}
 					}
 				}
@@ -894,10 +882,6 @@ characters = {
 					has_government = neutrality
 					AND = {
 						has_government = democratic
-						OR = {
-							has_completed_focus = AUS_oust_schuschnigg
-							has_completed_focus = AUS_reform_the_constitution
-						}
 					}
 				}
 			}
@@ -943,10 +927,6 @@ characters = {
 					has_government = neutrality
 					AND = {
 						has_government = democratic
-						OR = {
-							has_completed_focus = AUS_oust_schuschnigg
-							has_completed_focus = AUS_reform_the_constitution
-						}
 					}
 				}
 			}
@@ -998,10 +978,6 @@ characters = {
 					has_government = neutrality
 					AND = {
 						has_government = democratic
-						OR = {
-							has_completed_focus = AUS_oust_schuschnigg
-							has_completed_focus = AUS_reform_the_constitution
-						}
 					}
 				}
 			}
@@ -1097,11 +1073,6 @@ characters = {
 					has_government = neutrality
 					AND = {
 						has_government = democratic
-						OR = {
-							has_completed_focus = AUS_oust_schuschnigg
-							has_completed_focus = AUS_reform_the_constitution
-							has_completed_focus = AUS_compromise_with_conservatives
-						}
 					}
 				}
 			}
@@ -1128,7 +1099,6 @@ characters = {
 			NOT = {
 				tag = AUS
 			}
-			has_global_flag = AUS_civil_war_triggered
 			has_government = fascism
 		}
 		advisor = {
@@ -1258,16 +1228,12 @@ characters = {
 				OR = {
 					AND = {
 						has_government = fascism
-						NOT = {
-							has_completed_focus = AUS_integrate_frontmilliz
-						}
 					}
 					AND = {
 						OR = {
 							has_government = neutrality
 							has_government = fascism
 						}
-						has_completed_focus = AUS_utilize_paramilitaries
 					}
 				}
 			}
@@ -1289,7 +1255,6 @@ characters = {
 						character = AUS_ernst_rudiger_starhemberg
 						ruling_only = yes
 					}
-					has_completed_focus = AUS_empower_the_heimatblock
 					has_completed_focus = AUS_eiserne_legion
 				}
 			}
@@ -1315,7 +1280,6 @@ characters = {
 			NOT = {
 				tag = AUS
 			}
-			has_global_flag = AUS_civil_war_triggered
 			has_government = fascism
 		}
 		advisor = {
@@ -1327,8 +1291,6 @@ characters = {
 			available = {
 				has_government = fascism
 				OR = {
-					has_completed_focus = AUS_empower_the_heimatblock
-					
 					has_country_leader = {
 						character = AUS_josef_leopold
 						ruling_only = yes
@@ -1368,9 +1330,6 @@ characters = {
 						has_country_leader = {
 							character = AUS_ernst_rudiger_starhemberg
 							ruling_only = yes
-						}
-						NOT = {
-							has_global_flag = AUS_civil_war_triggered
 						}
 					}
 				}
@@ -1596,38 +1555,12 @@ characters = {
 					}
 					has_completed_focus = AUS_heimwehr_support
 				}
-				else = {
-					OR = {
-						has_completed_focus = AUS_utilize_paramilitaries
-						has_completed_focus = AUS_utilize_the_heimwehr
-						has_completed_focus = AUS_utilize_fey
-					}
-				}
 			}
 			traits = {
 				radical_anti_communist
 			}
 			allowed = {
 				original_tag = AUS
-			}
-			on_add = {
-				AUS = {
-					if = {
-						limit = {
-							has_power_balance = {
-								id = AUS_heimwehr_power_balance
-							}
-							NOT = {
-								has_completed_focus = AUS_utilize_fey
-							}
-						}
-						add_power_balance_value = {
-							id = AUS_heimwehr_power_balance
-							value = 0.1
-							tooltip_side = AUS_heimwehr_side
-						}
-					}
-				}
 			}
 		}
 	}
@@ -1648,9 +1581,6 @@ characters = {
 					AND = {
 						has_government = fascism
 						NOT = {
-							has_completed_focus = AUS_integrate_frontmilliz
-						}
-						NOT = {
 							has_country_leader = {
 								character = AUS_arthur_seyss_inquart
 								ruling_only = yes
@@ -1664,7 +1594,6 @@ characters = {
 					}
 					AND = {
 						has_government = neutrality
-						has_completed_focus = AUS_utilize_paramilitaries
 					}
 					
 				}
@@ -1703,10 +1632,8 @@ characters = {
 				}
 				if = {
 					limit = {
-						has_completed_focus = AUS_oust_schuschnigg
 						has_government = democratic
 					}
-					has_completed_focus = AUS_grand_coalition
 				}
 			}
 			traits = { 
@@ -1763,10 +1690,8 @@ characters = {
 				}
 				if = {
 					limit = {
-						has_completed_focus = AUS_oust_schuschnigg
 						has_government = democratic
 					}
-					has_completed_focus = AUS_grand_coalition
 				}
 			}
 			traits = { 
@@ -1802,10 +1727,8 @@ characters = {
 				}
 				if = {
 					limit = {
-						has_completed_focus = AUS_oust_schuschnigg
 						has_government = democratic
 					}
-					has_completed_focus = AUS_grand_coalition
 				}
 			}
 			traits = { 
@@ -1951,10 +1874,8 @@ characters = {
 				}
 				if = {
 					limit = {
-						has_completed_focus = AUS_oust_schuschnigg
 						has_government = democratic
 					}
-					has_completed_focus = AUS_grand_coalition
 				}
 			}
 		}
@@ -1971,10 +1892,8 @@ characters = {
 				}
 				if = {
 					limit = {
-						has_completed_focus = AUS_oust_schuschnigg
 						has_government = democratic
 					}
-					has_completed_focus = AUS_grand_coalition
 				}
 			}
 			cost = 100
@@ -2004,10 +1923,6 @@ characters = {
 			logistics_skill = 2
 			legacy_id = 1225
 			visible = {
-				if = { 
-					limit = {
-						has_global_flag = AUS_civil_war_triggered
-					}
 					NOT = {
 						has_country_leader = {
 							character = AUS_josef_leopold
@@ -2018,7 +1933,7 @@ characters = {
 							ruling_only = yes
 						}
 					}
-				}
+				
 			}
 		}
 	}
@@ -2043,7 +1958,6 @@ characters = {
 			visible = {
 				if = { 
 					limit = {
-						has_global_flag = AUS_civil_war_triggered
 					}
 					OR = {
 						has_country_leader = {
@@ -2079,7 +1993,6 @@ characters = {
 			visible = {
 				if = { 
 					limit = {
-						has_global_flag = AUS_civil_war_triggered
 					}
 					NOT = {
 						has_country_leader = {
@@ -2119,7 +2032,6 @@ characters = {
 			visible = {
 				if = { 
 					limit = {
-						has_global_flag = AUS_civil_war_triggered
 					}
 					NOT = {
 						has_country_leader = {
@@ -2194,7 +2106,6 @@ characters = {
 			visible = {
 				if = { 
 					limit = {
-						has_global_flag = AUS_civil_war_triggered
 					}
 					OR = {
 						has_country_leader = {
@@ -2273,7 +2184,6 @@ characters = {
 			NOT = {
 				tag = AUS
 			}
-			has_global_flag = AUS_civil_war_triggered
 			has_government = fascism
 		}
 		name = AUS_odilo_globocnik
@@ -2486,7 +2396,6 @@ characters = {
 			visible = {
 				if = { 
 					limit = {
-						has_global_flag = AUS_civil_war_triggered
 					}
 					NOT = {
 						has_country_leader = {
@@ -2548,7 +2457,6 @@ characters = {
 			}
 			available = {
 				owns_state = 736
-				has_completed_focus = AUS_trieste_shipyards
 			}
 			traits = {
 				navy_chief_naval_aviation_2
@@ -2665,7 +2573,6 @@ characters = {
 			visible = {
 				if = { 
 					limit = {
-						has_global_flag = AUS_civil_war_triggered
 					}
 					OR = {
 						has_country_leader = {
@@ -2691,9 +2598,7 @@ characters = {
 				original_tag = AUS
 			}
 			available = {
-				NOT = {
-					has_completed_focus = AUS_accept_inevitable
-				}
+
 			}
 			traits = {
 				army_chief_defensive_3
@@ -2718,7 +2623,7 @@ characters = {
 			visible = {
 				if = { 
 					limit = {
-						has_global_flag = AUS_civil_war_triggered
+
 					}
 					NOT = {
 						has_country_leader = {
@@ -2797,7 +2702,7 @@ characters = {
 			visible = {
 				if = { 
 					limit = {
-						has_global_flag = AUS_civil_war_triggered
+
 					}
 					OR = {
 						has_country_leader = {
@@ -3026,9 +2931,6 @@ characters = {
 						}
 						has_completed_focus = AUS_austromarxism_focus
 					}
-					else = {
-						has_completed_focus = AUS_bring_in_left
-					}
 				}
 			}
 			traits = {
@@ -3196,15 +3098,8 @@ characters = {
 				}
 				else = {
 					OR = {
-						has_completed_focus = AUS_bring_exiled_monarchists
-						has_completed_focus = AUS_moderate_restoration
-					}
-					OR = {
 						has_government = democratic
 						has_government = neutrality
-					}
-					NOT = {
-						has_completed_focus = AUS_utilize_paramilitaries
 					}
 				}
 			}
@@ -3238,8 +3133,6 @@ characters = {
 				}
 				else = {
 					OR = {
-						has_completed_focus = AUS_bring_exiled_monarchists
-						has_completed_focus = AUS_moderate_restoration
 						has_government = neutrality
 					}
 					NOT = {
@@ -3365,7 +3258,6 @@ characters = {
 						original_tag = AUS
 					}
 					AND = {
-						has_country_flag = GER_got_austrian_generals
 						original_tag = GER
 					}
 				}
@@ -3593,7 +3485,6 @@ characters = {
 					original_tag = AUS
 					AND = {
 						original_tag = GER
-						has_country_flag = GER_got_austrian_generals
 					}
 				}
 			}
@@ -3845,9 +3736,7 @@ characters = {
 			}
 
 			visible = {
-				owner = { 
-					has_country_flag = AUS_recall_gunther_adolf_burstyn_flag
-				}
+
 			}
 		}
 	}

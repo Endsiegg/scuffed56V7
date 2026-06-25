@@ -78,10 +78,7 @@ characters = {
 		}
 		field_marshal = {
 			visible = {
-				OR = {
-					has_completed_focus = POR_storm_the_national_assembly
-					has_government = democratic
-				}
+
 			}
 			traits = { old_guard homeland_connoisseur }
 			skill = 3
@@ -161,13 +158,7 @@ characters = {
 			ledger = air
 			allowed = { original_tag = POR }
 			visible = {
-				if = {
-					limit = {
-						has_global_flag = por_lar_focus_tree
-					}
-					has_completed_focus = POR_allow_free_elections
-				}
-				else = { has_completed_focus = POR_hold_fair_elections }
+
 			}
 			name = "POR_jose_manuel_sarmento_de_beires"
 			traits = { air_chief_all_weather_2 }
@@ -184,16 +175,7 @@ characters = {
 			idea_token = POR_julio_botelho_moniz
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_estado_novo
-				}
-				else = {
-					OR = {
-						has_completed_focus = POR_continue_salazars_policies
-						has_country_flag = POR_reintegrate_former_officers_flag
-					}
-				}
+
 			}
 			traits = { army_chief_reform_2 }
 			cost = 75
@@ -323,12 +305,7 @@ characters = {
 				allowed = { original_tag = POR }
 				traits = { air_air_combat_training_2 }
 				available = {	
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						has_completed_focus = POR_colonial_army
-					}
-					else = { has_completed_focus = POR_expand_overseas_recruitment }
-					NOT = { has_idea = POR_francisco_craveiro_lopes2 }
+
 				}
 				cost = 75
 				ledger = army
@@ -339,12 +316,7 @@ characters = {
 				idea_token = POR_francisco_craveiro_lopes2
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						has_completed_focus = POR_colonial_army
-					}
-					else = { has_completed_focus = POR_expand_overseas_recruitment }
-					NOT = { has_idea = POR_francisco_craveiro_lopes }				
+				
 				}
 				name = POR_francisco_craveiro_lopes 
 				cost = 75
@@ -366,8 +338,7 @@ characters = {
 				allowed = { original_tag = POR }
 				traits = { air_air_combat_training_2 }
 				available = {	
-					has_completed_focus = POR_expand_overseas_recruitment
-					NOT = { has_idea = POR_francisco_craveiro_lopes2 }
+
 				}
 				cost = 75
 				ledger = army
@@ -378,8 +349,7 @@ characters = {
 				idea_token = POR_francisco_craveiro_lopes2
 				allowed = { original_tag = POR }
 				available = {
-					has_completed_focus = POR_expand_overseas_recruitment
-					NOT = { has_idea = POR_francisco_craveiro_lopes }				
+			
 				}
 				name = POR_francisco_craveiro_lopes 
 				cost = 75
@@ -414,10 +384,7 @@ characters = {
 				ledger = army
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = POR_R56_focus_tree }
-						has_completed_focus = POR_study_flexible_defense_plans
-					}			
+		
 				}
 				traits = { grand_battle_plan_expert }
 			}
@@ -446,7 +413,7 @@ characters = {
 				slot = theorist
 				idea_token = POR_jose_norton_de_matos
 				allowed = { original_tag = POR }
-				available = { has_completed_focus = POR_study_flexible_defense_plans }
+				available = { }
 				ledger = army
 				traits = { grand_battle_plan_expert }
 			}
@@ -701,11 +668,7 @@ characters = {
 				idea_token = POR_jaime_cortesao
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						has_completed_focus = POR_allow_free_elections 
-					}
-					else = { has_completed_focus = POR_pave_the_path_to_progress }
+
 				}
 				name = POR_jaime_cortesao 
 				cost = 75
@@ -724,7 +687,7 @@ characters = {
 				slot = political_advisor
 				idea_token = POR_jaime_cortesao
 				allowed = { original_tag = POR }
-				available = { has_completed_focus = POR_pave_the_path_to_progress }
+				available = {  }
 				name = POR_jaime_cortesao 
 				cost = 75
 				traits = { compassionate_gentleman }
@@ -801,14 +764,7 @@ characters = {
 				idea_token = POR_francisco_da_cunha_leal
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						OR = {
-							has_completed_focus = POR_limited_self_rule 
-							has_completed_focus = POR_allow_free_elections 
-						}
-					}
-					else = { has_completed_focus = POR_pave_the_path_to_progress }
+
 				}
 				cost = 75
 				traits = { silent_workhorse }
@@ -827,7 +783,7 @@ characters = {
 				slot = political_advisor
 				idea_token = POR_francisco_da_cunha_leal
 				allowed = { original_tag = POR }
-				available = { has_completed_focus = POR_pave_the_path_to_progress }
+				available = {  }
 				cost = 75
 				traits = { silent_workhorse }
 				ai_will_do = { base = 1 }
@@ -847,11 +803,6 @@ characters = {
 				idea_token = POR_bento_de_jesus_caraca
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						has_completed_focus = POR_reorganization_of_the_communist_party 
-					}
-					else = { has_completed_focus = POR_portugals_path_to_marxism_leninism }
 				}
 				cost = 75
 				traits = { financial_expert }
@@ -870,7 +821,7 @@ characters = {
 				slot = political_advisor
 				idea_token = POR_bento_de_jesus_caraca
 				allowed = { original_tag = POR }
-				available = { has_completed_focus = POR_portugals_path_to_marxism_leninism }
+				available = {  }
 				cost = 75
 				traits = { financial_expert }
 				ai_will_do = { base = 1 }
@@ -988,14 +939,8 @@ characters = {
 				idea_token = POR_joao_de_azevedo_coutinho
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						OR = {
-							has_completed_focus = POR_appease_monarchists 
-							has_completed_focus = POR_a_royal_wedding 
-						}
-					}
-					else = { has_completed_focus = POR_study_flexible_defense_plans }
+
+
 				}
 				cost = 75
 				traits = { fortification_engineer }
@@ -1014,7 +959,7 @@ characters = {
 				slot = political_advisor
 				idea_token = POR_joao_de_azevedo_coutinho
 				allowed = { original_tag = POR }
-				available = { has_completed_focus = POR_study_flexible_defense_plans }
+				available = {  }
 				cost = 75
 				traits = { fortification_engineer }
 				ai_will_do = { base = 1 }
@@ -1034,12 +979,7 @@ characters = {
 				idea_token = POR_duarte_jose_pacheco
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_focus_tree = r56_portuguese_focus }
-						has_completed_focus = POR_continue_the_public_works_r56
-					}
-					else = { has_completed_focus = POR_continue_the_public_works }
-					NOT = { has_government = communism }
+
 				}
 				cost = 75
 				traits = { captain_of_industry }
@@ -1059,7 +999,6 @@ characters = {
 				idea_token = POR_duarte_jose_pacheco
 				allowed = { original_tag = POR }
 				available = {
-					has_completed_focus = POR_continue_the_public_works_r56
 					NOT = { has_government = communism }
 				}
 				cost = 75
@@ -1075,10 +1014,7 @@ characters = {
 			idea_token = POR_augusto_de_vasconcelos
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_focus_tree = r56_portuguese_focus }
-					has_completed_focus = POR_restore_civil_liberties
-				}
+
 			}
 			traits = {	#56
 				democratic_reformer
@@ -1108,16 +1044,8 @@ characters = {
 				idea_token = POR_manuel_goncalves_cerejeira
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						has_completed_focus = POR_concordat_with_the_holy_see 
-					}
-					else = {
-						OR = {
-							has_completed_focus = POR_promote_national_catholicism
-							has_country_flag = POR_foment_peace_with_the_church_flag	
-						} 
-					}
+
+
 				}
 				cost = 75
 				traits = { appeaser }
@@ -1137,10 +1065,7 @@ characters = {
 				idea_token = POR_manuel_goncalves_cerejeira
 				allowed = { original_tag = POR }
 				available = {
-					OR = {
-						has_completed_focus = POR_promote_national_catholicism
-						has_country_flag = POR_foment_peace_with_the_church_flag	
-					} 
+	
 				}
 				cost = 75
 				traits = { appeaser }
@@ -1161,13 +1086,7 @@ characters = {
 				idea_token = POR_jose_adriano_pequito_rebelo
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						NOT = { has_completed_focus = POR_popular_front }
-					}
-					else = { 
-						NOT = { has_completed_focus = POR_unite_against_salazar }
-					}
+
 				}
 				traits = { financial_expert }
 				ai_will_do = { base = 1 }
@@ -1186,7 +1105,7 @@ characters = {
 				idea_token = POR_jose_adriano_pequito_rebelo
 				allowed = { original_tag = POR }
 				available = {
-					NOT = { has_completed_focus = POR_unite_against_salazar }
+
 				}
 				traits = { financial_expert }
 				ai_will_do = { base = 1 }
@@ -1262,7 +1181,7 @@ characters = {
 				idea_token = POR_jose_hipolito_raposo
 				cost = 75
 				allowed = { original_tag = POR }
-				available = { has_completed_focus = POR_all_against_the_bolshevik_threat }
+				available = {  }
 				traits = { 		#56 - This dude is useless on the 56 tree and the fascist path on the vanilla tree could use this slight buff. 
 					IRQ_minister_of_the_interior
 					fascist_demagogue 
@@ -1286,11 +1205,7 @@ characters = {
 				cost = 75
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						has_completed_focus = POR_national_syndicalism 
-					}
-					else = { has_completed_focus = POR_all_against_the_bolshevik_threat }
+
 				}
 				traits = { 		#56 - This dude is useless on the 56 tree and the fascist path on the vanilla tree could use this slight buff. 
 					IRQ_minister_of_the_interior
@@ -1320,13 +1235,7 @@ characters = {
 				idea_token = POR_fernando_dos_santos_costa
 				allowed = { original_tag = POR }
 				available = {
-					if = {
-						limit = { has_global_flag = por_lar_focus_tree }
-						NOT = { has_completed_focus = POR_popular_front }
-					}
-					else = {
-						NOT = { has_completed_focus = POR_unite_against_salazar }
-					}								
+								
 				}
 				traits = { war_industrialist }
 			}
@@ -1344,7 +1253,7 @@ characters = {
 				idea_token = POR_fernando_dos_santos_costa
 				allowed = { original_tag = POR }
 				available = {
-					NOT = { has_completed_focus = POR_unite_against_salazar }							
+					
 				}
 				traits = { war_industrialist }
 			}
@@ -1368,10 +1277,7 @@ characters = {
 			logistics_skill = 3
 			legacy_id = -1
 			visible = {
-				OR = {
-					has_completed_focus = POR_storm_the_national_assembly
-					has_completed_focus = POR_allow_free_elections
-				}
+
 			}
 		}
 	}
@@ -1398,10 +1304,7 @@ characters = {
 			logistics_skill = 1
 			legacy_id = -1
 			visible = {
-				OR = {
-					has_completed_focus = POR_restore_the_empire
-					has_completed_focus = POR_restoration_of_the_monarchy
-				}
+
 			}
 		}
 	}
@@ -1488,10 +1391,7 @@ characters = {
 			coordination_skill = 2
 			legacy_id = -1
 			visible = {
-				OR = {
-					has_completed_focus = POR_storm_the_national_assembly
-					has_completed_focus = POR_allow_free_elections
-				}
+
 			}
 		}
 	}
@@ -1901,16 +1801,7 @@ characters = {
 			idea_token = POR_francisco_jose_nobre_guedes
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_portuguese_legion
-				}
-				else = {
-					OR = {
-						has_completed_focus = POR_found_the_portuguese_legion
-						has_completed_focus = POR_restore_valiance_to_the_nation
-					}
-				}
+
 			}
 			traits = { army_chief_fanaticism }
 			ai_will_do = { base = 9 }
@@ -1928,11 +1819,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_ditadura_militar
-				}
-				else = { has_completed_focus = POR_restore_the_empire }
+
 			}
 			traits = { accomplished_professor }
 		}
@@ -1949,11 +1836,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_national_syndicalism
-				}
-				else = { has_completed_focus = POR_all_against_the_bolshevik_threat }
+
 			}
 			traits = { nationalist_journalist }
 		}
@@ -1994,17 +1877,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = { 
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_popular_front
-					 
-				}
-				else = { 
-					OR = {
-						has_completed_focus = POR_towards_institutional_atheism
-						has_completed_focus = POR_continue_popular_reform
-					} 
-				} 
+
 			}
 			traits = { GER_workers_educator }
 		}
@@ -2021,11 +1894,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_unify_leftist_youth_wings
-				}
-				else = { has_completed_focus = POR_consolidate_the_revolution  } 
+
 			}
 			traits = { socialist_writer }
 		}
@@ -2042,11 +1911,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_allow_free_elections
-				}
-				else = { has_completed_focus = POR_modernize_the_junta_institutions }
+
 			}
 			traits = { liberal_reformer }
 		}
@@ -2063,11 +1928,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_popular_front
-				}
-				else = { has_completed_focus = POR_end_the_educational_abyss }
+
 			}
 			traits = { IRQ_minister_of_education }
 		}
@@ -2084,11 +1945,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_allow_free_elections
-				}
-				else = { has_completed_focus = POR_modernize_the_junta_institutions }
+
 			}
 			traits = { ambitious_agrarian }
 		}
@@ -2105,11 +1962,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_national_gold_reserves
-				}
-				else = { has_completed_focus = POR_long_term_economic_planning  }
+
 			}
 			traits = { economic_reformer }
 			ai_will_do = { base = 6 }
@@ -2127,16 +1980,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = {
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_strengthen_the_regime
-				}
-				else = { 
-					OR = {
-						has_completed_focus = POR_expand_ministerial_control
-						has_completed_focus = POR_peace_with_the_salazaristas
-					} 
-				}
+
 			}
 			traits = { lawyer }
 			ai_will_do = { base = 5 }
@@ -2154,12 +1998,7 @@ characters = {
 			cost = 75
 			allowed = { original_tag = POR }
 			available = { 
-				if = {
-					limit = { has_global_flag = por_lar_focus_tree }
-					has_completed_focus = POR_second_navy_reequipment
-				}
-				else = { has_completed_focus = POR_continue_the_naval_expansion }
-				NOT = { has_government = communism } 
+
 			}
 			traits = { minister_of_navy_trait_r56 }
 		}
