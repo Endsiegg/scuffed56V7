@@ -1,17 +1,6 @@
 ﻿capital = 1114 # Nanjing
 
-set_variable = { KMT_blue_stab = -0.05 }
-set_variable = { KMT_blue_pp = 0.03 }
-set_variable = { KMT_harpo_inf = 1 }
-set_variable = { KMT_cc_stab = 0.05 }
-set_variable = { KMT_cc_pp = -0.125 }
-set_variable = { KMT_cc_ddf = 0.1 }
-set_variable = { global.CHI_CUF = 0.1 }
-set_variable = { global.CHI_CUF2 = 0.05}
-set_stability = 0.575
-set_war_support = 0.45
-
-if = {
+IF = {
 	limit = {
 		has_dlc = "No Compromise, No Surrender"
 	}
@@ -19,75 +8,76 @@ if = {
 	else = {
 		set_oob = "CHI_1936"
 	}
-}
-
-add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 3000 producer = GER }
-add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 7000 producer = CZE }
-add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1000 producer = SOV }
-add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 500 producer = ITA }
-add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 35 producer = GER }
-add_equipment_to_stockpile = { type = support_equipment_1 amount = 250 producer = GER }
-
-# Starting tech
-set_technology = {
-	# Extended Technologies
-	etax_doctrine = 1
-	camo = 1
-	
-	r56_militia_tech = 1
-	
-	infantry_weapons = 1
-	gw_artillery = 1
-	tech_support = 1
-	tech_recon = 1
-	tech_engineers = 1
-	tech_mountaineers = 1
-	support_weapons = 1
-	tech_trucks = 1
-	motorised_infantry = 1
-	basic_train = 1
-}
-set_grand_doctrine = mass_assault
-set_grand_doctrine = new_fleet_in_being
-
-if = {
-	limit = {
-		has_dlc = "La Resistance"
-		CHI = { is_ai = no }
-	}
-	set_technology = {
-		armored_car1 = 1
-	}
-}
-
-if = {
-	limit = {
-		has_dlc = "No Step Back"					
-	}
-	set_technology = {
-		gwtank_chassis = 1
-	}
-	add_equipment_to_stockpile = {
-		type = light_tank_chassis_1
-		amount = 20
-		producer = GER
-	}
-	else = {
-		set_technology = {
-			gwtank = 1
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
 		}
-		add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 20 producer = GER }
+		create_equipment_variant = {
+			name = "L3/35"
+			type = light_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 1
+				tank_nsb_armor_upgrade = 1
+			}
+			icon = "GFX_ITA_basic_light_tank_medium"
+		}
+		create_equipment_variant = {
+			name = "Panzer I Ausf. A"
+			type = light_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_one_man_tank_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = 1
+			}
+			icon = "GFX_GER_basic_light_tank_medium"
+		}
+
+		add_equipment_to_stockpile = { 
+			type = light_tank_chassis_1
+			variant_name = "L3/35"
+			amount = 20
+			producer = ITA
+		}
+		add_equipment_to_stockpile = { 
+			type = light_tank_chassis_1
+			variant_name = "Panzer I Ausf. A"
+			amount = 16
+			producer = GER
+		}
 	}
 }
-
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "CHI_1936_naval_mtg"
+	else = {
+		set_naval_oob = "CHI_1936_naval_legacy"
+	}
+}
 if = {
 	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "CHI_1936_air_bba"
-	set_technology = {
-		engines_1 = 1
-		aa_lmg = 1
-		iw_small_airframe = 1
-	}
+		set_technology = {
+			iw_small_airframe = 1
+			aa_lmg = 1
+			engines_1 = 1
+			iw_medium_airframe = 1
+		}
 	else = {
 		set_air_oob = "CHI_1936_air_legacy"
 		set_technology = {
@@ -97,94 +87,21 @@ if = {
 	}
 }
 
-if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "CHI_1936_naval_mtg"
-		set_technology = {
-			basic_naval_mines = 1
-			early_ship_hull_light = 1
-			early_ship_hull_cruiser = 1
-			
-			
-			
-			coastal_defense_ships = 1
-		}
-	else = {
-		set_naval_oob = "CHI_1936_naval_legacy"
-		set_technology = {
-			early_destroyer = 1
-			early_light_cruiser = 1
-		}
-	}
-}
-
-set_party_name = { ideology = fascism long_name = KMT_blueshirt name = KMT_blueshirt }
-save_global_event_target_as = KMT_central_gov_tag
-set_party_name = { ideology = communism long_name = KMT_CPWDP_long name = KMT_CPWDP }
-
-recruit_character = CHI_chiang_kaishek
-recruit_character = CHI_hu_shih
-recruit_character = CHI_huang_qixiang
-recruit_character = CHI_carsun_chang
-recruit_character = CHI_deng_wenyi
-#recruit_character = CHI_yu_hung_chun # replaced in favour of CHI_chiang_ching_kuo
-recruit_character = CHI_gao_xibing
-recruit_character = CHI_he_yingqin
-recruit_character = CHI_zhang_qun
-recruit_character = CHI_h_h_kung
-recruit_character = CHI_chang_kia_ngau
-recruit_character = CHI_quo_taichi
-recruit_character = CHI_du_yuesheng
-recruit_character = CHI_chen_lifu
-recruit_character = CHI_soong_mei_ling
-recruit_character = CHI_dai_li
-recruit_character = CHI_tu_yuming
-recruit_character = CHI_li_zongren
-recruit_character = CHI_wang_shuming
-recruit_character = CHI_kao_chih_hang
-recruit_character = CHI_zhou_zhirou
-#recruit_character = CHI_xiao_jinguang #not real
-#recruit_character = CHI_bai_chongxi # exists already in GXC
-recruit_character = CHI_chen_shaokuan
-recruit_character = CHI_alexander_von_falkenhausen
-recruit_character = CHI_claire_lee_chennault # Shared 
-recruit_character = CHI_kwong_jiang # Shared 
-#recruit_character = CHI_fang_zeyi #not real
-#recruit_character = CHI_huang_shen #not real
-recruit_character = CHI_sun_li_jen
-#recruit_character = CHI_gao_zhihang #replaced by somebody who actually you know, lived longer than 1937 (CHI_mao_bangchu in this case)
-recruit_character = CHI_xiao_yisu #couldn't find any evidence this is a real person, could be wrong though	#uncommented because he got a portrait even
-recruit_character = CHI_chen_cheng
-#recruit_character = CHI_yu_hanmou # Exists already in GDC (and GXC without the NCNS)
-recruit_character = CHI_hsueh_yueh
-#recruit_character = CHI_fu_zuoyi	#in Shanxi, can join if Shanxi annexed
-recruit_character = CHI_hu_zongnan
-recruit_character = CHI_zhang_zizhong
-#recruit_character = CHI_gu_zhutong	#Removed due to inclusion of Sichuan warlord
-recruit_character = CHI_wei_lihuang
-recruit_character = CHI_tai_anlan
-recruit_character = CHI_wang_yaowu
-#recruit_character = CHI_liu_xiang	#Removed due to inclusion of Sichuan warlord
-recruit_character = CHI_ma_zhongying
-recruit_character = CHI_zhang_lingfu
-recruit_character = CHI_chan_chak
-
-recruit_character = CHI_mao_bangchu
-recruit_character = CHI_wang_jingwei	#introduced in GD, put low to avoid unintended application
-recruit_character = CHI_chen_guofu
-recruit_character = CHI_chiang_ching_kuo
-recruit_character = CHI_t_v_soong
 
 IF = {
 	limit = {
 		has_dlc = "No Compromise, No Surrender"
 	}
+	recruit_character = CHI_carsun_chang
 	recruit_character = CHI_soong_ching_ling
 	recruit_character = CHI_zhang_fakui
 	recruit_character = CHI_feng_yuxiang
 	recruit_character = CHI_jiang_guangnai
 	recruit_character = CHI_cai_tingkai
 	recruit_character = CHI_chen_mingshu
+	recruit_character = CHI_chan_chak
+	recruit_character = CHI_chen_lifu
+	recruit_character = CHI_du_yuesheng
 	recruit_character = CHI_huang_jinrong
 	recruit_character = CHI_chu_minying
 	recruit_character = CHI_mei_siping
@@ -197,6 +114,7 @@ IF = {
 	recruit_character = CHI_tao_xingzhi
 	recruit_character = CHI_shen_junru
 	recruit_character = CHI_shi_liang
+	recruit_character = CHI_chang_kia_ngau
 	recruit_character = CHI_wong_tsu
 	recruit_character = CHI_chu_chia_jen
 	recruit_character = CHI_dai_jitao
@@ -210,6 +128,7 @@ IF = {
 	recruit_character = CHI_mao_renfeng
 	recruit_character = CHI_hsu_huang_sheng
 	recruit_character = CHI_xu_tingyao
+	#recruit_character = CHI_wan_fulin
 	recruit_character = CHI_zhu_shaoliang
 	recruit_character = CHI_jiang_dingwen
 	recruit_character = CHI_jiang_dingwen_admiral
@@ -218,17 +137,251 @@ IF = {
 	recruit_character = CHI_gui_yongqing
 	recruit_character = CHI_chen_qingyun
 	recruit_character = CHI_teng_chie
+	recruit_character = CHI_huang_qixiang
 	recruit_character = CHI_ju_zheng
 	recruit_character = CHI_li_huang
+	recruit_character = CHI_zhang_qun
 	recruit_character = CHI_sun_fo
 	recruit_character = CHI_zhang_lan # Needs to be able to be transferred to PRC as well
 	recruit_character = CHI_symeon_du
+	recruit_character = CHI_zhu_jiahua
+	ELSE = { 
+		recruit_character = CHI_zhang_xueliang 
+		recruit_character = CHI_gu_zhutong # Sent to Sichuan
+		recruit_character = CHI_fu_zuoyi # Sent to Shaanxi
+		recruit_character = CHI_chen_jitang # Should be available in CHI at some point
+		recruit_character = CHI_li_zongren # Should be available in CHI at some point
+		recruit_character = CHI_bai_chongxi # Should be available in CHI at some point
+		recruit_character = CHI_yu_hanmou # Should be available in CHI at some point
+		recruit_character = CHI_fang_zeyi # Communist
+		recruit_character = CHI_bo_yibo # Communist
+		recruit_character = CHI_zhu_de # Communist
+		recruit_character = CHI_zhang_guotao # In PRC content 
+		recruit_character = CHI_huang_shen # Not a real person
+	}
+}
+recruit_character = CHI_weng_wenhao
+recruit_character = CHI_random_prince_of_terror 
+recruit_character = CHI_chiang_kaishek
+recruit_character = CHI_wang_jingwei
+recruit_character = CHI_tu_yuming
+recruit_character = CHI_hsueh_yueh
+recruit_character = CHI_tai_anlan
+recruit_character = CHI_wang_yaowu
+recruit_character = CHI_sun_li_jen
+recruit_character = CHI_hu_zongnan
+recruit_character = CHI_wei_lihuang
+recruit_character = CHI_chen_cheng
+recruit_character = CHI_wang_shuming
+recruit_character = CHI_zhou_zhirou # Shared in pre-sea
+recruit_character = CHI_xiao_yisu
+recruit_character = CHI_chen_shaokuan
+recruit_character = CHI_he_yingqin
+recruit_character = CHI_gao_zhihang
+recruit_character = CHI_h_h_kung
+recruit_character = CHI_chen_guofu
+recruit_character = CHI_chiang_ching_kuo
+recruit_character = CHI_chen_yi
+recruit_character = CHI_soong_mei_ling
+recruit_character = CHI_lin_sen
+recruit_character = CHI_wang_ganchang 
+recruit_character = CHI_dai_li # Shared in pre-sea
+recruit_character = CHI_t_v_soong # Shared 
+recruit_character = CHI_alexander_von_falkenhausen # Shared 
+recruit_character = CHI_claire_lee_chennault # Shared 
+recruit_character = CHI_kwong_jiang # Shared 
 
+if = {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
 	CHI_chen_shaokuan = {
 		set_character_flag = can_flip_to_prc
 	}
 	CHI_zhang_zhizhong = {
 		set_character_flag = can_flip_to_prc
+	}
+}
+
+set_stability = 0.2
+set_war_support = 0.32
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+}
+
+set_grand_doctrine = mass_assault
+set_grand_doctrine = new_fleet_in_being
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		early_heavy_cruiser = 1
+		early_light_cruiser = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		coastal_defense_ships = 1
+	}
+}
+
+IF = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+
+	create_operative_leader = {
+		name = CHI_zheng_pingru
+		GFX = GFX_portrait_CHI_zheng_pingru
+		traits = { operative_well_groomed }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		female = yes
+		nationalities = { CHI RNG PRC }
+	}
+
+	create_operative_leader = {
+		name = CHI_xu_lai
+		GFX = GFX_portrait_CHI_xu_lai
+		traits = { operative_seducer operative_well_groomed }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		female = yes
+		nationalities = { CHI RNG PRC }
+	}
+
+}
+
+600 = { #Jiangxi
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+749 = { #Huangshan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+606 = { #Anhui
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+607 = { #Henan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+620 = { #Hubei
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+602 = { #Hunan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+750 = { #Changde
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+744 = { #Xian
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+605 = { #Sichuan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+748 = { #Zunyi
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+603 = { #Guizhu
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+615 = { #Shanxi
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+622 = { #Shaanxi
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+325 = { #Yunnan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+747 = { #Dali
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+1032 = { #Yanan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+283 = { #Gansu
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+#598 = { #Jiangsu
+#	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+#}
+753 = { #Gannan
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+599 = { #Guangxi 
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+1045 = { #Guyuan  
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+616 = { #Ningxia   
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+1044 = { #Wuwei    
+	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+IF = {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
+	set_popularities = {
+		neutrality = 91
+		fascism = 2
+		communism = 7
+	}
+	#set_autonomy = {
+	#	target = SND
+	#	autonomous_state = autonomy_sea_warlord_subject
+	#}
+
+	add_dynamic_modifier = { modifier = CHI_corruption_in_the_administration }
+	add_dynamic_modifier = { modifier = CHI_inefficient_economy }
+	add_dynamic_modifier = { modifier = CHI_corruption_in_the_armed_forces }
+	add_dynamic_modifier = { modifier = CHI_illicit_trade }
+	#add_dynamic_modifier = { modifier = CHI_unstructured_logistics } 
+	add_dynamic_modifier = { modifier = CHI_ROCAF } 
+	add_dynamic_modifier = { modifier = CHI_neglected_countryside }
+	
+	#Tech
+	set_technology = {
+		tech_support = 1
+		tech_trucks = 1 
+	}
+
+	add_dynamic_modifier = {
+		modifier = CHI_nine_power_treaty_sea
+	}
+
+	IF = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		add_ideas = {
+			CHI_whampoa_military_academy_spirit
+		}
 	}
 
 	# Corruption in the Admininstration
@@ -244,7 +397,7 @@ IF = {
 	set_variable = { CHI_illicit_trade_industrial_capacity_dockyard = 0 }
 	# Inefficient Economy
 	set_variable = { CHI_inefficient_economy_factory_max_efficiency_factor = 0 } 
-	set_variable = { CHI_inefficient_economy_factory_efficiency_gain_factor = -0.4 }
+	set_variable = { CHI_inefficient_economy_factory_efficiency_gain_factor = -0.35 }
 	set_variable = { CHI_inefficient_economy_base_fuel_gain_factor = -0.5 }
 	# Neglected Countryside
 	set_variable = { CHI_neglected_countryside_communism_drift = 0.05 }
@@ -264,6 +417,7 @@ IF = {
 	set_variable = { CHI_corruption_in_the_armed_forces_army_defence_factor = -0.15 }
 	set_variable = { CHI_corruption_in_the_armed_forces_max_dig_in = -1 } #was -1
 	set_variable = { CHI_corruption_in_the_armed_forces_conscription_factor = -0.78 }
+	set_variable = { CHI_corruption_in_the_armed_forces_conscription_factor_improvement = 0.02 }
 	set_variable = { CHI_corruption_in_the_armed_forces_army_morale_factor = -0.25 } #was -0.25
 	set_variable = { CHI_corruption_in_the_armed_forces_max_planning_factor = 0 } #was -0.2
 	set_variable = { CHI_corruption_in_the_armed_forces_initiative_factor = 0 } 
@@ -399,7 +553,8 @@ IF = {
 
 	set_variable = { political_power_warlord_integration_cost_reduction = 0.25 }
 
-	set_variable = { warlord_subjects_pp_gain_base = 7 } #PP gain from one nation, undivided monthly per warlord
+	set_variable = { warlord_subjects_pp_gain_base = 1 } #PP gain from one nation, undivided monthly per warlord
+	set_variable = { t_warlord_subjects_pp_gain = 0 }
 
 	#Demonstrate our resolve rewards
 	set_variable = { demonstrate_resolve_cic_reward = 1000 }
@@ -422,333 +577,33 @@ IF = {
 	set_variable = { nine_power_treaty_cg = 0.16 }
 
 	set_variable = { CHI_economic_support_cic_amount = 100 } #CiC to Subject Warlords
+
+	613 = { #Shanghai
+		add_dynamic_modifier = { modifier = CHI_shanghai_international_settlement }
+	}
+
 	set_variable = { CHI_holding_state_mission_time_var = 90 }
-}
 
-#new characters
-recruit_character = KMT_zeng_qi
-recruit_character = KMT_soong_qingling
-recruit_character = CHI_lin_sen	
-recruit_character = CHI_chiang_wei_kuo
-recruit_character = KMT_chiang_ching_kuo
-recruit_character = CHI_liu_chien_chun
-recruit_character = CHI_zheng_jiemen
-recruit_character = CHI_zhu_jiahua
-recruit_character = CHI_go_taiqi
-recruit_character = CHI_lei_chen
-recruit_character = CHI_kang_tse
-recruit_character = CHI_chen_chilliang
-recruit_character = CHI_tseng_i_ting
-recruit_character = CHI_lu_ruji
-recruit_character = CHI_huang_yongan
-recruit_character = CHI_huang_guangrui
-recruit_character = CHI_chen_honglie
-recruit_character = CHI_ma_chaochun
-recruit_character = CHI_ho_lien
+	### END ###
 
-
-#scientists
-recruit_character = CHI_wang_ganchang
-recruit_character = CHI_li_fu_lee
-#falkenhausen is generated
-
-#DYNAMIC MODIFIERS MOVED TO ON_ACTIONS
-add_ideas = {	#need to display on country selection, so not in the on_action
-	KMT_demands_for_land_reform
-	german_advisors
-	KMT_warlord_cliques_pre_war
-	public_iliteracy
-	KMT_weak_army
-	incompetent_industry_real
-	incompetent_industry_real_navy
-	KMT_corrupted_government
-	CHI_alexander_von_falkenhausen
-	KMT_chinese_major
-	KMT_harpo_1
-}
-
-613 = { #Shanghai
-	add_dynamic_modifier = { modifier = CHI_shanghai_international_settlement }
-}
-
-
-IF = {
-	limit = {	
-		NOT = { has_dlc = "No Compromise, No Surrender" }
-	}
-	add_ideas = CHI_communist_uprisings
-	country_event = { id = kmt.299 days = 55 random_days = 20 }	#Famine in Sichuan event
-}
-save_global_event_target_as = WTT_current_china_leader
-
-set_convoys = 40
-
-
-set_politics = {
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	democratic = 1
-	fascism = 2
-	communism = 1
-	neutrality = 96
-}
-
-add_opinion_modifier = { target = PRC modifier = hostile_status }
-add_opinion_modifier = { target = GER modifier = sino_german_cooperation }
-GER = {
-	add_opinion_modifier = { target = CHI modifier = sino_german_cooperation }
-}
-
-diplomatic_relation = {
-    country = MEN
-    relation = non_aggression_pact
-    active = yes
-}
-
-diplomatic_relation = {
-    country = MEN
-    relation = guarantee
-    active = yes
-}
-
-if = {
-	limit = {
-		has_dlc = "La Resistance"
-	}
-	create_operative_leader = {
-		name = "Zheng Pingru"
-		GFX = GFX_portrait_asia_generic_operative_f_1
-		traits = { operative_seducer }
-		bypass_recruitment = no
-		available_to_spy_master = yes
-		female = yes
-		nationalities = { CHI }
-	}
-}
-
-### VARIANTS ###
-# 1936 Start #
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-		create_equipment_variant = {
-		name = "Chao Ho Class"
-		type = light_cruiser_1
-		parent_version = 0
-		upgrades = {
-			ship_reliability_upgrade = 0
-			ship_engine_upgrade = 0
-			ship_gun_upgrade = 0
-			ship_anti_air_upgrade = 0
+	ELSE = {
+		set_popularities = {
+			neutrality = 100
 		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Hai Chi Class"
-		type = light_cruiser_1
-		parent_version = 0
-		upgrades = {
-			ship_reliability_upgrade = 0
-			ship_engine_upgrade = 0
-			ship_gun_upgrade = 0
-			ship_anti_air_upgrade = 0
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Ning Hai Class"
-		type = light_cruiser_1
-		parent_version = 0
-		upgrades = {
-			ship_reliability_upgrade = 0
-			ship_engine_upgrade = 0
-			ship_gun_upgrade = 1
-			ship_anti_air_upgrade = 0
+
+		add_ideas = {
+			CHI_nine_power_treaty
+			CHI_army_corruption_1
+			CHI_ineffective_bureaucracy
+			CHI_incompetent_officers
+			free_trade
+			CHI_hyper_inflation_1
+			german_advisors
 		}
 	}
 }
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	# Destroyers #
-	create_equipment_variant = {
-		name = "Chiang Feng Class"			
-		type = ship_hull_light_1
-		name_group = CHI_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = empty
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-	}
-	create_equipment_variant = {
-		name = "Jianwei Class"			
-		type = ship_hull_light_1
-		name_group = CHI_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = empty
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = empty
-			mid_1_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-	}
-	# Light Cruisers #
-	create_equipment_variant = {
-		name = "Hai Yung Class"					# Hairong protected cruisers and Zhaohe, Yingrui training cruisers
-		type = ship_hull_cruiser_coastal_defense_ship
-		name_group = CHI_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			front_1_custom_slot = ship_anti_air_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_secondaries_1
-			rear_1_custom_slot = ship_torpedo_1
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Haiqi Class"
-		type = ship_hull_cruiser_coastal_defense_ship
-		name_group = CHI_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_1
-			fixed_ship_anti_air_slot = empty
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			mid_1_custom_slot = ship_secondaries_1
-			mid_2_custom_slot = ship_secondaries_1
-			rear_1_custom_slot = ship_torpedo_1
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Ninghai Class"
-		type = ship_hull_cruiser_1
-		name_group = CHI_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			mid_1_custom_slot = ship_torpedo_1
-			mid_2_custom_slot = empty
-			rear_1_custom_slot = ship_anti_air_1
-		}
-	}
-	# Heavy Cruisers #
-	create_equipment_variant = {
-		name = "Chao Ho Class"
-		type = ship_hull_cruiser_coastal_defense_ship
-		name_group = CHI_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_1
-			fixed_ship_anti_air_slot = empty
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-		obsolete = yes
-	}
-}
 
-#vanilla
 
-600 = { #Jiangxi
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-749 = { #Huangshan
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-606 = { #Anhui
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-607 = { #Henan
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-620 = { #Hubei
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-602 = { #Hunan
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-750 = { #Gannan
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-753 = { #Changde
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-744 = { #Xian
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-605 = { #Sichuan
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-748 = { #Zunyi
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-603 = { #Guizhu
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-615 = { #Shanxi
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-622 = { #Shaanxi
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-325 = { #Yunnan
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-325 = { #Dali
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-283 = { #Gansu
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-1111 = { #Yanan
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-1124 = { #Guyuan
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-616 = { #Ningxia
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
-1123 = { #Wuwei
-	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
-}
 
 ###################################
 # MIO LOCATIONS
@@ -779,7 +634,7 @@ if = {
 	}
 }
 
-715 = { #Liaobei	#r56: This one might not be correct, currently linked to Liaoning
+715 = { #Liaobei
 	add_to_array = {
 	    array = ROOT.mio_locations
 	    value = THIS
@@ -787,7 +642,7 @@ if = {
 	}
 }
 
-1115 = { #Wuhan
+1036 = { #Wuhan
 	add_to_array = {
 	    array = ROOT.mio_locations
 	    value = THIS
@@ -803,7 +658,7 @@ if = {
 	}
 }
 
-1114 = {  #Nanjing
+1035 = {  #Nanjing
 	add_to_array = {
 	    array = ROOT.mio_locations
 	    value = THIS
@@ -832,5 +687,106 @@ if = {
 	    array = ROOT.mio_locations
 	    value = THIS
 	    index = 9
+	}
+}
+
+save_global_event_target_as = WTT_current_china_leader
+
+set_convoys = 1
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+
+add_opinion_modifier = { target = PRC modifier = hostile_status }
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Chiang Feng Class"			
+		type = ship_hull_light_1
+		name_group = CHI_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+	# Light Cruisers #
+	create_equipment_variant = {
+		name = "Hai Yung Class"					
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = CHI_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Ninghai Class"
+		type = ship_hull_cruiser_1
+		name_group = CHI_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		optional_assets = {
+			{
+				icon = "GFX_CHI_light_cruiser_ning_hai"
+				model = "CHI_light_cruiser_entity"
+			}
+		}
+	}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Chao Ho Class"
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = CHI_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
 	}
 }

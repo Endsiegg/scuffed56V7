@@ -17,7 +17,7 @@ focus_tree = {
 		modifier = {
 			add = 15
 			NOR_AAT = yes	#is used for a variety of things so cant edit this scripted trigger
-			has_global_flag = NOR_use_DLC_tree
+		#	has_global_flag = NOR_use_DLC_tree
 			has_dlc = "Arms Against Tyranny"
 		}
 	}
@@ -5169,6 +5169,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
+			add_country_leader_role = {
+				character = NOR_king_haakon_vii  # Must be recruited
+				promote_leader = yes  # Makes the character be promoted to leader of the party
+				country_leader = {
+					ideology = absolute_monarchism
+					traits = { naw_naval_officer compassionate_gentleman }
+				}
+			}
 			set_politics = {
 				ruling_party = neutrality
 				elections_allowed = no

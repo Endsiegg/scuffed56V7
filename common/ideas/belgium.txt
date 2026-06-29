@@ -437,6 +437,23 @@ ideas = {
 			}
 		}
 
+		BEL_chasseurs_ardennais_ns_ncns = {
+			picture = BEL_chasseurs_ardennais
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = BEL_chasseurs_ardennais_ncns_tt
+			}
+		}
+
 		BEL_scars_of_ww1_ns_fake = { #For nation selection screen
 			picture = BEL_scars_of_ww1
 			allowed = {
@@ -622,7 +639,7 @@ ideas = {
 			modifier = {
 				send_volunteer_size = 3
 				send_volunteer_divisions_required = -1
-				send_volunteers_tension = -0.75
+				send_volunteers_tension = -1
 			}
 		}
 
@@ -692,6 +709,7 @@ ideas = {
 				mountaineers_special_forces_contribution_factor = -0.15
 				marines_special_forces_contribution_factor = -0.15
 				paratroopers_special_forces_contribution_factor = -0.15
+				rangers_special_forces_contribution_factor = -0.15
 			}
 		}
 
@@ -828,6 +846,50 @@ ideas = {
 		
 		designer = yes
 		
+		renault_bel = {
+			picture = renault
+
+			
+			allowed = {
+				original_tag = BEL
+				has_dlc = "Gotterdammerung"
+			}
+
+			available = {
+				has_completed_focus = BEL_fonderie_royale_de_canons_liege
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { fast_tank_manufacturer }
+			
+			modifier = {
+				# Renault FT
+			}
+		}
+
+		renault_bel_no_wuw = {
+			picture = renault
+
+			
+			allowed = {
+				original_tag = BEL
+				NOT = { has_dlc = "Gotterdammerung" }
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { infantry_tank_manufacturer }
+			
+			modifier = {
+				# Renault FT
+			}
+		}
+
 		vickers_armstrong_bel = {
 			picture = generic_tank_manufacturer_2
 		
@@ -937,6 +999,37 @@ ideas = {
 	
 		designer = yes
 		
+		renard = {
+			picture = BEL_renard_organization
+
+			
+			allowed = {
+				original_tag = BEL
+				has_dlc = "Gotterdammerung"
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = BEL_renard_constructions_aeronautiques
+					has_completed_focus = BEL_stampe_et_vertrongen
+				}
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			equipment_bonus = {
+				# Tipsy B, firefly, fairey fox
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
 		renard_no_wuw = {
 			picture = generic_air_manufacturer_2
 
@@ -951,6 +1044,30 @@ ideas = {
 			}
 			
 			traits = { multi_role_aircraft_manufacturer }
+			
+			equipment_bonus = {
+				# Tipsy B, firefly, fairey fox
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		avions_fairey = {
+			picture = generic_air_manufacturer_1
+
+			
+			allowed = {
+				original_tag = BEL
+				NOT = { has_dlc = "Gotterdammerung"}
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
 			
 			equipment_bonus = {
 				# Tipsy B, firefly, fairey fox
@@ -1086,6 +1203,70 @@ ideas = {
 			traits = { motorized_equipment_manufacturer }
 		}
 
+		BEL_ateliers_metallurgiques_tubize = {
+
+			name = "BEL_ateliers_metallurgiques_tubize_organization"
+
+			picture = BEL_ateliers_metallurgiques_tubize
+
+			allowed = {
+				original_tag = BEL
+				has_dlc = "Gotterdammerung"
+			}
+
+			available = {
+			}
+
+			visible = {
+			}
+
+			research_bonus = {
+				train_tech = 0.15
+				support_tech = 0.07
+			}
+
+			equipment_bonus = {
+				train_equipment = {
+					build_cost_ic = -0.10
+					armor_value = 0.10
+					air_attack = 0.10
+					instant = yes
+				}
+			}
+
+			cost = 150
+
+			traits = { train_equipment_manufacturer }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+
+		BEL_laboratoire_aerotechnique_de_belgique = {
+
+			name = "BEL_laboratoire_aerotechnique_de_belgique_organization"
+
+			picture = generic_helicopter_1
+
+			allowed = {
+				original_tag = BEL
+				has_dlc = "Gotterdammerung"
+			}
+
+			research_bonus = {
+				support_tech = 0.05
+				air_equipment = 0.05
+			}
+
+			traits = { helicopter_equipment_manufacturer }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
 	}
 
 ####################
@@ -1103,10 +1284,7 @@ ideas = {
 			picture = BEL_cockerill_industrial
 			
 			allowed = {
-				OR = {
-					original_tag = BEL
-					original_tag = WLL
-				}
+				original_tag = BEL
 				has_dlc = "Gotterdammerung"
 			}
 
@@ -1216,6 +1394,41 @@ ideas = {
 
 			modifier = {
 				
+			}
+		}
+
+		BEL_ateliers_metallurgiques_sambre = {
+
+			picture = BEL_ateliers_metallurgiques_sambre
+
+			allowed = {
+				original_tag = BEL
+				has_dlc = "Gotterdammerung"
+			}
+
+			available = {
+			}
+
+			visible = {
+			}
+
+			cost = 150
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+				production_speed_supply_node_factor = 0.1
+			}
+
+			research_bonus = {
+				construction_tech = 0.10
+				motorized_equipment = 0.10
+			}
+
+			traits = { construction_company_shell }
+
+			ai_will_do = {
+				factor = 0
 			}
 		}
 
