@@ -15,6 +15,7 @@ bookmarks = {
 		"FRA" = {
 			history = "FRA_GATHERING_STORM_DESC"
 			ideology = democratic
+			version = la_resistance
 			ideas = {
 				FRA_victors_of_wwi
 				FRA_disjointed_government
@@ -30,6 +31,7 @@ bookmarks = {
 		"USA" = {
 			history = "USA_GATHERING_STORM_DESC"
 			ideology = democratic
+			version = base_game
 			ideas = {
 				home_of_the_free
 				great_depression
@@ -46,6 +48,7 @@ bookmarks = {
 		"ENG" = {
 			history = "ENG_GATHERING_STORM_DESC"
 			ideology = democratic
+			version = man_the_guns
 			ideas = {
 				MTG_naval_treaty_adherent
 				stiff_upper_lip
@@ -62,6 +65,7 @@ bookmarks = {
 		GER = {
 			history = "GER_GATHERING_STORM_DESC"
 			ideology = fascism
+			version = gotterdammerung
 			ideas = {
 				sour_loser
 				GER_mefo_bills_1936_fake_ns
@@ -78,6 +82,7 @@ bookmarks = {
 		"ITA" = {
 			history = "ITA_GATHERING_STORM_DESC"
 			ideology = fascism
+			version = by_blood_alone
 			ideas = {
 				ITA_excessive_regia_marina_budget
 				ITA_military_research_stretched_thin
@@ -95,7 +100,7 @@ bookmarks = {
 			history = "JAP_GATHERING_STORM_DESC"
 			available = { NOT = { has_dlc = "No Compromise, No Surrender" } }
 			ideology = neutrality
-			#new_content = yes
+			version = base_game
 			override_leader_portrait = JAP_emperor_hirohito
 			ideas = {
 				JAP_1936_fake_state_shintoism_idea
@@ -114,6 +119,7 @@ bookmarks = {
 			history = "JAP_GATHERING_STORM_DESC"
 			available = { has_dlc = "No Compromise, No Surrender" }
 			ideology = neutrality
+			version = no_compromise_no_surrender
 			#new_content = yes
 			override_leader_portrait = JAP_emperor_hirohito
 			ideas = {
@@ -132,6 +138,7 @@ bookmarks = {
 		"SOV" = {
 			history = "SOV_GATHERING_STORM_DESC"
 			ideology = communism
+			version = no_step_back
 			ideas = {
 				home_of_revolution
 				trotskyite_plot_nsb
@@ -324,25 +331,28 @@ bookmarks = {
 		#	}
 		#}
 
-		"AUS" = {
+		AUS = {
             minor = yes
             history = "AUS_GATHERING_STORM_DESC"
             ideology = fascism
+			version = gotterdammerung
             ideas = {
-                AUS_july_followed_june
-                AUS_memories_of_februarkampfe
-				AUS_president_miklas
-				AUS_reliant_on_lon_1
+				AUS_treaty_of_saint_germain_en_laye
+				AUS_austrofascism_fake_ns
+				AUS_widespread_unemployment
             }
             focuses = {
-
+				AUS_legacy_of_the_empire
+				AUS_repeal_the_may_constitution
+				AUS_second_brothers_war
 			}
 		}
 
-		"LUX" = {
+		LUX = {
 			minor = yes
 			history = "LUX_GATHERING_STORM_DESC"
 			ideology = democratic
+			version = base_game
 			ideas = {
 				r56_legacy_of_luxembourg_crisis_1
 				BEL_LUX_BEL_customs_union
@@ -356,10 +366,11 @@ bookmarks = {
 			}
 		}
 
-		"POR" = {
+		POR = {
 			minor = yes
 			history = "POR_GATHERING_STORM_DESC"
 			ideology = neutrality
+			version = base_game
 			ideas = {
 				POR_lackluster_armed_forces
 				POR_disgruntled_republicans
@@ -367,9 +378,7 @@ bookmarks = {
 				POR_harrowing_illiteracy
 			}
 			focuses = {
-				POR_unite_against_salazar
-				POR_solidify_popular_support
-				POR_restore_the_empire
+
 			}
 		}
 
@@ -426,7 +435,7 @@ bookmarks = {
 			minor = yes
 			history = "CHI_GATHERING_STORM_DESC"
 			ideology = neutrality
-		#	new_content = yes
+			version = base_game
 			ideas = {
 				KMT_harpo_1
 				KMT_weak_army
@@ -444,6 +453,7 @@ bookmarks = {
 			minor = yes
 			history = "MAN_GATHERING_STORM_DESC"
 			ideology = fascism
+			version = base_game
 			ideas = {
 				MAN_banditry
 				MAN_kwantung_veto_2
@@ -461,6 +471,7 @@ bookmarks = {
 			minor = yes
 			history = "WARLORDS_GATHERING_STORM_DESC"
 			ideology = fascism
+			version = base_game
 			ideas = {
 				CHI_kmt_economic_influence
 				warlord_state
@@ -510,6 +521,7 @@ bookmarks = {
 			minor = yes
 			history = "MPL_GATHERING_STORM_DESC"
 			ideology = neutrality
+			version = base_game
 			ideas = {
 				MPL_mandate
 				MPL_aliyah_start
