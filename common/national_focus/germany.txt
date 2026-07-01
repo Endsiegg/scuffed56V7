@@ -17584,7 +17584,6 @@ focus_tree = {
 						NOT = {
 							OR = {	#56 - Adding support for old SOV tree
 								has_completed_focus = SOV_beaten_but_not_defeated
-								has_completed_focus = SOV_counter_coup_old
 								has_completed_focus = SOV_form_a_fifth_column
 							}
 							
@@ -41490,7 +41489,7 @@ focus_tree = {
 			SOV = {
 				IF = {
 					limit = { has_global_flag = sov_old_focus_tree}
-					has_completed_focus = SOV_great_purge
+					#has_completed_focus = SOV_great_purge
 				}
 				else = { has_completed_focus = SOV_the_centre }
 			}
@@ -51190,7 +51189,6 @@ focus_tree = {
 						limit = { has_global_flag = sov_old_focus_tree}
 						
 						OR = {	#56 - Adding support for old SOV tree
-							has_completed_focus = SOV_counter_coup_old
 							has_completed_focus = SOV_form_a_fifth_column
 						}
 					}
@@ -60501,7 +60499,7 @@ focus_tree = {
 				has_non_aggression_pact_with = ROOT
 				IF = {
 					limit = { has_global_flag = sov_old_focus_tree}
-					has_completed_focus = SOV_great_purge
+					#has_completed_focus = SOV_great_purge
 				}
 				else = { has_completed_focus = SOV_the_centre}
 				has_government = communism
@@ -67081,12 +67079,12 @@ focus_tree = {
 			OR = {
 				AUS = {
 					exists = yes
-					has_completed_focus = AUS_return_of_habsburgs
+					#has_completed_focus = AUS_return_of_habsburgs
 					OR = {
 						has_government = neutrality
 						AND = {
 							has_government = democratic
-							has_completed_focus = AUS_reform_the_constitution
+							#has_completed_focus = AUS_reform_the_constitution
 						}
 						
 					}
@@ -67114,12 +67112,12 @@ focus_tree = {
 				limit = {
 					AUS = {
 						exists = yes
-						has_completed_focus = AUS_return_of_habsburgs
+						#has_completed_focus = AUS_return_of_habsburgs
 						OR = {
 							has_government = neutrality
 							AND = {
 								has_government = democratic
-								has_completed_focus = AUS_reform_the_constitution
+								#has_completed_focus = AUS_reform_the_constitution
 							}
 							
 						}
@@ -67191,7 +67189,7 @@ focus_tree = {
 						limit = { has_global_flag = tur_bftb_focus_tree }
 						has_completed_focus = TUR_return_of_the_sultan
 					}
-					else = { has_completed_focus = TUR_lift_the_caliphates_exile }
+					#else = { has_completed_focus = TUR_lift_the_caliphates_exile }
 					has_cosmetic_tag = OTT_UNIFIED
 				}
 			}
@@ -67205,7 +67203,7 @@ focus_tree = {
 					limit = {
 						OR = {
 							has_completed_focus = TUR_return_of_the_sultan
-							has_completed_focus = TUR_lift_the_caliphates_exile	#56
+							#has_completed_focus = TUR_lift_the_caliphates_exile	#56
 							has_cosmetic_tag = OTT_UNIFIED
 						}
 					}
@@ -67218,7 +67216,7 @@ focus_tree = {
 					any_country = {
 						OR = {
 							has_completed_focus = TUR_return_of_the_sultan
-							has_completed_focus = TUR_lift_the_caliphates_exile	#56
+							#has_completed_focus = TUR_lift_the_caliphates_exile	#56
 							has_cosmetic_tag = OTT_UNIFIED
 						}
 					}
@@ -67227,7 +67225,7 @@ focus_tree = {
 					limit = {
 						OR = {
 							has_completed_focus = TUR_return_of_the_sultan
-							has_completed_focus = TUR_lift_the_caliphates_exile	#56
+						#	has_completed_focus = TUR_lift_the_caliphates_exile	#56
 							has_cosmetic_tag = OTT_UNIFIED
 						}
 					}
@@ -69967,7 +69965,7 @@ focus_tree = {
 						limit = {
 							OR = {
 								has_completed_focus = SOV_the_centre
-								has_completed_focus = SOV_great_purge
+								#has_completed_focus = SOV_great_purge
 							}
 							
 						}

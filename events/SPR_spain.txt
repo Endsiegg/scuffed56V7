@@ -20,20 +20,6 @@ country_event = { #SPR Color
 				}
 				set_cosmetic_tag = SPR_republican_spain
 			}
-			if = {
-				limit = {
-					OR = {
-						NOT = {
-							has_dlc = "La Resistance"
-						}
-						has_game_rule = {
-							rule = SPR_focus_tree_selection
-							option = R56_TREE
-						}
-					}
-				}
-				set_cosmetic_tag = SPR_republican_spain_cosmetic
-			}
 		}
 	}
 
@@ -61,20 +47,6 @@ country_event = { #NAT Color
 				} 
 				set_cosmetic_tag = SPR_nationalist_spain
 			}
-			if = {
-				limit = {
-					OR = {
-						NOT = {
-							has_dlc = "La Resistance"
-						}
-						has_game_rule = {
-							rule = SPR_focus_tree_selection
-							option = R56_TREE
-						}
-					}
-				}
-				set_cosmetic_tag = SPR_nationalist_spain_cosmetic
-			}	
 		}
 	}
 

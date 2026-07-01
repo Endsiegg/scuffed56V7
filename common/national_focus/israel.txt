@@ -4271,15 +4271,11 @@ focus_tree = {
 				is_faction_leader = yes
 				if = {
 					limit = { has_global_flag = SOV_old_focus_tree }
-					NOT = { has_completed_focus = SOV_counter_coup_old }
 				}
 				else = {
 					if = {
 						limit = { has_dlc = "No Step Back" }
 						NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
-					}
-					else = {
-						NOT = { has_completed_focus = SOV_form_a_fifth_column }
 					}
 				}
 				has_capitulated = no
@@ -4301,8 +4297,6 @@ focus_tree = {
 						is_faction_leader = yes
 						NOT = {
                             has_completed_focus = SOV_beaten_but_not_defeated
-							has_completed_focus = SOV_form_a_fifth_column
-							has_completed_focus = SOV_counter_coup_old
 						}
 						has_capitulated = no
 						NOT = { has_war_with = ROOT }
@@ -6647,7 +6641,6 @@ focus_tree = {
 				is_faction_leader = yes
 				if = {
 					limit = { has_global_flag = SOV_old_focus_tree }
-					NOT = { has_completed_focus = SOV_counter_coup_old }
 				}
 				else = {
 					if = {
@@ -6678,7 +6671,6 @@ focus_tree = {
 						NOT = {
 							has_completed_focus = SOV_beaten_but_not_defeated
 							has_completed_focus = SOV_form_a_fifth_column
-							has_completed_focus = SOV_counter_coup_old
 						}
 						has_capitulated = no
 						NOT = { has_war_with = ROOT }

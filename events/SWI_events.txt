@@ -12,7 +12,7 @@ news_event = { #Assassination of Wilhelm Gustloff
 		SWI = {
 			has_country_leader = { ruling_only = no character = SWI_wilhelm_gustlof }
 			NOT = { has_country_flag = has_henne }
-			NOT = { has_completed_focus = SWI_kill_henne }
+			#NOT = { has_completed_focus = SWI_kill_henne }
 		}
 		has_global_flag = SWI_R56_focus_tree	#vanilla has it too probably
 	}
@@ -538,7 +538,7 @@ country_event = { #Offensive War
 
 	option = { 
 		name = EYE_swiss.12.a
-		trigger = { has_completed_focus = SWI_banks }		
+		#trigger = { has_completed_focus = SWI_banks }		
 		add_offsite_building = { type = industrial_complex level = -1 }
 		if = {
 			limit = { has_idea = SWI_temp_banking }
@@ -556,7 +556,7 @@ country_event = { #Offensive War
 	}
 	option = {
 		name = EYE_swiss.12.b
-		trigger = { NOT = { has_completed_focus = SWI_banks } }
+		#trigger = { NOT = { has_completed_focus = SWI_banks } }
 		custom_effect_tooltip = EYE_swiss.12.tt
 		hidden_effect = {
 			set_country_flag = SWI_was_in_offensive_war

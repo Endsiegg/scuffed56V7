@@ -51,27 +51,6 @@ FRA_renault_organization = {
 				}
 			}
 		}
-		IF = {
-			limit = { FROM = { original_tag = AFG } } # R56
-			# custom_trigger_tooltip = {
-			# 	tooltip = has_invited_mio_tt
-			# 	FROM = {
-			# 		has_completed_focus = BRA_invite_foreign_companies
-			# 		has_country_flag = has_renault_mio_flag
-			# 	}
-			# }
-			# R56
-			FROM = {
-				has_completed_focus = AFG_legacy_of_the_yellow_expedition
-				FRA = {
-					has_opinion = {
-						target = AFG
-						value > 49
-					}
-				}
-			}
-			###
-		}
 	}
 
 	initial_trait = {

@@ -334,7 +334,6 @@ focus_tree = {
 						SOU = { 	#56 - Adding SOV old tree support
 							OR = {
 								has_completed_focus = SOV_the_left_opposition 
-								has_completed_focus = SOV_trotskyite_victory
 							}
 						}
 					}
@@ -435,7 +434,6 @@ focus_tree = {
 						SOU = { # SOV Not Trotskyists   
 							NOT = { 
 								has_completed_focus = SOV_the_left_opposition
-								has_completed_focus = SOV_trotskyite_victory 	#56 - Adding support for old SOV tree
 							} 
 						}
 					}
@@ -874,15 +872,11 @@ focus_tree = {
 						exists = yes 
 						if = {	#56 - Adding support for old SOV tree
 							limit = { has_global_flag = SOV_old_focus_tree }
-							NOT = { has_completed_focus = SOV_counter_coup_old }
 						}
 						else = {
 							if = {
 								limit = { has_dlc = "No Step Back" }
 								NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
-							}
-							else = {
-								NOT = { has_completed_focus = SOV_form_a_fifth_column }
 							}
 						}
 					}
@@ -946,15 +940,11 @@ focus_tree = {
 						exists = yes 
 						if = {	#56 - Adding support for old SOV tree
 							limit = { has_global_flag = SOV_old_focus_tree }
-							NOT = { has_completed_focus = SOV_counter_coup_old }
 						}
 						else = {
 							if = {
 								limit = { has_dlc = "No Step Back" }
 								NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
-							}
-							else = {
-								NOT = { has_completed_focus = SOV_form_a_fifth_column }
 							}
 						}
 					}
@@ -1483,7 +1473,6 @@ focus_tree = {
 						has_government = communism
 						NOT = { 
 							has_completed_focus = SOV_the_left_opposition
-							has_completed_focus = SOV_trotskyite_victory 	#56 - Adding support for old SOV tree
 						}
 						has_capitulated = no
 					}
@@ -1571,7 +1560,6 @@ focus_tree = {
 						has_government = communism
 						NOT = { 
 							has_completed_focus = SOV_the_left_opposition
-							has_completed_focus = SOV_trotskyite_victory 	#56 - Adding support for old SOV tree
 						}
 						has_capitulated = no
 					}

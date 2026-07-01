@@ -7072,7 +7072,7 @@ focus_tree = {
 
         completion_reward = {
             custom_effect_tooltip = available_political_advisor
-            show_ideas_tooltip = RAJ_jawaharlal_nehru #r56
+          #  show_ideas_tooltip = RAJ_jawaharlal_nehru #r56
             #custom_effect_tooltip = available_political_advisor    #56
             #show_ideas_tooltip = RAJ_mahatma_mohandas_gandhi   #56
             add_advisor_role = {    #56 - Needed because R56 trait is different. This way is better for optimization anyways.
@@ -16020,7 +16020,7 @@ focus = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 		retire_character = RAJ_mahatma_mohandas_gandhi
-		retire_character = RAJ_jawaharlal_nehru #r56
+		#retire_character = RAJ_jawaharlal_nehru #r56
 		retire_character = RAJ_subhas_chanda_bose
 		if = {
 			limit = {
@@ -17699,17 +17699,17 @@ focus = {
 				}
 			}
 		}
-		else_if = {
-			limit = {
-				has_country_leader = {
-					character = RAJ_jawaharlal_nehru #r56
-					ruling_only = yes
-				}
-			}
-			RAJ_jawaharlal_nehru = { #r56
-				add_country_leader_trait = support_from_congress
-			}
-		}
+		#else_if = {
+			# limit = {
+			# 	has_country_leader = {
+			# 		character = RAJ_jawaharlal_nehru #r56
+			# 		ruling_only = yes
+			# 	}
+			# }
+			# RAJ_jawaharlal_nehru = { #r56
+			# 	add_country_leader_trait = support_from_congress
+			# }
+	#	}
 		else_if = {
 			limit = {
 				has_country_leader = {

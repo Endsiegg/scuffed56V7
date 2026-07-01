@@ -9169,8 +9169,6 @@ focus_tree = {
 					PER = {
 						OR = {
 							has_war_with = ENG
-							has_completed_focus = PER_nationalize_the_means_of_production
-							has_completed_focus = PER_nationalize_aioc
 						}
 					}
 					SAU = {
@@ -9230,10 +9228,6 @@ focus_tree = {
 				if = {
 					limit = {
 						PER = {
-							OR = {
-								has_completed_focus = PER_nationalize_the_means_of_production
-								has_completed_focus = PER_nationalize_aioc
-							}
 							NOT = {
 								is_in_faction_with = ENG
 							}
@@ -10416,7 +10410,6 @@ focus_tree = {
 		bypass = {
 			if = {
 				limit = { has_global_flag = SOV_old_focus_tree }
-				SOV = { has_completed_focus = SOV_lease_british_planes_old }
 			}
 			else = {
 				SOV = { has_completed_focus = SOV_lease_british_planes }

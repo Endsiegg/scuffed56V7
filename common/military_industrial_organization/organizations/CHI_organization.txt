@@ -1096,18 +1096,18 @@ CHI_hanyan_arsenal_organization_sea = {
 				FROM = {
 					OR = {
 						NOT = { original_tag = CHI }
-						NOT = { has_global_flag = chi_dlc_focus_tree }
+					#	NOT = { has_global_flag = chi_dlc_focus_tree }
 					}
 				}
 			}
-			owner = { controls_state = CHI.mio_locations^4 } ##1036 Wuhan
+	#		owner = { controls_state = CHI.mio_locations^4 } ##1036 Wuhan
 		}
-		else = {
-			OR = {
-				owner = { has_completed_focus = CHI_relocate_factories_from_the_coast }
-				owner = { controls_state = CHI.mio_locations^4 } ##1036 Wuhan
-			}
-		}
+		# else = {
+		# 	OR = {
+		# 		owner = { has_completed_focus = CHI_relocate_factories_from_the_coast }
+		# 		owner = { controls_state = CHI.mio_locations^4 } ##1036 Wuhan
+		# 	}
+		# }
 	}
 	
 

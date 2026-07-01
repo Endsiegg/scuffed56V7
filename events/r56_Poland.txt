@@ -13,33 +13,33 @@ country_event = {
 	
 	trigger = {
 		tag = POL
-		has_completed_focus = POL_Cegielski_Artillery_Factory
-		has_government = neutrality
+		#has_completed_focus = POL_Cegielski_Artillery_Factory
+		#has_government = neutrality
 		has_war_with = ITA
-		NOT = { is_in_faction_with = SOV }
-		417 = {
-			controller = {
-				OR = {
-					tag = POL
-					is_in_faction_with = POL			
-				}
-				has_war_with = ITA
-			}
-		}
-		OR = {
-			divisions_in_state = {
-				state = 162
-				size > 0
-			}
-			divisions_in_state = {
-				state = 157
-				size > 0
-			}
-			divisions_in_state = {
-				state = 2
-				size > 0
-			}
-		}
+		#NOT = { is_in_faction_with = SOV }
+		# 417 = {
+		# 	controller = {
+		# 		OR = {
+		# 			tag = POL
+		# 			is_in_faction_with = POL			
+		# 		}
+		# 		has_war_with = ITA
+		# 	}
+		# }
+		# OR = {
+		# 	divisions_in_state = {
+		# 		state = 162
+		# 		size > 0
+		# 	}
+		# 	divisions_in_state = {
+		# 		state = 157
+		# 		size > 0
+		# 	}
+		# 	divisions_in_state = {
+		# 		state = 2
+		# 		size > 0
+		# 	}
+		# }
 	}
 
 	mean_time_to_happen = {
@@ -57,10 +57,10 @@ country_event = {
 				portrait_path = "gfx/leaders/POL/Portrait_POL_Voytek.dds"
 				traits = { bearer_of_artillery harsh_leader }
 				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				logistics_skill = 1
-				planning_skill = 1
+				attack_skill = 10
+				defense_skill = 10
+				logistics_skill = 10
+				planning_skill = 10
 			}
 			set_country_flag = POL_vojtek_commander
 		}
@@ -6713,7 +6713,6 @@ country_event = {
 		SOV = { 
 			NOT = { 
 				has_completed_focus = SOV_demand_eastern_poland 
-				has_completed_focus = SOV_demand_eastern_poland_old
 			} 
 		}
 		POL = { is_subject = no }
@@ -6727,7 +6726,6 @@ country_event = {
 			GER = { has_completed_focus = GER_reassert_eastern_claims }
 			GER = { has_completed_focus = GER_demand_sudetenland }
 			SOV = { has_completed_focus = SOV_claims_on_poland }
-			SOV = { has_completed_focus = SOV_claims_on_poland_old }
 		}
 	}
 	
@@ -7376,7 +7374,6 @@ country_event = {
 				factor = 0.1
 				OR = {
 					has_completed_focus = SOV_claims_on_poland
-					has_completed_focus = SOV_claims_on_poland_old
 				}
 			}
 			modifier = {

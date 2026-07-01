@@ -1506,9 +1506,9 @@ country_event = {
 	
 	trigger = {
 		tag = DEN
-		NOR = {
-			has_completed_focus = NOR_stand_against_communism
-		}
+		# NOR = {
+		# 	has_completed_focus = NOR_stand_against_communism
+		# }
 		DEN = {
 			owns_state = 998
 			owns_state = 99
@@ -2958,13 +2958,13 @@ country_event = {
 					ideology = democratic
 					popularity = 0.10
 				}
-				uncomplete_national_focus = {
-					focus = NOR_traditions_and_monarchy
-					uncomplete_children = yes
-					refund_political_power = no
-				}
-				unlock_national_focus = NOR_affirm_constitutional_monarchy
-				complete_national_focus = NOR_continuous_politics
+				# uncomplete_national_focus = {
+				# 	focus = NOR_traditions_and_monarchy
+				# 	uncomplete_children = yes
+				# 	refund_political_power = no
+				# }
+				#unlock_national_focus = NOR_affirm_constitutional_monarchy
+				#complete_national_focus = NOR_continuous_politics
 			}
 		}
 		
@@ -3117,11 +3117,11 @@ country_event = {
 					ideology = democratic
 					popularity = 0.10
 				}
-				uncomplete_national_focus = {
-					focus = NOR_traditions_and_monarchy
-					uncomplete_children = yes
-					refund_political_power = no
-				}
+				# uncomplete_national_focus = {
+				# 	focus = NOR_traditions_and_monarchy
+				# 	uncomplete_children = yes
+				# 	refund_political_power = no
+				# }
 				unlock_national_focus = NOR_affirm_constitutional_monarchy
 				complete_national_focus = NOR_continuous_politics
 			}
@@ -3667,14 +3667,14 @@ country_event = {
 				factor = 10
 				original_tag = NOR
 				is_subject = no
-				has_completed_focus = NOR_affirm_constitutional_monarchy
+				#has_completed_focus = NOR_affirm_constitutional_monarchy
 			}
 			modifier = {
 				factor = 0.2
 				original_tag = NOR
 				OR = {
-					has_completed_focus = NOR_traditions_and_monarchy
-					has_completed_focus = NOR_reject_constitutional_monarchy
+					#has_completed_focus = NOR_traditions_and_monarchy
+					#has_completed_focus = NOR_reject_constitutional_monarchy
 				}
 			}
 		}
@@ -3711,7 +3711,7 @@ country_event = {
 				factor = 20
 				original_tag = NOR
 				is_subject = no
-				has_completed_focus = NOR_support_radical_socialism
+				#has_completed_focus = NOR_support_radical_socialism
 			}
 		}
 		add_popularity = { ideology = communism popularity = -0.005 }
@@ -3741,7 +3741,7 @@ country_event = {
 				factor = 20
 				original_tag = NOR
 				is_subject = no
-				has_completed_focus = NOR_support_radical_nationalism
+				#has_completed_focus = NOR_support_radical_nationalism
 			}
 		}
 		add_popularity = { ideology = communism popularity = -0.01 }
@@ -3755,7 +3755,7 @@ country_event = {
 		trigger = {
 			OR = {
 				has_government = neutrality
-				has_completed_focus = NOR_traditions_and_monarchy
+				#has_completed_focus = NOR_traditions_and_monarchy
 			}
 		}
 		ai_chance = {
@@ -3772,7 +3772,7 @@ country_event = {
 				factor = 20
 				original_tag = NOR
 				is_subject = no
-				has_completed_focus = NOR_traditions_and_monarchy
+			#	has_completed_focus = NOR_traditions_and_monarchy
 			}
 		}
 		add_popularity = { ideology = communism popularity = -0.01 }
@@ -5539,7 +5539,7 @@ country_event = {
 		
 		trigger = {
 			NOT = {
-				NOR_haakon_vii = { has_character_flag = NOR_monarch_has_advisor_role }
+				NOR_king_haakon_vii = { has_character_flag = NOR_monarch_has_advisor_role }
 			}
 		}
 		ai_chance = {
@@ -5551,7 +5551,7 @@ country_event = {
 			}
 		}
 		
-		NOR_haakon_vii = { set_character_flag = NOR_monarch_has_advisor_role }
+		NOR_king_haakon_vii = { set_character_flag = NOR_monarch_has_advisor_role }
 		
 		add_political_power = -25
 	}
@@ -5561,7 +5561,7 @@ country_event = {
 		
 		trigger = {
 			NOT = {
-				NOR_haakon_vii = { has_character_flag = NOR_monarch_has_field_marshal_role }
+				NOR_king_haakon_vii = { has_character_flag = NOR_monarch_has_field_marshal_role }
 			}
 		}
 		ai_chance = {
@@ -5574,7 +5574,7 @@ country_event = {
 		}
 		
 		add_field_marshal_role = {
-			character = NOR_haakon_vii
+			character = NOR_king_haakon_vii
 			traits = { infantry_officer media_personality inspirational_leader }
 			skill = 1
 			attack_skill = 1
@@ -5583,7 +5583,7 @@ country_event = {
 			logistics_skill = 1
 			legacy_id = -1
 		}
-		NOR_haakon_vii = { set_character_flag = NOR_monarch_has_field_marshal_role }
+		NOR_king_haakon_vii = { set_character_flag = NOR_monarch_has_field_marshal_role }
 		
 		add_stability = -0.05
 	}
@@ -5593,7 +5593,7 @@ country_event = {
 		
 		trigger = {
 			NOT = {
-				NOR_haakon_vii = { has_character_flag = NOR_monarch_has_naval_commander_role }
+				NOR_king_haakon_vii = { has_character_flag = NOR_monarch_has_naval_commander_role }
 			}
 		}
 		ai_chance = {
@@ -5622,20 +5622,20 @@ country_event = {
 		}
 		
 		add_naval_commander_role = {
-			character = NOR_haakon_vii
-			traits = { navy_career_officer navy_media_personality gentlemanly }
-			skill = 2
-			attack_skill = 1
-			defense_skill = 2
-			maneuvering_skill = 2
-			coordination_skill = 2
+			character = NOR_king_haakon_vii
+			traits = { bold navy_career_officer navy_media_personality gentlemanly naval_lineage fleet_protector }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 6
+			maneuvering_skill = 5
+			coordination_skill = 5
 			legacy_id = -1
 		}
-		NOR_haakon_vii = {
+		NOR_king_haakon_vii = {
 			set_character_flag = NOR_monarch_has_naval_commander_role
 			if = {
 				limit = {
-					ROOT = { has_completed_focus = NOR_naval_conferences }
+				#	ROOT = { has_completed_focus = NOR_naval_conferences }
 					NOT = { has_character_flag = NOR_naval_commander_has_improved_maneuver }
 				}
 				add_maneuver = 1
@@ -5654,7 +5654,7 @@ country_event = {
 			base = 0.2
 			modifier = {
 				factor = 100
-				NOR_haakon_vii = {
+				NOR_king_haakon_vii = {
 					OR = {
 						has_character_flag = NOR_monarch_has_advisor_role
 						has_character_flag = NOR_monarch_has_field_marshal_role
@@ -6130,9 +6130,9 @@ country_event = {
 						has_war_with = SOV
 					}
 				}
-				NOT = { has_completed_focus = NOR_seek_a_british_alliance }
+				#NOT = { has_completed_focus = NOR_seek_a_british_alliance }
 			}
-			complete_national_focus = NOR_seek_a_british_alliance
+			#complete_national_focus = NOR_seek_a_british_alliance
 		}
 		if = {
 			limit = {
@@ -6145,9 +6145,9 @@ country_event = {
 						has_war_with = SOV
 					}
 				}
-				NOT = { has_completed_focus = NOR_join_axis }
+				#NOT = { has_completed_focus = NOR_join_axis }
 			}
-			complete_national_focus = NOR_join_axis
+			#complete_national_focus = NOR_join_axis
 		}
 		if = {
 			limit = {
@@ -6160,9 +6160,9 @@ country_event = {
 						has_war_with = GER
 					}
 				}
-				NOT = { has_completed_focus = NOR_join_comintern }
+			#	NOT = { has_completed_focus = NOR_join_comintern }
 			}
-			complete_national_focus = NOR_join_comintern
+			#complete_national_focus = NOR_join_comintern
 		}
 		if = {
 			limit = {

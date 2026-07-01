@@ -38,8 +38,6 @@ political_actions = {
 					SOV = {
 						NOT = { 
 							has_completed_focus = SOV_beaten_but_not_defeated
-							has_completed_focus = SOV_form_a_fifth_column
-							has_completed_focus = SOV_counter_coup_old 
 						}
 					}
 				}
@@ -940,17 +938,17 @@ LIE_support_monarchy_in_AUS_category = {
 							original_tag = AUS
 							has_government = neutrality
 						}
-						AUS_otto_von_habsburg = {
-							set_nationality = PREV
-							add_country_leader_role = {
-								promote_leader = yes
-								country_leader = {
-									ideology = constitutional_monarchy
-									traits = { savvy_politician }
-									expire = "1980.1.1.1"
-								}
-							}
-						}
+						# AUS_otto_von_habsburg = {
+						# 	set_nationality = PREV
+						# 	add_country_leader_role = {
+						# 		promote_leader = yes
+						# 		country_leader = {
+						# 			ideology = constitutional_monarchy
+						# 			traits = { savvy_politician }
+						# 			expire = "1980.1.1.1"
+						# 		}
+						# 	}
+						# }
 						division_template = {
 							name = "Kaiserlich-Königliche Landwehr" # To avoid cheesing
 							division_names_group = AUS_INF_01
@@ -1020,28 +1018,28 @@ LIE_support_monarchy_in_AUS_category = {
 									has_character = AUS_otto_von_habsburg
 								}
 							}
-							AUS_otto_von_habsburg = {
-								set_nationality = PREV
-								add_country_leader_role = {
-									promote_leader = yes
-									country_leader = {
-										ideology = constitutional_monarchy
-										traits = { savvy_politician }
-										expire = "1980.1.1.1"
-									}
-								}
-							}
+							# AUS_otto_von_habsburg = {
+							# 	set_nationality = PREV
+							# 	add_country_leader_role = {
+							# 		promote_leader = yes
+							# 		country_leader = {
+							# 			ideology = constitutional_monarchy
+							# 			traits = { savvy_politician }
+							# 			expire = "1980.1.1.1"
+							# 		}
+							# 	}
+							# }
 							else = {	
-								AUS_otto_von_habsburg = {
-									add_country_leader_role = {
-										promote_leader = yes
-										country_leader = {
-											ideology = constitutional_monarchy
-											traits = { savvy_politician }
-											expire = "1980.1.1.1"
-										}
-									}
-								}
+								# AUS_otto_von_habsburg = {
+								# 	add_country_leader_role = {
+								# 		promote_leader = yes
+								# 		country_leader = {
+								# 			ideology = constitutional_monarchy
+								# 			traits = { savvy_politician }
+								# 			expire = "1980.1.1.1"
+								# 		}
+								# 	}
+								# }
 							}
 						}
 						set_politics = {
