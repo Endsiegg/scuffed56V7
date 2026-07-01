@@ -1738,92 +1738,6 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					original_tag = SPR
-					NOT = {
-						any_other_country = {
-							NOT = {
-								tag = FROM	#loser still exists at time of evaluation
-							}
-							original_tag = SPR
-							exists = yes
-						}
-					}
-				}
-				every_state = {
-					limit = {
-						has_state_flag = SPR_core_of_spain_flag
-						OR = {
-							AND = {
-								ROOT = {
-									OR = {
-										tag = SPA
-										tag = SPB
-									}
-								}
-								has_state_flag = SPR_sided_with_republicans_flag
-							}
-							AND = {
-								ROOT = {
-									OR = {
-										tag = SPC
-										tag = SPD
-									}
-								}
-								has_state_flag = SPR_sided_with_nationalists_flag
-							}
-						}
-					}
-					add_dynamic_modifier = {
-						modifier = r56_SPR_post_civil_war_resistance
-					}
-				}
-				every_possible_country = {
-					limit = {
-						original_tag = SPR
-						NOT = {
-							tag = ROOT
-						}
-					}
-					every_core_state = {
-						remove_core_of = PREV
-					}
-				}
-				if = {
-					limit = {
-						ROM = { has_country_flag = BUL_sent_volunteers_to_SPD_flag }
-					}
-					ROM = {
-						set_country_flag = BUL_back_from_the_scw_flag
-						clr_country_flag = BUL_sent_volunteers_to_SPD_flag
-						army_experience = 50
-						air_experience = 25
-						add_tech_bonus = {
-							name = FRA_army_reform
-							bonus = 0.5
-							uses = 1
-							category = land_doctrine
-						}
-					}
-				}
-				else_if = {
-					limit = {
-						ROM = { has_country_flag = BUL_sent_volunteers_to_SPA_flag }
-					}
-					ROM = {
-						clr_country_flag = BUL_sent_volunteers_to_SPA_flag
-						army_experience = 50
-						air_experience = 25
-						add_tech_bonus = {
-							name = FRA_army_reform
-							bonus = 0.5
-							uses = 1
-							category = land_doctrine
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
 					FROM = { original_tag = HUN }
 				}
 				FROM = {
@@ -22350,18 +22264,6 @@ on_actions = {
 				}
 				else = {
 					set_country_flag = ROM_sent_volunteers_to_SPA_flag
-				}
-			}
-
-			if = { #"solving bug" which prevented pro-Republican volunteers to get proper supply - remove this if bug was resolved in any other way - Fantom
-				limit = {	# the issue is probably in setting capital for SCW rebels
-					SPR_scw_in_progress = yes
-					FROM = {
-						original_tag = SPR
-					}
-				}
-				FROM = {
-					give_military_access = ROOT
 				}
 			}
 

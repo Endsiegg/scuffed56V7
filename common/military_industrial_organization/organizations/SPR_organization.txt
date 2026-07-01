@@ -15,6 +15,19 @@ SPR_tallares_mecanicos_y_garaje_organization = {
 	allowed = {
 		tag = SPR
 	}
+	initial_trait = {
+		#name = generic_mio_initial_trait_tank_manufacturer
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+		production_bonus = {
+			production_cost_factor = -0.15
+		}		
+		equipment_bonus = {
+			max_strength = 0.10
+		}
+	}		
 }
 
 #####################
@@ -38,10 +51,10 @@ SPR_secn_vanilla_organization = {
 		name = generic_mio_initial_trait_task_force_ship_builders
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		equipment_bonus = {
-			max_strength = 0.05
+			max_strength = 0.10
 		}
 	}	
 }
@@ -57,10 +70,11 @@ SPR_secn_organization = {
 		name = generic_mio_initial_trait_battle_line_ship_builders
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		production_bonus = {
-			production_capacity_factor = 0.05
+			production_cost_factor = -0.15
+			production_capacity_factor = 0.15
 		}
 	}	
 }
@@ -76,10 +90,13 @@ SPR_euskalduna_organization = {
 		name = generic_mio_initial_trait_raiding_fleet
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
+		}
+		production_bonus = {
+			production_cost_factor = -0.15
 		}
 		equipment_bonus = {
-			surface_visibility = -0.05
+			surface_visibility = -0.10
 		}
 	}	
 }
@@ -105,10 +122,10 @@ SPR_casa_vanilla_organization = {
 		name = generic_mio_initial_trait_general_aircraft_designer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		production_bonus = {
-			production_capacity_factor = 0.03
+			production_capacity_factor = 0.15
 		}
 	}	
 }
@@ -122,13 +139,7 @@ SPR_casa_organization = {
 	}
 
 	available = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = SPR_scw_not_in_progress_tt
-				NOT = { SPR_scw_in_progress = yes }
-			}
-			FROM = { controls_state = 167 }
-		}
+
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_multi_role_tactical_aircraft
@@ -136,8 +147,8 @@ SPR_casa_organization = {
 		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
 
 		equipment_bonus = {
-			surface_detection = 0.05
-			air_ground_attack = 0.05
+			surface_detection = 0.10
+			air_ground_attack = 0.10
 		}
 	}	
 }
@@ -160,38 +171,19 @@ SPR_hispano_aviacion_organization = {
 
 	available = {
 		# When in a Foreign MIO, countries need to be at peace with original country
-		IF = {
-			limit = {
-				FROM = { NOT = { original_tag = SPR } }
-			}
-			FROM = { NOT = { has_war_with = SPR } }
-		}
 
-		if = {
-			limit = {
-				FROM = { tag = SWI }
-			}
-			custom_trigger_tooltip = {
-				tooltip = SPR_scw_not_in_progress_tt
-				NOT = { SPR_scw_in_progress = yes }
-			}	
-		}
-		else = {
-			FROM = { controls_state = 169 }
-			custom_trigger_tooltip = {
-				tooltip = SPR_scw_not_in_progress_tt
-				NOT = { SPR_scw_in_progress = yes }
-			}
-		}
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_light_aircraft_designer
 
 		equipment_bonus = {
-			air_agility = 0.05
-			maximum_speed = 0.05
-			air_attack = 0.05
+			air_agility = 0.10
+			maximum_speed = 0.10
+			air_attack = 0.10
 		}
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}		
 	}	
 }
 
@@ -216,27 +208,21 @@ SPR_star_bonifacio_echeverria_organization = {
 	}
 
 	available = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = SPR_scw_not_in_progress_tt
-				NOT = { SPR_scw_in_progress = yes }
-			}
-			FROM = { controls_state = 792 }
-		}
+
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_infantry_manufacturer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 
 		production_bonus = {
-			production_efficiency_cap_factor = 0.03
+			production_efficiency_cap_factor = 0.10
 		}
 
 		equipment_bonus = {
-			soft_attack = 0.03
+			soft_attack = 0.10
 		}
 	}	
 }
@@ -250,22 +236,16 @@ SPR_esperanza_y_cia_organization = {
 	}
 
 	available = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = SPR_scw_not_in_progress_tt
-				NOT = { SPR_scw_in_progress = yes }
-			}
-			FROM = { controls_state = 792 }
-		}
+
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_artillery_manufacturer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		production_bonus = {
-			production_cost_factor = -0.03
+			production_cost_factor = -0.10
 		}
 	}	
 }
@@ -279,20 +259,17 @@ SPR_llama_gabilondo_y_cia_organization = {
 	}
 
 	available = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = SPR_scw_not_in_progress_tt
-				NOT = { SPR_scw_in_progress = yes }
-			}
-			FROM = { controls_state = 792 }
-		}
+
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_support_equipment_manufacturer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
+		production_bonus = {
+			production_cost_factor = -0.10
+		}		
 	}
 
 }
@@ -316,37 +293,17 @@ SPR_hispano_suiza_organization = {
 
 	available = {
 		# When in a Foreign MIO, countries need to be at peace with original country
-		IF = {
-			limit = {
-				FROM = { NOT = { original_tag = SPR } }
-			}
-			FROM = { NOT = { has_war_with = SPR } }
-		}
-		
-		if = {
-			limit = {
-				FROM = { tag = SWI }
-			}
-			custom_trigger_tooltip = {
-				tooltip = SPR_scw_not_in_progress_tt
-				NOT = { SPR_scw_in_progress = yes }
-			}	
-		}
-		else = {
-			FROM = { controls_state = 169 }
-			custom_trigger_tooltip = {
-				tooltip = SPR_scw_not_in_progress_tt
-				NOT = { SPR_scw_in_progress = yes }
-			}
-		}
 	}
 
 	initial_trait = {
 		name = generic_mio_initial_trait_motorized_mechanized_manufacturer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.10
 		}
+		production_bonus = {
+			production_cost_factor = -0.10
+		}			
 	}	
 
 	ai_will_do = {
@@ -368,23 +325,17 @@ SPR_la_maquinista_terrestre_y_maritima_organiztion = {
 	}
 
 	available = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = SPR_scw_not_in_progress_tt
-				NOT = { SPR_scw_in_progress = yes }
-			}
-			FROM = { controls_state = 165 }
-		}
+
 	}
 
 	initial_trait = {
 		name = generic_train_organization_r56_NSB_initial_trait
 		limit_to_equipment_type = { train_equipment railway_gun_equipment }
 		production_bonus = {
-			production_cost_factor = -0.05
+			production_cost_factor = -0.15
 		}
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 	}
 }

@@ -1312,6 +1312,24 @@ on_actions = {
 					add_ideas = SPA_recovering_from_civil_war #keep the spirit on historical mode, keeping them out of the war
 				}
 			}
+			#End of SCW
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SPR
+					}
+					ROOT = {
+						original_tag = SPR
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+				}
+				ROOT = {
+					set_country_flag = achievement_won_spanish_civil_war
+				}
+			}		
 			if = {
 				limit = {
 					has_government = democratic
@@ -2379,6 +2397,77 @@ on_actions = {
 					}
 				}
 			}
+			SPR = {
+				if = {
+					limit = {
+						has_dlc = "La Resistance"
+						OR = {
+							AND = {
+								is_historical_focus_on = no
+								has_game_rule = {
+									rule = SPR_ai_behavior
+									option = DEFAULT
+								}
+							}
+							has_game_rule = {
+								rule = SPR_ai_behavior
+								option = RANDOM
+							}
+						}
+					}
+					random_list = {
+						40 = {
+							modifier = {
+								factor = 0.25
+								game_weight_can_add_fascist = no
+							}
+							set_add_fascist_weight_small = yes
+							set_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
+						}
+						25 = {
+							modifier = {
+								factor = 0.25
+								game_weight_can_add_democratic = no
+							}
+							set_add_democratic_weight_small = yes
+							set_country_flag = SPR_AI_RANDOM_SECOND_REPUBLIC
+						}
+						20 = {
+							modifier = {
+								factor = 0.25
+								game_weight_can_add_fascist = no
+							}
+							set_add_fascist_weight_small = yes
+							set_country_flag = SPR_AI_RANDOM_FALANGIST
+						}
+						15 = {
+							modifier = {
+								factor = 0.25
+								game_weight_can_add_unaligned = no
+							}
+							set_add_unaligned_weight_small = yes
+							set_country_flag = SPR_AI_RANDOM_CARLIST
+						}
+						15 = { set_country_flag = SPR_AI_RANDOM_ANARCHIST }
+						15 = {
+							modifier = {
+								factor = 0.25
+								game_weight_can_add_communist = no
+							}
+							set_add_communist_weight_small = yes
+							set_country_flag = SPR_AI_RANDOM_INDEPENDENT_COMMUNIST
+						}
+						20 = {
+							modifier = {
+								factor = 0.25
+								game_weight_can_add_communist = no
+							}
+							set_add_communist_weight_small = yes
+							set_country_flag = SPR_AI_RANDOM_STALINIST
+						}
+					}
+				}
+			}			
 			HOL = {
 				if = { 
 					limit = {
