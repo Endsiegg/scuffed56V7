@@ -1,4 +1,4 @@
-﻿# Characters shared by the Spanish countries # R56
+﻿# Characters shared by the spanish  countries
 # for each country, generate one instance of the characters
 every_possible_country = {
 	limit = {
@@ -932,8 +932,7 @@ every_possible_country = {
 		name=SPR_mate_zalka
 		portraits={
 			army={
-				large = GFX_portrait_SPR_mate_zalka # R56
-				small= GFX_idea_SPR_mate_zalka
+				small="GFX_idea_SPR_mate_zalka"
 			}
 		}
 		advisor={
@@ -1554,8 +1553,8 @@ every_possible_country = {
 		name=SPR_jose_rovira
 		portraits={
 			army={
-				large = "gfx/leaders/SPR/r56_portrait_SPR_jose_roviro_i_canals.dds"
-				small="gfx/interface/ideas/spr/advisors/r56_idea_SPR_jose_roviro_i_canals.dds"
+				small=GFX_portrait_SPR_jose_rovira_small
+				large = GFX_portrait_SPR_jose_rovira
 			}
 		}
 		advisor={
@@ -1958,7 +1957,10 @@ every_possible_country = {
 			idea_token = SPR_augusto_barcia_trelles
 			allowed = {
 				has_dlc = "La Resistance"
-				original_tag = SPR
+				OR = {
+					original_tag = SPR
+					original_tag = CHL
+				}
 			}
 			visible = {
 				NOT = {
@@ -1967,15 +1969,30 @@ every_possible_country = {
 				}
 			}
 			available = {
-				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate 
-					has_completed_focus = SPR_communists_in_the_government 
-				}
-				custom_trigger_tooltip = {
-					tooltip = SPR_not_nationalist_spain_tt
-					NOT = {
-						tag = SPA 
-						tag = SPB 
+				OR = {
+					AND = {
+						NOT = {
+							has_completed_focus = SPR_masters_of_our_own_fate 
+							has_completed_focus = SPR_communists_in_the_government 
+						}
+						custom_trigger_tooltip = {
+							tooltip = SPR_not_nationalist_spain_tt
+							NOT = {
+								tag = SPA 
+								tag = SPB 
+							}
+						}
+					}
+					
+					AND = {
+						CHL_hub_of_the_revolution_trigger = yes
+						SPR = {
+							has_country_flag = scw_over
+							OR = { #Nat Spain WON
+								tag = SPA 
+								tag = SPB 
+							}
+						}
 					}
 				}
 			}
@@ -2059,7 +2076,10 @@ every_possible_country = {
 			idea_token = SPR_dolores_ibarruri
 			allowed = {
 				has_dlc = "La Resistance"
-				original_tag = SPR
+				OR = {
+					original_tag = SPR
+					original_tag = CHL
+				}
 			}
 			visible = {
 				NOT = {
@@ -2069,17 +2089,32 @@ every_possible_country = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = SPR_demand_ministerial_positions 
-					has_completed_focus = SPR_communists_in_the_government 
-				}
-				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate 
-				}
-				custom_trigger_tooltip = {
-					tooltip = SPR_not_nationalist_spain_tt
-					NOT = {
-						tag = SPA 
-						tag = SPB 
+					AND = {
+						OR = {
+							has_completed_focus = SPR_demand_ministerial_positions 
+							has_completed_focus = SPR_communists_in_the_government 
+						}
+						NOT = {
+							has_completed_focus = SPR_masters_of_our_own_fate 
+						}
+						custom_trigger_tooltip = {
+							tooltip = SPR_not_nationalist_spain_tt
+							NOT = {
+								tag = SPA 
+								tag = SPB 
+							}
+						}
+					}
+
+					AND = {
+						CHL_hub_of_the_revolution_trigger = yes
+						SPR = {
+							has_country_flag = scw_over
+							OR = { #Nat Spain WON
+								tag = SPA 
+								tag = SPB 
+							}
+						}
 					}
 				}
 			}
@@ -2312,7 +2347,10 @@ every_possible_country = {
 			idea_token = SPR_federica_montseny
 			allowed = {
 				has_dlc = "La Resistance"
-				original_tag = SPR
+				OR = {
+					original_tag = SPR
+					original_tag = CHL
+				}
 			}
 			visible = {
 				NOT = {
@@ -2361,7 +2399,10 @@ every_possible_country = {
 			idea_token = SPR_juan_andrade
 			allowed = {
 				has_dlc = "La Resistance"
-				original_tag = SPR
+				OR = {
+					original_tag = SPR
+					original_tag = CHL
+				}
 			}
 			visible = {
 				NOT = {
@@ -2370,16 +2411,31 @@ every_possible_country = {
 				}
 			}
 			available = {
-				has_completed_focus = SPR_masters_of_our_own_fate 
-				NOT = {
-					has_completed_focus = SPR_regional_defense_council_of_aragon 
-				}
-				custom_trigger_tooltip = {
-					tooltip = SPR_not_nationalist_spain_tt
-					NOT = {
-						tag = SPA 
+				OR = {
+					AND = {
+						has_completed_focus = SPR_masters_of_our_own_fate 
+						NOT = {
+							has_completed_focus = SPR_regional_defense_council_of_aragon 
+						}
+						custom_trigger_tooltip = {
+							tooltip = SPR_not_nationalist_spain_tt
+							NOT = {
+								tag = SPA 
+							}
+						}
+					}
+					AND = {
+						CHL_hub_of_the_revolution_trigger = yes
+						SPR = {
+							has_country_flag = scw_over
+							OR = { #Nat Spain WON
+								tag = SPA 
+								tag = SPB 
+							}
+						}
 					}
 				}
+				
 			}
 			traits = {
 				collectivization_specialist 
@@ -2985,86 +3041,6 @@ every_possible_country = {
 			}
 			traits = {
 				regional_traditionalist_leader 
-			}
-		}
-	}
-
-	generate_character = { # R56
-		token_base = SPR_alejandro_lerroux
-		name=SPR_alejandro_lerroux
-		portraits={
-			army={
-				small="GFX_idea_advisor_SPR_alejandro_lerroux"
-			}
-		}
-		advisor={ # R56
-			slot = political_advisor
-			idea_token = SPR_alejandro_lerroux
-			allowed = {
-				original_tag = SPR
-			}
-			visible = {
-				NOT = {
-					tag = SPA
-					tag = SPB
-				}
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = spr_r56_focus_tree
-						}
-						has_completed_focus = SPR_maintain_the_second_republic
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = SPR_not_nationalist_spain_tt
-					NOT = { tag = SPA }
-				}
-			}
-			traits = {
-				staunch_atheist_spr
-			}
-		}
-	}
-
-	generate_character = { # R56
-		token_base = SPR_manuel_fal_conde
-		name=SPR_manuel_fal_conde
-		portraits={
-			army={
-				small="GFX_idea_advisor_SPR_manuel_fal_conde"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = SPR_manuel_fal_conde
-			allowed = {
-				original_tag = SPR
-			}
-			visible = {
-				NOT = {
-					tag = SPD
-					tag = SPC
-				}
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = spr_r56_focus_tree
-						}
-						has_completed_focus = SPA_supremacy_of_the_communion
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = SPA_not_republican_spain_tt
-					NOT = { tag = SPD }
-				}
-			}
-			traits = {
-				staunch_monarchist # He was the carlist leader
 			}
 		}
 	}
