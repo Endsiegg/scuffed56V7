@@ -18,10 +18,7 @@
 
 	available = {
 		owner = {
-			OR = {
 				has_completed_focus = HOL_lessons_from_the_last_war
-				has_completed_focus = HOL_convert_werkspoor_train_factory
-			}
 		}
 	}
 
@@ -279,7 +276,7 @@ HOL_artillerie_inrichtingen_organization = {
 		tag = HOL
 	}
 	available = {
-		owner = { has_completed_focus = HOL_expand_the_artillerieinrichtingen }
+
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_infantry_manufacturer
@@ -305,13 +302,7 @@ HOL_hih_siderius_organization = { # need a r56 version and
 		tag = HOL
 	}
 	available = {
-		owner = {
-			OR = {
-				has_completed_focus = HOL_modernize_the_field_artillery
-				has_completed_focus = HOL_modernize_the_infantry
-				has_completed_focus = HOL_expand_the_artillerieinrichtingen #DLC
-			}			
-		}
+
 	}
 }
 
@@ -326,12 +317,5 @@ HOL_hih_siderius_organization_r56 = { # need a r56 version and
 		tag = HOL
 	}
 	available = {
-		owner = {
-			OR = {
-				has_completed_focus = HOL_modernize_the_field_artillery
-				has_completed_focus = HOL_modernize_the_infantry
-				#has_completed_focus = HOL_expand_the_artillerieinrichtingen #DLC
-			}			
-		}
 	}
 }

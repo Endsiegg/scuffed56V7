@@ -1028,15 +1028,8 @@ focus = {
 		is_subject = no
 		has_army_manpower = { size > 150000 }
 		has_completed_focus = PRU_appoint_a_peruvian_monarch
-		BRA = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
 	}
 	bypass = {	
-			BRA = {
-			r56_script_standard_bypass = yes
-			}
 			has_completed_focus = PRU_appoint_a_peruvian_monarch
 	}
 	ai_will_do = {
@@ -1964,18 +1957,12 @@ focus = {
 		is_subject = no
 		has_army_manpower = { size > 150000 }
 		has_completed_focus = PRU_invite_carlos
-		SPR = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+	
 	}
 	ai_will_do = {
 		factor = 10
 	}
     bypass = {	
-			SPR= {
-			r56_script_standard_bypass = yes
-			}
 			has_completed_focus = PRU_invite_carlos
 	}
 	will_lead_to_war_with = SPR
@@ -4438,7 +4425,7 @@ focus = {
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 900000 }
-		r56_script_i_am_sane = yes
+	
 		any_state = {
 			is_on_continent = south_america
 			OR = {
@@ -8709,18 +8696,14 @@ focus = {
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 800000 }
-		USA = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+
+	
 	}
 	ai_will_do = {
 		factor = 10
 	}
 	bypass = {
-		USA= {
-		  r56_script_standard_bypass = yes
-		}
+
 
 	}
     will_lead_to_war_with = USA
@@ -9198,75 +9181,37 @@ focus = {
 		custom_effect_tooltip = available_political_advisor
 		show_ideas_tooltip = PRU_saturnino_huillca
 		add_ideas = PRU_tupac_amaru
-		if = {
-                limit = {
-                   COL = {
-			      r56_script_target_is_sane = yes
-                   }
-                }
                 COL = {
 			    add_timed_idea = {
 				idea = PRU_legacy_of_tupac_amaru
 				days = 560
 			         }
 		       }   
-            }
-
-			if = {
-                limit = {
-                   BOL = {
-			      r56_script_target_is_sane = yes
-                   }
-                }
                 BOL = {
 			    add_timed_idea = {
 				idea = PRU_legacy_of_tupac_amaru
 				days = 560
 			    }
 		      }  
-            }
-
-			if = {
-                limit = {
-                   CHL = {
-			      r56_script_target_is_sane = yes
-                   }
-                }
                 CHL = {
 			    add_timed_idea = {
 				idea = PRU_legacy_of_tupac_amaru
 				days = 560
 			         }
 		       }   
-            }
-
-			if = {
-                limit = {
-                   ECU = {
-			      r56_script_target_is_sane = yes
-                   }
-                }
                 ECU = {
 			    add_timed_idea = {
 				idea = PRU_legacy_of_tupac_amaru
 				days = 560
 			         }
 		       }   
-            }
-
-			if = {
-                limit = {
-                   ARG = {
-			      r56_script_target_is_sane = yes
-                   }
-                }
                 ARG = {
 			    add_timed_idea = {
 				idea = PRU_legacy_of_tupac_amaru
 				days = 560
 			         }
 		       }   
-            }
+            
 
 		custom_effect_tooltip = PRU_oli_loyalty_hostile_status_text
 		custom_effect_tooltip = PRU_unlock_friend_que
@@ -9719,19 +9664,13 @@ focus = {
 	cost = 5
 	available = {
 		is_subject = no
-		r56_script_i_am_sane = yes
-			BRA = {
-				r56_script_target_is_sane = yes
-			}
 	}
 	ai_will_do = {
 		factor = 4
 	}
 
 	bypass = {
-			BRA = {
-				r56_script_standard_bypass = yes
-			}
+
 	}
      will_lead_to_war_with = BRA
 	completion_reward = {	
@@ -9753,19 +9692,13 @@ focus = {
 	cost = 5
 	available = {
 		is_subject = no
-		r56_script_i_am_sane = yes
-			CUB = {
-				r56_script_target_is_sane = yes
-			}
 	}
 	ai_will_do = {
 		factor = 4
 	}
 
 	bypass = {
-		CUB = {
-				r56_script_standard_bypass = yes
-			}	
+	
 	}
      will_lead_to_war_with = CUB
 	completion_reward = {
@@ -9791,10 +9724,6 @@ focus = {
 	available = {
 		is_subject = no
 		CUB = { is_subject_of = PRU}
-			r56_script_i_am_sane = yes
-			HAI = {
-				r56_script_target_is_sane = yes
-			}
 	}
 	ai_will_do = {
 		factor = 4
@@ -9803,17 +9732,15 @@ focus = {
 	will_lead_to_war_with = HAI
 
 	bypass = {
-		HAI = {
-				r56_script_standard_bypass = yes
-			}	
+
 	}
 
 	completion_reward = {
-	USA = {
-				diplomatic_relation = { country = DOM relation = guarantee active = no }
-				diplomatic_relation = { country = HAI relation = guarantee active = no }
-				}
-		
+		USA = {
+			diplomatic_relation = { country = DOM relation = guarantee active = no }
+			diplomatic_relation = { country = HAI relation = guarantee active = no }
+		}
+			
 		create_wargoal = { type = puppet_wargoal_focus target = DOM 
 			expire = 0}
 		create_wargoal = { type = puppet_wargoal_focus target = HAI 
@@ -9822,25 +9749,25 @@ focus = {
 	search_filters = { FOCUS_FILTER_ANNEXATION }
 }
 
-focus = {
-			id = PRU_rallying_the_peasants
-			icon = GFX_goal_generic_industrial_unionism
-			prerequisite = { focus =  PRU_public_universities }
-			relative_position_id =  PRU_public_universities
-			x = -1
-			y = 1
-			cost = 5
-	
-			available = { has_government = communism }
-	
-			completion_reward = {
-				add_timed_idea = {
-					idea = PRU_peasant_rallying
-					days = 98
-				}
-			   add_stability = -0.1
+	focus = {
+		id = PRU_rallying_the_peasants
+		icon = GFX_goal_generic_industrial_unionism
+		prerequisite = { focus =  PRU_public_universities }
+		relative_position_id =  PRU_public_universities
+		x = -1
+		y = 1
+		cost = 5
+
+		available = { has_government = communism }
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = PRU_peasant_rallying
+				days = 98
 			}
-		}	
+			add_stability = -0.1
+		}
+	}	
 
  
 focus = {
@@ -10507,19 +10434,15 @@ focus = {
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 70000 }
-		BOL = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+
+	
 	}
 	ai_will_do = {
 		factor = 4
 	}
 
 	bypass = {	
-			BOL = {
-			r56_script_standard_bypass = yes
-			}
+
 	}
     will_lead_to_war_with = BOL
 	completion_reward = {
@@ -10550,18 +10473,14 @@ focus = {
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 70000 }
-		CHL = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+
+	
 	}
 	ai_will_do = {
 		factor = 10
 	}
 	bypass = {
-		CHL = {
-			r56_script_standard_bypass = yes
-		}
+
 	}	
 	
     will_lead_to_war_with = CHL
@@ -10594,18 +10513,13 @@ focus = {
 			original_tag = ARG
 		}
 		has_army_manpower = { size > 70000 }
-		ARG = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+	
 	}
 	ai_will_do = {
 		factor = 10
 	}
 	bypass = {
-		ARG = {
-			r56_script_standard_bypass = yes
-		}
+
 	}
     will_lead_to_war_with = ARG
 	completion_reward = {
@@ -10635,20 +10549,12 @@ focus = {
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 100000 }
-		COL = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+	
 	}
 	ai_will_do = {
 		factor = 10
 	}
 	bypass = {
-		
-		COL = {
-			r56_script_standard_bypass = yes
-		}
-		
 	}
 	will_lead_to_war_with = COL
 	completion_reward = {
@@ -10686,20 +10592,13 @@ focus = {
 		}
 		is_subject = no
 		has_army_manpower = { size > 100000 }
-		VEN = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+	
 	}
 	ai_will_do = {
 		factor = 10
 	}
 	bypass = {
-		
-		VEN = {
-			r56_script_standard_bypass = yes
-		}
-		
+
 	}
 	will_lead_to_war_with = VEN
 	completion_reward = {
@@ -10728,19 +10627,12 @@ focus = {
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 100000 }
-		ECU = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+	
 	}
 	ai_will_do = {
 		factor = 10
 	}
 	bypass = {
-		ECU = {
-			r56_script_standard_bypass = yes
-		}
-		
 	}
 	will_lead_to_war_with = ECU
 	completion_reward = {
@@ -10767,18 +10659,12 @@ focus = {
 	available = {
 		is_subject = no
 		has_army_manpower = { size > 800000 }
-		USA = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+	
 	}
 	ai_will_do = {
 		factor = 10
 	}
 	bypass = {
-		USA= {
-		  r56_script_standard_bypass = yes
-		}
 
 	}
     will_lead_to_war_with = USA
@@ -11089,10 +10975,7 @@ focus = {
 				}
 			}
 			is_subject = no
-		ECU = {
-			r56_script_target_is_sane = yes
-		}
-		r56_script_i_am_sane = yes
+	
 		hidden_trigger = {
 			if = {
 				limit = {
@@ -11690,7 +11573,7 @@ focus = {
 	mutually_exclusive = { focus = PRU_join_allies}
 	icon =  GFX_goal_constitution
 	available = {
-			r56_script_i_am_sane = yes
+		
 					NOT = {
 						has_government = communism
 					}

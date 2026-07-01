@@ -65,13 +65,6 @@ generic_fighter = {
 				has_tech = advanced_small_airframe
 				factor = 0 #let's not waste XP here
 			}
-			modifier = {
-				OR = {
-					any_subject_country = { check_variable = { resource_produced@rubber > 100 } }
-					resource_produced@rubber > 100
-				}
-				factor = 0
-			}
 		}
 
 		target_variant = {
@@ -110,11 +103,6 @@ generic_fighter = {
 			modifier = {
 				has_tech = advanced_small_airframe
 				factor = 0 #let's not waste XP here
-			}
-			modifier = {
-				NOT = { any_subject_country = { check_variable = { resource_produced@rubber > 100 } } }
-				NOT = { resource_produced@rubber > 100 }
-				factor = 0
 			}
 		}
 
@@ -155,13 +143,6 @@ generic_fighter = {
 				has_tech = modern_small_airframe
 				factor = 0 #let's not waste XP here
 			}
-			modifier = {
-				OR = {
-					any_subject_country = { check_variable = { resource_produced@rubber > 100 } }
-					resource_produced@rubber > 100
-				}
-				factor = 0
-			}
 		}
 
 		target_variant = {
@@ -201,11 +182,6 @@ generic_fighter = {
 			modifier = {
 				has_tech = modern_small_airframe
 				factor = 0 #let's not waste XP here
-			}
-			modifier = {
-				NOT = { any_subject_country = { check_variable = { resource_produced@rubber > 100 } } }
-				NOT = { resource_produced@rubber > 100 }
-				factor = 0
 			}
 		}
 

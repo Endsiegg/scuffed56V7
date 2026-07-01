@@ -17,7 +17,6 @@ FRA_renault_organization = {
 			tag = FRA 
 			AND = {
 				tag = ETH 
-				has_dlc = "By Blood Alone"
 			}
 			tag = AFG # R56
 		}
@@ -51,27 +50,6 @@ FRA_renault_organization = {
 					has_country_flag = has_invited_FRA_renault_organization_flag
 				}
 			}
-		}
-		IF = {
-			limit = { FROM = { original_tag = AFG } } # R56
-			# custom_trigger_tooltip = {
-			# 	tooltip = has_invited_mio_tt
-			# 	FROM = {
-			# 		has_completed_focus = BRA_invite_foreign_companies
-			# 		has_country_flag = has_renault_mio_flag
-			# 	}
-			# }
-			# R56
-			FROM = {
-				has_completed_focus = AFG_legacy_of_the_yellow_expedition
-				FRA = {
-					has_opinion = {
-						target = AFG
-						value > 49
-					}
-				}
-			}
-			###
 		}
 	}
 
@@ -136,7 +114,6 @@ FRA_hotchkiss_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	allowed = {	
 		tag = FRA 
-		has_dlc = "Arms Against Tyranny"
 	}
 	add_trait = { 
 		token = FRA_mio_trait_l_35
@@ -214,7 +191,6 @@ FRA_fcm_organization = {
 	icon = GFX_idea_fcm
 	allowed = {	
 		tag = FRA 
-		has_dlc = "Arms Against Tyranny"
 	}
 	# R56
 	initial_trait = {
@@ -235,7 +211,6 @@ FRA_aeb_organization = {
 	icon = GFX_idea_FRA_aeb
 	allowed = {	
 		tag = FRA 
-		has_dlc = "Arms Against Tyranny"
 	}
 	# R56
 	initial_trait = {
@@ -256,7 +231,6 @@ FRA_acl_organization = {
 	icon = GFX_idea_FRA_acl
 	allowed = {	
 		tag = FRA 
-		has_dlc = "Arms Against Tyranny"
 	}
 	# R56
 	initial_trait = {
@@ -276,7 +250,6 @@ FRA_acf_organization = {
 	include = generic_raider_ship_organization
 	icon = GFX_idea_FRA_acf
 	allowed = {	
-		has_dlc = "Arms Against Tyranny"
 		# OR = {
 			tag = FRA
 		# 	AND = {
@@ -332,7 +305,6 @@ FRA_morane_saulnier_organization = {
 	icon = GFX_idea_morane_saulnier
 	allowed = {	
 		tag = FRA 
-		has_dlc = "Arms Against Tyranny"
 	}
 	# R56
 	initial_trait = {
@@ -355,7 +327,6 @@ FRA_bloch_organization = {
 			tag = FRA 
 			AND = {
 				tag = ETH 
-				has_dlc = "By Blood Alone"
 			}
 			# AND = {
 			# 	tag = BRA
@@ -423,7 +394,6 @@ FRA_amiot_organization = {
 	icon = GFX_idea_amiot
 	allowed = {	
 		tag = FRA 
-		has_dlc = "Arms Against Tyranny"
 	}
 	# R56
 	initial_trait = {
@@ -447,7 +417,6 @@ FRA_levasseur_organization = {
 	icon = GFX_idea_levasseur
 	allowed = {	
 		tag = FRA 
-		has_dlc = "Arms Against Tyranny"
 	}
 	# R56
 	initial_trait = {
@@ -470,7 +439,6 @@ FRA_SNCAC_organization = {
 	icon = GFX_idea_FRA_sncac
 	allowed = {	
 		tag = FRA 
-		has_dlc = "Arms Against Tyranny"
 	}
 	visible = {
 		FROM = { has_country_flag = FRA_SNCAC_formed }
@@ -507,7 +475,6 @@ FRA_panhard_organization = {
 	icon = GFX_idea_FRA_panhard
 	allowed = {	
 		tag = FRA 
-		has_dlc = "La Resistance"
 	}
 	# R56
 	initial_trait = {
@@ -530,10 +497,6 @@ FRA_somua_organization = {
 			tag = FRA 
 			AND = {
 				tag = POL # If Poland sets up a local one
-				OR = {
-					has_dlc = "Poland: United and Ready"
-					has_dlc = "No Step Back"
-				}
 			}
 		}
 	}
@@ -578,7 +541,6 @@ FRA_mas_organization = {
 			tag = FRA 
 			AND = {
 				tag = ETH
-				has_dlc = "By Blood Alone"
 			}
 		}
 	}
@@ -648,7 +610,6 @@ FRA_somua_tank_organization = {
 
 	allowed = {	
 		tag = FRA 
-		has_dlc = "Arms Against Tyranny"
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_medium_tank_designer

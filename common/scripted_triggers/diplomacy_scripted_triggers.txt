@@ -478,9 +478,9 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_SOVIET_TOOLTIP
 			OR = {
 				has_completed_focus = SOV_autonomous_soviet_republics
-				has_completed_focus = SOV_dissolve_the_treaty_agreement 	# R56
-				has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb # R56
-				has_completed_focus = SOV_increased_autonomy				# R56
+				#has_completed_focus = SOV_dissolve_the_treaty_agreement 	# R56
+				#has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb # R56
+				#has_completed_focus = SOV_increased_autonomy				# R56
 				#has_completed_focus = SOV_reconvene_the_zemsky_sobor		# R56
 			}
 		}
@@ -506,9 +506,9 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				}
 				OR = {
 					has_completed_focus = SOV_autonomous_soviet_republics
-					has_completed_focus = SOV_dissolve_the_treaty_agreement 	# R56
-					has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb # R56
-					has_completed_focus = SOV_increased_autonomy				# R56
+					##has_completed_focus = SOV_dissolve_the_treaty_agreement 	# R56
+					#has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb # R56
+					#has_completed_focus = SOV_increased_autonomy				# R56
 					#has_completed_focus = SOV_reconvene_the_zemsky_sobor		# R56
 				}
 			}
@@ -597,9 +597,9 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			}
 			NOT = {
 				has_completed_focus = SOV_autonomous_soviet_republics
-				has_completed_focus = SOV_dissolve_the_treaty_agreement 	# R56
-				has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb # R56
-				has_completed_focus = SOV_increased_autonomy				# R56
+				#has_completed_focus = SOV_dissolve_the_treaty_agreement 	# R56
+				#has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb # R56
+				#has_completed_focus = SOV_increased_autonomy				# R56
 				#has_completed_focus = SOV_reconvene_the_zemsky_sobor		# R56
 			}
 		}
@@ -616,9 +616,9 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_SOVIET_TOOLTIP
 			OR = {
 				has_completed_focus = SOV_autonomous_soviet_republics
-				has_completed_focus = SOV_dissolve_the_treaty_agreement 	# R56
-				has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb # R56
-				has_completed_focus = SOV_increased_autonomy				# R56
+			#	has_completed_focus = SOV_dissolve_the_treaty_agreement 	# R56
+				#has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb # R56
+				#@has_completed_focus = SOV_increased_autonomy				# R56
 				#has_completed_focus = SOV_reconvene_the_zemsky_sobor		# R56
 			}
 		}
@@ -809,31 +809,6 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = SHL } }
 			NOT = { FROM = { tag = SAX } }
 			NOT = { FROM = { tag = HES } }
-		}
-	}
-	if = {
-		limit = {
-			has_focus_tree = r56_portuguese_focus
-			NOT = { has_completed_focus = POR_the_question_of_our_colonies }
-			OR = {
-				has_game_rule = {
-					rule = allow_release_nations
-					option = FREE
-				}
-				has_game_rule = {
-					rule = allow_release_nations
-					option = PEACE_ONLY
-				}
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_PORTUGAL_TOOLTIP
-			NOT = { FROM = { tag = ANG } }
-			NOT = { FROM = { tag = MZB } }
-			NOT = { FROM = { tag = GNB } }
-			NOT = { FROM = { tag = TML } }
-			NOT = { FROM = { tag = SAO } }
-			NOT = { FROM = { tag = CAP } }
 		}
 	}
 	if = { # Avoid exploitation 
@@ -1556,17 +1531,13 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 				tooltip = RULE_VOLUNTEERS_SOVIET_CHINA_SUPPORT_CHOSEN_ONE_TT
 				OR = {
 					has_completed_focus = SOV_the_gobi_gambit
-					has_completed_focus = SOV_claim_on_sinkiang
 					has_completed_focus = SOV_two_red_flags
-					has_completed_focus = SOV_two_red_flags_old
 					has_completed_focus = SOV_support_the_kuomintang
-					has_completed_focus = SOV_operation_zet
 				}
 				NOT = {
 					AND = {
 						OR = {
 							has_completed_focus = SOV_the_gobi_gambit
-							has_completed_focus = SOV_claim_on_sinkiang
 						}
 						FROM = { NOT = { tag = SIK } }
 					}
@@ -1575,7 +1546,6 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 					AND = {
 						OR = {
 							has_completed_focus = SOV_two_red_flags
-							has_completed_focus = SOV_two_red_flags_old
 						}
 						FROM = { NOT = { tag = PRC } }
 					}
@@ -1584,7 +1554,6 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 					AND = {
 						OR = {
 							has_completed_focus = SOV_support_the_kuomintang
-							has_completed_focus = SOV_operation_zet
 						}
 						FROM = { NOT = { tag = CHI } }
 					}

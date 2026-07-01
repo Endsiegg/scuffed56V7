@@ -138,14 +138,6 @@ focus_tree = {
 					}
 				}
 			}
-			NOT = {
-				AUS = {
-					focus_progress = {
-						focus = AUS_past_glories
-						progress > 0.001
-					}
-				}
-			}
 		}
 
 		available_if_capitulated = yes
@@ -2639,11 +2631,6 @@ focus_tree = {
 				}
 			}
 		}
-		bypass = {
-			AUS = {
-				has_completed_focus = AUS_renew_the_rome_protocols
-			}
-		}
 		completion_reward = {
 			set_global_flag = HUN_did_rome_protocols
 			swap_ideas = {
@@ -4329,7 +4316,6 @@ focus_tree = {
 					SOV = {
 						NOT = {
 							has_completed_focus = SOV_the_anti_soviet_trotskyist_center
-							has_completed_focus = SOV_great_purge
 						}
 					}
 				}
@@ -4402,8 +4388,6 @@ focus_tree = {
 						OR = {
 							has_completed_focus = SOV_the_right_opposition
 							has_completed_focus = SOV_beaten_but_not_defeated
-							has_completed_focus = SOV_form_a_fifth_column
-							has_completed_focus = SOV_counter_coup_old
 						}
 					}
 				}

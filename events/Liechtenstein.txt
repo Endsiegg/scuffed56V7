@@ -345,7 +345,7 @@ country_event = { # Swiss victory
         if = {
             limit = {
                 original_tag = AUS
-                has_completed_focus = AUS_intervention_in_liechtenstein_schuschnigg
+               # has_completed_focus = AUS_intervention_in_liechtenstein_schuschnigg
             }
             set_autonomy = {
                 target = LIE
@@ -370,7 +370,7 @@ country_event = { # Swiss victory
         else_if = {
             limit = {
                 original_tag = AUS
-                has_completed_focus = AUS_intervention_in_liechtenstein_nazi
+              #  has_completed_focus = AUS_intervention_in_liechtenstein_nazi
             }
             set_autonomy = {
                 target = LIE
@@ -494,14 +494,6 @@ country_event = { # A wild guest appears
             AUS = {
                 focus_progress = {
                     focus = AUS_moderate_restoration
-                    progress > 0.001
-                }
-            }
-        }
-        NOT = {
-            AUS = {
-                focus_progress = {
-                    focus = AUS_past_glories
                     progress > 0.001
                 }
             }

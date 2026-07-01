@@ -1948,7 +1948,7 @@ leader_traits = {
 		}
 		cost = 500
 		modifier = {
-			cas_damage_reduction = 0.5
+			cas_damage_reduction = 0.25
 			air_superiority_bonus_in_combat = -0.5
 		}
 		
@@ -3893,7 +3893,28 @@ leader_traits = {
 		}
 
 	}
+	expeditionary_leader_trait = {
+		type = land
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		
+		modifier = {
+			# max_commander_army_size = -18
+			# max_army_group_size = -4
+			# army_non_core_attack_factor = 0.15
+			# army_non_core_defence_factor = 0.15
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
 
+		new_commander_weight = {
+			factor = 0
+		}
+	}
 ##################################
 # operative traits
 ##################################

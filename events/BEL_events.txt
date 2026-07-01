@@ -1329,7 +1329,6 @@ country_event = {
 		tag = BEL
 		date > 1937.4.1
 		NOT = { date > 1939.1.1 }
-		NOT = { has_completed_focus = BEL_go_right }
 		has_government = democratic
 	}
 	mean_time_to_happen = {
@@ -1341,7 +1340,6 @@ country_event = {
 			base = 100
 			modifier = {
 				factor = 0
-				has_completed_focus = BEL_go_left
 			}
 		}
 		add_political_power = 20
@@ -1360,9 +1358,6 @@ country_event = {
 		set_country_flag = rexist_electoral_victory_1937
 	}
 	option = {
-		trigger = {
-			has_completed_focus = BEL_go_left
-		}	
 		name = belgium.41.c
 		ai_chance = { base = 100 }
 		add_political_power = 20
@@ -1513,7 +1508,6 @@ news_event = {
 					} 
 				}
 		NOT = { has_global_flag = fall_of_jerusalem_bel }
-		NOT = { has_completed_focus = BEL_choose_Verdinaso }
 		BEL = {has_government = fascism}
 	}
 	
@@ -1567,7 +1561,6 @@ news_event = {
 		NOT = { has_global_flag = fall_of_paris_bel }
 		BEL = {
 				has_government = fascism
-				has_completed_focus = BEL_choose_Verdinaso
 			}
 	}
 	
@@ -1606,7 +1599,6 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = BEL
-		NOT = {has_completed_focus = BEL_choose_Verdinaso}
 		NOT = {has_government = fascism}
 		NOT = {has_global_flag = van_severen_killed}
 		BEL = {
@@ -1648,13 +1640,13 @@ country_event = {
 		OR = {	
 			BEL = {
 				has_government = fascism
-				has_completed_focus = BEL_choose_Verdinaso
+
 				owns_state = 29
 				owns_state = 6
 			}
 			FLA = {
 				has_government = fascism
-				has_completed_focus = BEL_choose_Verdinaso
+
 				owns_state = 29
 			}
 		}
@@ -1906,13 +1898,11 @@ country_event = {
 		OR = {
 			AND = {
 				BEL = {	  
-					has_completed_focus = BEL_further_nuclear_research
 					controls_state = 889	
 					}
 				}
 			AND = {				
 				COG = {	  
-					has_completed_focus = COG_further_nuclear_research
 					controls_state = 889	
 					}
 				}	
@@ -1920,7 +1910,6 @@ country_event = {
 				COG = {  
 					is_puppet_of = BEL
 					controls_state = 889
-					has_completed_focus = COG_further_nuclear_research
 				}
 			}	
 		}
@@ -2392,9 +2381,6 @@ country_event = {
 	picture = GFX_report_event_french_resistance_01
 	trigger = {
 		NOT = {tag = BEL}	
-		BEL = {
-			has_completed_focus = BEL_launch_V_campaign
-			}
 		is_in_faction_with = BEL
 		has_capitulated = yes
 		}		

@@ -1995,14 +1995,6 @@ focus_tree = {
 					}
 				}
 			}
-			NOT = {
-				AUS = {
-					focus_progress = {
-						focus = AUS_past_glories
-						progress > 0.001
-					}
-				}
-			}
 		}
 		bypass = {
 			OR = {
@@ -3448,68 +3440,68 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				add_equipment_subsidy = {
-					cic = 2000
-					equipment_type = infantry_equipment
-					seller_trigger = AFG_purchase_german_equipment_subsidy
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_equipment_subsidy = {
-					cic = 1200
-					equipment_type = artillery_equipment
-					seller_trigger = AFG_purchase_german_equipment_subsidy
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				GER = {
-					create_production_license = {
-						target = ROOT
-						equipment = {
-							type = infantry_equipment_1
-							version = 0
-						}
-						cost_factor = 0.1
-					}
-				}
-			}
-			else = {
-				GER = {
-					create_production_license = {
-						target = LIE
-						equipment = {
-							type = infantry_equipment_1
-							version = 0
-						}
-						cost_factor = 0.1
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 2000
-					producer = GER
-				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment
-					amount = 150
-					producer = GER
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_timed_idea = {
-					idea = AFG_purchasing_german_guns
-					days = 90
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				GER = {
-					add_timed_idea = {
-						idea = AFG_purchasing_german_guns_GER
-						days = 90
-					}
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		has_dlc = "Arms Against Tyranny"
+			# 	}
+			# 	add_equipment_subsidy = {
+			# 		cic = 2000
+			# 		equipment_type = infantry_equipment
+			# 		seller_trigger = AFG_purchase_german_equipment_subsidy
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	add_equipment_subsidy = {
+			# 		cic = 1200
+			# 		equipment_type = artillery_equipment
+			# 		seller_trigger = AFG_purchase_german_equipment_subsidy
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	GER = {
+			# 		create_production_license = {
+			# 			target = ROOT
+			# 			equipment = {
+			# 				type = infantry_equipment_1
+			# 				version = 0
+			# 			}
+			# 			cost_factor = 0.1
+			# 		}
+			# 	}
+			# }
+			# else = {
+			# 	GER = {
+			# 		create_production_license = {
+			# 			target = LIE
+			# 			equipment = {
+			# 				type = infantry_equipment_1
+			# 				version = 0
+			# 			}
+			# 			cost_factor = 0.1
+			# 		}
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	add_equipment_to_stockpile = {
+			# 		type = infantry_equipment
+			# 		amount = 2000
+			# 		producer = GER
+			# 	}
+			# 	add_equipment_to_stockpile = {
+			# 		type = artillery_equipment
+			# 		amount = 150
+			# 		producer = GER
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	add_timed_idea = {
+			# 		idea = AFG_purchasing_german_guns
+			# 		days = 90
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	GER = {
+			# 		add_timed_idea = {
+			# 			idea = AFG_purchasing_german_guns_GER
+			# 			days = 90
+			# 		}
+			# 	}
+			# }
 		}
 	}
 
@@ -3931,68 +3923,68 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT }
 
 		completion_reward = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				add_equipment_subsidy = {
-					cic = 2000
-					equipment_type = infantry_equipment
-					seller_trigger = AFG_purchase_german_equipment_subsidy
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_equipment_subsidy = {
-					cic = 1200
-					equipment_type = artillery_equipment
-					seller_trigger = AFG_purchase_german_equipment_subsidy
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				GER = {
-					create_production_license = {
-						target = ROOT
-						equipment = {
-							type = infantry_equipment_1
-							version = 0
-						}
-						cost_factor = 0.1
-					}
-				}
-			}
-			else = {
-				GER = {
-					create_production_license = {
-						target = LIE
-						equipment = {
-							type = infantry_equipment_1
-							version = 0
-						}
-						cost_factor = 0.1
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 2000
-					producer = GER
-				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment
-					amount = 150
-					producer = GER
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_timed_idea = {
-					idea = AFG_purchasing_german_guns
-					days = 90
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				GER = {
-					add_timed_idea = {
-						idea = AFG_purchasing_german_guns_GER
-						days = 90
-					}
-				}
-			}
+			# if = {
+			# 	limit = {
+			# 		has_dlc = "Arms Against Tyranny"
+			# 	}
+			# 	add_equipment_subsidy = {
+			# 		cic = 2000
+			# 		equipment_type = infantry_equipment
+			# 		seller_trigger = AFG_purchase_german_equipment_subsidy
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	add_equipment_subsidy = {
+			# 		cic = 1200
+			# 		equipment_type = artillery_equipment
+			# 		seller_trigger = AFG_purchase_german_equipment_subsidy
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	GER = {
+			# 		create_production_license = {
+			# 			target = ROOT
+			# 			equipment = {
+			# 				type = infantry_equipment_1
+			# 				version = 0
+			# 			}
+			# 			cost_factor = 0.1
+			# 		}
+			# 	}
+			# }
+			# else = {
+			# 	GER = {
+			# 		create_production_license = {
+			# 			target = LIE
+			# 			equipment = {
+			# 				type = infantry_equipment_1
+			# 				version = 0
+			# 			}
+			# 			cost_factor = 0.1
+			# 		}
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	add_equipment_to_stockpile = {
+			# 		type = infantry_equipment
+			# 		amount = 2000
+			# 		producer = GER
+			# 	}
+			# 	add_equipment_to_stockpile = {
+			# 		type = artillery_equipment
+			# 		amount = 150
+			# 		producer = GER
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	add_timed_idea = {
+			# 		idea = AFG_purchasing_german_guns
+			# 		days = 90
+			# 	}
+			# 	custom_effect_tooltip = generic_skip_one_line_tt
+			# 	GER = {
+			# 		add_timed_idea = {
+			# 			idea = AFG_purchasing_german_guns_GER
+			# 			days = 90
+			# 		}
+			# 	}
+			# }
 		}
 	}
 

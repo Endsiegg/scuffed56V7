@@ -7,7 +7,7 @@ LIT_mobilization_plans = {
 	}
 
 	visible = {
-		has_completed_focus = LIT_prepare_the_mobilization_plans
+
 	}
 }
 
@@ -17,7 +17,7 @@ LIT_naval_purchases = {
 		has_dlc = "La Resistance"
 	}
 	visible = {
-		has_completed_focus = LIT_purchase_foreign_ships
+
 	}
 }
 
@@ -30,7 +30,7 @@ LIT_iron_wolf_managment = {
 	}
 
 	visible = {
-		has_completed_focus = LIT_reform_the_iron_wolf
+
 	}
 
 	priority = {
@@ -47,7 +47,7 @@ LIT_battle_for_lithunia = {
 	}
 
 	visible = {
-		has_completed_focus = LIT_battle_for_lithuania
+
 	}
 }
 
@@ -60,7 +60,7 @@ LIT_kazys_griniuss_reforms = {
 	}
 
 	visible = {
-		has_completed_focus = LIT_social_welfare_focus
+
 		always = no
 		#has_country_flag = LIT_under_development_flag
 	}
@@ -75,8 +75,7 @@ LIT_communist_uprising = {
 	}
 
 	visible = {
-		has_completed_focus = LIT_preparing_for_the_uprising
-		NOT = { has_completed_focus = LIT_launch_the_revolution }
+
 	}
 
 	priority = {
@@ -84,23 +83,6 @@ LIT_communist_uprising = {
 	}
 }
 
-LIT_fourth_seimas_elections = {
-
-	icon = border_war
-
-	allowed = {
-		original_tag = LIT
-	}
-
-	visible = {
-		has_completed_focus = LIT_announce_upcoming_elections
-		has_country_flag = LIT_elections_in_progress_flag
-	}
-
-	priority = {
-		base = 30
-	}
-}
 
 LIT_council_of_lithuania_decisions = {
 
@@ -111,11 +93,7 @@ LIT_council_of_lithuania_decisions = {
 	}
 
 	visible = {
-		has_completed_focus = LIT_reconvene_the_council_of_lithuania
-		NOT = {
-			has_completed_focus = LIT_kings_party
-			has_completed_focus = LIT_cooperate_with_the_conservatives
-		}
+
 		#should be swapped for leader = Jurgis Saulys
 	}
 

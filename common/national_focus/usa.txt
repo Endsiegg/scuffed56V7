@@ -235,9 +235,7 @@ focus_tree = {
 						NOT = { 
 							has_government = communism
 						}
-						has_completed_focus = SOV_counter_coup
 						has_completed_focus = SOV_beaten_but_not_defeated
-						has_completed_focus = SOV_counter_coup_old
 					}
 				}
 			}
@@ -1598,7 +1596,7 @@ focus_tree = {
 		relative_position_id = USA_continue_the_new_deal
 		x = -4
 		y = 1
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -1627,7 +1625,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_wpa }
 		relative_position_id = USA_wpa
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1675,7 +1673,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_agricultural_adjustment_act }
 		relative_position_id = USA_wpa
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1725,7 +1723,7 @@ focus_tree = {
 		y = 3
 		prerequisite = { focus = USA_fair_labour_standards_act }
 		relative_position_id = USA_wpa
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 15
@@ -1774,7 +1772,7 @@ focus_tree = {
 						}
 						is_core_of = ROOT
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 5
 					set_state_flag = USA_federal_housing_act
 				}
 				random_owned_controlled_state = {
@@ -1787,7 +1785,7 @@ focus_tree = {
 						is_core_of = ROOT
 						not = { has_state_flag = USA_federal_housing_act }
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 5
 					set_state_flag = USA_federal_housing_act
 				}
 				random_owned_controlled_state = {
@@ -1800,7 +1798,7 @@ focus_tree = {
 						is_core_of = ROOT
 						not = { has_state_flag = USA_federal_housing_act }
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 5
 					set_state_flag = USA_federal_housing_act
 				}
 				random_owned_controlled_state = {
@@ -1813,7 +1811,7 @@ focus_tree = {
 						is_core_of = ROOT
 						not = { has_state_flag = USA_federal_housing_act }
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 5
 					set_state_flag = USA_federal_housing_act
 				}
 				random_owned_controlled_state = {
@@ -1826,7 +1824,7 @@ focus_tree = {
 						is_core_of = ROOT
 						not = { has_state_flag = USA_federal_housing_act }
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 5
 					set_state_flag = USA_federal_housing_act
 				}
 			}
@@ -3208,7 +3206,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = USA_neutrality_act
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -3261,11 +3259,6 @@ focus_tree = {
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 2
-						include_locked = yes
-					}
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -3278,11 +3271,6 @@ focus_tree = {
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 2
-						include_locked = yes
-					}
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -3295,12 +3283,18 @@ focus_tree = {
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
-					dockyard > 0
-					free_building_slots = {
-						building = dockyard
-						size > 2
-						include_locked = yes
-					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}			
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -3313,12 +3307,6 @@ focus_tree = {
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
-					dockyard > 0
-					free_building_slots = {
-						building = dockyard
-						size > 2
-						include_locked = yes
-					}
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -3347,7 +3335,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = USA_arsenal_of_democracy
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 20
 		}
@@ -10735,7 +10723,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -10843,7 +10831,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_selective_training_act }
 		relative_position_id = USA_selective_training_act
-		cost = 5
+		cost = 2
 
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 
@@ -10964,7 +10952,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_louisiana_maneuvers }
 		relative_position_id = USA_louisiana_maneuvers
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -11084,7 +11072,7 @@ focus_tree = {
 					has_full_control_of_state = 361
 				}
 				361 = {
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 5
 				}
 			}
 		}
@@ -11186,7 +11174,7 @@ focus_tree = {
 			custom_effect_tooltip = USA_walkie_talkies_tt
 			add_tech_bonus = {
 				name = USA_walkie_talkies
-				bonus = 1
+				bonus = 3
 				uses = 1
 				category = electronics
 			}
@@ -11232,21 +11220,7 @@ focus_tree = {
 		}
 
 		available = {
-			if = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
-				OR = {
-				has_tech = basic_medium_tank_chassis
-				has_tech = basic_heavy_tank_chassis					
-				}
-				has_tech = armor_tech_1
-				has_tech = engine_tech_1
-				OR = {
-					has_tech = artillery1
-					has_tech = antitank1
-				}
-			}
+
 		}
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -11685,7 +11659,7 @@ focus_tree = {
 				custom_effect_tooltip = available_mio_tt
 				show_mio_tooltip = USA_tank_destroyer_board_organization
 				mio:USA_tank_destroyer_board_organization = {
-					add_mio_size = 2
+					add_mio_size = 5
 				}
 			}
 			ELSE = {
@@ -12146,7 +12120,7 @@ focus_tree = {
 				custom_effect_tooltip = available_mio_tt
 				show_mio_tooltip = USA_detroit_arsenal_organization
 				mio:USA_detroit_arsenal_organization = {
-					add_mio_size = 2
+					add_mio_size = 5
 				}
 			}
 			ELSE = {
@@ -12282,7 +12256,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = USA_armored_infantry
 				uses = 1
-				bonus = 1
+				bonus = 2
 				category = cat_mechanized_equipment
 			}
 			
@@ -12911,13 +12885,13 @@ focus_tree = {
 				}
 				add_tech_bonus = {
 					name = USA_escort_fighters
-					bonus = 1
+					bonus = 3
 					uses = 1
 					category = light_air
 				}
 				add_tech_bonus = {
 					name = USA_escort_fighters
-					bonus = 1
+					bonus = 3
 					uses = 1
 					category = medium_air
 				}
@@ -12937,7 +12911,7 @@ focus_tree = {
 			else = {
 				add_tech_bonus = {
 					name = USA_escort_fighters
-					bonus = 1
+					bonus = 3
 					uses = 1
 					category = light_fighter
 				}
@@ -13047,6 +13021,9 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			add_ideas = ENG_expand_the_repair_yards
+			
+			
 			if = { 
 				limit = { 
 					378 = {
@@ -13125,7 +13102,7 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				mio:USA_brooklyn_naval_yard_organization = {
-					add_mio_funds = 250
+					add_mio_funds = 2000
 				}
 			}
 		}

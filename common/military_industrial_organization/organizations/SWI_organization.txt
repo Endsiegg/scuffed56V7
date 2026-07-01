@@ -80,17 +80,7 @@ SWI_werner_risch_r56_organization = {
 	}
 
 	available = {
-		if = {
-			limit = {
-				owner = {
-					has_global_flag = SWI_R56_focus_tree
-				}
-				
-			}
-			owner = {
-				has_completed_focus = SWI_reform_flotilla 
-			}
-		}
+
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_escort_fleet
@@ -274,22 +264,22 @@ SWI_sig_organization = {
 	}	
 }
 
-#SWI_berna_organization = {
-#	name = SWI_berna
-#	include = generic_motorized_mechanized_organization
-#	icon = GFX_idea_SWI_berna
-#	allowed = {	
-#		tag = SWI
-#		has_dlc = "By Blood Alone"
-#	}
-#	initial_trait = {
-#		name = generic_mio_initial_trait_motorized_mechanized_manufacturer
-#
-#		organization_modifier = {
-#			military_industrial_organization_research_bonus = 0.05
-#		}
-#	}		
-#}
+SWI_berna_organization = {
+	name = SWI_berna
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_SWI_berna
+	allowed = {	
+		tag = SWI
+		has_dlc = "By Blood Alone"
+	}
+	initial_trait = {
+		name = generic_mio_initial_trait_motorized_mechanized_manufacturer
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}		
+}
 
 SWI_berna_organization_r56 = {
 	name = "Berna"

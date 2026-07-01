@@ -247,12 +247,6 @@ characters={
 		instance = {
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = {
-					has_game_rule = {
-						rule = SPR_focus_tree_selection
-						option = R56_TREE
-					}
-				}
 			}
 			name=SPR_vicente_rojo_lluch
 			portraits={
@@ -261,39 +255,11 @@ characters={
 					small="gfx/interface/ideas/idea_SPR_vicente_rojo_lluch.dds"
 				}
 			}
-			corps_commander={ # R56 - matched pre-conversion LaR config
-				traits={ brilliant_strategist }
-				skill=3
-				attack_skill=3
-				defense_skill=2
-				planning_skill=2
-				logistics_skill=3
-				legacy_id=1102
-			}
-		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
-			}
-			name=SPR_vicente_rojo_lluch
-			portraits={
-				army={
-					large="gfx/leaders/SPR/r56_portrait_SPR_Vicente_Lluch.dds" # R56
-					small="GFX_idea_generic_army_europe_5"
-				}
-			}
 			advisor={
 				slot = army_chief
 				idea_token = SPR_vincente_rojo_lluch
 				name = SPR_vincente_rojo_lluch
 				allowed = {
-					OR = {
-						NOT = { has_dlc = "La Resistance" }
-						has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE }
-					}
 					original_tag = SPR
 				}
 				visible = {
@@ -313,22 +279,15 @@ characters={
 				ai_will_do = {
 					factor = 1.000
 				}
-			}
-
-			corps_commander={
-				traits={ brilliant_strategist trait_SPR_republican_loyalties } # R56
+			}			
+			corps_commander={ # R56 - matched pre-conversion LaR config
+				traits={ brilliant_strategist }
 				skill=3
 				attack_skill=3
 				defense_skill=2
 				planning_skill=2
 				logistics_skill=3
-				visible={ # R56
-					AND = {
-						tag = S56
-						NOT = { tag = N56 }
-						has_global_flag = spanish_civil_war
-					}
-				}
+				legacy_id=1102
 			}
 		}
 	}
@@ -337,7 +296,6 @@ characters={
 		instance = {
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 			}
 			name=SPR_jose_miaja
 			portraits={
@@ -356,73 +314,12 @@ characters={
 				legacy_id=1103
 			}
 		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
-			}
-			name=SPR_jose_miaja
-			portraits={
-				army={
-					large="gfx/leaders/SPR/r56_portrait_SPR_Jose_Miaja.dds" # R56
-					small="GFX_idea_generic_army_europe_2"
-				}
-			}
-			advisor={
-				slot = high_command
-				idea_token = SPR_jose_miaja2
-				ledger = army
-				name = SPR_jose_miaja
-				allowed = {
-					NOT = {
-						has_dlc = "La Resistance"
-					}
-					original_tag = SPR
-				}
-				visible = {
-					tag = S56 # R56
-					NOT = {
-						has_government = fascism
-					}
-				}
-				available = {
-					NOT = {
-						has_government = fascism
-					}
-				}
-				traits = {
-					army_infantry_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-			}
-			corps_commander = { # R56
-				traits = { infantry_leader trait_SPR_republican_loyalties }
-				skill=2
-				attack_skill=2
-				defense_skill=2
-				planning_skill=2
-				logistics_skill=1
-				visible={
-					tag = S56
-					NOT = {
-						tag = N56
-					}
-					has_global_flag = spanish_civil_war
-				}
-			}
-		}
 	}
 
 	SPR_jose_asensio_torrado={
 		instance = {
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 			}
 			name=SPR_jose_asensio_torrado
 			portraits={
@@ -439,30 +336,6 @@ characters={
 				planning_skill=2
 				logistics_skill=1
 				legacy_id=1101
-			}
-		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
-			}
-			name=SPR_jose_asensio_torrado
-			portraits={
-				army={
-					large=GFX_portrait_SPR_jose_asensio_torrado
-					small=GFX_portrait_SPR_jose_asensio_torrado_small
-				}
-			}
-			corps_commander={ # R56 - was defensive field marshall pre-conversion
-				traits={ career_officer infantry_leader } # R56
-				skill=2
-				attack_skill=1
-				defense_skill=3
-				planning_skill=2
-				logistics_skill=1
-				legacy_id=6008 # R56
 			}
 		}
 	}
@@ -529,7 +402,6 @@ characters={
 		instance = {
 			allowed = { # R56
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } }
 			}
 			name = SPR_enrique_lister
 			portraits={
@@ -546,40 +418,6 @@ characters={
 				planning_skill=2
 				logistics_skill=2
 				legacy_id=1119
-			}
-		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = {
-						rule = SPR_focus_tree_selection
-						option = R56_TREE
-					}
-				}
-			}
-			name="Enrique Lister"
-			portraits={
-				army={
-					large="gfx/leaders/SPR/r56_portrait_SPR_Enrique_Lister.dds"
-					small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
-				}
-			}
-			corps_commander={
-				traits={ politically_connected infantry_officer trait_SPR_republican_loyalties }
-				skill=3
-				attack_skill=2
-				defense_skill=3
-				planning_skill=3
-				logistics_skill=2
-				legacy_id=1119
-				visible = {
-					tag = S56
-					has_global_flag = spanish_civil_war
-					NOT = {
-						tag = N56
-					}
-				}
 			}
 		}
 	}
@@ -962,7 +800,6 @@ characters={
 		instance = {
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 			}
 			name=SPA_emilio_mola
 			portraits={
@@ -978,7 +815,6 @@ characters={
 				allowed = {
 					has_dlc = "La Resistance"
 					original_tag = SPR
-					NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 				}
 	
 				visible = {
@@ -1017,65 +853,6 @@ characters={
 						NOT = { has_global_flag = spanish_civil_war }
 						AND = {
 							tag = SPA
-							has_global_flag = spanish_civil_war
-						}
-					}
-				}
-			}
-		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
-			}
-			name=SPA_emilio_mola_vidal
-			portraits={
-				army={
-					large="GFX_portrait_SPA_emilio_mola"
-					small="GFX_idea_generic_army_europe_5"
-				}
-			}
-			advisor={
-				slot = army_chief
-				idea_token = SPA_emilio_mola_vidal
-				name = SPA_emilio_mola_vidal
-				allowed = {
-					OR = {
-						NOT = { has_dlc = "La Resistance" }
-						has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-					}
-					original_tag = SPR
-				}
-				visible = {
-					has_government = fascism
-				}
-				available = {
-					has_government = fascism
-				}
-				traits = {
-					army_chief_morale_2 # R56
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-			}
-			field_marshal={ # R56
-				traits={ organisational_leader trait_cautious thorough_planner trait_SPA_nationalist_sympathies }
-				skill=3
-				attack_skill=2
-				defense_skill=2
-				planning_skill=4
-				logistics_skill=2
-				visible = {
-					OR = {
-						AND = {
-							tag = N56
-							NOT = {
-								tag = S56
-							}
 							has_global_flag = spanish_civil_war
 						}
 					}
@@ -1172,10 +949,6 @@ characters={
 			ledger = army
 			name = SPA_emilio_esteban_infantes
 			allowed = {
-				OR ={
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
 				original_tag = SPR
 			}
 			visible = {
@@ -1198,7 +971,6 @@ characters={
 		instance = {
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } }
 			}
 			name=SPA_agustin_munoz_grandes
 			portraits={
@@ -1259,77 +1031,12 @@ characters={
 				}
 			}
 		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
-			}
-			name=SPA_agustin_munoz_grandes
-			portraits={
-				army={
-					large="gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds" # R56
-					small="GFX_idea_generic_army_europe_3"
-				}
-			}
-			advisor={
-				slot = high_command
-				idea_token = SPA_agustin_munoz_grandes
-				ledger = army
-				name = SPA_agustin_munoz_grandes
-				allowed = {
-					OR = {
-						NOT = { has_dlc = "La Resistance" }
-						has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-					}
-					original_tag = SPR
-				}
-				visible = {
-					tag = N56 # R56
-					OR = {
-						has_government = fascism
-						has_government = neutrality # R56
-					}
-				}
-
-				available = {
-					OR = {
-						has_government = fascism
-						has_government = neutrality # R56
-					}
-				}
-				traits = {
-					army_infantry_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-			}
-			corps_commander = { # R56
-				traits={ infantry_officer trait_SPA_nationalist_sympathies }
-				skill=3
-				attack_skill=2
-				defense_skill=3
-				planning_skill=3
-				logistics_skill=2
-				visible={
-					AND = {
-						tag = N56
-						NOT = { tag = S56 }
-						has_global_flag = spanish_civil_war
-					}
-				}
-			}
-		}
 	}
 
 	SPA_jose_enrique_varela={ # Carlist
 		instance = {
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } }
 			}
 			name=SPA_jose_enrique_varela
 			portraits={
@@ -1346,7 +1053,6 @@ characters={
 				allowed = {
 					has_dlc = "La Resistance"
 					original_tag = SPR
-					NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 				}
 				visible = {
 					NOT = {
@@ -1408,67 +1114,6 @@ characters={
 				}
 			}
 		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE }
-				}
-			}
-			name=SPA_jose_enrique_varela
-			portraits={
-				army={
-					large="gfx/leaders/SPR/r56_portrait_SPR_Jose_Enrique_Varela.dds" # R56
-					small="GFX_idea_generic_army_europe_3"
-				}
-			}
-			advisor={
-				cost = 100
-				slot = theorist
-				idea_token = SPA_jose_enrique_varela
-				ledger = army
-				name = SPA_jose_enrique_varela
-				allowed = {
-					OR = {
-						NOT = { has_dlc = "La Resistance" }
-						has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-					}
-					original_tag = SPR
-				}
-				visible = {
-					tag = N56 # R56
-					OR = {
-						has_government = fascism
-						has_government = neutrality # R56
-					}
-				}
-				available = {
-					OR = {
-						has_government = fascism
-						has_government = neutrality # R56
-					}
-				}
-				
-				traits = {
-					military_theorist
-				}
-			}
-			corps_commander = { # R56
-				traits={ organizer infantry_leader meticulous trait_SPA_nationalist_sympathies }
-				skill=3
-				attack_skill=3
-				defense_skill=2
-				planning_skill=3
-				logistics_skill=2
-				visible={
-					has_global_flag = spanish_civil_war
-					tag = N56
-					NOT = {
-						tag = S56
-					}
-				}
-			}
-		}
 	}
 
 	SPA_karl_pius_von_habsburg = {
@@ -1511,7 +1156,6 @@ characters={
 		instance = {
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 			}
 			name=SPA_miguel_cabanellas
 			portraits={
@@ -1573,66 +1217,6 @@ characters={
 							has_global_flag = SPR_carlist_uprising_flag
 						}
 					}
-				}
-			}
-		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
-			}
-			name=SPA_miguel_cabanellas_ferrer
-			portraits={
-				army={
-					large="gfx/leaders/SPR/r56_portrait_SPR_Miguel_Cabanellas.dds" # R56
-					small="GFX_idea_generic_army_europe_3"
-				}
-			}
-			advisor={
-				slot = army_chief
-				idea_token = SPA_miguel_cabanellas_ferrer
-				name = SPA_miguel_cabanellas_ferrer
-				allowed = {
-					OR = {
-						NOT = { has_dlc = "La Resistance" }
-						has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE }
-					}
-					original_tag = SPR
-				}
-				visible = {
-					tag = N56 # R56
-					OR = {
-						has_government = fascism
-						has_government = neutrality # R56
-					}
-				}
-				available = {
-					OR = {
-						has_government = fascism
-						has_government = neutrality # R56
-					}
-				}
-				traits = {
-					army_chief_old_guard
-				}
-				ai_will_do = {
-					factor = 1.000
-				}
-			}
-			corps_commander = { # R56
-				traits = { cavalry_officer old_guard trait_SPA_nationalist_sympathies }
-				skill = 3
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 3
-				legacy_id=-1
-				visible={
-					has_global_flag = spanish_civil_war
-					tag = N56
-					NOT = { tag = S56 }
 				}
 			}
 		}
@@ -1789,7 +1373,6 @@ characters={
 		instance = {
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 			}
 			name=SPA_luis_carrero_blanco
 			portraits={
@@ -1803,7 +1386,6 @@ characters={
 				idea_token = SPA_luis_carrero_blanco
 				allowed = {
 					has_dlc = "La Resistance"
-					NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 					original_tag = SPR
 				}
 				visible = {
@@ -1828,61 +1410,6 @@ characters={
 				maneuvering_skill=2
 				coordination_skill=1
 				legacy_id=1118
-			}
-		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
-			}
-			name=SPA_luis_carrero_blanco
-			portraits={
-				army={
-					large="GFX_portrait_SPA_luis_carrero_blanco" # R56
-					small="GFX_idea_generic_navy_europe_1"
-				}
-			}
-			advisor={
-				slot = navy_chief
-				idea_token = SPA_luis_carrero_blanco
-				name = SPA_luis_carrero_blanco
-				allowed = {
-					OR = {
-						NOT = { has_dlc = "La Resistance" }
-						has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-					}
-					original_tag = SPR
-				}
-				visible = {
-					has_government = fascism
-					has_government = neutrality # R56
-				}
-				available = {
-					has_government = fascism
-					has_government = neutrality # R56
-				}
-				traits = {
-					navy_chief_old_guard
-				}
-				ai_will_do = {
-					factor = 1.000
-				}
-			}
-			navy_leader={ # R56
-				traits={ trait_SPA_nationalist_sympathies seawolf }
-				skill=2
-				attack_skill=2
-				defense_skill=2
-				maneuvering_skill=2
-				coordination_skill=1
-				legacy_id=-1
-				visible={
-					tag = N56
-					NOT = { tag = S56 }
-					has_global_flag = spanish_civil_war
-				}
 			}
 		}
 	}
@@ -2009,7 +1536,6 @@ characters={
 			allowed = {
 				has_dlc = "La Resistance"
 				original_tag = SPR
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 			}
 
 			visible = {
@@ -2142,7 +1668,6 @@ characters={
 		instance = {
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 			}
 			name=SPA_joaquin_garcia_morato
 			portraits={
@@ -2156,7 +1681,6 @@ characters={
 				ledger = air
 				allowed = {
 					has_dlc = "La Resistance"
-					NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 					original_tag = SPR
 				}
 				visible = {
@@ -2180,45 +1704,6 @@ characters={
 				cost = 100
 			}
 		}
-		instance = {
-			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
-			}
-			name=SPA_joaquin_garcia_morato
-			portraits={
-				army={
-					small="GFX_idea_generic_air_europe_2"
-				}
-			}
-			advisor={
-				slot = high_command
-				idea_token = SPA_joaquin_garcia_morato
-				ledger = air
-				name = SPA_joaquin_garcia_morato
-				allowed = {
-					NOT = {
-						has_dlc = "La Resistance"
-					}
-					original_tag = SPR
-				}
-				visible = {
-					has_government = fascism
-				}
-				available = {
-					has_government = fascism
-				}
-				traits = {
-					air_air_combat_training_3
-				}
-				cost = 200
-				ai_will_do = {
-					factor = 1.000
-				}
-			}
-		}
 	}
 
 	SPA_juan_vigon_suero_diaz = { # Carlist
@@ -2234,7 +1719,6 @@ characters={
 			ledger = air
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } }
 				original_tag = SPR
 			}
 			visible = {
@@ -2272,7 +1756,6 @@ characters={
 			ledger = army
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 				original_tag = SPR
 			}
 			visible = {
@@ -2308,7 +1791,6 @@ characters={
 			ledger = army
 			allowed = {
 				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
 				original_tag = SPR
 			}
 			visible = {
@@ -2366,10 +1848,6 @@ characters={
 			idea_token = SPR_carlos_masquelet_lacaci
 			name = SPR_carlos_masquelet_lacaci
 			allowed = {
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
 				original_tag = SPR
 			}
 			visible = {
@@ -2394,64 +1872,7 @@ characters={
 
 	SPA_ricardo_rada = { # Carlist
 		instance = {
-			allowed = {
-				has_dlc = "La Resistance"
-				NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
-			}
-			name=SPA_ricardo_rada
-			portraits={
-				army={
-					large="gfx/leaders/SPR/r56_portrait_SPR_Ricardo_de_Rada.dds" # R56
-					small="GFX_idea_generic_army_europe_1"
-				}
-			}
-			advisor={
-				slot = high_command
-				idea_token = SPA_ricardo_rada
-				ledger = army
-				allowed = {
-					has_dlc = "La Resistance"
-					NOT = { has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } } # R56
-					original_tag = SPR
-				}
-				visible = {
-					NOT = {
-						tag = SPD
-						tag = SPC
-					}
-				}
-				available = {
-					NOT = {
-						has_completed_focus = SPA_eliminate_the_carlists
-					}
-					custom_trigger_tooltip = {
-						tooltip = SPA_not_republican_spain_tt
-						NOT = { tag = SPD }
-					}
-				}
-				traits = {
-					army_entrenchment_2
-				}
-				cost = 100
-			}
-			corps_commander = { # R56
-				traits = { infantry_leader trait_SPA_carlist_loyalties }
-				skill = 3
-				attack_skill = 2
-				defense_skill = 3
-				planning_skill = 2
-				logistics_skill = 3
-				visible = {
-					has_completed_focus = SPA_unite_the_requetes
-				}
-			}
-		}
-		instance = {
 			allowed = {		
-				OR = {
-					NOT = { has_dlc = "La Resistance" }
-					has_game_rule = { rule = SPR_focus_tree_selection option = R56_TREE } # R56
-				}
 			}
 			name=SPA_ricardo_rada
 			portraits={
@@ -2523,9 +1944,7 @@ characters={
 			planning_skill=2
 			logistics_skill=1
 			visible = {
-				tag = N56
-				NOT = { tag = S56 }
-				has_completed_focus = SPR_Expand
+
 			}
 		}
 	}
@@ -2546,9 +1965,7 @@ characters={
 			planning_skill=2
 			logistics_skill=3
 			visible={
-				tag = N56
-				NOT = { tag = S56 }
-				has_completed_focus = SPR_Expand
+
 			}
 		}
 	}
@@ -2571,7 +1988,7 @@ characters={
 			visible={
 				tag = N56
 				NOT = { tag = S56 }
-				has_completed_focus = SPR_Expand
+
 			}
 		}
 	}
@@ -2640,9 +2057,7 @@ characters={
 			planning_skill=3
 			logistics_skill=2
 			visible={
-				has_global_flag = spanish_civil_war
-				NOT = { tag = N56 }
-				tag = S56
+
 			}
 		}
 	}
@@ -2663,10 +2078,7 @@ characters={
 			planning_skill=3
 			logistics_skill=2
 			visible={
-				has_global_flag = spanish_civil_war
-				NOT = { tag = N56 }
-				tag = S56
-				S56 = { has_completed_focus = SPR_Expand }
+
 			}
 		}
 	}
@@ -5320,12 +4732,6 @@ characters={
 						}
 					}
 					has_completed_focus = SPR_new_leadership
-					else_if = {
-						limit = {
-							has_focus_tree = Spain_focus
-						}
-						has_completed_focus = SPR_appease_the_workers
-					}
 					else = {
 						OR = {
 							has_government = democratic

@@ -27,26 +27,6 @@ DEN_r56_GER_porsche_organization = {
 	}
 
     available = {
-        owner = {
-            OR = {
-                is_subject_of = GER
-                is_subject_of = WGR
-                
-                is_in_faction_with = GER # add is in faction?
-                is_in_faction_with = WGR
-                
-                if = {
-                    limit = {
-                        NOT = { has_global_flag = DEN_use_DLC_tree }
-                    }
-                    has_completed_focus = DEN_Invite_the_Wehrwirtschaftsfuhrer
-                }
-            }
-            NOT = {
-                has_war_with = GER
-                has_war_with = WGR
-            }
-        }
 
     }
 	initial_trait = {
@@ -144,23 +124,13 @@ DEN_orlogsvaerftet_organization = {
         any_parent = { generic_mio_trait_long_range_raiding generic_mio_trait_high_speed_raiding }
         
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_modernize_the_navy
-                }
-                else = {
-                    has_completed_focus = DEN_Retrofit_the_Royal_Navy
-                }
-            }
+
         }
 
         equipment_bonus = {
-            naval_range = 0.05
-            naval_speed = 0.05
-            fuel_consumption = -0.05
+            naval_range = 0.10
+            naval_speed = 0.10
+            fuel_consumption = -0.15
         }
     }
 
@@ -193,23 +163,13 @@ DEN_orlogsvaerftet_organization = {
         relative_position_id = generic_mio_trait_long_range_raiding
 
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_appropriate_odense_staalskibsvaerft
-                }
-                else = {
-                    has_completed_focus = DEN_Battleship_Development
-                }
-            }
+ 
         }
 
         production_bonus = {
-            production_cost_factor = -0.05
-            production_capacity_factor = 0.05
-            production_resource_penalty_factor = -0.05
+            production_cost_factor = -0.15
+            production_capacity_factor = 0.15
+            production_resource_penalty_factor = -0.15
         }
     }
 
@@ -321,22 +281,12 @@ DEN_burmeister_wain_organization = {
         relative_position_id = DEN_mio_trait_engine_optimization
 
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_refit_civilian_ships
-                }
-                else = {
-                    has_completed_focus = DEN_Expand_the_Operational_Command
-                }
-            }
+
         }
 
         production_bonus = {
-            production_conversion_speed_factor = 0.1
-            production_resource_need_factor = -0.05
+            production_conversion_speed_factor = 0.25
+            production_resource_need_factor = -0.10
         }
     }
 
@@ -471,17 +421,7 @@ DEN_flyvertroppernes_organization = {
         any_parent = { generic_mio_trait_light_airframe generic_mio_trait_medium_airframe }
         
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_unify_flyvevabnet
-                }
-                else = {
-                    has_completed_focus = DEN_Establish_the_Royal_Airforce
-                }
-            }
+
         }
 
         production_bonus = {
@@ -533,17 +473,7 @@ DEN_flyvemaskinevaerksted_organization = {
         mutually_exclusive = { DEN_mio_trait_naval_detection }
 
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_flyveskolen
-                }
-                else = {
-                    has_completed_focus = DEN_Keep_the_Sealanes_Open
-                }
-            }
+
         }
 
         equipment_bonus = {
@@ -569,17 +499,7 @@ DEN_flyvemaskinevaerksted_organization = {
         mutually_exclusive = { DEN_mio_trait_sub_detection }
 
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_flyveskolen
-                }
-                else = {
-                    has_completed_focus = DEN_Keep_the_Sealanes_Open
-                }
-            }
+    
         }
 
         equipment_bonus = {
@@ -601,17 +521,7 @@ DEN_flyvemaskinevaerksted_organization = {
         any_parent = { generic_mio_trait_navigation_equipment }
         
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_unify_flyvevabnet
-                }
-                else = {
-                    has_completed_focus = DEN_CAS_Production
-                }
-            }
+  
         }
 
         production_bonus = {
@@ -675,17 +585,7 @@ DEN_DISA_organization = {
         }
         
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_expand_dansk_industri_syndikat
-                }
-                else = {
-                    has_completed_focus = DEN_Move_past_the_Krag_Jorgesen
-                }
-            }
+
         }
 
         equipment_bonus = {
@@ -709,17 +609,7 @@ DEN_DISA_organization = {
        }
        
        available = {
-           owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_expand_dansk_industri_syndikat
-                }
-                else = {
-                    has_completed_focus = DEN_Move_past_the_Krag_Jorgesen
-                }
-           }
+
        }
 
        equipment_bonus = {
@@ -856,17 +746,7 @@ DEN_haerens_tekniske_korps_organization = {
         }
         
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_expand_dansk_industri_syndikat
-                }
-                else = {
-                    has_completed_focus = DEN_Produce_Domestic_Artillery
-                }
-            }
+
         }
 
         limit_to_equipment_type = { 
@@ -900,9 +780,7 @@ DEN_haerens_tekniske_korps_organization = {
         }
         
         available = {
-            owner = {
-                has_completed_focus = DEN_expand_haerens_tekniske_korps
-            }
+
         }
 
         limit_to_equipment_type = { 
@@ -930,17 +808,6 @@ DEN_haerens_tekniske_korps_organization = {
         }
         
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_new_artillery_tactics
-                }
-                else = {
-                    has_completed_focus = DEN_Produce_Domestic_Artillery
-                }
-            }
         }
 
         limit_to_equipment_type = { 
@@ -1050,17 +917,7 @@ DEN_triangel_organization = {
         position = { x=9 y=0 }
         
         available = {
-            owner = {
-                if = {
-                    limit = {
-                        has_global_flag = DEN_use_DLC_tree
-                    }
-                    has_completed_focus = DEN_convert_automobile_production
-                }
-                else = {
-                    has_completed_focus = DEN_Motorization_of_the_Army
-                }
-            }
+
         }
 
         limit_to_equipment_type = {

@@ -9,7 +9,7 @@ focus_tree = {
 			add = 9
 			tag = TUR
 			has_dlc = "Battle for the Bosporus"
-			has_global_flag = tur_bftb_focus_tree
+			#has_global_flag = tur_bftb_focus_tree
 		}
 	}
 	
@@ -957,7 +957,6 @@ focus_tree = {
 		}
 		
 		available = {
-			r56_script_i_am_sane = yes
 			is_subject = no
 			any_state = {
 				OR = {
@@ -1022,7 +1021,6 @@ focus_tree = {
 		}
 		
 		available = {
-			r56_script_i_am_sane = yes
 			is_subject = no
 			any_state = {
 				OR = {
@@ -1108,7 +1106,6 @@ focus_tree = {
 		}
 		
 		available = {
-			r56_script_i_am_sane = yes
 			is_subject = no
 			any_state = {
 				custom_trigger_tooltip = {
@@ -1399,7 +1396,6 @@ focus_tree = {
 							limit = { has_global_flag = aus_dlc_focus_tree }
 							has_completed_focus = AUS_reinstate_the_imperial_council
 						}
-						else = { has_completed_focus = AUS_past_glories }
 						OR = {
 							is_in_faction = no
 							is_faction_leader = yes
@@ -1440,9 +1436,6 @@ focus_tree = {
 							is_in_faction = no
 							is_faction_leader = yes
 						}
-					}
-					AUS = {
-						has_completed_focus = AUS_past_glories
 					}
 				}
 			}
@@ -1646,7 +1639,6 @@ focus_tree = {
 		}
 		
 		available = {
-			r56_script_i_am_sane = yes
 			is_subject = no
 			any_state = {
 				OR = {
@@ -4458,9 +4450,7 @@ focus_tree = {
 		}
 
 		available = {	
-			r56_script_i_am_sane = yes
 			BUL = {
-				r56_script_target_is_sane = yes
 				is_in_faction = no
 				NOT = {
 					has_war_with = TUR
@@ -4475,9 +4465,7 @@ focus_tree = {
 		}
 			
 		bypass = {
-			BUL = {
-				r56_script_standard_bypass = yes
-			}
+
 		}
 
 		completion_reward = {
@@ -4621,16 +4609,11 @@ focus_tree = {
 		}
 
 		available = {	
-			r56_script_i_am_sane = yes
-			PER = {
-				r56_script_target_is_sane = yes
-			}
+
 		}
 			
 		bypass = {
-			PER = {
-				r56_script_standard_bypass = yes
-			}
+
 		}
 
 		completion_reward = {
@@ -5333,16 +5316,11 @@ focus_tree = {
 		}
 
 		available = {	
-			r56_script_i_am_sane = yes
-			GRE = {
-				r56_script_target_is_sane = yes
-			}
+
 		}
 			
 		bypass = {
-			GRE = {
-				r56_script_standard_bypass = yes
-			}
+
 		}
 
 		completion_reward = {
@@ -5921,17 +5899,15 @@ focus_tree = {
 		}
 
 		available = {	
-			r56_script_i_am_sane = yes
+
 			SOV = {
 				has_government = communism
-				r56_script_target_is_sane = yes
+
 			}
 		}
 			
 		bypass = {
-			SOV = {
-				r56_script_standard_bypass = yes
-			}
+
 		}		
 
 		completion_reward = {
@@ -5956,16 +5932,11 @@ focus_tree = {
 		}
 
 		available = {	
-			r56_script_i_am_sane = yes
-			IRQ = {
-				r56_script_target_is_sane = yes
-			}
+	
 		}
 			
 		bypass = {
-			IRQ = {
-				r56_script_standard_bypass = yes
-			}
+
 		}
 
 		completion_reward = {
@@ -5989,17 +5960,12 @@ focus_tree = {
 			base = 10
 		}
 		available = {	
-			r56_script_i_am_sane = yes
-			GRE = {
-				r56_script_target_is_sane = yes
-			}
+
 		}		
 
 
 		bypass = {
-			GRE = {
-				r56_script_standard_bypass = yes
-			}
+	
 		}
 		completion_reward = {
 			add_state_claim = 184
@@ -6525,28 +6491,11 @@ focus_tree = {
 		}
 
 		available = {	
-			r56_script_i_am_sane = yes
-			FRA = {
-				r56_script_target_is_sane = yes
-			}
-			ENG = {
-				r56_script_target_is_sane = yes
-			}
-			ITA = {
-				r56_script_target_is_sane = yes
-			}
+
 		}
 			
 		bypass = {
-			FRA = {
-				r56_script_standard_bypass = yes
-			}
-			ENG = {
-				r56_script_standard_bypass = yes
-			}
-			ITA = {
-				r56_script_standard_bypass = yes
-			}
+
 		}
 
 		completion_reward = {
@@ -6579,7 +6528,7 @@ focus_tree = {
 		}
 
 		available = {	
-			r56_script_i_am_sane = yes
+
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }

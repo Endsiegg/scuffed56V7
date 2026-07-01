@@ -9693,18 +9693,13 @@ country_event = { #Forts makes the people feels safe
 	trigger = {
 		original_tag = DEN
 		has_dlc = "Arms Against Tyranny"
-		if = {
-			limit = {
-				has_global_flag = DEN_use_DLC_tree
-			}
+		OR = {
 			has_completed_focus = DEN_build_a_modern_dannevirke
 			has_completed_focus = DEN_refortify_tunestillingen
-			has_completed_focus = DEN_fortify_the_islands
+			has_completed_focus = DEN_fortify_the_islands			
 		}
-		else = {
-			has_completed_focus = DEN_The_Frederick_Line
-			has_completed_focus = DEN_Fortify_the_Southern_Islands
-		}
+
+		
 		has_war = no
 		has_civil_war = no
 	}

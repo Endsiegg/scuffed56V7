@@ -78,12 +78,10 @@ AUS_ansaldo_organization = {
 	icon = GFX_idea_AUS_ansaldo
 	allowed = {
 		original_tag = AUS
-		has_dlc = "Arms Against Tyranny" 
-		has_dlc = "Gotterdammerung"
 	}
-	visible = { has_global_flag = aus_dlc_focus_tree }	#56
+	visible = { }	#56
 	available = {
-		owner = { has_completed_focus = AUS_invite_foreign_tank_designers }
+
 	}
 }
 
@@ -112,55 +110,9 @@ AUS_triesteshipyards_organization = { #has atlantic_fleet_naval_manufacturer pre
 	visible = { } 	#56 #has_global_flag = aus_dlc_focus_tree removed the flag because the MIO was unavailable in r56 AUS tree even with DLC 
 
 	available = { # add A-H effect? and join Skoda?
-		owner = { 
-			IF = {
-				limit = {
-					FROM = { original_tag = AUS has_focus_tree = austria_focus_tree }
-				}
-				has_completed_focus = AUS_revive_stt
-			}
-			else_if = {
-				limit = {
-					FROM = {
-						original_tag = AUS
-						has_focus_tree = austrian_focus
-					}
-				}
-				has_completed_focus = AUS_trieste_shipyards
-			}
-			else_if = {	#CRO/CZE/non-DLC HUN have a focus in r56 shared branch
-				limit = {
-					NOT = {
-						AND = {
-							has_dlc = "Gotterdammerung"
-							original_tag = HUN
-						}
-					}
-				}
-				has_completed_focus = AH_rijeka_naval_academy
-			}
-		}
+
 	}
 
-	visible = {
-		IF = {
-			limit = {
-				FROM = {
-					original_tag = HUN
-					has_dlc = "Gotterdammerung"
-				} 
-			}
-			FROM = {
-				has_completed_focus = wuw_HUN_integrate_bohemian_and_austrian_industries
-			}
-		}
-		else_if = {	#CRO/CZE/non-DLC HUN gets it from formable, AUS always has it visible
-			limit = {
-				FROM = { NOT = { original_tag = AUS } }
-			}
-			FROM = { has_cosmetic_tag = HUN_EMPIRE }
-		}
-	}
 
 	initial_trait = {
 		name = generic_mio_initial_trait_task_force_ship_builders
@@ -184,43 +136,19 @@ AUS_ELIN_organization = {
 		OR = {
 			AND = {
 				original_TAG = AUS
-				has_dlc = "Arms Against Tyranny" 
-				has_dlc = "Gotterdammerung"
 			}
 			AND = {
 				tag = HUN 
-				has_dlc = "Gotterdammerung"
 			}
 		}
 	}
 
 	visible = {
-		IF = {
-			limit = {
-				FROM = { original_tag = HUN } 
-			}
-			FROM = { has_completed_focus = wuw_HUN_integrate_bohemian_and_austrian_industries }
-		}
+
 	}
 
 	available = {
-		IF = {
-			limit = {
-				FROM = { 
-					original_tag = AUS 
-					has_global_flag = aus_dlc_focus_tree
-				} 
-			}
-			FROM = { has_completed_focus = AUS_elin }
-		}
-		else_if = {
-			limit = {
-				FROM = { 
-					original_tag = AUS
-				} 
-			}
-			FROM = { has_completed_focus = AUS_a_stealthier_approach }
-		}
+
 	}
 
 	initial_trait = {
@@ -352,11 +280,9 @@ AUS_phonix_fleugzeugwerke_organization = {
 	icon = GFX_idea_AUS_phonix_fleugzeugwerke
 	allowed = {
 		original_TAG = AUS
-		has_dlc = "Arms Against Tyranny" 
-		has_dlc = "Gotterdammerung"
 	}
 	visible = { 
-		FROM = { has_focus_tree = austria_focus_tree }
+
 	}
 
 	equipment_type = {
@@ -509,26 +435,15 @@ AUS_osterreichische_fleugzeugfabrik_organization = {
 		OR = {
 			AND = {
 				original_TAG = AUS
-				has_dlc = "Arms Against Tyranny" 
-				has_dlc = "Gotterdammerung"
 			}
 			AND = {
 				tag = HUN 
-				has_dlc = "Gotterdammerung"
 			}
 		}
 	}
 
 	visible = {
-		IF = {
-			limit = {
-				FROM = { original_tag = HUN } 
-			}
-			FROM = { has_completed_focus = wuw_HUN_integrate_bohemian_and_austrian_industries }
-		}
-		else = {
-			FROM = { has_focus_tree = austria_focus_tree }
-		}
+
 	}
 
 	add_trait = { 
@@ -605,7 +520,6 @@ AUS_steyr_armored_car = { #ADGZ
 	icon = GFX_idea_AUS_steyr_mannlicher # check icon
 	allowed = {	
 		original_tag = AUS 
-		has_dlc = "La Resistance"
 	}
 	initial_trait = {
 		name = generic_armored_car_organization
@@ -691,11 +605,9 @@ AUS_steyr_organization = {
 	icon = GFX_idea_AUS_steyr
 	allowed = {
 		original_TAG = AUS
-		has_dlc = "Arms Against Tyranny" 
-		has_dlc = "Gotterdammerung"
 	}
 	visible = {
-		owner = { has_focus_tree = austria_focus_tree }
+
 	}
 	add_trait = { 
 		token = AUS_mio_trait_innovative_riflemaking
@@ -755,20 +667,14 @@ AUS_osterreichische_saurerwerke_organization = {
 	icon = GFX_idea_AUS_saurer
 	allowed = {
 		original_tag = AUS
-		has_dlc = "Arms Against Tyranny" 
-		has_dlc = "Gotterdammerung"
-		has_dlc = "La Resistance"
 	}
 
 	available = {
-		owner = { has_completed_focus = AUS_saurerwerke }
+
 	}
 
 	visible = {
-		owner = {
-			has_focus_tree = austria_focus_tree 
-			NOT = { has_completed_focus = AUS_graf_und_stift_focus } 
-		}
+
 	}
 
 	equipment_type = {
@@ -903,14 +809,11 @@ AUS_osterreichische_saurerwerke_organization_no_lar = {
 	icon = GFX_idea_AUS_saurer 
 	allowed = {
 		original_tag = AUS
-		has_dlc = "Arms Against Tyranny" 
-		has_dlc = "Gotterdammerung"
-		NOT = { has_dlc = "La Resistance" } 
 	}
-	visible = { has_global_flag = aus_dlc_focus_tree }	#56
+	visible = {  }	#56
 	
 	available = {
-		owner = { has_completed_focus = AUS_saurerwerke }
+		owner = { }
 	}
 
 	equipment_type = {

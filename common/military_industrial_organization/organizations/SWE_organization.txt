@@ -24,24 +24,14 @@ SWE_landsverk_organization = {
 		special_trait_background  = yes
 		position = { x=0 y=1 }
 		available = { 
-			SWE = { 
-				if = { 
-					limit = {
-						has_global_flag = SWE_use_DLC_tree
-					}
-					has_completed_focus = SWE_allow_landsverk_to_operate 
-				}
-				else = {
-					has_completed_focus = SWE_respect_landsverk_independence
-				}
-			} 
+
 		}
 		production_bonus = {
-			production_capacity_factor = 0.03
+			production_capacity_factor = 0.10
 		}
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.08
+			military_industrial_organization_research_bonus = 0.10
 		
 		}
 	}
@@ -102,20 +92,10 @@ SWE_gotaverken_organization = {
 		special_trait_background  = yes
 		position = { x=0 y=2 }
 		available = { 
-			SWE = { 
-				if = { 
-					limit = {
-						has_global_flag = SWE_use_DLC_tree
-					}
-					has_completed_focus = SWE_gotaverken 
-				}
-				else = {
-					has_completed_focus = SWE_gotaverken_shipyards
-				}
-			} 
+	 
 		}
 		production_bonus = {
-			production_capacity_factor = 0.06
+			production_capacity_factor = 0.10
 		}
 	}
 }
@@ -246,64 +226,32 @@ SWE_bofors_organization = {
 			tag = SWE 
 			AND = {
 				tag = ETH
-				has_dlc = "By Blood Alone"
 			}
 			AND = {
 				tag = PER
-				has_dlc = "Graveyard of Empires"
-				has_dlc = "Arms Against Tyranny"
 			}
 		}
 	}
 
 	visible = {
-		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
-		}
-		IF = {
-			limit = { FROM = { original_tag = PER } }
-			FROM = { has_completed_focus = PER_swedish_artillery }
-		}
+
 	}
 
 	available = {
 		# When in a Foreign MIO, countries need to be at peace with original country
-		IF = {
-			limit = {
-				FROM = { NOT = { original_tag = SWE } }
-			}
-			FROM = { NOT = { has_war_with = SWE } }
-		}
-
-		IF = {
-			limit = {
-				FROM = { original_tag = ETH }
-			}
-			custom_trigger_tooltip = {
-				tooltip = has_invited_mio_tt
-				FROM = {
-					has_country_flag = has_invited_SWE_bofors_organization_flag
-				}
-			}
-		}
-		IF = {
-			limit = { FROM = { original_tag = PER } }
-			FROM = { has_completed_focus = PER_swedish_artillery }
-		}
 	}
 
 	initial_trait = {
 		name = generic_mio_initial_trait_artillery_manufacturer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.10
 		}
 		production_bonus = {
-			production_cost_factor = -0.02
+			production_cost_factor = -0.05
 		}
 		equipment_bonus = {
-			air_attack = 0.03
+			air_attack = 0.10
 		}
 	}
 
@@ -317,17 +265,7 @@ SWE_bofors_organization = {
 
 		all_parents = { generic_mio_trait_improved_hydraulic_recoil_system }
 		available = {
-			SWE = { 
-				if = { 
-					limit = {
-						has_global_flag = SWE_use_DLC_tree
-					}
-					has_completed_focus = SWE_bofors_fly_swatter 
-				}
-				else = {
-					has_completed_focus = SWE_bofors_kanoner
-				}
-			}
+
 		}
 
 		limit_to_equipment_type = {
@@ -335,8 +273,8 @@ SWE_bofors_organization = {
 		}
 
 		equipment_bonus = {
-			air_attack = 0.1
-			ap_attack = 0.05
+			air_attack = 0.15
+			ap_attack = 0.15
 		}
 	}
 
@@ -350,17 +288,7 @@ SWE_bofors_organization = {
 
 		all_parents = { generic_mio_trait_improved_hydraulic_recoil_system }
 		available = {
-			SWE = { 
-				if = { 
-					limit = {
-						has_global_flag = SWE_use_DLC_tree
-					}
-					has_completed_focus = SWE_bofors_anti_tank_gun 
-				}
-				else = {
-					has_completed_focus = SWE_artilleriskjutskolan
-				}
-			}
+
 		}
 
 		limit_to_equipment_type = {
@@ -368,13 +296,13 @@ SWE_bofors_organization = {
 		}
 
 		equipment_bonus = {
-			ap_attack = 0.05
-			hard_attack = 0.05
+			ap_attack = 0.15
+			hard_attack = 0.15
 
 		}
 
 		production_bonus = {
-			production_capacity_factor = 0.05 
+			production_capacity_factor = 0.10 
 		}
 	}
 
@@ -388,13 +316,13 @@ SWE_bofors_organization = {
 
 		all_parents = { generic_mio_trait_sliding_breech_block }
 		available = {
-			SWE = { has_completed_focus = SWE_defense_in_depth }
+
 		}
 
 		equipment_bonus = {
-			defense = 0.08
-			ap_attack = 0.05
-			hard_attack = 0.05
+			defense = 0.10
+			ap_attack = 0.10
+			hard_attack = 0.10
 		}
 	}
 }

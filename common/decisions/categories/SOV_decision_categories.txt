@@ -21,6 +21,20 @@ SOV_paranoia_system = {
 			has_country_flag = SOV_paranoia_system_active_flag
 			has_country_flag = SOV_third_moscow_trial_flag
 			has_country_flag = SOV_debug_show_paranoia_system_flag #Debug
+
+			# So Opposition can get rid of the Anti-Soviet Military Thinking NS
+			has_idea = SOV_anti_soviet_military_thinking_banned_army
+			has_idea = SOV_anti_soviet_military_thinking_banned_navy
+			has_idea = SOV_anti_soviet_military_thinking_banned_airforce
+			# So Opposition can get rid of the Junior Army/Navy Officers Purged NS
+			has_idea = SOV_purged_junior_army_officers_1
+			has_idea = SOV_purged_junior_army_officers_2
+			has_idea = SOV_purged_junior_army_officers_3
+			has_idea = SOV_purged_junior_navy_officers_1
+			has_idea = SOV_purged_junior_navy_officers_2
+			has_idea = SOV_purged_junior_navy_officers_3
+			SOV_is_stalinist = yes
+			has_country_flag = SOV_assassinated_stalin_flag			
 		}
 	}
 
@@ -41,7 +55,6 @@ SOV_propaganda_campaigns = {
 	visible = {
 		OR = {
 			has_completed_focus = SOV_expand_the_agitprop
-			has_completed_focus = SOV_expand_the_agitprop_old
 			has_country_flag = SOV_debug_show_propaganda_system_flag #Debug
 		}
 	}
@@ -134,7 +147,6 @@ SOV_diplomacy_baltic_decision_category = {
 	visible = {
 		OR = {
 			has_completed_focus = SOV_baltic_security
-			has_completed_focus = SOV_improve_stalin_line	#Old tree
 		}
 		OR = {
 			country_exists = EST
@@ -157,7 +169,6 @@ SOV_diplomacy_nordic_decision_category = {
 	visible = {
 		OR = {
 			has_completed_focus = SOV_secure_leningrad
-			has_completed_focus = SOV_secure_leningrad_old	#Old tree
 		}
 		OR = {
 			country_exists = FIN
@@ -181,9 +192,6 @@ SOV_diplomacy_balkan_decision_category = {
 	visible = {
 		OR = {
 			has_completed_focus = SOV_claim_on_bessarabia
-			has_completed_focus = SOV_claim_bessarabia		#Old tree
-			has_completed_focus = SOV_invite_romania
-			has_completed_focus = SOV_invite_romania_old	#Old tree
 		}
 		any_country = {
 			BUL_is_balkan_nation = yes
@@ -205,9 +213,7 @@ SOV_diplomacy_middle_east_decision_category = {
 	visible = {
 		OR = {
 			has_completed_focus = SOV_support_afghan_ideology
-			has_completed_focus = SOV_support_afghan_ideology_old	#Old tree
 			has_completed_focus = SOV_the_khakimov_proposal
-			has_completed_focus = SOV_the_khakimov_proposal_old		#Old tree
 		}
 		OR = {
 			country_exists = IRQ
@@ -233,7 +239,6 @@ SOV_diplomacy_asia_decision_category = {
 			AND = {
 				OR = {
 					has_completed_focus = SOV_the_threat_from_the_land_of_the_rising_sun
-					has_completed_focus = SOV_far_east_fortification_old					#Old tree
 				}
 				any_country = {
 					OR = {
@@ -245,7 +250,6 @@ SOV_diplomacy_asia_decision_category = {
 			AND = {
 				OR = {
 					has_completed_focus = SOV_reconcile_japan
-					has_completed_focus = SOV_reconcile_japan_old							#Old tree
 				}
 				any_country = {
 					OR = {
@@ -262,7 +266,6 @@ SOV_diplomacy_asia_decision_category = {
 			}
 			AND = {
 				OR = {
-					has_completed_focus = SOV_claim_on_sinkiang
 					has_completed_focus = SOV_the_gobi_gambit
 				}
 				SIK = {
@@ -324,10 +327,7 @@ SOV_kill_trotsky_dec_cat = {
 	}
 
 	visible = {
-		OR = {
-			has_completed_focus = SOV_behead_the_snake
-			has_completed_focus = SOV_nkvd_primacy_old
-		}
+		has_completed_focus = SOV_behead_the_snake
 	}
 }
 
@@ -419,7 +419,6 @@ SOV_permanent_revolution_dec_cat = {
 	visible = {
 		OR = {
 			has_completed_focus = SOV_the_permanent_revolution
-			has_completed_focus = SOV_anti_colonialist_rebels
 		}
 	}
 }

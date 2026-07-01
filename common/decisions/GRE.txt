@@ -18,24 +18,12 @@ GRE_1936_election_category = {
 		fire_only_once = yes
 
 		activation = {
-			NOT = {	#56
-				has_game_rule = {
-					rule = GRE_focus_tree_selection
-					option = R56_TREE
-				}
-			}
 			NOT = { has_country_flag = GRE_1936_election }
 			date > 1935.12.31
 			date < 1936.01.26
 		}
 
 		visible = {
-			NOT = {	#56
-				has_game_rule = {
-					rule = GRE_focus_tree_selection
-					option = R56_TREE
-				}
-			} 
 			NOT = { has_country_flag = GRE_1936_election }
 		}
 
@@ -1500,11 +1488,6 @@ GRE_investment_decisions_category = {
 					has_capitulated = yes
 					is_puppet = yes
 					NOT = { has_government = communism }
-					if = {	#56 - For old SOV tree
-						limit = { has_global_flag = SOV_old_focus_tree }
-						has_completed_focus = SOV_claim_on_the_straits_old
-					}
-					else = { has_completed_focus = SOV_claim_on_the_straits }
 				}
 			}
 		}
@@ -1569,11 +1552,6 @@ GRE_investment_decisions_category = {
 					has_capitulated = yes
 					is_puppet = yes
 					NOT = { has_government = communism }
-					if = {	#56 - For old SOV tree
-						limit = { has_global_flag = SOV_old_focus_tree }
-						has_completed_focus = SOV_claim_on_the_straits_old
-					}
-					else = { has_completed_focus = SOV_claim_on_the_straits }
 				}
 			}
 		}
@@ -1640,11 +1618,6 @@ GRE_investment_decisions_category = {
 					has_capitulated = yes
 					is_puppet = yes
 					NOT = { has_government = communism }
-					if = {	#56 - For old SOV tree
-						limit = { has_global_flag = SOV_old_focus_tree }
-						has_completed_focus = SOV_claim_on_the_straits_old
-					}
-					else = { has_completed_focus = SOV_claim_on_the_straits }
 				}
 			}
 		}
@@ -2785,14 +2758,6 @@ GRE_hellenic_academy_category = {
 				TUR = { 
 					has_completed_focus = TUR_pivot_to_the_past
 					has_completed_focus = TUR_reconfigure_our_foreign_policy
-				}
-			}
-			else = {
-				TUR = {
-					OR = {
-						has_completed_focus = TUR_overthrow_inonus_government
-						has_completed_focus = TUR_befriend_the_fascist_council
-					}
 				}
 			}
 		}

@@ -1,5 +1,5 @@
 characters={
-	EST_konstantin_pats={	#"POLITICS_KONSTANTIN_PATS_DESC"
+	EST_konstantin_pats={
 		name=EST_konstantin_pats
 		portraits={
 			civilian={
@@ -11,10 +11,7 @@ characters={
 		}
 		country_leader={
 			ideology=oligarchism
-			traits = {
-				political_dancer
-			}
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
 	}
@@ -23,7 +20,7 @@ characters={
 		name=EST_artur_sirk
 		portraits={
 			civilian={
-				large="GFX_portrait_EST_artur_sirk"	#was "r56_portrait_EST_Artur_Sirk.dds" pre-nsb
+				large="GFX_portrait_EST_artur_sirk"
 			}
 			army = {
 				small = "GFX_idea_EST_artur_sirk" #Not ever used
@@ -32,7 +29,7 @@ characters={
 		country_leader={
 			ideology=fascism_ideology
 			traits = { HUN_popular_among_paramilitaries }
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
 	}
@@ -49,24 +46,9 @@ characters={
 		}
 		country_leader={
 			ideology=marxism
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 			traits = { baltic_revolutionary }
-		}
-	}
-
-	EST_johannes_lauristin={
-		name="Johannes Lauristin"
-		portraits={
-			civilian={
-				large="gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_6.dds"
-			}
-		}
-		country_leader={
-			ideology=leninism
-			expire="1965.1.1"
-			id=-1
-			traits = { revolutionary_writer }
 		}
 	}
 
@@ -100,18 +82,19 @@ characters={
 			}
 		}
 
-		#country_leader={
-		#	ideology=stalinism
-		#	expire="1965.1.1"
-		#	id=-1
-		#}
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1.1"
+			id=-1
+			traits = { HUN_ardent_stalinist }
+		}
 	}
 
 	EST_jaan_tonisson={
 		name=EST_jaan_tonisson
 		portraits={
 			civilian={
-				large="GFX_portrait_EST_jaan_tonisson"	#was "r56_portrait_EST_Jaan_Tonisson.dds" pre-nsb
+				large="GFX_portrait_EST_jaan_tonisson"
 			}
 			army={
 				small="GFX_idea_EST_jaan_tonisson"
@@ -125,10 +108,7 @@ characters={
 			}
 			available = {
 				IF = { 
-					limit = { 
-						has_dlc = "No Step Back" 
-						has_global_flag = EST_vanilla_focus_tree
-					}
+					limit = { has_dlc = "No Step Back" }
 					has_completed_focus = EST_establish_the_rahvuskogu 
 				}
 			}
@@ -150,28 +130,21 @@ characters={
 				}
 			}
 		}
-		#country_leader={
-		#	ideology = socialism
-		#	traits = {
-		#		triumphant_revolutionary
-		#	}
-		#	expire="1965.1.1"
-		#	id=-1
-		#}
+		country_leader={
+			ideology=conservatism
+			traits = { BEL_determined_prime_minister }
+			expire="1965.1.1.1"
+			id=-1
+		}
 	}
 
-	EST_ants_piip={
-		name="Ants Piip"
-		portraits={
-			civilian={
-				large="gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_4.dds"
+	UBD_sophie_buxhoeveden = {
+		name = UBD_sophie_buxhoeveden
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UBD_sophie_buxhoeveden
+				small = GFX_portrait_UBD_sophie_buxhoeveden_small
 			}
-		}
-		country_leader={
-			ideology=socialism
-			expire="1965.1.1"
-			id=-1
-			traits = { lawyer }
 		}
 	}
 
@@ -194,10 +167,7 @@ characters={
 			}
 			available = {
 				IF = { 
-					limit = { 
-						has_dlc = "No Step Back"
-						has_global_flag = EST_vanilla_focus_tree
-					}
+					limit = { has_dlc = "No Step Back" }
 					has_completed_focus = EST_rally_the_nation 
 				}
 			}
@@ -206,21 +176,16 @@ characters={
 			}
 		}
 
-		#field_marshal={
-		#	traits={ old_guard }
-		#	skill=3
-		#	attack_skill=2
-		#	defense_skill=3
-		#	planning_skill=2
-		#	logistics_skill=3
-		#	legacy_id=-1
-		#	visible = { 
-		#		has_dlc = "No Step Back" 
-		#		NOT = {
-		#			has_government = communism
-		#		}
-		#	}
-		#}
+		field_marshal={
+			traits={ old_guard }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+			visible = { has_dlc = "No Step Back" }
+		}
 	}
 
 	EST_herbert_brede={
@@ -232,29 +197,14 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { career_officer old_guard war_hero artillerist }
+			traits={ old_guard }
 			skill=2
-			attack_skill=1
-			defense_skill=3
-			planning_skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
 			logistics_skill=1
 			legacy_id=-1
-		}
-		advisor={
-			slot = high_command
-			idea_token = EST_herbert_brede
-			ledger = army
-			allowed = {
-				original_tag = EST
-				#has_dlc = "No Step Back" - we had him too...
-			}
-			traits = {
-				army_artillery_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
+			visible = { has_dlc = "No Step Back" }
 		}
 	}
 
@@ -267,8 +217,8 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ BALTIC_anti_bolshevik infantry_officer }
-			skill=2
+			traits={ BALTIC_anti_bolshevik }
+			skill=1
 			attack_skill=2
 			defense_skill=2
 			planning_skill=2
@@ -279,221 +229,81 @@ characters={
 	}
 
 	EST_aleksander_jaakson={
-		instance = {
-			allowed = {
-				has_dlc = "No Step Back"
-			}
-			name="Alexander Jaakson"
-			portraits={
-				army={
-					large="GFX_portrait_EST_aleksander_jaakson"
-					small="GFX_idea_EST_aleksander_jaakson"
-				}
-			}
-			corps_commander={
-				traits={ career_officer infantry_officer vigorous BALTIC_anti_bolshevik }
-				skill=3
-				attack_skill=2
-				defense_skill=3
-				planning_skill=4
-				logistics_skill=3
-				legacy_id=-1
-				visible = { 
-					NOT = {
-						has_government = communism
-					}					
-				}
-			}
-			#advisor={
-			#	slot = high_command
-			#	idea_token = EST_alexander_jaakson
-			#	ledger = army
-			#	allowed = {
-			#		original_tag = EST
-			#		#has_dlc = "No Step Back" - we had him too...
-			#	}
-			#	traits = {
-			#		army_artillery_2
-			#	}
-			#	cost = 100
-			#	ai_will_do = {
-			#		factor = 1.000
-			#	}
-			#}
-		}		
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "No Step Back" 
-				}
-				
-			}
-			name="Alexander Jaakson"
-			portraits={
-				army={
-					large="GFX_portrait_EST_aleksander_jaakson"
-					small="GFX_idea_EST_aleksander_jaakson"
-				}
-			}
-			 corps_commander = { #Purged after annexed by soviets
-			 	traits = { career_officer infantry_officer vigorous promising }
-			 	skill = 2
-			    attack_skill = 2
-			    defense_skill = 1
-			    planning_skill = 2
-			    logistics_skill = 2
-				visible = { 
-					NOT = {
-						has_government = communism
-					}
-				}
-			}
-			#advisor={
-			#	slot = high_command
-			#	idea_token = EST_alexander_jaakson
-			#	ledger = army
-			#	allowed = {
-			#		original_tag = EST
-			#		#has_dlc = "No Step Back" - we had him too...
-			#	}
-			#	traits = {
-			#		army_artillery_2
-			#	}
-			#	cost = 100
-			#	ai_will_do = {
-			#		factor = 1.000
-			#	}
-			#}
-		}
-	}
-
-	EST_johan_laidoner={
-		instance = {
-			allowed = {
-				has_dlc = "No Step Back" 
-			}		
-			name="Johan Laidoner"
-			portraits={
-				army={
-					small="GFX_idea_EST_johan_laidoner"
-					large="GFX_portrait_EST_johan_laidoner"
-				}
-			}
-			advisor={
-				slot = army_chief
-				idea_token = EST_johan_laidoner
-				allowed = {
-					original_tag = EST
-				}
-				traits = {
-					army_chief_drill_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-			}
-			
-			field_marshal={
-				traits={ war_hero old_guard homeland_connoisseur brilliant_strategist thorough_planner }
-				skill=3
-				attack_skill=2
-				defense_skill=2
-				planning_skill=4
-				logistics_skill=2
-				legacy_id=-1
-				visible = {
-					NOT = {
-						has_government = communism
-					}					
-				 }
-			}
-		}
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "No Step Back" 
-				}
-			}		
-			name="Johan Laidoner"
-			portraits={
-				army={
-					small="GFX_idea_EST_johan_laidoner"
-					large="GFX_portrait_EST_johan_laidoner"
-				}
-			}
-			advisor={
-				slot = army_chief
-				idea_token = EST_johan_laidoner
-				allowed = {
-					original_tag = EST
-				}
-				traits = {
-					army_chief_drill_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-			}
-			
-			field_marshal={
-				traits={ war_hero old_guard defensive_doctrine homeland_connoisseur brilliant_strategist }
-				skill=3
-				attack_skill=2
-				defense_skill=2
-				planning_skill=4
-				logistics_skill=2
-				legacy_id=-1
-				visible = { 
-					NOT = {
-						has_government = communism
-					}				
-				}
-			}
-		}			
-	}
-
-	EST_gustav_jonson={
-		name="Gustav Jonson"
+		name=EST_alexander_jaakson
 		portraits={
 			army={
-				large="GFX_portrait_EST_gustav_jonson"
-				small="GFX_idea_generic_air_europe_2" #No portrait
+				large="GFX_portrait_EST_aleksander_jaakson"
+				small="GFX_idea_EST_aleksander_jaakson"
 			}
 		}
-		corps_commander = { #Purged after annexed by soviets
-		 	traits = { cavalry_officer winter_specialist }
-		 	skill = 2
-		 	legacy_id = 299
-		    attack_skill = 2
-		    defense_skill = 2
-		    planning_skill = 1
-		    logistics_skill = 2
-			visible = { 
-			}				
+		corps_commander={
+			traits={ infantry_officer BALTIC_anti_bolshevik }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=-1
+			visible = { has_dlc = "No Step Back"}
 		}
 		advisor={
 			slot = high_command
-			idea_token = EST_gustav_jonson
+			idea_token = EST_alexander_jaakson
 			ledger = army
 			allowed = {
 				original_tag = EST
+				has_dlc = "No Step Back"
 			}
 			traits = {
-				army_cavalry_2
+				army_artillery_2
 			}
 			cost = 100
 			ai_will_do = {
 				factor = 1.000
 			}
-		}	
+		}
 	}
+
+	EST_johan_laidoner={
+		name=EST_johan_laidoner
+		portraits={
+			army={
+				small="GFX_idea_EST_johan_laidoner"
+				large="GFX_portrait_EST_johan_laidoner"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = EST_johan_laidoner
+			allowed = {
+				original_tag = EST
+			}
+			traits = {
+				army_chief_drill_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		field_marshal={
+			traits={ old_guard }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=-1
+			visible = { has_dlc = "No Step Back"}
+		}
+	}
+
 
 	### THEORISTS ###
 
 	EST_juhan_tuuling={
-		name="Juhan Tuuling"
+		name=EST_juhan_tuuling
 		portraits={
 			army={
 				small="GFX_idea_generic_army_europe_1" #No portrait
@@ -515,7 +325,7 @@ characters={
 	}
 
 	EST_alex_nirk={
-		name="Alex Nirk"
+		name=EST_alex_nirk
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_europe_2" #No portrait
@@ -536,71 +346,6 @@ characters={
 		}
 	}
 
-	EST_august_kasekamp={
-		name="August Kasekamp"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_1"
-			}
-		}
-		advisor={
-			cost = 100
-			slot = theorist
-			idea_token = EST_august_kasekamp
-			ledger = army
-			allowed = {
-				original_tag = EST
-			}
-			
-			traits = {
-				military_theorist
-			}
-		}
-	}
-
-	EST_herman_liikane={
-		name="Herman Liikane"
-		portraits={
-			army={
-				small="GFX_idea_generic_navy_europe_2"
-			}
-		}
-		advisor={
-			cost = 100
-			slot = theorist
-			idea_token = EST_herman_liikane
-			ledger = navy
-			allowed = {
-				original_tag = EST
-			}
-			
-			traits = {
-				naval_theorist
-			}
-		}
-	}
-
-	EST_hans_kitvel={
-		name="Hans Kitvel"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_europe_2"
-			}
-		}
-		advisor={
-			cost = 100
-			slot = theorist
-			idea_token = EST_hans_kitvel
-			ledger = navy
-			allowed = {
-				original_tag = EST
-			}
-			
-			traits = {
-				air_warfare_theorist
-			}
-		}
-	}
 
 	### ARMY CHIEFS ###
 
@@ -612,7 +357,7 @@ characters={
 			idea_token = EST_alfons_rebane
 			allowed = {
 				original_tag = EST
-				has_global_flag = EST_vanilla_focus_tree
+				has_dlc = "No Step Back" 
 			}
 			traits = {
 				army_chief_morale_2
@@ -630,62 +375,12 @@ characters={
 			}
 		}
 	}
-
-	EST_jaan_maide={
-		advisor={
-			slot = army_chief
-			idea_token = EST_jaan_maide
-			traits = {
-				army_chief_morale_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		} 
-		name="Jaan Maide"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_3"
-			}
-		}
-	}
-
-	EST_nikolai_reek={
-		advisor={
-			slot = army_chief
-			idea_token = EST_nikolai_reek
-			traits = {
-				army_chief_organizational_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		} 
-		name="Nikolai Reek"
-		portraits={
-			army={
-				large = GFX_kr_portrait_europe_generic_land_9
-				small = GFX_kr_portrait_europe_generic_land_9_small
-			}
-		}
-		corps_commander = {
-			traits = { infantry_officer }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 3
-			legacy_id = -1
-		}	
-	}
 	
 
 	### NAVY CHIEFS ###
 
 	EST_oskar_eiriksson={
-		name="Oskar Eiriksson"
+		name=EST_oskar_eiriksson
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_europe_2" #No portrait
@@ -708,7 +403,7 @@ characters={
 	}
 
 	EST_alfred_vendt={
-		name="Alfred Vendt"
+		name=EST_alfred_vendt
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_europe_3" #No portrait
@@ -730,80 +425,14 @@ characters={
 		}
 	}
 
-	EST_valev_mere={
-		name="Valev Mere"
-		portraits={
-			army={
-				large = GFX_kr_portrait_europe_generic_navy_1
-				small = GFX_kr_portrait_europe_generic_navy_1_small
-			}
-		}
-		advisor={
-			slot = navy_chief
-			idea_token = EST_valev_mere
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				navy_chief_reform_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		navy_leader={
-			traits={ fleet_protector }
-			skill = 2
-			attack_skill=2
-			defense_skill=2
-			maneuvering_skill=2
-			coordination_skill=1
-			legacy_id=-1
-		}
-	}
-
-	EST_valentin_grenz={
-		name="Valentin Grenz"
-		portraits={
-			army={
-				large = GFX_kr_portrait_europe_generic_navy_3
-				small = GFX_kr_portrait_europe_generic_navy_3_small
-			}
-		}
-		advisor={
-			slot = navy_chief
-			idea_token = EST_valentin_grenz
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				navy_chief_maneuver_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		navy_leader={
-			traits={ navy_career_officer spotter }
-			skill = 2
-			attack_skill=2
-			defense_skill=2
-			maneuvering_skill=1
-			coordination_skill=2
-			legacy_id=-1
-		}	
-	}
 
 	### AIR CHIEFS ###
 
 	EST_richard_tomberg={
-		name="Richard Tomberg"
+		name=EST_richard_tomberg
 		portraits={
 			army={
 				small="GFX_idea_generic_air_europe_1" #No portrait
-				large = "GFX_portrait_EST_richard_tomberg"
 			}
 		}
 		advisor={
@@ -820,20 +449,10 @@ characters={
 				factor = 1.000
 			}
 		}
-		corps_commander = { #Purged after annexed by soviets
-			traits = { career_officer air_force_ties }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
-			visible = { 
-			}
-		}		
 	}
 
-	EST_valfried_gutmann={
-		name="Valfried Gutmann"
+	EST_leo_sepp={
+		name=EST_leo_sepp
 		portraits={
 			army={
 				small="GFX_idea_generic_air_europe_3" #No portrait
@@ -841,7 +460,7 @@ characters={
 		}
 		advisor={
 			slot = air_chief
-			idea_token = EST_valfried_gutmann
+			idea_token = EST_leo_sepp
 			allowed = {
 				original_tag = EST
 			}
@@ -861,24 +480,21 @@ characters={
 	# Jaakson up there
 
 	EST_richard_veermaa={
-		name="Richard Veermaa"
+		name=EST_richard_veermaa
 		portraits={
-			civilian={
-				small="GFX_idea_generic_political_advisor_europe_4"
+			army={
+				small="GFX_idea_generic_army_europe_2"
 			}
 		}
 		advisor={
-			slot = political_advisor
+			slot = high_command
 			idea_token = EST_richard_veermaa
 			ledger = army
 			allowed = {
 				original_tag = EST
 			}
-			available  = {
-				has_government  = neutrality
-			}
 			traits = {
-				minister_of_the_interior_abate
+				army_cavalry_2
 			}
 			cost = 100
 			ai_will_do = {
@@ -888,7 +504,7 @@ characters={
 	}
 
 	EST_nikolay_g_karotamm={
-		name="Nikolay G. Karotamm"
+		name=EST_nikolay_g_karotamm
 		portraits={
 			army={
 				small = "GFX_idea_EST_nikolai_karotamm"
@@ -915,7 +531,7 @@ characters={
 	}
 
 	EST_voldemar_mere={
-		name="Voldemar Mere"
+		name=EST_voldemar_mere
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_europe_1"
@@ -938,174 +554,6 @@ characters={
 		}
 	}
 
-	EST_jaan_kruus={
-		name="Jaan Kruus"
-		portraits={
-			army={
-				large = GFX_kr_portrait_europe_generic_land_4
-				small = GFX_kr_portrait_europe_generic_land_4_small
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = EST_jaan_kruus
-			ledger = army
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				army_infantry_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		corps_commander={
-			traits = { infantry_officer }
-			skill=2
-			attack_skill=2
-			defense_skill=1
-			planning_skill=2
-			logistics_skill=2
-			legacy_id=-1
-		}
-	}
-
-	EST_martin_volmer_jervan={
-		name="Martin-Volmer Jervan"
-		portraits={
-			army={
-				small = "GFX_idea_generic_army_europe_2"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = EST_martin_volmer_jervan
-			ledger = army
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				army_regrouping_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-
-	EST_roman_kruul={
-		name="Roman Kuul"
-		portraits={
-			army={
-				small = "GFX_idea_generic_air_europe_1"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = EST_roman_kruul
-			ledger = army
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				air_air_combat_training_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-	EST_juhan_karl_fischer={
-		name="Juhan Karl Fischer"
-		portraits={
-			army={
-				small = "GFX_idea_generic_navy_europe_2"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = EST_juhan_karl_fischer
-			ledger = army
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				air_naval_strike_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-	EST_johannes_orasmaa= {
-		name="Johannes Orasmaa"
-		portraits={
-			army={
-				large = GFX_kr_portrait_europe_generic_land_5
-				small = GFX_kr_portrait_europe_generic_land_5_small
-			}
-		}
-		corps_commander={
-			traits = { artillerist }
-			skill = 2
-			attack_skill = 1
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 1
-			legacy_id=-1
-		}
-	}
-
-	EST_aleksander_pulk= {
-		name="Aleksander Pulk"
-		portraits={
-			army={
-				large = GFX_kr_portrait_europe_generic_land_6
-				small = GFX_kr_portrait_europe_generic_land_6_small
-			}
-		}
-		corps_commander={
-			traits = { infantry_officer }
-			skill = 2
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 3
-			logistics_skill = 2
-			legacy_id=-1
-		}
-	}
-
-	EST_kurt_arced_linneberg={
-		name="Kurt-Arved Linneberg"
-		portraits={
-			army={
-				small = "GFX_idea_generic_navy_europe_1"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = EST_kurt_arced_linneberg
-			ledger = army
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				navy_naval_air_defense_1
-			}
-			cost = 50
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
 
 	### POLITICAL ADVISORS ###
 
@@ -1116,7 +564,7 @@ characters={
 	# Larka up there
 
 	EST_boris_kumm={
-		name="Boris Kumm"
+		name=EST_boris_kumm
 		portraits={
 			army={
 				small="GFX_idea_EST_boris_kumm"
@@ -1131,18 +579,14 @@ characters={
 			traits = {
 				backroom_backstabber 
 			}
-			available = {
-				has_government = communism
-			}
 			ai_will_do = {
 				factor = 0.000
 			}
 		}
-
 	}
 
 	EST_august_rei={
-		name="August Rei"
+		name=EST_august_rei
 		portraits={
 			army={
 				small="GFX_idea_EST_august_rei"
@@ -1155,96 +599,7 @@ characters={
 				original_tag = EST
 			}
 			traits = {
-				silent_workhorse		
-			}
-			available  = {
-				has_government = democratic
-			}
-		}
-	}
-
-	EST_leo_sepp={
-		name="Leo Sepp"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_europe_3" #No portrait
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_leo_sepp
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				financial_expert				
-			}
-			available  = {
-				has_government = democratic
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-	EST_theodor_pool={
-		name="Theodor Pool"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_1"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_theodor_pool
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				ambitious_agrarian
-			}
-			available  = {
-				has_government = democratic
-			}
-		}
-	}
-
-	EST_nikolai_kostnar={
-		name="Nikolai Köstner"
-		portraits={
-			army={
-				small="GFX_kr_portrait_europe_generic_1_small"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_nikolai_kostnar
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				economist
-			}
-		}
-	}
-
-	EST_karl_selter={
-		name="Karl Selter"
-		portraits={
-			army={
-				small="GFX_kr_portrait_europe_generic_16_small"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_karl_selter
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				smooth_talking_charmer
+				popular_figurehead 
 			}
 		}
 	}
@@ -1260,19 +615,18 @@ characters={
 			slot = political_advisor
 			idea_token = EST_august_jakobson
 			allowed = {
+				OR = {
 					original_tag = EST
-					has_dlc = "No Step Back"
+					original_tag = SWE
+				}
+				has_dlc = "No Step Back"
+				
 			}
 			available = {
-				IF = { 
-					limit = { 
-						has_dlc = "No Step Back" 
-						has_global_flag = EST_vanilla_focus_tree
-					}
+				OR = {
 					has_completed_focus = BALTIC_revolutionary_cabinet 
-
-				}				
-				
+					SWE_refuge_for_revolutionaries_trigger = yes
+				}
 			}
 			traits = {
 				revolutionary_poet 
@@ -1281,7 +635,7 @@ characters={
 	}
 
 	EST_juri_uluots={
-		name="Jüri Uluots"
+		name=EST_juri_uluots
 		portraits={
 			army={
 				small="GFX_idea_EST_juri_uluots"
@@ -1293,140 +647,12 @@ characters={
 			allowed = {
 				original_tag = EST
 			}
-			available = {
-				has_government = neutrality
-			}
 			traits = {
-				accomplished_professor
+				captain_of_industry 
 			}
 		}
 	}
-	EST_ado_birk={
-		name="Ado Birk"
-		portraits={
-			army={
-				small="GFX_kr_portrait_europe_generic_10_small"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_ado_birk
-			allowed = {
-				original_tag = EST
-			}
-			available = {
-				has_government = democratic
-			}
-			traits = {
-				liberal_reformer
-			}
-		}
-	}
-	EST_aleksander_joeaar = {
-		name="Aleksander Jõeäär"
-		portraits={
-			army={
-				small="GFX_kr_portrait_europe_generic_4_small"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_aleksander_joeaar
-			allowed = {	
-				original_tag = EST
-			}
-			traits = {
-				trade_unionist
-			}
-			available = { 
-				OR = {
-					has_government = democratic
-					has_government = communism
-				}	
-			}	
-		}
-	}
-	EST_kaarl_eenpalu={
-		name="Kaarel Eenpalu"
-		portraits={
-			army={
-				small="GFX_kr_portrait_europe_generic_9_small"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_kaarl_eenpalu
-			allowed = {
-				original_tag = EST
-			}
-			available = {
-				has_government = neutrality
-			}
-			traits = {
-				autocratic_journalist
-			}
-		}
-	}
-	EST_viktor_pihlak={
-		name="Viktor Pihlak"
-		portraits={
-			army={
-				small="GFX_kr_portrait_europe_generic_12_small"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_viktor_pihlak
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				captain_of_industry
-			}
-		}
-	}
-	EST_eduard_kimber={
-		name="Eduard Kimber"
-		portraits={
-			army={
-				small="GFX_kr_portrait_europe_generic_11_small"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_eduard_kimber
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				war_industrialist
-			}
-		}
-	}
-	EST_nikolai_kann = {
-		name="Nikolai Kann"
-		portraits={
-			army={
-				small="GFX_kr_portrait_europe_generic_15_small"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = EST_nikolai_kann 
-			allowed = {	
-				original_tag = EST
-			}
-			traits = {
-				education_reformer
-			}
-			available = { 
-				OR = {
-					has_government = democratic
-					has_government = neutrality
-				}	
-			}	
-		}
-	}
+
 	EST_viktor_puskar={
 		name=EST_viktor_puskar
 		portraits={
@@ -1442,14 +668,7 @@ characters={
 					has_dlc = "No Step Back"
 			}
 			available = {
-				IF = { 
-					limit = { 
-						has_dlc = "No Step Back" 
-						has_global_flag = EST_vanilla_focus_tree
-					}
-					has_completed_focus = EST_veterans_government 
-				}				
-				
+				has_completed_focus = EST_veterans_government 
 			}
 			traits = {
 				veteran_anti_bolshevik 
@@ -1468,18 +687,17 @@ characters={
 			slot = political_advisor
 			idea_token = EST_voldemar_voolman
 			allowed = {
-				original_tag = EST
+				OR = {
+					original_tag = EST
+					original_tag = SWE
+				}
 				has_dlc = "No Step Back"
 			}
 			available = {
-				IF = { 
-					limit = { 
-						has_dlc = "No Step Back" 
-						has_global_flag = EST_vanilla_focus_tree
-					}
+				OR = {
 					has_completed_focus = BALTIC_revolutionary_cabinet 
-				}				
-			
+					SWE_refuge_for_revolutionaries_trigger = yes
+				}
 			}
 			traits = {
 				socialist_justice 
@@ -1498,16 +716,16 @@ characters={
 			slot = political_advisor
 			idea_token = EST_henrik_allik
 			allowed = {
+				OR = {
 					original_tag = EST
-					has_dlc = "No Step Back"
+					original_tag = SWE
+				}	
+				has_dlc = "No Step Back"
 			}
 			available = {
-				IF = { 
-					limit = { 
-						has_dlc = "No Step Back" 
-						has_global_flag = EST_vanilla_focus_tree
-					}
+				OR = {
 					has_completed_focus = BALTIC_revolutionary_cabinet 
+					SWE_refuge_for_revolutionaries_trigger = yes
 				}
 			}
 			traits = {
@@ -1521,7 +739,6 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_EST_johan_pitka"
-				large="GFX_portrait_EST_johan_pitka"
 			}
 		}
 		advisor={
@@ -1531,70 +748,15 @@ characters={
 				original_tag = EST
 				has_dlc = "No Step Back"
 			}
-			available = {				
-				IF = { 
-					limit = { 
-						has_dlc = "No Step Back" 
-						has_global_flag = EST_vanilla_focus_tree
-					}
-					has_completed_focus = EST_veterans_government 
-				} 
+			available = {
+				has_completed_focus = EST_veterans_government 
 			}
 			traits = {
 				vapsid_economist 
 			}
 		}
-		#navy_leader={
-		#	traits={ 
-		#		chief_engineer
-		#	}
-		#	skill=3
-		#	attack_skill=3
-		#	defense_skill=3
-		#	maneuvering_skill=2
-		#	coordination_skill=2
-		#	legacy_id=-1
-		#	visible = { 
-		#		NOT = {
-		#			has_government = communism
-		#		}
-		#	}			
-		#}		
 	}
-	EST_hermann_salza={
-		name="Hermann Salza"
-		portraits={
-			army={
-				small="GFX_idea_generic_navy_europe_1"
-				large="GFX_portrait_EST_hermann_salza"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = EST_hermann_salza
-			ledger = navy
-			allowed = {
-				original_tag = EST
-			}
-			traits = {
-				navy_fleet_logistics_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		navy_leader={
-		 	traits = { seawolf gentlemanly }
-		 	skill = 2
-		 	attack_skill = 3
-		 	defense_skill = 1
-		 	maneuvering_skill = 1
-		 	coordination_skill = 2
-			legacy_id=-1
-		
-		}		
-	}
+
 	EST_hjalmar_mae={
 		name=EST_hjalmar_mae
 		portraits={
@@ -1610,63 +772,11 @@ characters={
 				has_dlc = "No Step Back"
 			}
 			available = {
-				IF = { 
-					limit = { 
-						has_dlc = "No Step Back" 
-						has_global_flag = EST_vanilla_focus_tree
-					}
-					has_completed_focus = EST_veterans_government 
-				} 
+				has_completed_focus = EST_veterans_government 
 			}
 			traits = {
 				subservient_ultranationalist 
 			}
 		}
 	}
-	EST_albrecht_altma  = {
-		name = "Albrecht Altma"
-		portraits = {
-			army = {
-				large = GFX_portrait_generic_europe_male_03
-			}
-		}
-
-		scientist = {
-			traits = {  }
-			skills = {
-				specialization_nuclear = 1
-			}
-		}
-	}
-	EST_herman_voldemar_reier  = {
-		name = "Herman Voldemar Reier"
-		portraits = {
-			army = {
-				large = GFX_portrait_generic_europe_male_14
-			}
-		}
-
-		scientist = {
-			traits = { scientist_trait_r56_political_dancer }
-			skills = {
-				specialization_land = 1
-			}
-		}
-	}
-	EST_voldemar_post  = {
-		name = "Voldemar Post"
-		portraits = {
-			army = {
-				large = GFX_portrait_generic_europe_male_07
-			}
-		}
-
-		scientist = {
-			traits = { scientist_trait_aircraft_specialist }
-			skills = {
-				specialization_air = 2
-			}
-		}
-	}
-
 }

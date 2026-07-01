@@ -188,15 +188,7 @@ characters = {
 				original_tag = SOV
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = sov_old_focus_tree
-					}
-					has_completed_focus = SOV_positive_heroism_old
-				}
-				else = {
-					has_completed_focus = SOV_positive_heroism
-				}
+				has_completed_focus = SOV_positive_heroism
 				if = {
 					limit = {
 						has_character_flag = SOV_exiled_flag
@@ -248,15 +240,7 @@ characters = {
 				}
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = sov_old_focus_tree
-					}
-					has_completed_focus = SOV_positive_heroism_old
-				}
-				else = {
-					has_completed_focus = SOV_positive_heroism
-				}
+				has_completed_focus = SOV_positive_heroism
 				if = {
 					limit = {
 						has_character_flag = SOV_exiled_flag
@@ -553,17 +537,9 @@ characters = {
 					}
 					NOT = { has_character_flag = SOV_exiled_flag }
 				}
-				if = {
-					limit = {
-						has_global_flag = sov_old_focus_tree
-					}
-					has_completed_focus = SOV_positive_heroism_old
-					else = {
-						NOT = {
-							has_completed_focus = SOV_the_military_conspiracy
-						}
-					}
-				}
+				NOT = {
+					has_completed_focus = SOV_the_military_conspiracy
+				}						
 			}
 			traits = {
 				mass_assault_expert
@@ -573,10 +549,10 @@ characters = {
 		field_marshal = {
 			traits = { brilliant_strategist career_officer trait_reckless infantry_officer offensive_doctrine }
 			skill = 4
-			attack_skill = 3
-			defense_skill = 4
-			planning_skill = 4
-			logistics_skill = 2
+			attack_skill = 7
+			defense_skill = 6
+			planning_skill = 6
+			logistics_skill = 6
 			legacy_id = 401
 			visible = { NOT = { has_character_flag = SOV_exiled_flag } }
 		}
@@ -605,15 +581,8 @@ characters = {
 					}
 					NOT = { has_character_flag = SOV_exiled_flag }
 				}
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = sov_old_focus_tree
-						}
-					}
-					NOT = {
-						has_completed_focus = SOV_the_military_conspiracy
-					}
+				NOT = {
+					has_completed_focus = SOV_the_military_conspiracy
 				}
 			}
 			traits = {
@@ -3790,9 +3759,6 @@ characters = {
 						NOT = { has_character_flag = SOV_exiled_flag }
 					}
 				}
-				else = {
-					has_completed_focus = SOV_form_a_fifth_column
-				}
 			}
 			visible = {
 				OR  = {
@@ -3848,9 +3814,6 @@ characters = {
 							}
 							NOT = { has_character_flag = SOV_exiled_flag }
 						}
-					}
-					else = {
-						has_completed_focus = SOV_form_a_fifth_column
 					}
 				}
 				visible = {
@@ -3910,7 +3873,7 @@ characters = {
 						}
 					}
 					else = {
-						has_completed_focus = SOV_form_a_fifth_column
+
 					}
 				}
 				visible = {
@@ -3950,26 +3913,10 @@ characters = {
 				original_tag = SOV
 			}
 			visible = {
-				if = {
-					limit = {
-						has_global_flag = sov_old_focus_tree
-					}
-					has_completed_focus = SOV_form_a_fifth_column_old
-				}
-				else = {
-					has_completed_focus = SOV_form_a_fifth_column
-				}
+
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = sov_old_focus_tree
-					}
-					has_completed_focus = SOV_counter_coup_old
-				}
-				else = {
-					has_completed_focus = SOV_counter_coup
-				}
+
 			}
 			traits = {
 				staunch_monarchist
@@ -4048,10 +3995,6 @@ characters = {
 				if = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
-					}
-					has_completed_focus = SOV_finish_the_five_year_plan_old
-					NOT = {
-						has_completed_focus = SOV_form_a_fifth_column_old
 					}
 				}
 				else = {
@@ -4162,9 +4105,6 @@ characters = {
 				if = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
-					}
-					NOT = {
-						has_completed_focus = SOV_form_a_fifth_column_old
 					}
 				}
 			}
@@ -4365,7 +4305,6 @@ characters = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
 					}
-					has_completed_focus = SOV_policy_of_individual_security_old
 				}
 				else = {
 					has_completed_focus = SOV_policy_of_individual_security
@@ -4404,7 +4343,6 @@ characters = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
 					}
-					has_completed_focus = SOV_policy_of_collective_security_old
 				}
 				else = {
 					has_completed_focus = SOV_policy_of_collective_security
@@ -4549,7 +4487,7 @@ characters = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
 					}
-					has_completed_focus = SOV_trotskyite_victory
+
 				}
 				else = {
 					OR = {
@@ -4627,7 +4565,7 @@ characters = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
 					}
-					has_completed_focus = SOV_trotskyite_victory
+
 				}
 				else = {
 					OR = {
@@ -4703,7 +4641,7 @@ characters = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
 					}
-					has_completed_focus = SOV_trotskyite_victory
+	
 				}
 				else = {
 					OR = {
@@ -4771,7 +4709,7 @@ characters = {
 						has_global_flag = sov_old_focus_tree
 					}
 					NOT = {
-						has_completed_focus = SOV_power_struggle_old
+
 					}
 				}
 			}
@@ -4780,7 +4718,7 @@ characters = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
 					}
-					has_completed_focus = SOV_trotskyite_victory
+
 				}
 				else = {
 					OR = {
@@ -4863,7 +4801,7 @@ characters = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
 					}
-					has_completed_focus = SOV_trotskyite_victory
+
 				}
 				else = {
 					OR = {
@@ -4994,7 +4932,7 @@ characters = {
 					limit = {
 						has_global_flag = sov_old_focus_tree
 					}
-					has_completed_focus =  SOV_trotskyite_victory
+
 				}
 				else = {
 					OR = {
@@ -5343,18 +5281,10 @@ characters = {
 				original_tag = SOV
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = sov_old_focus_tree
-					}
-					has_completed_focus = SOV_orthadox_resurgance
-				}
-				else = {
-					OR = {
-						has_completed_focus = SOV_patriarch_of_all_russia
-						has_completed_focus = SOV_the_declaration
-					}
-				}
+				OR = {
+					has_completed_focus = SOV_patriarch_of_all_russia
+					has_completed_focus = SOV_the_declaration
+				}	
 			}
 			traits = {
 				patriarch_of_moscow_and_all_russia 
@@ -5645,10 +5575,6 @@ characters = {
 			ai_will_do = {
 				factor = 0.000
 				modifier = {
-					OR = {
-						has_completed_focus = SOV_form_a_fifth_column		#new tree
-						has_completed_focus = SOV_form_a_fifth_column_old	#old tree, trotsky path should block this with further modifiers
-					}
 					add = 1
 				}
 			}
@@ -5911,9 +5837,7 @@ characters = {
 				original_tag = SOV
 			}
 			visible = {
-				NOT = {
-					has_global_flag = sov_old_focus_tree
-				}
+
 			}
 			available = {
 				SOV_is_exiles = yes
@@ -5956,9 +5880,7 @@ characters = {
 				original_tag = SOV
 			}
 			visible = {
-				NOT = {
-					has_global_flag = sov_old_focus_tree
-				}
+
 			}
 			available = {
 				SOV_is_exiles = yes
@@ -6062,7 +5984,6 @@ characters = {
 					NOT = {
 						has_character_flag = SOV_character_purged_flag 
 					}
-					has_global_flag = sov_old_focus_tree
 				}
 				available = {
 					if = {
@@ -6334,7 +6255,6 @@ characters = {
 				owner = {
 					OR = {
 						has_completed_focus = SOV_development_of_tankograd
-						has_completed_focus = SOV_establish_tankograd
 					}
 				}
 			}

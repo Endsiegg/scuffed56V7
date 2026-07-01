@@ -362,7 +362,6 @@ focus_tree = {
 		available = {
 			date > 1938.04.01
 			is_subject = no
-			r56_script_i_am_sane = yes
 			has_army_manpower = {
 				size > 199999
 			}
@@ -2332,8 +2331,6 @@ focus_tree = {
 					NOT = { is_in_faction_with = ENG }
 				}
 			}
-			r56_script_i_am_sane = yes # R56
-			POR = { r56_script_target_is_sane = yes } # R56
 		}
 		bypass = {
 			POR = {	#R56
@@ -2547,8 +2544,6 @@ focus_tree = {
 			NOT = {
 				is_in_faction_with = ITA
 			}
-			#r56_script_i_am_sane = yes # R56 - Removed in favor of harsh ai_will_do check
-			#ITA = { r56_script_target_is_sane = yes } # R56 - Removed in favor of harsh ai_will_do check
 		}
 		bypass = {
 		}
@@ -2611,8 +2606,6 @@ focus_tree = {
 			NOT = {
 				is_in_faction_with = FRA
 			}
-			#r56_script_i_am_sane = yes # R56 - Removed in favor of harsh ai_will_do check
-			#FRA = { r56_script_target_is_sane = yes } # R56 - Removed in favor of harsh ai_will_do check
 		}
 		bypass = {
 		}
@@ -2731,7 +2724,6 @@ focus_tree = {
 	focus = {
 		id = SPA_retake_the_americas
 		available = {
-			r56_script_i_am_sane = yes # R56
 			has_navy_size = { size > 24 } # R56		
 			OR = {
 				NOT = { is_in_faction_with = ARG }
@@ -8075,8 +8067,7 @@ focus_tree = {
 	focus = {
 		id = SPA_press_the_gibraltar_claim
 		available = {
-			#r56_script_i_am_sane = yes # R56 - Removed in favor of harsh ai_will_do check
-			#ENG = { r56_script_target_is_sane = yes } # R56 - Removed in favor of harsh ai_will_do check
+
 		}
 		bypass = {
 		}
@@ -15272,7 +15263,7 @@ focus_tree = {
 	focus = {
 		id = SPR_join_the_global_fight_against_fascism
 		available = {
-			r56_script_i_am_sane = yes # R56
+
 		}
 		bypass = {
 		}

@@ -13,7 +13,6 @@ NOR_thunes_mekaniske_verksted_organization = {
     icon = GFX_idea_NOR_thunes_mekaniske_vaerksted
     allowed = { 
         tag = NOR
-        has_dlc = "Arms Against Tyranny"
     }
 
     equipment_type = {  
@@ -44,11 +43,7 @@ NOR_thunes_mekaniske_verksted_organization_r56 = {
     include = generic_infantry_tank_organization
     icon = GFX_idea_NOR_thunes_mekaniske_vaerksted
     allowed = { 
-        tag = NOR
-        NOT = {
-            has_dlc = "Arms Against Tyranny"
-        }
-        
+        tag = NOR  
     }
 
     equipment_type = {  
@@ -198,7 +193,6 @@ NOR_karljohansvern_verft_organization = {
     icon = GFX_idea_NOR_karljohansvern_verft
     allowed = { 
         tag = NOR
-        has_dlc = "Arms Against Tyranny"
     } 
 	initial_trait = {
 		name = generic_mio_initial_trait_battle_line_ship_builders
@@ -239,13 +233,7 @@ NOR_marinens_hovedverft_organization = {
         tag = NOR
     } 
 	available = {
-        owner = {
-            OR = {
-                has_completed_focus = NOR_capital_ships
-                has_completed_focus = NOR_battleship_focus    
-            }
-        	      
-        }
+
 	}
 	initial_trait = {
 		name = generic_mio_refurbishment_repair_organization
@@ -322,9 +310,7 @@ NOR_as_norsk_aeroplanfabrik_organization = { # flying ship manufacturer
 	}
 
     available = {
-        owner = {
-            has_completed_focus = NOR_resurrect_norsk_aeroplanfabrik
-        }
+
     }
 	initial_trait = {
 		name = generic_mio_initial_trait_heavy_aircraft_designer
@@ -347,7 +333,6 @@ NOR_marinens_flyvebaatfabrikk_organization = {
     icon = GFX_idea_NOR_marinens_flyvebaatfabrikk
     allowed = { 
         tag = NOR
-        has_dlc = "Arms Against Tyranny"
     }
     
 	initial_trait = {
@@ -374,9 +359,7 @@ NOR_marinens_flyvebaatfabrikk_organization = {
         position = { x=9 y=0 }
         
         available = {
-            FROM = {
-                has_completed_focus = NOR_increase_air_production
-            }
+
         }
 
         production_bonus = {
@@ -410,7 +393,6 @@ NOR_raufoss_ammunisjonsfabrikker_organization = {
     icon = GFX_idea_NOR_raufoss_ammunisjonsfabrikker
     allowed = { 
         tag = NOR
-        has_dlc = "Arms Against Tyranny"
     }  
 
     trait = { 
@@ -423,7 +405,6 @@ NOR_raufoss_ammunisjonsfabrikker_organization = {
 
         all_parents = { generic_mio_trait_improved_hydraulic_recoil_system }
         available = {
-            NOR = { has_completed_focus = NOR_buy_aa_from_sweden }
         }
 
         limit_to_equipment_type = {
@@ -443,9 +424,6 @@ NOR_raufoss_ammunisjonsfabrikker_organization_r56 = {
     icon = GFX_idea_NOR_raufoss_ammunisjonsfabrikker
     allowed = { 
         tag = NOR
-        NOT = {
-            has_dlc = "Arms Against Tyranny"
-        }
         
     }  
 
@@ -459,7 +437,7 @@ NOR_raufoss_ammunisjonsfabrikker_organization_r56 = {
 
         all_parents = { generic_mio_trait_improved_hydraulic_recoil_system }
         available = {
-            NOR = { has_completed_focus = NOR_buy_aa_from_sweden }
+
         }
 
         limit_to_equipment_type = {
@@ -478,7 +456,6 @@ NOR_kongsberg_vaapenfabrikk_organization = {
     icon = GFX_idea_NOR_kongsberg_vaapenfabrikk
     allowed = { 
         tag = NOR
-        has_dlc = "Arms Against Tyranny"
     }
     initial_trait = {
         
@@ -499,7 +476,6 @@ NOR_norsk_spraengstofindustri_organization = {
     icon = GFX_idea_NOR_norsk_Spraengstofindustri
     allowed = { 
         tag = NOR
-        has_dlc = "Arms Against Tyranny"  
     }
 	initial_trait = {
 		name = generic_mio_initial_trait_support_equipment_manufacturer
@@ -516,11 +492,9 @@ NOR_cadillac_organization = { #TODO_Manu: This is a perfect candidate to become 
     icon = GFX_idea_NOR_cadillac
     allowed = { 
         tag = NOR
-        has_dlc = "Arms Against Tyranny"  
     }  
     available = {
         FROM = { NOT = { has_war_with = USA } } #This is a bit weird since the MIO does not exist in USA, but consistent with other foreign MIOs requisites
-        FROM = { has_completed_focus = NOR_invite_cadillac_to_norway }
     }
 
     initial_trait = {
