@@ -338,3 +338,37 @@ has_any_occupation_cost_trigger = {
 is_vichy_france = {
 	has_country_flag = is_vichy_france	
 }
+
+FRA_is_industrial_relocation_destiny_state = {
+	OR = {
+		state = 458 #Tunisia
+		state = 460 #Constantine
+		state = 459 #Algiers
+		state = 461 #Casablanca
+		state = 462 #Marrakech
+		state = 513 #Tlemcen
+		state = 933 #Batna
+	}
+}
+
+FRA_is_industrial_relocation_destiny_fallback_state = {
+	OR = {
+		#French Congo
+		state = 722 #Middle Congo
+		state = 539 #Gabon
+		state = 773 #Cameroon
+		state = 660 #Ubangi - Shari
+		state = 774 #Chad
+		#Ivory Coast
+		state = 779 #ivory coast
+		state = 778 #Upper Volta
+		state = 777 #Togo
+		#
+		state = 776 #Dahomey
+		state = 781 #Niger
+		state = 780 #Guinea
+		state = 899 #Kayes
+		state = 272 #Senegal
+		state = 557 #Mauritania
+	}
+}

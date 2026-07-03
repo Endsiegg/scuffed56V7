@@ -237,7 +237,7 @@ political_actions = {
 		cancel_if_not_visible = yes
 
 		complete_effect = {
-			add_political_power = 25
+			add_political_power = 150
 			add_stability = 0.05 #just a little reward for you
 			set_country_flag = FRA_popular_front_was_dealth_with
 		}
@@ -1327,7 +1327,7 @@ economy_decisions = {
 			}
 		}
 
-		cost = 50
+		cost = 25
 
 		ai_will_do = {
 			factor = 10
@@ -1350,12 +1350,12 @@ economy_decisions = {
 				}
 				remove_ideas = FRA_matignon_agreements2
 			}
-			if = {
-				limit = {
-					communism > 0.25
-				}
-				country_event = lar_france_political_violence.2
-			}
+			# if = {
+			# 	limit = {
+			# 		communism > 0.25
+			# 	}
+			# 	country_event = lar_france_political_violence.2
+			# }
 		}
 	}
 
@@ -1388,8 +1388,8 @@ economy_decisions = {
 				}
 			}
 		}
-		days_remove = 120
-		cost = 50
+		days_remove = 30
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1423,8 +1423,8 @@ economy_decisions = {
 				}
 			}
 		}
-		days_remove = 120
-		cost = 50
+		days_remove = 30
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1459,8 +1459,8 @@ economy_decisions = {
 				}
 			}
 		}
-		days_remove = 120
-		cost = 50
+		days_remove = 30
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1494,8 +1494,8 @@ economy_decisions = {
 				}
 			}
 		}
-		days_remove = 120
-		cost = 50
+		days_remove = 30
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1529,8 +1529,8 @@ economy_decisions = {
 				}
 			}
 		}
-		days_remove = 120
-		cost = 50
+		days_remove = 30
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -3442,7 +3442,7 @@ FRA_nationalisation = {
 
 		}
 
-		days_remove = 90
+		days_remove = 30
 		days_re_enable = 0
 
 		cost = 0
@@ -3581,7 +3581,7 @@ FRA_nationalisation = {
 
 		}
 
-		days_remove = 90
+		days_remove = 60
 		days_re_enable = 0
 
 		cost = 0
@@ -3729,7 +3729,7 @@ FRA_nationalisation = {
 
 		}
 
-		days_remove = 90
+		days_remove = 30
 		days_re_enable = 0
 
 		cost = 0
@@ -3982,6 +3982,325 @@ FRA_4th_international = {
 			FROM = {
 				add_timed_idea = { idea = comintern_influence days = 720 }
 			}
+		}
+	}
+}
+
+#### ##    ## ########  ##     ##  ######  ######## ########  ##    ##    ########  ######## ##        #######   ######     ###    ######## ####  #######  ##    ##
+ ##  ###   ## ##     ## ##     ## ##    ##    ##    ##     ##  ##  ##     ##     ## ##       ##       ##     ## ##    ##   ## ##      ##     ##  ##     ## ###   ##
+ ##  ####  ## ##     ## ##     ## ##          ##    ##     ##   ####      ##     ## ##       ##       ##     ## ##        ##   ##     ##     ##  ##     ## ####  ##
+ ##  ## ## ## ##     ## ##     ##  ######     ##    ########     ##       ########  ######   ##       ##     ## ##       ##     ##    ##     ##  ##     ## ## ## ##
+ ##  ##  #### ##     ## ##     ##       ##    ##    ##   ##      ##       ##   ##   ##       ##       ##     ## ##       #########    ##     ##  ##     ## ##  ####
+ ##  ##   ### ##     ## ##     ## ##    ##    ##    ##    ##     ##       ##    ##  ##       ##       ##     ## ##    ## ##     ##    ##     ##  ##     ## ##   ###
+#### ##    ## ########   #######   ######     ##    ##     ##    ##       ##     ## ######## ########  #######   ######  ##     ##    ##    ####  #######  ##    ##
+
+
+#Category only allowed for FRA
+FRA_industry_relocation = {
+
+	FRA_generic_industry_relocation = {
+		priority = 10
+
+		icon = generic_construction
+
+		# ai_will_do = {
+		# 	factor = 0
+		# 	modifier = {
+		# 		add = 200 # oh shit they are getting close!
+		# 		FROM = {
+		# 			OR = {
+		# 				state = 219 #MOSCOW
+		# 				state = 195 #LENINGRAD
+		# 				state = 202 #KIEV
+		# 				state = 206 #MINSK
+		# 				state = 217 #STALINGRAD
+		# 			}
+		# 			any_neighbor_state = {
+		# 				NOT = { is_fully_controlled_by = ROOT }
+		# 			}
+		# 		}
+		# 	}
+		# }
+
+		state_target = yes
+
+		#targets = { core_states }
+
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of = ROOT
+				is_fully_controlled_by = ROOT
+				is_on_continent = europe
+				OR = {
+					has_state_category = town
+					has_state_category = large_town
+					has_state_category = city
+					has_state_category = large_city
+					has_state_category = megalopolis
+					has_state_category = metropolis
+				}
+				infrastructure > 2
+			}
+		}
+
+		target_root_trigger = {
+			original_tag = FRA
+			OR = {
+				has_completed_focus = FRA_move_industry_to_the_africa
+			}
+			has_civil_war = no
+		}
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				infrastructure > 2
+			}
+			has_equipment = { train_equipment > 79 } #20 trains per factory
+		}
+
+		visible = {
+			FROM = {
+				OR = { #Has at least 2 factories
+					arms_factory > 1
+					industrial_complex > 1
+					AND = {
+						arms_factory > 0
+						industrial_complex > 0
+					}
+				}
+			}
+		}
+
+		cancel_if_not_visible = no
+
+		cost = 5
+
+		days_remove = FRA_industrial_relocation_days
+
+		complete_effect = {  #Attempt to remove 2 CIVS & 2 MILS
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = FRA_industrial_relocation_trains_decision_negative
+					producer = FRA
+				}
+			}
+			custom_effect_tooltip = FRA_industry_relocation_trains_tt
+			custom_effect_tooltip = FRA_industry_relocation_complete_effect_tt
+			#REMOVE factories
+			FROM = {
+				hidden_effect = {
+					set_temp_variable = { FRA_factories_counter = 0 }
+
+					#Attempt to relocate 50%-50% of mils-civs
+					set_temp_variable = { FRA_half_the_factories_to_relocate = FRA.FRA_industrial_relocation_max_factories }
+					divide_temp_variable = { FRA_half_the_factories_to_relocate = 2 }
+					while_loop_effect = {
+						limit = {
+							check_variable = { FRA_factories_counter = FRA.FRA_industrial_relocation_max_factories compare = less_than }
+						}
+						if = { #GO MILS (if possible)
+							limit = {
+								check_variable = { FRA_factories_counter = FRA_half_the_factories_to_relocate compare = less_than }
+							}
+							if = {
+								limit = {
+									arms_factory > 0
+								}
+								remove_building = {
+									type = arms_factory
+									level = 1
+								}
+								if = {
+									limit = {
+										has_state_flag = FRA_mils_removed_flag
+									}
+									modify_state_flag = { flag = FRA_mils_removed_flag value = 1 }
+								}
+								else = {
+									set_state_flag = FRA_mils_removed_flag
+								}
+							}
+							else_if = {
+								limit = {
+									industrial_complex > 0
+								}
+								remove_building = {
+									type = industrial_complex
+									level = 1
+								}
+								if = {
+									limit = {
+										has_state_flag = FRA_civs_removed_flag
+									}
+									modify_state_flag = { flag = FRA_civs_removed_flag value = 1 }
+								}
+								else = {
+									set_state_flag = FRA_civs_removed_flag
+								}
+							}
+						}
+						else = { #GO CIVS (if possible)
+							if = {
+								limit = {
+									industrial_complex > 0
+								}
+								remove_building = {
+									type = industrial_complex
+									level = 1
+								}
+								if = {
+									limit = {
+										has_state_flag = FRA_civs_removed_flag
+									}
+									modify_state_flag = { flag = FRA_civs_removed_flag value = 1 }
+								}
+								else = {
+									set_state_flag = FRA_civs_removed_flag
+								}
+							}
+							else_if = {
+								limit = {
+									arms_factory > 0
+								}
+								remove_building = {
+									type = arms_factory
+									level = 1
+								}
+								if = {
+									limit = {
+										has_state_flag = FRA_mils_removed_flag
+									}
+									modify_state_flag = { flag = FRA_mils_removed_flag value = 1 }
+								}
+								else = {
+									set_state_flag = FRA_mils_removed_flag
+								}
+							}
+						}
+						add_to_temp_variable = { FRA_factories_counter = 1 }
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = FRA_industrial_relocation_trains_decision
+					producer = FRA
+				}
+			}
+			custom_effect_tooltip = FRA_industry_relocation_remove_effect_tt
+			#RELOCATE FACTORIES
+			FROM = {
+				set_temp_variable = { FRA_factories_counter = 0 }
+				#Factories attempt to get relocated in 2 different states
+				set_temp_variable = { FRA_half_the_factories_to_relocate = FRA.FRA_industrial_relocation_max_factories }
+				divide_temp_variable = { FRA_half_the_factories_to_relocate = 2 }
+				while_loop_effect = { #NOTE: Due to the seed not changing during the execution of this effect, the same state will always be chosen, UNLESS it runs out of slots -> That's the reason for this
+					limit = {
+						check_variable = { FRA_factories_counter = FRA_half_the_factories_to_relocate compare = less_than }
+					}
+					FRA_relocate_industry_in_appropriate_state_effect = yes
+					add_to_temp_variable = { FRA_factories_counter = 1 }
+				}
+			}
+			custom_effect_tooltip = FRA_relocate_industry_repair_tt
+			custom_effect_tooltip = FRA_relocate_industry_lose_control_tt
+		}
+	}
+
+	move_rhone_aluminium_plant = { #20
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 20
+			}
+		}
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			has_full_control_of_state = 20
+			has_full_control_of_state = 772
+			has_equipment = { train_equipment > 19 } #20 trains per factory
+		}
+
+		visible = {
+			has_completed_focus = FRA_move_industry_to_the_africa
+			controls_state = 20
+			controls_state = 772
+		#	20 = { has_state_flag = rhone_aluminium_developed }
+			has_civil_war = no
+		}
+
+		fire_only_once = yes
+
+		cost = 5
+		days_remove = FRA_industrial_relocation_days
+
+		modifier = {
+
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = FRA_industrial_relocation_trains_decision_aluminium_negative
+					producer = FRA
+				}
+			}
+			20 = {
+				add_resource = {
+					type = aluminium
+					amount = -35
+				}
+				add_resource = {
+					type = steel
+					amount = -60
+				}
+			}
+			custom_effect_tooltip = FRA_industry_relocation_aluminium_plant_trains_tt
+		}
+
+		remove_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = FRA_industrial_relocation_trains_decision_aluminium
+					producer = FRA
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 772
+				}
+				772 = {
+					add_resource = {
+						type = aluminium
+						amount = 35
+					}
+					add_resource = {
+						type = steel
+						amount = 60
+					}
+				}
+			}
+			set_global_flag = relocate_industry_from_rhone
+			custom_effect_tooltip = FRA_relocate_industry_from_rhone_tt
 		}
 	}
 }

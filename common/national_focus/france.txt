@@ -2960,6 +2960,206 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
 	}
 	focus = {
+		id = FRA_move_industry_to_the_africa
+		icon = GFX_goal_plan
+		prerequisite = { focus = FRA_war_effort_law }
+		x = 0
+		y = 1
+		relative_position_id = FRA_war_effort_law
+		cost = 5
+
+		available = {
+			has_full_control_of_state = 16 #PARIS
+			has_equipment = { train_equipment > 119 } #20 trains per factory
+		}
+
+		select_effect = {
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = FRA_industrial_relocation_trains_focus_negative
+				producer = FRA
+			}
+			#Factories are removed immediately to keep consistency with how decisions work
+			16 = { #Paris
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 28
+				}
+				28 = { #Alsace
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 29
+				}
+				29 = { #Nord-De-Pas-Calais
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		completion_reward = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = FRA_industrial_relocation_trains_focus
+					producer = FRA
+				}
+			}
+			custom_effect_tooltip = SOV_focus_select_effect_tt
+			effect_tooltip = {
+				16 = { #Paris
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+				# if = {
+				# 	limit = {
+				# 		has_full_control_of_state = 28
+				# 	}
+				# 	28 = { #Alsace
+				# 		remove_building = {
+				# 			type = arms_factory
+				# 			level = 1
+				# 		}
+				# 		remove_building = {
+				# 			type = industrial_complex
+				# 			level = 1
+				# 		}
+				# 	}
+				# }
+				# if = {
+				# 	limit = {
+				# 		has_full_control_of_state = 29
+				# 	}
+				# 	29 = { #Nord-De-Ca-palais
+				# 		remove_building = {
+				# 			type = arms_factory
+				# 			level = 1
+				# 		}
+				# 		remove_building = {
+				# 			type = industrial_complex
+				# 			level = 1
+				# 		}
+				# 	}
+				# }
+			}
+			custom_effect_tooltip = FRA_move_industry_to_the_africa_trains_tt
+
+			custom_effect_tooltip = SOV_focus_complete_effect_tt
+			unlock_decision_category_tooltip = FRA_industry_relocation
+
+			random_controlled_state = {
+				limit = {
+					FRA_is_industrial_relocation_destiny_state = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.5 }
+					damage_building = { type = industrial_complex damage = 0.5 }
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { has_full_control_of_state = 28 } #Alsace
+				}
+				random_controlled_state = { #Different State please thanks
+					limit = {
+						NOT = { state = 28 }
+						SOV_is_industrial_relocation_destiny_state = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				
+					hidden_effect = {
+						damage_building = { type = arms_factory damage = 0.5 }
+						damage_building = { type = industrial_complex damage = 0.5 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { has_full_control_of_state = 16 } #Paris
+				}
+				random_controlled_state = { #Different State please thanks
+					limit = {
+						NOT = { state = 16 }
+						SOV_is_industrial_relocation_destiny_state = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				
+					hidden_effect = {
+						damage_building = { type = arms_factory damage = 0.5 }
+						damage_building = { type = industrial_complex damage = 0.5 }
+					}
+				}
+			}
+			custom_effect_tooltip = SOV_relocate_industry_repair_tt
+		}
+	}
+
+	focus = {
 		id = FRA_wartime_organisation_act
 		icon = GFX_goal_generic_production
 		cost = 5
