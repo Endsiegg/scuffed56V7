@@ -18,12 +18,76 @@ CAN_vickers_armstrong_can_organization = {
 		name = generic_mio_initial_trait_medium_tank_designer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
+		}
+
+		equipment_bonus = {
+			maximum_speed = -0.1
+			reliability = 0.05
+			armor_value = 0.1
+			soft_attack = 0.05
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}	
+
+		production_bonus = {
+			production_capacity_factor = 0.15
+		}
+	}	
+	add_trait = { 
+		token = ENG_mio_trait_expanded_turret_capacity
+		name = ENG_mio_trait_expanded_turret_capacity
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_engine
+		special_trait_background = yes
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_all_round_cupola
+
+		any_parent = { generic_mio_trait_all_round_cupola }
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+
+		equipment_bonus = {
+			reliability = 0.05
+			armor_value = 0.10
+			breakthrough = 0.05
+		}
+	}
+
+	add_trait = { 
+		token = ENG_mio_trait_firefly
+		name = ENG_mio_trait_firefly
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_at
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_simplified_turret_design
+
+		any_parent = { generic_mio_trait_simplified_turret_design }
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+
+		equipment_bonus = {
+			ap_attack = 0.15
+			hard_attack = 0.15
+			breakthrough = 0.05
+			reliability_factor = -0.10
+		}
+	}
+
+	add_trait = { 
+		token = ENG_mio_trait_expanded_production_facilities
+		name = ENG_mio_trait_expanded_production_facilities
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_technology
+		special_trait_background = yes
+
+		position = { x=2 y=1 }
+		relative_position_id = generic_mio_trait_simplified_turret_design
+
+		all_parents = { generic_mio_trait_simplified_turret_design generic_mio_trait_armor_steel_working }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.15
+			production_efficiency_gain_factor = 0.15
 		}
 		
-		production_bonus = {
-			production_capacity_factor = 0.05
-		}
 	}	
 }
 
@@ -36,9 +100,7 @@ CAN_canadian_pacific_railway_organization = {
 	}
 
 	available = {
-		owner = {
-			has_completed_focus = r56_CAN_retool_angus_shops
-		}
+
 	}
 
 	initial_trait = {
@@ -88,10 +150,10 @@ CAN_kingston_shipbuilding_organization = {
 		name = generic_mio_initial_trait_task_force_ship_builders
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		equipment_bonus = {
-			max_strength = 0.05
+			max_strength = 0.10
 		}
 	}
 
@@ -108,10 +170,10 @@ CAN_halifax_shipyard_organization = {
 		name = generic_mio_initial_trait_escort_fleet
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		production_bonus = {
-			production_capacity_factor = 0.05
+			production_capacity_factor = 0.25
 		}
 	}	
 }
@@ -127,10 +189,10 @@ CAN_davie_shipbuilding_organization = {
 		name = generic_mio_initial_trait_escort_fleet
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		production_bonus = {
-			production_capacity_factor = 0.05
+			production_capacity_factor = 0.15
 		}
 	}	
 }
@@ -156,7 +218,7 @@ CAN_canadian_power_boat_company_organization = {
 		name = generic_mio_initial_trait_raiding_fleet
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		equipment_bonus = {
 			surface_visibility = -0.05
@@ -202,10 +264,14 @@ CAN_canadian_car_foundry_organization = {
 	initial_trait = {
 		name = generic_mio_initial_trait_light_aircraft_designer
 
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+
 		equipment_bonus = {
-			air_agility = 0.05
-			maximum_speed = 0.05
-			air_attack = 0.05
+			air_agility = 0.10
+			maximum_speed = 0.10
+			air_attack = 0.10
 		}
 	}	
 }
@@ -221,11 +287,11 @@ CAN_fairchild_aircraft_ltd_organization = {
 		name = generic_mio_initial_trait_naval_aircraft_designer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 
 		production_bonus = {
-			production_capacity_factor = 0.05
+			production_capacity_factor = 0.10
 		}
 	}	
 }
@@ -296,9 +362,7 @@ CAN_inglis_company_organization = {
 		original_TAG = CAN
 	}
 	available = {
-		owner = {
-			has_completed_focus = r56_CAN_john_inglis_company
-		}
+
 	}
 	visible = {
 
@@ -307,7 +371,7 @@ CAN_inglis_company_organization = {
 		name = generic_mio_initial_trait_support_equipment_manufacturer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 	}
 
@@ -359,10 +423,10 @@ CAN_sorel_industries_organization = {
 		name = generic_mio_initial_trait_artillery_manufacturer
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.15
 		}
 		production_bonus = {
-			production_cost_factor = -0.03
+			production_cost_factor = -0.10
 		}
 	}	
 }
@@ -376,9 +440,7 @@ CAN_r56_ford_organization = {
 	}
 
 	available = {
-		owner = {
-			has_completed_focus = r56_CAN_cmp_truck
-		}
+
 	}	
 	initial_trait = {
         name = NOR_mio_initial_trait_mechanical_workshop
@@ -403,9 +465,7 @@ r56_CAN_gm_of_canada_organization = {
 	}
 
 	available = {
-		owner = {
-			has_completed_focus = r56_CAN_cmp_truck
-		}
+
 	}	
 
 	initial_trait = {
@@ -416,7 +476,7 @@ r56_CAN_gm_of_canada_organization = {
             mechanized_equipment
         }        
         equipment_bonus = {
-            build_cost_ic = -0.05
+            build_cost_ic = -0.15
         }
     }
 

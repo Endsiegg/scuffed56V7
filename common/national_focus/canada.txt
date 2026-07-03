@@ -710,7 +710,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = r56_CAN_alcan
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1217,7 +1217,7 @@ focus_tree = {
 		relative_position_id = r56_CAN_wartime_prices_and_trade_board
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1251,7 +1251,7 @@ focus_tree = {
 		relative_position_id = r56_CAN_department_of_munitions_and_supply
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 6
@@ -1326,7 +1326,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 5
@@ -1335,11 +1335,11 @@ focus_tree = {
 
 
 		completion_reward = {
-			army_experience = 10
+			army_experience = 50
 			add_doctrine_cost_reduction = {
 				name = r56_CAN_army_modernisation
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -1390,7 +1390,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -1469,7 +1469,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1502,7 +1502,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1535,7 +1535,7 @@ focus_tree = {
 		relative_position_id = r56_CAN_british_designs
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1571,7 +1571,7 @@ focus_tree = {
 		dynamic = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1604,7 +1604,7 @@ focus_tree = {
 		relative_position_id = r56_CAN_army_modernisation
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 		
 		prerequisite = {
 			focus = r56_CAN_army_modernisation
@@ -1787,7 +1787,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 		
 		prerequisite = {
 			focus = r56_CAN_canadian_armoured_corps
@@ -1873,7 +1873,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 		
 		prerequisite = {
 			focus = r56_CAN_kangaroo
@@ -1936,7 +1936,7 @@ focus_tree = {
 		relative_position_id = r56_CAN_valentine_tank
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 		
 		prerequisite = {
 			focus = r56_CAN_valentine_tank
@@ -1998,12 +1998,12 @@ focus_tree = {
 			owns_state = 276
 		}
 		completion_reward = {
-			# add_tech_bonus = {
-			# 	name = r56_CAN_small_arms_limited
-			# 	bonus = 1.0
-			# 	uses = 1
-			# 	category = infantry_weapons
-			# }
+			add_tech_bonus = {
+				name = r56_CAN_small_arms_limited
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
 			276 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2025,7 +2025,7 @@ focus_tree = {
 		relative_position_id = r56_CAN_small_arms_limited
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 		
 		prerequisite = {
 			focus = r56_CAN_small_arms_limited
@@ -2055,7 +2055,7 @@ focus_tree = {
 		relative_position_id = r56_CAN_small_arms_limited
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 
-		cost = 5
+		cost = 2
 		
 		prerequisite = {
 			focus = r56_CAN_small_arms_limited
@@ -4141,7 +4141,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 6
@@ -4366,7 +4366,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 5
@@ -4566,7 +4566,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 10
@@ -6554,6 +6554,7 @@ focus_tree = {
 		prerequisite = {
 			focus = r56_CAN_forge_our_own_future
 			focus = r56_CAN_emergency_assembly
+			focus = r56_CAN_trust_in_the_commonwealth
 		}
 		
 		available = {
@@ -6886,7 +6887,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_POLITICAL }
 
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 5
@@ -6920,7 +6921,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 5
@@ -6990,7 +6991,7 @@ focus_tree = {
 		x = 2
 		y = 0
 
-		cost = 5
+		cost = 1
 		
 		ai_will_do = {
 			factor = 5
@@ -8413,7 +8414,7 @@ focus_tree = {
 		available = {
 			NOT = {
 				has_completed_focus = r56_CAN_communism
-				has_completed_focus = r56_CAN_alliance_with_america
+				#has_completed_focus = r56_CAN_alliance_with_america
 				has_completed_focus = r56_CAN_fascism
 			}
 			OR = {
