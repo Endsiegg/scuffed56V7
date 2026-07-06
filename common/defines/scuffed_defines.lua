@@ -238,8 +238,8 @@ NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {	-- 0 armor will always r
     0.50,
     0.25, -- No longer set to zero, now to 25% ~EndSieg
 }
-NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.75 -- damage reduction if armor outclassing enemy
-NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.5 -- damage reduction if armor outclassing enemy
+--NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.75 -- damage reduction if armor outclassing enemy
+--NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.5 -- damage reduction if armor outclassing enemy
 --NDefines.NMilitary.RIVER_CROSSING_PENALTY = -0.6                 -- small river crossing-
 --NDefines.NMilitary.RIVER_CROSSING_PENALTY_LARGE = -0.9           -- large river crossing
 --NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY = -0.5           -- small river crossing
