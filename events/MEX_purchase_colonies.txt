@@ -1,0 +1,111 @@
+add_namespace = MEX
+country_event = {
+    id = MEX.100
+    title = MEX_100_TITLE
+    desc = MEX_100_DESC
+    picture = GFX_report_event_diplomatic
+
+    is_triggered_only = yes
+
+    immediate = {
+
+        if = {
+            limit = { ENG = { exists = yes } }
+            ENG = {
+                country_event = { id = MEX.101 }
+            }
+        }
+
+        if = {
+            limit = { USA = { exists = yes } }
+            USA = {
+                country_event = { id = MEX.102 }
+            }
+        }
+    }
+
+    option = {
+        name = OK
+    }
+}
+
+country_event = {
+    id = MEX.101
+    title = MEX_101_TITLE
+    desc = MEX_101_DESC
+    picture = GFX_report_event_diplomatic
+
+    is_triggered_only = yes
+
+    option = {
+        name = MEX_101_ACCEPT
+
+        ai_chance = {
+            base = 10
+        }
+
+        311 = {
+            transfer_state_to = MEX
+        }
+
+        add_timed_idea = {
+            idea = ENG_colonial_sale
+            days = 60
+        }
+
+        MEX = {
+            add_timed_idea = {
+                idea = MEX_exchanging_gold_for_western_colonies
+                days = 60
+            }
+        }
+    }
+
+    option = {
+        name = MEX_101_REJECT
+
+        ai_chance = {
+            base = 90
+        }
+    }
+}
+
+country_event = {
+    id = MEX.102
+    title = MEX_102_TITLE
+    desc = MEX_102_DESC
+    picture = GFX_report_event_diplomatic
+
+    is_triggered_only = yes
+
+   option = {
+        name = MEX_102_ACCEPT
+
+        ai_chance = {
+            base = 10
+        }
+
+        685 = {
+            transfer_state_to = MEX
+        }
+
+        add_timed_idea = {
+            idea = USA_colonial_sale
+            days = 60
+        }
+
+        MEX = {
+            add_timed_idea = {
+                idea = MEX_exchanging_gold_for_western_colonies
+                days = 60
+            }
+        }
+    }
+    option = {
+        name = MEX_102_REJECT
+
+        ai_chance = {
+            base = 90
+        }
+    }
+}
