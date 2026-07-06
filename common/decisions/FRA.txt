@@ -606,7 +606,7 @@ category_test_decisions = {
 						}
 					}
 				}
-				set_country_flag = is_vichy_france
+				set_cosmetic_tag = FRA_VICHY
 				add_ideas = FRA_occupation_costs_4
 				load_focus_tree = vichy_french_focus
 				FRA = {
@@ -619,6 +619,8 @@ category_test_decisions = {
 						air_ratio = 1.0
 					}
 				}
+				event_target:france_vichy = {set_country_flag  = vichy_france}
+				
 				change_tag_from = FRA
 			}
 		}
