@@ -1,0 +1,178 @@
+MEX_wartime_resource_extraction = {
+
+    MEX_extract_steel_478 = {
+        icon = steel
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 478
+            }
+        }
+
+        allowed = {
+            original_tag = MEX
+        }
+
+        visible = {
+            has_completed_focus = MEX_focus_wartime_resource_extraction
+            478 = {
+                NOT = { has_state_flag = MEX_steel_478_extracted }
+            }
+        }
+
+        available = {
+            478 = { is_controlled_by_ROOT_or_subject = yes }
+        }
+
+        fire_only_once = yes
+
+        cost = 60
+        days_remove = 60
+
+        modifier = {
+            civilian_factory_use = 5
+        }
+
+        remove_effect = {
+            478 = {
+                add_resource = {
+                    type = steel
+                    amount = 24
+                }
+                set_state_flag = MEX_steel_478_extracted
+            }
+        }
+    }
+
+    MEX_extract_steel_485 = {
+        icon = steel
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 485
+            }
+        }
+
+        allowed = {
+            original_tag = MEX
+        }
+
+        visible = {
+            has_completed_focus = MEX_focus_wartime_resource_extraction
+            485 = {
+                NOT = { has_state_flag = MEX_steel_485_extracted }
+            }
+        }
+
+        available = {
+            485 = { is_controlled_by_ROOT_or_subject = yes }
+        }
+
+        fire_only_once = yes
+
+        cost = 60
+        days_remove = 60
+
+        modifier = {
+            civilian_factory_use = 5
+        }
+
+        remove_effect = {
+            485 = {
+                add_resource = {
+                    type = steel
+                    amount = 24
+                }
+                set_state_flag = MEX_steel_485_extracted
+            }
+        }
+    }
+
+    MEX_extract_chromium_930 = {
+        icon = chromium
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 930
+            }
+        }
+
+        allowed = {
+            original_tag = MEX
+        }
+
+        visible = {
+            has_completed_focus = MEX_focus_wartime_resource_extraction
+            930 = {
+                NOT = { has_state_flag = MEX_chromium_930_extracted }
+            }
+        }
+
+        available = {
+            930 = { is_controlled_by_ROOT_or_subject = yes }
+        }
+
+        fire_only_once = yes
+
+        cost = 60
+        days_remove = 60
+
+        modifier = {
+            civilian_factory_use = 5
+        }
+
+        remove_effect = {
+            930 = {
+                add_resource = {
+                    type = chromium
+                    amount = 20
+                }
+                set_state_flag = MEX_chromium_930_extracted
+            }
+        }
+    }
+
+    MEX_extract_chromium_931 = {
+        icon = chromium
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 931
+            }
+        }
+
+        allowed = {
+            original_tag = MEX
+        }
+
+        visible = {
+            has_completed_focus = MEX_focus_wartime_resource_extraction
+            931 = {
+                NOT = { has_state_flag = MEX_chromium_931_extracted }
+            }
+        }
+
+        available = {
+            931 = { is_controlled_by_ROOT_or_subject = yes }
+        }
+
+        fire_only_once = yes
+
+        cost = 60
+        days_remove = 60
+
+        modifier = {
+            civilian_factory_use = 5
+        }
+
+        remove_effect = {
+            931 = {
+                add_resource = {
+                    type = chromium
+                    amount = 20
+                }
+                set_state_flag = MEX_chromium_931_extracted
+            }
+        }
+    }
+}
