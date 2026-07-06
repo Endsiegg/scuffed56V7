@@ -30,7 +30,7 @@ focus_tree = {
 		icon = GFX_focus_spa_the_spanish_miracle
 		x = 23
 		y = 0
-		cost = 5
+		cost = 2
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY }
@@ -317,75 +317,55 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_valentin_campa
 			set_party_name = { ideology = communism name = MEX_democratic_party_mexican_revolution_party_short long_name = MEX_democratic_party_mexican_revolution_party_long }
 			hidden_effect = {set_cosmetic_tag = MEX_SOCIALISTS } # Hidden because the tooltip looks odd together with ideology changes
 		}
 	}
 
 	focus = {
-		id = MEX_focus_rural_infrastructure
-		icon = GFX_focus_generic_road_investment
-		prerequisite = { focus = MEX_focus_agricultural_credit_bank }
-		x = 0
-		y = 1
-		relative_position_id = MEX_focus_agricultural_credit_bank
-		cost = 3
-		ai_will_do = { base = 100 }
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {
-			every_controlled_state = {
-				limit = {
-					OR = {
-						state = 477
-						state = 485
-						state = 478
-						state = 479
-						state = 480
-						state = 481
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
+    id = MEX_focus_rural_infrastructure
+    icon = GFX_focus_generic_road_investment
+    prerequisite = { focus = MEX_focus_agricultural_credit_bank }
+    x = 0
+    y = 1
+    relative_position_id = MEX_focus_agricultural_credit_bank
+    cost = 20
+    ai_will_do = { base = 100 }
+    available_if_capitulated = yes
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+
+    	completion_reward = {
+        	every_owned_state = {
+           	 add_building_construction = {
+                type = infrastructure
+                level = 1
+                instant_build = yes
+            	}
+       	 }
+    	}
 	}
 
 	focus = {
-		id = MEX_focus_peripheral_infrastructure
-		icon = GFX_goal_generic_road
-		prerequisite = { focus = MEX_focus_rural_infrastructure }
-		x = 0
-		y = 1
-		relative_position_id = MEX_focus_rural_infrastructure
-		cost = 3
-		ai_will_do = { base = 100 }
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {
-			every_controlled_state = {
-				limit = {
-					OR = {
-						state = 476
-						state = 475
-						state = 474
-						state = 484
-						state = 482
-						state = 483
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
+    id = MEX_focus_peripheral_infrastructure
+    icon = GFX_goal_generic_road
+    prerequisite = { focus = MEX_focus_rural_infrastructure }
+    x = 0
+    y = 1
+    relative_position_id = MEX_focus_rural_infrastructure
+    cost = 20
+    ai_will_do = { base = 100 }
+    available_if_capitulated = yes
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+
+   		 completion_reward = {
+        	every_owned_state = {
+            add_building_construction = {
+                type = infrastructure
+                level = 1
+                instant_build = yes
+           	 }
+       	 }
+   	 	}
 	}
 
 	focus = {
@@ -459,7 +439,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_strike_breaking
-		cost = 3
+		cost = 5
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -544,36 +524,26 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MEX_focus_privatization
-		icon = GFX_goal_generic_financial_markets
-		prerequisite = { focus = MEX_focus_end_land_reform }
-		x = 0
-		y = 1
-		relative_position_id = MEX_focus_end_land_reform
-		cost = 5
-		ai_will_do = { base = 100 }
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
-		completion_reward = {
-			every_controlled_state = {
-				limit = {
-					OR = {
-						state = 277
-						state = 477
-						state = 485
-						state = 478
-						state = 479
-						state = 480
-						state = 932
-						state = 931
-					}
-				}
-				add_extra_state_shared_building_slots = 3
-			}
-			custom_effect_tooltip = CHL_skip_one_line_tt
-			MEX_decrease_cedillo_tension = yes
-		}
-	}
+    id = MEX_focus_privatization
+    icon = GFX_goal_generic_financial_markets
+    prerequisite = { focus = MEX_focus_end_land_reform }
+    x = 0
+    y = 1
+    relative_position_id = MEX_focus_end_land_reform
+    cost = 20
+    ai_will_do = { base = 100 }
+    available_if_capitulated = yes
+    search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
+
+    completion_reward = {
+        every_owned_state = {
+            add_extra_state_shared_building_slots = 3
+        }
+
+        custom_effect_tooltip = CHL_skip_one_line_tt
+        MEX_decrease_cedillo_tension = yes
+    }
+}
 
 	focus = {
 		id = MEX_focus_caudillo_private_armies
@@ -939,7 +909,7 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -1059,7 +1029,7 @@ focus_tree = {
 		x = 7
 		y = 1
 		relative_position_id = MEX_focus_oil_field_expansion
-		cost = 5
+		cost = 10
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
@@ -1078,7 +1048,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 32
 				}
 			}
 			custom_effect_tooltip = CHL_skip_one_line_tt
@@ -1096,7 +1066,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 32
 				}
 			}
 		}
@@ -1957,12 +1927,6 @@ focus_tree = {
 					elections_allowed = yes
 				}
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_manuel_herrera_y_lasso
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_martin_luis_guzman
 			set_party_name = { ideology = democratic name = MEX_democratic_party_institutional_revolutionary_party_short long_name = MEX_democratic_party_institutional_revolutionary_party_long }
 		}
 	}
@@ -2002,7 +1966,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_exile_calles
-		cost = 5
+		cost = 2
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY }
@@ -2037,7 +2001,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_repeal_the_calles_law
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -2090,7 +2054,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_enforce_the_calles_law
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available = {
 			OR = {
@@ -2163,7 +2127,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_state_education
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -2196,10 +2160,10 @@ focus_tree = {
 						state = 478
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2218,39 +2182,43 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			if = {
-				limit = { has_tech = synth_oil_experiments }
-				every_controlled_state = {
-					limit = {
-						OR = {
-							state = 277
-							state = 485
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = synthetic_refinery
-						level = 1
-						instant_build = yes
+			every_controlled_state = {
+				limit = {
+					OR = {
+						state = 277
+						state = 485
 					}
 				}
-				else = {
-					every_controlled_state = {
-						limit = {
-							OR = {
-								state = 277
-								state = 485
-							}
-						}
-						add_extra_state_shared_building_slots = 1
-						add_building_construction = {
-							type = arms_factory
-							level = 1
-							instant_build = yes
-						}
-					}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
 				}
 			}
+		}
+	}
+
+	focus = {
+		id = MEX_focus_balanced_industrial_buildup
+		icon = GFX_focus_CHL_enlarge_the_textile_industries
+
+		prerequisite = { focus = MEX_focus_nafinsa }
+
+		x = 0
+		y = 1
+		relative_position_id = MEX_focus_nafinsa
+
+		cost = 5
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = MEX_balanced_industrial_buildup
 		}
 	}
 
@@ -2264,7 +2232,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_northern_steel_plants
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -2287,7 +2255,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_engineering_school
-		cost = 20
+		cost = 10
 		available = { num_of_factories > 50 }
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
@@ -2310,7 +2278,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_control_the_army
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -2347,7 +2315,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_antidisestablishmentarianism
-		cost = 5
+		cost = 2
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -2365,7 +2333,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_rewrite_the_constitution
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MEX_CHURCH_AUTHORITY }
@@ -2402,7 +2370,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = MEX_focus_knights_of_columbus
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available = {
 			has_idea = MEX_church_power_5
@@ -2439,12 +2407,6 @@ focus_tree = {
 				ideology = democratic
 				popularity = 0.1
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_manuel_herrera_y_lasso
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_martin_luis_guzman
 			set_party_name = { ideology = democratic name = MEX_democratic_party_national_action_party_short long_name = MEX_democratic_party_national_action_party_long }
 			hidden_effect = { set_cosmetic_tag = MEX_cristero } 	# Hidden because the tooltip looks odd together with ideology changes
 			custom_effect_tooltip = CHL_skip_one_line_tt
@@ -2479,7 +2441,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_catholic_politics
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY}
@@ -2500,7 +2462,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_rewrite_the_constitution
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MEX_CHURCH_AUTHORITY FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
@@ -2513,16 +2475,6 @@ focus_tree = {
 					days = 7
 				}
 			}
-            custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_gustavo_saenz_de_sicilia
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_manuel_torres_bueno
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_roque_gonzalez_garza
-			custom_effect_tooltip = CHL_skip_one_line_tt
 		}
 			#name will be used as focus/idea instead
 			#set_party_name = { ideology = fascism name = MEX_fascist_party_legionnaires_of_christ_short long_name = MEX_fascist_party_legionnaires_of_christ_long }
@@ -2617,7 +2569,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = MEX_focus_legion_of_christ
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available = {
 			OR = {
@@ -2744,7 +2696,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_crusade_against_atheism
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		allow_branch = {
@@ -2810,10 +2762,10 @@ focus_tree = {
 						state = 481
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2828,7 +2780,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = MEX_focus_synarchist_communes
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		completion_reward = {
@@ -2939,7 +2891,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_synarchist_communes
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MANPOWER }
@@ -2959,7 +2911,7 @@ focus_tree = {
 			y = 0
 			trigger = { has_country_flag = MEX_restored_the_monarchy_flag }
 		}
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
@@ -2994,6 +2946,7 @@ focus_tree = {
 						state = 277
 						state = 479
 						state = 477
+						state = 932
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -3013,7 +2966,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MEX_focus_revolutionary_women
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available = { has_elections = yes }
 		available_if_capitulated = yes
@@ -3032,7 +2985,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = MEX_focus_revolutionary_women
-		cost = 10
+		cost = 5
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_INDUSTRY }
 		ai_will_do = {
 			base = 100
@@ -3076,7 +3029,7 @@ focus_tree = {
 			y = 0
 			trigger = { has_country_flag = MEX_restored_the_monarchy_flag }
 		}
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
@@ -3101,7 +3054,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_depoliticised_army
-		cost = 10
+		cost = 5
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
@@ -3126,7 +3079,7 @@ focus_tree = {
 		x = 5
 		y = 0
 		relative_position_id = MEX_focus_ban_political_militias
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -3163,7 +3116,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = MEX_focus_legacy_of_revolution
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_IMPROVEMENT }
@@ -3269,16 +3222,6 @@ focus_tree = {
 				  	}
 				}
 			}
-            custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_gustavo_saenz_de_sicilia
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_manuel_torres_bueno
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_roque_gonzalez_garza
-			custom_effect_tooltip = CHL_skip_one_line_tt
 			set_party_name = { ideology = neutrality name = MEX_democratic_party_institutional_revolutionary_party_short long_name = MEX_democratic_party_institutional_revolutionary_party_long }
 			set_party_name = { ideology = fascism name = MEX_fascist_party_national_revolutionary_party_short long_name = MEX_fascist_party_national_revolutionary_party_long }
 		}
@@ -3292,7 +3235,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = MEX_focus_legacy_of_revolution
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 100 }
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MEX_CHURCH_AUTHORITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_IMPROVEMENT }
@@ -3437,8 +3380,6 @@ focus_tree = {
 				}				
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MEX_valentin_campa
 
 			if = {
 				limit = {
@@ -4114,10 +4055,6 @@ focus_tree = {
 		cost = 10
 		ai_will_do = { 
 			base = 0
-			modifier = {
-				add = 15
-				has_army_manpower = { size > 499999 }
-			} 
 		}
 		available = {
 			is_subject = no
@@ -4128,10 +4065,6 @@ focus_tree = {
 				}
 				has_country_leader = {
 					character = MEX_hernan_laborde
-					ruling_only = yes
-				}
-				has_country_leader = {
-					character = MEX_valentin_campa
 					ruling_only = yes
 				}
 			}
@@ -4183,7 +4116,6 @@ focus_tree = {
 			base = 0	#r56 - anti AI run-into-wall
 			modifier = {
 				add = 1
-				has_army_manpower = { size > 499999 }
 			}
 			modifier = {
 				add = 15
@@ -4400,9 +4332,8 @@ focus_tree = {
 	focus = {
 		id = MEX_focus_march_southwards
 		icon = GFX_goal_MEX_march_southwards
-		prerequisite = { focus = MEX_focus_interior_defence_plan focus = MEX_focus_coastal_defence_plan }
-		x = 8
-		y = 1
+		x = 22
+		y = -10
 		relative_position_id = MEX_focus_interior_defence_plan
 		offset = {
 			x = -8
@@ -4444,7 +4375,10 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 10 	#As a general thing, focuses that give war goals should really be 70 days
+		cost = 5 	#As a general thing, focuses that give war goals should really be 70 days
+		available = {
+			date > 1937.1.1
+		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		ai_will_do = {
 			base = 0	#r56 - anti AI run-into-wall
@@ -4453,17 +4387,6 @@ focus_tree = {
 				has_army_manpower = { size > 349999 }
 				has_stability > 0.75
 			}			
-		}
-		available = {
-			is_subject = no
-			OR = {
-				has_government = fascism
-				has_government = communism
-				AND = {
-					has_government = neutrality
-					has_completed_focus = MEX_focus_crusade_against_atheism
-				}
-			}
 		}
 		available_if_capitulated = yes
 		will_lead_to_war_with = GUA
@@ -4618,6 +4541,8 @@ focus_tree = {
             }
 		}
 	}
+
+	
 
 	focus = {
 		id = MEX_focus_liberate_the_caribbean
@@ -4855,31 +4780,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MEX_focus_seize_the_panama_canal
-		icon = GFX_goal_generic_attack_panama
-		prerequisite = { focus = MEX_focus_unify_centroamerica }
-		x = 3
-		y = 1
-		relative_position_id = MEX_focus_liberate_the_caribbean
-		cost = 5
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		ai_will_do = { base = 100 }
-		available = {
-			is_subject = no
-			NOT = { has_war_with = USA }
-			NOT = { is_in_faction_with = USA }
-		}
-		bypass = {
-			NOT = {
-				USA = { owns_state = 685 }
-			}
-		}
-		available_if_capitulated = yes
-		completion_reward = { unlock_decision_tooltip = MEX_decision_operation_just_cause }
-		will_lead_to_war_with = USA
-	}
-
-	focus = {
 		id = MEX_focus_integrate_the_south
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = MEX_focus_unify_centroamerica }
@@ -4917,10 +4817,38 @@ focus_tree = {
 	}
 
 	focus = {
+		id = MEX_focus_purchase_colonial_holdings
+		icon = GFX_focus_CHI_promote_national_currency
+		prerequisite = { focus = MEX_focus_unify_centroamerica }
+
+		x = 2
+		y = 1
+		relative_position_id = MEX_focus_unify_centroamerica
+
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {
+			is_subject = no
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_named_threat = {
+				threat = 2
+				name = MEX_threat_colonial_purchase
+			}
+
+			country_event = { id = MEX.100 days = 1 }
+		}
+	}
+
+	focus = {
 		id = MEX_focus_push_past_the_darien_gap
 		icon = GFX_focus_por_recover_latin_america
 		prerequisite = { focus = MEX_focus_unify_centroamerica }
-		x = 3
+		x = 4
 		y = 0
 		relative_position_id = MEX_focus_integrate_the_south
 		cost = 10
@@ -5123,267 +5051,6 @@ focus_tree = {
                     expire = 0
                 }
             }
-		}
-	}
-
-	focus = {
-		id = MEX_focus_fortify_the_canal
-		icon = GFX_focus_generic_coastal_fort
-		prerequisite = { focus = MEX_focus_seize_the_panama_canal }
-		x = 1
-		y = 1
-		relative_position_id = MEX_focus_seize_the_panama_canal
-		cost = 5
-		ai_will_do = { base = 80 }
-		available = { controls_state = 685 }
-		available_if_capitulated = yes
-		completion_reward = {
-			685 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					province = 7617
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					province = 7617
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = MEX_focus_rescind_the_mexican_cession
-		icon = GFX_focus_spa_the_war_of_vengeance
-		prerequisite = { focus = MEX_focus_seize_the_panama_canal }
-		x = -1
-		y = 1
-		relative_position_id = MEX_focus_seize_the_panama_canal
-		cost = 10
-		ai_will_do = {
-			base = 0	#R56 - Anti AI Run-Into-Wall. Hopefully this will give the MEX AI the opportunity to jump in on America if someone gets their surrender progress up :)
-			modifier = {
-				add = 100
-				has_army_manpower = { size > 499999 }
-				USA = { surrender_progress > 0.1 }
-			}
-		}
-
-		available = {
-			is_subject = no
-			threat > 0.5
-			NOT = { is_in_faction_with = USA }
-			NOT = { has_non_aggression_pact_with = USA }
-		}
-
-		bypass = {
-
-		}
-		available_if_capitulated = yes
-		will_lead_to_war_with = USA
-		completion_reward = {
-			add_named_threat = {
-				threat = 5
-				name = threat_mexico_rescind_cession
-			}
-			every_state = {
-				limit = {
-					NOT = { is_core_of = ROOT }
-					NOT = { is_claimed_by = ROOT }
-					OR = {
-						state = 375
-						state = 376
-						state = 377
-						state = 378
-						state = 379
-						state = 380
-						state = 382
-					}
-				}
-				add_claim_by = ROOT
-			}
-			custom_effect_tooltip = CHL_skip_one_line_tt
-			if = {
-				limit = { country_exists = USA }
-				create_wargoal = {
-					type = take_state_focus
-					target = USA
-					expire = 0
-					generator = { 375 376 377 378 379 380 382 }
-				}
-			}
-			every_other_country = {
-				limit = {
-					NOT = { tag = USA }
-					original_tag = USA
-				}
-				ROOT = {
-					create_wargoal = {
-						type = take_state_focus
-						target = PREV
-						expire = 0
-						generator = { 375 376 377 378 379 380 382 }
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = MEX_focus_redeem_aztlan
-		icon = GFX_focus_mex_redeem_aztlan
-		prerequisite = { focus = MEX_focus_rescind_the_mexican_cession }
-		x = -1
-		y = 1
-		relative_position_id = MEX_focus_rescind_the_mexican_cession
-		cost = 30
-		ai_will_do = { base = 100 }
-		available = {
-			375 = {
-				controller = {
-					OR = {
-						is_subject_of = ROOT
-						tag = ROOT
-					}
-				}
-			}
-			376 = {
-				controller = {
-					OR = {
-						is_subject_of = ROOT
-						tag = ROOT
-					}
-				}
-			}
-			377 = {
-				controller = {
-					OR = {
-						is_subject_of = ROOT
-						tag = ROOT
-					}
-				}
-			}
-			378 = {
-				controller = {
-					OR = {
-						is_subject_of = ROOT
-						tag = ROOT
-					}
-				}
-			}
-			379 = {
-				controller = {
-					OR = {
-						is_subject_of = ROOT
-						tag = ROOT
-					}
-				}
-			}
-			380 = {
-				controller = {
-					OR = {
-						is_subject_of = ROOT
-						tag = ROOT
-					}
-				}
-			}
-			382 = {
-				controller = {
-					OR = {
-						is_subject_of = ROOT
-						tag = ROOT
-					}
-				}
-			}
-		}
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = yes
-		completion_reward = {
-			add_political_power = -300
-			if = {
-				limit = { has_idea = MEX_idea_unpopular_restoration }
-				swap_ideas = {
-					remove_idea = MEX_idea_unpopular_restoration
-					add_idea = MEX_idea_lackluster_support_for_the_monarchy
-				}
-			}
-			else_if = {
-				limit = { has_idea = MEX_idea_lackluster_support_for_the_monarchy }
-				swap_ideas = {
-					remove_idea = MEX_idea_lackluster_support_for_the_monarchy
-					add_idea = MEX_idea_growing_support_for_the_monarchy
-				}
-			}
-			else_if = {
-				limit = { has_idea = MEX_idea_growing_support_for_the_monarchy }
-				remove_ideas = MEX_idea_growing_support_for_the_monarchy
-			}
-			else = {
-				add_war_support = 0.05
-				add_popularity = {
-					ideology = ROOT
-					popularity = 0.05
-				}
-			}
-			every_state = {
-				limit = {
-					OR = {
-						state = 375
-						state = 376
-						state = 377
-						state = 378
-						state = 379
-						state = 380
-						state = 382
-					}
-				}
-				add_core_of = ROOT
-				hidden_effect = { remove_claim_by = ROOT }
-			}
-			if = {
-				limit = {
-					USA = { is_subject_of = ROOT }
-				}
-				annex_country = { target = USA }
-			}
-		}
-	}
-
-	focus = {
-		id = MEX_focus_assert_control_in_manila
-		icon = GFX_goal_philippines_post_independence_stabilization
-		x = 1
-		y = 1
-		relative_position_id = MEX_focus_rescind_the_mexican_cession
-		prerequisite = { focus = MEX_focus_rescind_the_mexican_cession }
-		cost = 5
-		ai_will_do = { base = 1 }
-		available = {
-			OR = {
-				has_government = fascism
-				has_government = neutrality
-			}
-			has_completed_focus = MEX_focus_crusade_against_atheism
-			any_controlled_state = { is_core_of = PHI }
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			custom_effect_tooltip = MEX_focus_assert_control_in_manila_tt
-			hidden_effect = {
-				every_controlled_state = {
-					limit = { is_core_of = PHI }
-					add_claim_by = ROOT
-					add_compliance = 15
-				}		
-			}
 		}
 	}
 
@@ -5659,9 +5326,8 @@ focus_tree = {
 		id = MEX_focus_military_budget_review
 		icon = GFX_focus_generic_combined_arms
 		prerequisite = { focus = MEX_focus_national_bank }
-		x = -6
+		x = 3
 		y = 1
-		relative_position_id = MEX_focus_national_bank
 		cost = 10
 		ai_will_do = {
 			base = 100
@@ -5693,7 +5359,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = MEX_focus_military_budget_review
-		cost = 10
+		cost = 5
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		ai_will_do = {
 			base = 100
@@ -5724,10 +5390,10 @@ focus_tree = {
 						state = 477
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -5752,7 +5418,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MEX_focus_military_budget_review
-		cost = 10
+		cost = 5
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		ai_will_do = {
 			base = 100
@@ -5783,10 +5449,10 @@ focus_tree = {
 						state = 478
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -5801,189 +5467,6 @@ focus_tree = {
 				custom_effect_tooltip = available_designer
 				show_ideas_tooltip = MEX_astimar_pacific
 			}
-		}
-	}
-
-	focus = {
-		id = MEX_focus_brown_water_navy
-		icon = GFX_goal_generic_occupy_states_coastal
-		prerequisite = { 
-			focus = MEX_focus_pacific_coast_naval_yards 
-			focus = MEX_focus_gulf_coast_naval_yards 
-		}
-		x = -1
-		y = 2
-		relative_position_id = MEX_focus_pacific_coast_naval_yards
-		cost = 10
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
-		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0.1
-				has_war_with = USA
-			}
-			modifier = {
-				factor = 10
-				has_war_with = ENG
-			}
-			modifier = {
-				factor = 10
-				has_war_with = GER
-			}
-			modifier = {
-				factor = 10
-				has_war_with = SOV
-			}
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = naval_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = naval_doctrine
-			}
-			add_ideas = MEX_brown_water_navy
-			custom_effect_tooltip = CHL_skip_one_line_tt	
-			add_tech_bonus = {
-				name = tooltip_escort_ships
-				bonus = 1
-				uses = 1
-				category = dd_tech
-				category = cl_tech
-			}
-			if = {
-				limit = { has_dlc = "Man the Guns" }
-				add_tech_bonus = {
-					name = SPR_navy_modernization
-					bonus = 2
-					uses = 1
-					category = asw_tech
-				}
-			}			
-		}
-	}
-
-	focus = {
-		id = MEX_focus_blue_water_navy
-		icon = GFX_focus_generic_navy_battleship2
-		prerequisite = { focus = MEX_focus_brown_water_navy }
-		mutually_exclusive = { focus = MEX_focus_raiding_navy }
-		x = -1
-		y = 1
-		relative_position_id = MEX_focus_brown_water_navy
-		cost = 10
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT } 
-		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0.1
-				has_war_with = USA
-			}
-			modifier = {
-				factor = 10
-				has_war_with = GER
-			}
-			modifier = {
-				factor = 10
-				has_war_with = SOV
-			}
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = naval_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = naval_doctrine
-			}
-			swap_ideas = {
-				remove_idea = MEX_brown_water_navy
-				add_idea = MEX_blue_water_navy
-			}
-			
-			add_tech_bonus = {
-				name = tooltip_capital_ships
-				bonus = 1
-				uses = 1
-				category = ca_tech
-				category = bb_tech
-			}
-			if = {
-				limit = { has_dlc = "Man the Guns" }
-				add_tech_bonus = {
-					name = artillery_bonus
-					bonus = 1
-					uses = 1
-					category = naval_gunnery_tech
-				}
-				add_tech_bonus = {
-					name = artillery_bonus
-					bonus = 1
-					uses = 1
-					category = naval_shell_tech
-				}
-				add_tech_bonus = {
-					name = SPR_navy_modernization
-					bonus = 1
-					uses = 1
-					technology = fire_control_methods_1
-					technology = fire_control_methods_2
-					technology = fire_control_methods_3
-				}								
-			}			
-		}
-	}
-
-	focus = {
-		id = MEX_focus_raiding_navy
-		icon = GFX_focus_generic_trade_interdiction
-		prerequisite = { focus = MEX_focus_brown_water_navy }
-		mutually_exclusive = { focus = MEX_focus_blue_water_navy }
-		x = 1
-		y = 1
-		relative_position_id = MEX_focus_brown_water_navy
-		cost = 10
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_IMPROVEMENT }
-		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0.1
-				has_war_with = USA
-			}
-			modifier = {
-				factor = 10
-				has_war_with = ENG
-			}
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = naval_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = naval_doctrine
-			}
-			swap_ideas = {
-				remove_idea = MEX_brown_water_navy
-				add_idea = MEX_raiding_navy
-			}
-			add_tech_bonus = {
-				name = ss_tech
-				bonus = 1
-				uses = 1
-				category = ss_tech
-				category = bc_tech
-			}
-			if = {
-				limit = { has_dlc = "Man the Guns" }
-				add_tech_bonus = {
-					name = SPR_navy_modernization
-					bonus = 2
-					uses = 2
-					category = torpedo_equipment
-				}
-			}				
 		}
 	}
 
@@ -6253,5 +5736,107 @@ focus_tree = {
 		}
 		available_if_capitulated = yes
 		completion_reward = { add_ideas = MEX_aerial_artillery }
+	}
+
+	focus = {
+		id = MEX_focus_wartime_resource_extraction
+		icon = GFX_focus_generic_mining_industry
+
+		prerequisite = {
+			focus = MEX_focus_pacific_coast_naval_yards
+			focus = MEX_focus_gulf_coast_naval_yards
+		}
+
+		x = 2
+		y = 3.5
+		cost = 5
+
+		ai_will_do = { base = 100 }
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			unlock_decision_category_tooltip = MEX_wartime_resource_extraction
+		}
+	}
+
+	focus = {
+		id = MEX_focus_sea_to_shining_sea
+		icon = GFX_focus_generic_large_navy
+
+		prerequisite = {
+			focus = MEX_focus_wartime_resource_extraction
+		}
+
+		x = 2
+		y = 4.5
+
+		cost = 10
+
+		ai_will_do = {
+			base = 100
+		}
+
+		search_filters = { FOCUS_FILTER_NAVY }
+
+		completion_reward = {
+			add_ideas = MEX_sea_to_shining_sea
+		}
+	}
+
+	focus = {
+			id = MEX_focus_supportive_role_navy
+			icon = GFX_focus_generic_navy_battleship2
+
+			prerequisite = {
+				focus = MEX_focus_sea_to_shining_sea
+			}
+
+			mutually_exclusive = {
+				focus = MEX_focus_full_fledged_navy
+			}
+
+			x = 1
+			y = 5.5
+
+			cost = 10
+
+			ai_will_do = {
+				base = 60
+			}
+
+			search_filters = { FOCUS_FILTER_NAVY }
+
+			completion_reward = {
+				add_ideas = MEX_supportive_navy_idea
+			}
+	}
+
+	focus = {
+			id = MEX_focus_full_fledged_navy
+			icon = GFX_goal_generic_navy_battleship
+
+			prerequisite = {
+				focus = MEX_focus_sea_to_shining_sea
+			}
+
+			mutually_exclusive = {
+				focus = MEX_focus_supportive_role_navy
+			}
+
+			x = 3
+			y = 5.5
+
+			cost = 10
+
+			ai_will_do = {
+				base = 40
+			}
+
+			search_filters = { FOCUS_FILTER_NAVY }
+
+			completion_reward = {
+				add_ideas = MEX_full_fledged_navy_idea
+			}
 	}
 }
