@@ -5425,12 +5425,6 @@ focus_tree = {
 				uses = 1
 				category = cat_heavy_armor
 			}
-			add_tech_bonus = {
-				name = GER_expand_kummersdorfs_capacity
-				bonus = 1
-				uses = 1
-				category = cat_medium_armor
-			}
 			add_breakthrough_progress = {
 				specialization = specialization_land
 				value = 0.5
@@ -12260,6 +12254,7 @@ focus_tree = {
 		relative_position_id = GER_army_indoctrination
 		cost = 10
 		available = {
+			date > 1940.01.01
 			has_war_with_major = yes
 			has_tech = advanced_machine_tools
 		}
@@ -17757,7 +17752,7 @@ focus_tree = {
 					}	
 					add_tech_bonus = {
 						name = armor_bonus
-						bonus = 2.0
+						bonus = 1.0
 						uses = 1
 						category = armor
 					}
@@ -17767,14 +17762,9 @@ focus_tree = {
 			else = {
 				effect_tooltip = {
 					add_tech_bonus = {
-						name = med_armor_bonus
-						ahead_reduction = 1
-						category = cat_medium_armor
-					}
-					add_tech_bonus = {
 						name = armor_bonus
 						bonus = 1.0
-						uses = 2
+						uses = 1
 						category = armor
 					}
 				}
