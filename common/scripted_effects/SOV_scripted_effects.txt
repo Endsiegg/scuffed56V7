@@ -343,7 +343,7 @@ SOV_initiate_paranoia_effect = { #PARANOIA SYSTEM STARTS, GOOD LUCK COMRADE
 }
 
 SOV_remove_paranoia_effect = { # NO MORE PARANOIA, COMRADES
-custom_effect_tooltip = SOV_stalins_cult_of_personality_tt
+	custom_effect_tooltip = SOV_stalins_cult_of_personality_tt
 	set_variable = { SOV_paranoia = 0 }
 	set_variable = { SOV_paranoia_modifier_increase = 0 }
 	SOV_paranoia_clamp_and_update_ui_effect = yes
@@ -1167,12 +1167,12 @@ SOV_pick_regular_purge_administration_type_effect = {
 			add_to_temp_variable = { SOV_random_purge_test = 1 } #TEST
 		}
 	}
-	#if = { #TEST
-	#	limit = {
-	#		check_variable = { SOV_random_purge_test = 0 }
-	#	}
-	#	#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
-	#}
+	if = { #TEST
+		limit = {
+			check_variable = { SOV_random_purge_test = 0 }
+		}
+		#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
+	}
 }
 
 SOV_pick_great_purge_administration_type_effect = {
@@ -1238,7 +1238,7 @@ SOV_pick_regular_purge_army_type_effect = {
 		25 = { # GENERAL ACCUSES GENERAL
 			modifier = { #No pastia no comiercio
 				factor = 0
-				NOT = { #TODO_MANU: Need to check for 2 guys fulfilling these conditions here
+				NOT = {
 					any_army_leader = {
 						SOV_character_can_be_purged = yes
 						NOT = { has_trait = trait_SOV_stalinist }
@@ -1259,12 +1259,12 @@ SOV_pick_regular_purge_army_type_effect = {
 			add_to_temp_variable = { SOV_random_purge_test = 1 } #TEST
 		}
 	}
-	#if = { #TEST
-	#	limit = {
-	#		check_variable = { SOV_random_purge_test = 0 }
-	#	}
-	#	#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
-	#}
+	if = { #TEST
+		limit = {
+			check_variable = { SOV_random_purge_test = 0 }
+		}
+		#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
+	}
 }
 
 SOV_pick_great_purge_army_type_effect = {
@@ -1303,12 +1303,12 @@ SOV_pick_great_purge_army_type_effect = {
 			add_to_temp_variable = { SOV_random_purge_test = 1 } #TEST
 		}
 	}
-	#if = { #TEST
-	#	limit = {
-	#		check_variable = { SOV_random_purge_test = 0 }
-	#	}
-	#	#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
-	#}
+	if = { #TEST
+		limit = {
+			check_variable = { SOV_random_purge_test = 0 }
+		}
+		#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
+	}
 }
 
 SOV_pick_regular_purge_navy_type_effect = {
@@ -1393,12 +1393,12 @@ SOV_pick_great_purge_navy_type_effect = {
 			add_to_temp_variable = { SOV_random_purge_test = 1 } #TEST
 		}
 	}
-	#if = { #TEST
-	#	limit = {
-	#		check_variable = { SOV_random_purge_test = 0 }
-	#	}
-	#	#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
-	#}
+	if = { #TEST
+		limit = {
+			check_variable = { SOV_random_purge_test = 0 }
+		}
+		#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
+	}
 }
 
 SOV_pick_regular_purge_airforce_type_effect = {
@@ -1421,12 +1421,12 @@ SOV_pick_regular_purge_airforce_type_effect = {
 			add_to_temp_variable = { SOV_random_purge_test = 1 } #TEST
 		}
 	}
-	#if = { #TEST
-	#	limit = {
-	#		check_variable = { SOV_random_purge_test = 0 }
-	#	}
-	#	#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
-	#}
+	if = { #TEST
+		limit = {
+			check_variable = { SOV_random_purge_test = 0 }
+		}
+		#log = "RANDOM PURGE FAILED. NO VALID PURGE AVAILABLE"
+	}
 }
 
 SOV_pick_great_purge_airforce_type_effect = {
@@ -2915,31 +2915,6 @@ SOV_approach_sinkiang_diplomacy_effect = {
 		}
 		add_ai_strategy = {
 			type = alliance
-			id = SIC	
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = XIC	
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = GDC	
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = HBC	
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = SND	
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
 			id = YUN		
 			value = -5
 		}
@@ -2956,6 +2931,41 @@ SOV_approach_sinkiang_diplomacy_effect = {
 		add_ai_strategy = {
 			type = alliance
 			id = MAN		
+			value = -5
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = GDC		
+			value = -5
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = XIC		
+			value = -5
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = SND		
+			value = -5
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = KHM		
+			value = -5
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = NXM		
+			value = -5
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = GSM		
+			value = -5
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = HBC		
 			value = -5
 		}
 	}
@@ -3699,7 +3709,6 @@ SOV_manage_spanish_generals_exiled_in_ussr_effect = {
 		limit = {
 			ROOT = { tag = SPD }
 			SOV = {
-				has_government = communism
 				has_country_flag = SOV_spanish_refugee_generals_welcome_flag
 				has_completed_focus = SOV_the_centre
 			}
@@ -3736,7 +3745,6 @@ SOV_manage_spanish_generals_exiled_in_ussr_effect = {
 		limit = {
 			ROOT = { tag = SPD }
 			SOV = {
-				has_government = communism
 				has_country_flag = SOV_spanish_refugee_generals_welcome_flag
 				OR = {
 					has_completed_focus = SOV_the_left_opposition
@@ -3778,7 +3786,6 @@ SOV_manage_spanish_generals_exiled_in_ussr_effect = {
 		limit = {
 			ROOT = { tag = SPC }
 			SOV = {
-				has_government = communism
 				has_country_flag = SOV_spanish_refugee_generals_welcome_flag
 				has_completed_focus = SOV_covert_support_for_spanish_poum
 			}
@@ -7097,6 +7104,7 @@ SOV_set_up_left_opposition_militia = {
 	        infantry = { x = 0 y = 1 }
 	        infantry = { x = 0 y = 2 }
 	    }
+	    is_locked = yes
 	}
 	division_template = {
 	    name = "Trotskyist Peasant Militia"
@@ -7110,6 +7118,7 @@ SOV_set_up_left_opposition_militia = {
 	        infantry = { x = 1 y = 0 }
 	        infantry = { x = 1 y = 1 }
 	    }
+	    is_locked = yes
 	}
 	every_owned_state = {
 		IF = {
@@ -7149,6 +7158,7 @@ SOV_set_up_right_opposition_militia = {
 	        infantry = { x = 0 y = 1 }
 	        infantry = { x = 0 y = 2 }
 	    }
+	    is_locked = yes
 	}
 	division_template = {
 	    name = "Bukharinist Peasant Militia"
@@ -7162,6 +7172,7 @@ SOV_set_up_right_opposition_militia = {
 	        infantry = { x = 1 y = 0 }
 	        infantry = { x = 1 y = 1 }
 	    }
+	    is_locked = yes
 	}
 	every_owned_state = {
 		IF = {
@@ -7304,7 +7315,7 @@ SOV_set_up_extras_from_concessions = {
 		}
 	}
 	for_each_loop = {
-		array = SOV.few_weapons_array
+		array = SOV.some_weapons_array
 		value = weapons_country
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
@@ -7348,30 +7359,14 @@ SOV_promote_to_country_leader_beriya = {
 }
 
 SOV_promote_to_country_leader_trotsky = {
-	if = {
-		limit = {
-			has_dlc = "La Resistance"
+	add_country_leader_role = {
+		character = "SOV_lev_trotsky"
+		country_leader = {
+			ideology = marxism
+			traits = { permanent_revolutionary }
+			expire = "1965.1.1.1"
 		}
-		add_country_leader_role = {
-			character = "SOV_lev_trotsky"
-			country_leader = {
-				ideology = marxism
-				traits = { permanent_revolutionary_LaR }
-				expire = "1965.1.1.1"
-			}
-			promote_leader = yes
-		}
-	}
-	else = {
-		add_country_leader_role = {
-			character = "SOV_lev_trotsky"
-			country_leader = {
-				ideology = marxism
-				traits = { permanent_revolutionary }
-				expire = "1965.1.1.1"
-			}
-			promote_leader = yes
-		}
+		promote_leader = yes
 	}
 	SOV = { set_country_flag = SOV_trotsky_country_leader_flag }
 }
@@ -7480,6 +7475,7 @@ SOV_set_up_japanese_troops = {
 	        artillery_brigade = { x= 2 y = 0}
 	        artillery_brigade = { x= 2 y = 1}
 	    }
+	    is_locked = yes
 	}
 	JAP = {
 		var:SOV.SOV_japanese_general = {
@@ -7822,13 +7818,13 @@ SOV_start_civil_war = {
 	IF = {
 		limit = {
 			has_border_war_between = {
-				attacker = 918
+				attacker = 527
 				defender = 408
 			}
 		}
 		finalize_border_war = {
 			attacker_win = yes
-			attacker = 918
+			attacker = 527
 			defender = 408
 		}
 	}
@@ -7836,13 +7832,13 @@ SOV_start_civil_war = {
 		limit = {
 			has_border_war_between = {
 				attacker = 408
-				defender = 918
+				defender = 527
 			}
 		}
 		finalize_border_war = {
 			defender_win = yes
 			attacker = 408
-			defender = 918
+			defender = 527
 		}
 	}
 
@@ -8734,6 +8730,127 @@ SOV_exiles_civil_war_start = {
 	# Initiate Wreckers
 	SOV_launch_wreckers = yes
 
+	# Vasily Flug and Boris Shtefion
+	IF = {
+		limit = {
+			NOT = {
+				OR = {
+					has_global_flag = SOV_flug_and_shteifon_went_to_germany_flag
+					has_global_flag = SOV_flug_and_shteifon_went_to_russia_flag
+					has_global_flag = SOV_flug_and_shteifon_decided_to_fight_for_yugoslavia_flag
+				}
+			}
+		}
+
+		set_country_flag = SOV_flug_and_shteifon_are_ready_to_serve_flag
+		set_global_flag = SOV_flug_and_shteifon_went_to_russia_flag
+
+		YUG = {
+			SOV_vasily_flug = {
+				set_nationality = SOV
+			}
+			SOV_boris_shteifon = {
+				set_nationality = SOV
+			}
+		}
+
+	}
+
+	# Fyodor Konovalov
+	IF = {
+		limit = {
+			ETH = {
+				OR = {
+					exists = no
+					has_capitulated = yes
+					has_country_flag = ETH_selassie_left_flag
+				}
+			}
+		}
+
+		set_country_flag = ETH_feodor_konovalov_went_to_rejoin_the_russian_whites_flag
+
+		ETH = {
+			ETH_feodor_konovalov = {
+				set_nationality = SOV
+			}
+		}
+
+	}
+
+	# Vladimir Sidorin
+	IF = {
+		limit = {
+			DON = {
+				exists = no
+			}
+		}
+
+		set_country_flag = DON_vladimir_sidorin_went_to_rejoin_the_russian_whites_flag
+
+		DON = {
+			DON_vladimir_sidorin = {
+				demote_leader = yes
+				remove_country_leader_role = {
+				    ideology = fascism_ideology
+				}
+				remove_country_leader_role = {
+				    ideology = despotism
+				}
+				set_nationality = SOV
+			}
+		}
+
+	}
+
+	# Ivanis Vasily Nikolaevich
+	IF = {
+		limit = {
+			KUB = {
+				exists = no
+			}
+		}
+
+		set_country_flag = KUB_ivanis_vasily_nikolaevich_went_to_rejoin_the_russian_whites_flag
+
+		KUB = {
+			KUB_ivanis_vasily_nikolaevich = {
+				demote_leader = yes
+				remove_country_leader_role = {
+				    ideology = fascism_ideology
+				}
+				remove_country_leader_role = {
+				    ideology = despotism
+				}
+				set_nationality = SOV
+			}
+		}
+
+	}
+
+	# Ivan Belyaev
+	IF = {
+		limit = {
+			PAR = {
+				OR = {
+					exists = no
+					has_capitulated = yes
+					NOT = {
+						has_idea = PAR_ivan_belyaev
+					}
+				}
+			}
+		}
+
+		set_country_flag = PAR_ivan_belyaev_went_to_rejoin_the_russian_whites_flag
+
+		PAR = {
+			PAR_ivan_belyaev = {
+				set_nationality = SOV
+			}
+		}
+
+	}
 	
 }
 
@@ -9497,6 +9614,8 @@ SOV_set_up_dynamic_modifiers_civil_war = { #Used for Stalinist side in the CW
 	set_variable = { SOS.SOV_the_red_army_army_org_factor = SOV.SOV_the_red_army_army_org_factor }
 	set_variable = { SOS.SOV_the_red_army_experience_gain_army_factor = SOV.SOV_the_red_army_experience_gain_army_factor }
 	set_variable = { SOS.SOV_the_red_army_experience_loss_factor = SOV.SOV_the_red_army_experience_loss_factor }
+	set_variable = { SOS.SOV_the_red_army_mastery_loss_factor = SOV.SOV_the_red_army_mastery_loss_factor }
+	set_variable = { SOS.SOV_the_red_army_mastery_loss_factor_inverted = SOV.SOV_the_red_army_mastery_loss_factor_inverted }
 	set_variable = { SOS.SOV_the_red_army_mobilization_speed = SOV.SOV_the_red_army_mobilization_speed }
 	set_variable = { SOS.SOV_the_red_army_conscription_factor = SOV.SOV_the_red_army_conscription_factor }
 	set_variable = { SOS.SOV_the_red_army_modifier_army_sub_unit_cavalry_speed_factor = SOV.SOV_the_red_army_modifier_army_sub_unit_cavalry_speed_factor }

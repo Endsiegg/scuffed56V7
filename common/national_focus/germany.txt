@@ -5425,12 +5425,6 @@ focus_tree = {
 				uses = 1
 				category = cat_heavy_armor
 			}
-			add_tech_bonus = {
-				name = GER_expand_kummersdorfs_capacity
-				bonus = 1
-				uses = 1
-				category = cat_medium_armor
-			}
 			add_breakthrough_progress = {
 				specialization = specialization_land
 				value = 0.5
@@ -11138,9 +11132,12 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			GER_integrate_modify_mefo_bills_or_economy_of_conquest = yes
+			#GER_seize_gold_reserves_in_europe_peacefully = yes
+			add_to_variable = { 
+				 GER_industrial_consumer_goods_factor = -0.1
+				 tooltip = consumer_goods_factor_tt
+			 }				
 			hidden_effect = {
-			GER_seize_gold_reserves_in_europe_peacefully = yes
-			add_to_variable = { var = GER_mefo_bill_counter value = -20 }	
 			if = {
 				limit = {
 					HUN = {
@@ -12260,6 +12257,7 @@ focus_tree = {
 		relative_position_id = GER_army_indoctrination
 		cost = 10
 		available = {
+			date > 1940.01.01
 			has_war_with_major = yes
 			has_tech = advanced_machine_tools
 		}
@@ -17757,7 +17755,7 @@ focus_tree = {
 					}	
 					add_tech_bonus = {
 						name = armor_bonus
-						bonus = 2.0
+						bonus = 1.0
 						uses = 1
 						category = armor
 					}
@@ -17767,14 +17765,9 @@ focus_tree = {
 			else = {
 				effect_tooltip = {
 					add_tech_bonus = {
-						name = med_armor_bonus
-						ahead_reduction = 1
-						category = cat_medium_armor
-					}
-					add_tech_bonus = {
 						name = armor_bonus
 						bonus = 1.0
-						uses = 2
+						uses = 1
 						category = armor
 					}
 				}
