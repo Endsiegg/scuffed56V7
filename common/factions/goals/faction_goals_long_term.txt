@@ -59,7 +59,7 @@ faction_goal_resource_control = {
 					name = FACTION
 			}
 			resource = rubber
-			amount > 199
+			amount > 499
 			extracted = yes # (optional, default: no) checks extracted amount instead of country balance
 		}
 		has_resources_in_collection = {
@@ -69,7 +69,7 @@ faction_goal_resource_control = {
 					name = FACTION
 			}
 			resource = aluminium
-			amount > 199
+			amount > 499
 			extracted = yes # (optional, default: no) checks extracted amount instead of country balance
 		}
 		has_resources_in_collection = {
@@ -79,7 +79,7 @@ faction_goal_resource_control = {
 					name = FACTION
 			}
 			resource = chromium
-			amount > 199
+			amount > 499
 			extracted = yes # (optional, default: no) checks extracted amount instead of country balance
 		}
 		has_resources_in_collection = {
@@ -89,7 +89,7 @@ faction_goal_resource_control = {
 					name = FACTION
 			}
 			resource = tungsten
-			amount > 199
+			amount > 499
 			extracted = yes # (optional, default: no) checks extracted amount instead of country balance
 		}
 	
@@ -1174,6 +1174,12 @@ faction_goal_industrial_domination = {
 				num_of_controlled_factories > 500
 			}
 			add_faction_initiative = 1
+			add_tech_bonus = {
+				name = industrial_expansion_tech_bonus
+				bonus = 1
+				uses = 2
+				category = industry
+			}			
 		}
 	}
 	ai_will_do = {

@@ -386,9 +386,60 @@ ideas = {
 			allowed_civil_war = {
 				NOT = { has_government = communism }
 			}
-			modifier = { industrial_capacity_factory = 0.1 }
+			modifier = { industrial_capacity_factory = 0.10
+						 industrial_capacity_dockyard = 0.1
+					 }
 		}
 		
+		MEX_sea_to_shining_sea = {
+			name = MEX_sea_to_shining_sea
+			picture = generic_sea_focused_navy
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+
+			modifier = {
+				naval_detection = 0.10
+				naval_speed_factor = 0.10
+				production_speed_dockyard_factor = 0.1
+			}
+		}
+		MEX_supportive_navy_idea = {
+			picture = AUS_naval_efficiency_idea
+
+			allowed = {
+				original_tag = MEX
+			}
+
+			modifier = {
+				convoy_escort_efficiency = 0.15
+				navy_submarine_detection_factor = 0.10
+				navy_anti_air_attack_factor = 0.10
+				navy_screen_defence_factor = 0.10
+				industrial_capacity_dockyard = -0.10
+			}
+		}
+
+		MEX_full_fledged_navy_idea = {
+			picture = generic_navy_bonus
+
+			allowed = {
+				original_tag = MEX
+			}
+
+			modifier = {
+				naval_detection = 0.10
+				navy_capital_ship_attack_factor = 0.10
+				navy_capital_ship_defence_factor = 0.10
+				positioning = 0.10
+				industrial_capacity_dockyard = -0.10
+			}
+		}
 		MEX_capital_reserves = {
 			name = MEX_capital_reserves
 			picture = generic_foreign_capital
@@ -436,7 +487,8 @@ ideas = {
 			allowed_civil_war = { has_government = fascism }
 			modifier = {
 				fascism_drift = 0.12
-				mobilization_speed = 0.1
+				production_speed_dockyard_factor = 0.075
+				production_speed_arms_factory_factor = 0.075
 			}
 		}
 
@@ -457,7 +509,21 @@ ideas = {
 			allowed_civil_war = { has_government = fascism }
 			modifier = {
 				fascism_drift = 0.2
-				mobilization_speed = 0.2
+				production_speed_dockyard_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+			}
+		}
+
+		MEX_balanced_industrial_buildup = {
+			name = MEX_balanced_industrial_buildup
+
+			picture = ARG_public_works_investment
+
+			allowed = { always = no }
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.10
 			}
 		}
 

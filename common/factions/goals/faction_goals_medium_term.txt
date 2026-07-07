@@ -1637,18 +1637,15 @@ faction_goal_industrial_expansion = {
 				name = FACTION_NAME
 			}
 			buildings = { industrial_complex }
-			size > 149
+			size > 499
 		}
 	}
 	complete_effect = {
 		add_faction_power_projection = 200
 		custom_effect_tooltip = generic_skip_one_line_tt
 		every_faction_member = {
-			tooltip = AT_LEAST_50_CIVS
+			#tooltip = AT_LEAST_50_CIVS
 			visible_when_empty = yes 
-			limit = {
-				num_of_civilian_factories > 49
-			}
 			add_tech_bonus = {
 				name = industrial_expansion_tech_bonus
 				bonus = 1

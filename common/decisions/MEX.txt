@@ -350,83 +350,6 @@ MEX_category_military_issues = {	# Mission to deal with Cedillo before he rebels
 		}
 	}
 
-	# Seizure of the Panama Canal if Mexico controls the rest of Panama
-	# Can trigger an American declaration of war	
-	MEX_decision_operation_just_cause = { # Bahahaha
-		icon = generic_nationalism
-		visible = {
-			USA = { owns_state = 685 }
-			has_completed_focus = MEX_focus_seize_the_panama_canal
-			NOT = { 
-				has_war_with = USA
-				is_ally_with = USA
-				controls_state = 685
-			}
-		}
-		available = {
-			NOT = { has_non_aggression_pact_with = USA }
-			NOT = { has_war_with = USA }
-			NOT = { is_ally_with = USA }
-			controls_state = 304
-			OR = {
-				owns_state = 304
-				"PAN" = {
-					owns_state = 304
-					has_war_with = MEX
-				}
-			}
-			USA = { owns_state = 685 }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			if = {
-				limit = {
-					304 = {
-						is_owned_by = "PAN"
-						is_controlled_by = ROOT
-					}
-					ROOT = { has_war_with = "PAN" }
-				}
-				annex_country = { target = "PAN" }
-			}
-			add_named_threat = {
-				threat = 5
-				name = threat_mexico_attacks_panama_canal
-			}
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = 304
-					num_provinces = 2
-					on_win = mexico.40
-					on_lose = mexico.42
-					#on_cancel = 
-				}
-				
-				defender = {
-					state = 685
-					num_provinces = 1
-					on_win = mexico.41
-					on_lose = mexico.43
-					#on_cancel = 
-				}
-			}
-
-			add_opinion_modifier = {
-				target = USA
-				modifier = mexico_attack_on_panama_canal
-			}
-			USA = {
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = mexico_attack_on_panama_canal
-				}
-			}
-		}
-		ai_will_do = { base = 1 }
-	}
-
 	# Decision to send support to the communists in the Spanish Civil War
 	MEX_decision_support_spanish_loyalists = {
 		icon = generic_nationalism
@@ -1473,4 +1396,8 @@ MEX_category_hispanic_solidarity = {
 		}
 		ai_will_do = { base = 100 }
 	}
+		
+
+
 }
+
