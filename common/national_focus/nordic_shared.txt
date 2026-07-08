@@ -348,14 +348,6 @@ shared_focus = {
 	}
 
 	offset = {
-		x = -1
-		y = -5
-		trigger = {
-			has_focus_tree = swe_focus
-		}
-	}
-
-	offset = {
 		x = -27
 		y = 0
 		trigger = {
@@ -5845,22 +5837,16 @@ joint_focus = {
 	id = NORDIC_nordic_military_industry
 
 	icon = {
-		trigger = {
-			NORDIC_democratic_alliance_viable = yes 
+		GFX_focus_NORDIC_dem_materiel = {
+			NORDIC_democratic_alliance_viable = yes
 		}
-		value = GFX_focus_NORDIC_dem_materiel
-	}
-	icon = {
-		trigger = {
-			NORDIC_communist_alliance_viable = yes 
+		GFX_focus_NORDIC_com_materiel = {
+			NORDIC_communist_alliance_viable = yes
 		}
-		value = GFX_focus_NORDIC_com_materiel
-	}
-	icon = {
-		trigger = {
-			NORDIC_monarchist_alliance_viable = yes 
+		GFX_focus_NORDIC_mon_materiel = {
+			NORDIC_monarchist_alliance_viable = yes
 		}
-		value = GFX_focus_NORDIC_mon_materiel
+		GFX_focus_NORDIC_dem_materiel = yes
 	}
 
 	dynamic = yes
