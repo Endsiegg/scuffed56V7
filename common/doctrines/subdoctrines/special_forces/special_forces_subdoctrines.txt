@@ -40,7 +40,7 @@ mountaineers_1 = {
 	effect = {
 		unlock_subunit = rangers_support
 	}
-	mountaineers_special_forces_contribution_factor = -0.25
+	#mountaineers_special_forces_contribution_factor = -0.25
 	rangers_support = {
 		acclimatization_cold_climate_gain_factor = 0.25
 		snow = {
@@ -63,7 +63,7 @@ mountaineers_1 = {
 		reward_2 = {
 			mastery = 60
 	    	special_forces_training_time_factor = -0.1
-	    	mountaineers_special_forces_contribution_factor = -0.25
+	    	#mountaineers_special_forces_contribution_factor = -0.25
 		}
 		reward_3 = {
 			mastery = 60
@@ -133,7 +133,7 @@ mountaineers_2 = {
 	effect = {
 		unlock_subunit = rangers_support
 	}
-	mountaineers_special_forces_contribution_factor = -0.25
+	#mountaineers_special_forces_contribution_factor = -0.25
 	rangers_support = {
 		mountain = {
 			attack = 0.10
@@ -164,8 +164,12 @@ mountaineers_2 = {
 		}
 		reward_2 = {
 			mastery = 60
-		    category_mountaineers = {
-		    	#initiative = 0.01
+		    rangers_support = {
+				hills = {
+					attack = 0.10
+					defence = 0.10
+					movement = 0.10
+				}
 		    }
 			unit_mountaineers_design_cost_factor = -0.50
 			unit_rangers_support_design_cost_factor = -0.50
@@ -187,7 +191,7 @@ mountaineers_2 = {
 		}
 		reward_4 = {
 			mastery = 60
-			mountaineers_special_forces_contribution_factor = -0.25
+			#mountaineers_special_forces_contribution_factor = -0.25
 			category_mountaineers = {
 				supply_consumption = -0.02
 				max_organisation = 10
@@ -245,9 +249,9 @@ marines_1 = {
 	effect = {
 		unlock_subunit = pioneer_support
 	}
-	marines_special_forces_contribution_factor = -0.25
+	#marines_special_forces_contribution_factor = -0.25
 	pioneer_support = {
-		jungle = {
+		desert = {
 			attack = 0.10
 			defence = 0.10
 			movement = 0.10
@@ -269,12 +273,17 @@ marines_1 = {
 			unit_marine_design_cost_factor = -0.50
 			marine = {
 				max_organisation = 5
+				combat_width = -0.2
 			}
 		}
 		reward_3 = {			
 			mastery = 60
 			marine_commando = {
+				max_organisation = 5
 				breakthrough = 0.15
+				soft_attack = 0.1
+				hard_attack = 0.15
+				combat_width = -0.2
 			}
 			effect = {
 				custom_effect_tooltip = SF_marine_demoliton_effect_TT
@@ -283,7 +292,7 @@ marines_1 = {
 		reward_4 = {
 			mastery = 60
 			naval_invasion_plan_cap = 2
-			marines_special_forces_contribution_factor = -0.25
+			#marines_special_forces_contribution_factor = -0.25
 		}
 		reward_5 = {
 			mastery = 60
@@ -300,7 +309,7 @@ marines_1 = {
 			pioneer_support = {
 				battalion_mult = {
 					category = category_amphibious_tanks
-					armor = 0.15
+					armor_value = 0.15
 					breakthrough = 0.15
 				}
 			}
@@ -350,7 +359,7 @@ marines_2 = {
 	effect = {
 		unlock_subunit = pioneer_support
 	}
-	marines_special_forces_contribution_factor = -0.25
+	#marines_special_forces_contribution_factor = -0.25
 	pioneer_support = {
 		amphibious = {
 			attack = 0.15
@@ -367,35 +376,35 @@ marines_2 = {
 			naval_invasion_prep_days = -5
 			naval_invasion_division_cap = 2
 			naval_invasion_plan_cap = 1
-			marines_special_forces_contribution_factor = -0.25
+			#marines_special_forces_contribution_factor = -0.25
 		}
 		reward_2 = {
 			mastery = 60
 			pioneer_support = {
 				battalion_mult = {
 					category = category_line_artillery
-					max_organisation = 2
+					max_organisation = 5
 					add = yes
 				}
 			}
 		    artillery = {
 				 battalion_mult = {
 					category = category_marines
-					defense = 0.05				
+					defense = 0.15				
 				}
 			}
 		
 			anti_air = {
 				 battalion_mult = {
 					category = category_marines
-					defense = 0.05
+					defense = 0.15
 				}
 			}
 			
 			anti_tank = {
 				 battalion_mult = {
 					category = category_marines
-					defense = 0.05					
+					defense = 0.15					
 				}
 			}			
 		}
@@ -405,11 +414,15 @@ marines_2 = {
 				max_organisation = 5
 				soft_attack = 0.05
 			}
-			extra_marine_supply_grace = 36			
+			marine_commando = {
+				max_organisation = 5
+				soft_attack = 0.05
+			}
+			extra_marine_supply_grace = 72			
 		}
 		reward_4 = {
 			mastery = 60
-			naval_invasion_planning_bonus_speed = 0.2
+			naval_invasion_planning_bonus_speed = 0.6
 			shore_bombardment_bonus = 0.15
 			army_bonus_air_superiority_factor = 0.10						
 		}
@@ -461,7 +474,7 @@ paratroopers_1 = {
    effect = {
 		unlock_subunit = airborne_light_armor
 	}
-	paratroopers_special_forces_contribution_factor = -0.25
+	#paratroopers_special_forces_contribution_factor = -0.25
 	signal_company = {
 		battalion_mult = {
 			category = category_paratroopers
@@ -510,7 +523,7 @@ paratroopers_1 = {
 		}
 		reward_5 = {
 		    mastery = 60
-		    paratroopers_special_forces_contribution_factor = -0.25
+		   #aratroopers_special_forces_contribution_factor = -0.25
 		    category_paratroopers = {
 				soft_attack = 0.15
 				breakthrough = 0.15
@@ -562,7 +575,7 @@ paratroopers_2 = {
     effect = {
 		unlock_subunit = airborne_light_armor
 	}
-	paratroopers_special_forces_contribution_factor = -0.25
+	#paratroopers_special_forces_contribution_factor = -0.25
 	field_hospital = {
 		battalion_mult = {
 				category = category_paratroopers
@@ -574,7 +587,7 @@ paratroopers_2 = {
     rewards = {
 		reward_1 = {
 	    	mastery = 60
-	    	paratroopers_special_forces_contribution_factor = -0.25	
+	    	#paratroopers_special_forces_contribution_factor = -0.25	
 			effect = {
 				# Display only — real effect fires in on_units_paradropped_in_state (00_on_actions.txt), gated on has_mastery_level of paratroopers_2
 				custom_effect_tooltip = SF_PARAS_combat_effect_tt
@@ -583,6 +596,9 @@ paratroopers_2 = {
 		reward_2 = {
 			mastery = 60
 			special_forces_training_time_factor = -0.1
+			paratrooper = {
+				combat_width = -0.2
+			}
 		}
 		reward_3 = {
 			mastery = 60
@@ -649,7 +665,7 @@ rangers_1 = {
 		effect = {
 			unlock_subunit = rangers_support
 		}
-		rangers_special_forces_contribution_factor = -0.25
+		#rangers_special_forces_contribution_factor = -0.25
 	    ranger_battalion = {
 			acclimatization_cold_climate_gain_factor = 0.25
 			forest = {
@@ -674,7 +690,7 @@ rangers_1 = {
 				soft_attack = 0.05
 				max_organisation = 5
 			}
-	    	rangers_special_forces_contribution_factor = -0.25
+	    	#rangers_special_forces_contribution_factor = -0.25
 		}
 		reward_3 = {
 			mastery = 60
@@ -693,29 +709,29 @@ rangers_1 = {
 				}
 			}
 		}
-	reward_4 = {
-	    mastery = 60
-	    category_rangers = {
-			default_morale = 0.1
-			supply_consumption = -0.02		
-		}
+		reward_4 = {
+			mastery = 60
+			category_rangers = {
+				default_morale = 0.1
+				supply_consumption = -0.02		
+			}
 
-		ranger_battalion = {	
-			urban = {
-				attack = 0.1
-				defence = 0.1
-				movement = 0.05
+			ranger_battalion = {	
+				urban = {
+					attack = 0.1
+					defence = 0.1
+					movement = 0.05
+				}
 			}
 		}
-	}
-	reward_5 = {
-	    mastery = 60
-	    ranger_battalion = {
-			max_organisation = 10
-			soft_attack = 0.1
-			breakthrough = 0.1
+		reward_5 = {
+			mastery = 60
+			ranger_battalion = {
+				max_organisation = 10
+				soft_attack = 0.1
+				breakthrough = 0.1
+			}
 		}
-	}
     }
 }
 
@@ -761,7 +777,7 @@ rangers_2 = {
 	effect = {
 		unlock_subunit = rangers_support
 	}
-	rangers_special_forces_contribution_factor = -0.25
+	#rangers_special_forces_contribution_factor = -0.25
 	ranger_battalion = {
 		acclimatization_hot_climate_gain_factor = 0.25
 		jungle = {
@@ -805,7 +821,7 @@ rangers_2 = {
 		reward_4 = {
 			mastery = 60
 			special_forces_training_time_factor = -0.1
-			rangers_special_forces_contribution_factor = -0.25
+			#rangers_special_forces_contribution_factor = -0.25
 		}
 		reward_5 = {
 			mastery = 60
@@ -813,186 +829,212 @@ rangers_2 = {
 		}
     }
 }
+
  #I WILL FIX THESE AT A LATER DATE ~EndSieg
-# shocktroops_1 = {
-#     track = { special_forces_first special_forces_second }
-#     name = SUBDOCTRINE_SHOCKTROOPS_1
-#     description = SUBDOCTRINE_SHOCKTROOPS_1_DESC
-#     icon = GFX_shocktroop_level_3_b_medium
+shocktroops_1 = {
+    track = { special_forces_first special_forces_second }
+    name = SUBDOCTRINE_SHOCKTROOPS_1
+    description = SUBDOCTRINE_SHOCKTROOPS_1_DESC
+    icon = GFX_shocktroop_level_3_b_medium
 
-#     xp_cost = 60
-#     xp_type = army
+    xp_cost = 60
+    xp_type = army
 
-#     xor = { shocktroops_2 }
+   # xor = { shocktroops_2 }
 
-#     mastery = {
-#         multiplier = 6
-#         categories = {
-#             category_shocktroops
-#         }
-#     }
+    mastery = {
+        multiplier = 6
+        categories = {
+            category_shocktroops
+        }
+    }
 
-#     available = {
-#     	has_tech = shocktroops
-#     }
+    available = {
+    	has_tech = shocktroops
+    }
 
-#     ai_will_do = {
-#         base = 1
-#     }
+    ai_will_do = {
+        base = 1
+    }
 
-#     # EFFECTS
-# 		effect = {
-# 			unlock_subunit = shocktroops_support
-# 		}
-# 		shocktroops_special_forces_contribution_factor = -0.25
-# 	    ranger_battalion = {
-# 			acclimatization_cold_climate_gain_factor = 0.25
-# 			forest = {
-# 				attack = 0.1
-# 				defence = 0.1
-# 				movement = 0.05
-# 			}
-# 		}
+    # EFFECTS
+	    shocktroop = {
+			urban = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.05
+			}
+		}
 
-#     rewards = {
-# 		reward_1 = {
-# 			mastery = 60
-# 			category_shocktroops = {
-# 				defense = 0.1
-# 				#initiative = 0.01 
-# 				maximum_speed = 0.1
-# 			}
-# 		}
-# 		reward_2 = {
-# 			mastery = 60
-# 			category_special_forces = {
-# 				soft_attack = 0.05
-# 				max_organisation = 5
-# 			}
-# 	    	shocktroops_special_forces_contribution_factor = -0.25
-# 		}
-# 		reward_3 = {
-# 			mastery = 60
-# 			artillery = {
-# 				battalion_mult = {
-# 					category = category_shocktroops
-# 					defense = 0.05
-# 					breakthrough = 0.05
-# 				}
-# 			}
-# 			shocktroops_support = {
-# 				battalion_mult = {
-# 					category = category_line_artillery
-# 					defense = 0.15
-# 					breakthrough = 0.15
-# 				}
-# 			}
-# 		}
-# 	reward_4 = {
-# 	    mastery = 60
-# 	    category_shocktroops = {
-# 			default_morale = 0.1
-# 			supply_consumption = -0.02		
-# 		}
+    rewards = {
+		reward_1 = {
+			mastery = 60
+			category_shocktroops = {
+				defense = 0.1
+				#initiative = 0.01 
+				maximum_speed = 0.1
+			}
+		}
+		reward_2 = {
+			mastery = 60
+			category_shocktroops = {
+				soft_attack = 0.05
+				max_organisation = 5
+			}
+	    	#shocktroops_special_forces_contribution_factor = -0.25
+		}
+		reward_3 = {
+			mastery = 60
+			bm_command_regiment = {
+				battalion_mult = {
+					category = category_shocktroops
+					breakthrough = 0.15
+				}
+			}
+			bm_light_tank_command_regiment = {
+				battalion_mult = {
+					category = category_shocktroops
+					breakthrough = 0.15
+				}				
+			}
+			bm_medium_tank_command_regiment = {
+				battalion_mult = {
+					category = category_shocktroops
+					breakthrough = 0.15
+				}				
+			}
+			bm_heavy_tank_command_regiment = {
+				battalion_mult = {
+					category = category_shocktroops
+					breakthrough = 0.15
+				}				
+			}
+		}
+		reward_4 = {
+			mastery = 60
+			shocktroop = {	
+				urban = {
+					attack = 0.15
+					defence = 0.15
+					movement = 0.05
+				}
+			}
+			mot_shocktroop = {	
+				urban = {
+					attack = 0.1
+					defence = 0.1
+				}
+			}
+			mech_shocktroop = {	
+				urban = {
+					attack = 0.1
+					defence = 0.1
+				}
+			}						
+		}
+		reward_5 = {
+			mastery = 60
+			category_shocktroops = {
+				hard_attack = 0.15
+				breakthrough = 0.1
+				supply_consumption = 0.04			
+			}
+		}
+    }
+} 
 
-# 		ranger_battalion = {	
-# 			urban = {
-# 				attack = 0.1
-# 				defence = 0.1
-# 				movement = 0.05
-# 			}
-# 		}
-# 	}
-# 	reward_5 = {
-# 	    mastery = 60
-# 	    shocktroop = {
-# 			max_organisation = 10
-# 			soft_attack = 0.1
-# 			breakthrough = 0.1
-# 		}
-# 	}
-#     }
-# } 
+shocktroops_2 = {
+    track = { special_forces_first special_forces_second }
+    name = SUBDOCTRINE_SHOCKTROOPS_2
+    description = SUBDOCTRINE_SHOCKTROOPS_2_DESC
+    icon = GFX_shocktroop_level_3_a_medium
 
-# shocktroops_2 = {
-#     track = { special_forces_first special_forces_second }
-#     name = SUBDOCTRINE_SHOCKTROOPS_2
-#     description = SUBDOCTRINE_SHOCKTROOPS_2_DESC
-#     icon = GFX_shocktroop_level_3_a_medium
+    xp_cost = 60
+    xp_type = army
 
-#     xp_cost = 60
-#     xp_type = army
+    #xor = { shocktroops_1 }
 
-#     xor = { shocktroops_1 }
+    mastery = {
+        multiplier = 6
+        categories = {
+            category_shocktroops
+        }
+    }
 
-#     mastery = {
-#         multiplier = 6
-#         categories = {
-#             category_shocktroops
-#         }
-#     }
+    available = {
+    	has_tech = shocktroops
+    }
 
-#     available = {
-#     	has_tech = shocktroops
-#     }
+    ai_will_do = {
+        base = 1
+    }
 
-#     ai_will_do = {
-#         base = 1
-#     }
+    # EFFECTS   
+	shocktroop = {
+		fort = {
+			attack = 0.2
+			defence = 0.2
+		}
+	}		
 
-#     # EFFECTS   
-# 	effect = {
-# 		unlock_subunit = shocktroops_support
-# 	}
-# 	shocktroops_special_forces_contribution_factor = -0.25
-# 	ranger_battalion = {
-# 		acclimatization_hot_climate_gain_factor = 0.25
-# 		jungle = {
-# 			attack = 0.1
-# 			defence = 0.1
-# 			movement = 0.05
-# 		}
-# 	}		
+    rewards = {
+		reward_1 = {
+			mastery = 60
+			bm_command_regiment = {
+				fort = {
+					attack = 0.05
+					defence = 0.05
+					movement = 0.05
+				}
+			}
+			bm_heavy_tank_command_regiment = {
+				fort = {
+					attack = 0.05
+					defence = 0.05
+					movement = 0.05
+				}				
+			}	
+			bm_medium_tank_command_regiment = {
+				fort = {
+					attack = 0.05
+					defence = 0.05
+					movement = 0.05
+				}				
+			}		
+			bm_light_tank_command_regiment = {
+				fort = {
+					attack = 0.05
+					defence = 0.05
+					movement = 0.05
+				}				
+			}
+		}
+		reward_2 = {
+		    mastery = 60
+		    category_shocktroops = {
+				soft_attack = 0.1
+				defense = 0.1
+				max_organisation = 5
+			}
+		}
+		reward_3 = {
+			mastery = 60
+			shocktroop = {
+				combat_width = -0.2
+			}
+			special_forces_no_supply_grace = 72
+		}
+		reward_4 = {
+			mastery = 60
+			category_shocktroops = {
+				hard_attack = 0.1	
+				breakthrough = 0.1			
+			}
 
-#     rewards = {
-# 		reward_1 = {
-# 			mastery = 60
-# 			shocktroops_support = {
-# 				jungle = {
-# 					attack = 0.05
-# 					defence = 0.05
-# 					movement = 0.05
-# 				}
-# 				forest = {
-# 					attack = 0.05
-# 					defence = 0.05
-# 					movement = 0.05
-# 				}
-# 			}
-# 		}
-# 		reward_2 = {
-# 		    mastery = 60
-# 		    category_shocktroops = {
-# 				soft_attack = 0.1
-# 				defense = 0.1
-# 				max_organisation = 5
-# 			}
-# 		}
-# 		reward_3 = {
-# 			mastery = 60
-# 			ranger_battalion = {
-# 				supply_consumption = -0.03
-# 			}
-# 			special_forces_no_supply_grace = 36
-# 		}
-# 		reward_4 = {
-# 			mastery = 60
-# 			special_forces_training_time_factor = -0.1
-# 			shocktroops_special_forces_contribution_factor = -0.25
-# 		}
-# 		reward_5 = {
-# 			mastery = 60
-# 			special_forces_attack_factor = 0.1
-# 		}
-#     }
-# }
+		}
+		reward_5 = {
+			mastery = 60
+			special_forces_attack_factor = 0.1
+		}
+    }
+}

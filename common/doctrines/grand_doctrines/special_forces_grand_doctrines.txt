@@ -13,7 +13,7 @@ special_forces_quantity = {
         }
     }
 
-    xp_cost = 60
+    xp_cost = 1
     xp_type = army
 
     ai_will_do = {
@@ -26,16 +26,15 @@ special_forces_quantity = {
     }
 
     # EFFECTS
-
-    special_forces_cap = 0.04
-    special_forces_training_time_factor = -0.2
-
+    special_forces_training_time_factor = -0.3
+    special_forces_no_supply_grace = 72
+    paratroopers_special_forces_contribution_factor = -0.25
+    marines_special_forces_contribution_factor = -0.25
+    mountaineers_special_forces_contribution_factor = -0.25
+    rangers_special_forces_contribution_factor = -0.25
     milestones = {
         {
         	special_forces_cap = 0.04
-            category_special_forces = {
-                soft_attack = 0.05
-            }
             effect = {
                 if = {
                     limit = {
@@ -52,9 +51,6 @@ special_forces_quantity = {
         }
         {
         	special_forces_cap = 0.04
-            category_special_forces = {
-                max_organisation = 5
-            }
             effect = {
                 if = {
                     limit = {
@@ -87,7 +83,7 @@ special_forces_quality = {
         }
     }
 
-    xp_cost = 60
+    xp_cost = 1
     xp_type = army
 
     ai_will_do = {
@@ -105,7 +101,6 @@ special_forces_quality = {
                 max_organisation = 10
 
     }
-    special_forces_no_supply_grace = 24
 
     milestones = {
         {
