@@ -440,7 +440,7 @@ focus_tree = {
 	focus = { # R56
 		id = GER_exploit_trade_dependence
 		icon = GFX_focus_GRE_Combat_depression
-		cost = 10
+		cost = 5
 		prerequisite = { focus = GER_abolish_price_controls }
 		x = -1
 		y = 1
@@ -664,7 +664,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_lower_taxes
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -779,7 +779,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_industrial_expansion
-		cost = 10
+		cost = 5
 		available = {
 			42 = {
 				is_fully_controlled_by = ROOT
@@ -830,15 +830,15 @@ focus_tree = {
 			42 = {
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 16
 				}
 				add_resource = {
 					type = tungsten
-					amount = 2
+					amount = 16
 				}
 				add_resource = {
 					type = chromium
-					amount = 2
+					amount = 16
 				}
 			}
 
@@ -855,7 +855,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_recovering_economy_modifier_local_resources_factor = 0.05
+				GER_recovering_economy_modifier_local_resources_factor = 0.10
 				tooltip = local_resources_factor_tt
 			}
 
@@ -871,7 +871,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_industrial_expansion
-		cost = 10
+		cost = 5
 		available = {
 			has_tech = advanced_machine_tools
 		}
@@ -894,7 +894,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				998 = { add_extra_state_shared_building_slots = 1 } # R56
+				998 = { add_extra_state_shared_building_slots = 3 } # R56
 			}
 			if = {
 				limit = {
@@ -902,7 +902,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				61 = { add_extra_state_shared_building_slots = 1 }
+				61 = { add_extra_state_shared_building_slots = 3 }
 			}
 			if = {
 				limit = {
@@ -910,7 +910,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				62 = { add_extra_state_shared_building_slots = 1 }
+				62 = { add_extra_state_shared_building_slots = 3 }
 			}
 			if = {
 				limit = {
@@ -918,7 +918,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				63 = { add_extra_state_shared_building_slots = 1 }
+				63 = { add_extra_state_shared_building_slots = 3 }
 			}
 			if = {
 				limit = {
@@ -926,7 +926,7 @@ focus_tree = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
-				5 = { add_extra_state_shared_building_slots = 1 }
+				5 = { add_extra_state_shared_building_slots = 3 }
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -948,7 +948,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_agricultural_reforms
-		cost = 10
+		cost = 5
 		available = {
 			OR ={
 				59 = { #Hannover
@@ -1004,7 +1004,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_invest_in_vereinigte_stahlwerke
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -1067,7 +1067,7 @@ focus_tree = {
 		x =-1
 		y = 1
 		relative_position_id = GER_wirtschaftswunder
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				has_war = yes
@@ -1122,7 +1122,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_wirtschaftswunder
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				has_war = yes
@@ -1178,7 +1178,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_mass_production
-		cost = 10
+		cost = 5
 		available = {
 			has_war_with_major = yes
 		}
