@@ -1,6 +1,8 @@
 NDefines.NGame.END_DATE = "1956.1.1.1" -- we are called r56 for a reason!
 NDefines.NGame.HANDS_OFF_START_TAG = "YEM" --more central than vanilla's Haiti
-	
+NDefines.NGame.TRADE_ROUTE_RECALCULATE_FREQUENCY_DAYS = 7 -- Max recalculation time for all trade routes (0 means we do not recalucate prediodically trade routes)
+NDefines.NGame.ALERT_SFX_COOLDOWN_DAYS = 3					-- After playing an alert sound, don't play the same sound for XXX days, even if it fires again.
+
 NDefines.NDiplomacy.LICENSE_ACCEPTANCE_PUPPET_BASE = 20			-- Acceptance modifier for puppets requesting production licenses.
 NDefines.NDiplomacy.LICENSE_ACCEPTANCE_TECH_DIFFERENCE_BASE = 20    -- Acceptance base for tech difference
 NDefines.NDiplomacy.LICENSE_ACCEPTANCE_SAME_FACTION = 30			-- Acceptance modifier for being in the same faction
@@ -15,6 +17,7 @@ NDefines.NDiplomacy.TENSION_VOLUNTEER_FORCE_DIVISION = 0.0
 NDefines.NDiplomacy.MAX_REMEMBERED_LEASED_IC = 2000				-- Maximum of leased equipment value that is remembered for opinion bonus
 NDefines.NDiplomacy.MAX_OPINION_FOR_LEASED_IC = 50					-- Positive opinion when remembering the MAX_REMEMBERED_LEASED_IC equipment
 NDefines.NDiplomacy.OPINION_FOR_DEMO_FROM_WT_GENERATION = -1.0		-- How much less do democracies like us if we generate world tension
+NDefines.NDiplomacy.EMBARGO_THREAT_THRESHOLD = -1						-- Target-generated threat threshold to allow embargo (affected by modifiers)
 
 NDefines.NDiplomacy.PEACE_SCORE_TRANSFERRED_FROM_FACTION_INFLUENCE = 0 --R56: Influence is currently (12/2025) incredibly arbitrary, do not redistribute points based on it like vanilla
 
@@ -38,7 +41,9 @@ NDefines.NDiplomacy.REVOKE_GUARANTEE_COST = 0
 NDefines.NDiplomacy.OPINION_PER_VOLUNTEER = 15
 NDefines.NDiplomacy.MAX_OPINION_FROM_VOLUNTEERS = 100
 ----------------------------------
-NDefines.NFactions.AI_DAYS_TO_SELECT_GOAL = 100
+NDefines.NFactions.AI_DAYS_TO_SELECT_GOAL = 9999
+NDefines.NFactions.AI_THEATER_CREATION_PENALTY = 99 -- Penalty defines how much each theater reduces the chance linearly. (The higher, the worse the penalty is)
+
 NDefines.NFactions.THEATER_COMMANDER_LAND_EXPERIENCE_SCALE = 2
 NDefines.NFactions.THEATER_COMMANDER_NAVY_EXPERIENCE_SCALE = 2
 NDefines.NFactions.PASSIVE_INITIATIVE_GENERATION = 0.03
@@ -47,7 +52,14 @@ NDefines.NFactions.REPLACING_UNFINISHED_FACTION_GOAL_COST = 0			-- The cost of r
 NDefines.NFactions.MAX_NUM_LONG_TERM_GOALS = 2						-- Maximum number of long term goals a faction can have at any one time
 NDefines.NFactions.MAX_NUM_SHORT_TERM_GOALS = 2-- Maximum number of short term goals a faction can have at any one time
 NDefines.NFactions.MAX_NUM_MEDIUM_TERM_GOALS = 2						-- Maximum number of medium term goals a faction can have at any one time
+NDefines.NFactions.DOCTRINE_SHARING_BASE_MASTERY_GAIN_MONTHLY = 20 -- When doctrine sharing is enabled, this is the base amount of mastery gained monthly
+
+
 ----------------------------------
+NDefines.NCountry.MAJOR_IC_RATIO = 2.5                             -- difference in total factories needed to be considered major with respect to other nation
+NDefines.NCountry.MAJOR_MIN_FACTORIES = 250						-- need at least these many factories to become a major
+NDefines.NCountry.POLITICAL_POWER_UPPER_CAP = 10000.0					-- Max amount of political power country should have
+
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 80						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
 NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.0
@@ -61,6 +73,7 @@ NDefines.NCountry.CONVOY_RANGE_FACTOR = 0.5
 NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.2
 NDefines.NCountry.AIR_SUPPLY_CONVERSION_SCALE = 0.05  --BASE GAME IS 0.01
 NDefines.NCountry.STARTING_COMMAND_POWER = 25.0					-- starting command power for every country
+NDefines.NCountry.STARTING_FUEL_RATIO = 0.75						-- starting fuel ratio compared to max fuel for countries
 
 NDefines.NCountry.FEMALE_UNIT_LEADER_BASE_CHANCE = { 
         -- applies as a factor to female unit leader randomization
@@ -94,6 +107,8 @@ NDefines.NProduction.BASE_FACTORY_SPEED_MIL = 1.0
 NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 1.0
 NDefines.NProduction.POWERED_FACTORY_SPEED_MIL = 3.0
 NDefines.NProduction.POWERED_FACTORY_SPEED_NAV = 3.5
+NDefines.NProduction.BASE_COUNTRY_ENERGY_PRODUCTION = 20 	-- The base energy production of a country
+
 NDefines.NProduction.MIN_LAND_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.2   --Cost for army refits
 NDefines.NProduction.MIN_NAVAL_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.0 --Cost for navy refits
 NDefines.NProduction.BASE_FACTORY_EFFICIENCY_GAIN = 3		-- Base efficiency factor. GROWTH OVER TIME
@@ -176,10 +191,12 @@ NDefines.NMilitary.MAX_AIR_EXPERIENCE = 9999
 NDefines.NMilitary.SUPPLY_GRACE = 84 -- 72 3 days as they say and remain hungry for another 12
 --NDefines.NMilitary.UNIT_EXP_LEVELS = { 0.1, 0.3, 0.75, 0.9 }
 NDefines.NMilitary.UNIT_EXPERIENCE_PER_TRAINING_DAY = 0.003
-NDefines.NMilitary.EXPERIENCE_COMBAT_FACTOR = 0.03
+NDefines.NMilitary.EXPERIENCE_COMBAT_FACTOR = 0.075
 NDefines.NMilitary.NUKE_MIN_DAMAGE_PERCENT = 0.9
 NDefines.NMilitary.NUKE_MAX_DAMAGE_PERCENT = 1.2
-NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.3
+NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.35
+NDefines.NMilitary.WITHDRAWING_SPEED_FACTOR = 0.3				-- speed bonus when withdrawing
+
 NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.1
 NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.04 --readded cause planning OP
 NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 3 -- how many CAS/TAC can enter a combat depending on enemy width there
@@ -187,6 +204,30 @@ NDefines.NMilitary.RECON_SKILL_IMPACT = 6
 NDefines.NMilitary.UNIT_EXPERIENCE_PER_COMBAT_HOUR = 0.0002
 NDefines.NMilitary.FIELD_EXPERIENCE_MAX_PER_DAY = 12
 NDefines.NMilitary.FIELD_MARSHAL_XP_RATIO = 1.0
+NDefines.NMilitary.ARMY_LEADER_XP_GAIN_PER_UNIT_IN_COMBAT = 0.25 -- XP gain per unit in combat
+NDefines.NMilitary.BASE_LEADER_TRAIT_GAIN_XP = 0.75			   -- Base xp gain for traits per hour for armies
+
+NDefines.NMilitary.BASE_CAPTURE_EQUIPMENT_RATIO = 0.025				-- after a successful land combat ratio of the equipments that are being captured/salvaged from enemy's lost equipment
+NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.03        -- global damage modifier... but some equipment is returned at end of battles see : EQUIPMENT_COMBAT_LOSS_FACTOR
+NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.045        -- global damage modifier
+NDefines.NMilitary.LAND_COMBAT_COLLATERAL_FACTOR = 0.0025		   -- Factor to scale collateral damage to infra and forts with.
+NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_ON_SOFT_DICE_SIZE = 5
+
+NDefines.NMilitary.LAND_COMBAT_FORT_DAMAGE_CHANCE = 6		-- chance to get a hit to damage on forts. (out of 100)
+NDefines.NMilitary.ATTRITION_DAMAGE_ORG = 0.05					   -- damage from attrition to Organisation
+NDefines.NMilitary.ATTRITION_EQUIPMENT_LOSS_CHANCE = 0.002		   -- Chance for loosing equipment when suffer attrition. Scaled up the stronger attrition is. Then scaled down by equipment reliability.
+NDefines.NMilitary.ATTRITION_WHILE_MOVING_FACTOR = 1
+NDefines.NMilitary.COHESION_IMMOBILE_PLANNING_SPEED_MULTIPLIER = 0.9	-- If using the 'immobile' cohesion setting, factor ALL planning speed growth by this
+NDefines.NMilitary.BATALION_CHANGED_EXPERIENCE_DROP = 0.75			-- Division experience drop if unit has different batalion
+
+NDefines.NMilitary.SPEED_REINFORCEMENT_BONUS = 0.02              -- chance to join combat bonus by each 100% larger than infantry base (up to 200%)
+NDefines.NMilitary.COMBAT_STACKING_START = 12						-- at what nr of divisions stacking penalty starts
+
+NDefines.NMilitary.INFRASTRUCTURE_MOVEMENT_SPEED_IMPACT = -0.03	-- speed penalty per infrastucture below maximum.
+NDefines.NMilitary.LEND_LEASE_FIELD_EXPERIENCE_SCALE = 0.005		-- Experience scale for lend leased equipment used in combat.
+NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.0012
+NDefines.NMilitary.TACTIC_SWAP_FREQUENCEY = 24                   -- hours between tactic swaps
+
 --NDefines.NMilitary.COMMANDER_LEVEL_UP_STAT_WEIGHTS = {5, 5, 3, 4}
 NDefines.NMilitary.NEW_COMMANDER_RANDOM_PERSONALITY_TRAIT_CHANCES = { -- Chances to gain a personality trait for new generals
     1.0, --100% for first trait
@@ -219,25 +260,33 @@ NDefines.NMilitary.NEW_COMMANDER_RANDOM_BASIC_TRAIT_CHANCES = {  -- chances to g
 --     0.25, --25% for a second
 -- }
 NDefines.NMilitary.PIERCING_THRESHOLDS = {	-- Our piercing / their armor must be this value to deal damage fraction equal to the index in the array below [higher number = higher penetration]. If armor is 0, 1.00 will be returned.
-   -- 1.50,
-   -- 1.25,
-    1.00,
-    0.85,
-    0.75,
-    0.60,
-    0.50,
-    0.00, --there isn't much point setting this higher than 0
+	1.00,
+	0.9,
+	0.8,
+	0.7,
+	0.6,
+	0.5,
+	0.4,
+	0.3,
+	0.0, --there isn't much point setting this higher than 0
 }
 NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {	-- 0 armor will always receive maximum damage (so add overmatching at your own peril). the system expects at least 2 values, with no upper limit.
-  --  1.50,
- --   1.25,
-    1.00,
-    0.85,
-    0.75,
-    0.60,
-    0.50,
-    0.25, -- No longer set to zero, now to 25% ~EndSieg
+	1.00,
+	0.85,
+	0.70,
+	0.60,
+	0.50,
+	0.40,
+	0.30,
+	0.20,
+	0.10,
 }
+
+
+
+NDefines.NMilitary.XP_GAIN_PER_OVERRUN_UNIT = 100.0						-- fixed XP gain per overrun unit
+NDefines.NMilitary.XP_GAIN_FOR_SHATTERING = 100.0                          -- fixed XP gain per shattered unit
+
 --NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.75 -- damage reduction if armor outclassing enemy
 --NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.5 -- damage reduction if armor outclassing enemy
 --NDefines.NMilitary.RIVER_CROSSING_PENALTY = -0.6                 -- small river crossing-
@@ -296,14 +345,58 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = { -- command power cost per plane to
 --NDefines.NAir.DETECT_EFFICIENCY_BASE = 0.10						-- Base value for detection efficiency (once something detected, efficiency says how many airplanes was detected).
 NDefines.NAir.DETECT_CHANCE_FROM_OCCUPATION = 0.20 				-- How much the controlled provinces in area affects the air detection base value.
 	
+
+
+NDefines.NAir.TOP_SPEED_DAMAGE_BONUS_FACTOR = 0.04				-- A factor for scaling the top speed of a plane into damage buff. If an attacking wing has a speed advantage of any form their speed value will be converted into a percentage bonus with this modifier --Vanilla is .02
+NDefines.NAir.COMBAT_DAMAGE_STATS_MULTILPIER = 0.35	
+NDefines.NAir.BIGGEST_AGILITY_FACTOR_DIFF = 5.0					-- biggest factor difference in agility for doing damage (caps to this) -- Vanilla is 3.0
+NDefines.NAir.BIGGEST_SPEED_FACTOR_DIFF = 3.0					-- biggest factor difference in speed for doing damage (caps to this)	-- Vanilla is 3.5	
+NDefines.NAir.AIR_WING_BOMB_DAMAGE_FACTOR = 10					-- Used to balance the damage done while bombing.
+NDefines.NAir.COMBAT_DAMAGE_SCALE = 0.1						-- Higher value = more shot down planes
+NDefines.NAir.CARRIER_HOURS_DELAY_AFTER_EACH_COMBAT = 8          -- how often carrier planes do battle inside naval combat
+NDefines.NAir.NAVAL_STRIKE_TARGETTING_TO_AMOUNT = 0.4			-- Balancing value to convert the naval_strike_targetting equipment stats to chances of how many airplanes managed to do successfull strike.
+NDefines.NAir.NAVAL_STRIKE_DAMAGE_TO_STR = 1.25					-- Balancing value to convert damage ( naval_strike_attack * hits ) to Strength reduction.
+NDefines.NAir.PORT_STRIKES_DELAY_MULTIPLIER = 4                 -- multplies HOURS_DELAY_AFTER_EACH_COMBAT (2 in vanilla, 4 in the mod) if port strikes
+NDefines.NAir.COMBAT_MAX_WINGS_AT_ONCE_PORT_STRIKE = 10         -- we can really pounce a naval strike and escalate (10k Vanilla)
+NDefines.NAir.COMBAT_DAMAGE_SCALE_CARRIER = 7					-- same as above but used inside naval combat for carrier battles
+NDefines.NAir.PORT_STRIKE_DAMAGE_FACTOR = 0.7								-- How much damage is dealt to ports during a port strike (per plane damage [complex number] * num flying planes * define)
+NDefines.NAir.DETECT_CHANCE_FROM_RADARS = 0.7 					-- How much the radars in area affects detection chance. (Vanilla 0.5)
+NDefines.NAir.DETECT_EFFICIENCY_FROM_RADAR = 0.8					-- How much radars affect the efficiency. (Vanilla 0.7)
+
 ---------------------------------
+NDefines.NNavy.DETECTION_CHANCE_MULT_RADAR_BONUS = 0.2						-- detection chance bonus from radars. (Vanilla 0.1)
+
+NDefines.NNavy.MAX_ORG_ON_MANUAL_MOVE = 0.9 -- org will clamped to this ratio on manual move
+NDefines.NNavy.TRAINING_EXPERIENCE_FACTOR = 0.5								-- Amount of exp each ship gain every 24h while training (before modifiers)
+NDefines.NNavy.COMBAT_EVASION_TO_HIT_CHANCE_TORPEDO_MULT = 24		-- the above evasion hit chance is multiplied by 400% if shooting with torpedoes. Torpedoes are slow, so evasion matters more.
+NDefines.NNavy.COMBAT_ARMOR_PIERCING_CRITICAL_BONUS = 2.0						-- Bonus to critical chance when shooter armor piercing is higher then target armor.
+NDefines.NNavy.CONVOY_DEFENSE_MAX_CONVOY_TO_SHIP_RATIO	= 30		-- each ship in convoy defense mission can at most cover this many convoys without losing efficiency
+NDefines.NNavy.BASE_GUN_COOLDOWNS = { -- number of hours for a gun to be ready after shooting
+	2.0,	-- big guns
+	6.0,	-- torpedoes
+	1.0,	-- small guns
+}
+NDefines.NNavy.GUN_HIT_PROFILES = { -- hit profiles for guns if target ih profile is lower the gun will have lower accuracy
+	95.0,	-- big guns
+	100.0,	-- torpedos
+	60.0	-- small guns
+}
 --NDefines.NNavy.SUPPLY_NEED_FACTOR = 0	
 --NDefines.NNavy. dont remove easy to copy paste for testing
---NDefines.NNavy.HIGHER_SHIP_RATIO_POSITIONING_PENALTY_FACTOR	= 1.5 -- was .25 / if one side has more ships than the other, that side will get this penalty for each +100% ship ratio it has
-	
+NDefines.NNavy.HIGHER_SHIP_RATIO_POSITIONING_PENALTY_FACTOR	= 0.5 -- was .25 / if one side has more ships than the other, that side will get this penalty for each +100% ship ratio it has
+NDefines.NNavy.BASE_JOIN_COMBAT_HOURS						= 24				-- the taskforces that wants to join existing combats will wait for at least this amount
+
+NDefines.NNavy.SPEED_TO_ESCAPE_SPEED = 1.15									-- ratio to converstion from ship speed to escape speed (divided by hundred)
+NDefines.NNavy.BASE_ESCAPE_SPEED = 0.060										-- daily base escape speed (gained as percentagE)
+NDefines.NNavy.HIGHER_CARRIER_RATIO_POSITIONING_PENALTY_FACTOR	= 0.1  		-- penalty if other side has stronger carrier air force
+
+NDefines.NNavy.DAMAGE_PENALTY_ON_MINIMUM_POSITIONING 							= 0.80	-- damage penalty at 0% positioning
+NDefines.NNavy.SCREENING_EFFICIENCY_PENALTY_ON_MINIMUM_POSITIONING				= 0.40	-- screening efficiency (screen to capital ratio) at 0% positioning
+NDefines.NNavy.AA_EFFICIENCY_PENALTY_ON_MINIMUM_POSITIONING						= 0.70  -- AA penalty at 0% positioning
+
 --NDefines.NNavy.MAX_ANTI_AIR_REDUCTION_EFFECT_ON_INCOMING_AIR_DAMAGE = 0.90	-- was .75 / damage reduction for incoming air attacks is clamped to this value at maximum.
---NDefines.NNavy.MAX_POSITIONING_PENALTY_FROM_HIGHER_SHIP_RATIO	= 3.00  -- was .75 / maximum penalty to get from larger fleets
-NDefines.NNavy.MIN_SHIPS_FOR_HIGHER_SHIP_RATIO_PENALTY = 11    -- was 4 ships causings issues  for convoy raiding / the minimum fleet size in ships that a fleet must be before having the large fleet penalty applied to them
+NDefines.NNavy.MAX_POSITIONING_PENALTY_FROM_HIGHER_SHIP_RATIO	= 1.5  -- was .75 / maximum penalty to get from larger fleets
+NDefines.NNavy.MIN_SHIPS_FOR_HIGHER_SHIP_RATIO_PENALTY = 60    -- was 4 ships causings issues  for convoy raiding / the minimum fleet size in ships that a fleet must be before having the large fleet penalty applied to them
 NDefines.NNavy.NAVAL_HEADQUARTER_ADJACENCY = 3								-- How many extra steps of strategic regions from the first the naval headquarter provides benefits. 
 NDefines.NNavy.NAVAL_HEADQUARTERS_EXPERIENCE_SCALE = 1.0					-- Characters assigned to a naval HQ will gain 15% of all experience from taskforces in their regions
 NDefines.NNavy.UNDERWAY_REPLENISHMENT_CONVOY_COST_PER_FUEL = 0.1	-- Cost in convoys for underway replenishment multiplied by max daily fuel consumption (rounded up)
@@ -407,5 +500,47 @@ NDefines.NMilitary.MAX_REGIMENTAL_SUPPORT_HEIGHT = 1
 NDefines.NDoctrines.TRAINING_MASTERY_GAIN_FACTOR = 0.75
 NDefines.NDoctrines.MILITARY_ATTACHE_MASTERY_TRANSFER_FACTOR = 0.25
 NDefines.NDoctrines.MASTERY_BANK_CONVERSION_RATE = 1
-NDefines.NDoctrines.MASTERY_BANK_MAX = 400
+NDefines.NDoctrines.MASTERY_BANK_MAX = 1000
 NDefines.NDoctrines.MIN_MASTERY_GAIN_PER_DAY = 0.2
+NDefines.NDoctrines.MAX_MONTHLY_MASTERY_GAIN = 100
+
+NDefines.NCharacter.SPECIALIST_ADVISOR_MIN_RANK = 2
+NDefines.NCharacter.EXPERT_ADVISOR_MIN_RANK = 4
+NDefines.NCharacter.GENIUS_ADVISOR_MIN_RANK = 6
+
+------------------------------------------------
+NDefines.NNavy.NAVY_PIERCING_THRESHOLDS = {					-- Our piercing / their armor must be this value to deal damage fraction equal to the index in the array below [higher number = higher penetration]. If armor is 0, 1.00 will be returned.
+	2.00,
+	1.50,
+	1.00,
+	0.90,
+	0.75,
+	0.50,
+	0.25,
+	0.10,
+	0.00 --there isn't much point setting this higher than 0
+}
+
+NDefines.NNavy.NAVY_PIERCING_THRESHOLD_CRITICAL_VALUES = {	-- 0 armor will always receive maximum damage (so add overmatching at your own peril). the system expects at least 2 values, with no upper limit.
+	1.75,
+	1.10,
+	1.00,
+	0.90,
+	0.75,
+	0.50,
+	0.25,
+	0.10,
+	0.00 -- For criticals, you could reduce crit chance unlike damage in army combat, but we do not for now.
+}
+
+NDefines.NNavy.NAVY_PIERCING_THRESHOLD_DAMAGE_VALUES = {	-- 0 armor will always receive maximum damage (so add overmatching at your own peril). the system expects at least 2 values, with no upper limit.
+	1.00,
+	1.00,
+	1.00,
+	0.85,
+	0.70,
+	0.40,
+	0.30,
+	0.20,
+	0.10 -- 
+}
