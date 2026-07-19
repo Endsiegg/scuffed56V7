@@ -752,6 +752,7 @@ faction_goal_spy_master = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = THE_SPY_MASTER
 		add_faction_initiative = 2
+		add_political_power = 100
 		custom_effect_tooltip = generic_skip_one_line_tt
 		every_faction_member = { 
 			limit = {
@@ -796,15 +797,15 @@ faction_goal_spy_master = {
 			add_faction_initiative = 1
 			gain_random_agency_upgrade = yes
 		}
-		every_faction_member = { # Fallback in case someone completed everything
-			visible_when_empty = yes
-			limit = {
-				has_intelligence_agency = yes
-				agency_upgrade_number > 30
-			}
-			add_faction_initiative = 1
-			add_political_power = 100
-		}
+		# every_faction_member = { # Fallback in case someone completed everything
+		# 	visible_when_empty = yes
+		# 	limit = {
+		# 		has_intelligence_agency = yes
+		# 		agency_upgrade_number > 30
+		# 	}
+		# 	add_faction_initiative = 1
+		# 	add_political_power = 100
+		# }
 	}
 	ai_will_do = {
 		base = 1

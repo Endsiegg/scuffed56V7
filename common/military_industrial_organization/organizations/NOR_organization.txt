@@ -172,7 +172,7 @@ NOR_akers_mekaniske_verksted_organization = {
         special_trait_background  = yes
 
         position = { x=0 y=0 }
-        limit_to_equipment_type = { convoy }
+      #  limit_to_equipment_type = { convoy }
         
         production_bonus = {
             production_capacity_factor = 0.1
@@ -198,10 +198,10 @@ NOR_karljohansvern_verft_organization = {
 		name = generic_mio_initial_trait_battle_line_ship_builders
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.10
 		}
 		production_bonus = {
-			production_capacity_factor = 0.05
+			production_capacity_factor = 0.10
 		}
 	}    
 }
@@ -217,7 +217,7 @@ NOR_horten_naval_yard_organization = {
 		name = generic_mio_initial_trait_raiding_fleet
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_research_bonus = 0.10
 		}
 		equipment_bonus = {
 			surface_visibility = -0.05
@@ -227,7 +227,7 @@ NOR_horten_naval_yard_organization = {
 
 NOR_marinens_hovedverft_organization = {
     name = NOR_marinens_hovedverft
-    include = generic_refurbishment_repair_organization
+    include = generic_task_force_ship_organization
     icon = GFX_idea_generic_naval_manufacturer_3
     allowed = { 
         tag = NOR
@@ -239,11 +239,11 @@ NOR_marinens_hovedverft_organization = {
 		name = generic_mio_refurbishment_repair_organization
 		limit_to_equipment_type = { capital_ship screen_ship ship_hull_submarine }
 		equipment_bonus = {
-			max_strength = 0.03
+			max_strength = 0.10
 		}
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.01
+			military_industrial_organization_research_bonus = 0.10
 		}
 	}        
 }
