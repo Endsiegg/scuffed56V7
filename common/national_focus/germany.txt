@@ -4000,7 +4000,7 @@ focus_tree = {
 		relative_position_id = GER_all_terrain_military_motorcycle
 		x = -1
 		y = 1
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 3
 		}
@@ -6197,8 +6197,7 @@ focus_tree = {
 		icon = GFX_focus_generic_tank_air_support
 		alternate_icon = GFX_focus_GER_combined_arms_historical
 
-		prerequisite = { focus = GER_advanced_panzer_research }
-		prerequisite = { focus = GER_dive_bombers }
+		prerequisite = { focus = GER_advanced_panzer_research focus = GER_dive_bombers }
 
 		x = 1
 		y = 1
@@ -6232,7 +6231,7 @@ focus_tree = {
 		x = 12
 		y = 0
 		relative_position_id = GER_develop_modern_maneuver_warfare
-		cost = 3
+		cost = 1
 		available = {
 		}
 
@@ -6370,10 +6369,10 @@ focus_tree = {
 					limit = {
 						is_fully_controlled_by = ROOT
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -6383,7 +6382,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_aeronautical_research_institute
-				bonus = 0.25
+				bonus = 1
 				uses = 2
 				category = air_equipment
 			}
@@ -6455,7 +6454,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = GER_dive_bombers
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = light_air
 			}
@@ -6588,7 +6587,8 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = GER_tactical_bombers
-				bonus = 0.5
+				bonus = 1
+				ahead_reduction = 1
 				uses = 1
 				category = medium_air
 			}
@@ -6720,7 +6720,8 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = GER_uralbomber_program
-				bonus = 0.5
+				bonus = 1
+				ahead_reduction = 1
 				uses = 1
 				category = heavy_air
 			}
@@ -6841,28 +6842,27 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = GER_aerodynamic_research_institute
-				bonus = 0.5
+				bonus = 1
+				ahead_reduction = 1
 				uses = 1
 				category = rocketry
 			}
 
 			add_breakthrough_progress = {
 				specialization = specialization_air
-				value = 0.75
+				value = 1
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			add_timed_idea = {
-				idea = GER_rocketry_idea
-				days = 730
-			}
+			add_ideas = GER_rocketry_idea
+			
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			GER_add_or_modify_wunderwaffen = yes
 			add_to_variable = { 
-				GER_wunderwaffen_sp_tag_rocket_speed_factor = 0.15
+				GER_wunderwaffen_sp_tag_rocket_speed_factor = 0.25
 				tooltip = sp_tag_rocket_speed_factor_tt
 			}
 
@@ -7615,7 +7615,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_torpedobomber
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -7846,7 +7846,7 @@ focus_tree = {
 		x = 12
 		y = 0
 		relative_position_id = GER_expanding_the_luftwaffe
-		cost = 3
+		cost = 2
 		available = {
 		}
 
@@ -7886,7 +7886,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_strengthen_the_kriegsmarine
-		cost = 2
+		cost = 21
 		available = {
 			# OR = {
 			# 	NOT = { has_completed_focus = GER_trade_interdiction }
@@ -7929,7 +7929,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_plan_z
-		cost = 3
+		cost = 2
 		available = {
 			#NOT = { has_completed_focus = GER_high_seas_fleet }
 		}
@@ -8243,7 +8243,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_expand_kriegsmarinewerft
-		cost = 3
+		cost = 2
 
 		available = {
 		#	NOT = { has_completed_focus = GER_high_seas_fleet }
@@ -8634,7 +8634,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_construct_aircraft_carriers
-		cost = 2
+		cost = 1
 		available = {
 		}
 
@@ -8709,7 +8709,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = GER_strengthen_the_kriegsmarine
-		cost = 2
+		cost = 1
 		available = {
 		}
 
@@ -8797,7 +8797,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_re_establish_the_seekriegsleitung
-		cost = 3
+		cost = 2
 		available = { #These states start out with naval bases in western France
 			14 = { #Brittany
 				state_is_fully_controlled_by_ROOT_or_subject = yes
@@ -8888,7 +8888,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_marinestosstrupp
-		cost = 3
+		cost = 2
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GER_controls_an_atantic_island_tt
@@ -9026,7 +9026,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = GER_strengthen_the_kriegsmarine
-		cost = 2
+		cost = 1
 	
 		available = {
 			# OR = {
@@ -9079,7 +9079,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_trade_interdiction
-		cost = 3
+		cost = 2
 		available = {
 		#	NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 		}
@@ -9218,7 +9218,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_cruiser_warfare
-		cost = 2
+		cost = 1
 		available = {
 			#NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 		}
@@ -9295,7 +9295,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = GER_trade_interdiction
-		cost = 2
+		cost = 1
 		available = {
 			#NOT = { has_completed_focus = GER_unrestricted_convoy_raiding }
 			has_war = yes
@@ -9473,7 +9473,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_panzerschiff_raiders
-		cost = 2
+		cost = 1
 		available = {
 		}
 
@@ -9544,14 +9544,13 @@ focus_tree = {
 	focus = {
 		id = GER_seeherrschaft 
 		icon = GFX_focus_GER_seeherrschaft
-		prerequisite = { focus = GER_high_seas_fleet }
-		prerequisite = { focus = GER_unrestricted_convoy_raiding }
+		prerequisite = { focus = GER_high_seas_fleet  focus = GER_unrestricted_convoy_raiding }
 		
 		x = 0
 		y = 1
 		relative_position_id = GER_atlantic_naval_dominance
 
-		cost = 3
+		cost = 2
 		available = {
 		}
 
@@ -10140,7 +10139,7 @@ focus_tree = {
 			effect_tooltip = {
 				add_timed_idea = {
 					idea = GER_strengthened_supply_lines_ns
-					days = 730
+					days = 1095
 				}
 			}
 		}
