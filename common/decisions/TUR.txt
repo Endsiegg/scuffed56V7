@@ -1128,7 +1128,7 @@ TUR_industrial_projects_category = {
 		
 		visible = {
 			has_completed_focus = TUR_the_sanayiciler
-			NOT = { has_completed_focus = TUR_fully_integrate_the_is_bank }
+			#NOT = { has_completed_focus = TUR_fully_integrate_the_is_bank }
 		}
 
 		highlight_states = {
@@ -1143,34 +1143,6 @@ TUR_industrial_projects_category = {
 		available = {
 			NOT = { 
 				has_country_flag = TUR_financing_private_enterprise_flag
-			}
-			49 = { 
-				free_building_slots = {
-					building = arms_factory
-					size > 2
-					include_locked = yes
-				}
-			}
-			797 = { 
-				free_building_slots = {
-					building = arms_factory
-					size > 2
-					include_locked = yes
-				}
-			}
-			339 = { 
-				free_building_slots = {
-					building = arms_factory
-					size > 1
-					include_locked = yes
-				}
-			}
-			341 = { 
-				free_building_slots = {
-					building = arms_factory
-					size > 0
-					include_locked = yes
-				}
 			}
 		}
 
@@ -1204,7 +1176,7 @@ TUR_industrial_projects_category = {
 				}
 			}
 			797 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -1212,7 +1184,7 @@ TUR_industrial_projects_category = {
 				}
 			}
 			339 = {
-				add_extra_state_shared_building_slots = 12
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -1220,7 +1192,7 @@ TUR_industrial_projects_category = {
 				}
 			}
 			341 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -1565,7 +1537,7 @@ TUR_industrial_projects_category = {
 
 		highlight_states = {
  			highlight_state_targets = { 
-				state = 347
+				state = 49
 			} 
 		}
 
@@ -1577,7 +1549,7 @@ TUR_industrial_projects_category = {
 		
 		available = {
 			NOT = { has_country_flag = TUR_financing_private_enterprise_flag }
-			347 = { 
+			49 = { 
 				free_building_slots = {
 					building = steel_mill
 					size > 1
@@ -1608,12 +1580,12 @@ TUR_industrial_projects_category = {
 		}
 
 		remove_effect = {
-			#add_resource = {
-			#	type = steel
-			#	amount = 4
-			#	state = 347
-			#}
-			347 = {
+			add_resource = {
+				type = steel
+				amount = 24
+				state = 49
+			}
+			49 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = steel_mill
