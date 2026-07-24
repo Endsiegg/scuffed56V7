@@ -560,7 +560,7 @@ technologies = {
 		industrial_capacity_dockyard = 0.1
 		line_change_production_efficiency_factor = 0.1
 		production_factory_start_efficiency_factor = 0.05
-		#equipment_conversion_speed = 0.50 #R56
+		equipment_conversion_speed = 0.20 
 		industry_air_damage_factor = -0.15
 		static_anti_air_damage_factor = 0.1
 		static_anti_air_hit_chance_factor = 0.1
@@ -909,7 +909,7 @@ technologies = {
 	fuel_refining = {
 
 		fuel_gain_factor = 0.25
-		fuel_gain_factor_from_states = 0.1
+		fuel_gain_factor_from_states = 0.25
 					
 		path = {
 			leads_to_tech = fuel_refining2 
@@ -975,7 +975,7 @@ technologies = {
 	fuel_refining2 = {
 		
 		fuel_gain_factor = 0.25
-		fuel_gain_factor_from_states = 0.1
+		fuel_gain_factor_from_states = 0.25
 
 		path = {
 			leads_to_tech = fuel_refining3 
@@ -1033,13 +1033,13 @@ technologies = {
 	fuel_refining3 = {
 		
 		fuel_gain_factor = 0.25
-		fuel_gain_factor_from_states = 0.1
+		fuel_gain_factor_from_states = 0.25
 
 		path = {
 			leads_to_tech = fuel_refining4 
 			research_cost_coeff = 1
 		}
-		research_cost = 3
+		research_cost = 2
 		start_year = 1939
 		folder = {
 			name = industry_folder
@@ -1081,13 +1081,13 @@ technologies = {
 	fuel_refining4 = {
 		
 		fuel_gain_factor = 0.25
-		fuel_gain_factor_from_states = 0.1
+		fuel_gain_factor_from_states = 0.25
 
 		path = {
 			leads_to_tech = fuel_refining5
 			research_cost_coeff = 1
 		}
-		research_cost = 3
+		research_cost = 2
 		start_year = 1941
 		folder = {
 			name = industry_folder
@@ -1129,9 +1129,9 @@ technologies = {
 	fuel_refining5 = {
 		
 		fuel_gain_factor = 0.25
-		fuel_gain_factor_from_states = 0.1
+		fuel_gain_factor_from_states = 0.25
 
-		research_cost = 3
+		research_cost = 2
 		start_year = 1943
 		folder = {
 			name = industry_folder
@@ -1185,7 +1185,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.5
+		research_cost = 1
 		start_year = 1936
 		folder = {
 			name = industry_folder
@@ -1240,7 +1240,7 @@ technologies = {
 	
 	oil_processing = {
 		
-		fuel_gain_factor_from_states = 0.75
+		fuel_gain_factor_from_states = 1.0
 
 		start_year = 1937
 		
@@ -1254,7 +1254,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.5
+		research_cost = 1
 		
 		folder = {
 			name = industry_folder
@@ -1308,14 +1308,14 @@ technologies = {
 	
 	improved_oil_processing = {
 		
-		fuel_gain_factor_from_states = 0.75
+		fuel_gain_factor_from_states = 1.0
 
 		path = {
 			leads_to_tech = advanced_oil_processing
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.5
+		research_cost = 1
 		start_year = 1939
 		
 		folder = {
@@ -1368,19 +1368,19 @@ technologies = {
 	
 	advanced_oil_processing = {
 
-		fuel_gain_factor_from_states = 0.75
+		fuel_gain_factor_from_states = 1.0
 
 		path = {
 			leads_to_tech = modern_oil_processing
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.5
-		start_year = 1943
+		research_cost = 1
+		start_year = 1941
 		
 		folder = {
 			name = industry_folder
-			position = { x = 0 y = 10 }
+			position = { x = 0 y = 8 }
 		}
 		
 		categories = {
@@ -1423,14 +1423,14 @@ technologies = {
 
 	modern_oil_processing = {
 
-		fuel_gain_factor_from_states = 0.75
+		fuel_gain_factor_from_states = 1.0
 		
-		research_cost = 1.5
-		start_year = 1948
+		research_cost = 1
+		start_year = 1943
 		
 		folder = {
 			name = industry_folder
-			position = { x = 0 y = 14 }
+			position = { x = 0 y = 10 }
 		}
 		
 		categories = {
@@ -2347,7 +2347,7 @@ technologies = {
 		
 		folder = {
 			name = industry_folder
-			position = { x = 2 y = 5 }
+			position = { x = 2 y = 4 }
 		}
 		
 		categories = {
@@ -2409,11 +2409,11 @@ technologies = {
 		}
 		
 		research_cost = 1.5
-		start_year = 1941
+		start_year = 1939
 		
 		folder = {
 			name = industry_folder
-			position = { x = 2 y = 8 }
+			position = { x = 2 y = 6 }
 		}
 		
 		categories = {
@@ -2471,11 +2471,11 @@ technologies = {
 		}
 		
 		research_cost = 1.6
-		start_year = 1945
+		start_year = 1940
 		
 		folder = {
 			name = industry_folder
-			position = { x = 2 y = 12 }
+			position = { x = 2 y = 8 }
 		}
 		
 		categories = {
@@ -2528,11 +2528,11 @@ technologies = {
 		}
 		
 		research_cost = 1.5
-		start_year = 1949
+		start_year = 1941
 		
 		folder = {
 			name = industry_folder
-			position = { x = 2 y = 16 }
+			position = { x = 2 y = 10 }
 		}
 		
 		categories = {
@@ -3043,6 +3043,16 @@ steel_production_2 = {
 			resource = steel
 			amount = 2
 		}
+		modify_building_resources = {
+			building = steel_mill
+			resource = chromium
+			amount = 2
+		}
+			modify_building_resources = {
+			building = steel_mill
+			resource = tungsten
+			amount = 2
+		}		
 	}
 
 	path = {
@@ -3051,11 +3061,11 @@ steel_production_2 = {
 	}
 	
 	research_cost = 1.0
-	start_year = 1941
+	start_year = 1938
 	
 	folder = {
 		name = industry_folder
-		position = { x = 0 y = 8 }
+		position = { x = 0 y = 4 }
 	}
 	
 	categories = {
@@ -3092,6 +3102,16 @@ steel_production_3 = {
 			resource = steel
 			amount = 2
 		}
+		modify_building_resources = {
+			building = steel_mill
+			resource = chromium
+			amount = 2
+		}
+		modify_building_resources = {
+			building = steel_mill
+			resource = tungsten
+			amount = 2
+		}		
 	}
 	
 	path = {
@@ -3100,11 +3120,11 @@ steel_production_3 = {
 	}
 	
 	research_cost = 1.5
-	start_year = 1948
+	start_year = 1940
 	
 	folder = {
 		name = industry_folder
-		position = { x = 0 y = 14 }
+		position = { x = 0 y = 6 }
 	}
 	
 	categories = {
@@ -3140,14 +3160,24 @@ steel_production_4 = {
 			resource = steel
 			amount = 2
 		}
+		modify_building_resources = {
+			building = steel_mill
+			resource = chromium
+			amount = 2
+		}
+		modify_building_resources = {
+			building = steel_mill
+			resource = tungsten
+			amount = 2
+		}		
 	}
 	
 	research_cost = 1.5
-	start_year = 1954
+	start_year = 1941
 	
 	folder = {
 		name = industry_folder
-		position = { x = 0 y = 18 }
+		position = { x = 0 y = 8 }
 	}
 	
 	categories = {
@@ -3233,11 +3263,11 @@ aluminum_production_2 = {
 	}
 	
 	research_cost = 1.0
-	start_year = 1941
+	start_year = 1938
 	
 	folder = {
 		name = industry_folder
-		position = { x = 2 y = 8 }
+		position = { x = 2 y = 4 }
 	}
 		
 	categories = {
@@ -3281,11 +3311,11 @@ aluminum_production_3 = {
 	}
 	
 	research_cost = 1.5
-	start_year = 1948
+	start_year = 1940
 	
 	folder = {
 		name = industry_folder
-		position = { x = 2 y = 14 }
+		position = { x = 2 y = 6 }
 	}
 		
 	categories = {
@@ -3327,11 +3357,11 @@ aluminum_production_4 = {
 	}
 	
 	research_cost = 1.5
-	start_year = 1954
+	start_year = 1941
 	
 	folder = {
 		name = industry_folder
-		position = { x = 2 y = 18 }
+		position = { x = 2 y = 8 }
 	}
 		
 	categories = {

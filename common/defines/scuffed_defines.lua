@@ -72,7 +72,9 @@ NDefines.NCountry.NAVY_USE_HOME_BASE_FOR_RANGE = true
 NDefines.NCountry.CONVOY_RANGE_FACTOR = 0.5
 NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.2
 NDefines.NCountry.AIR_SUPPLY_CONVERSION_SCALE = 0.05  --BASE GAME IS 0.01
-NDefines.NCountry.STARTING_COMMAND_POWER = 25.0					-- starting command power for every country
+NDefines.NCountry.STARTING_COMMAND_POWER = 50.0					-- starting command power for every country
+NDefines.NCountry.BASE_MAX_COMMAND_POWER = 200.0					-- base value for maximum command power
+
 NDefines.NCountry.STARTING_FUEL_RATIO = 0.75						-- starting fuel ratio compared to max fuel for countries
 
 NDefines.NCountry.FEMALE_UNIT_LEADER_BASE_CHANCE = { 
@@ -185,13 +187,16 @@ NDefines.NMilitary.BASE_DIVISION_SUPPORT_SLOT_COST = 0
 NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 9999
 NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 9999
 NDefines.NMilitary.MAX_AIR_EXPERIENCE = 9999
---NDefines.NMilitary.TRAINING_MAX_LEVEL = 2 -- was 2
---NDefines.NMilitary.DEPLOY_TRAINING_MAX_LEVEL = 1 -- Was 2
---NDefines.NMilitary.ARMY_EXP_BASE_LEVEL = 1
+NDefines.NMilitary.TRAINING_MAX_LEVEL = 3 -- was 2
+NDefines.NMilitary.DEPLOY_TRAINING_MAX_LEVEL = 2 -- Was 2
+NDefines.NMilitary.ARMY_EXP_BASE_LEVEL = 1
 NDefines.NMilitary.SUPPLY_GRACE = 84 -- 72 3 days as they say and remain hungry for another 12
---NDefines.NMilitary.UNIT_EXP_LEVELS = { 0.1, 0.3, 0.75, 0.9 }
-NDefines.NMilitary.UNIT_EXPERIENCE_PER_TRAINING_DAY = 0.003
-NDefines.NMilitary.EXPERIENCE_COMBAT_FACTOR = 0.075
+NDefines.NMilitary.TRAINING_ORG = 0.4
+NDefines.NMilitary.UNIT_EXP_LEVELS = { 0.1, 0.3, 0.75, 0.9, }
+NDefines.NMilitary.UNIT_EXPERIENCE_PER_TRAINING_DAY = 0.009
+NDefines.NMilitary.EXPERIENCE_COMBAT_FACTOR = 0.25
+NDefines.NMilitary.UNIT_DIGIN_CAP = 10
+NDefines.NMilitary.UNIT_DIGIN_SPEED = 2
 NDefines.NMilitary.NUKE_MIN_DAMAGE_PERCENT = 0.9
 NDefines.NMilitary.NUKE_MAX_DAMAGE_PERCENT = 1.2
 NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.35
@@ -201,7 +206,7 @@ NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.1
 NDefines.NMilitary.PLAYER_ORDER_PLANNING_DECAY = 0.04 --readded cause planning OP
 NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 3 -- how many CAS/TAC can enter a combat depending on enemy width there
 NDefines.NMilitary.RECON_SKILL_IMPACT = 6
-NDefines.NMilitary.UNIT_EXPERIENCE_PER_COMBAT_HOUR = 0.0002
+NDefines.NMilitary.UNIT_EXPERIENCE_PER_COMBAT_HOUR = 0.0001
 NDefines.NMilitary.FIELD_EXPERIENCE_MAX_PER_DAY = 12
 NDefines.NMilitary.FIELD_MARSHAL_XP_RATIO = 1.0
 NDefines.NMilitary.ARMY_LEADER_XP_GAIN_PER_UNIT_IN_COMBAT = 0.25 -- XP gain per unit in combat
@@ -219,7 +224,7 @@ NDefines.NMilitary.ATTRITION_EQUIPMENT_LOSS_CHANCE = 0.002		   -- Chance for loo
 NDefines.NMilitary.ATTRITION_WHILE_MOVING_FACTOR = 1
 NDefines.NMilitary.COHESION_IMMOBILE_PLANNING_SPEED_MULTIPLIER = 0.9	-- If using the 'immobile' cohesion setting, factor ALL planning speed growth by this
 NDefines.NMilitary.BATALION_CHANGED_EXPERIENCE_DROP = 0.75			-- Division experience drop if unit has different batalion
-
+NDefines.NMilitary.REINFORCE_CHANCE = 0.10                 	   -- base chance to join combat from back line when empty
 NDefines.NMilitary.SPEED_REINFORCEMENT_BONUS = 0.02              -- chance to join combat bonus by each 100% larger than infantry base (up to 200%)
 NDefines.NMilitary.COMBAT_STACKING_START = 12						-- at what nr of divisions stacking penalty starts
 
@@ -244,7 +249,7 @@ NDefines.NMilitary.PLAN_PROVINCE_HIGH_VP_IMPORTANCE_FRONT = 8.0
 NDefines.NMilitary.PLAN_AREA_DEFENSE_ENEMY_CONTROLLER_SCORE = 30.0
 NDefines.NMilitary.PLAN_MAX_PROGRESS_TO_JOIN = 0.60
 NDefines.NMilitary.PEN_VS_AVERAGE = 0.4
-NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.4		
+NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.5		
 NDefines.NMilitary.PLAN_PORVINCE_PORT_BASE_IMPORTANCE = 18.0		-- increased from 12.0 ; Added importance for area defense province with a port
 NDefines.NMilitary.PLAN_STICKINESS_IGNORE_STACK_LIMIT = 1	
 NDefines.NMilitary.PLAN_BLITZ_OPTIMISM = 0.3	
@@ -293,6 +298,13 @@ NDefines.NMilitary.XP_GAIN_FOR_SHATTERING = 100.0                          -- fi
 --NDefines.NMilitary.RIVER_CROSSING_PENALTY_LARGE = -0.9           -- large river crossing
 --NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY = -0.5           -- small river crossing
 --NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY_LARGE = -0.75     -- large river crossing
+
+NDefines.NMilitary.PLANNING_CAP_COMMS_SCALING = { 1.1, 1.0, 1.0, 0.9, 0.8, }
+NDefines.NMilitary.PLANNING_SPEED_COMMS_SCALING = { 1.1, 1.0, 1.0, 0.9, 0.8, }
+NDefines.NMilitary.PLANNING_CAP_NO_HQ_SCALING = 1.0
+NDefines.NMilitary.PLANNING_PLANNING_SPEED_NO_HQ_SCALING = 1.0
+
+
 
 ----------------------------------
 --NDefines.NAir.SUPPLY_NEED_FACTOR = 0.22 -- 0.28
