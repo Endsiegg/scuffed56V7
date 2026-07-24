@@ -27,8 +27,8 @@ country_event = {
 				start_civil_war = {
 					ruling_party = neutrality
 					ideology = fascism
-					size = 0.5
-					navy_ratio = 0.1
+					size = 0.1
+					navy_ratio = 0.0
 					capital = 64
 					states = all
 					keep_all_characters = yes
@@ -219,8 +219,8 @@ country_event = {
 				start_civil_war = {
 					ruling_party = neutrality
 					ideology = fascism
-					size = 0.5
-					navy_ratio = 0.8
+					size = 0.1
+					navy_ratio = 0.0
 					capital = 64
 					states = all
 					keep_all_characters = yes
@@ -437,7 +437,7 @@ country_event = {
 				}
 				add_popularity = {
 					ideology = communism
-					popularity = 0.25
+					popularity = 0.05
 				}
 				add_popularity = {
 					ideology = democratic
@@ -445,7 +445,7 @@ country_event = {
 				}
 				add_popularity = {
 					ideology = neutrality
-					popularity = 0.25
+					popularity = 0.45
 				}
 				add_popularity = {
 					ideology = fascism
@@ -480,8 +480,8 @@ country_event = {
 		}
 
 		custom_effect_tooltip = GER_fascism_civil_war_tt
-		add_stability = -0.35
-
+		#add_stability = -0.35
+		add_war_support = 0.20
 		hidden_effect = { 
 			set_cosmetic_tag = GER_provisional_gvt 
 		}
@@ -538,22 +538,22 @@ country_event = {
 
 			if = {
 				limit = {
-					is_ai = yes
+					has_dlc = "Gotterdammerung"
 				}
 				add_political_power = 150
 				add_equipment_to_stockpile = {
 				    type = infantry_equipment
-				    amount = 10000
+				    amount = 30000
 				    producer = GER
 				}
 				add_equipment_to_stockpile = {
 				    type = support_equipment
-				    amount = 250
+				    amount = 1000
 				    producer = GER
 				}
 				add_equipment_to_stockpile = {
 				    type = artillery_equipment
-				    amount = 500
+				    amount = 1000
 				    producer = GER
 				}
 			}
@@ -569,7 +569,22 @@ country_event = {
 						shocktroop = { x = 0 y = 1 }
 						shocktroop = { x = 0 y = 2 }
 						shocktroop = { x = 0 y = 3 }
-						artillery_brigade = { x = 1 y = 0 }
+						shocktroop = { x = 1 y = 0 }
+						shocktroop = { x = 1 y = 1 }
+						shocktroop = { x = 1 y = 2 }
+						shocktroop = { x = 1 y = 3 }						
+						shocktroop = { x = 2 y = 0 }
+						shocktroop = { x = 2 y = 1 }
+						shocktroop = { x = 2 y = 2 }
+						shocktroop = { x = 2 y = 3 }						
+						shocktroop = { x = 3 y = 0 }
+						shocktroop = { x = 3 y = 1 }
+						shocktroop = { x = 3 y = 2 }
+						shocktroop = { x = 3 y = 3 }						
+						artillery_brigade = { x = 4 y = 0 }
+						artillery_brigade = { x = 4 y = 1 }
+						artillery_brigade = { x = 4 y = 2 }
+						artillery_brigade = { x = 4 y = 3 }
 					}
 					support = {
 						armored_car_recon = { x = 0 y = 0 }
@@ -596,17 +611,45 @@ country_event = {
 			}
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Freikorps Division 1\" division_template = \"Freikorps Division\" start_experience_factor = 0.3 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					division = "name = \"Freikorps Division 1\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
 					owner = ROOT
 				}
 				create_unit = {
-					division = "name = \"Freikorps Division 2\" division_template = \"Freikorps Division\" start_experience_factor = 0.3 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					division = "name = \"Freikorps Division 2\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
 					owner = ROOT
 				}
 				create_unit = {
-					division = "name = \"Freikorps Division 3\" division_template = \"Freikorps Division\" start_experience_factor = 0.3 start_equipment_factor = 0.75 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					division = "name = \"Freikorps Division 3\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
 					owner = ROOT
 				}
+				create_unit = {
+					division = "name = \"Freikorps Division 4\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Freikorps Division 5\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Freikorps Division 6\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Freikorps Division 7\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Freikorps Division 8\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					owner = ROOT
+				}	
+				create_unit = {
+					division = "name = \"Freikorps Division 9\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Freikorps Division 10\" division_template = \"Freikorps Division\" start_experience_factor = 0.9 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_1 = { owner = GER } }" 
+					owner = ROOT
+				}																											
 			}
 
 		}
