@@ -4487,7 +4487,7 @@ country_event = { #Germany insists Austria hold a referendum to join them
 	option = { #sure 
 		name = wuw_GER_diplomacy.77.a
 		ai_chance = {
-			base = 5
+			base = 100
 			modifier = {
 				factor = 2
 				has_government = communism
@@ -4532,7 +4532,7 @@ country_event = { #Germany insists Austria hold a referendum to join them
 	option = { #no way
 		name = wuw_GER_diplomacy.77.b
 		ai_chance = {
-			base = 5
+			base = 0
 		}
 		
 		event_option_tooltip = wuw_GER_diplomacy.79.a
@@ -16416,7 +16416,7 @@ country_event = {
 	option = {
 		name = wuw_GER_realpolitik.17.a
 		ai_chance = {
-			base = 20
+			base = 99
 			modifier = {
 				factor = 0.5
 				FROM = {
@@ -16480,7 +16480,7 @@ country_event = {
 	option = {
 		name = wuw_GER_realpolitik.17.b
 		ai_chance = {
-			base = 5
+			base = 1
 			modifier = {
 				factor = 2
 				strength_ratio = {
@@ -16489,14 +16489,14 @@ country_event = {
 				}
 			}
 			modifier = {
-				factor = 3
+				factor = 1
 				any_other_country = {
 					is_major = yes
 					has_guaranteed = ROOT
 				}
 			}
 			modifier = {
-				factor = 3
+				factor = 1
 				is_in_faction = yes
 			}
 		}
@@ -16776,7 +16776,7 @@ country_event = {
 	option = {
 		name = wuw_GER_realpolitik.20.a
 		ai_chance = {
-			base = 10
+			base = 99
 			modifier = {
 				factor = 0.5
 				FROM = {
@@ -16825,7 +16825,7 @@ country_event = {
 	option = {
 		name = wuw_GER_realpolitik.20.b
 		ai_chance = {
-			base = 10
+			base = 1
 			modifier = {
 				factor = 3
 				strength_ratio = {
@@ -18392,7 +18392,7 @@ country_event = {
 	option = { # It is time to reclaim our birthright!
 		name = wuw_GER_realpolitik.42.a
 		ai_chance = {
-			base = 12
+			base = 99
 			modifier = {
 				factor = 2
 				has_government = FROM
@@ -18777,7 +18777,7 @@ country_event = {
 	option = { # We do not need their friendship!
 		name = wuw_GER_realpolitik.42.b
 		ai_chance = {
-			base = 1
+			base = 0
 			modifier = {
 				factor = 5
 				strength_ratio = {
@@ -19096,7 +19096,7 @@ country_event = {
 	option = { # We cannot fight them both...
 		name = wuw_GER_realpolitik.46.a
 		ai_chance = {
-			base = 90
+			base = 100
 		}
 		
 		IF = {
@@ -19191,7 +19191,7 @@ country_event = {
 	option = { # We will never surrender!
 		name = wuw_GER_realpolitik.46.b
 		ai_chance = {
-			base = 10
+			base = 0
 		}
 
 		FROM = { # [FROM.GetNameDefCap] Rejects Splitting Czechoslovakia
