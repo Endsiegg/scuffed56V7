@@ -8213,10 +8213,11 @@ formable_nations_mod_category = {
 				AND = {
 					
 					count_triggers = {
-						amount = 10
+						amount = 22
 						278 = { is_controlled_by = ROOT }
 						508 = { is_controlled_by = ROOT }
 						509 = { is_controlled_by = ROOT }
+						279 = { is_controlled_by = ROOT }
 						510 = { is_controlled_by = ROOT }
 						511 = { is_controlled_by = ROOT }
 						512 = { is_controlled_by = ROOT }
@@ -8225,6 +8226,24 @@ formable_nations_mod_category = {
 						300 = { is_controlled_by = ROOT }
 						302 = { is_controlled_by = ROOT }
 						487 = { is_controlled_by = ROOT }
+						688 = { is_controlled_by = ROOT }
+						688 = { is_controlled_by = ROOT }
+						1069 = { is_controlled_by = ROOT }
+						1071 = { is_controlled_by = ROOT }
+						1068 = { is_controlled_by = ROOT }
+						1070 = { is_controlled_by = ROOT }
+						1067 = { is_controlled_by = ROOT }
+						1066 = { is_controlled_by = ROOT }
+						1065 = { is_controlled_by = ROOT }
+						507 = { is_controlled_by = ROOT }
+						1062 = { is_controlled_by = ROOT }
+						1063 = { is_controlled_by = ROOT}
+						1069 = { is_controlled_by = ROOT }
+						954 = { is_controlled_by = ROOT }
+						1064 = { is_controlled_by = ROOT }
+						1077 = { is_controlled_by = ROOT }
+						1059 = { is_controlled_by = ROOT }
+						1060 = { is_controlled_by = ROOT }
 					}
 				}
 				AND = {
@@ -8241,6 +8260,7 @@ formable_nations_mod_category = {
 			custom_effect_tooltip = core_land
 			hidden_effect = { sound_effect = complete_focus  set_country_flag = unform_available
 				278 = { add_core_of = ROOT }
+				279 = { add_core_of = ROOT }
 				508 = { add_core_of = ROOT }
 				509 = { add_core_of = ROOT }
 				510 = { add_core_of = ROOT }
@@ -8251,6 +8271,23 @@ formable_nations_mod_category = {
 				300 = { add_core_of = ROOT }
 				302 = { add_core_of = ROOT }
 				487 = { add_core_of = ROOT }
+				688 = { add_core_of = ROOT }
+				1069 = { add_core_of = ROOT }
+				1071 = { add_core_of = ROOT }
+				1068 = { add_core_of = ROOT }
+				1070 = { add_core_of = ROOT }
+				1067 = { add_core_of = ROOT }
+				1066 = { add_core_of = ROOT }
+				1065 = { add_core_of = ROOT }
+				507 = { add_core_of = ROOT }
+				1062 = { add_core_of = ROOT }
+				1063 = { add_core_of = ROOT}
+				1069 = { add_core_of = ROOT }
+				954 = { add_core_of = ROOT }
+				1064 = { add_core_of = ROOT }
+				1077 = { add_core_of = ROOT }
+				1059 = { add_core_of = ROOT }
+				1060 = { add_core_of = ROOT }
 			}
 			506 = { add_core_of = ROOT }
 			299 = { add_claim_by = ROOT }
@@ -8583,6 +8620,31 @@ formable_nations_mod_category = {
 	}
 	formable_nations_chile_argentina = {
 	
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 507
+				state = 279
+				state = 506
+				state = 512
+				state = 511
+				state = 508
+				state = 509
+				state = 510
+				state = 278
+				state = 954
+				state = 1062
+				state = 1063
+				state = 1064
+				state = 1065
+				state = 1066
+				state = 1067
+				state = 1068
+				state = 1069
+				state = 1070
+				state = 1071
+			}
+		}	
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -8608,7 +8670,7 @@ formable_nations_mod_category = {
 				AND = {
 					
 					count_triggers = {
-						amount = 8
+						amount = 14
 						507 = { is_controlled_by = ROOT }
 						279 = { is_controlled_by = ROOT }
 						506 = { is_controlled_by = ROOT }
@@ -8618,6 +8680,18 @@ formable_nations_mod_category = {
 						509 = { is_controlled_by = ROOT }
 						510 = { is_controlled_by = ROOT }
 						278 = { is_controlled_by = ROOT }
+						### new states from the dlcs
+						954 = { is_controlled_by = ROOT }
+						1062 = { is_controlled_by = ROOT }
+						1063 = { is_controlled_by = ROOT }
+						1064 = { is_controlled_by = ROOT }
+						1065 = { is_controlled_by = ROOT }
+						1066 = { is_controlled_by = ROOT }
+						1067 = { is_controlled_by = ROOT }
+						1068 = { is_controlled_by = ROOT }
+						1069 = { is_controlled_by = ROOT }
+						1070 = { is_controlled_by = ROOT }
+						1071 = { is_controlled_by = ROOT }
 					}
 				}
 				AND = {
@@ -8642,6 +8716,19 @@ formable_nations_mod_category = {
 				509 = { add_core_of = ROOT }
 				510 = { add_core_of = ROOT }
 				278 = { add_core_of = ROOT }
+				### new states from the dlcs
+				954 = { add_core_of = ROOT }
+				1062 = { add_core_of = ROOT }
+				1063 = { add_core_of = ROOT }
+				1064 = { add_core_of = ROOT }
+				1065 = { add_core_of = ROOT }
+				1066 = { add_core_of = ROOT }
+				1067 = { add_core_of = ROOT }
+				1068 = { add_core_of = ROOT }
+				1069 = { add_core_of = ROOT }
+				1070 = { add_core_of = ROOT }
+				1071 = { add_core_of = ROOT }
+				1074 = { add_core_of = ROOT }
 			}
 			299 = { add_claim_by = ROOT }
 			720 = { add_claim_by = ROOT }
@@ -8725,7 +8812,7 @@ formable_nations_mod_category = {
 				#Rom
 				state = 43	
 				state = 46							
-				state = 47
+				state = 48
 				state = 70
 				state = 71
 				state = 73				
@@ -8746,6 +8833,11 @@ formable_nations_mod_category = {
 				state = 955							
 				state = 996
 				state = 1104
+			### Bulgarian states
+				state = 211
+				state = 801
+				state = 965
+				state = 212
 			}
 		}		
 		ai_will_do = {
@@ -8777,10 +8869,10 @@ formable_nations_mod_category = {
 				AND = {
 					
 					count_triggers = {
-						amount = 10
+						amount = 12
 						43 = { is_controlled_by = ROOT }
 						46 = { is_controlled_by = ROOT }						
-						47 = { is_controlled_by = ROOT }
+						48 = { is_controlled_by = ROOT }
 						70 = { is_controlled_by = ROOT }
 						71 = { is_controlled_by = ROOT }
 						73 = { is_controlled_by = ROOT }
@@ -8794,10 +8886,16 @@ formable_nations_mod_category = {
 						154 = { is_controlled_by = ROOT }
 						155 = { is_controlled_by = ROOT }
 						664 = { is_controlled_by = ROOT }
+						766 = { is_controlled_by = ROOT }
 						913 = { is_controlled_by = ROOT }
 						955 = { is_controlled_by = ROOT }
 						996 = { is_controlled_by = ROOT }
 						1104 = { is_controlled_by = ROOT }
+					### Bulgarian states
+						211 = { is_controlled_by = ROOT }
+						801 = { is_controlled_by = ROOT }
+						965 = { is_controlled_by = ROOT }
+						212 = { is_controlled_by = ROOT }
 					}
 				}
 				AND = {
@@ -8841,12 +8939,18 @@ formable_nations_mod_category = {
 				211 = { add_core_of = ROOT }
 				212 = { add_core_of = ROOT }
 				664 = { add_core_of = ROOT }
+				766 = { add_core_of = ROOT }
 				801 = { add_core_of = ROOT }
 				913 = { add_core_of = ROOT }
+				955 = { add_core_of = ROOT }
 				996 = { add_core_of = ROOT }				
 				1104 = { add_core_of = ROOT }
-				764 = { add_core_of = ROOT }			
+				764 = { add_core_of = ROOT }		
 			}
+			184 = { add_claim_by = ROOT }
+			731 = { add_claim_by = ROOT }
+			106 = { add_claim_by = ROOT }
+			803 = { add_claim_by = ROOT }
 		}
 	}
 	formable_nations_asia = {#continent
