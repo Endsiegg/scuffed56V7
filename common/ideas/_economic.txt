@@ -1313,9 +1313,9 @@ ideas = {
 					AND = {
 						NOT = { has_government = democratic }
 						OR = {
-							has_idea = partial_economic_mobilisation
-							has_idea = war_economy
-							has_idea = tot_economic_mobilisation
+							#has_idea = partial_economic_mobilisation
+							#has_idea = war_economy
+							#has_idea = tot_economic_mobilisation
 							if = {
 								limit = {
 									original_tag = GER
@@ -1529,19 +1529,7 @@ ideas = {
 				OR = {
 					has_government = fascism
 					has_government = communism
-				}
-				OR = {
-					has_idea = war_economy
-					has_idea = tot_economic_mobilisation
-					if = {
-						limit = {
-							original_tag = GER
-						}
-						has_idea = totaler_krieg_economy
-					}
-					else = {
-						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
-					}
+					has_government = neutrality
 				}
 				if = {
 					limit = {
