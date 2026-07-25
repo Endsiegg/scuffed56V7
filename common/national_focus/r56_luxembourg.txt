@@ -4291,14 +4291,6 @@ focus_tree = {
 		available = {
 			has_country_flag = LUX_elections_over
 			has_country_flag = LUX_elections_indecisive
-			OR = {
-				GER = {
-					has_completed_focus = GER_remilitarize_the_rhineland
-				}
-				any_neighbor_country = {
-					has_added_tension_amount > 5
-				}
-			}
 			has_country_flag = LUX_maulkuerfgesetz_passed
 		}
 		allow_branch = {
@@ -4642,7 +4634,7 @@ focus_tree = {
 	focus = {
 		id = LUX_replace_the_government
 		icon = GFX_focus_ger_reichskommisariats
-		cost = 10
+		cost = 5
 		x = 0
 		y = 5
 		relative_position_id = LUX_contest_election_results
@@ -4681,15 +4673,17 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
-					GER = {
-						has_government = fascism
-						has_completed_focus = GER_remilitarize_the_rhineland
+					OR = {
+						GER = {
+							has_government = neutrality
+							has_completed_focus = GER_remilitarize_the_rhineland
+						}
 					}
 				}
 				GER = {
 					set_autonomy = {
 						target = ROOT
-						autonomy_state = autonomy_reichskommissariat
+						autonomy_state = autonomy_integrated_puppet
 						end_wars = no
 					}
 				}
@@ -4729,7 +4723,7 @@ focus_tree = {
 	focus = {
 		id = LUX_expand_the_gau
 		icon = GFX_goal_LUX_expand_the_gau	# request new gfx
-		cost = 10
+		cost = 5
 		x = 3
 		y = 1
 		relative_position_id = LUX_replace_the_government
