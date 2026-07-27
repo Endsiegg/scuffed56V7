@@ -36,7 +36,6 @@ economy_decisions = {
 		visible = {
 			NOT = {
 				has_full_control_of_state = 229
-				has_tech = excavation_a
 			}
 		}
 
@@ -374,7 +373,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c
+			#
 			OR = {
 				153 = { state_is_fully_controlled_by_ROOT_or_subject = yes }	
 				has_resources_rights = {
@@ -385,7 +384,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			#
 			OR = {
 				153 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -1368,7 +1367,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			#
 			OR = {
 				674 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -1390,7 +1389,7 @@ prospect_for_resources = {
 					has_decision = open_cooks_creeks_mine_wtt
 				}
 			}
-			has_tech = construction5
+			#
 			674 = {
 				NOT = {
 					has_state_flag = cooks_creeks_mine_exploited
@@ -1455,7 +1454,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = construction3
+			
 			ENG = {
 				has_opinion = {
 					target = ROOT
@@ -1798,7 +1797,7 @@ prospect_for_resources = {
 				}
 			}
 			has_tech = excavation2
-			#has_tech = construction4
+			#
 			OR = {
 				50 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -1876,7 +1875,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			#
 			OR = {
 				289 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -1888,7 +1887,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			#
 			OR = {
 				289 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -2042,10 +2041,6 @@ prospect_for_resources = {
 					has_resources_rights = {
 						state = 655
 					}
-					OR = {
-						has_completed_focus = JAP_soviet_japanese_neutrality_pact
-						has_completed_focus = JAP_people_owned_mines
-					}
 					
 					NOT = {
 						OR = {
@@ -2077,10 +2072,6 @@ prospect_for_resources = {
 				}				
 				AND = {
 					original_tag = JAP
-					OR = {
-						has_completed_focus = JAP_soviet_japanese_neutrality_pact
-						has_completed_focus = JAP_people_owned_mines
-					}
 				}				
 			}
 			655 = { NOT = { has_state_flag = sakhalin_oil_developed } }
@@ -2479,7 +2470,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a
+			#
 			OR = {
 				279 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -2490,7 +2481,6 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
 			OR = {
 				279 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -2830,7 +2820,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a
+			
 			OR = {
 				457 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -2841,7 +2831,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				457 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -3706,7 +3696,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			
 			OR = {
 				540 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -3717,7 +3707,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			#has_tech = construction4
+			#
 			OR = {
 				540 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -3881,10 +3871,10 @@ prospect_for_resources = {
 				}
 				OR = {
 					has_country_flag = prospect_volga_ural_basin
-					has_tech = excavation_a
+					
 				}
 				else = {
-					has_tech = excavation_a
+					
 				}					
 			}
 			OR = {
@@ -3970,10 +3960,10 @@ prospect_for_resources = {
 				}
 				OR = {
 					has_country_flag = prospect_volga_ural_basin
-					has_tech = excavation_b
+					
 				}
 				else = {
-					has_tech = excavation_b
+					
 				}					
 			}
 			
@@ -4060,10 +4050,10 @@ prospect_for_resources = {
 				}
 				OR = {
 					has_country_flag = prospect_volga_ural_basin
-					has_tech = excavation_b
+					
 				}
 				else = {
-					has_tech = excavation_b
+					
 				}					
 			}
 			
@@ -4144,7 +4134,7 @@ prospect_for_resources = {
 					}
 				}
 			}	
-			has_tech = excavation_d
+			
 			OR = {
 				566 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -4155,7 +4145,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				566 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -4386,7 +4376,7 @@ prospect_for_resources = {
 			}
 			OR = {
 				AND = {
-					has_tech = excavation_a
+					
 					infrastructure > 3				
 				}
 				AND = {
@@ -4471,7 +4461,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a
+			
 			OR = {
 				470 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -4482,7 +4472,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				470 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -4550,7 +4540,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a
+			
 			OR = {
 				470 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -4561,7 +4551,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				470 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -4629,7 +4619,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c
+			
 			OR = {
 				470 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -4640,7 +4630,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction5
+			
 			OR = {
 				470 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -4708,7 +4698,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c
+			
 			OR = {
 				467 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -4719,7 +4709,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				467 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -5024,7 +5014,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			
 			OR = {
 				155 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -5035,7 +5025,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				155 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -5338,7 +5328,6 @@ prospect_for_resources = {
 				}
 			}
 			has_tech = excavation2
-			has_tech = construction3
 			OR = {
 				756 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -5416,7 +5405,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			
 			OR = {
 				756 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -5428,7 +5417,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction5
+			
 			OR = {
 				756 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -5721,7 +5710,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c
+			
 			num_of_civilian_factories_available_for_projects > 4
 			OR = {
 				618 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -5738,7 +5727,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction5	
+				
 			OR = {
 				618 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -5798,7 +5787,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c
+			
 			num_of_civilian_factories_available_for_projects > 4
 			OR = {
 				715 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -5815,7 +5804,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction5
+			
 			OR = {
 				715 = { state_is_fully_controlled_by_ROOT_or_subject = yes }	
 				has_resources_rights = {
@@ -5876,7 +5865,7 @@ prospect_for_resources = {
 				}
 			}
 			has_tech = excavation2
-			has_tech = construction3
+			
 			num_of_civilian_factories_available_for_projects > 4
 			OR = {
 				617 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -5959,7 +5948,6 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = construction1
 			num_of_civilian_factories_available_for_projects > 0
 			owns_state = 617
 			has_full_control_of_state = 617
@@ -6061,7 +6049,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			
 			num_of_civilian_factories_available_for_projects > 4
 			OR = {
 				900 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -6078,7 +6066,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction5
+			
 			OR = {
 				900 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -6684,7 +6672,7 @@ prospect_for_resources = {
 				}
 			}
 			num_of_civilian_factories_available_for_projects > 3
-			has_tech = excavation_a
+			
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -6693,7 +6681,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				327 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -7328,7 +7316,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = construction3
+			
 			num_of_civilian_factories_available_for_projects > 2
 			OR = {
 				792 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -7422,7 +7410,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = construction3
+			
 			num_of_civilian_factories_available_for_projects > 2
 			OR = {
 				166 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -7516,7 +7504,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = construction3
+			
 			num_of_civilian_factories_available_for_projects > 2
 			OR = {
 				173 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -8483,11 +8471,11 @@ prospect_for_resources = {
 				}
 			}
 			OR = {
-				has_tech = excavation_a
+				
 				any_other_country = {
 					is_major = yes
 					is_in_faction_with = ROOT
-					has_tech = excavation_a
+					
 				}
 			}
 			
@@ -8727,7 +8715,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c
+			
 			num_of_civilian_factories_available_for_projects > 3
 			OR = {
 				77 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -8744,7 +8732,7 @@ prospect_for_resources = {
 
 
 		visible = {
-			has_tech = construction5
+			
 			OR = {
 				77 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -8806,7 +8794,6 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = construction2
 			num_of_civilian_factories_available_for_projects > 2
 			OR = {
 				103 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
@@ -9058,7 +9045,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			
 			OR = {
 				680 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -9081,7 +9068,7 @@ prospect_for_resources = {
 					has_state_flag = rmelan_oil_exploited
 				}
 			}
-			has_tech = construction5
+			
 		}
 
 		fire_only_once = yes
@@ -9426,7 +9413,7 @@ prospect_for_resources = {
 				}				
 			}
 			num_of_civilian_factories_available_for_projects > 7
-			has_tech = excavation_a
+			
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -10359,7 +10346,7 @@ prospect_for_resources = {
 				}				
 			}
 			num_of_civilian_factories_available_for_projects > 7
-			has_tech = excavation_a		
+					
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -10379,7 +10366,7 @@ prospect_for_resources = {
 					has_state_flag = faryab_chromium_exploited
 				}
 			}
-			has_tech = construction4
+			
 		}
 
 		fire_only_once = yes
@@ -10538,7 +10525,7 @@ prospect_for_resources = {
 				has_tech = excavation2
 				AND = {
 					has_tech = excavation2
-					has_completed_focus = PRU_national_mining_administration
+					#has_completed_focus = PRU_national_mining_administration
 				}
 			}	
 					
@@ -10668,15 +10655,15 @@ prospect_for_resources = {
 					}
 				}
 				OR = {
-					has_tech = excavation_a
+					
 					AND = {
 						has_tech = excavation2
-						has_completed_focus = AFR_african_unification
+					#	has_completed_focus = AFR_african_unification
 					}
 				}
 			}
 			else = {
-				has_tech = excavation_c
+				
 			}
 
 
@@ -10700,7 +10687,7 @@ prospect_for_resources = {
 
 		visible = {
 			#OR = {
-			#	has_tech = construction4
+			#	
 			#	AND = {
 			#		has_tech = excavation2
 			#		has_completed_focus = AFR_african_unification
@@ -10768,7 +10755,6 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = construction2 #test found oil in november 1936, truly started in 1940
 			OR = {
 				225 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11095,7 +11081,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c
+			
 			OR = {
 				584 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11107,7 +11093,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				584 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11170,7 +11156,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a
+			
 			OR = {
 				315 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11182,7 +11168,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				315 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11245,7 +11231,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			
 			OR = {
 				315 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11257,7 +11243,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				315 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11474,7 +11460,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a #hist 1950
+			 #hist 1950
 			OR = {
 				117 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11486,7 +11472,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				117 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11553,7 +11539,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b #hist 1951
+			 #hist 1951
 			OR = {
 				689 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11565,7 +11551,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				689 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11632,7 +11618,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			
 			OR = {
 				689 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11644,7 +11630,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				689 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11713,7 +11699,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c
+			
 			OR = {
 				689 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11725,7 +11711,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				689 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11805,7 +11791,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				309 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11868,7 +11854,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a
+			
 			OR = {
 				309 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11880,7 +11866,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				309 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11946,7 +11932,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b
+			
 			OR = {
 				309 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -11958,7 +11944,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				309 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12027,7 +12013,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c
+			
 			OR = {
 				309 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12039,7 +12025,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				309 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12103,7 +12089,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b #hist 1951
+			 #hist 1951
 			OR = {
 				731 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12115,7 +12101,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				731 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12178,7 +12164,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b #hist 1951
+			 #hist 1951
 			OR = {
 				187 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12190,7 +12176,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				187 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12253,7 +12239,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b #hist 1950's
+			 #hist 1950's
 			OR = {
 				47 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12265,7 +12251,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				47 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12328,7 +12314,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b #hist 1950's
+			 #hist 1950's
 			OR = {
 				333 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12340,7 +12326,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				333 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12403,7 +12389,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b #hist 1950's
+			 #hist 1950's
 			OR = {
 				318 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12415,7 +12401,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				318 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12478,7 +12464,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_b #hist 1950's
+			 #hist 1950's
 			OR = {
 				319 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12490,7 +12476,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				319 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12553,7 +12539,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c #hist 1950's
+			 #hist 1950's
 			OR = {
 				148 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12565,7 +12551,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				148 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12628,7 +12614,7 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_c #hist 1950's
+			 #hist 1950's
 			OR = {
 				568 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12639,7 +12625,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				568 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -12930,7 +12916,7 @@ prospect_for_resources = {
 					has_tech = excavation2
 					AND = {
 						has_tech = excavation2
-						has_completed_focus = AFR_african_unification
+						#has_completed_focus = AFR_african_unification
 					}
 				}
 			}
@@ -13252,15 +13238,15 @@ prospect_for_resources = {
 					}
 				}
 				OR = {
-					has_tech = excavation_a
+					
 					AND = {
 						has_tech = excavation2
-						has_completed_focus = AFR_african_unification
+						#has_completed_focus = AFR_african_unification
 					}
 				}
 			}
 			else = {
-				has_tech = excavation_a
+				
 			}
 			
 			NOT = {
@@ -13393,15 +13379,12 @@ prospect_for_resources = {
 					}
 				}
 				OR = {
-					has_tech = excavation_a
+					#
 					AND = {
 						has_tech = excavation2
-						has_completed_focus = AFR_african_unification
+						#has_completed_focus = AFR_african_unification
 					}
 				}
-			}
-			else = {
-				has_tech = excavation_a
 			}
 			
 			NOT = {
@@ -13537,15 +13520,15 @@ prospect_for_resources = {
 					}
 				}
 				OR = {
-					has_tech = excavation_a
+					
 					AND = {
 						has_tech = excavation2
-						has_completed_focus = AFR_african_unification
+					#	has_completed_focus = AFR_african_unification
 					}
 				}
 			}
 			else = {
-				has_tech = excavation_a
+				
 			}
 			
 			NOT = {
@@ -13634,7 +13617,6 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a
 			OR = {
 				628 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -13647,7 +13629,7 @@ prospect_for_resources = {
 			civilian_factory_use = 7
 		}
 		visible = {
-			has_tech = construction4
+			
 			OR = {
 				628 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -13974,7 +13956,6 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a
 			OR = {
 				1017 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -14060,7 +14041,6 @@ prospect_for_resources = {
 					}
 				}
 			}
-			has_tech = excavation_a
 			OR = {
 				406 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				has_resources_rights = {
@@ -14344,9 +14324,6 @@ prospect_for_resources = {
 				}
 				has_tech = excavation2 # already identified in 1936 but lacked manpower and need for it IRL.
 			}
-			else = {
-				has_tech = excavation_a # could be higher as it happened post war
-			}
 			
 			num_of_civilian_factories_available_for_projects > 4
 			OR = {
@@ -14546,9 +14523,6 @@ prospect_for_resources = {
 					}
 				}
 				has_tech = excavation2 # represents a relatively big jump
-			}
-			else = {
-				has_tech = excavation_c # happened very late IRL
 			}
 			
 			num_of_civilian_factories_available_for_projects > 4
