@@ -411,6 +411,10 @@ equipment_modules = {
 			hg_armor_piercing = 45 
 		}
 		critical_parts = { damaged_heavy_guns }
+		can_convert_from = {
+			module_category = ship_heavy_battery
+			convert_cost_ic = 100000000
+		}
 	}
 
 
@@ -2962,7 +2966,7 @@ ship_light_battery_sub = {
 		dismantle_cost_ic = 8200
 		can_convert_from = {
 			module_category = ship_heavy_armor
-			convert_cost_ic = 10000
+			convert_cost_ic = 1000
 		}
 		
 	}
