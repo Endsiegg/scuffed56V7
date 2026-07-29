@@ -13,13 +13,6 @@ ideas = {
 			available = {
 				#has_manpower_for_recruit_change_to = { value = 0.005 group = mobilization_laws }
 				if = { 
-					limit = {
-					 	original_tag = SWI
-						has_global_flag = SWI_R56_focus_tree
-					}
-					NOT = { has_country_flag = SWI_reliance_on_militia }
-				}
-				if = { 
 					limit = { original_tag = CAN }
 					has_completed_focus = r56_CAN_conscription_crisis
 				}
@@ -108,13 +101,6 @@ ideas = {
 							}
 						}
 					}
-				}
-				if = { 
-					limit = {
-					 	original_tag = SWI
-						has_global_flag = SWI_R56_focus_tree
-					 }
-					NOT = { has_country_flag = SWI_reliance_on_militia } 
 				}
 				if = {
 					limit = {
@@ -205,13 +191,6 @@ ideas = {
 						has_idea = SWE_swedish_disarmament_1_idea
 					} 
 				}				
-				if = { 
-					limit = {
-						original_tag = SWI
-					   has_global_flag = SWI_R56_focus_tree
-					 }
-					NOT = { has_country_flag = SWI_reliance_on_militia } 
-				}
 				if = {
 					limit = {
 						original_tag = USA
@@ -333,13 +312,6 @@ ideas = {
 						has_dlc = "La Resistance"
 					}
 					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
-				}
-				if = {
-					limit = {
-						original_tag = BUL
-						has_global_flag = bul_bftb_focus_tree
-					}
-					NOT = { has_idea = BUL_army_restrictions }
 				}
 				if = {
 					limit = {
@@ -585,13 +557,6 @@ ideas = {
 				}				
 				if = {
 					limit = {
-						original_tag = SWI
-						has_global_flag = SWI_R56_focus_tree
-					}
-					NOT = { has_country_flag = SWI_reliance_on_militia } 
-				}
-				if = {
-					limit = {
 						original_tag = USA
 					}
 					NOT = { has_idea = undisturbed_isolation }
@@ -622,14 +587,6 @@ ideas = {
 					 	original_tag = QUE
 					 }
 					has_completed_focus = QUE_a_standing_army
-				}
-
-				if = {
-					limit = {
-						original_tag = BUL
-						has_global_flag = bul_bftb_focus_tree
-					}
-					NOT = { has_idea = BUL_army_restrictions }
 				}
 				if = {
 					limit = {
@@ -886,13 +843,6 @@ ideas = {
 				}				
 				if = {
 					limit = {
-						original_tag = SWI
-						has_global_flag = SWI_R56_focus_tree
-					}
-					NOT = { has_country_flag = SWI_reliance_on_militia } 
-				}
-				if = {
-					limit = {
 						original_tag = USA
 					}
 					NOT = { has_idea = undisturbed_isolation }
@@ -902,13 +852,6 @@ ideas = {
 						original_tag = SAU
 					}
 					NOT = { has_idea = isolation }
-				}
-				if = {
-					limit = {
-						original_tag = BUL
-						has_global_flag = bul_bftb_focus_tree
-					}
-					NOT = { has_idea = BUL_army_restrictions }
 				}
 				if = {
 					limit = {
@@ -1135,13 +1078,6 @@ ideas = {
 				}				
 				if = {
 					limit = {
-						original_tag = SWI
-						has_global_flag = SWI_R56_focus_tree
-					}
-					NOT = { has_country_flag = SWI_reliance_on_militia } 
-				}
-				if = {
-					limit = {
 						original_tag = USA
 					}
 					NOT = { has_idea = undisturbed_isolation }
@@ -1166,13 +1102,6 @@ ideas = {
 						original_tag = SAU
 					}
 					NOT = { has_idea = isolation }
-				}
-				if = {
-					limit = {
-						original_tag = BUL
-						has_global_flag = bul_bftb_focus_tree
-					}
-					NOT = { has_idea = BUL_army_restrictions }
 				}
 				if = { 
 					limit = {
@@ -1397,13 +1326,6 @@ ideas = {
 				}				
 				if = {
 					limit = {
-						original_tag = SWI
-						has_global_flag = SWI_R56_focus_tree
-					}
-					NOT = { has_country_flag = SWI_reliance_on_militia } 
-				}
-				if = {
-					limit = {
 						original_tag = USA
 					}
 					NOT = { has_idea = undisturbed_isolation }
@@ -1434,13 +1356,6 @@ ideas = {
 					 	original_tag = QUE
 					}
 					has_completed_focus = QUE_a_standing_army
-				}
-				if = {
-					limit = {
-						original_tag = BUL
-						has_global_flag = bul_bftb_focus_tree
-					}
-					NOT = { has_idea = BUL_army_restrictions }
 				}
 				if = {
 					limit = {
