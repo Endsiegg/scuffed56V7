@@ -9271,7 +9271,7 @@ country_event = { #Denmark offers subjugation
 	option = { #Accept
 		name = denmark_expansion_event.600.a #Intentional
 		ai_chance = {
-			base = 5
+			base = 1000
 			modifier = {
 				factor = 2
 				has_civil_war = yes
@@ -9281,14 +9281,14 @@ country_event = { #Denmark offers subjugation
 				has_government = FROM
 			}
 			modifier = {
-				factor = 2
+				factor = 100
 				has_opinion = {
 					target = FROM
 					value > 49
 				}
 			}
 			modifier = {
-				factor = 2
+				factor = 10
 				enemies_strength_ratio > 0.75
 			}
 			modifier = {
@@ -9308,9 +9308,9 @@ country_event = { #Denmark offers subjugation
 	option = { #Refuse
 		name = denmark_protection_event.100.b #Intentional
 		ai_chance = {
-			base = 2
+			base = 0
 			modifier = {
-				factor = 5
+				factor = 0
 				strength_ratio = {
 				    tag = FROM
 				    ratio > 0.5
