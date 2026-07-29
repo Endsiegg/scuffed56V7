@@ -97,6 +97,8 @@ scripted_gui = {
 						if={limit={check_variable={Root.selected_cheat=4}} add_offsite_building = { type = industrial_complex level = -1 }}
 						if={limit={check_variable={Root.selected_cheat=5}} add_political_power = 50 }
 						if={limit={check_variable={Root.selected_cheat=6}} add_political_power = -50 }
+						if={limit={check_variable={Root.selected_cheat=7}} add_stability = 5 }
+						if={limit={check_variable={Root.selected_cheat=8}} add_stability = -5 }
 						}}
 				GER={
 
@@ -211,6 +213,8 @@ scripted_gui = {
 			cheat4_click={set_variable={Root.selected_cheat=4} ROOT={clr_country_flag=cheating}}
 			cheat5_click={set_variable={Root.selected_cheat=5} ROOT={clr_country_flag=cheating}}
 			cheat6_click={set_variable={Root.selected_cheat=6} ROOT={clr_country_flag=cheating}}
+			cheat7_click={set_variable={Root.selected_cheat=7} ROOT={clr_country_flag=cheating}}
+			cheat8_click={set_variable={Root.selected_cheat=8} ROOT={clr_country_flag=cheating}}
 		}
 		properties = {
 
@@ -240,11 +244,15 @@ scripted_gui = {
 			cheat4_visible={ROOT={has_country_flag=cheating}}
 			cheat5_visible={ROOT={has_country_flag=cheating}}
 			cheat6_visible={ROOT={has_country_flag=cheating}}
+			cheat7_visible={ROOT={has_country_flag=cheating}}
+			cheat8_visible={ROOT={has_country_flag=cheating}}
 			cheat2_text_visible={ROOT={has_country_flag=cheating}}
 			cheat3_text_visible={ROOT={has_country_flag=cheating}}
 			cheat4_text_visible={ROOT={has_country_flag=cheating}}
 			cheat5_text_visible={ROOT={has_country_flag=cheating}}
 			cheat6_text_visible={ROOT={has_country_flag=cheating}}
+			cheat7_text_visible={ROOT={has_country_flag=cheating}}
+			cheat8_text_visible={ROOT={has_country_flag=cheating}}
 			clear_all_markings_click_enabled = {
 				check_variable = { ROOT.host_marked_states^num > 0 }
 			}
