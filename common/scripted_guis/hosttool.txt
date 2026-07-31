@@ -145,7 +145,6 @@ scripted_gui = {
 				}
 			}
 			annex_country_click = {
-
 				owner={
 					set_variable = { ROOT.taker = this}}
 				var:ROOT.host_marked_states^0={owner={set_variable={ROOT.target=this}}}
@@ -237,6 +236,40 @@ scripted_gui = {
 				}
 
 			}
+
+			declare_war_country_click = {
+				owner={
+					set_variable = { ROOT.taker = this}}
+				var:ROOT.host_marked_states^0={owner={set_variable={ROOT.target=this}}}
+				if={
+					limit={check_variable={ROOT.target=ROOT.taker}}
+				}
+				else={
+					var:ROOT.target={
+						var:ROOT.taker={
+							GER = {
+								news_event={id=hosttool.10}
+							}
+							create_wargoal = {
+								type = annex_everything
+								target=prev
+							}
+						}
+					}
+				}
+
+				ROOT = {
+					for_each_scope_loop={
+						array=host_marked_states
+						clear_variable=host_mark_status
+					}
+					clear_array=host_marked_states
+					clear_variable=target
+					clear_variable=taker
+					clear_variable=first_marked_state
+				}
+			}			
+			
 			puppet_country_click = {
 				owner={
 					set_variable = { ROOT.taker = this}}
@@ -369,7 +402,10 @@ scripted_gui = {
 			}	
 			faction_leave_country_click_enabled = {
 				check_variable = { ROOT.host_marked_states^num > 0 }
-			}							
+			}	
+			declare_war_country_click_enabled = {
+				check_variable = { ROOT.host_marked_states^num > 0 }
+			}				
 			add_cores_click_enabled = {
 				check_variable = { ROOT.host_marked_states^num > 0 }
 			}
