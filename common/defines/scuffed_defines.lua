@@ -506,7 +506,7 @@ NDefines.NMilitary.MAX_DIVISION_BRIGADE_HEIGHT = 5
 NDefines.NMilitary.MIN_DIVISION_BRIGADE_HEIGHT = 4
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 1
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 7
-NDefines.NMilitary.MAX_REGIMENTAL_SUPPORT_WIDTH = 0
+NDefines.NMilitary.MAX_REGIMENTAL_SUPPORT_WIDTH = 5
 NDefines.NMilitary.MAX_REGIMENTAL_SUPPORT_HEIGHT = 1
 --------------------------------------------------------
 NDefines.NDoctrines.TRAINING_MASTERY_GAIN_FACTOR = 0.75
