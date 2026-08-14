@@ -119,12 +119,15 @@ anti_tank_frontline = {
             mot_anti_tank_brigade = {
                 max_organisation = 5
             }
+            bm_mechanized_anti_tank = {
+                max_organisation = 5
+            }
         }
         weakpoint_studies = {
         #3
             anti_tank_brigade = {
-                hard_attack = 0.10
-                ap_attack = 0.10
+                hard_attack = 0.1
+                ap_attack = 0.1
             }
         }
         offensive_deployments = {
@@ -133,12 +136,20 @@ anti_tank_frontline = {
                 hard_attack = 0.1
                 ap_attack = 0.1
             }
+            bm_mechanized_anti_tank = {
+                hard_attack = 0.1
+                ap_attack = 0.1
+            }
         }
         assault_anti_tank = {
         #5
             mot_anti_tank_brigade = {
-                ap_attack = 0.10
-                hard_attack = 0.10
+                ap_attack = 0.1
+                hard_attack = 0.1
+            }
+            bm_mechanized_anti_tank = {
+                ap_attack = 0.1
+                hard_attack = 0.1
             }
         }
     }
@@ -187,16 +198,20 @@ flying_batteries = {
     rewards = {
         deployment_drills = {
             mot_rocket_artillery_brigade = {
-                combat_width = -1
+                soft_attack = 0.1
+                #combat_width = -1
             }
             motorized_rocket_brigade = {
-                combat_width = -1
+                soft_attack = 0.1
+                #combat_width = -1
             }
             mot_artillery_brigade = {
-                combat_width = -1
+                soft_attack = 0.1
+                #combat_width = -1
             }
             bm_mechanized_artillery = {
-                combat_width = -1
+                soft_attack = 0.1
+                #combat_width = -1
             }
         }
         counter_battery_tasks = {
@@ -210,6 +225,14 @@ flying_batteries = {
                 recon = 0.25
             }
             mot_recon = {
+                battalion_mult = {
+                    category = category_line_artillery 
+                    soft_attack = 0.05
+                    defense = 0.05
+                }
+                recon = 0.25
+            }
+            light_tank_recon = {
                 battalion_mult = {
                     category = category_line_artillery 
                     soft_attack = 0.05
@@ -285,13 +308,14 @@ air_cavalry = {
                 battalion_mult = {
                     category = category_artillery
                     soft_attack = 0.05
+                    recon = 1
                 }
                 max_organisation = 5
             }
         }
         service_and_support = {
             category_helicopter_support_companies = {
-                max_strength = 0.03
+                max_strength = 0.05
             }
         }
         rescue_liasions = {
@@ -299,10 +323,10 @@ air_cavalry = {
             battalion_mult = {
                 category = category_all_infantry
                     max_strength = 0.05 
-                    default_morale = 0.05 
+                    default_morale = 0.2
                 }
                 max_organisation = 5
-                casualty_trickleback = 0.05
+                casualty_trickleback = 0.15
             }
         }
 
@@ -310,10 +334,11 @@ air_cavalry = {
             helicopter_transport = {
                 battalion_mult = {
                     category = category_light_infantry
+                    supply_consumption = -0.15
                     maximum_speed = 0.2
-                    breakthrough = 0.05
+                    breakthrough = 0.1
                 }
-                breakthrough = 0.05
+                breakthrough = 0.1
                 max_organisation = 10
             }
                 
@@ -566,7 +591,7 @@ self_propelled_support = {
         }
         screening_attacks = {
             
-            recon = {
+            armored_car_recon = {
                 battalion_mult = {
                     category = category_self_propelled_artillery
                     soft_attack = 0.05
@@ -659,11 +684,11 @@ siege_artillery = {
 
     equipment_bonus = {
         railway_gun_equipment = {
-            railway_gun_attack = 0.10
+            railway_gun_attack = 0.15
             instant = yes
         }
         super_heavy_railway_gun_equipment = {
-            railway_gun_attack = 0.10
+            railway_gun_attack = 0.15
             instant = yes
         }
     }
@@ -684,26 +709,26 @@ siege_artillery = {
         }
         improved_transport_preparation = {
             category_line_artillery = {
-                default_morale = 0.1
+                default_morale = 0.15
             }
             super_heavy_artillery = {
                 plains = {
-                    movement = 0.1
+                    movement = 0.15
                 }
             }
             self_propelled_super_heavy_artillery = {
                 plains = {
-                    movement = 0.1
+                    movement = 0.15
                 }
             }
 
             equipment_bonus = {
                 railway_gun_equipment = {
-                    railway_gun_hours_between_redistribution = -0.5
+                    railway_gun_hours_between_redistribution = -0.75
                     instant = yes
                 }
                 super_heavy_railway_gun_equipment = {
-                    railway_gun_hours_between_redistribution = -0.5
+                    railway_gun_hours_between_redistribution = -0.75
                     instant = yes
                 }
                 
@@ -813,6 +838,13 @@ field_engineering = {
                     entrenchment = 0.05
                 }
             }
+            pioneer_support = {
+                max_organisation = 10
+                battalion_mult = {
+                    category = category_all_infantry
+                    entrenchment = 0.05
+                }
+            }
             maintenance_company = {
                 max_organisation = 5
             }
@@ -823,6 +855,10 @@ field_engineering = {
                 max_strength = 0.25
                 defense = 0.15
             }
+            pioneer_support = {
+                max_strength = 0.25
+                defense = 0.15
+            }
             maintenance_company = {
                 max_strength = 0.25
             }
@@ -830,10 +866,11 @@ field_engineering = {
         engineerdug_gun_emplacements = {
             engineer = {
                 battalion_mult = {
-                    category = category_artillery
-                    soft_attack = 0.05
+                    category = category_all_infantry
                     defense = 0.05
                 }
+            }
+            pioneer_support = {
                 battalion_mult = {
                     category = category_all_infantry
                     defense = 0.05
@@ -842,6 +879,9 @@ field_engineering = {
         }
         smoke_projector_training = {
             engineer = {
+                breakthrough = 0.5
+            }
+            pioneer_support = {
                 breakthrough = 0.5
             }
             maintenance_company = {
@@ -859,6 +899,11 @@ field_engineering = {
                 max_organisation = 5
                 soft_attack = 0.1
                 hard_attack = 1  
+            }
+            pioneer_support = {
+                max_organisation = 5
+                soft_attack = 0.1
+                hard_attack = 1
             }
             maintenance_company = {
                 max_organisation = 10
