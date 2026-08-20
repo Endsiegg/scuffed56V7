@@ -390,7 +390,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = MEX_focus_national_bank
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -616,7 +616,7 @@ focus_tree = {
 	focus = {
 		id = MEX_focus_oil_field_expansion
 		icon = GFX_goal_generic_oil_refinery
-		prerequisite = { focus = MEX_focus_rural_schools focus = MEX_focus_cientifico_camarilla }
+		prerequisite = { focus = MEX_focus_rural_industry_investments }
 		x = 1
 		y = 2
 		relative_position_id = MEX_focus_rural_schools
@@ -723,7 +723,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = MEX_focus_oil_field_expansion
-		cost = 5
+		cost = 10
 		ai_will_do = { base = 100 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -734,10 +734,10 @@ focus_tree = {
 						state = 479
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1038,7 +1038,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -1056,7 +1056,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -5328,7 +5328,7 @@ focus_tree = {
 		prerequisite = { focus = MEX_focus_national_bank }
 		x = 3
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -5356,7 +5356,7 @@ focus_tree = {
 		id = MEX_focus_gulf_coast_naval_yards
 		icon = GFX_focus_POL_develop_polish_shipbuilding
 		prerequisite = { focus = MEX_focus_military_budget_review }
-		x = -2
+		x = -8
 		y = 1
 		relative_position_id = MEX_focus_military_budget_review
 		cost = 5
@@ -5415,7 +5415,7 @@ focus_tree = {
 		id = MEX_focus_pacific_coast_naval_yards
 		icon = GFX_goal_generic_expand_the_naval_industry
 		prerequisite = { focus = MEX_focus_military_budget_review }
-		x = 0
+		x = -6
 		y = 1
 		relative_position_id = MEX_focus_military_budget_review
 		cost = 5
@@ -5474,10 +5474,10 @@ focus_tree = {
 		id = MEX_focus_heroic_military_college
 		icon = GFX_focus_SOV_mobilization_plan
 		prerequisite = { focus = MEX_focus_military_budget_review }
-		x = 2
+		x = -1
 		y = 1
 		relative_position_id = MEX_focus_military_budget_review
-		cost = 5
+		cost = 2
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
 		ai_will_do = {
 			base = 100
@@ -5525,7 +5525,36 @@ focus_tree = {
 				uses = 3
 				category = infantry_weapons
 				category = artillery
-				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_focus_armor_plate_breakthroughs
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = MEX_focus_tank_workshops }
+		x = -1
+		y = 3
+		relative_position_id = MEX_focus_heroic_military_college
+		cost = 5
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_plate_breakthroughs_1
+				bonus = 1.0
+				uses = 2
+				category = armor
 			}
 		}
 	}
@@ -5534,10 +5563,10 @@ focus_tree = {
 		id = MEX_focus_tank_workshops
 		icon = GFX_focus_generic_mass_production
 		prerequisite = { focus = MEX_focus_weapons_modernisation }
-		x = 0
-		y = 1
-		relative_position_id = MEX_focus_weapons_modernisation
-		cost = 5
+		x = -1
+		y = 2
+		relative_position_id = MEX_focus_heroic_military_college
+		cost = 10
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -5566,16 +5595,22 @@ focus_tree = {
 				custom_effect_tooltip = available_designer
 				show_ideas_tooltip = MEX_tga
 			}
+			add_tech_bonus = {
+				name = motorized_equipment
+				bonus = 1
+				uses = 2
+				category = motorized_equipment
+			}
 		}
 	}
 
 	focus = {
 		id = MEX_focus_aviation_workshops
 		icon = GFX_focus_generic_aircraft_production
-		prerequisite = { focus = MEX_focus_heroic_military_college }
-		x = 1
+		prerequisite = { focus = MEX_focus_military_budget_review }
+		x = 3
 		y = 1
-		relative_position_id = MEX_focus_heroic_military_college
+		relative_position_id = MEX_focus_military_budget_review
 		cost = 5
 		ai_will_do = {
 			base = 100
@@ -5644,11 +5679,14 @@ focus_tree = {
 	focus = {
 		id = MEX_focus_army_expansion_programme
 		icon = GFX_focus_generic_reorient_production 
-		prerequisite = { focus = MEX_focus_tank_workshops }
-		prerequisite = { focus = MEX_focus_military_aviation_specialists }
-		x = 1
-		y = 1
-		relative_position_id = MEX_focus_tank_workshops
+		prerequisite = { focus = MEX_focus_armor_plate_breakthroughs focus = MEX_focus_heavy_artillery}
+		
+		mutually_exclusive = {
+		focus = MEX_focus_sea_to_shining_sea
+		}
+
+		x = 2
+		y = 6
 		cost = 10
 		ai_will_do = {
 			base = 100
@@ -5670,6 +5708,7 @@ focus_tree = {
 						state = 478
 						state = 277
 						state = 477
+						state = 480
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -5691,11 +5730,10 @@ focus_tree = {
 	focus = {
 		id = MEX_focus_heavy_artillery
 		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = MEX_focus_army_expansion_programme }
-		mutually_exclusive = { focus = MEX_focus_aerial_artillery }
-		x = -1
-		y = 1
-		relative_position_id = MEX_focus_army_expansion_programme
+		prerequisite = { focus = MEX_focus_advancements_in_military_equipment_production }
+		x = 1
+		y = 3
+		relative_position_id = MEX_focus_heroic_military_college
 		cost = 5
 		ai_will_do = {
 			base = 100
@@ -5715,11 +5753,10 @@ focus_tree = {
 	focus = {
 		id = MEX_focus_aerial_artillery
 		icon = GFX_goal_generic_occupy_start_war
-		prerequisite = { focus = MEX_focus_army_expansion_programme }
-		mutually_exclusive = { focus = MEX_focus_heavy_artillery }
-		x = 1
+		prerequisite = { focus = MEX_focus_military_aviation_specialists }
+		x = 0
 		y = 1
-		relative_position_id = MEX_focus_army_expansion_programme
+		relative_position_id = MEX_focus_military_aviation_specialists
 		cost = 5
 		ai_will_do = {
 			base = 100
@@ -5745,10 +5782,11 @@ focus_tree = {
 		prerequisite = {
 			focus = MEX_focus_pacific_coast_naval_yards
 			focus = MEX_focus_gulf_coast_naval_yards
+			focus = MEX_focus_heroic_military_college
 		}
 
-		x = 2
-		y = 3.5
+		x = -1
+		y = 3
 		cost = 5
 
 		ai_will_do = { base = 100 }
@@ -5765,11 +5803,15 @@ focus_tree = {
 		icon = GFX_focus_generic_large_navy
 
 		prerequisite = {
-			focus = MEX_focus_wartime_resource_extraction
+			focus = MEX_focus_national_naval_expansion
 		}
 
-		x = 2
-		y = 4.5
+		mutually_exclusive = {
+			focus = MEX_focus_army_expansion_programme
+		}
+
+		x = -4
+		y = 6
 
 		cost = 10
 
@@ -5796,8 +5838,8 @@ focus_tree = {
 				focus = MEX_focus_full_fledged_navy
 			}
 
-			x = 1
-			y = 5.5
+			x = -5
+			y = 7
 
 			cost = 10
 
@@ -5817,15 +5859,15 @@ focus_tree = {
 			icon = GFX_goal_generic_navy_battleship
 
 			prerequisite = {
-				focus = MEX_focus_sea_to_shining_sea
+				focus = MEX_focus_sea_to_shining_sea 
 			}
 
 			mutually_exclusive = {
 				focus = MEX_focus_supportive_role_navy
 			}
 
-			x = 3
-			y = 5.5
+			x = -3
+			y = 7
 
 			cost = 10
 
@@ -5839,4 +5881,386 @@ focus_tree = {
 				add_ideas = MEX_full_fledged_navy_idea
 			}
 	}
+
+	focus = {
+		id = MEX_focus_marine_warfare_expansion
+		icon = GFX_focus_PRC_develop_the_army
+		prerequisite = { focus = MEX_focus_army_expansion_programme}
+		x = 1
+		y = 1
+		relative_position_id = MEX_focus_army_expansion_programme
+		mutually_exclusive = { focus = MEX_focus_amphibious_tank_production }
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = MEX_marine_warfare_program
+			
+			add_tech_bonus = {
+				name = MEX_landing_craft_research
+				bonus = 1.0
+				uses = 2
+				category = tp_tech
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			custom_effect_tooltip = available_military_high_command
+			show_ideas_tooltip = MEX_lieutenant_BruhBruh_maximillio_Guatemala_Salamaca
+		}
+	}
+
+	focus = {
+		id = MEX_focus_developing_coastal_special_forces
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = MEX_focus_heroic_military_college }
+		x = 1
+		y = 1
+		relative_position_id = MEX_focus_heroic_military_college
+		cost = 5
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = coastal_special_forces_bonus
+				bonus = 1.0
+				uses = 2
+				category = marine_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = MEX_focus_advancements_in_military_equipment_production
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = MEX_focus_developing_coastal_special_forces }
+		x = 0
+		y = 1
+		relative_position_id = MEX_focus_developing_coastal_special_forces
+		cost = 5
+
+		completion_reward = {
+			add_ideas = MEX_advancements_in_military_equipment_production
+			army_experience = 100
+			add_doctrine_cost_reduction = {
+			name = MEX_advancements_in_military_equipment_production
+			cost_reduction = 0.5
+			uses = 2
+			category = land_doctrine
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = MEX_focus_amphibious_tank_production
+		icon = GFX_focus_generic_naval_invasion
+		prerequisite = { focus = MEX_focus_army_expansion_programme }
+		x = -1
+		y = 1
+		relative_position_id = MEX_focus_army_expansion_programme
+		cost = 10
+
+		mutually_exclusive = { focus = MEX_focus_marine_warfare_expansion }
+
+		completion_reward = {
+
+			add_ideas = MEX_amphibious_tank_production
+			
+			add_tech_bonus = {
+				name = armor
+				ahead_reduction = 1.5
+				bonus = 1.5
+				uses = 1
+				category = armor
+			}
+
+			create_corps_commander = {
+				name = "Agustín Rivera"
+				picture = "GFX_portrait_mexican_general"
+				traits = {
+					panzer_leader
+				}
+				skill = 4
+				attack_skill = 4
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 4
+			}
+
+			add_advisor_role = {
+				character = MEX_hector_salamanca
+				advisor = {
+					slot = high_command
+					traits = {
+						army_armored_2
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = MEX_focus_uncontrolled_mexican_mass_migration
+		icon = GFX_focus_generic_immigration
+
+		prerequisite = {
+			focus = MEX_focus_wartime_resource_extraction
+		}
+
+		x = -1
+		y = 4
+		cost = 10
+
+		available = {
+			is_ai = no
+			date > 1939.05.31
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			country_event = {
+				id = MEX_migration.1
+				days = 1
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_focus_national_destroyer_program
+		icon = GFX_focus_generic_navy_research_bonus
+
+		prerequisite = {
+			focus = MEX_focus_gulf_coast_naval_yards
+		}
+
+		x = -8
+		y = 2
+		relative_position_id = MEX_focus_military_budget_review
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+
+		ai_will_do = {
+			base = 100
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEX_destroyer_design_bonus
+				bonus = 1.0
+				uses = 2
+				category = dd_tech
+			}
+		}
+	}
+
+
+	focus = {
+		id = MEX_focus_national_cruiser_program
+		icon = GFX_focus_generic_navy_battleship2
+
+		prerequisite = {
+			focus = MEX_focus_pacific_coast_naval_yards
+		}
+
+		x = -6
+		y = 2
+		relative_position_id = MEX_focus_military_budget_review
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+
+		ai_will_do = {
+			base = 100
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEX_light_cruiser_design_bonus
+				bonus = 1.0
+				uses = 2
+				category = cl_tech
+			}
+		}
+	}
+
+
+	focus = {
+		id = MEX_focus_naval_research_facility
+		icon = GFX_focus_NORDIC_dem_capstone_research
+
+		prerequisite = {
+			focus = MEX_focus_national_destroyer_program
+		}
+
+		x = -8
+		y = 3
+		relative_position_id = MEX_focus_military_budget_review
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
+
+		ai_will_do = {
+			base = 100
+		}
+
+		completion_reward = {
+			477 = {
+				construct_building_in_random_province = {
+					naval_facility = 1
+				}
+			}
+
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.25
+			}
+		}
+	}
+
+
+	focus = {
+		id = MEX_focus_national_battleship_program
+		icon = GFX_focus_JAP_expand_navy_technical_department
+
+		prerequisite = {
+			focus = MEX_focus_national_cruiser_program
+		}
+
+		x = -6
+		y = 3
+		relative_position_id = MEX_focus_military_budget_review
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+
+		ai_will_do = {
+			base = 100
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEX_battleship_design_bonus
+				bonus = 1.0
+				uses = 2
+				category = bb_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_focus_national_naval_expansion
+		icon = GFX_goal_generic_construct_naval_dockyard
+
+		prerequisite = {
+			focus = MEX_focus_naval_research_facility
+			focus = MEX_focus_national_battleship_program
+		}
+
+		x = -7
+		y = 4
+		relative_position_id = MEX_focus_military_budget_review
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
+
+		ai_will_do = {
+			base = 100
+		}
+
+		completion_reward = {
+			navy_experience = 100
+
+			475 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			474 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_focus_rural_industry_investments
+		icon = GFX_goal_generic_construct_civilian
+
+		prerequisite = {
+			focus = MEX_focus_rural_schools
+			focus = MEX_focus_cientifico_camarilla
+		}
+
+		x = 1
+		y = 1
+		relative_position_id = MEX_focus_rural_schools
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		ai_will_do = {
+			base = 100
+		}
+
+		completion_reward = {
+			931 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			484 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+
+
 }
+
+

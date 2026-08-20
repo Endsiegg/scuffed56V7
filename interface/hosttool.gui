@@ -1,4 +1,13 @@
 guiTypes = {
+	containerWindowType = {
+		name = "pause_block_window"
+		size = { width = 206 height = 36 } 
+		position = { x= 56 y =0 }  	 	
+		background = {
+			name = "Background"
+			spriteType = "GFX_tiled_window_transparent"
+		}
+	}
 
 	containerWindowType = {
 		name = "hosttool_open_container"
@@ -113,7 +122,7 @@ guiTypes = {
             		frame = 1
 			pdx_tooltip = "PUPPET_COUNTRY"
 			pdx_tooltip_delayed = "PUPPET_COUNTRY_DELAYED"
-		}
+		}		
 		buttonType = {
 			name = "free_country" 
 			position = {x=430 y=190}	
@@ -122,7 +131,78 @@ guiTypes = {
 			pdx_tooltip = "FREE_COUNTRY"
 			pdx_tooltip_delayed = "FREE_COUNTRY_DELAYED"
 		}
+		buttonType = {
+			name = "faction_join_country" 
+			position = {x=350 y=253}	
+			spriteType = "GFX_global_diplorequest_icons"
+            		frame = 1
+			pdx_tooltip = "JOIN_FACTION"
+			pdx_tooltip_delayed = "JOIN_FACTION_DELAYED"
+		}		
+		buttonType = {
+			name = "faction_leave_country" 
+			position = {x=400 y=253}	
+			spriteType = "GFX_global_diplorequest_icons"
+            		frame = 1
+			pdx_tooltip = "REMOVE_FACTION"
+			pdx_tooltip_delayed = "REMOVE_FACTION_DELAYED"
+		}
+		buttonType = {
+			name = "declare_war_country" 
+			position = {x=450 y=253}	
+			spriteType = "GFX_global_diplorequest_icons"
+            		frame = 1
+			pdx_tooltip = "DECLARE_WAR_COUNTRY"
+			pdx_tooltip_delayed = "DECLARE_WAR_DELAYED"
+		}								
 ####################################################################
+
+		buttonType = {
+			name = "pause_blocker_block_all"
+			position = {x=230 y=253}
+			spriteType = "GFX_ability_jap_last_stand"
+			pdx_tooltip = "pause_blocker_block_all_tt"
+			pdx_tooltip_delayed = "pause_blocker_block_all_delayed_tt"
+			scale = 1.3
+		}
+
+		buttonType = {
+			name = "pause_blocker_unblock_all"
+			position = {x=275 y=253}
+			spriteType = "GFX_ability_force_attack"
+			pdx_tooltip = "pause_blocker_unblock_all_tt"
+			pdx_tooltip_delayed = "pause_blocker_unblock_all_delayed_tt"
+			scale = 1.3
+		}
+
+		buttonType = {
+			name = "pause_blocker_unblock_country"
+			position = {x=185 y=255}
+			spriteType = "GFX_checkbox_small_red"
+			pdx_tooltip = "pause_blocker_unblock_country_tt"
+			pdx_tooltip_delayed = "pause_blocker_unblock_country_delayed_tt"
+			scale = 1.2
+		}
+
+		buttonType = {
+			name = "pause_blocker_block_country"
+			position = {x=185 y=255}
+			spriteType = "GFX_checkbox_small_green"
+			pdx_tooltip = "pause_blocker_block_country_tt"
+			pdx_tooltip_delayed = "pause_blocker_block_country_delayed_tt"
+			scale = 1.2
+		}
+
+		instantTextboxType = {
+			name = "pause_blocker_country_block_tt"
+			position = {x=30 y=264}
+			font = "hoi_24mbs"
+			text = "pause_blocker_country_block_tt"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}
 
 ####################################################################
 		buttonType = {
@@ -160,6 +240,30 @@ guiTypes = {
 			spriteType = "GFX_generic_box_125"
 			scale= 1
 		}
+		buttonType = {
+			name = "cheat7"
+			position = {x=40 y=246}
+			spriteType = "GFX_generic_box_125"
+			scale= 1
+		}
+		buttonType = {
+			name = "cheat8"
+			position = {x=40 y=276}
+			spriteType = "GFX_generic_box_125"
+			scale= 1
+		}		
+		buttonType = {
+			name = "cheat9"
+			position = {x=40 y=302}
+			spriteType = "GFX_generic_box_125"
+			scale= 1
+		}		
+		buttonType = {
+			name = "cheat10"
+			position = {x=40 y=328}
+			spriteType = "GFX_generic_box_125"
+			scale= 1
+		}								
 		instantTextboxType = {
 			name = "cheat1_text"
 			position = {x=45 y=95}
@@ -225,7 +329,46 @@ guiTypes = {
 			format = left
 			alwaystransparent = yes
 		}
-
+		instantTextboxType = {
+			name = "cheat7_text"
+			position = {x=45 y=251}
+			font = "hoi_18mbs"
+			text = "CHEAT7"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "cheat8_text"
+			position = {x=45 y=277}
+			font = "hoi_18mbs"
+			text = "CHEAT8"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "cheat9_text"
+			position = {x=45 y=303}
+			font = "hoi_18mbs"
+			text = "CHEAT9"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}	
+		instantTextboxType = {
+			name = "cheat10_text"
+			position = {x=45 y=329}
+			font = "hoi_18mbs"
+			text = "CHEAT10"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}							
 		buttonType = {
 			name = "toogle_mark" 
 			position = {x=203 y=35}

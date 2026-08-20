@@ -35,53 +35,138 @@ country_event = {
 				transfer_state = 938
 				transfer_state = 939
 				transfer_state = 1097
+				transfer_state = 903
+				transfer_state = 904
+				transfer_state = 905
 			}
 		}
 		hidden_effect = {
+			542 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			545 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			546 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			1055 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			547 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			548 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			771 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			770 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			938 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			939 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			1097 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			904 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			905 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			903 = {
+				add_core_of = SAF
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}									
 			SAF = {
 				country_event = { id = tfv_south_africa.2 }
-			}
-		}
-	}
-	
-	option = {
-		name = tfv_south_africa.1.b # ENG refuses the proposal
-		
-		ai_chance = {
-			base = 0
-		}
-		
-		hidden_effect = {
-			SAF = {
-				country_event = { id = tfv_south_africa.3 }
-			}
-		}
-	}
-	option = {
-		name = tfv_south_africa.1.c # ENG compromises
-		trigger = {
-			KEN = { exists = no }
-			ZIM = { exists = no }
-			BOT = { exists = no }
-			ZAM = { exists = no }
-			MLW = { exists = no }
-			TZN = { exists = no }
-			UGA = { exists = no }
-		}
-		
-		ai_chance = {
-			base = 20
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0 #don't do this if we are historical!
-			}
-		}
-		effect_tooltip = {
-			custom_effect_tooltip = SAF_colonies_tt
-		}
-		hidden_effect = {
-			SAF = {
-				country_event = { id = tfv_south_africa.4 }
 			}
 		}
 	}

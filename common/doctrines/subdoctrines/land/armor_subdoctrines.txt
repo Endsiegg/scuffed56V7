@@ -166,6 +166,8 @@ infantry_is_queen = {
         categories = {
             category_light_infantry
             category_line_artillery
+            category_anti_tank
+            category_anti_air
         }
     }
     available = {
@@ -193,29 +195,68 @@ infantry_is_queen = {
             build_cost_ic = -0.1
         }
         artillery_equipment = {
-            build_cost_ic = -0.05
+            build_cost_ic = -0.1
         }
     }
     #TODO jack look if you can make a script effect for production bonuses
 
     rewards = {
+
         queen = {
         #1
         bm_command_regiment = {
             battalion_mult = {
                 category = category_light_infantry
-                    soft_attack = 0.1
-                    defense = 0.1
+                    soft_attack = 0.05
+                    defense = 0.05
             } 
         }
         }
+
         king = {
         #2
         bm_command_regiment = {
             battalion_mult = {
                 category = category_line_artillery
-                    soft_attack = 0.1
-                    defense = 0.1
+                    soft_attack = 0.05
+                    defense = 0.05
+            }
+        }
+        }
+
+        royal_authroity = {
+        #3
+        equipment_bonus = {
+            anti_tank_equipment = {
+                build_cost_ic = -0.1
+            }
+            anti_air_equipment = {
+                build_cost_ic = -0.1
+            }
+        }
+        }
+
+        queens_perogative = {
+        #4
+        bm_command_regiment = {
+            battalion_mult = {
+                category = category_light_infantry
+                    breakthrough = 0.1
+            } 
+        }
+        }
+
+        kingly_command = {
+        #5
+        bm_command_regiment = {
+            battalion_mult = {
+                category = category_line_artillery
+                    breakthrough = 0.1
+            } 
+        }
+        equipment_bonus = {
+            support_equipment = {
+                build_cost_ic = -0.1
             }
         }
         }
