@@ -141,7 +141,7 @@ focus_tree = {
 		x = -15
 		y = 1
 	
-		cost = 2
+		cost = 1
 	
 		completion_reward = {
 
@@ -329,7 +329,7 @@ focus_tree = {
 		x = -1
 		y = 2
 	
-		cost = 2
+		cost = 1
 	
 		completion_reward = {
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -510,7 +510,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 3
+		cost = 1
 
 		available = {
 
@@ -623,7 +623,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		bypass = {
 			has_war_with = FRA
@@ -684,7 +684,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 			NOT = { 
@@ -728,7 +728,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 			every_owned_state = {
@@ -897,7 +897,7 @@ focus_tree = {
 		x = 1
 		y = 2
 	
-		cost = 3
+		cost = 1
 	
 		completion_reward = {
 			hidden_effect = {
@@ -941,7 +941,7 @@ focus_tree = {
 		x = -3
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -1021,7 +1021,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -1046,7 +1046,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 3
 	
 		completion_reward = {
 			custom_effect_tooltip = BEL_modify_royal_military_academy_dynamic_modifier_tt
@@ -1069,7 +1069,7 @@ focus_tree = {
 		x = 3
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 			custom_effect_tooltip = BEL_modify_royal_military_academy_dynamic_modifier_tt
@@ -1094,7 +1094,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available_if_capitulated = yes
 
@@ -1133,7 +1133,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 3
 	
 		completion_reward = {
 			custom_effect_tooltip = BEL_modify_royal_military_academy_dynamic_modifier_tt
@@ -1190,7 +1190,7 @@ focus_tree = {
 		x = 4
 		y = 2
 	
-		cost = 5
+		cost = 2
 	
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 	
@@ -1218,7 +1218,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -1253,7 +1253,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
 	
@@ -1289,7 +1289,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 1
 	
 		completion_reward = {
 			mio:BEL_fonderie_royale_de_canons_liege_organization = {
@@ -1324,7 +1324,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available_if_capitulated = yes
 	
@@ -1360,7 +1360,7 @@ focus_tree = {
 		x = 1
 		y = 2
 	
-		cost = 10
+		cost = 5
 	
 		completion_reward = {
 			if = {
@@ -1405,7 +1405,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 1
 	
 		completion_reward = {
 			add_doctrine_cost_reduction = {
@@ -1457,7 +1457,7 @@ focus_tree = {
 		x = 1
 		y = 2
 	
-		cost = 5
+		cost = 1
 	
 		completion_reward = {
 			add_doctrine_cost_reduction = {
@@ -1492,7 +1492,7 @@ focus_tree = {
 		x = 0
 		y = 4
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 			if = {
@@ -1539,7 +1539,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 			NOT = { 
@@ -1591,6 +1591,17 @@ focus_tree = {
 		available_if_capitulated = yes
 	
 		completion_reward = {
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt				
+			}			
+			add_tech_bonus = {
+				name = BEL_mechanized_development
+				bonus = 2
+				uses = 1
+				category = cat_mechanized_equipment				
+			}			
 			mio:BEL_fn_herstal_organization = {
 				add_mio_size = 1
 				add_mio_funds_gain_factor = 0.2
@@ -1615,7 +1626,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 3
 		available_if_capitulated = yes
 		available = {
 			6 = {
@@ -1677,6 +1688,17 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	
 		completion_reward = {
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt				
+			}			
+			add_tech_bonus = {
+				name = BEL_mechanized_development
+				bonus = 2
+				uses = 1
+				category = cat_mechanized_equipment				
+			}
 			mio:BEL_minerva_imperia_armored_car_organization = {
 				add_mio_size = 1
 				add_mio_funds_gain_factor = 0.2
@@ -1707,7 +1729,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 			has_war = yes
@@ -1751,7 +1773,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 
@@ -1881,7 +1903,7 @@ focus_tree = {
 		x = 0
 		y = 3
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			NOT ={
@@ -1972,7 +1994,7 @@ focus_tree = {
 		x = 21
 		y = 0
 	
-		cost = 5
+		cost = 2
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 
@@ -2067,7 +2089,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -2117,7 +2139,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 2
 
 		available = {
 			has_idea = BEL_collapsing_government_ns
@@ -2224,7 +2246,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -2253,7 +2275,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 2
 
 		available = { 
 		}
@@ -2280,7 +2302,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 
@@ -2695,7 +2717,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		allow_branch = {
 			IF = {
@@ -2750,7 +2772,7 @@ focus_tree = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			fascism > 0.5
@@ -2778,7 +2800,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			fascism > 0.4
@@ -2859,7 +2881,7 @@ focus_tree = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 			fascism > 0.5
@@ -2886,7 +2908,7 @@ focus_tree = {
 		x = 1
 		y = 2
 	
-		cost = 5
+		cost = 3
 
 		available = {
 			fascism > 0.6
@@ -2935,7 +2957,7 @@ focus_tree = {
 		x = -2
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 	
@@ -2949,7 +2971,7 @@ focus_tree = {
 				show_mio_tooltip = GER_daimler_benz_organization
 
 				mio:GER_daimler_benz_organization = {
-					add_mio_size = 2
+					add_mio_size = 5
 				}
 			}
 
@@ -2972,7 +2994,7 @@ focus_tree = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 			fascism > 0.8
@@ -3009,7 +3031,7 @@ focus_tree = {
 		x = 0
 		y = 2
 	
-		cost = 10
+		cost = 5
 
 		available = {
 			fascism > 0.9
@@ -3125,7 +3147,7 @@ focus = {
 	x = 3
 	y = 1
 
-	cost = 5
+	cost = 1
 
 	available = {
 		has_dynamic_modifier = { modifier = BEL_neutrality_dynamic_modifier }
@@ -3150,7 +3172,7 @@ focus = {
 		x = 2
 		y = 0
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			fascism > 0.40
@@ -3229,7 +3251,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 			fascism > 0.50
@@ -3258,7 +3280,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			fascism > 0.50
@@ -3292,7 +3314,7 @@ focus = {
 		x = 3
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 			fascism > 0.50
@@ -3322,7 +3344,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 			fascism > 0.60
@@ -3364,7 +3386,7 @@ focus = {
 		x = 3
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 			fascism > 0.60
@@ -3392,7 +3414,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 3
 	
 		completion_reward = {
 			IF = {
@@ -3458,7 +3480,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 3
 	
 		completion_reward = {
 			custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_tt
@@ -3492,7 +3514,7 @@ focus = {
 		x = 8
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		allow_branch = {
 			IF = {
@@ -3563,7 +3585,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 			swap_ideas = {
@@ -3590,7 +3612,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 			NOT = { 
@@ -3651,7 +3673,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			HOL = {
@@ -3720,7 +3742,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		bypass = {
 		}
@@ -3746,7 +3768,7 @@ focus = {
 		x = -2
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			OR = {
@@ -3785,7 +3807,7 @@ focus = {
 					}
 				}
 
-				add_compliance = 25
+				add_compliance = 75
 			}
 		}
 	}
@@ -3803,7 +3825,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 			29 = {
@@ -3841,7 +3863,7 @@ focus = {
 		x = -6
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			is_subject = no
@@ -3881,7 +3903,7 @@ focus = {
 
 		
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			is_subject = no
@@ -3915,7 +3937,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		completion_reward = {
 			add_state_claim = 29
@@ -3951,7 +3973,7 @@ focus = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 2
 
 		available = {
 			AND = {
@@ -4013,7 +4035,7 @@ focus = {
 		x = 13
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		allow_branch = {
 			IF = {
@@ -4099,7 +4121,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 	
 		completion_reward = {
@@ -4135,7 +4157,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		completion_reward = {
 			country_event = { id = ww_BEL_event_political.7 }
@@ -4213,7 +4235,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 			IF = {
@@ -4239,7 +4261,7 @@ focus = {
 		x = 3
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 	
 		completion_reward = {
@@ -4267,7 +4289,7 @@ focus = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 1
 	
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	
@@ -4369,7 +4391,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			
@@ -4383,7 +4405,7 @@ focus = {
 						controls_province = 9574
 						controls_province = 11419
 						controls_province = 6598
-#						controls_province = 6560	#56
+						#controls_province = 6560	#56
 					}
 
 					OR = {
@@ -4619,7 +4641,7 @@ focus = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			any_country = {
@@ -4684,7 +4706,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 1
 	
 		completion_reward = {
 			if = {
@@ -4763,7 +4785,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 10
+		cost = 5
 	
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	
@@ -4784,7 +4806,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available_if_capitulated = yes
 	
@@ -4823,7 +4845,7 @@ focus = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			is_in_faction = no
@@ -4912,7 +4934,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 	
@@ -5007,7 +5029,7 @@ focus = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 1
 
 		available = {
 			any_country = {
@@ -5050,7 +5072,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 			has_facility_specialization = specialization_land
@@ -5162,7 +5184,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -5188,7 +5210,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -5223,7 +5245,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -5331,7 +5353,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 1
 
 		available_if_capitulated = yes
 	
@@ -5358,7 +5380,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available = {
 			COG = {
@@ -5494,7 +5516,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available_if_capitulated = yes
 	
@@ -5583,7 +5605,7 @@ focus = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 3
 
 		available_if_capitulated = yes
 	
@@ -5662,7 +5684,7 @@ focus = {
 		x = 0
 		y = 2
 	
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 	
@@ -5710,7 +5732,7 @@ focus = {
 			}
 		}
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -6044,7 +6066,7 @@ focus = {
 		x = -2
 		y = 1
 	
-		cost = 2
+		cost = 1
 
 		available_if_capitulated = yes
 	
@@ -6080,7 +6102,7 @@ focus = {
 		x = 2
 		y = 1
 	
-		cost = 2
+		cost = 1
 
 		available_if_capitulated = yes
 
@@ -6124,7 +6146,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 2
+		cost = 1
 
 		available = {
 			is_government_in_exile = yes
@@ -6201,7 +6223,7 @@ focus = {
 			add_war_support = 0.10
 			add_legitimacy = 25
 			add_stability = 0.10
-			add_manpower = 5000
+			add_manpower = 50000
 		}
 
 	}
@@ -6226,7 +6248,7 @@ focus = {
 		completion_reward = {
 			add_offsite_building = { 
 				type = industrial_complex
-				level = 4
+				level = 8
 			}
 		}
 
@@ -7054,7 +7076,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 			add_dynamic_modifier = {
@@ -7080,7 +7102,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 3
 	
 		completion_reward = {
 			add_stability = 0.05
@@ -7103,7 +7125,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 3
 
 		available = {
 			34 = {
@@ -7151,7 +7173,7 @@ focus = {
 		x = -2
 		y = 1
 	
-		cost = 5
+		cost = 4
 	
 		completion_reward = {
 			add_stability = 0.05
@@ -7254,7 +7276,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 			add_tech_bonus = {
@@ -7293,7 +7315,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 5
+		cost = 4
 	
 		completion_reward = {
 			add_stability = 0.10
@@ -7346,7 +7368,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 			if = {
@@ -7406,7 +7428,7 @@ focus = {
 		x = 0
 		y = 1
 	
-		cost = 2
+		cost = 1
 	
 		completion_reward = {
 			if = {
@@ -7554,13 +7576,13 @@ focus = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
 			add_tech_bonus = {
 				name = BEL_develop_belgian_air_industry
-				bonus = 0.5
+				bonus = 1
 				uses = 2
 				category = air_equipment
 			}
@@ -7581,7 +7603,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 1
 	
 		completion_reward = {
 			mio:BEL_renard_organization = {
@@ -7607,7 +7629,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 1
 	
 		completion_reward = {
 			mio:BEL_renard_organization = {
@@ -7723,7 +7745,7 @@ focus = {
 		x = -2
 		y = 1
 	
-		cost = 5
+		cost = 2
 
 		available_if_capitulated = yes
 	
@@ -7747,7 +7769,7 @@ focus = {
 	focus = {
 		id = BEL_polish_licences
 		icon = GFX_focus_BEL_polish_licences
-#		Maybe use GFX_focus_generic_copy_plane_designs
+		#Maybe use GFX_focus_generic_copy_plane_designs
 	
 		prerequisite = { focus = BEL_foreign_plane_purchases }
 
@@ -7781,7 +7803,7 @@ focus = {
 		x = -1
 		y = 1
 	
-		cost = 5
+		cost = 2
 	
 		completion_reward = {
 			if = {
@@ -7830,7 +7852,7 @@ focus = {
 		x = 1
 		y = 1
 	
-		cost = 5
+		cost = 1
 	
 		completion_reward = {
 			add_doctrine_cost_reduction = {
@@ -7854,7 +7876,7 @@ focus = {
 		x = 0
 		y = 2
 	
-		cost = 5
+		cost = 3
 
 		available_if_capitulated = yes
 	
