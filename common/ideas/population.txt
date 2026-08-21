@@ -1,130 +1,130 @@
-ideas = {
+# ideas = {
 
-	population = { 
+# 	population = { 
 	
-		law = yes
+# 		law = yes
 		
-		#Encourage Growth
-		population_encourage = {
+# 		#Encourage Growth
+# 		population_encourage = {
 
-			modifier = {
-				political_power_factor = -0.20
-                weekly_manpower  = 2000
-                conscription = 0.05
-                mobilization_speed = 0.20
-                war_support_factor = -0.05
-                stability_factor = -0.05
-				consumer_goods_factor = 0.10
-			}
+# 			modifier = {
+# 				political_power_factor = -0.20
+#                 weekly_manpower  = 2000
+#                 conscription = 0.05
+#                 mobilization_speed = 0.20
+#                 war_support_factor = -0.05
+#                 stability_factor = -0.05
+# 				consumer_goods_factor = 0.10
+# 			}
 
-			cost = 150
+# 			cost = 150
 			
-			cancel_if_invalid = yes
+# 			cancel_if_invalid = yes
 			
-			ai_will_do = {
-   				factor = 1
-   			}
-		}
+# 			ai_will_do = {
+#    				factor = 1
+#    			}
+# 		}
 		
-		#Open Borders
-		population_open = {
+# 		#Open Borders
+# 		population_open = {
 
-            available = {
-				NOT = {
-					has_government = communism
-					has_government = fascism
-					has_government = neutrality
-				}
-			}
+#             available = {
+# 				NOT = {
+# 					has_government = communism
+# 					has_government = fascism
+# 					has_government = neutrality
+# 				}
+# 			}
 
-			modifier = {
-				political_power_factor = 0.1
-				#weekly_manpower  = 1000
-                conscription = 0.02
-				stability_factor = -0.025
-				war_support_factor = -0.025
-                mobilization_speed = -0.1
-               # stability_weekly = -0.0005
-                #war_support_weekly = -0.0005
-			}
-			cost = 150
+# 			modifier = {
+# 				political_power_factor = 0.1
+# 				#weekly_manpower  = 1000
+#                 conscription = 0.02
+# 				stability_factor = -0.025
+# 				war_support_factor = -0.025
+#                 mobilization_speed = -0.1
+#                # stability_weekly = -0.0005
+#                 #war_support_weekly = -0.0005
+# 			}
+# 			cost = 150
 			
-			cancel_if_invalid = yes
+# 			cancel_if_invalid = yes
 
-			ai_will_do = {
-   				factor = 0.5
+# 			ai_will_do = {
+#    				factor = 0.5
 
-   				modifier = {
-					has_government = democratic
-					factor = 1
-				}
-   			}
-		}
+#    				modifier = {
+# 					has_government = democratic
+# 					factor = 1
+# 				}
+#    			}
+# 		}
 		
-		#National Purity
-		population_pure = {
-		    available = {
-				NOT = {
-				    OR = {
-					has_government = communism
-					has_government = democratic
-				    }
-				}
-			}
+# 		#National Purity
+# 		population_pure = {
+# 		    available = {
+# 				NOT = {
+# 				    OR = {
+# 					has_government = communism
+# 					has_government = democratic
+# 				    }
+# 				}
+# 			}
 			
-			modifier = {
-				weekly_manpower  = -1000
-				political_power_factor = 0.10
-				war_support_factor = 0.05
-				stability_factor = 0.05
-				non_core_manpower = -0.4
-			}
+# 			modifier = {
+# 				weekly_manpower  = -1000
+# 				political_power_factor = 0.10
+# 				war_support_factor = 0.05
+# 				stability_factor = 0.05
+# 				non_core_manpower = -0.4
+# 			}
 
-			cost = 150
+# 			cost = 150
 			
-			cancel_if_invalid = yes
+# 			cancel_if_invalid = yes
 
-			ai_will_do = {
-   				factor = 0.5
+# 			ai_will_do = {
+#    				factor = 0.5
 
-   				modifier = {
-					has_government = fascism
-					factor = 10
-				}
-   			}
-		}
+#    				modifier = {
+# 					has_government = fascism
+# 					factor = 10
+# 				}
+#    			}
+# 		}
 		
-		#Controlled Growth
-		population_controlled = {
+# 		#Controlled Growth
+# 		population_controlled = {
 		
-			available = {
-				NOT = {
-					has_government = democratic
-				}
-			}
+# 			available = {
+# 				NOT = {
+# 					has_government = democratic
+# 				}
+# 			}
 			
-			modifier = {
-				weekly_manpower  = -2000
-                war_support_factor = -0.05
-                stability_factor = -0.05
-                political_power_factor = 0.25
-			}
+# 			modifier = {
+# 				weekly_manpower  = -2000
+#                 war_support_factor = -0.05
+#                 stability_factor = -0.05
+#                 political_power_factor = 0.25
+# 			}
 
-			cost = 150
+# 			cost = 150
 			
-			cancel_if_invalid = yes
+# 			cancel_if_invalid = yes
 
-			ai_will_do = {
-   				factor = 1.0
-				modifier = {
-				has_government = communism
-				factor = 5
-				}
-				modifier = {
-				has_government = neutrality
-				factor = 3
-				}
-   			}
-		}
-	}
-} 
+# 			ai_will_do = {
+#    				factor = 1.0
+# 				modifier = {
+# 				has_government = communism
+# 				factor = 5
+# 				}
+# 				modifier = {
+# 				has_government = neutrality
+# 				factor = 3
+# 				}
+#    			}
+# 		}
+# 	}
+# } 
