@@ -2090,10 +2090,10 @@ sp_naval_super_heavy_battleship = {
 				limit = { 
 					has_dlc = "Man the Guns"
 				}
-				has_tech = basic_ship_hull_heavy
+				has_tech = improved_ship_hull_heavy
 			}
 			else = {
-				has_tech = basic_battleship
+				has_tech = improved_battleship
 			}
 		}
 	}
@@ -2782,19 +2782,19 @@ sp_naval_modern_carrier = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = basic_ship_hull_carrier
+				has_tech = improved_ship_hull_carrier
 			}
 			else = {
-				has_tech = basic_carrier
+				has_tech = improved_carrier
 			}
 
 		}
 
 	}
 
-	special_project_parent = {
-		sp_naval_super_heavy_battleship
-	}
+	#special_project_parent = {            #removing the need for SHBB for now.
+		#sp_naval_super_heavy_battleship 
+	#}
 	
 	breakthrough_cost = {
 		specialization_naval = 1

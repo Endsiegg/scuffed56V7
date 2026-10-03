@@ -3475,6 +3475,20 @@ focus_tree = {
 			add_command_power = 25
 			army_experience = 15
 
+			add_tech_bonus = {
+				name = GER_infantry_weapons
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+
+			add_tech_bonus = {
+				name = GER_artillery_bombardment
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_mastery = {
@@ -3484,7 +3498,7 @@ focus_tree = {
 
 			add_doctrine_cost_reduction = {
 				name = GER_the_prussian_legacy
-				cost_reduction = 0.25
+				cost_reduction = 0.50
 				uses = 2
 				category = land_doctrine
 			}
@@ -3648,7 +3662,14 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 15
-			
+
+			add_tech_bonus = {
+				name = GER_lessons_of_the_great_war
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_doctrine_cost_reduction = {
@@ -3666,7 +3687,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			GER_modify_army_modifier = yes
-			add_to_variable = { 
+			add_to_variable = {
 				GER_military_max_dig_in_factor = 0.25
 				tooltip = max_dig_in_factor_tt
 			}
@@ -3724,6 +3745,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = GER_artillery_bombardment
+				ahead_reduction = 1
 				bonus = 1
 				uses = 1
 				category = infantry_weapons
@@ -5282,7 +5304,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = GER_advanced_panzer_research
 				bonus = 1
-				uses = 1
+				uses = 2
 				category = armor
 			}
 
