@@ -637,7 +637,8 @@ GER_operational_planning_category = {
 			original_tag = GER
 		}
 
-		days_remove = 365
+		days_remove = 15
+		days_re_enable = 20
 
 		custom_cost_trigger = {
 			command_power > 24
@@ -694,7 +695,7 @@ GER_operational_planning_category = {
 							add_dynamic_modifier = {
 								modifier = GER_motor_and_mech_attack_modifier
 								scope = GER
-								days = 45
+								days = 15
 							}
 						}
 					}
@@ -712,7 +713,7 @@ GER_operational_planning_category = {
 						add_dynamic_modifier = {
 							modifier = GER_blitzkrieg_modifier
 							scope = GER
-							days = 45
+							days = 15
 						}
 					}
 				}
@@ -729,7 +730,7 @@ GER_operational_planning_category = {
 						add_dynamic_modifier = {
 							modifier = GER_blitzkrieg_modifier_lvl_2
 							scope = GER
-							days = 45
+							days = 15
 						}
 					}
 				}
@@ -745,12 +746,12 @@ GER_operational_planning_category = {
 						add_dynamic_modifier = {
 							modifier = GER_blitzkrieg_modifier_lvl_3
 							scope = GER
-							days = 45
+							days = 15
 						}
 					}
 				}
 				hidden_effect = { #This removes the GER_operational_planning_flag, enabling Germany to do the decision again. remove_effect won't work if the country in question capitulates
-					country_event = { id = wuw_GER_military_events.1 days = 45 } 
+					country_event = { id = wuw_GER_military_events.1 days = 15 } 
 				}
 			}
 			#BEWEGUNGSKRIEG
@@ -771,7 +772,7 @@ GER_operational_planning_category = {
 							add_dynamic_modifier = {
 								modifier = GER_motor_and_mech_attack_modifier
 								scope = GER
-								days = 90
+								days = 15
 							}
 						}
 					}
@@ -789,7 +790,7 @@ GER_operational_planning_category = {
 						add_dynamic_modifier = {
 							modifier = GER_bewegungskrieg_modifier
 							scope = GER
-							days = 90
+							days = 15
 						}
 					}
 				}
@@ -806,7 +807,7 @@ GER_operational_planning_category = {
 						add_dynamic_modifier = {
 							modifier = GER_bewegungskrieg_modifier_lvl_2
 							scope = GER
-							days = 90
+							days = 15
 						}
 					}
 				}
@@ -823,7 +824,7 @@ GER_operational_planning_category = {
 						add_dynamic_modifier = {
 							modifier = GER_bewegungskrieg_modifier_lvl_3
 							scope = GER
-							days = 90
+							days = 15
 						}
 					}
 				}
@@ -839,12 +840,12 @@ GER_operational_planning_category = {
 						add_dynamic_modifier = {
 							modifier = GER_bewegungskrieg_modifier_lvl_4
 							scope = GER
-							days = 90
+							days = 15
 						}
 					}
 				}				
 				hidden_effect = { #This removes the GER_operational_planning_flag, enabling Germany to do the decision again. remove_effect won't work if the country in question capitulates
-					country_event = { id = wuw_GER_military_events.1 days = 90 } 
+					country_event = { id = wuw_GER_military_events.1 days = 15 } 
 				}
 			}
 

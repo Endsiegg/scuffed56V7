@@ -1040,6 +1040,14 @@ mass_standardization = {
                     default_morale = 0.2
                 }
             }
+            maintenance_company = {
+                battalion_mult = {
+                    category = category_medium_armor
+                    supply_consumption = -0.10
+                    max_organisation = 0.15
+                    default_morale = 0.15
+                }
+            }
         }
 
         reactive_crews = {
@@ -1094,7 +1102,7 @@ light_armor_maneuver = {
     category_light_armor = {
         soft_attack = 0.1
         breakthrough = 0.05
-        defense = 0.05
+        defense = 0.1
     }
 
     rewards = {
@@ -1125,6 +1133,14 @@ light_armor_maneuver = {
                     supply_consumption = -0.05
                     max_organisation = 0.1
                     default_morale = 0.2
+                }
+            }
+            helicopter_transport = {
+                battalion_mult = {
+                    category = category_light_armor
+                    supply_consumption = -0.1
+                    max_organisation = 0.15
+                    default_morale = 0.25
                 }
             }
         }
@@ -1170,5 +1186,91 @@ modern_armor_assault = {
     #            has_template_containing_unit = tank_destroyers
     #        }
     #    }
+    }
+ 	equipment_bonus = {
+		modern_tank_chassis = {
+			build_cost_ic = -0.1
+			instant = yes
+				}
+	}
+    
+    category_modern_armor = {
+        armor_value = 0.15
+        hard_attack = 0.1
+        soft_attack = 0.1
+        defense = 0.1
+        max_strength = 0.05
+    }
+
+    rewards = {
+
+        armored_command = {
+            bm_modern_tank_command_regiment = {
+                battalion_mult = {
+                    category = category_modern_armor
+                    max_organisation = 0.1
+                    soft_attack = 0.1
+                    hard_attack = 0.1
+                    breakthrough = 0.1
+                }
+            }
+        }
+
+        committed_operational_units = {
+            assault_engineer = {
+                battalion_mult = {
+                    category = category_modern_armor
+                    soft_attack = 0.05
+                    hard_attack = 0.05
+                    ap_attack = 0.05
+                }
+            }
+        }
+
+        priority_logistics = {
+            logistics_company = {
+                battalion_mult = {
+                    category = category_modern_armor
+                    supply_consumption = -0.2
+                    max_organisation = 0.15
+                    default_morale = 0.2
+                }
+            }
+            helicopter_transport = {
+                battalion_mult = {
+                    category = category_modern_armor
+                    supply_consumption = -0.25
+                    max_organisation = 0.20
+                    default_morale = 0.25
+                }
+            }
+        }
+
+        priority_maintenance = {
+            armored_maintenance = {
+                battalion_mult = {
+                    category = category_modern_armor
+                    equipment_capture_factor = 0.1
+                    reliability = 0.15
+                }
+            }
+            maintenance_company = {
+                battalion_mult = {
+                    category = category_modern_armor
+                    equipment_capture_factor = 0.05
+                    reliability = 0.1
+                }
+            }
+        }
+
+        precision_strikes = {
+            armored_signal = {
+                battalion_mult = {
+                    category = category_modern_armor
+                    hard_attack = 0.05
+                    soft_attack = 0.05
+                }
+            }
+        }
     }
 }  
