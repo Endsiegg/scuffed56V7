@@ -13,15 +13,18 @@
 #   Normal      = green air OR surplus         (one good, NOT both — excludes big time)
 #   Kinda       = no green air AND no surplus  (winning) / no red air AND no shortage (losing)
 #
-# Air note: has_green_air and has_red_air are NOT complements.
-# Neither true = contested air. Same logic for surplus/shortage.
+# Air note [v2]: has_green_air and has_red_air ARE exact complements (red = NOT green flag).
+# The green flag itself carries hysteresis (ON at friendly >= enemy fighters, OFF only
+# below 85% of enemy), so contested air shows up as flag *persistence*, not a third state.
+# Surplus/shortage remain NOT complements: neither true = middling supply condition.
 ####################################################################################################
 
 ai_we_winning_big_time = {
 	enable = {
+		has_capitulated = no
 		has_war = yes
 		has_an_actual_civil_war = no
-		alliance_strength_ratio > 1.25
+		NOT = { alliance_strength_ratio < 1.25 }
 		has_green_air = yes
 		has_manpower_and_equipment_surplus = yes
 	}
@@ -31,8 +34,10 @@ ai_we_winning_big_time = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
+			has_capitulated = no
 			strength_ratio = { tag = FROM ratio < 1.4 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = rush_weak
@@ -42,9 +47,11 @@ ai_we_winning_big_time = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.4 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.4 } }
 			strength_ratio = { tag = FROM ratio < 1.7 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -54,9 +61,11 @@ ai_we_winning_big_time = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.7 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.7 } }
 			strength_ratio = { tag = FROM ratio < 2.0 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
@@ -66,21 +75,23 @@ ai_we_winning_big_time = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 2.0 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 2.0 } }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
-		execution_type = rush_weak
-		execute_order = no
-		manual_attack = yes
+		execution_type = careful
+		execute_order = yes
 	}
 }
 
 ai_we_winning = {
 	enable = {
+		has_capitulated = no
 		has_war = yes
 		has_an_actual_civil_war = no
-		alliance_strength_ratio > 1.25
+		NOT = { alliance_strength_ratio < 1.25 }
 		OR = {
 			has_green_air = yes
 			has_manpower_and_equipment_surplus = yes
@@ -98,8 +109,10 @@ ai_we_winning = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
+			has_capitulated = no
 			strength_ratio = { tag = FROM ratio < 1.1 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = rush_weak
@@ -109,9 +122,11 @@ ai_we_winning = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.1 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.1 } }
 			strength_ratio = { tag = FROM ratio < 1.4 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -121,9 +136,11 @@ ai_we_winning = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.4 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.4 } }
 			strength_ratio = { tag = FROM ratio < 1.7 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
@@ -133,35 +150,38 @@ ai_we_winning = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.7 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.7 } }
 			strength_ratio = { tag = FROM ratio < 2.0 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
-		execution_type = rush_weak
-		execute_order = no
-		manual_attack = yes
+		execution_type = careful
+		execute_order = yes
 	}
 
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 2.0 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 2.0 } }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
-		execution_type = balanced
-		execute_order = no
-		manual_attack = yes
+		execution_type = careful
+		execute_order = yes
 	}
 }
 
 ai_we_kinda_winning = {
 	enable = {
+		has_capitulated = no
 		has_war = yes
 		has_an_actual_civil_war = no
-		alliance_strength_ratio > 1.25
+		NOT = { alliance_strength_ratio < 1.25 }
 		has_green_air = no					# no air advantage at all
 		has_manpower_and_equipment_surplus = no		# no supply advantage at all
 	}
@@ -171,8 +191,10 @@ ai_we_kinda_winning = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
+			has_capitulated = no
 			strength_ratio = { tag = FROM ratio < 0.8 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = rush_weak
@@ -182,9 +204,11 @@ ai_we_kinda_winning = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.8 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.8 } }
 			strength_ratio = { tag = FROM ratio < 1.1 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -194,9 +218,11 @@ ai_we_kinda_winning = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.1 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.1 } }
 			strength_ratio = { tag = FROM ratio < 1.4 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
@@ -206,50 +232,54 @@ ai_we_kinda_winning = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.4 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.4 } }
 			strength_ratio = { tag = FROM ratio < 1.7 }
 		}
-		priority = 1000
-		ordertype = front
-		execution_type = rush_weak
-		execute_order = no
-		manual_attack = yes
-	}
-
-	ai_strategy = {
-		type = front_control
-		country_trigger = {
-			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.7 }
-			strength_ratio = { tag = FROM ratio < 2.0 }
-		}
-		priority = 1000
-		ordertype = front
-		execution_type = balanced
-		execute_order = no
-		manual_attack = yes
-	}
-
-	ai_strategy = {
-		type = front_control
-		country_trigger = {
-			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 2.0 }
-		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
-		execute_order = no
-		manual_attack = yes
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			has_war_with = FROM
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.7 } }
+			strength_ratio = { tag = FROM ratio < 2.0 }
+		}
+		ratio = 0.0
+		priority = 1000
+		ordertype = front
+		execution_type = careful
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			has_war_with = FROM
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 2.0 } }
+		}
+		ratio = 0.0
+		priority = 1000
+		ordertype = front
+		execution_type = careful
+		execute_order = yes
 	}
 }
 
 ai_we_stalemating = {
 	enable = {
+		has_capitulated = no
 		has_war = yes
 		has_an_actual_civil_war = no
 		alliance_strength_ratio < 1.25
-		alliance_strength_ratio > 0.75
+		NOT = { alliance_strength_ratio < 0.75 }
 	}
 	abort_when_not_enabled = yes
 
@@ -257,8 +287,10 @@ ai_we_stalemating = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
+			has_capitulated = no
 			strength_ratio = { tag = FROM ratio < 0.5 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = rush_weak
@@ -268,9 +300,11 @@ ai_we_stalemating = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.5 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.5 } }
 			strength_ratio = { tag = FROM ratio < 0.8 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -280,9 +314,11 @@ ai_we_stalemating = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.8 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.8 } }
 			strength_ratio = { tag = FROM ratio < 1.1 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
@@ -292,60 +328,65 @@ ai_we_stalemating = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.1 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.1 } }
 			strength_ratio = { tag = FROM ratio < 1.4 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
-		execution_type = rush_weak
-		execute_order = no
-		manual_attack = yes
+		execution_type = careful
+		execute_order = yes
 	}
 
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.4 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.4 } }
 			strength_ratio = { tag = FROM ratio < 1.7 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
-		execution_type = balanced
-		execute_order = no
-		manual_attack = yes
+		execution_type = careful
+		execute_order = yes
 	}
 
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.7 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.7 } }
 			strength_ratio = { tag = FROM ratio < 2.0 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
-		execute_order = no
-		manual_attack = yes
+		execute_order = yes
 	}
 
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 2.0 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 2.0 } }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
-		execute_order = no
-		manual_attack = no
+		execute_order = yes
 	}
 }
 
 ai_we_kinda_losing = {
 	enable = {
+		has_capitulated = no
         has_war = yes
         has_an_actual_civil_war = no
         alliance_strength_ratio < 0.75
@@ -369,8 +410,10 @@ ai_we_kinda_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
+			has_capitulated = no
 			strength_ratio = { tag = FROM ratio < 0.5 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = rush_weak
@@ -380,9 +423,11 @@ ai_we_kinda_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.5 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.5 } }
 			strength_ratio = { tag = FROM ratio < 0.8 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -392,9 +437,11 @@ ai_we_kinda_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.8 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.8 } }
 			strength_ratio = { tag = FROM ratio < 1.1 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
@@ -404,9 +451,11 @@ ai_we_kinda_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.1 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.1 } }
 			strength_ratio = { tag = FROM ratio < 1.4 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = rush_weak
@@ -418,9 +467,11 @@ ai_we_kinda_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.4 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.4 } }
 			strength_ratio = { tag = FROM ratio < 1.7 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -432,8 +483,10 @@ ai_we_kinda_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.7 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.7 } }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
@@ -444,6 +497,7 @@ ai_we_kinda_losing = {
 
 ai_we_losing = {
 	enable = {
+		has_capitulated = no
 		has_war = yes
 		has_an_actual_civil_war = no
 		alliance_strength_ratio < 0.75
@@ -465,8 +519,10 @@ ai_we_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
+			has_capitulated = no
 			strength_ratio = { tag = FROM ratio < 0.5 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = rush_weak
@@ -476,9 +532,11 @@ ai_we_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.5 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.5 } }
 			strength_ratio = { tag = FROM ratio < 0.8 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -488,9 +546,11 @@ ai_we_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.8 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.8 } }
 			strength_ratio = { tag = FROM ratio < 1.1 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
@@ -500,9 +560,11 @@ ai_we_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.1 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.1 } }
 			strength_ratio = { tag = FROM ratio < 1.4 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = rush_weak
@@ -514,8 +576,10 @@ ai_we_losing = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.4 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.4 } }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -526,6 +590,7 @@ ai_we_losing = {
 
 ai_we_losing_big_time = {
 	enable = {
+		has_capitulated = no
 		has_war = yes
 		has_an_actual_civil_war = no
 		alliance_strength_ratio < 0.75
@@ -538,8 +603,10 @@ ai_we_losing_big_time = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
+			has_capitulated = no
 			strength_ratio = { tag = FROM ratio < 0.5 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -549,9 +616,11 @@ ai_we_losing_big_time = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.5 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.5 } }
 			strength_ratio = { tag = FROM ratio < 0.8 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
@@ -561,9 +630,11 @@ ai_we_losing_big_time = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.8 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.8 } }
 			strength_ratio = { tag = FROM ratio < 1.1 }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = balanced
@@ -575,8 +646,10 @@ ai_we_losing_big_time = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.1 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.1 } }
 		}
+		ratio = 0.0
 		priority = 1000
 		ordertype = front
 		execution_type = careful
@@ -591,85 +664,101 @@ ai_we_losing_big_time = {
 
 ai_we_civil_warring = {
 	enable = {
+		has_capitulated = no
 		has_war = yes
 		has_an_actual_civil_war = yes
 	}
 	abort_when_not_enabled = yes
 
+	# Civil wars: no cowardice. Every band attacks (execute_order = yes), and the more
+	# dominant we are the harder we rush to overrun and end it fast. No resource-preserving
+	# holds — civil wars have no "later" to save for.
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
+			has_capitulated = no
 			strength_ratio = { tag = FROM ratio < 0.8 }
 		}
-		priority = 1000
+		ratio = 0.0
+		priority = 10000
 		ordertype = front
 		execution_type = rush_weak
+		execute_order = yes
 	}
 
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 0.8 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 0.8 } }
 			strength_ratio = { tag = FROM ratio < 1.1 }
 		}
-		priority = 1000
-		ordertype = front
-		execution_type = balanced
-	}
-
-	ai_strategy = {
-		type = front_control
-		country_trigger = {
-			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.1 }
-			strength_ratio = { tag = FROM ratio < 1.4 }
-		}
-		priority = 1000
-		ordertype = front
-		execution_type = careful
-	}
-
-	ai_strategy = {
-		type = front_control
-		country_trigger = {
-			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.4 }
-			strength_ratio = { tag = FROM ratio < 1.7 }
-		}
-		priority = 1000
+		ratio = 0.0
+		priority = 10000
 		ordertype = front
 		execution_type = rush_weak
-		execute_order = no
-		manual_attack = yes
+		execute_order = yes
 	}
 
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 1.7 }
-			strength_ratio = { tag = FROM ratio < 2.0 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.1 } }
+			strength_ratio = { tag = FROM ratio < 1.4 }
 		}
-		priority = 1000
+		ratio = 0.0
+		priority = 10000
 		ordertype = front
 		execution_type = balanced
-		execute_order = no
-		manual_attack = yes
+		execute_order = yes
 	}
 
 	ai_strategy = {
 		type = front_control
 		country_trigger = {
 			has_war_with = FROM
-			strength_ratio = { tag = FROM ratio > 2.0 }
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.4 } }
+			strength_ratio = { tag = FROM ratio < 1.7 }
 		}
-		priority = 1000
+		ratio = 0.0
+		priority = 10000
 		ordertype = front
-		execution_type = careful
-		execute_order = no
-		manual_attack = yes
+		execution_type = balanced
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			has_war_with = FROM
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 1.7 } }
+			strength_ratio = { tag = FROM ratio < 2.0 }
+		}
+		ratio = 0.0
+		priority = 10000
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_control
+		country_trigger = {
+			has_war_with = FROM
+			has_capitulated = no
+			NOT = { strength_ratio = { tag = FROM ratio < 2.0 } }
+		}
+		ratio = 0.0
+		priority = 10000
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
 	}
 }
 
@@ -677,13 +766,13 @@ ai_we_civil_warring = {
 # CORE DEFENSE
 ####################################################################################################
 
-protect_homeland_1 = {
+protect_homeland = {
 	enable = {
-		surrender_progress > 0.05
+		surrender_progress > 0.50
 	}
 	abort = {
 		OR = {
-			surrender_progress < 0.02
+			surrender_progress < 0.30
 			has_capitulated = yes
 		}
 	}
@@ -709,115 +798,7 @@ protect_homeland_1 = {
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		value = 50
-	}
-}
-
-protect_homeland_2 = {
-	enable = {
-		surrender_progress > 0.10
-	}
-	abort = {
-		OR = {
-			surrender_progress < 0.05
-			has_capitulated = yes
-		}
-	}
-	
-	ai_strategy = {
-		type = front_unit_request
-		state_trigger = { 
-			any_state = {
-				is_core_of = FROM.FROM
-				controller = {
-					has_war_with = FROM.FROM
-				}
-			}
-		}
-		value = 100
-	}
-	ai_strategy = {
-		type = front_unit_request
-		state_trigger = {
-			NOT = { is_core_of = FROM.FROM }
-		}
-		value = 100
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		value = 100
-	}
-}
-
-protect_homeland_3 = {
-	enable = {
-		surrender_progress > 0.20
-	}
-	abort = {
-		OR = {
-			surrender_progress < 0.10
-			has_capitulated = yes
-		}
-	}
-	
-	ai_strategy = {
-		type = front_unit_request
-		state_trigger = { 
-			any_state = {
-				is_core_of = FROM.FROM
-				controller = {
-					has_war_with = FROM.FROM
-				}
-			}
-		}
-		value = 500
-	}
-	ai_strategy = {
-		type = front_unit_request
-		state_trigger = {
-			NOT = { is_core_of = FROM.FROM }
-		}
-		value = -500
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		value = 500
-	}
-}
-
-protect_homeland_4 = {
-	enable = {
-		surrender_progress > 0.40
-	}
-	abort = {
-		OR = {
-			surrender_progress < 0.20
-			has_capitulated = yes
-		}
-	}
-	
-	ai_strategy = {
-		type = front_unit_request
-		state_trigger = { 
-			any_state = {
-				is_core_of = FROM.FROM
-				controller = {
-					has_war_with = FROM.FROM
-				}
-			}
-		}
-		value = 1000
-	}
-	ai_strategy = {
-		type = front_unit_request
-		state_trigger = {
-			NOT = { is_core_of = FROM.FROM }
-		}
-		value = -1000
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		value = 1000
+		value = 25
 	}
 }
 
@@ -1038,6 +1019,122 @@ FAI_empty_enemy_front_state_rush = {
 	}
 }
 
+# Finish off weak-but-defended enemy front states (between thin-gap push <2 and the
+# posture cascade). Only when overall not losing, so we don't overextend while on the back foot.
+# careful + execute_order = yes keeps it active but safe (won't hit forts / bad odds).
+FAI_finish_weak_defended_state = {
+	enable = {
+		has_war = yes
+		FAI_no_crisis_hold = yes
+		alliance_strength_ratio > 1.0
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		state_trigger = {
+			is_controlled_by = FROM
+			any_neighbor_state = {
+				is_controlled_by = FROM.FROM
+			}
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size < 4
+				}
+			}
+		}
+		ratio = 0.0
+		priority = 6000
+		ordertype = front
+		execution_type = careful
+		execute_order = yes
+		manual_attack = yes
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		state_trigger = {
+			is_controlled_by = FROM
+			any_neighbor_state = {
+				is_controlled_by = FROM.FROM
+			}
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size < 4
+				}
+			}
+		}
+		value = 25
+	}
+}
+
+# Encirclement-cut: pinch the neck of a forming pocket. Targets enemy front states we
+# border that are adjacent to an enemy salient whose ONLY links to enemy territory are
+# borderable necks (every other neighbour is ours/neutral). Pressing the neck closes
+# the pocket. Uses only proven triggers (no identity comparison / count_neighbor_state).
+FAI_encirclement_cut_push = {
+	enable = {
+		has_war = yes
+		FAI_no_crisis_hold = yes
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		state_trigger = {
+			is_controlled_by = FROM
+			any_neighbor_state = {
+				is_controlled_by = FROM.FROM
+			}
+			any_neighbor_state = {
+				is_controlled_by = FROM
+				all_neighbor_state = {
+					OR = {
+						controller = { NOT = { has_war_with = FROM.FROM } }
+						AND = {
+							is_controlled_by = FROM
+							any_neighbor_state = { is_controlled_by = FROM.FROM }
+						}
+					}
+				}
+			}
+		}
+		ratio = 0.0
+		priority = 7000
+		ordertype = front
+		execution_type = careful
+		execute_order = yes
+		manual_attack = yes
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		state_trigger = {
+			is_controlled_by = FROM
+			any_neighbor_state = {
+				is_controlled_by = FROM.FROM
+			}
+			any_neighbor_state = {
+				is_controlled_by = FROM
+				all_neighbor_state = {
+					OR = {
+						controller = { NOT = { has_war_with = FROM.FROM } }
+						AND = {
+							is_controlled_by = FROM
+							any_neighbor_state = { is_controlled_by = FROM.FROM }
+						}
+					}
+				}
+			}
+		}
+		value = 35
+	}
+}
+
 FAI_thin_enemy_front_gap_push = {
 	enable = {
 		has_war = yes
@@ -1064,7 +1161,8 @@ FAI_thin_enemy_front_gap_push = {
 		priority = 6500
 		ordertype = front
 		execution_type = rush_weak
-		execute_order = yes
+		# [v2] execute_order removed: divisions_in_state only counts the CONTROLLER's divisions,
+		# so an ally-stacked state reads as thin. Letting the balance check veto stops the bait.
 		manual_attack = yes
 	}
 
@@ -1083,5 +1181,381 @@ FAI_thin_enemy_front_gap_push = {
 			}
 		}
 		value = 40
+	}
+}
+
+####################################################################################################
+# REACTIVE PRESSURE SYSTEMS [v2]
+####################################################################################################
+
+# Counter window: hold-then-punish. When a 25%+ stronger attacker declares on us, the wardec
+# hold (priority 5000) keeps us defensive for 60 days. If we are still standing and near parity
+# once it expires, open a ~30 day balanced counterpush against that aggressor (flag lives 90
+# days, window is days 61-90). Brakes: strength gate, crisis gate, auto-expiry, and crisis
+# holds (2500) plus a repeat wardec hold (5000) both outrank priority 1300.
+FAI_counter_window = {
+	enable = {
+		has_war = yes
+		has_an_actual_civil_war = no
+		FAI_no_crisis_hold = yes
+		alliance_strength_ratio > 0.9
+		any_enemy_country = {
+			PREV = {
+				has_country_flag = { flag = FAI_counter_target_@PREV days > 60 }
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		ordertype = front
+		ratio = 0.0
+		priority = 1300
+		execution_type = balanced
+		manual_attack = yes
+		country_trigger = {
+			has_war_with = FROM
+			FROM = {
+				has_country_flag = { flag = FAI_counter_target_@PREV days > 60 }
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = force_concentration_target_weight
+		country_trigger = {
+			has_war_with = FROM
+			FROM = {
+				has_country_flag = { flag = FAI_counter_target_@PREV days > 60 }
+			}
+		}
+		value = 25
+	}
+}
+
+# Stalemate breaker: if a war has ground on 12+ months against an enemy and neither side is
+# collapsing, stop headbutting the line and go around it: more naval invasions, bigger AIFC
+# spearheads, and AIFC target weighting aimed at the stubborn enemy specifically.
+# Brakes: crisis gate, both surrender-progress gates, not-losing gate, and AIFC self-gates
+# on org ratio (0.3) and in-position ratio (0.3) before activating any offensive.
+FAI_stalemate_breaker = {
+	enable = {
+		has_war = yes
+		has_an_actual_civil_war = no
+		FAI_no_crisis_hold = yes
+		has_capitulated = no
+		surrender_progress < 0.05
+		NOT = { alliance_strength_ratio < 0.75 }
+		any_enemy_country = {
+			surrender_progress < 0.1
+			ROOT = {
+				war_length_with = { tag = PREV months > 12 }
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 20
+	}
+
+	# [v2.2] when going around the line, clear the path first
+	ai_strategy = {
+		type = naval_invasion_dominance_weight
+		value = 30
+	}
+
+	ai_strategy = {
+		type = force_concentration_factor
+		value = 15
+	}
+
+	ai_strategy = {
+		type = force_concentration_target_weight
+		country_trigger = {
+			has_war_with = FROM
+			surrender_progress < 0.1
+			FROM = {
+				war_length_with = { tag = PREV months > 12 }
+			}
+		}
+		value = 40
+	}
+}
+
+# Faction rescue: majors stop watching allies die. When a faction-mate is collapsing
+# (surrender progress > 15%) and our own homeland is safe (< 5%), defend ally borders and
+# push units toward the collapsing ally's fronts. Mutually exclusive with protect_homeland
+# by design: rescue requires our surrender < 0.05, protect_homeland_1 starts at > 0.05 and
+# its dont_defend_ally_borders values outbid this the moment we are threatened ourselves.
+FAI_faction_rescue = {
+	enable = {
+		has_war = yes
+		has_an_actual_civil_war = no
+		FAI_no_crisis_hold = yes
+		has_capitulated = no
+		surrender_progress < 0.05
+		any_allied_country = {
+			has_war = yes
+			has_capitulated = no
+			surrender_progress > 0.15
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		value = 40
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		state_trigger = {
+			owner = {
+				NOT = { tag = FROM.FROM }
+				is_in_faction_with = FROM.FROM
+				has_capitulated = no
+				surrender_progress > 0.15
+			}
+		}
+		value = 25
+	}
+}
+
+####################################################################################################
+# ALLY FRONT MANNING + CRUSH WEAK ENEMIES [v2.1]
+####################################################################################################
+
+# Ally border manning: fixes the longstanding "Germany won't man the Hungarian/Romanian
+# segment in Barbarossa" behaviour from the strategy side. The theatre distribution defines
+# were starving ally-border fronts (see [FAI v2] notes in the defines file); this raises the
+# evaluated priority of front segments running along faction-mate territory against our
+# enemies, so the concentrated distribution feeds them instead of ignoring them. Works both
+# for wars already joined by the ally and for access-staged fronts on non-belligerent
+# faction-mate soil. Brakes: crisis gate, homeland gate (protect_homeland tiers outbid this
+# with -50/-100/-500/-1000 the moment we are invaded ourselves).
+FAI_man_ally_borders = {
+	enable = {
+		has_war = yes
+		has_an_actual_civil_war = no
+		FAI_no_crisis_hold = yes
+		has_capitulated = no
+		surrender_progress < 0.05
+		is_in_faction = yes
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		state_trigger = {
+			controller = { has_war_with = FROM.FROM }
+			any_neighbor_state = {
+				owner = {
+					NOT = { tag = FROM.FROM }
+					is_in_faction_with = FROM.FROM
+				}
+			}
+		}
+		value = 30
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		value = 15
+	}
+}
+
+# Crush weak enemies: when an enemy country fields less than 35% of our army strength and we
+# are not losing the wider war, stop treating them like a peer -- full rush with forced
+# execution and AIFC targeting so the minor folds in weeks, not years. Priority 4000: above
+# postures (1000), personalities (1180-1250), counter window (1300) and crisis holds (2500,
+# but FAI_no_crisis_hold disables this entirely in a crisis anyway), below the wardec hold
+# (5000, disjoint targets) and the opportunistic geometry systems (6000+).
+# Anti-suicide: the org (0.35) / strength (0.5) / supply (0.2) / balance (0.25) floors all
+# still gate every individual rush attack, and abort_when_not_enabled kills the stance the
+# moment the ratio shifts or a crisis flag rises.
+FAI_crush_weak_enemy = {
+	enable = {
+		has_war = yes
+		has_an_actual_civil_war = no
+		FAI_no_crisis_hold = yes
+		NOT = { alliance_strength_ratio < 0.9 }
+		any_enemy_country = {
+			strength_ratio = { tag = ROOT ratio < 0.35 }
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		ordertype = front
+		
+		ratio = 0.0
+		priority = 4000
+		execution_type = rush
+		execute_order = yes
+		manual_attack = yes
+		country_trigger = {
+			has_war_with = FROM
+			strength_ratio = { tag = FROM ratio < 0.35 }
+		}
+	}
+
+	ai_strategy = {
+		type = force_concentration_target_weight
+		country_trigger = {
+			has_war_with = FROM
+			strength_ratio = { tag = FROM ratio < 0.35 }
+		}
+		value = 60
+	}
+}
+
+####################################################################################################
+# v2.2: BEACHHEAD ANNIHILATION / MOMENTUM / ISLAND PRESSURE / OPERATIONAL RESERVES
+####################################################################################################
+
+# Beachhead annihilation: an enemy landing on OUR soil gets rushed before it entrenches.
+# Detection rides the mod's own recent_naval_invasion_flag (set on the target state by
+# on_naval_invasion for 180 days -- fires for player landings too, so this IS the anti-D-Day
+# response). Covers both a fully captured state and enemy toeholds inside a state we still
+# control. Deliberately NOT crisis-gated and at priority 8000 (above crisis holds): throwing
+# an invader back into the sea is homeland defense, you do it even mid equipment crisis.
+# Own-invasion safety: is_owned_by FROM.FROM means our own footholds on enemy soil never
+# match, so no conflict with FAI_invasion_foothold_followup.
+FAI_beachhead_annihilation = {
+	enable = {
+		has_war = yes
+		has_capitulated = no
+		any_owned_state = {
+			has_state_flag = recent_naval_invasion_flag
+			OR = {
+				controller = { has_war_with = ROOT }
+				AND = {
+					is_controlled_by = ROOT
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		ratio = 0.0
+		priority = 8000
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+		manual_attack = yes
+		state_trigger = {
+			is_owned_by = FROM.FROM
+			has_state_flag = recent_naval_invasion_flag
+			OR = {
+				controller = { has_war_with = FROM.FROM }
+				AND = {
+					is_controlled_by = FROM.FROM
+					NOT = { is_fully_controlled_by = FROM.FROM }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		state_trigger = {
+			is_owned_by = FROM.FROM
+			has_state_flag = recent_naval_invasion_flag
+			OR = {
+				controller = { has_war_with = FROM.FROM }
+				AND = {
+					is_controlled_by = FROM.FROM
+					NOT = { is_fully_controlled_by = FROM.FROM }
+				}
+			}
+		}
+		value = 60
+	}
+}
+
+# Chain crush momentum: for 45 days after an enemy capitulates (flag granted in on_actions),
+# keep pressing every remaining enemy weaker than parity instead of settling back into the
+# posture cascade -- and point the AIFC spearheads (the universal armor-routing mechanism,
+# since front_armor_score only documents static country ids) at those same targets.
+# Priority 1400: above counter window (1300), below operational pause (2000) -- a scheduled
+# rest still interrupts momentum, overextension protection stays intact.
+FAI_chain_crush_momentum = {
+	enable = {
+		has_war = yes
+		has_an_actual_civil_war = no
+		FAI_no_crisis_hold = yes
+		has_country_flag = FAI_momentum
+		NOT = { alliance_strength_ratio < 0.9 }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = force_concentration_factor value = 10 }
+
+	ai_strategy = {
+		type = front_control
+		ordertype = front
+		ratio = 0.0
+		priority = 1400
+		execution_type = balanced
+		execute_order = yes
+		manual_attack = yes
+		country_trigger = {
+			has_war_with = FROM
+			strength_ratio = { tag = FROM ratio < 1.0 }
+		}
+	}
+
+	ai_strategy = {
+		type = force_concentration_target_weight
+		country_trigger = {
+			has_war_with = FROM
+			strength_ratio = { tag = FROM ratio < 1.0 }
+		}
+		value = 30
+	}
+}
+
+# Island enemy pressure: when we are at war with an enemy we do not border (unreachable by
+# land -- UK, Japan, overseas majors) and we have a real navy, weight naval invasions up and
+# focus the fleet on dominating the invasion path. Uses only value-based strategy types
+# (naval_invasion_focus, naval_invasion_dominance_weight) -- convoy_raiding_target and
+# naval_dominance need static tags / map region ids, so they are out for universal compat.
+# Stacks with Microscripts: +45 base focus at war, -40 during crises still applies on top.
+FAI_island_enemy_pressure = {
+	enable = {
+		has_war = yes
+		has_an_actual_civil_war = no
+		has_capitulated = no
+		has_navy_size = { size > 30 }
+		any_enemy_country = {
+			has_capitulated = no
+			NOT = { is_neighbor_of = ROOT }
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 25
+	}
+
+	ai_strategy = {
+		type = naval_invasion_dominance_weight
+		value = 30
 	}
 }

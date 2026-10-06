@@ -134,7 +134,7 @@ FAI_invasion_foothold_followup = {
 	enable = {
 		has_war = yes
 		FAI_no_crisis_hold = yes
-		alliance_strength_ratio > 0.75
+		NOT = { alliance_strength_ratio < 0.75 }
 	}
 
 	abort_when_not_enabled = yes
@@ -232,5 +232,25 @@ FAI_invasion_foothold_cautious_followup = {
 		execution_type = careful
 		##execute_order = yes
 		manual_attack = no
+	}
+}
+
+minor_nation_suppress_invasion_spam = {
+	enable = {
+		is_major = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		value = -100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = -100
 	}
 }

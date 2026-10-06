@@ -13,7 +13,9 @@
 ############################################
 FAI_operational_pause = {
 	enable = {
+		has_capitulated = no
 		has_country_flag = FAI_op_pause_timer
+		has_an_actual_civil_war = no		# no rest cycles during a civil war — push to resolve it
 	}
 	abort_when_not_enabled = yes
 
@@ -24,7 +26,7 @@ FAI_operational_pause = {
 		priority = 2000
 		execution_type = careful
 		execute_order = no
-		manual_attack = no
+		manual_attack = yes
 	}
 }
 
@@ -35,7 +37,9 @@ FAI_operational_pause = {
 ############################################
 FAI_equipment_crisis_hold = {
 	enable = {
+		has_capitulated = no
 		has_country_flag = FAI_eq_crisis
+		has_an_actual_civil_war = no		# don't freeze a civil war — keep pressing to resolve it
 	}
 	abort_when_not_enabled = yes
 
@@ -46,7 +50,7 @@ FAI_equipment_crisis_hold = {
 		priority = 2500
 		execution_type = careful
 		execute_order = no
-		manual_attack = no
+		manual_attack = yes
 	}
 }
 
@@ -55,7 +59,9 @@ FAI_equipment_crisis_hold = {
 ############################################
 FAI_manpower_crisis_hold = {
 	enable = {
+		has_capitulated = no
 		has_country_flag = FAI_manpower_crisis
+		has_an_actual_civil_war = no		# don't freeze a civil war — keep pressing to resolve it
 	}
 	abort_when_not_enabled = yes
 
@@ -66,7 +72,34 @@ FAI_manpower_crisis_hold = {
 		priority = 2500
 		execution_type = careful
 		execute_order = no
-		manual_attack = no
+		manual_attack = yes
+	}
+}
+
+
+############################################
+# Surrender Crisis Hold
+# Priority 2500: same tier as eq/manpower crisis holds. The posture cascade (1000) has no
+# awareness of our own collapse — it only ever looks at strength_ratio against each enemy,
+# so a country at 40%+ surrender_progress could still get rush_weak/forced orders against
+# whichever enemy happens to be weak. This forces caution once we're visibly going under.
+############################################
+FAI_surrender_crisis_hold = {
+	enable = {
+		has_capitulated = no
+		has_country_flag = FAI_surrender_crisis
+		has_an_actual_civil_war = no		# don't freeze a civil war — keep pressing to resolve it
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		ordertype = front
+		ratio = 0.5
+		priority = 2500
+		execution_type = careful
+		execute_order = no
+		manual_attack = yes
 	}
 }
 
@@ -76,6 +109,7 @@ FAI_manpower_crisis_hold = {
 ############################################
 FAI_hold_front_recent_wardec = {
 	enable = {
+		has_capitulated = no
 		any_enemy_country = {
 			PREV = {
 				has_country_flag = { flag = FAI_hold_against_@PREV value = 1 days < 60 }
@@ -93,8 +127,13 @@ FAI_hold_front_recent_wardec = {
 		execute_order = no
 		manual_attack = no
 		country_trigger = {
-			ROOT = {
-				has_country_flag = { flag = FAI_hold_against_@FROM value = 1 days < 60 }
+			# [v2 bugfix] was ROOT = { ...@FROM }: in country_trigger the scope is the candidate
+			# enemy and FROM is our country, so @FROM resolved to our OWN tag -- a flag that is
+			# never set. The hold never bound to the aggressor's fronts (dead code). Scoping into
+			# FROM (us) and using @PREV (= the enemy) mirrors the proven pattern in this
+			# strategy's own enable block and in the on_actions flag setter.
+			FROM = {
+				has_country_flag = { flag = FAI_hold_against_@PREV value = 1 days < 60 }
 			}
 		}
 	}
@@ -106,9 +145,18 @@ FAI_hold_front_recent_wardec = {
 ############################################
 FAI_save_airforce_zone_suppression = {
 	enable = {
-		has_country_flag = FAI_save_airforce
+		has_war = yes
+		has_an_actual_civil_war = no		# no rest cycles during a civil war — push to resolve it
+		any_enemy_country = { is_major = yes }
+		has_red_air = yes
+		the_air_force_is_dead_jim = yes
 	}
-	abort_when_not_enabled = yes
+	abort = {
+		OR = {
+			has_green_air = yes
+			has_yellow_air = yes
+		}
+	}
 
 	ai_strategy = { type = strategic_air_importance id = 1 value = -500000 }
 	ai_strategy = { type = strategic_air_importance id = 2 value = -500000 }
@@ -408,4 +456,106 @@ FAI_save_airforce_zone_suppression = {
 	ai_strategy = { type = strategic_air_importance id = 296 value = -500000 }
 	ai_strategy = { type = strategic_air_importance id = 297 value = -500000 }
 	ai_strategy = { type = strategic_air_importance id = 298 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 299 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 300 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 301 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 302 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 303 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 304 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 305 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 306 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 307 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 308 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 309 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 310 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 311 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 312 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 313 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 314 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 315 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 316 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 317 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 318 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 319 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 320 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 321 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 322 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 323 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 324 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 325 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 326 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 327 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 328 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 329 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 330 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 331 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 332 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 333 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 334 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 335 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 336 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 337 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 338 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 339 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 340 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 341 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 342 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 343 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 344 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 345 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 346 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 347 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 348 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 349 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 350 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 351 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 352 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 353 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 354 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 355 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 356 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 357 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 358 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 359 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 360 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 361 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 362 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 363 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 364 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 365 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 366 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 367 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 368 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 369 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 370 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 371 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 372 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 373 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 374 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 375 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 376 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 377 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 378 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 379 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 380 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 381 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 382 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 383 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 384 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 385 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 386 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 387 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 388 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 389 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 390 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 391 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 392 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 393 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 394 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 395 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 396 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 397 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 398 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 399 value = -500000 }
+	ai_strategy = { type = strategic_air_importance id = 400 value = -500000 }
 }

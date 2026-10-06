@@ -7,37 +7,62 @@ FAI_green_air_update = {
 	if = {
 		limit = { has_war = yes }
 
-		set_temp_variable = { FAI_friendly_air = num_deployed_planes_with_type@small_plane_airframe }
-		every_allied_country = {
-			add_to_temp_variable = { FAI_friendly_air = num_deployed_planes_with_type@small_plane_airframe }
-		}
+		set_temp_variable = { FAI_solo_fighter_total = num_deployed_planes_with_type@small_plane_airframe }
+
 		every_enemy_country = {
-			subtract_from_temp_variable = { FAI_friendly_air = num_deployed_planes_with_type@small_plane_airframe }
+			subtract_from_temp_variable = { FAI_solo_fighter_total = num_deployed_planes_with_type@small_plane_airframe }
 		}
 
 		if = {
 			limit = {
-				NOT = { has_country_flag = FAI_green_air }
-				if = {
-					OR = {
-						check_variable = { FAI_friendly_air > 0 }
-						check_variable = { FAI_friendly_air = 0 }
-					}
+				NOT = { has_country_flag = FAI_strong_green_air }
+				OR = {
+					check_variable = { FAI_solo_fighter_total > 0 }
+					check_variable = { FAI_solo_fighter_total = 0 }
 				}
 			}
-			set_country_flag = FAI_green_air
+			set_country_flag = FAI_strong_green_air
 		}
 		else_if = {
 			limit = {
-				has_country_flag = FAI_green_air
-				if = {
-					check_variable = { FAI_friendly_air < 0 }
-				}
+				has_country_flag = FAI_strong_green_air
+				check_variable = { FAI_solo_fighter_total < 0 }
 			}
-			clr_country_flag = FAI_green_air
+			clr_country_flag = FAI_strong_green_air
 		}
+
+		if = {
+			limit = { NOT = { has_country_flag = FAI_strong_green_air } }
+
+			set_temp_variable = { FAI_combined_fighter_total = FAI_solo_fighter_total }
+			every_allied_country = {
+				add_to_temp_variable = { FAI_combined_fighter_total = num_deployed_planes_with_type@small_plane_airframe }
+			}
+
+			if = {
+				limit = {
+					NOT = { has_country_flag = FAI_weak_green_air }
+					OR = {
+						check_variable = { FAI_combined_fighter_total > 0 }
+						check_variable = { FAI_combined_fighter_total = 0 }
+					}
+				}
+				set_country_flag = FAI_weak_green_air
+			}
+			else_if = {
+				limit = {
+					has_country_flag = FAI_weak_green_air
+					check_variable = { FAI_combined_fighter_total < 0 }
+				}
+				clr_country_flag = FAI_weak_green_air
+			}
+		}
+		else = { set_country_flag = FAI_weak_green_air }
 	}
-	else = { set_country_flag = FAI_green_air }
+	else = {
+		set_country_flag = FAI_strong_green_air
+		set_country_flag = FAI_weak_green_air
+	}
 }
 
 FAI_track_fighter_losses = {
@@ -200,10 +225,10 @@ FAI_equipment_ratio_update = {
 				has_country_flag = FAI_eq_crisis
 				if = {
 					limit = { FAI_mass_assault_doctrine = yes }
-					check_variable = { FAI_fielded_eq_ratio > 0.85 }
+					check_variable = { FAI_fielded_eq_ratio > 0.80 }
 				}
 				else = {
-					check_variable = { FAI_fielded_eq_ratio > 0.9 }
+					check_variable = { FAI_fielded_eq_ratio > 0.85 }
 				}
 			}
 			clr_country_flag = FAI_eq_crisis
@@ -234,16 +259,41 @@ FAI_manpower_crisis_update = {
 				has_country_flag = FAI_manpower_crisis
 				if = {
 					limit = { FAI_mass_assault_doctrine = yes }
-					manpower_per_military_factory > 700
+					manpower_per_military_factory > 600
 				}
 				else = {
-					manpower_per_military_factory > 1000
+					manpower_per_military_factory > 800
 				}
 			}
 			clr_country_flag = FAI_manpower_crisis
 		}
 	}
 	else = { clr_country_flag = FAI_manpower_crisis }
+}
+
+# Activate: surrender_progress above 10% (visibly collapsing). Deactivate: recovered below 5%.
+# has_capitulated = no outer guard mirrors FAI_manpower_crisis_update, in case the weekly tick
+# lands in the gap between capitulation and the flag being cleared by other means.
+FAI_surrender_crisis_update = {
+	if = {
+		limit = { has_war = yes has_capitulated = no }
+
+		if = {
+			limit = {
+				NOT = { has_country_flag = FAI_surrender_crisis }
+				surrender_progress > 0.10
+			}
+			set_country_flag = FAI_surrender_crisis
+		}
+		else_if = {
+			limit = {
+				has_country_flag = FAI_surrender_crisis
+				surrender_progress < 0.05
+			}
+			clr_country_flag = FAI_surrender_crisis
+		}
+	}
+	else = { clr_country_flag = FAI_surrender_crisis }
 }
 
 ############################################
@@ -261,6 +311,7 @@ FAI_weekly_air_update = {
 	FAI_green_air_update = yes
 	FAI_equipment_ratio_update = yes
 	FAI_manpower_crisis_update = yes
+	FAI_surrender_crisis_update = yes
 }
 
 FAI_operational_pause_update = {
@@ -313,4 +364,38 @@ FAI_operational_pause_update = {
 			}
 		}
 	}
+}
+
+# [v2.2] FAI telemetry: dumps the full posture-relevant state of an AI country to game.log
+# weekly (Documents/Paradox Interactive/Hearts of Iron IV/logs/game.log). Flags are encoded
+# as 0/1 temp variables because log strings interpolate variables, not triggers. If the
+# [GetDateText] token does not resolve on some setup it prints literally -- harmless.
+# grep the log for "[FAI]" to chart crisis cycling, air flapping and pause rhythm per tag.
+FAI_telemetry_log = {
+	set_temp_variable = { FAI_dbg_green = 0 }
+	if = {
+		limit = { has_country_flag = FAI_strong_green_air }
+		set_temp_variable = { FAI_dbg_green = 1 }
+	}
+	set_temp_variable = { FAI_dbg_eqc = 0 }
+	if = {
+		limit = { has_country_flag = FAI_eq_crisis }
+		set_temp_variable = { FAI_dbg_eqc = 1 }
+	}
+	set_temp_variable = { FAI_dbg_mpc = 0 }
+	if = {
+		limit = { has_country_flag = FAI_manpower_crisis }
+		set_temp_variable = { FAI_dbg_mpc = 1 }
+	}
+	set_temp_variable = { FAI_dbg_pause = 0 }
+	if = {
+		limit = { has_country_flag = FAI_op_pause_timer }
+		set_temp_variable = { FAI_dbg_pause = 1 }
+	}
+	set_temp_variable = { FAI_dbg_mom = 0 }
+	if = {
+		limit = { has_country_flag = FAI_momentum }
+		set_temp_variable = { FAI_dbg_mom = 1 }
+	}
+	log = "[FAI] [GetDateText] [Root.GetTag] eq_ratio=[?FAI_fielded_eq_ratio] green_air=[?FAI_dbg_green] eq_crisis=[?FAI_dbg_eqc] mp_crisis=[?FAI_dbg_mpc] op_pause=[?FAI_dbg_pause] momentum=[?FAI_dbg_mom] fighters_lost_frac=[?FAI_monthly_fighters_lost_fraction]"
 }

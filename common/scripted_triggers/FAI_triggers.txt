@@ -1,9 +1,63 @@
+has_selected_a_grand_doctrine = {
+	OR = {
+		has_doctrine = new_mobile_warfare
+		has_doctrine = superior_firepower
+		has_doctrine = grand_battleplan
+		has_doctrine = mass_assault
+	}
+}
+
+has_one_subdoctrine_track = {
+	has_subdoctrine_in_track = infantry
+}
+
+has_two_subdoctrine_tracks = {
+	has_subdoctrine_in_track = infantry
+	OR = {
+		has_subdoctrine_in_track = combat_support
+		has_subdoctrine_in_track = operations
+	}
+}
+
+has_three_subdoctrine_tracks = {
+	has_subdoctrine_in_track = infantry
+	has_subdoctrine_in_track = combat_support
+	has_subdoctrine_in_track = operations
+}
+
+has_four_subdoctrine_tracks = {
+	has_subdoctrine_in_track = infantry
+	has_subdoctrine_in_track = combat_support
+	has_subdoctrine_in_track = armor
+	has_subdoctrine_in_track = operations
+}
+
+is_losing_tank_war = {
+	any_enemy_country = {
+		ROOT = {
+			estimated_intel_max_armor = {
+				tag = PREV
+				value > 25
+			}
+		}
+	}
+}
+
 has_green_air = {
-	has_country_flag = FAI_green_air
+	has_country_flag = FAI_strong_green_air
+}
+
+has_yellow_air = {
+	NOT = { has_country_flag = FAI_strong_green_air }
+	has_country_flag = FAI_weak_green_air
 }
 
 has_red_air = {
-	NOT = { has_country_flag = FAI_green_air }
+	NOT = { has_country_flag = FAI_weak_green_air }
+}
+
+the_air_force_is_dead_jim = {
+	has_deployed_air_force_size = { type = fighter	size < 100 }
 }
 
 has_manpower_and_equipment_surplus = {
@@ -63,4 +117,5 @@ FAI_unknown_or_modded_doctrine = {
 FAI_no_crisis_hold = {
 	NOT = { has_country_flag = FAI_eq_crisis }
 	NOT = { has_country_flag = FAI_manpower_crisis }
+	NOT = { has_country_flag = FAI_surrender_crisis }
 }

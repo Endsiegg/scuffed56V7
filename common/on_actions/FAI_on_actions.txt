@@ -82,9 +82,14 @@ on_actions = {
 			# ROOT = aggressor, FROM = victim
 			ROOT = {
 				set_country_flag = { flag = FAI_recent_wardec value = 1 days = 90 }
+				# [v2.2] fresh-war pause reset: nobody enters a brand new war mid-nap.
+				# Only the pause timer is cleared -- the resume timer keeps running, so the
+				# rest rhythm is delayed, not destroyed.
+				clr_country_flag = FAI_op_pause_timer
 			}
 			FROM = {
 				set_country_flag = { flag = FAI_recent_wardec value = 1 days = 90 }
+				clr_country_flag = FAI_op_pause_timer
 				# If attacker is 25%+ stronger, victim holds defensively for 60 days
 				if = {
 					limit = {
@@ -93,6 +98,40 @@ on_actions = {
 						}
 					}
 					set_country_flag = { flag = FAI_hold_against_@PREV value = 1 days = 60 }
+					# [v2] counter window marker: 90 day lifetime, FAI_counter_window opens days 61-90
+					set_country_flag = { flag = FAI_counter_target_@PREV value = 1 days = 90 }
+				}
+			}
+		}
+	}
+
+	############################################
+	# FAI: Chain Crush Momentum [v2.2]
+	############################################
+	# When a country capitulates, every enemy it was fighting gets a 45 day momentum
+	# window (FAI_chain_crush_momentum in Frontline Management). The wiki does not
+	# document ROOT/FROM for on_capitulation unambiguously, so this is written
+	# direction-proof: momentum is granted to the enemies of whichever scope actually
+	# has has_capitulated = yes. Under a wrong scope convention this no-ops safely,
+	# it can never hand momentum to the losing side.
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = { ROOT = { has_capitulated = yes } }
+				ROOT = {
+					every_enemy_country = {
+						limit = { has_capitulated = no }
+						set_country_flag = { flag = FAI_momentum value = 1 days = 45 }
+					}
+				}
+			}
+			if = {
+				limit = { FROM = { has_capitulated = yes } }
+				FROM = {
+					every_enemy_country = {
+						limit = { has_capitulated = no }
+						set_country_flag = { flag = FAI_momentum value = 1 days = 45 }
+					}
 				}
 			}
 		}
@@ -105,7 +144,7 @@ on_actions = {
 		effect = {
 			if = {
 				limit = { is_ai = yes }
-				FAI_monthly_air_update = yes
+				# FAI_monthly_air_update = yes
 			}
 		}
 	}
@@ -118,6 +157,14 @@ on_actions = {
 			if = {
 				limit = { is_ai = yes }
 				FAI_weekly_air_update = yes
+			}
+			# [v2.2] telemetry: one game.log line per AI country at war, per week
+			if = {
+				limit = {
+					is_ai = yes
+					has_war = yes
+				}
+				FAI_telemetry_log = yes
 			}
 		}
 	}
